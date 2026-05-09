@@ -1,0 +1,255 @@
+/*
+ * carousel-builder — default neutral style
+ *
+ * Brand-agnostic baseline. All visual decisions go through CSS custom
+ * properties so a brand.json can override them without forking this file.
+ *
+ * HARD RULES (carried over from agent-social-slides, learned in production):
+ *   - No `backdrop-filter` anywhere. It breaks slides2pdf / headless Chrome PDF.
+ *   - No on-slide PREV/NEXT or .nav-btns. They leak into PNG/PDF exports.
+ *   - Selectors `.deck` and `.slide` match slides2pdf defaults; do not rename.
+ *   - Body copy floor is 22px so a 1080x1350 slide remains readable on mobile.
+ *   - Slide width and height come from --slide-w / --slide-h, set at root level
+ *     by the renderer. Default below = 4:5 portrait (1080x1350).
+ */
+
+/* ── BRAND TOKENS (overridable via brand.json) ─────────────────────── */
+:root {
+  --bg:               #0d0d10;
+  --text-primary:     rgba(255,255,255,0.94);
+  --text-secondary:   rgba(255,255,255,0.74);
+  --text-muted:       rgba(255,255,255,0.50);
+  --accent:           #5b8def;
+  --accent-secondary: #2a4a99;
+  --card-bg:          rgba(255,255,255,0.04);
+  --card-border:      1px solid rgba(255,255,255,0.10);
+  --card-radius:      18px;
+  --card-shadow:      0 10px 30px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.04);
+  --font-heading:     'Instrument Serif', Georgia, serif;
+  --font-body:        'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --slide-w:          1080px;
+  --slide-h:          1350px;
+  --slide-padding:    72px;
+}
+
+/* ── RESET ─────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ── DECK ──────────────────────────────────────────────────────────── */
+.deck {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.deck::-webkit-scrollbar { display: none; }
+
+/* ── SLIDE ─────────────────────────────────────────────────────────── */
+.slide {
+  flex: 0 0 var(--slide-w);
+  width: var(--slide-w);
+  height: var(--slide-h);
+  scroll-snap-align: start;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: var(--slide-padding);
+  overflow: hidden;
+  background: var(--bg);
+  page-break-after: always;
+}
+.slide:last-child { page-break-after: auto; }
+
+/* Soft accent backdrop. No backdrop-filter on purpose. */
+.slide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(70% 40% at 12% 0%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 60%),
+    radial-gradient(50% 35% at 88% 100%, color-mix(in srgb, var(--accent-secondary) 20%, transparent), transparent 55%);
+  pointer-events: none;
+}
+
+.slide-header,
+.slide-content,
+.slide-footer { position: relative; z-index: 2; }
+
+/* ── HEADER ────────────────────────────────────────────────────────── */
+.slide-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  min-height: 36px;
+}
+.brand-logo { height: 36px; width: auto; }
+.brand-logo-group { display: flex; align-items: center; gap: 12px; }
+.brand-logo-text {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+}
+.slide-number {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+/* ── CONTENT ZONE ──────────────────────────────────────────────────── */
+.slide-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 28px;
+}
+
+/* ── TYPOGRAPHY (Hierarchy v2 scale, mobile-readable floor) ────────── */
+.h-kicker {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.h-hero { font-family: var(--font-heading); font-size: 156px; line-height: 0.95; color: var(--text-primary); }
+.h-hero-italic { font-family: var(--font-heading); font-style: italic; font-size: 156px; line-height: 0.95; color: var(--text-primary); }
+.h-hero-number { font-family: var(--font-heading); font-size: 200px; line-height: 0.9; color: var(--accent); }
+.h-hero-eyebrow { font-size: 38px; color: var(--text-secondary); font-weight: 400; }
+.h-title { font-family: var(--font-heading); font-size: 92px; line-height: 1.04; color: var(--text-primary); }
+.h-body-lead { font-size: 32px; line-height: 1.4; color: var(--text-secondary); font-weight: 400; }
+.h-body { font-size: 26px; line-height: 1.5; color: var(--text-secondary); }
+.h-caption { font-size: 22px; line-height: 1.45; color: var(--text-muted); }
+.h-lift { font-size: 36px; line-height: 1.35; color: var(--text-primary); font-weight: 500; }
+
+.title-stack { display: flex; flex-direction: column; gap: 18px; max-width: 920px; }
+
+/* ── CARDS ─────────────────────────────────────────────────────────── */
+.card {
+  background: var(--card-bg);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: 48px;
+  max-width: 980px;
+}
+
+/* ── LISTS ─────────────────────────────────────────────────────────── */
+.list-lead-sub {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+.list-lead-sub li {
+  display: flex;
+  gap: 28px;
+  align-items: baseline;
+}
+.list-lead-sub .num {
+  font-family: var(--font-heading);
+  font-size: 64px;
+  color: var(--accent);
+  min-width: 110px;
+}
+.list-lead-sub .lead { font-size: 38px; line-height: 1.25; color: var(--text-primary); }
+.list-lead-sub .sub  { font-size: 26px; line-height: 1.45; color: var(--text-secondary); margin-top: 6px; }
+
+/* ── KEY/VALUE PAIRS ───────────────────────────────────────────────── */
+.kv-rows { display: flex; flex-direction: column; gap: 20px; max-width: 920px; }
+.kv-row { display: flex; gap: 32px; align-items: baseline; }
+.kv-label { font-size: 20px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--text-muted); min-width: 160px; }
+.kv-value { font-family: var(--font-heading); font-size: 32px; color: var(--text-primary); }
+
+/* ── QUOTE ─────────────────────────────────────────────────────────── */
+.quote-block {
+  border-left: 4px solid var(--accent);
+  padding-left: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.quote-text { font-family: var(--font-heading); font-size: 64px; line-height: 1.18; color: var(--text-primary); }
+.quote-attr { font-size: 24px; color: var(--text-muted); letter-spacing: 0.04em; }
+
+/* ── STAT ──────────────────────────────────────────────────────────── */
+.stat-block { display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
+.stat-number { font-family: var(--font-heading); font-size: 220px; line-height: 0.9; color: var(--accent); }
+.stat-label  { font-size: 36px; color: var(--text-primary); max-width: 760px; line-height: 1.3; }
+.stat-source { font-size: 20px; color: var(--text-muted); letter-spacing: 0.06em; }
+
+/* ── IMAGE SLIDE ───────────────────────────────────────────────────── */
+.slide-image-wrap {
+  flex: 1;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.03);
+}
+.slide-image-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.image-caption { font-size: 22px; color: var(--text-muted); margin-top: 16px; }
+.image-placeholder {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed rgba(255,255,255,0.2);
+  border-radius: var(--card-radius);
+  color: var(--text-muted);
+  font-size: 24px;
+  text-align: center;
+  padding: 40px;
+}
+
+/* ── CTA ───────────────────────────────────────────────────────────── */
+.cta-block { display: flex; flex-direction: column; gap: 28px; max-width: 880px; }
+.cta-button {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 22px 44px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 28px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.cta-secondary { font-size: 22px; color: var(--text-muted); }
+
+/* ── FOOTER + SWIPE INDICATOR ──────────────────────────────────────── */
+.slide-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 36px;
+  margin-top: 28px;
+}
+.swipe-indicator {
+  font-size: 20px;
+  color: var(--text-muted);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* ── INLINE EMPHASIS ───────────────────────────────────────────────── */
+strong.accent { color: var(--accent); font-weight: 700; }
+.em { color: var(--accent); }
+
+/* ── SAFETY NET: navigation UI banned in exports ───────────────────── */
+.nav-btns, .nav-btn, #prev-btn, #next-btn { display: none !important; }
+.progress-bar { display: none; }

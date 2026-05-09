@@ -1,0 +1,9 @@
+{
+  "_comment": "Copied to <project-root>/<project>/landing-page-analyzer/config.json on first run. Replace placeholders. Never commit a real config to the agent folder.",
+  "project": "<project-slug>",
+  "url": "https://example.com/",
+  "goal": "signup",
+  "target_user": "<who the page is for>",
+  "context": "<optional: pricing, value prop, competitor URLs>",
+  "language": "en"
+}

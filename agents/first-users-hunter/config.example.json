@@ -1,0 +1,8 @@
+{
+  "_comment": "Copied to <project-root>/<project>/first-users-hunter/config.json on first run. Replace placeholders. Never commit a real config to the agent folder.",
+  "project": "<project-slug>",
+  "idea": "<one paragraph: what the product does and what problem it solves>",
+  "target_user": "<who is the early adopter, role, vertical, size>",
+  "geography": "global",
+  "language": "en"
+}

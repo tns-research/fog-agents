@@ -1,0 +1,6 @@
+{
+  "_comment": "Copied to <project-root>/<project>/<agent-name>/config.json on first run. Replace placeholders, never commit a real config to the agent folder.",
+  "project": "<project-slug>",
+  "language": "en",
+  "$schema_hint": "Add agent-specific parameters below. Examples: market, target_user, geography, audience, locale."
+}

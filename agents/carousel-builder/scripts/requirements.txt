@@ -1,0 +1,7 @@
+playwright>=1.45
+img2pdf>=0.5.1
+pdf2image>=1.17.0
+Pillow>=10.0.0
+# Optional: only needed if a user supplies HEIC images (iPhone). copy_user_images.py
+# silently skips it if missing, so installing is per-project rather than mandatory.
+pillow-heif>=0.16.0; python_version >= "3.10"

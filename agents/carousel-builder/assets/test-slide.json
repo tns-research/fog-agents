@@ -1,0 +1,14 @@
+{
+  "_purpose": "Hardcoded sample slide plan used by extract-brand to render a single preview slide with the candidate brand. Do not delete; the extract-brand skill imports this file directly.",
+  "ratio": "4:5",
+  "outputs": ["png"],
+  "slides": [
+    {
+      "type": "quote",
+      "kicker": "BRAND PREVIEW",
+      "title": "This is a one-slide preview rendered with your extracted brand.",
+      "body": "If the colors, typography, and logo placement look right, approve in chat. If anything is off, tell the agent what to change or edit brand-candidate.json directly.",
+      "footer": "carousel-builder · brand validation"
+    }
+  ]
+}

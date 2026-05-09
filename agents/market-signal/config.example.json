@@ -1,0 +1,9 @@
+{
+  "_comment": "Copied to <project-root>/<project>/market-signal/config.json on first run. Replace placeholders. Never commit a real config to the agent folder.",
+  "project": "<project-slug>",
+  "market": "<the market or product category>",
+  "language": "en",
+  "geography": "global",
+  "depth": "standard",
+  "recency_days": 90
+}

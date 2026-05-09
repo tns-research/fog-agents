@@ -1,0 +1,14 @@
+{
+  "_comment": "carousel-builder per-project config. On first run, this file is copied to <your-projects-root>/<project>/carousel-builder/config.json and the agent fills missing values from chat. Edit freely after that. Brand cache is a separate file (brand.json) in the same folder.",
+  "project": "<project-slug>",
+  "platforms": ["linkedin", "instagram"],
+  "ratio": "4:5",
+  "slide_count": 8,
+  "outputs": ["pdf", "png"],
+  "brand_url": null,
+  "language": "en",
+  "tone": "founder",
+  "fal_model": "fal-ai/nano-banana-pro",
+  "fal_max_images": 3,
+  "images": []
+}

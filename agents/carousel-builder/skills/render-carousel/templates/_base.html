@@ -1,0 +1,65 @@
+<!--
+  _base.html - carousel-builder shell template.
+  ============================================
+  Hard rules:
+    - No PREV/NEXT buttons, no .nav-btns, .nav-btn, #prev-btn, #next-btn.
+      They have leaked into PNG/PDF exports. Keyboard arrows only (script below).
+    - No backdrop-filter anywhere in CSS (breaks slides2pdf / headless Chrome).
+    - Selectors .deck and .slide so slides2pdf works with zero config.
+    - Ratio is set via CSS custom properties --slide-w / --slide-h, overridden
+      at the very top of the inlined <style> block by the renderer.
+-->
+<!DOCTYPE html>
+<html lang="LANG">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TITLE</title>
+  <link href="FONTS_URL" rel="stylesheet">
+  <style>
+    /* RATIO_OVERRIDE (renderer fills this in) */
+    /* CSS_INLINE (default-style.css or per-project style.css verbatim, then brand-token override) */
+  </style>
+</head>
+<body>
+
+  <svg style="position:absolute;width:0;height:0" aria-hidden="true">
+    <defs>
+      <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:var(--accent-secondary)"/>
+        <stop offset="100%" style="stop-color:var(--accent)"/>
+      </linearGradient>
+      <linearGradient id="accent-grad-v" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:var(--accent)"/>
+        <stop offset="100%" style="stop-color:var(--accent-secondary)"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <main class="deck" id="deck">
+    <!-- SLIDES_INJECTION_POINT -->
+  </main>
+
+  <script>
+  (function() {
+    var deck = document.getElementById('deck');
+    var slides = document.querySelectorAll('.slide');
+    var current = 0;
+    function goTo(i) {
+      if (i < 0 || i >= slides.length) return;
+      current = i;
+      slides[current].scrollIntoView({ behavior: 'smooth', inline: 'start' });
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); goTo(current + 1); }
+      if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   { e.preventDefault(); goTo(current - 1); }
+    });
+    deck.addEventListener('scroll', function() {
+      var max = deck.scrollWidth - deck.clientWidth;
+      if (max > 0) current = Math.round(deck.scrollLeft / deck.clientWidth);
+    });
+  })();
+  </script>
+
+</body>
+</html>

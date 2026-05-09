@@ -1,0 +1,13 @@
+{
+  "_comment": "Copied to <project-root>/<project>/seo-audit/config.json on first run. Replace placeholders. Never commit a real config to the agent folder.",
+  "project": "<project-slug>",
+  "domain": "https://example.com/",
+  "target_queries": [
+    "primary query the site should rank for",
+    "secondary query",
+    "tertiary query"
+  ],
+  "period_days": 90,
+  "country": "all",
+  "language": "en"
+}
