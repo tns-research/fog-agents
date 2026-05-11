@@ -4,13 +4,15 @@ A real run of `carousel-builder`, the explainer deck for the agent itself, rende
 
 This example shows how the 4-step pipeline (angles, plan, brand, render) produces a posting-ready deck from a single chat prompt + a brand URL.
 
-## Cover and CTA
+## Full deck preview
 
-| Slide 1 (cover) | Slide 8 (CTA) |
-|---|---|
-| ![Cover slide, "Ship a LinkedIn carousel in 10 minutes."](./slide-01.png) | ![CTA slide, "Plug it into your stack." with fog-agents.com link](./slide-08.png) |
+8 slides, JPEG-compressed (600px wide, q80) for repo weight. Original PNGs (2160x2700) are produced by the agent in the user project folder.
 
-The 6 inner slides walk through the pipeline (Why, Steps, Angles, Plan, Brand, Render). Full PDF + PNG sequence are produced by the agent in the user project folder, not committed here for size reasons.
+| | | |
+|---|---|---|
+| ![Slide 1, cover, "Ship a LinkedIn carousel in 10 minutes."](./slide-01.jpg) | ![Slide 2, "Carousels eat hours we don't have."](./slide-02.jpg) | ![Slide 3, "Four steps. No clicks."](./slide-03.jpg) |
+| ![Slide 4, "Topic in. Angles out."](./slide-04.jpg) | ![Slide 5, "Slide-by-slide plan, in markdown."](./slide-05.jpg) | ![Slide 6, "Drop your URL. Get your brand."](./slide-06.jpg) |
+| ![Slide 7, "Render. Export. Post."](./slide-07.jpg) | ![Slide 8, CTA, "Plug it into your stack."](./slide-08.jpg) | |
 
 ## Inputs the user gave
 

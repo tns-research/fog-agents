@@ -4,7 +4,7 @@ Anonymized real runs and visual references for `carousel-builder`.
 
 ## Real runs
 
-- [`swanbase-explainer-20260509/`](./swanbase-explainer-20260509/) — 8-slide LinkedIn + Instagram explainer of the agent itself, rendered with `swanbase.co` brand tokens. Cover + CTA PNG previews + full slide manifest, brand snapshot, engine notes, and posting guidance.
+- [`swanbase-explainer-20260509/`](./swanbase-explainer-20260509/) — 8-slide LinkedIn + Instagram explainer of the agent itself, rendered with `swanbase.co` brand tokens. Full 8-slide JPEG gallery + slide manifest, brand snapshot, engine notes, and posting guidance.
 
 ## Visual patterns
 
@@ -14,6 +14,6 @@ Anonymized real runs and visual references for `carousel-builder`.
 
 A single high-quality example is worth more than verbose documentation: it pins the output format and reduces hallucination.
 
-Naming convention: `<project>-<topic-slug>-<YYYYMMDD>/` with a `README.md` and 1 to 3 preview PNGs. Use synthetic-but-realistic data if real runs are too sensitive to anonymize. Don't commit the full PDF or all 8 PNGs (size). Cover + CTA is enough to convey the look.
+Naming convention: `<project>-<topic-slug>-<YYYYMMDD>/` with a `README.md` and the full slide gallery as **JPEG, 600px wide, quality 80** (the 8-slide swanbase example weighs ~250 KB total this way). Use synthetic-but-realistic data if real runs are too sensitive to anonymize. Don't commit the raw 2160x2700 PNGs or the multi-MB PDF, those live in the user's project folder.
 
 Each example README should include: inputs, slide manifest, brand snapshot, engine path used, creative patterns used, and the prompt to reproduce.

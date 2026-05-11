@@ -15,15 +15,15 @@ Build a ready-to-post social carousel (LinkedIn PDF + Instagram PNG sequence) fr
 
 ## Status
 
-V1 in active development.
+V1, shipped. Phase 6 (Canva Connect, X threads, more styles) is the next iteration but not required for end-to-end use today.
 
 | Phase | Status | What ships |
 |-------|--------|------------|
 | Phase 1 | ✅ | scaffold + `AGENT_CAROUSEL_BUILDER.md` + skills `propose-angles`, `plan-carousel` |
 | Phase 2 | ✅ this commit | rendering core: `render-carousel` + 7 templates + `_base.html`, `export-slides` skill, `default-style.css`, scripts `install_slides2pdf.sh` / `render_playwright.py` / `pack_pdf.py` + `requirements.txt` |
 | Phase 3 | ✅ | skill `extract-brand` + `scripts/extract_brand.py` (firecrawl DOM + Playwright screenshot + Pillow palette heuristics, confidence-scored, validation loop) + `assets/test-slide.json` |
-| Phase 4 | ✅ this commit | skill `handle-assets` + `scripts/svg_helpers.py` (15 helpers) + `scripts/generate_image.py` (fal HTTP, single opt-in via `FAL_API_KEY`, models nano-banana-pro / gpt-image-2) + `scripts/copy_user_images.py` (1500px JPEG opt) + `references/svg-patterns.md` |
-| Phase 5 | next | examples, top-level fog-agents README integration |
+| Phase 4 | ✅ | skill `handle-assets` + `scripts/svg_helpers.py` (15 helpers) + `scripts/generate_image.py` (fal HTTP, single opt-in via `FAL_API_KEY`, models nano-banana-pro / gpt-image-2) + `scripts/copy_user_images.py` (1500px JPEG opt) + `references/svg-patterns.md` |
+| Phase 5 | ✅ | `examples/swanbase-explainer-20260509/` (full 8-slide gallery, brand snapshot, engine notes) + `examples/svg-creative-gallery.md` (17 patterns) + integration into top-level `README.md` and `AGENTS.md` |
 | Phase 6 | later | optional Canva Connect REST integration, X thread output, more shipped styles |
 
 End-to-end pipeline (topic → PDF + PNG) runs today with optional brand extraction from any URL. The default neutral style is used when no brand is provided.
