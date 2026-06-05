@@ -1,13 +1,13 @@
 # carousel-builder
 
-Build a ready-to-post social carousel (LinkedIn PDF + Instagram PNG sequence) from a topic typed in chat. HTML/CSS rendered to native PDF by `slides2pdf` (Playwright fallback). Optional brand extraction from any URL. Optional AI image generation via fal. No paid SaaS, no Canva account required, runs from any AI coding harness (Claude Code, Cursor, Codex CLI, Gemini CLI).
+Build a ready-to-post social carousel (LinkedIn PDF + Instagram PNG sequence) from a topic typed in chat. HTML/CSS rendered to native PDF by `slides2pdf` (Playwright fallback). Shared brand and voice context come from `project-context/` when it exists. Optional AI image generation via fal. No paid SaaS, no Canva account required, runs from any AI coding harness (Claude Code, Cursor, Codex CLI, Gemini CLI).
 
 ## What it does
 
 1. You type a topic or short outline in chat.
 2. The agent proposes 3 to 5 angles. You pick one.
 3. The agent writes a slide-by-slide markdown plan. You approve or edit.
-4. (Optional) The agent extracts your brand from a URL, shows a test slide, iterates with you until validated.
+4. (Optional) The agent reuses brand tokens from `project-context/` and falls back to the neutral style when that folder is absent.
 5. The agent renders HTML slides at 1:1 (1080x1080) or 4:5 (1080x1350).
 6. You get PDF (LinkedIn document post), PNG sequence (Instagram), and optional raw HTML.
 
@@ -21,12 +21,12 @@ V1, shipped. Phase 6 (Canva Connect, X threads, more styles) is the next iterati
 |-------|--------|------------|
 | Phase 1 | ✅ | scaffold + `AGENT_CAROUSEL_BUILDER.md` + skills `propose-angles`, `plan-carousel` |
 | Phase 2 | ✅ this commit | rendering core: `render-carousel` + 7 templates + `_base.html`, `export-slides` skill, `default-style.css`, scripts `install_slides2pdf.sh` / `render_playwright.py` / `pack_pdf.py` + `requirements.txt` |
-| Phase 3 | ✅ | skill `extract-brand` + `scripts/extract_brand.py` (firecrawl DOM + Playwright screenshot + Pillow palette heuristics, confidence-scored, validation loop) + `assets/test-slide.json` |
+| Phase 3 | ✅ | skill `resolve-project-context` + shared `project-context/` folder (brand + voice context, read-only from this agent) |
 | Phase 4 | ✅ | skill `handle-assets` + `scripts/svg_helpers.py` (15 helpers) + `scripts/generate_image.py` (fal HTTP, single opt-in via `FAL_API_KEY`, models nano-banana-pro / gpt-image-2) + `scripts/copy_user_images.py` (1500px JPEG opt) + `references/svg-patterns.md` |
 | Phase 5 | ✅ | `examples/swanbase-explainer-20260509/` (full 8-slide gallery, brand snapshot, engine notes) + `examples/svg-creative-gallery.md` (17 patterns) + integration into top-level `README.md` and `AGENTS.md` |
 | Phase 6 | later | optional Canva Connect REST integration, X thread output, more shipped styles |
 
-End-to-end pipeline (topic → PDF + PNG) runs today with optional brand extraction from any URL. The default neutral style is used when no brand is provided.
+End-to-end pipeline (topic → PDF + PNG) runs today. The default neutral style is used when no `project-context/brand.json` is provided.
 
 ## Prerequisites
 
@@ -40,10 +40,6 @@ cd agents/carousel-builder/scripts
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 playwright install chromium
-
-# Brand extraction (optional, used when brand_url is set)
-# extract_brand.py calls the Firecrawl API directly (no extra CLI needed)
-export FIRECRAWL_API_KEY="..."   # without this key, runs in screenshot-only mode
 
 # Optional: AI image generation. Single opt-in: this env var is the only gate.
 # Default model fal-ai/nano-banana-pro at $0.15/image, hard cap 3 per run = $0.45 max.
@@ -66,7 +62,7 @@ The agent will:
 1. Resolve project context (creates `<your-projects-root>/acme/carousel-builder/config.json` if missing).
 2. Propose 3-5 angles. You pick one.
 3. Write the slide plan. You approve or edit.
-4. Ask if you want brand extraction (only if `brand_url` not yet set).
+4. Reuse `project-context/brand.json` if it exists, otherwise stay on the neutral style.
 5. Render and export.
 
 ## Per-project config
@@ -76,8 +72,6 @@ Outputs live outside the agent folder, in your project root:
 ```
 <your-projects-root>/<project>/carousel-builder/
   ├── config.json                   # platforms, ratio, slide_count, language, tone, outputs, fal toggle
-  ├── brand.json                    # extracted brand cache (validated, optional)
-  ├── brand-debug/                  # screenshot, header crop, firecrawl response (kept for traceability)
   ├── style.css                     # OPTIONAL power-user override, replaces default-style.css
   └── <label>-<YYYYMMDD>/
       ├── carousel-summary-<YYYYMMDD>.md
@@ -89,21 +83,19 @@ Outputs live outside the agent folder, in your project root:
       └── images/                   # logo + per-slide images
 ```
 
-`config.json` is created on first run from `agents/carousel-builder/config.example.json`. Edit it freely.
+`config.json` is created on first run from `agents/carousel-builder/config.example.json`. Edit it freely. The shared brand cache lives next door in `<your-projects-root>/<project>/project-context/brand.json`.
 
 ## Three layers of customization (most users only touch the first)
 
 | Layer | File | When to edit |
 |---|---|---|
-| 1. Brand tokens | `brand.json` | The default 95% case. Colors, fonts, logo path. Auto-extracted by `extract-brand` (firecrawl + screenshot heuristics, confidence-scored), validated via a one-slide preview, then reused on every run. |
-| 2. Per-project full CSS | `style.css` | When `brand.json` tokens aren't enough. Drop a complete CSS file; it replaces `assets/default-style.css` for that project only. Other projects unaffected. |
-| 3. Default style | `agents/carousel-builder/assets/default-style.css` | Only when contributing back to the agent. Affects every project with no `brand.json` / `style.css`. |
+| 1. Shared brand context | `project-context/brand.json` | The default 95% case. Colors, fonts, logo path. Reused by this agent and the other founder agents. |
+| 2. Per-project full CSS | `style.css` | When the shared brand tokens aren't enough. Drop a complete CSS file; it replaces `assets/default-style.css` for that project only. Other projects unaffected. |
+| 3. Default style | `agents/carousel-builder/assets/default-style.css` | Only when contributing back to the agent. Affects every project with no shared brand and no `style.css`. |
 
-## Brand extraction
+## Shared context
 
-Optional. If you provide a `brand_url`, the agent runs `scripts/extract_brand.py` (firecrawl + heuristic color/font detection), produces a candidate `brand.json`, and renders one preview slide. Iterate freely in chat ("change primary to navy", "use logo from /logo.svg", "edit JSON directly") until you approve. The validated `brand.json` is reused on every future run.
-
-If you don't provide a `brand_url`, the agent uses `assets/default-style.css` (neutral baseline).
+If `<your-projects-root>/<project>/project-context/brand.json` exists, the agent reads it and reuses the shared brand tokens. If the shared folder is missing, the agent uses `assets/default-style.css` and keeps going.
 
 ## Manual Canva handoff
 
@@ -144,10 +136,10 @@ The `handle-assets` skill picks one source per slide using a deterministic prior
 
 ## Limitations (V1)
 
-- No URL ingestion as content source (URLs only as `brand_url`).
+- No URL ingestion as content source. If you want to configure brand from a URL, run `project-context` first.
 - No X / Twitter native carousel (X has no carousel format).
 - No video reels or animated slides.
-- One default style shipped (neutral). Brand customization happens via extraction or direct `brand.json` edit.
+- One default style shipped (neutral). Brand customization happens via shared `project-context/brand.json` or direct `style.css` edit.
 - Slide count capped at 15 (LinkedIn document post drop-off).
 
 ## Portability

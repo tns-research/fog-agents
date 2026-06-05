@@ -1,0 +1,14 @@
+# render_ads.py and validate_briefs.py use the Python standard library only
+# (urllib, json, argparse, pathlib, subprocess, shutil). No third-party Python
+# dependency.
+#
+# render_ads.py SHELLS the `fal` CLI for generation. The CLI owns the
+# fal-specific work: endpoint routing to /edit, queue submit, polling, and
+# result extraction. Install it from skills-cli/fal-cli (binary name: `fal`,
+# must be on PATH). render_ads.py exits with code 3 if `fal` is not found.
+#
+# Local reference images (logo, packshot, screenshot, hero) are uploaded to fal
+# storage by render_ads.py (a plain initiate + PUT over urllib), so the model
+# receives short URLs. Data URIs are never placed on the command line.
+#
+# Auth: set FAL_KEY (or FAL_API_KEY) in the environment.

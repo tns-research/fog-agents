@@ -1,6 +1,6 @@
 # fog-agents, agent briefing
 
-This repo contains 6 focused AI agents for early-stage founders working on growth (market signal, first users, SEO, landing page, cold outreach, carousel building), plus a `_template-agent` scaffold to fork.
+This repo contains 8 focused AI agents for early-stage founders working on growth (shared project context, market signal, first users, SEO, landing page, cold outreach, carousel building, static ads), plus a `_template-agent` scaffold to fork.
 
 If you are an AI agent reading this on first open, you have everything you need below.
 
@@ -27,12 +27,14 @@ When the user asks to run an agent named `X`:
 
 | Agent | Use case |
 |-------|----------|
+| `project-context` | Run-once setup. Shared brand (colors, fonts, logo, site assets) + business context every other agent reuses. |
 | `market-signal` | Mine real user discourse before writing copy or building. |
 | `first-users-hunter` | Map where the first 10 to 50 users hang out. |
 | `seo-audit` | One-shot SEO snapshot when traffic dips. |
 | `landing-page-analyzer` | CRO heuristic audit on a single page. |
 | `cold-outreach-builder` | Sequence + per-prospect personalization. |
 | `carousel-builder` | LinkedIn / Instagram brand-consistent carousel from a chat prompt. |
+| `static-ads-builder` | Funnel-aware static Meta / Instagram ad creatives rendered on fal.ai with real brand assets, behind two budget gates. |
 
 Plus `_template-agent`, the canonical scaffold to fork when building your own.
 

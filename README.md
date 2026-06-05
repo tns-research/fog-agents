@@ -6,7 +6,7 @@
 [![CLI toolbelt: cli-skills](https://img.shields.io/badge/CLIs-cli--skills-181717?logo=github)](https://github.com/the20100/cli-skills)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#build-your-own)
 
-A growing pack of focused AI agents for early-stage founders who want to grow without hiring a marketing agency. Market signals, first users, SEO, landing pages, cold outreach.
+A growing pack of focused AI agents for early-stage founders who want to grow without hiring a marketing agency. Set up your shared brand and context once, then run focused agents: market signals, first users, SEO, landing pages, cold outreach, social carousels, static ads.
 
 Portable across **Claude Code, Cursor, Codex CLI, Gemini CLI**. No vendor lock-in. Each agent is a folder of markdown that any harness reads as context.
 
@@ -16,16 +16,18 @@ Companion site: [fog-agents.com](https://fog-agents.com).
 
 ---
 
-## The 6 agents
+## The 8 agents
 
 | Agent | When to use |
 |-------|-------------|
+| [`project-context`](./agents/project-context/) | Run this first, once. Capture your brand (colors, fonts, logo, real site assets) and business context (what you sell, ICP, offer, voice) into a shared folder every other agent reuses. No more re-typing the same info per agent. |
 | [`market-signal`](./agents/market-signal/) | Before writing copy or code. Read what real users say in Reddit, X, forums, HN. |
 | [`first-users-hunter`](./agents/first-users-hunter/) | After validation. Map where your first 10 to 50 users hang out + outreach templates. |
 | [`seo-audit`](./agents/seo-audit/) | One-shot SEO snapshot when traffic dips. GSC + live SERP + prioritized fix list. |
 | [`landing-page-analyzer`](./agents/landing-page-analyzer/) | Before paying for traffic or after a launch. CRO heuristic audit on a single page. |
 | [`cold-outreach-builder`](./agents/cold-outreach-builder/) | When you need 50 to 200 first conversations. Sequence + per-prospect personalization. |
 | [`carousel-builder`](./agents/carousel-builder/) | When you need a brand-consistent LinkedIn / Instagram carousel from a chat prompt. HTML/CSS + Playwright, no Canva Pro. |
+| [`static-ads-builder`](./agents/static-ads-builder/) | When you need static Meta / Instagram ad creatives. Funnel-aware concepts rendered on fal.ai (nano-banana, gpt-image) with your real logo and assets, behind two budget gates. |
 
 Plus [`_template-agent`](./agents/_template-agent/), the canonical scaffold every agent in the stack follows. Fork it to build your own.
 
@@ -141,12 +143,14 @@ fog-agents/
 ├── NOTICE
 └── agents/
     ├── _template-agent/            (canonical scaffold)
+    ├── project-context/            (run-once: shared brand + business context)
     ├── market-signal/
     ├── first-users-hunter/
     ├── seo-audit/
     ├── landing-page-analyzer/
     ├── cold-outreach-builder/
-    └── carousel-builder/
+    ├── carousel-builder/
+    └── static-ads-builder/
 ```
 
 The companion **site** for this stack ships at [fog-agents.com](https://fog-agents.com).

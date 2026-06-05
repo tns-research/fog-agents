@@ -1,0 +1,22 @@
+{
+  "_comment": "static-ads-builder per-project config. Copied to <project-root>/<project-slug>/static-ads-builder/config.json on first run. Replace placeholders; never commit a real config to the agent folder.",
+  "project": "<project-slug>",
+  "copy_language": "fr",
+  "funnel_stages": "all",
+  "product": "",
+  "visual_style": "",
+  "web_enrichment": "off",
+  "num_briefs": 12,
+  "default_model": "fal-ai/nano-banana-2",
+  "default_resolution": "1K",
+  "$schema_hint": {
+    "copy_language": "fr | en. Language of on-ad copy (headline/subheadline). Image prompts are always English.",
+    "funnel_stages": "all | tofu | mofu | bofu | tofu,mofu | tofu,bofu | mofu,bofu. How the brief pool is distributed.",
+    "product": "Exact product name for the reference image, or empty for a generic product label.",
+    "visual_style": "Empty = auto-select a named style per brief. Or a slug from skills/visual-styles/REGISTRY.md to lock one style across all briefs.",
+    "web_enrichment": "off | exa | firecrawl | auto. Optional, non-blocking angle discovery before strategy.",
+    "num_briefs": "Size of the brief pool to generate (max 15). Gate 1 then selects a subset of 5 to 15 to render.",
+    "default_model": "fal-ai/nano-banana-2 (default) | openai/gpt-image-2 | fal-ai/nano-banana-pro. Confirmed again at Gate 2.",
+    "default_resolution": "1K | 2K | 4K. Main cost lever. Confirmed again at Gate 2."
+  }
+}

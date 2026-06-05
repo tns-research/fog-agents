@@ -1,0 +1,7 @@
+{
+  "_comment": "project-context per-project config. On first run, copied to <your-projects-root>/<project-slug>/project-context/config.json and the agent fills missing values from chat. This agent writes the shared context folder every other agent reads. Edit freely after that.",
+  "project": "<project-slug>",
+  "url": null,
+  "language": "en",
+  "web_enrichment": "auto"
+}

@@ -1,8 +1,8 @@
 # Example, swanbase explainer carousel (2026-05-09)
 
-A real run of `carousel-builder`, the explainer deck for the agent itself, rendered with [swanbase.co](https://swanbase.co) brand tokens. 8 slides, 4:5 ratio, EN, founder tone.
+A real run of `carousel-builder`, the explainer deck for the agent itself, rendered with shared `project-context` brand tokens. 8 slides, 4:5 ratio, EN, founder tone.
 
-This example shows how the 4-step pipeline (angles, plan, brand, render) produces a posting-ready deck from a single chat prompt + a brand URL.
+This example shows how the 4-step pipeline (angles, plan, shared context, render) produces a posting-ready deck from a single chat prompt.
 
 ## Full deck preview
 
@@ -17,7 +17,7 @@ This example shows how the 4-step pipeline (angles, plan, brand, render) produce
 ## Inputs the user gave
 
 - **Topic**: "how the carousel-builder agent works, founder explainer"
-- **Brand URL**: `https://swanbase.co`
+- **Shared brand context**: `project-context/brand.json`
 - **Platforms**: `linkedin`, `instagram`
 - **Ratio**: `4:5` (1080x1350)
 - **Slide count**: 8
@@ -41,7 +41,7 @@ This example shows how the 4-step pipeline (angles, plan, brand, render) produce
 | 7 | content-text | Render. Export. Post. | Step 4, phone-frame mockup, PDF / PNG split |
 | 8 | cta | Plug it into your stack. | fog-agents.com, open-source stamp badge |
 
-## Brand snapshot, extracted from `swanbase.co`
+## Brand snapshot, reused from `project-context/brand.json`
 
 | Token | Value | Source | Confidence |
 |---|---|---|---|
@@ -56,7 +56,7 @@ This example shows how the 4-step pipeline (angles, plan, brand, render) produce
 | `font_body` | `Inter, sans-serif` | css:body.font-family | 0.90 |
 | `logo_url` | `swanbase_logo_icn.svg` | dom:img-or-svg-near-top | 0.75 |
 
-Brand validated against a test slide before rendering the full deck. See `references/brand-extraction.md` for the heuristic playbook.
+Brand validated in the shared `project-context` workflow before rendering the full deck.
 
 ## Engine path
 
@@ -87,7 +87,6 @@ All patterns inherit brand tokens automatically, no per-deck restyling needed.
   "ratio": "4:5",
   "slide_count": 8,
   "outputs": ["pdf", "png"],
-  "brand_url": "https://swanbase.co",
   "language": "en",
   "tone": "founder",
   "fal_model": "fal-ai/nano-banana-pro",

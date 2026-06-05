@@ -14,7 +14,7 @@ Take an approved slide plan + active brand and write `index.html` to the run out
 - **No `backdrop-filter` anywhere.** Breaks `slides2pdf` / headless Chrome PDF rendering.
 - **No PREV / NEXT buttons, no `.nav-btns`, `.nav-btn`, `#prev-btn`, `#next-btn`** in the exported HTML. They have leaked into PNG / PDF screenshots in production. Keyboard nav for browser preview is included in `_base.html` and uses arrow keys only.
 - **Selectors must be `.deck` and `.slide`** (matches `slides2pdf` defaults, no flag needed).
-- **Logo always loaded from a file** (`images/logo.svg`), never reconstructed inline by the agent. If `brand.json` is missing, omit the logo entirely rather than draw a placeholder.
+- **Logo always loaded from a file** (`images/logo.svg`), never reconstructed inline by the agent. If `project-context/brand.json` is missing, omit the logo entirely rather than draw a placeholder.
 - **Body copy minimum 22px** so a 1080x1350 portrait slide reads cleanly in a 1:1 mobile feed.
 
 ---
@@ -24,7 +24,7 @@ Take an approved slide plan + active brand and write `index.html` to the run out
 | Input | Source | Required |
 |-------|--------|----------|
 | `slide_plan.json` | from `plan-carousel` | yes |
-| `brand.json` | from `extract-brand` (Phase 3) or hand-edited; if absent, use `assets/default-style.css` defaults | no |
+| `brand.json` | from `project-context/brand.json` (shared) or hand-edited in `project-context/`; if absent, use `assets/default-style.css` defaults | no |
 | `style.css` (per-project override) | optional, replaces `assets/default-style.css` if present | no |
 | `ratio` | from `config.json` (`1:1` or `4:5`) | yes |
 | `output_dir` | `<project-root>/<project>/carousel-builder/<label>-<YYYYMMDD>/` | yes |
@@ -37,7 +37,7 @@ Take an approved slide plan + active brand and write `index.html` to the run out
 <output_dir>/
   ├── index.html       # self-contained deck, fonts URL externalized, CSS + SVG defs inlined
   └── images/
-      ├── logo.svg     # copied from brand.json.logo_path if set
+      ├── logo.svg     # copied from the resolved project-context logo_path if set
       └── img-NN.*     # user-provided images referenced by content-image slides
 ```
 
@@ -80,26 +80,26 @@ These overwrite the values from `assets/default-style.css` via a small `:root` o
 Priority order:
 
 1. `<project-root>/<project>/carousel-builder/style.css` exists → inline it verbatim. Skip token mapping.
-2. `<project-root>/<project>/carousel-builder/brand.json` exists → map fields to CSS custom properties (see table below), inline `assets/default-style.css`, then append a `:root` override block with the mapped tokens.
+2. `<project-root>/<project>/project-context/brand.json` exists → map fields to CSS custom properties (see table below), inline `assets/default-style.css`, then append a `:root` override block with the mapped tokens.
 3. Neither → inline `assets/default-style.css` as-is.
 
 `brand.json` -> CSS custom properties:
 
 | brand.json key | CSS variable |
 |---|---|
-| `colors.bg` | `--bg` |
-| `colors.text_primary` | `--text-primary` |
-| `colors.text_secondary` | `--text-secondary` |
-| `colors.text_muted` | `--text-muted` |
-| `colors.accent` | `--accent` |
-| `colors.accent_secondary` | `--accent-secondary` |
-| `colors.card_bg` | `--card-bg` |
-| `colors.card_border` | `--card-border` |
-| `colors.card_radius` | `--card-radius` |
+| `bg` | `--bg` |
+| `text_primary` | `--text-primary` |
+| `text_secondary` | `--text-secondary` |
+| `text_muted` | `--text-muted` |
+| `accent` | `--accent` |
+| `accent_secondary` | `--accent-secondary` |
+| `card_bg` | `--card-bg` |
+| `card_border` | `--card-border` |
+| `card_radius` | `--card-radius` |
 | `font_heading` | `--font-heading` |
 | `font_body` | `--font-body` |
 | `fonts_url` | `<link href="..." rel="stylesheet">` in `<head>` |
-| `logo_path` | copy file to `<output_dir>/images/logo.svg`, reference as `images/logo.svg` |
+| `logo_path` | copy file to `<output_dir>/images/logo.svg`, reference as `images/logo.svg` (resolved against `project-context/`) |
 | `logo_text` | optional brand wordmark next to logo (rendered in `_base.html` header) |
 
 ### Step 3 — Read templates
@@ -130,7 +130,7 @@ skills/render-carousel/templates/
 
 ```
 mkdir -p <output_dir>/images
-cp <brand.json.logo_path> <output_dir>/images/logo.svg     # if present
+cp <project-root>/<project>/<logo_path> <output_dir>/images/logo.svg     # if present
 cp <user-provided image> <output_dir>/images/img-NN.<ext>  # for each content-image slide with a local path
 ```
 
@@ -142,7 +142,7 @@ After writing, verify:
 
 - `index.html` contains exactly `slide_plan.meta.total_slides` `<section class="slide">` elements.
 - No `<button class="nav-btn">`, `<div class="nav-btns">`, `id="prev-btn"`, or `id="next-btn"` survived.
-- `images/logo.svg` exists if `brand.json.logo_path` was set.
+- `images/logo.svg` exists if `project-context/brand.json.logo_path` was set.
 
 If any check fails, fix before handing off to `export-slides`.
 
@@ -242,7 +242,7 @@ No nested markdown, no headings inside body copy.
 
 ## Tools used
 
-- `Read` / `read_file`: load templates, default-style.css, brand.json
+- `Read` / `read_file`: load templates, default-style.css, project-context/brand.json
 - `Write` / `create_or_rewrite_file`: write index.html
 - `Bash` / `run_bash_command`: copy logo + images into `images/`
 
@@ -253,7 +253,7 @@ No nested markdown, no headings inside body copy.
 | Situation | Action |
 |---|---|
 | Slide type not in templates | Fall back to `content-text` template |
-| `brand.json` malformed | Warn, ignore, use default-style.css |
+| `project-context/brand.json` malformed | Warn, ignore, use default-style.css |
 | Logo path does not exist | Render header without logo, log warning |
 | Local image path missing | Render `image-placeholder` div, log warning |
 | `slide_plan.json` references unknown field | Skip the field, do not crash the whole render |

@@ -4,7 +4,7 @@ External docs and prior art consulted while building `carousel-builder`. Not dep
 
 ## CLI references
 - `cli-skills` repo: https://github.com/the20100/cli-skills (firecrawl, exa, gsc, perplexity, instantly).
-- `firecrawl` is the only CLI dependency in V1, and only for the optional `extract-brand` skill.
+- `firecrawl` is used by the shared `project-context` agent for brand extraction, not by `carousel-builder` itself.
 
 ## Playwright (Python)
 - Docs: https://playwright.dev/python/

@@ -42,7 +42,7 @@ Full slide-by-slide copy: see `slide-plan-<YYYYMMDD>.md` (markdown) and `slide-p
 
 | Property | Value |
 |----------|-------|
-| Source | <default | extracted from <brand_url>> |
+| Source | <default | project-context/brand.json> |
 | Primary color | <#hex> |
 | Secondary color | <#hex> |
 | Accent color | <#hex> |
@@ -51,7 +51,7 @@ Full slide-by-slide copy: see `slide-plan-<YYYYMMDD>.md` (markdown) and `slide-p
 | Font family | <name> |
 | Logo | <path or "none"> |
 
-Brand cache: `<your-projects-root>/<project>/carousel-builder/brand.json`. Edit and re-run to apply changes.
+Brand cache: `<your-projects-root>/<project>/project-context/brand.json`. Edit and re-run to apply changes.
 
 ---
 

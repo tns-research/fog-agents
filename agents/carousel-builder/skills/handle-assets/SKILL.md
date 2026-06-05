@@ -27,7 +27,7 @@ This skill is the single source of truth for visual asset resolution. It does no
 | Input | Source | Required |
 |-------|--------|----------|
 | `slide_plan.json` | from `plan-carousel`, optionally enriched with `image_path`, `image_url`, `chart`, or `generate_image` blocks per slide | yes |
-| `brand.json` | from `extract-brand` or hand-edited; absent means default-style.css colors | no |
+| `brand.json` | from `project-context/brand.json` (shared) or hand-edited in `project-context/`; absent means default-style.css colors | no |
 | `output_dir` | run output dir, e.g. `<project-root>/<project>/carousel-builder/<label>-<YYYYMMDD>/` | yes |
 | `config.json.fal_max_images` | per-project cap on fal images per run, default `3` | no |
 | `config.json.fal_model` | per-project default fal model, default `fal-ai/nano-banana-pro` | no |
@@ -278,7 +278,7 @@ It also writes a small audit log to `<output_dir>/asset-resolution-<YYYYMMDD>.js
 
 ## Tools used
 
-- `Read` / `read_file`: load `slide_plan.json`, `brand.json`, `config.json`.
+- `Read` / `read_file`: load `slide_plan.json`, `project-context/brand.json`, `config.json`.
 - `Bash` / `run_bash_command`: invoke `copy_user_images.py`, `generate_image.py`, `svg_helpers.py`.
 - `Write` / `create_or_rewrite_file`: write the audit log; the slide plan stays in memory and is passed to render-carousel.
 
