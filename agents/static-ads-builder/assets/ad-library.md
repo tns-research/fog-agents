@@ -463,6 +463,14 @@ These patterns are **forbidden**. If the agent produces any of them, the headlin
 **Punctuation failures:**
 - **Em-dashes (, ) in French copy:** Never use em-dashes in headlines, subheadlines, or primary text. Em-dashes are an English typographic convention. In French, use a spaced en-dash ( - ), a comma, a semicolon, or restructure the sentence. "Le gel natif, 94 % de pulpe" is wrong. "Le gel natif : 94 % de pulpe" or "Le gel natif, 94 % de pulpe fraîche" is correct.
 
+**Accents and diacritics (mandatory when `copy_language` is `fr`):**
+French copy MUST carry its full accents. They are valid, expected UTF-8 in the briefs JSON, the renderer prints `headline`/`subheadline` on the creative exactly as written, so a stripped accent ships as a typo. The complete set you will use:
+
+- **Lowercase:** é è ê ë  ·  à â  ·  î ï  ·  ô ö  ·  ù û ü  ·  ç  ·  (rare: ÿ, œ, æ in "cœur", "œuf", "et cætera")
+- **Uppercase:** É È Ê Ë  ·  À Â  ·  Î Ï  ·  Ô  ·  Ù Û  ·  Ç (accents on capitals are correct French, keep them: "Économisez", "À partir de", "Ça change tout")
+
+Write "torréfié", "différence", "protège", "goûtés", "pilotés", "déjà", "français", "créé", "réglé", "qualité", never their ASCII-stripped forms. **This is the one place ASCII-only does not apply:** the only characters banned from French copy are the em/en dashes above. Everything diacritical stays.
+
 **The diagnostic test:** Read the headline aloud in French. If it sounds like a voice-over for a translated American ad, it is wrong. If it sounds like something a friend would say to explain why they love this product, it is closer.
 
 ---

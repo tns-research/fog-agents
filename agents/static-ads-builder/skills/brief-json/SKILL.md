@@ -67,7 +67,7 @@ A single brief may attach several roles (e.g. `screenshot` + `logo` for a UI ad 
 | Field | Type | Required | Rules |
 |-------|------|----------|--------|
 | `image_prompt` | string | Yes | **English only.** 7-element formula (below). Rich and specific, never a one-liner. When assets are attached, the prompt names each one and its placement, e.g. "Use the attached product UI screenshot (Brand) as the screen content inside a floating browser mockup, centered. Use the attached logo exactly as provided, do not redraw it, top-left, small. Reserve the lower third for headline and subheadline." No conditional language. When no asset is attached, describe only the scene. |
-| `headline` | string | Yes | On-creative main line, language = `copy_language`. One clear, complete idea. French: correct and idiomatic. Passes the 5 quality tests in `assets/ad-library.md` Section 8. No `voice.banned_words`. |
+| `headline` | string | Yes | On-creative main line, language = `copy_language`. One clear, complete idea. French: correct and idiomatic, **with every accent and diacritic kept intact** (é è ê ë à â ä î ï ô ö ù û ü ç, uppercase too: É È À Ç). Never strip accents to plain ASCII, the copy renders on the creative exactly as written. Passes the 5 quality tests in `assets/ad-library.md` Section 8. No `voice.banned_words`. |
 | `subheadline` | string | Yes | Secondary line. `""` when the creative has one line. Same language; a second idea, not a repeat of the headline. |
 | `typography` | object | Yes | See typography rules below. |
 | `reference_assets` | array | Only when a real asset is on the creative | Ordered list of `{ "role", "instruction" }`. `role` is one of `product` / `screenshot` / `logo` / `hero`. `instruction` states exactly what the asset is, where it goes, and (for logo/product) "use it exactly as provided, do not redraw it". No conditionals. Omit the whole key when no asset is shown (never `"N/A"`, never an empty array). |
@@ -113,6 +113,7 @@ Every `image_prompt` includes all 7 elements, in order:
 - **Headline:** one clear, complete idea. A native speaker understands it in one read. No telegraphic fragments, no dot-separated noun lists ("Bio. Artisanal. Bon." is forbidden, it is a spec sheet, not an idea).
 - **Subheadline:** same rules. `""` when only one line. Adds a second layer, never repeats the headline.
 - **French (`copy_language: fr`) process, mandatory:** think the headline natively in French as a complete sentence with subject, verb, and point of view. Read it aloud; if it sounds like a translated English tagline or a fragment list, rewrite from scratch. Only then write the English image prompt to match. The French copy drives the creative, not the other way around. See `assets/ad-library.md` Section 4.
+- **Accents are mandatory in French.** Every French string in the brief (`headline`, `subheadline`, and any French value in `typography`) keeps its full diacritics: write "torréfié", "différence", "protège", "goûtés", "pilotés", "déjà", "français", not "torrefie", "difference", "protege", "goutes", "pilotes", "deja", "francais". The JSON is UTF-8 and these characters are valid and expected; a stripped accent ships straight onto the creative as a typo. Capitals keep their accents too (É, À, Ç). The complete French character set lives in `assets/ad-library.md` Section 4. Only `copy_language: en` copy is accent-free by nature.
 - **Length:** French headline 6-15 words (the idea dictates length; a 12-word sentence that means something beats a 4-word fragment that means nothing). English headline 4-10 words. Subheadline: same ballpark or `""`.
 - **Quality gates:** every headline passes all 5 tests in `assets/ad-library.md` Section 8 (Competitor, 5-Word, Surprising Word, Emotion, Native Speaker).
 - **Voice:** no `voice.banned_words`. No claim violating `voice.claims_policy`, drop unverifiable metrics rather than invent them.
@@ -139,12 +140,12 @@ Do not repeat identical typography across all briefs. Font may stay consistent i
 ```json
 {
   "image_prompt": "Vertical 4:5, mid-shot showing only the lower half of a copper industrial coffee roaster drum, warm dark background. Camera at low angle, 45 degrees below eye level, 3-4 front. 50mm equivalent, medium depth of field. Hard side light from camera-right, single bare source at 45 degrees, strong cast shadow across the drum and floor. Warm high-contrast grade, deep blacks, copper highlights. No human hands. No coffee cup. No text on roaster. Reserve lower quarter for headline and subheadline overlay. (Style ref: industrial craft editorial)",
-  "headline": "On torrefie ici. Vous sentez la difference.",
+  "headline": "On torréfie ici. Vous sentez la différence.",
   "subheadline": "",
   "typography": {
     "font_style": "Sans-serif, light weight, wide tracking",
     "color": "#F5EDE4 sur fond sombre",
-    "headline_placement": "Tiers inferieur, centre sur zone sombre",
+    "headline_placement": "Tiers inférieur, centré sur zone sombre",
     "subheadline_placement": ""
   }
 }
@@ -155,13 +156,13 @@ Do not repeat identical typography across all briefs. Font may stay consistent i
 ```json
 {
   "image_prompt": "Vertical 4:5, close-up flat lay. Use the attached product reference image (Loutsa - Abonnement Colombie Bio 500g) as the single source for the coffee bag: exact shape, label, logo, brand colors. Place the bag upright at slight angle, lower-center frame, on a matte dark-grey surface. Small handful of unroasted green beans to the left, out of focus. Camera directly overhead, 100mm macro equivalent. Studio softbox overhead, centered, soft diffuse, no shadows. Neutral-cool grade, clean digital, no grain. No ceramic cup. No steam. No scattered roasted beans. Reserve upper third for headline and subheadline.",
-  "headline": "200 lots goutes. 12 retenus.",
-  "subheadline": "Le votre en fait partie.",
+  "headline": "200 lots goûtés. 12 retenus.",
+  "subheadline": "Le vôtre en fait partie.",
   "typography": {
     "font_style": "Serif, light weight, tight tracking",
     "color": "#F5EDE4 sur #1A1A1A",
-    "headline_placement": "Tiers superieur, left-aligned",
-    "subheadline_placement": "Sous le headline, meme alignement"
+    "headline_placement": "Tiers supérieur, left-aligned",
+    "subheadline_placement": "Sous le headline, même alignement"
   },
   "reference_assets": [
     {
@@ -176,19 +177,19 @@ Do not repeat identical typography across all briefs. Font may stay consistent i
 
 ```json
 {
-  "image_prompt": "Vertical 4:5, clean studio composition on a soft #f5f6f8 background. Use the attached product UI screenshot (GMB Club) as the exact screen content inside a single floating laptop mockup, centered, tilted 8 degrees, soft drop shadow beneath. Use the attached logo exactly as provided, do not redraw or recolor it, placed top-left, small. Camera eye level, frontal, 50mm equivalent, medium depth of field. Soft even studio light from above, gentle gradient, no harsh shadows. Neutral clean digital grade, high contrast on the screen. No human hands. No extra UI windows. No invented interface, the screen shows only the attached screenshot. Reserve the lower third for headline and subheadline.",
-  "headline": "Vos avis Google, pilotes en un seul endroit.",
-  "subheadline": "GMB Club centralise, repond, et fait grimper la note.",
+  "image_prompt": "Vertical 4:5, clean studio composition on a soft #f5f6f8 background. Use the attached product UI screenshot (Acme Reviews) as the exact screen content inside a single floating laptop mockup, centered, tilted 8 degrees, soft drop shadow beneath. Use the attached logo exactly as provided, do not redraw or recolor it, placed top-left, small. Camera eye level, frontal, 50mm equivalent, medium depth of field. Soft even studio light from above, gentle gradient, no harsh shadows. Neutral clean digital grade, high contrast on the screen. No human hands. No extra UI windows. No invented interface, the screen shows only the attached screenshot. Reserve the lower third for headline and subheadline.",
+  "headline": "Vos avis Google, pilotés en un seul endroit.",
+  "subheadline": "Acme Reviews centralise, répond, et fait grimper la note.",
   "typography": {
     "font_style": "Sans-serif, semibold, tight tracking",
     "color": "#09090b text on #f5f6f8 background, accent #f97316",
-    "headline_placement": "Tiers inferieur, centre",
-    "subheadline_placement": "Sous le headline, centre"
+    "headline_placement": "Tiers inférieur, centré",
+    "subheadline_placement": "Sous le headline, centré"
   },
   "reference_assets": [
     {
       "role": "screenshot",
-      "instruction": "Use the attached product UI screenshot (GMB Club) as the exact screen content inside the laptop mockup. Do not invent or alter the interface; show it as captured. Centered, tilted 8 degrees."
+      "instruction": "Use the attached product UI screenshot (Acme Reviews) as the exact screen content inside the laptop mockup. Do not invent or alter the interface; show it as captured. Centered, tilted 8 degrees."
     },
     {
       "role": "logo",
@@ -221,6 +222,7 @@ Also write a machine-readable sidecar `static-ads-briefs-YYYYMMDD.json`: a singl
 - [ ] No asset shown: no `reference_assets` key (never an empty array).
 - [ ] Headline passes all 5 quality tests; no `voice.banned_words`; no claim breaking `voice.claims_policy`.
 - [ ] Headline and subheadline are clear, complete ideas in `copy_language`. Subheadline `""` when one line.
+- [ ] French copy keeps all accents/diacritics (é è ê à â î ô û ç, capitals included). No accent-stripped ASCII French.
 - [ ] Typography placement varies across briefs.
 - [ ] Both files written: `static-ads-briefs-YYYYMMDD.md` and `.json`. The `.json` validates with `scripts/validate_briefs.py`.
 

@@ -22,12 +22,12 @@ The agent planned 12 briefs (4 TOFU / 4 MOFU / 4 BOFU), one named angle each, wi
 ```json
 {
   "image_prompt": "Vertical 4:5, extreme close-up of a single paper invoice on a designer's desk, one line highlighted in CTA orange. Camera 45 degrees above, 3-4 front. 100mm macro equivalent, shallow depth. Soft diffuse window light from camera-left 45 degrees, slight rim from a desk lamp camera-right. Neutral clean digital grade, high contrast. No laptop in frame. No hands. Reserve upper third for headline.",
-  "headline": "1 200 designers attendent moins pour etre payes.",
+  "headline": "1 200 designers attendent moins pour être payés.",
   "subheadline": "",
   "typography": {
     "font_style": "Instrument Serif, light, editorial",
     "color": "#ffffff sur #0b1020",
-    "headline_placement": "Tiers superieur, gauche",
+    "headline_placement": "Tiers supérieur, gauche",
     "subheadline_placement": ""
   }
 }
@@ -42,8 +42,8 @@ Rationale: TOFU, Origin Number (1.4). Anchors the waitlist proof point from cont
 ```json
 {
   "image_prompt": "Use the attached product UI screenshot (Acme Invoices - app dashboard) as the exact screen content, do not invent or alter the interface. Vertical 4:5 mid-shot, the dashboard shown on a tablet held at a slight angle on a concrete desk. Use the attached logo exactly as provided, do not redraw or recolor it, top-left corner, small. Camera eye level, 3-4 front, 35mm equivalent. Soft overhead softbox, medium quality, gentle falloff. Cool-neutral clean grade. No hands gripping the tablet edge. Reserve right column for headline and subheadline.",
-  "headline": "L'argent reste en main jusqu'a la livraison.",
-  "subheadline": "L'escrow protege les deux cotes.",
+  "headline": "L'argent reste en main jusqu'à la livraison.",
+  "subheadline": "L'escrow protège les deux côtés.",
   "typography": {
     "font_style": "Inter, medium weight",
     "color": "#ffffff sur #0b1020",
