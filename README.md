@@ -2,7 +2,7 @@
 
 # fog · Founders Growth agents
 
-**The growth team you can't hire yet, as open-source agents you run in your own coding agent.**
+**Growth agents for founders who don't need a marketing agency. Open source, and they run in your own coding agent.**
 
 Market research, first users, SEO, landing pages, cold outreach, carousels, ads, shorts, founder posts and a weekly growth report.<br>
 Every number is computed by a script, every quote traced to its source, and nothing goes out without your approval.
@@ -32,7 +32,7 @@ Launch your product fast, find your first 10 to 1,000 customers, raise funds: we
 
 <br>
 
-<img src="docs/hero.webp" alt="fog-agents.com: the growth team you can't hire yet, running inside your coding agent" width="100%">
+<img src="docs/hero.webp" alt="fog-agents.com: growth agents for founders who don't need a marketing agency" width="100%">
 
 </div>
 
