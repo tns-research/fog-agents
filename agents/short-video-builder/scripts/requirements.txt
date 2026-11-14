@@ -6,7 +6,7 @@
 # Face tracking (Haar cascades ship inside the wheel, no model download) and the
 # frame maths. mediapipe is not used: OpenCV covers frontal and profile faces
 # offline in a much smaller install.
-opencv-python-headless>=4.8.1.78,<5  # 5.0 drops cv2.CascadeClassifier from the main module
+opencv-python-headless>=5.0.0.93,<6  # 5.0 drops cv2.CascadeClassifier from the main module
 # 4.8 and 4.9 wheels are built against NumPy 1.x: pinning one of them needs numpy<2.
 numpy>=1.24
 # Fixture drawing (fixture.py) and the shared contact sheet (reviewing-renders).
