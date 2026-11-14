@@ -1,0 +1,73 @@
+{
+  "url": "http://127.0.0.1:8000/index.html",
+  "primary_cta": "Apply now",
+  "viewports": ["desktop", "mobile"],
+  "fixes": [
+    {
+      "id": "01-mobile-overflow",
+      "title": "Keep the program table inside the screen",
+      "criteria": ["U039", "LM1", "V8"],
+      "evidence": ["probe:mobile.overflow_x_px", "probe:mobile.overflow_offenders"],
+      "viewports": ["mobile"],
+      "focus": ".glance",
+      "css": [{"selector": ".glance table", "declarations": {"width": "100%"}}],
+      "expect": ["mobile.overflow_x_px <= 0"]
+    },
+    {
+      "id": "02-touch-targets",
+      "title": "Footer links and social icons large enough to tap",
+      "criteria": ["U036", "TM1", "V7"],
+      "evidence": ["probe:mobile.targets_under_24", "probe:mobile.targets_under_44"],
+      "viewports": ["mobile"],
+      "focus": "footer",
+      "css": [
+        {"selector": ".social", "declarations": {"gap": "8px"}},
+        {"selector": ".social a", "declarations": {"width": "44px", "height": "44px"}},
+        {"selector": ".footer-links li", "declarations": {"line-height": "1.5", "margin-bottom": "0"}},
+        {"selector": ".footer-links a", "declarations": {"display": "inline-block", "padding": "12px 0", "font-size": "16px"}}
+      ],
+      "expect": ["mobile.targets_under_24 == 0"]
+    },
+    {
+      "id": "03-hero-cta",
+      "title": "Primary CTA in the first mobile screen, readable subline and button, plain H1",
+      "criteria": ["U009", "U038", "K011", "V5", "V9"],
+      "evidence": ["probe:mobile.primary_cta_above_fold", "probe:mobile.contrast_failures", "journey:mobile/01-landing.png"],
+      "css": [
+        {"selector": ".hero .sub", "declarations": {"color": "#c0c1c6"}},
+        {"selector": ".cta", "declarations": {"color": "#030619", "font-size": "17px"}},
+        {"selector": ".hero .cta", "media": "(max-width: 799px)", "declarations": {"order": "1"}},
+        {"selector": ".hero img", "media": "(max-width: 799px)", "declarations": {"order": "2"}}
+      ],
+      "text": [{"selector": ".hero h1", "text": "Year-round support for early-stage founders in Paris"}],
+      "expect": ["mobile.primary_cta_above_fold == 1", "mobile.contrast_failures == 0", "desktop.contrast_failures == 0"]
+    },
+    {
+      "id": "04-banner-shift",
+      "title": "Reserve the space of the promo banner and the hero image so the page stops jumping",
+      "criteria": ["U025", "PM3", "U076"],
+      "evidence": ["probe:mobile.cls_observed", "probe:desktop.cls_observed"],
+      "css": [{"selector": "#promo-slot", "declarations": {"display": "block", "min-height": "80px"}},
+              {"selector": ".hero img", "declarations": {"aspect-ratio": "800 / 760", "width": "100%", "height": "auto"}}],
+      "expect": ["mobile.cls_observed < 0.1", "desktop.cls_observed < 0.1"]
+    },
+    {
+      "id": "05-apply-form",
+      "title": "Visible phone label, right keyboards and autofill on the application form",
+      "url": "apply.html",
+      "primary_cta": "Send application",
+      "criteria": ["U029", "U032", "U033", "TM3"],
+      "evidence": ["journey:mobile/12-fill-phone.png", "probe:mobile.form_issues"],
+      "viewports": ["mobile"],
+      "focus": "form.apply",
+      "attributes": [
+        {"selector": "#email", "set": {"type": "email", "autocomplete": "email"}},
+        {"selector": "#phone", "set": {"type": "tel", "autocomplete": "tel"}},
+        {"selector": "#startup", "set": {"autocomplete": "organization"}}
+      ],
+      "insert": [{"selector": "#phone", "position": "beforebegin", "html": "<label for=\"phone\">Phone</label>"}],
+      "css": [{"selector": "form.apply input, form.apply textarea", "declarations": {"font-size": "16px"}}],
+      "expect": ["mobile.form_issues == 0", "mobile.inputs_under_16 == 0"]
+    }
+  ]
+}

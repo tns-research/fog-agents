@@ -1,0 +1,4 @@
+# seo-audit scripts use the Python 3.9+ standard library only: nothing to install.
+# Optional: requests. crawl.py and verify_served.py use it when it is installed (--http auto)
+# and fall back to urllib otherwise; results are the same.
+# Every API the scripts can call (Serper, SerpApi, Firecrawl, Jina Reader, Perplexity) is reached over HTTP and is optional.

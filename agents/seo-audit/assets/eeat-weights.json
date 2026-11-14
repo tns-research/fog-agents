@@ -1,0 +1,42 @@
+{
+  "_comment": "Weights and patterns of scripts/eeat.py, the only definition of the E-E-A-T score. Every signal is measured on crawl.jsonl (served HTML), never judged by the model. Signal value v: a boolean counts 1 or 0; a count is min(n, cap) / cap; freshness takes the value of the first band whose max_days the age of dateModified does not exceed (else 'else'; no dateModified, or a date after today, gives 0). Page score (article pages only) = round(100 x sum(weight x v) / sum(weight)) over the page signals; other pages carry their signals with score null. Site signal score = the same formula over site_signals. Site score = round(site_signals_share x site signal score (already rounded) + (1 - site_signals_share) x mean of the indexable article scores (one decimal)), or the site signal score alone when the crawl holds no indexable article. A weight of 0 reports a signal without scoring it. Rounding: half up. Same crawl.jsonl, same weights and same --today give the same output. A project overrides any key with an eeat object in its config.json (--config).",
+  "version": 1,
+  "article_detection": {
+    "jsonld_types": ["Article", "BlogPosting", "NewsArticle", "TechArticle", "ScholarlyArticle", "Report", "LiveBlogPosting", "AnalysisNewsArticle", "OpinionNewsArticle", "ReviewNewsArticle", "HowTo"],
+    "og_types": ["article"],
+    "path_prefixes": ["/blog/", "/articles/", "/article/", "/guides/", "/guide/", "/news/", "/posts/", "/post/", "/insights/", "/resources/", "/learn/", "/journal/"]
+  },
+  "page_signals": {
+    "author_visible": { "weight": 3, "means": "a byline a reader sees: an element with class or id author or byline, itemprop author, or a[rel=author], with text" },
+    "author_schema": { "weight": 2, "means": "an author name in the JSON-LD of the article (author string, Person or Organization), or itemprop author" },
+    "author_page_linked": { "weight": 2, "means": "the byline, a[rel=author], link[rel=author] or the JSON-LD author.url points to an internal page that answers 200 in the crawl" },
+    "date_published": { "weight": 2, "means": "a publication date: JSON-LD datePublished, article:published_time, itemprop datePublished, a <time> element or a dated 'Published' phrase" },
+    "date_modified": { "weight": 2, "means": "an update date: JSON-LD dateModified, article:modified_time, og:updated_time, itemprop dateModified, a <time> marked updated or a dated 'Updated' phrase" },
+    "date_visible": { "weight": 1, "means": "a date a reader sees: a <time> element with text or a dated phrase in the visible text" },
+    "freshness": { "weight": 2, "means": "days between the update date and --today", "bands": [{ "max_days": 365, "value": 1.0 }, { "max_days": 730, "value": 0.5 }], "else": 0.0 },
+    "external_sources": { "weight": 2, "cap": 3, "means": "distinct outbound links to other sites, social networks and the site's own hosts excluded" },
+    "citations": { "weight": 1, "cap": 2, "means": "blockquote[cite], q[cite], <cite>, footnote links (#fn, #ref, #cite, #note) and a heading named like a reference list" }
+  },
+  "site_signals": {
+    "about_page": { "weight": 2, "means": "a crawled 200 page whose path has an about segment" },
+    "contact_page": { "weight": 2, "means": "a crawled 200 page whose path has a contact segment" },
+    "legal_page": { "weight": 1, "means": "a crawled 200 page for the legal notice, terms or imprint" },
+    "privacy_page": { "weight": 1, "means": "a crawled 200 page for the privacy policy" },
+    "organization_schema": { "weight": 2, "means": "a JSON-LD node of an organization type on a crawled page" },
+    "organization_same_as": { "weight": 1, "cap": 2, "means": "sameAs links of the best organization node" },
+    "reviews_marked_up": { "weight": 1, "means": "Review or AggregateRating in JSON-LD (or a review property) or schema.org microdata" },
+    "author_pages": { "weight": 1, "cap": 1, "means": "distinct internal author pages linked from articles and answering 200" },
+    "testimonial_blocks": { "weight": 0, "means": "elements with a testimonial class, reported only: unmarked testimonials score nothing" }
+  },
+  "site_score": { "site_signals_share": 0.5 },
+  "organization_types": ["Organization", "Corporation", "LocalBusiness", "OnlineBusiness", "OnlineStore", "NGO", "EducationalOrganization", "ProfessionalService", "NewsMediaOrganization", "GovernmentOrganization", "MedicalOrganization", "SportsOrganization", "ResearchOrganization"],
+  "review_types": ["Review", "AggregateRating", "EmployerAggregateRating", "CriticReview", "UserReview"],
+  "reference_headings": ["references", "sources", "bibliography", "further reading", "notes", "citations", "references and sources", "références", "bibliographie", "pour aller plus loin", "quellen", "literatur", "fuentes", "fonti"],
+  "site_pages": {
+    "about_page": ["about", "about-us", "a-propos", "qui-sommes-nous", "team", "our-team", "equipe", "our-story", "company", "ueber-uns", "uber-uns", "chi-siamo", "sobre-nosotros", "nosotros"],
+    "contact_page": ["contact", "contact-us", "contactez-nous", "nous-contacter", "kontakt", "contacto", "contatti"],
+    "legal_page": ["legal", "legal-notice", "mentions-legales", "imprint", "impressum", "terms", "terms-of-service", "terms-of-use", "terms-and-conditions", "tos", "cgu", "cgv", "conditions-generales", "aviso-legal", "note-legali"],
+    "privacy_page": ["privacy", "privacy-policy", "confidentialite", "politique-de-confidentialite", "donnees-personnelles", "datenschutz", "privacidad", "politica-de-privacidad", "gdpr", "rgpd"]
+  },
+  "social_domains": ["facebook.com", "fb.com", "instagram.com", "x.com", "twitter.com", "t.co", "linkedin.com", "lnkd.in", "youtube.com", "youtu.be", "tiktok.com", "pinterest.com", "threads.net", "bsky.app", "mastodon.social", "reddit.com", "discord.gg", "discord.com", "telegram.me", "t.me", "whatsapp.com", "wa.me", "snapchat.com", "dribbble.com", "behance.net", "producthunt.com", "news.ycombinator.com", "vimeo.com", "twitch.tv", "linktr.ee"]
+}

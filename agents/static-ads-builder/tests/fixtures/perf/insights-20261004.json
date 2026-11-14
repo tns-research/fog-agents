@@ -1,0 +1,79 @@
+{
+  "data": [
+    {
+      "ad_name": "acme_01_tofu_anti-category_bold-statement_4x5",
+      "adset_name": "tofu-broad",
+      "campaign_name": "Acme prospecting (fictional)",
+      "date_start": "2026-09-21",
+      "date_stop": "2026-10-04",
+      "spend": "180.00",
+      "impressions": "42000",
+      "inline_link_clicks": "760",
+      "account_currency": "EUR",
+      "actions": [
+        {
+          "action_type": "landing_page_view",
+          "value": "700"
+        },
+        {
+          "action_type": "omni_purchase",
+          "value": "11"
+        },
+        {
+          "action_type": "offsite_conversion.fb_pixel_purchase",
+          "value": "11"
+        }
+      ]
+    },
+    {
+      "ad_name": "acme_02_tofu_quiet-confession_meme-static_4x5",
+      "adset_name": "tofu-broad",
+      "campaign_name": "Acme prospecting (fictional)",
+      "date_start": "2026-09-21",
+      "date_stop": "2026-10-04",
+      "spend": "150.00",
+      "impressions": "40000",
+      "inline_link_clicks": "300",
+      "account_currency": "EUR",
+      "actions": [
+        {
+          "action_type": "landing_page_view",
+          "value": "270"
+        },
+        {
+          "action_type": "omni_purchase",
+          "value": "2"
+        },
+        {
+          "action_type": "offsite_conversion.fb_pixel_purchase",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "ad_name": "acme_03_mofu_process-reveal_three-benefits-card_4x5",
+      "adset_name": "mofu-visitors",
+      "campaign_name": "Acme prospecting (fictional)",
+      "date_start": "2026-09-21",
+      "date_stop": "2026-10-04",
+      "spend": "120.00",
+      "impressions": "21000",
+      "inline_link_clicks": "520",
+      "account_currency": "EUR",
+      "actions": [
+        {
+          "action_type": "landing_page_view",
+          "value": "480"
+        },
+        {
+          "action_type": "omni_purchase",
+          "value": "2"
+        },
+        {
+          "action_type": "offsite_conversion.fb_pixel_purchase",
+          "value": "2"
+        }
+      ]
+    }
+  ]
+}

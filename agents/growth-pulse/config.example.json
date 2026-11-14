@@ -1,0 +1,18 @@
+{
+  "_comment": "Copied to <your-projects-root>/<project>/growth-pulse/config.json on the first run. Never commit a real config to the agent folder, never put a key here: API keys live in the environment only (see each connector's --help). sources: one entry per source you use; csv lists export files relative to <project>/growth-pulse/ (social takes NETWORK=FILE pairs); ids are the website or property ids; enabled false skips a source. A source with neither a key nor a CSV is reported as missing and the run goes on. social.zernio: enabled true reads the Zernio API when ZERNIO_API_KEY is set (profile_id and platforms are optional: platforms like [\"linkedin\", \"x\"], empty for every network in use); the csv list of social stays the fallback, read when Zernio is off, the key is not set or the API call ends without data. events: AARRR stage of each tracked event (acquisition, activation, retention, referral, revenue); an unmapped event counts as activation and is listed in Limitations. focus_stage: pin the three experiments to one stage (null = spread over at least two). budget_eur_per_sprint: cash cap of the three experiments (0 = no cash spend; null = no cap, any spend still waits for approval). pulse_rules overrides keys of assets/pulse-rules.json; gsc_bands.decline overrides the shared Search Console decline (an override in <project>/seo-audit/config.json is read too). Optional: a tools object (same keys as shared/tools.example.json) pins providers for this agent.",
+  "project": "<project-slug>",
+  "language": "en",
+  "sources": {
+    "umami": { "website_id": null, "csv": [] },
+    "plausible": { "site_id": null, "csv": [] },
+    "ga4": { "property_id": null, "events": [], "csv": [] },
+    "gsc": { "site_url": null, "csv": [] },
+    "social": { "zernio": { "enabled": false, "profile_id": null, "platforms": [] }, "csv": [] },
+    "revenue": { "currency": "eur", "csv": [] }
+  },
+  "events": {},
+  "focus_stage": null,
+  "budget_eur_per_sprint": 0,
+  "pulse_rules": {},
+  "gsc_bands": {}
+}

@@ -1,0 +1,12 @@
+{
+  "_comment": "Rules per kind of positioning.proof item, read by shared/scripts/proof.py. valid_days: how long a fact stays usable after its date when the item sets no valid_days of its own (null: it does not go stale, a press mention stays true). requires_source: the item needs a URL or a project file. requires_date: the item needs the date of the fact. requires_consent: the person or company named must have granted consent for the scope of the copy.",
+  "kinds": {
+    "metric": { "valid_days": 180, "requires_source": true, "requires_date": true, "requires_consent": false },
+    "testimonial": { "valid_days": 730, "requires_source": true, "requires_date": true, "requires_consent": true },
+    "customer": { "valid_days": 365, "requires_source": true, "requires_date": true, "requires_consent": true },
+    "press": { "valid_days": null, "requires_source": true, "requires_date": true, "requires_consent": false },
+    "award": { "valid_days": null, "requires_source": true, "requires_date": true, "requires_consent": false },
+    "feature": { "valid_days": null, "requires_source": false, "requires_date": false, "requires_consent": false }
+  },
+  "scopes": ["ads", "carousel", "posts", "outreach", "site", "video"]
+}

@@ -1,0 +1,242 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "brand.json V2",
+  "description": "Brand contract written by the project-context agent to <project>/project-context/brand.json and read by every visual agent (carousel-builder, static-ads-builder, landing-page-analyzer captures, future video agents). Every path is relative to the project-context/ folder. A file without schema_version is a V1 file: readers map it with the table in shared/schemas/README.md. Validate with: python3 shared/scripts/validate_json.py shared/schemas/brand.schema.json <brand.json>",
+  "type": "object",
+  "required": ["schema_version", "name", "mode", "colors", "fonts"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": ["2.0"],
+      "description": "Contract version. Absent in V1 files."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Brand name with its exact casing, as the brand writes it (copy and lint rules reuse it)."
+    },
+    "source_url": {
+      "type": "string",
+      "pattern": "^https?://",
+      "description": "Page the tokens were read from."
+    },
+    "as_of": {
+      "$ref": "#/$defs/date",
+      "description": "Date the tokens were extracted or last validated by the founder."
+    },
+    "mode": {
+      "type": "string",
+      "enum": ["dark", "light"],
+      "description": "Whether colors.bg is a dark or a light background. Visual agents pick the matching logo variant: dark mode uses logos.on_dark."
+    },
+    "colors": {
+      "type": "object",
+      "description": "Color roles. Only bg, text and accent are required; readers derive the others with the fallbacks in shared/schemas/README.md.",
+      "required": ["bg", "text", "accent"],
+      "additionalProperties": false,
+      "properties": {
+        "bg": { "$ref": "#/$defs/color", "description": "Page or slide background." },
+        "surface": { "$ref": "#/$defs/color", "description": "Card, panel or tile background sitting on bg." },
+        "text": { "$ref": "#/$defs/color", "description": "Primary text on bg." },
+        "text_secondary": { "$ref": "#/$defs/color", "description": "Body copy and subheads, a step quieter than text." },
+        "text_muted": { "$ref": "#/$defs/color", "description": "Captions, sources, footers." },
+        "border": { "$ref": "#/$defs/color", "description": "Hairlines and card borders." },
+        "accent": { "$ref": "#/$defs/color", "description": "Main brand color, usually the primary CTA background." },
+        "accent_secondary": { "$ref": "#/$defs/color", "description": "Second brand color (gradient stop, secondary button)." },
+        "on_accent": { "$ref": "#/$defs/color", "description": "Text color placed on accent (button label)." }
+      }
+    },
+    "radius": {
+      "type": "string",
+      "pattern": "^(0|[0-9]+(\\.[0-9]+)?(px|rem|em|%))$",
+      "description": "Corner radius of cards and buttons as a CSS length, for example 14px. 0 for square brands."
+    },
+    "fonts": {
+      "type": "object",
+      "required": ["display", "body"],
+      "additionalProperties": false,
+      "properties": {
+        "display": { "$ref": "#/$defs/font", "description": "Headlines, covers, big numbers." },
+        "body": { "$ref": "#/$defs/font", "description": "Paragraphs, lists, captions." },
+        "fonts_url": {
+          "type": "string",
+          "pattern": "^https://",
+          "description": "Stylesheet URL that loads the families (Google Fonts css2 URL or the brand's own). Optional when every family ships local files."
+        }
+      }
+    },
+    "logos": {
+      "type": "object",
+      "description": "Logo files by background variant. on_light holds the files that read on a light background (dark ink), on_dark the files that read on a dark background (light ink). Each variant holds a wordmark, a mark (symbol only), or both.",
+      "additionalProperties": false,
+      "properties": {
+        "on_light": { "$ref": "#/$defs/logo_variant" },
+        "on_dark": { "$ref": "#/$defs/logo_variant" }
+      }
+    },
+    "logo_text": {
+      "type": "string",
+      "description": "Wordmark text to typeset when no logo file is usable."
+    },
+    "logo_audit": {
+      "type": "object",
+      "description": "Result of the logo checks run by project-context: viewBox against the inked area, and pixel contrast of each file on the background it is meant for.",
+      "required": ["status"],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["pass", "warn", "fail", "unchecked"],
+          "description": "unchecked for files migrated from V1 or added by hand."
+        },
+        "method": {
+          "type": "string",
+          "enum": ["render", "manual"],
+          "description": "render: measured on a rendered image; manual: the founder looked at the brand board."
+        },
+        "checked_at": { "$ref": "#/$defs/date" },
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["variant", "kind", "status"],
+            "additionalProperties": false,
+            "properties": {
+              "variant": { "type": "string", "enum": ["on_light", "on_dark"] },
+              "kind": { "type": "string", "enum": ["wordmark", "mark"] },
+              "status": { "type": "string", "enum": ["pass", "warn", "fail"] },
+              "viewbox_clips_ink": {
+                "type": "boolean",
+                "description": "true when part of the glyphs falls outside the declared viewBox."
+              },
+              "contrast_ratio": {
+                "type": "number",
+                "minimum": 1,
+                "maximum": 21,
+                "description": "WCAG contrast between the logo ink and the variant background."
+              },
+              "note": { "type": "string" }
+            }
+          }
+        },
+        "issues": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Plain-language problems the founder should know about."
+        }
+      }
+    },
+    "assets": {
+      "type": "object",
+      "description": "Real material harvested from the brand's site. Creative agents reuse these files and never re-scrape.",
+      "additionalProperties": false,
+      "properties": {
+        "og_image_path": { "$ref": "#/$defs/rel_path" },
+        "favicon_path": { "$ref": "#/$defs/rel_path" },
+        "screenshot_path": { "$ref": "#/$defs/rel_path" },
+        "images": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["path"],
+            "additionalProperties": false,
+            "properties": {
+              "path": { "$ref": "#/$defs/rel_path" },
+              "role": { "type": "string", "enum": ["hero", "product", "team", "illustration", "texture", "other"] },
+              "w": { "type": "integer", "minimum": 1 },
+              "h": { "type": "integer", "minimum": 1 },
+              "alt": { "type": "string" },
+              "source_url": { "type": "string", "pattern": "^https?://" }
+            }
+          }
+        }
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Extraction caveats kept for the founder (for example a font that needs network access to load)."
+    },
+    "extensions": {
+      "type": "object",
+      "description": "Free space for agent- or project-specific keys. Readers ignore what they do not know."
+    }
+  },
+  "$defs": {
+    "color": {
+      "type": "string",
+      "pattern": "^#([0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+      "description": "Hex color, #rrggbb or #rrggbbaa. Flatten rgba() against bg before writing."
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "rel_path": {
+      "type": "string",
+      "pattern": "^(?!/)(?![A-Za-z]:)(?!project-context/)(?!.*\\.\\.)[A-Za-z0-9._/-]+$",
+      "description": "Path relative to the project-context/ folder, for example assets/logos/wordmark-on-dark.svg. Never absolute, never starting with project-context/, never climbing with '..'."
+    },
+    "font": {
+      "type": "object",
+      "required": ["family"],
+      "additionalProperties": false,
+      "properties": {
+        "family": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[^,'\"]+$",
+          "description": "One family name, unquoted, for example Instrument Serif. The fallback stack goes in fallback."
+        },
+        "fallback": {
+          "type": "string",
+          "description": "CSS fallback stack appended after the family, for example Georgia, serif."
+        },
+        "weights": {
+          "type": "array",
+          "items": { "type": "integer", "minimum": 100, "maximum": 900 }
+        },
+        "source": {
+          "type": "string",
+          "enum": ["google_fonts", "self_hosted", "system", "other"]
+        },
+        "files": {
+          "type": "array",
+          "description": "Optional local font files, for offline rendering.",
+          "items": {
+            "type": "object",
+            "required": ["path"],
+            "additionalProperties": false,
+            "properties": {
+              "path": { "$ref": "#/$defs/rel_path" },
+              "weight": { "type": "integer", "minimum": 100, "maximum": 900 },
+              "style": { "type": "string", "enum": ["normal", "italic"] },
+              "format": { "type": "string", "enum": ["woff2", "woff", "truetype", "opentype"] }
+            }
+          }
+        }
+      }
+    },
+    "logo_file": {
+      "type": "object",
+      "required": ["path", "format"],
+      "additionalProperties": false,
+      "properties": {
+        "path": { "$ref": "#/$defs/rel_path" },
+        "format": { "type": "string", "enum": ["svg", "png", "webp", "jpg"] },
+        "width": { "type": "integer", "minimum": 1, "description": "Pixel width, or viewBox width for SVG." },
+        "height": { "type": "integer", "minimum": 1, "description": "Pixel height, or viewBox height for SVG." },
+        "ink": { "$ref": "#/$defs/color", "description": "Dominant color of the logo itself." }
+      }
+    },
+    "logo_variant": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "wordmark": { "$ref": "#/$defs/logo_file" },
+        "mark": { "$ref": "#/$defs/logo_file" }
+      }
+    }
+  }
+}

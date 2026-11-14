@@ -1,0 +1,2109 @@
+{
+ "_comment": "Fictional Search Console rows for the growth-pulse tests. Invented numbers.",
+ "dimensions": [
+  "date",
+  "page"
+ ],
+ "rows": [
+  {
+   "keys": [
+    "2026-08-31",
+    "https://swanbase.example/"
+   ],
+   "clicks": 8,
+   "impressions": 84,
+   "ctr": 0.0952,
+   "position": 8.39
+  },
+  {
+   "keys": [
+    "2026-08-31",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 2,
+   "impressions": 86,
+   "ctr": 0.0233,
+   "position": 11.38
+  },
+  {
+   "keys": [
+    "2026-08-31",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 2,
+   "impressions": 94,
+   "ctr": 0.0213,
+   "position": 10.93
+  },
+  {
+   "keys": [
+    "2026-08-31",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 1,
+   "impressions": 29,
+   "ctr": 0.0345,
+   "position": 11.15
+  },
+  {
+   "keys": [
+    "2026-08-31",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 9,
+   "impressions": 177,
+   "ctr": 0.0508,
+   "position": 7.2
+  },
+  {
+   "keys": [
+    "2026-09-01",
+    "https://swanbase.example/"
+   ],
+   "clicks": 12,
+   "impressions": 100,
+   "ctr": 0.12,
+   "position": 8.27
+  },
+  {
+   "keys": [
+    "2026-09-01",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 4,
+   "impressions": 83,
+   "ctr": 0.0482,
+   "position": 11.29
+  },
+  {
+   "keys": [
+    "2026-09-01",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 5,
+   "impressions": 115,
+   "ctr": 0.0435,
+   "position": 11.18
+  },
+  {
+   "keys": [
+    "2026-09-01",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 0,
+   "impressions": 35,
+   "ctr": 0.0,
+   "position": 11.68
+  },
+  {
+   "keys": [
+    "2026-09-01",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 11,
+   "impressions": 210,
+   "ctr": 0.0524,
+   "position": 7.14
+  },
+  {
+   "keys": [
+    "2026-09-02",
+    "https://swanbase.example/"
+   ],
+   "clicks": 9,
+   "impressions": 77,
+   "ctr": 0.1169,
+   "position": 8.59
+  },
+  {
+   "keys": [
+    "2026-09-02",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 1,
+   "impressions": 71,
+   "ctr": 0.0141,
+   "position": 11.49
+  },
+  {
+   "keys": [
+    "2026-09-02",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 3,
+   "impressions": 96,
+   "ctr": 0.0312,
+   "position": 10.95
+  },
+  {
+   "keys": [
+    "2026-09-02",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 0,
+   "impressions": 32,
+   "ctr": 0.0,
+   "position": 11.44
+  },
+  {
+   "keys": [
+    "2026-09-02",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 8,
+   "impressions": 141,
+   "ctr": 0.0567,
+   "position": 6.94
+  },
+  {
+   "keys": [
+    "2026-09-03",
+    "https://swanbase.example/"
+   ],
+   "clicks": 4,
+   "impressions": 84,
+   "ctr": 0.0476,
+   "position": 8.74
+  },
+  {
+   "keys": [
+    "2026-09-03",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 0,
+   "impressions": 78,
+   "ctr": 0.0,
+   "position": 11.48
+  },
+  {
+   "keys": [
+    "2026-09-03",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 2,
+   "impressions": 97,
+   "ctr": 0.0206,
+   "position": 11.29
+  },
+  {
+   "keys": [
+    "2026-09-03",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 2,
+   "impressions": 35,
+   "ctr": 0.0571,
+   "position": 11.54
+  },
+  {
+   "keys": [
+    "2026-09-03",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 9,
+   "impressions": 167,
+   "ctr": 0.0539,
+   "position": 7.28
+  },
+  {
+   "keys": [
+    "2026-09-04",
+    "https://swanbase.example/"
+   ],
+   "clicks": 3,
+   "impressions": 73,
+   "ctr": 0.0411,
+   "position": 8.91
+  },
+  {
+   "keys": [
+    "2026-09-04",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 2,
+   "impressions": 70,
+   "ctr": 0.0286,
+   "position": 11.58
+  },
+  {
+   "keys": [
+    "2026-09-04",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 1,
+   "impressions": 82,
+   "ctr": 0.0122,
+   "position": 11.37
+  },
+  {
+   "keys": [
+    "2026-09-04",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 0,
+   "impressions": 28,
+   "ctr": 0.0,
+   "position": 11.83
+  },
+  {
+   "keys": [
+    "2026-09-04",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 2,
+   "impressions": 147,
+   "ctr": 0.0136,
+   "position": 7.51
+  },
+  {
+   "keys": [
+    "2026-09-05",
+    "https://swanbase.example/"
+   ],
+   "clicks": 5,
+   "impressions": 64,
+   "ctr": 0.0781,
+   "position": 8.02
+  },
+  {
+   "keys": [
+    "2026-09-05",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 0,
+   "impressions": 61,
+   "ctr": 0.0,
+   "position": 10.93
+  },
+  {
+   "keys": [
+    "2026-09-05",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 3,
+   "impressions": 68,
+   "ctr": 0.0441,
+   "position": 10.73
+  },
+  {
+   "keys": [
+    "2026-09-05",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 0,
+   "impressions": 23,
+   "ctr": 0.0,
+   "position": 10.86
+  },
+  {
+   "keys": [
+    "2026-09-05",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 11,
+   "impressions": 135,
+   "ctr": 0.0815,
+   "position": 6.87
+  },
+  {
+   "keys": [
+    "2026-09-06",
+    "https://swanbase.example/"
+   ],
+   "clicks": 12,
+   "impressions": 77,
+   "ctr": 0.1558,
+   "position": 7.95
+  },
+  {
+   "keys": [
+    "2026-09-06",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 1,
+   "impressions": 64,
+   "ctr": 0.0156,
+   "position": 11.0
+  },
+  {
+   "keys": [
+    "2026-09-06",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 2,
+   "impressions": 89,
+   "ctr": 0.0225,
+   "position": 10.64
+  },
+  {
+   "keys": [
+    "2026-09-06",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 0,
+   "impressions": 29,
+   "ctr": 0.0,
+   "position": 10.98
+  },
+  {
+   "keys": [
+    "2026-09-06",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 7,
+   "impressions": 140,
+   "ctr": 0.05,
+   "position": 6.89
+  },
+  {
+   "keys": [
+    "2026-09-07",
+    "https://swanbase.example/"
+   ],
+   "clicks": 11,
+   "impressions": 90,
+   "ctr": 0.1222,
+   "position": 8.28
+  },
+  {
+   "keys": [
+    "2026-09-07",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 2,
+   "impressions": 80,
+   "ctr": 0.025,
+   "position": 11.55
+  },
+  {
+   "keys": [
+    "2026-09-07",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 2,
+   "impressions": 102,
+   "ctr": 0.0196,
+   "position": 10.96
+  },
+  {
+   "keys": [
+    "2026-09-07",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 2,
+   "impressions": 30,
+   "ctr": 0.0667,
+   "position": 11.2
+  },
+  {
+   "keys": [
+    "2026-09-07",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 8,
+   "impressions": 172,
+   "ctr": 0.0465,
+   "position": 7.03
+  },
+  {
+   "keys": [
+    "2026-09-08",
+    "https://swanbase.example/"
+   ],
+   "clicks": 16,
+   "impressions": 100,
+   "ctr": 0.16,
+   "position": 8.49
+  },
+  {
+   "keys": [
+    "2026-09-08",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 4,
+   "impressions": 97,
+   "ctr": 0.0412,
+   "position": 11.43
+  },
+  {
+   "keys": [
+    "2026-09-08",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 4,
+   "impressions": 109,
+   "ctr": 0.0367,
+   "position": 11.14
+  },
+  {
+   "keys": [
+    "2026-09-08",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 2,
+   "impressions": 40,
+   "ctr": 0.05,
+   "position": 11.88
+  },
+  {
+   "keys": [
+    "2026-09-08",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 8,
+   "impressions": 208,
+   "ctr": 0.0385,
+   "position": 7.4
+  },
+  {
+   "keys": [
+    "2026-09-09",
+    "https://swanbase.example/"
+   ],
+   "clicks": 7,
+   "impressions": 82,
+   "ctr": 0.0854,
+   "position": 8.79
+  },
+  {
+   "keys": [
+    "2026-09-09",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 4,
+   "impressions": 67,
+   "ctr": 0.0597,
+   "position": 11.36
+  },
+  {
+   "keys": [
+    "2026-09-09",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 5,
+   "impressions": 101,
+   "ctr": 0.0495,
+   "position": 11.24
+  },
+  {
+   "keys": [
+    "2026-09-09",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 0,
+   "impressions": 32,
+   "ctr": 0.0,
+   "position": 11.8
+  },
+  {
+   "keys": [
+    "2026-09-09",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 9,
+   "impressions": 153,
+   "ctr": 0.0588,
+   "position": 7.4
+  },
+  {
+   "keys": [
+    "2026-09-10",
+    "https://swanbase.example/"
+   ],
+   "clicks": 8,
+   "impressions": 86,
+   "ctr": 0.093,
+   "position": 8.74
+  },
+  {
+   "keys": [
+    "2026-09-10",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 3,
+   "impressions": 73,
+   "ctr": 0.0411,
+   "position": 11.27
+  },
+  {
+   "keys": [
+    "2026-09-10",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 1,
+   "impressions": 101,
+   "ctr": 0.0099,
+   "position": 11.35
+  },
+  {
+   "keys": [
+    "2026-09-10",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 3,
+   "impressions": 35,
+   "ctr": 0.0857,
+   "position": 11.9
+  },
+  {
+   "keys": [
+    "2026-09-10",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 10,
+   "impressions": 160,
+   "ctr": 0.0625,
+   "position": 7.45
+  },
+  {
+   "keys": [
+    "2026-09-11",
+    "https://swanbase.example/"
+   ],
+   "clicks": 11,
+   "impressions": 82,
+   "ctr": 0.1341,
+   "position": 8.53
+  },
+  {
+   "keys": [
+    "2026-09-11",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 2,
+   "impressions": 72,
+   "ctr": 0.0278,
+   "position": 11.34
+  },
+  {
+   "keys": [
+    "2026-09-11",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 2,
+   "impressions": 89,
+   "ctr": 0.0225,
+   "position": 11.09
+  },
+  {
+   "keys": [
+    "2026-09-11",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 0,
+   "impressions": 34,
+   "ctr": 0.0,
+   "position": 11.3
+  },
+  {
+   "keys": [
+    "2026-09-11",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 7,
+   "impressions": 138,
+   "ctr": 0.0507,
+   "position": 7.02
+  },
+  {
+   "keys": [
+    "2026-09-12",
+    "https://swanbase.example/"
+   ],
+   "clicks": 5,
+   "impressions": 66,
+   "ctr": 0.0758,
+   "position": 8.58
+  },
+  {
+   "keys": [
+    "2026-09-12",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 0,
+   "impressions": 55,
+   "ctr": 0.0,
+   "position": 11.4
+  },
+  {
+   "keys": [
+    "2026-09-12",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 2,
+   "impressions": 78,
+   "ctr": 0.0256,
+   "position": 11.0
+  },
+  {
+   "keys": [
+    "2026-09-12",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 2,
+   "impressions": 27,
+   "ctr": 0.0741,
+   "position": 11.67
+  },
+  {
+   "keys": [
+    "2026-09-12",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 13,
+   "impressions": 126,
+   "ctr": 0.1032,
+   "position": 7.23
+  },
+  {
+   "keys": [
+    "2026-09-13",
+    "https://swanbase.example/"
+   ],
+   "clicks": 6,
+   "impressions": 65,
+   "ctr": 0.0923,
+   "position": 8.83
+  },
+  {
+   "keys": [
+    "2026-09-13",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 3,
+   "impressions": 55,
+   "ctr": 0.0545,
+   "position": 11.6
+  },
+  {
+   "keys": [
+    "2026-09-13",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 4,
+   "impressions": 76,
+   "ctr": 0.0526,
+   "position": 11.13
+  },
+  {
+   "keys": [
+    "2026-09-13",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 1,
+   "impressions": 26,
+   "ctr": 0.0385,
+   "position": 11.44
+  },
+  {
+   "keys": [
+    "2026-09-13",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 10,
+   "impressions": 140,
+   "ctr": 0.0714,
+   "position": 7.63
+  },
+  {
+   "keys": [
+    "2026-09-14",
+    "https://swanbase.example/"
+   ],
+   "clicks": 12,
+   "impressions": 93,
+   "ctr": 0.129,
+   "position": 8.34
+  },
+  {
+   "keys": [
+    "2026-09-14",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 2,
+   "impressions": 92,
+   "ctr": 0.0217,
+   "position": 11.41
+  },
+  {
+   "keys": [
+    "2026-09-14",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 5,
+   "impressions": 111,
+   "ctr": 0.045,
+   "position": 11.03
+  },
+  {
+   "keys": [
+    "2026-09-14",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 0,
+   "impressions": 36,
+   "ctr": 0.0,
+   "position": 11.29
+  },
+  {
+   "keys": [
+    "2026-09-14",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 18,
+   "impressions": 161,
+   "ctr": 0.1118,
+   "position": 6.9
+  },
+  {
+   "keys": [
+    "2026-09-15",
+    "https://swanbase.example/"
+   ],
+   "clicks": 12,
+   "impressions": 86,
+   "ctr": 0.1395,
+   "position": 8.38
+  },
+  {
+   "keys": [
+    "2026-09-15",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 1,
+   "impressions": 71,
+   "ctr": 0.0141,
+   "position": 11.4
+  },
+  {
+   "keys": [
+    "2026-09-15",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 1,
+   "impressions": 100,
+   "ctr": 0.01,
+   "position": 11.1
+  },
+  {
+   "keys": [
+    "2026-09-15",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 0,
+   "impressions": 27,
+   "ctr": 0.0,
+   "position": 11.48
+  },
+  {
+   "keys": [
+    "2026-09-15",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 7,
+   "impressions": 164,
+   "ctr": 0.0427,
+   "position": 7.2
+  },
+  {
+   "keys": [
+    "2026-09-16",
+    "https://swanbase.example/"
+   ],
+   "clicks": 10,
+   "impressions": 89,
+   "ctr": 0.1124,
+   "position": 8.58
+  },
+  {
+   "keys": [
+    "2026-09-16",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 4,
+   "impressions": 80,
+   "ctr": 0.05,
+   "position": 11.43
+  },
+  {
+   "keys": [
+    "2026-09-16",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 1,
+   "impressions": 101,
+   "ctr": 0.0099,
+   "position": 11.22
+  },
+  {
+   "keys": [
+    "2026-09-16",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 1,
+   "impressions": 30,
+   "ctr": 0.0333,
+   "position": 11.2
+  },
+  {
+   "keys": [
+    "2026-09-16",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 5,
+   "impressions": 182,
+   "ctr": 0.0275,
+   "position": 7.41
+  },
+  {
+   "keys": [
+    "2026-09-17",
+    "https://swanbase.example/"
+   ],
+   "clicks": 11,
+   "impressions": 75,
+   "ctr": 0.1467,
+   "position": 8.66
+  },
+  {
+   "keys": [
+    "2026-09-17",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 0,
+   "impressions": 77,
+   "ctr": 0.0,
+   "position": 11.32
+  },
+  {
+   "keys": [
+    "2026-09-17",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 4,
+   "impressions": 93,
+   "ctr": 0.043,
+   "position": 11.02
+  },
+  {
+   "keys": [
+    "2026-09-17",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 0,
+   "impressions": 31,
+   "ctr": 0.0,
+   "position": 11.39
+  },
+  {
+   "keys": [
+    "2026-09-17",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 8,
+   "impressions": 158,
+   "ctr": 0.0506,
+   "position": 6.78
+  },
+  {
+   "keys": [
+    "2026-09-18",
+    "https://swanbase.example/"
+   ],
+   "clicks": 6,
+   "impressions": 72,
+   "ctr": 0.0833,
+   "position": 8.78
+  },
+  {
+   "keys": [
+    "2026-09-18",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 1,
+   "impressions": 74,
+   "ctr": 0.0135,
+   "position": 11.82
+  },
+  {
+   "keys": [
+    "2026-09-18",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 5,
+   "impressions": 89,
+   "ctr": 0.0562,
+   "position": 11.05
+  },
+  {
+   "keys": [
+    "2026-09-18",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 0,
+   "impressions": 27,
+   "ctr": 0.0,
+   "position": 11.75
+  },
+  {
+   "keys": [
+    "2026-09-18",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 9,
+   "impressions": 133,
+   "ctr": 0.0677,
+   "position": 7.24
+  },
+  {
+   "keys": [
+    "2026-09-19",
+    "https://swanbase.example/"
+   ],
+   "clicks": 5,
+   "impressions": 61,
+   "ctr": 0.082,
+   "position": 8.85
+  },
+  {
+   "keys": [
+    "2026-09-19",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 3,
+   "impressions": 56,
+   "ctr": 0.0536,
+   "position": 11.08
+  },
+  {
+   "keys": [
+    "2026-09-19",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 3,
+   "impressions": 75,
+   "ctr": 0.04,
+   "position": 11.12
+  },
+  {
+   "keys": [
+    "2026-09-19",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 0,
+   "impressions": 26,
+   "ctr": 0.0,
+   "position": 11.12
+  },
+  {
+   "keys": [
+    "2026-09-19",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 7,
+   "impressions": 133,
+   "ctr": 0.0526,
+   "position": 7.11
+  },
+  {
+   "keys": [
+    "2026-09-20",
+    "https://swanbase.example/"
+   ],
+   "clicks": 11,
+   "impressions": 68,
+   "ctr": 0.1618,
+   "position": 8.9
+  },
+  {
+   "keys": [
+    "2026-09-20",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 1,
+   "impressions": 59,
+   "ctr": 0.0169,
+   "position": 11.7
+  },
+  {
+   "keys": [
+    "2026-09-20",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 3,
+   "impressions": 76,
+   "ctr": 0.0395,
+   "position": 11.24
+  },
+  {
+   "keys": [
+    "2026-09-20",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 0,
+   "impressions": 22,
+   "ctr": 0.0,
+   "position": 11.76
+  },
+  {
+   "keys": [
+    "2026-09-20",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 3,
+   "impressions": 131,
+   "ctr": 0.0229,
+   "position": 7.35
+  },
+  {
+   "keys": [
+    "2026-09-21",
+    "https://swanbase.example/"
+   ],
+   "clicks": 15,
+   "impressions": 92,
+   "ctr": 0.163,
+   "position": 8.18
+  },
+  {
+   "keys": [
+    "2026-09-21",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 1,
+   "impressions": 81,
+   "ctr": 0.0123,
+   "position": 11.29
+  },
+  {
+   "keys": [
+    "2026-09-21",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 3,
+   "impressions": 104,
+   "ctr": 0.0288,
+   "position": 10.72
+  },
+  {
+   "keys": [
+    "2026-09-21",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 2,
+   "impressions": 32,
+   "ctr": 0.0625,
+   "position": 11.09
+  },
+  {
+   "keys": [
+    "2026-09-21",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 9,
+   "impressions": 183,
+   "ctr": 0.0492,
+   "position": 6.8
+  },
+  {
+   "keys": [
+    "2026-09-22",
+    "https://swanbase.example/"
+   ],
+   "clicks": 11,
+   "impressions": 85,
+   "ctr": 0.1294,
+   "position": 8.75
+  },
+  {
+   "keys": [
+    "2026-09-22",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 1,
+   "impressions": 79,
+   "ctr": 0.0127,
+   "position": 11.35
+  },
+  {
+   "keys": [
+    "2026-09-22",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 4,
+   "impressions": 102,
+   "ctr": 0.0392,
+   "position": 11.0
+  },
+  {
+   "keys": [
+    "2026-09-22",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 3,
+   "impressions": 33,
+   "ctr": 0.0909,
+   "position": 11.11
+  },
+  {
+   "keys": [
+    "2026-09-22",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 10,
+   "impressions": 168,
+   "ctr": 0.0595,
+   "position": 7.07
+  },
+  {
+   "keys": [
+    "2026-09-23",
+    "https://swanbase.example/"
+   ],
+   "clicks": 12,
+   "impressions": 82,
+   "ctr": 0.1463,
+   "position": 8.92
+  },
+  {
+   "keys": [
+    "2026-09-23",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 2,
+   "impressions": 75,
+   "ctr": 0.0267,
+   "position": 11.02
+  },
+  {
+   "keys": [
+    "2026-09-23",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 7,
+   "impressions": 100,
+   "ctr": 0.07,
+   "position": 11.04
+  },
+  {
+   "keys": [
+    "2026-09-23",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 1,
+   "impressions": 30,
+   "ctr": 0.0333,
+   "position": 11.45
+  },
+  {
+   "keys": [
+    "2026-09-23",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 14,
+   "impressions": 168,
+   "ctr": 0.0833,
+   "position": 7.03
+  },
+  {
+   "keys": [
+    "2026-09-24",
+    "https://swanbase.example/"
+   ],
+   "clicks": 14,
+   "impressions": 77,
+   "ctr": 0.1818,
+   "position": 8.69
+  },
+  {
+   "keys": [
+    "2026-09-24",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 3,
+   "impressions": 77,
+   "ctr": 0.039,
+   "position": 11.28
+  },
+  {
+   "keys": [
+    "2026-09-24",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 4,
+   "impressions": 95,
+   "ctr": 0.0421,
+   "position": 11.13
+  },
+  {
+   "keys": [
+    "2026-09-24",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 2,
+   "impressions": 29,
+   "ctr": 0.069,
+   "position": 11.13
+  },
+  {
+   "keys": [
+    "2026-09-24",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 8,
+   "impressions": 156,
+   "ctr": 0.0513,
+   "position": 7.26
+  },
+  {
+   "keys": [
+    "2026-09-25",
+    "https://swanbase.example/"
+   ],
+   "clicks": 8,
+   "impressions": 71,
+   "ctr": 0.1127,
+   "position": 8.58
+  },
+  {
+   "keys": [
+    "2026-09-25",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 1,
+   "impressions": 66,
+   "ctr": 0.0152,
+   "position": 11.5
+  },
+  {
+   "keys": [
+    "2026-09-25",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 1,
+   "impressions": 79,
+   "ctr": 0.0127,
+   "position": 11.22
+  },
+  {
+   "keys": [
+    "2026-09-25",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 1,
+   "impressions": 26,
+   "ctr": 0.0385,
+   "position": 11.7
+  },
+  {
+   "keys": [
+    "2026-09-25",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 6,
+   "impressions": 135,
+   "ctr": 0.0444,
+   "position": 7.44
+  },
+  {
+   "keys": [
+    "2026-09-26",
+    "https://swanbase.example/"
+   ],
+   "clicks": 5,
+   "impressions": 60,
+   "ctr": 0.0833,
+   "position": 8.7
+  },
+  {
+   "keys": [
+    "2026-09-26",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 1,
+   "impressions": 56,
+   "ctr": 0.0179,
+   "position": 11.31
+  },
+  {
+   "keys": [
+    "2026-09-26",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 2,
+   "impressions": 75,
+   "ctr": 0.0267,
+   "position": 11.01
+  },
+  {
+   "keys": [
+    "2026-09-26",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 1,
+   "impressions": 22,
+   "ctr": 0.0455,
+   "position": 10.96
+  },
+  {
+   "keys": [
+    "2026-09-26",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 16,
+   "impressions": 133,
+   "ctr": 0.1203,
+   "position": 6.82
+  },
+  {
+   "keys": [
+    "2026-09-27",
+    "https://swanbase.example/"
+   ],
+   "clicks": 6,
+   "impressions": 62,
+   "ctr": 0.0968,
+   "position": 8.75
+  },
+  {
+   "keys": [
+    "2026-09-27",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 1,
+   "impressions": 64,
+   "ctr": 0.0156,
+   "position": 11.41
+  },
+  {
+   "keys": [
+    "2026-09-27",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 0,
+   "impressions": 75,
+   "ctr": 0.0,
+   "position": 11.0
+  },
+  {
+   "keys": [
+    "2026-09-27",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 1,
+   "impressions": 23,
+   "ctr": 0.0435,
+   "position": 11.68
+  },
+  {
+   "keys": [
+    "2026-09-27",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 5,
+   "impressions": 123,
+   "ctr": 0.0407,
+   "position": 7.03
+  },
+  {
+   "keys": [
+    "2026-09-28",
+    "https://swanbase.example/"
+   ],
+   "clicks": 6,
+   "impressions": 85,
+   "ctr": 0.0706,
+   "position": 8.31
+  },
+  {
+   "keys": [
+    "2026-09-28",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 0,
+   "impressions": 71,
+   "ctr": 0.0,
+   "position": 11.03
+  },
+  {
+   "keys": [
+    "2026-09-28",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 3,
+   "impressions": 99,
+   "ctr": 0.0303,
+   "position": 10.99
+  },
+  {
+   "keys": [
+    "2026-09-28",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 1,
+   "impressions": 37,
+   "ctr": 0.027,
+   "position": 11.07
+  },
+  {
+   "keys": [
+    "2026-09-28",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 6,
+   "impressions": 172,
+   "ctr": 0.0349,
+   "position": 6.99
+  },
+  {
+   "keys": [
+    "2026-09-29",
+    "https://swanbase.example/"
+   ],
+   "clicks": 13,
+   "impressions": 87,
+   "ctr": 0.1494,
+   "position": 8.74
+  },
+  {
+   "keys": [
+    "2026-09-29",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 1,
+   "impressions": 76,
+   "ctr": 0.0132,
+   "position": 11.36
+  },
+  {
+   "keys": [
+    "2026-09-29",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 4,
+   "impressions": 100,
+   "ctr": 0.04,
+   "position": 11.18
+  },
+  {
+   "keys": [
+    "2026-09-29",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 2,
+   "impressions": 32,
+   "ctr": 0.0625,
+   "position": 11.38
+  },
+  {
+   "keys": [
+    "2026-09-29",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 7,
+   "impressions": 165,
+   "ctr": 0.0424,
+   "position": 7.05
+  },
+  {
+   "keys": [
+    "2026-09-30",
+    "https://swanbase.example/"
+   ],
+   "clicks": 5,
+   "impressions": 86,
+   "ctr": 0.0581,
+   "position": 8.94
+  },
+  {
+   "keys": [
+    "2026-09-30",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 0,
+   "impressions": 76,
+   "ctr": 0.0,
+   "position": 11.92
+  },
+  {
+   "keys": [
+    "2026-09-30",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 2,
+   "impressions": 99,
+   "ctr": 0.0202,
+   "position": 11.4
+  },
+  {
+   "keys": [
+    "2026-09-30",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 1,
+   "impressions": 35,
+   "ctr": 0.0286,
+   "position": 11.89
+  },
+  {
+   "keys": [
+    "2026-09-30",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 9,
+   "impressions": 166,
+   "ctr": 0.0542,
+   "position": 7.43
+  },
+  {
+   "keys": [
+    "2026-10-01",
+    "https://swanbase.example/"
+   ],
+   "clicks": 7,
+   "impressions": 78,
+   "ctr": 0.0897,
+   "position": 8.81
+  },
+  {
+   "keys": [
+    "2026-10-01",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 2,
+   "impressions": 76,
+   "ctr": 0.0263,
+   "position": 11.27
+  },
+  {
+   "keys": [
+    "2026-10-01",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 1,
+   "impressions": 87,
+   "ctr": 0.0115,
+   "position": 11.34
+  },
+  {
+   "keys": [
+    "2026-10-01",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 0,
+   "impressions": 27,
+   "ctr": 0.0,
+   "position": 11.77
+  },
+  {
+   "keys": [
+    "2026-10-01",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 9,
+   "impressions": 149,
+   "ctr": 0.0604,
+   "position": 7.09
+  },
+  {
+   "keys": [
+    "2026-10-02",
+    "https://swanbase.example/"
+   ],
+   "clicks": 9,
+   "impressions": 79,
+   "ctr": 0.1139,
+   "position": 8.41
+  },
+  {
+   "keys": [
+    "2026-10-02",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 3,
+   "impressions": 74,
+   "ctr": 0.0405,
+   "position": 11.37
+  },
+  {
+   "keys": [
+    "2026-10-02",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 1,
+   "impressions": 90,
+   "ctr": 0.0111,
+   "position": 11.11
+  },
+  {
+   "keys": [
+    "2026-10-02",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 0,
+   "impressions": 28,
+   "ctr": 0.0,
+   "position": 11.35
+  },
+  {
+   "keys": [
+    "2026-10-02",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 8,
+   "impressions": 156,
+   "ctr": 0.0513,
+   "position": 7.46
+  },
+  {
+   "keys": [
+    "2026-10-03",
+    "https://swanbase.example/"
+   ],
+   "clicks": 7,
+   "impressions": 65,
+   "ctr": 0.1077,
+   "position": 9.4
+  },
+  {
+   "keys": [
+    "2026-10-03",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 2,
+   "impressions": 56,
+   "ctr": 0.0357,
+   "position": 12.28
+  },
+  {
+   "keys": [
+    "2026-10-03",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 1,
+   "impressions": 80,
+   "ctr": 0.0125,
+   "position": 12.13
+  },
+  {
+   "keys": [
+    "2026-10-03",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 0,
+   "impressions": 23,
+   "ctr": 0.0,
+   "position": 12.68
+  },
+  {
+   "keys": [
+    "2026-10-03",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 1,
+   "impressions": 119,
+   "ctr": 0.0084,
+   "position": 9.51
+  },
+  {
+   "keys": [
+    "2026-10-04",
+    "https://swanbase.example/"
+   ],
+   "clicks": 7,
+   "impressions": 67,
+   "ctr": 0.1045,
+   "position": 9.47
+  },
+  {
+   "keys": [
+    "2026-10-04",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 0,
+   "impressions": 59,
+   "ctr": 0.0,
+   "position": 12.38
+  },
+  {
+   "keys": [
+    "2026-10-04",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 1,
+   "impressions": 73,
+   "ctr": 0.0137,
+   "position": 12.16
+  },
+  {
+   "keys": [
+    "2026-10-04",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 0,
+   "impressions": 28,
+   "ctr": 0.0,
+   "position": 12.3
+  },
+  {
+   "keys": [
+    "2026-10-04",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 4,
+   "impressions": 124,
+   "ctr": 0.0323,
+   "position": 9.68
+  },
+  {
+   "keys": [
+    "2026-10-05",
+    "https://swanbase.example/"
+   ],
+   "clicks": 5,
+   "impressions": 81,
+   "ctr": 0.0617,
+   "position": 10.81
+  },
+  {
+   "keys": [
+    "2026-10-05",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 1,
+   "impressions": 66,
+   "ctr": 0.0152,
+   "position": 13.52
+  },
+  {
+   "keys": [
+    "2026-10-05",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 1,
+   "impressions": 88,
+   "ctr": 0.0114,
+   "position": 13.47
+  },
+  {
+   "keys": [
+    "2026-10-05",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 0,
+   "impressions": 29,
+   "ctr": 0.0,
+   "position": 13.88
+  },
+  {
+   "keys": [
+    "2026-10-05",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 7,
+   "impressions": 149,
+   "ctr": 0.047,
+   "position": 10.72
+  },
+  {
+   "keys": [
+    "2026-10-06",
+    "https://swanbase.example/"
+   ],
+   "clicks": 3,
+   "impressions": 84,
+   "ctr": 0.0357,
+   "position": 11.56
+  },
+  {
+   "keys": [
+    "2026-10-06",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 1,
+   "impressions": 78,
+   "ctr": 0.0128,
+   "position": 13.81
+  },
+  {
+   "keys": [
+    "2026-10-06",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 0,
+   "impressions": 103,
+   "ctr": 0.0,
+   "position": 13.88
+  },
+  {
+   "keys": [
+    "2026-10-06",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 0,
+   "impressions": 30,
+   "ctr": 0.0,
+   "position": 14.15
+  },
+  {
+   "keys": [
+    "2026-10-06",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 10,
+   "impressions": 182,
+   "ctr": 0.0549,
+   "position": 11.16
+  },
+  {
+   "keys": [
+    "2026-10-07",
+    "https://swanbase.example/"
+   ],
+   "clicks": 6,
+   "impressions": 82,
+   "ctr": 0.0732,
+   "position": 10.72
+  },
+  {
+   "keys": [
+    "2026-10-07",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 0,
+   "impressions": 79,
+   "ctr": 0.0,
+   "position": 13.33
+  },
+  {
+   "keys": [
+    "2026-10-07",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 2,
+   "impressions": 98,
+   "ctr": 0.0204,
+   "position": 13.28
+  },
+  {
+   "keys": [
+    "2026-10-07",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 0,
+   "impressions": 33,
+   "ctr": 0.0,
+   "position": 13.25
+  },
+  {
+   "keys": [
+    "2026-10-07",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 0,
+   "impressions": 175,
+   "ctr": 0.0,
+   "position": 10.51
+  },
+  {
+   "keys": [
+    "2026-10-08",
+    "https://swanbase.example/"
+   ],
+   "clicks": 4,
+   "impressions": 72,
+   "ctr": 0.0556,
+   "position": 10.81
+  },
+  {
+   "keys": [
+    "2026-10-08",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 1,
+   "impressions": 58,
+   "ctr": 0.0172,
+   "position": 13.5
+  },
+  {
+   "keys": [
+    "2026-10-08",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 0,
+   "impressions": 86,
+   "ctr": 0.0,
+   "position": 13.4
+  },
+  {
+   "keys": [
+    "2026-10-08",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 0,
+   "impressions": 30,
+   "ctr": 0.0,
+   "position": 13.41
+  },
+  {
+   "keys": [
+    "2026-10-08",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 3,
+   "impressions": 153,
+   "ctr": 0.0196,
+   "position": 10.95
+  },
+  {
+   "keys": [
+    "2026-10-09",
+    "https://swanbase.example/"
+   ],
+   "clicks": 6,
+   "impressions": 71,
+   "ctr": 0.0845,
+   "position": 10.79
+  },
+  {
+   "keys": [
+    "2026-10-09",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 0,
+   "impressions": 60,
+   "ctr": 0.0,
+   "position": 14.11
+  },
+  {
+   "keys": [
+    "2026-10-09",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 1,
+   "impressions": 77,
+   "ctr": 0.013,
+   "position": 13.57
+  },
+  {
+   "keys": [
+    "2026-10-09",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 0,
+   "impressions": 29,
+   "ctr": 0.0,
+   "position": 14.06
+  },
+  {
+   "keys": [
+    "2026-10-09",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 3,
+   "impressions": 142,
+   "ctr": 0.0211,
+   "position": 10.93
+  },
+  {
+   "keys": [
+    "2026-10-10",
+    "https://swanbase.example/"
+   ],
+   "clicks": 5,
+   "impressions": 61,
+   "ctr": 0.082,
+   "position": 11.27
+  },
+  {
+   "keys": [
+    "2026-10-10",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 0,
+   "impressions": 61,
+   "ctr": 0.0,
+   "position": 13.84
+  },
+  {
+   "keys": [
+    "2026-10-10",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 0,
+   "impressions": 75,
+   "ctr": 0.0,
+   "position": 13.77
+  },
+  {
+   "keys": [
+    "2026-10-10",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 0,
+   "impressions": 20,
+   "ctr": 0.0,
+   "position": 13.91
+  },
+  {
+   "keys": [
+    "2026-10-10",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 5,
+   "impressions": 135,
+   "ctr": 0.037,
+   "position": 10.82
+  },
+  {
+   "keys": [
+    "2026-10-11",
+    "https://swanbase.example/"
+   ],
+   "clicks": 3,
+   "impressions": 60,
+   "ctr": 0.05,
+   "position": 11.0
+  },
+  {
+   "keys": [
+    "2026-10-11",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 2,
+   "impressions": 55,
+   "ctr": 0.0364,
+   "position": 13.7
+  },
+  {
+   "keys": [
+    "2026-10-11",
+    "https://swanbase.example/blog/pre-seed-checklist/"
+   ],
+   "clicks": 0,
+   "impressions": 67,
+   "ctr": 0.0,
+   "position": 13.53
+  },
+  {
+   "keys": [
+    "2026-10-11",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 0,
+   "impressions": 26,
+   "ctr": 0.0,
+   "position": 13.67
+  },
+  {
+   "keys": [
+    "2026-10-11",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 3,
+   "impressions": 119,
+   "ctr": 0.0252,
+   "position": 10.65
+  }
+ ]
+}

@@ -1,0 +1,392 @@
+{
+ "version": "1.2",
+ "country_requested": "us",
+ "serp_country": "us",
+ "providers": {
+  "serp": [
+   "serper"
+  ],
+  "scrape": [
+   "http"
+  ]
+ },
+ "queries_analyzed": 1,
+ "data": [
+  {
+   "query": "how to invoice as a freelancer",
+   "country": "us",
+   "language": "en",
+   "fetched_at": "2026-11-13T09:00:00Z",
+   "serp_provider": "serper",
+   "ai_overview": {
+    "present": true,
+    "text": "An invoice lists...",
+    "cited_sources": [
+     "https://www.taxagency.example/small-business/invoicing-records"
+    ],
+    "status": "captured"
+   },
+   "features": {
+    "paa": [
+     "What should a freelance invoice include?",
+     "How do I send an invoice to a client?",
+     "When should a freelancer send an invoice?"
+    ],
+    "paa_status": "captured",
+    "featured_snippet": null,
+    "featured_snippet_status": "captured"
+   },
+   "top_10": [
+    {
+     "position": 1,
+     "url": "https://ledgerly.example/blog/freelance-invoice/",
+     "serp_title": "How to invoice as a freelancer | Ledgerly",
+     "serp_snippet": null,
+     "scrape_provider": "http",
+     "title": "How to invoice as a freelancer | Ledgerly",
+     "meta": null,
+     "meta_length": 0,
+     "h1": "How to invoice as a freelancer",
+     "outline": [
+      {
+       "h2": "What to include on a freelance invoice",
+       "h3": [
+        "Your business details",
+        "Client details",
+        "Line items"
+       ]
+      },
+      {
+       "h2": "How to send an invoice",
+       "h3": [
+        "Email or client portal"
+       ]
+      },
+      {
+       "h2": "Payment terms",
+       "h3": [
+        "Net 30"
+       ]
+      },
+      {
+       "h2": "What is an invoice?",
+       "h3": []
+      },
+      {
+       "h2": "Related articles",
+       "h3": []
+      }
+     ],
+     "h2_outline": [
+      "What to include on a freelance invoice",
+      "How to send an invoice",
+      "Payment terms",
+      "What is an invoice?",
+      "Related articles"
+     ],
+     "h3_outline": [
+      "Your business details",
+      "Client details",
+      "Line items",
+      "Email or client portal",
+      "Net 30"
+     ],
+     "word_count": 1800,
+     "word_count_basis": "html-main-content",
+     "schema_types": [
+      "BlogPosting",
+      "FAQPage"
+     ],
+     "outbound_links": [
+      {
+       "url": "https://www.taxagency.example/small-business/invoicing-records",
+       "text": "record keeping rules"
+      },
+      {
+       "url": "https://www.paymentlaw.example/late-payment-rules",
+       "text": "late payment rules"
+      }
+     ]
+    },
+    {
+     "position": 2,
+     "url": "https://tallyhouse.example/guides/invoicing/",
+     "serp_title": "Freelance invoicing guide | Tallyhouse",
+     "serp_snippet": null,
+     "scrape_provider": "http",
+     "title": "Freelance invoicing guide | Tallyhouse",
+     "meta": null,
+     "meta_length": 0,
+     "h1": "Freelance invoicing guide",
+     "outline": [
+      {
+       "h2": "What to include on an invoice",
+       "h3": [
+        "Business details",
+        "Client details"
+       ]
+      },
+      {
+       "h2": "How to send your invoice",
+       "h3": []
+      },
+      {
+       "h2": "Setting payment terms",
+       "h3": [
+        "Net 15 or net 30"
+       ]
+      },
+      {
+       "h2": "Related articles",
+       "h3": []
+      }
+     ],
+     "h2_outline": [
+      "What to include on an invoice",
+      "How to send your invoice",
+      "Setting payment terms",
+      "Related articles"
+     ],
+     "h3_outline": [
+      "Business details",
+      "Client details",
+      "Net 15 or net 30"
+     ],
+     "word_count": 1500,
+     "word_count_basis": "html-main-content",
+     "schema_types": [
+      "Article"
+     ],
+     "outbound_links": [
+      {
+       "url": "https://www.taxagency.example/small-business/invoicing-records",
+       "text": "tax agency guidance"
+      }
+     ]
+    },
+    {
+     "position": 3,
+     "url": "https://quillbooks.example/learn/invoice/",
+     "serp_title": "Invoice like a pro | Quillbooks",
+     "serp_snippet": null,
+     "scrape_provider": "http",
+     "title": "Invoice like a pro | Quillbooks",
+     "meta": null,
+     "meta_length": 0,
+     "h1": "Invoice like a pro",
+     "outline": [
+      {
+       "h2": "Invoice details to include",
+       "h3": [
+        "Line items",
+        "Client details"
+       ]
+      },
+      {
+       "h2": "How to send invoices to clients",
+       "h3": []
+      },
+      {
+       "h2": "Invoice templates",
+       "h3": []
+      },
+      {
+       "h2": "What is an invoice?",
+       "h3": []
+      }
+     ],
+     "h2_outline": [
+      "Invoice details to include",
+      "How to send invoices to clients",
+      "Invoice templates",
+      "What is an invoice?"
+     ],
+     "h3_outline": [
+      "Line items",
+      "Client details"
+     ],
+     "word_count": 1200,
+     "word_count_basis": "html-main-content",
+     "schema_types": [
+      "BlogPosting"
+     ],
+     "outbound_links": [
+      {
+       "url": "https://www.paymentlaw.example/late-payment-rules",
+       "text": "late payment law"
+      },
+      {
+       "url": "https://ledgerly.example/blog/freelance-invoice/",
+       "text": "Ledgerly guide"
+      }
+     ]
+    },
+    {
+     "position": 4,
+     "url": "https://invoicenest.example/blog/how-to-invoice/",
+     "serp_title": "How to invoice clients | Invoicenest",
+     "serp_snippet": null,
+     "scrape_provider": "http",
+     "title": "How to invoice clients | Invoicenest",
+     "meta": null,
+     "meta_length": 0,
+     "h1": "How to invoice clients",
+     "outline": [
+      {
+       "h2": "Choosing an invoicing tool",
+       "h3": []
+      },
+      {
+       "h2": "Following up on unpaid invoices",
+       "h3": []
+      }
+     ],
+     "h2_outline": [
+      "Choosing an invoicing tool",
+      "Following up on unpaid invoices"
+     ],
+     "h3_outline": [],
+     "word_count": 1000,
+     "word_count_basis": "html-main-content",
+     "schema_types": [
+      "BlogPosting"
+     ],
+     "outbound_links": []
+    },
+    {
+     "position": 5,
+     "url": "https://fernhollow.example/blog/getting-paid/",
+     "serp_title": "Getting paid as a freelancer | Fernhollow",
+     "serp_snippet": null,
+     "scrape_provider": "http",
+     "title": "Getting paid as a freelancer | Fernhollow",
+     "meta": null,
+     "meta_length": 0,
+     "h1": "Getting paid as a freelancer",
+     "outline": [
+      {
+       "h2": "How to invoice as a freelancer",
+       "h3": []
+      },
+      {
+       "h2": "Chasing late payments",
+       "h3": []
+      }
+     ],
+     "h2_outline": [
+      "How to invoice as a freelancer",
+      "Chasing late payments"
+     ],
+     "h3_outline": [],
+     "word_count": 900,
+     "word_count_basis": "html-main-content",
+     "schema_types": [
+      "BlogPosting"
+     ],
+     "outbound_links": []
+    },
+    {
+     "position": 6,
+     "url": "https://brightpaper.example/invoice-basics/",
+     "serp_title": "Invoice basics for freelancers | Brightpaper",
+     "serp_snippet": null,
+     "scrape_provider": "http",
+     "title": "Invoice basics for freelancers | Brightpaper",
+     "meta": null,
+     "meta_length": 0,
+     "h1": "Invoice basics for freelancers",
+     "outline": [
+      {
+       "h2": "Following up on unpaid invoices",
+       "h3": [
+        "A polite reminder"
+       ]
+      },
+      {
+       "h2": "Newsletter",
+       "h3": []
+      }
+     ],
+     "h2_outline": [
+      "Following up on unpaid invoices",
+      "Newsletter"
+     ],
+     "h3_outline": [
+      "A polite reminder"
+     ],
+     "word_count": 800,
+     "word_count_basis": "html-main-content",
+     "schema_types": [
+      "BlogPosting"
+     ],
+     "outbound_links": []
+    },
+    {
+     "position": 7,
+     "url": "https://mossledger.example/freelance/invoices/",
+     "serp_title": "Freelance invoices explained | Mossledger",
+     "serp_snippet": null,
+     "scrape_provider": "http",
+     "title": "Freelance invoices explained | Mossledger",
+     "meta": null,
+     "meta_length": 0,
+     "h1": "Freelance invoices explained",
+     "outline": [
+      {
+       "h2": "Numbering your invoices",
+       "h3": []
+      },
+      {
+       "h2": "Which invoicing tool to choose",
+       "h3": []
+      }
+     ],
+     "h2_outline": [
+      "Numbering your invoices",
+      "Which invoicing tool to choose"
+     ],
+     "h3_outline": [],
+     "word_count": 1100,
+     "word_count_basis": "html-main-content",
+     "schema_types": [
+      "BlogPosting"
+     ],
+     "outbound_links": []
+    },
+    {
+     "position": 8,
+     "url": "https://copperfern.example/invoicing/",
+     "serp_title": "Invoicing for freelancers | Copperfern",
+     "serp_snippet": null,
+     "scrape_provider": "http",
+     "title": "Invoicing for freelancers | Copperfern",
+     "meta": null,
+     "meta_length": 0,
+     "h1": "Invoicing for freelancers",
+     "outline": [
+      {
+       "h2": "Keeping invoice records",
+       "h3": []
+      }
+     ],
+     "h2_outline": [
+      "Keeping invoice records"
+     ],
+     "h3_outline": [],
+     "word_count": 1300,
+     "word_count_basis": "html-main-content",
+     "schema_types": [
+      "BlogPosting"
+     ],
+     "outbound_links": [
+      {
+       "url": "https://www.taxagency.example/small-business/invoicing-records",
+       "text": "record keeping"
+      }
+     ]
+    }
+   ],
+   "_warnings": []
+  }
+ ]
+}

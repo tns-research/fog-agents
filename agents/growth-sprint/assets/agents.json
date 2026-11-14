@@ -1,0 +1,246 @@
+{
+  "schema_version": "1.0",
+  "_comment": "Registry of the stack agents growth-sprint can chain. Paths in outputs, reads and inputs.from are relative to the founder's project folder (<your-projects-root>/<project>/); <YYYYMMDD> matches any 8-digit date and <label> the step label (any label when the step has none). spec and schema paths are relative to the repo root. spends: the agent has a step that can spend money (always behind its own gate). publishes: the agent can put something in front of an audience (always behind a human approval). human_gates are detected on disk or declared in the step result file, then surfaced in the sprint's needs_human queue; growth-sprint never clears them itself. Validate with: python3 shared/scripts/validate_json.py agents/growth-sprint/assets/agents.schema.json agents/growth-sprint/assets/agents.json",
+  "agents": {
+    "project-context": {
+      "spec": "agents/project-context/AGENT_PROJECT_CONTEXT.md",
+      "purpose": "Shared business and brand context every other agent reads (context.json, brand.json).",
+      "inputs": [
+        { "name": "url", "required": false, "default": "none: everything comes from the founder's answers" },
+        { "name": "language", "required": false, "default": "en" }
+      ],
+      "reads": [],
+      "outputs": [
+        { "id": "context", "path": "project-context/context.json", "check": "schema", "schema": "agents/project-context/assets/context-schema.json" },
+        { "id": "context-md", "path": "project-context/context.md", "check": "file", "required": false },
+        { "id": "brand", "path": "project-context/brand.json", "check": "schema", "schema": "shared/schemas/brand.schema.json", "required": false }
+      ],
+      "spends": false,
+      "publishes": false,
+      "spend_note": "Local brand extraction; a scrape or search API only if the founder configured one in tools.json.",
+      "human_gates": [],
+      "parallel_safe": true
+    },
+    "market-signal": {
+      "spec": "agents/market-signal/AGENT_MARKET_SIGNAL.md",
+      "purpose": "Verified customer language: pains, quotes with permalinks, objections, angles per format.",
+      "inputs": [
+        { "name": "market", "required": true, "from": ["project-context/context.json#category"] },
+        { "name": "language", "required": false, "default": "project-context voice.language, else en" },
+        { "name": "recency_days", "required": false, "default": "90" }
+      ],
+      "reads": ["project-context/context.json"],
+      "outputs": [
+        { "id": "sidecar", "path": "market-signal/market-signal-<YYYYMMDD>.json", "check": "schema", "schema": "agents/market-signal/assets/market-signal.schema.json" },
+        { "id": "report", "path": "market-signal/market-signal-<YYYYMMDD>.md", "check": "file", "min_bytes": 200 }
+      ],
+      "spends": false,
+      "publishes": false,
+      "spend_note": "Free collectors by default; an API search provider only adds coverage and draws on the founder's own quota.",
+      "human_gates": [],
+      "parallel_safe": true
+    },
+    "first-users-hunter": {
+      "spec": "agents/first-users-hunter/AGENT_FIRST_USERS_HUNTER.md",
+      "purpose": "One row per person with a dated public signal, verified activity and a drafted first touch.",
+      "inputs": [
+        { "name": "idea", "required": true, "from": ["project-context/context.json#what_it_is"] },
+        { "name": "target_user", "required": true, "from": ["project-context/context.json#icp.who"] },
+        { "name": "max_people", "required": false, "default": "20" }
+      ],
+      "reads": ["project-context/context.json", "first-users-hunter/ledger.csv"],
+      "outputs": [
+        { "id": "people", "path": "first-users-hunter/people-<YYYYMMDD>.jsonl", "check": "jsonl_schema", "schema": "agents/first-users-hunter/assets/person.schema.json" },
+        { "id": "prospects", "path": "first-users-hunter/prospects-<YYYYMMDD>.csv", "check": "csv_header", "columns": ["prospect_id", "first_name", "role", "profile_url", "channel", "fit_rationale", "source_url", "found_on"] },
+        { "id": "report", "path": "first-users-hunter/first-users-<YYYYMMDD>.md", "check": "file", "min_bytes": 200 }
+      ],
+      "spends": false,
+      "publishes": false,
+      "spend_note": "Free collectors (HN, GitHub, Luma, official Reddit OAuth); nothing is sent, first touches are drafts.",
+      "human_gates": [],
+      "parallel_safe": true
+    },
+    "seo-audit": {
+      "spec": "agents/seo-audit/AGENT_SEO_AUDIT.md",
+      "purpose": "Local crawl, Search Console bands, refresh briefs and GEO panel for one site.",
+      "inputs": [
+        { "name": "domain", "required": true, "from": ["project-context/context.json#url"] },
+        { "name": "period_days", "required": false, "default": "28" }
+      ],
+      "reads": ["project-context/context.json", "seo-audit/state.json"],
+      "outputs": [
+        { "id": "report-json", "path": "seo-audit/runs/<YYYYMMDD>/seo-audit-<YYYYMMDD>.json", "check": "json" },
+        { "id": "report", "path": "seo-audit/runs/<YYYYMMDD>/seo-audit-<YYYYMMDD>.md", "check": "file", "min_bytes": 200 },
+        { "id": "state", "path": "seo-audit/state.json", "check": "json" }
+      ],
+      "spends": true,
+      "publishes": false,
+      "spend_note": "Paid SERP and answer-engine calls run only on an explicit yes inside the agent; without it free tiers take over and the run ends partial with the pending spend recorded.",
+      "human_gates": [
+        { "id": "paid-serp", "kind": "spend", "detect": "result_pending", "how": "Answer the pending spend question of seo-audit (paid SERP or answer-engine calls) in a seo-audit session, then resolve the needs_human item.", "after_clear": "rerun" }
+      ],
+      "parallel_safe": true
+    },
+    "landing-page-analyzer": {
+      "spec": "agents/landing-page-analyzer/AGENT_LANDING_PAGE_ANALYZER.md",
+      "purpose": "Conversion audit of one page: driven journey, DOM probes, scored grid, fixes rendered before and after.",
+      "inputs": [
+        { "name": "url", "required": true, "from": ["project-context/context.json#url"] },
+        { "name": "goal", "required": false, "default": "the action of the page's primary CTA" }
+      ],
+      "reads": ["project-context/context.json", "market-signal/market-signal-<YYYYMMDD>.json"],
+      "outputs": [
+        { "id": "report-json", "path": "landing-page-analyzer/landing-audit-<YYYYMMDD>.json", "check": "json" },
+        { "id": "report", "path": "landing-page-analyzer/landing-audit-<YYYYMMDD>.md", "check": "file", "min_bytes": 200 }
+      ],
+      "spends": false,
+      "publishes": false,
+      "spend_note": "Local Playwright captures; PageSpeed Insights needs no key at low volume.",
+      "human_gates": [],
+      "parallel_safe": true
+    },
+    "cold-outreach-builder": {
+      "spec": "agents/cold-outreach-builder/AGENT_COLD_OUTREACH_BUILDER.md",
+      "purpose": "Sourced per-prospect dossiers, a sequence linted to zero BLOCK and a sequencer export.",
+      "inputs": [
+        { "name": "offer", "required": true, "from": ["project-context/context.json#offer.core"] },
+        { "name": "icp", "required": true, "from": ["project-context/context.json#icp.who"] },
+        { "name": "prospect_list", "required": false, "default": "latest first-users-hunter/prospects-<YYYYMMDD>.csv" }
+      ],
+      "reads": ["project-context/context.json", "market-signal/market-signal-<YYYYMMDD>.json", "first-users-hunter/prospects-<YYYYMMDD>.csv"],
+      "outputs": [
+        { "id": "sidecar", "path": "cold-outreach-builder/outreach-<YYYYMMDD>/cold-outreach-output.json", "check": "json" },
+        { "id": "export", "path": "cold-outreach-builder/outreach-<YYYYMMDD>/sequence-export.csv", "check": "file" },
+        { "id": "summary", "path": "cold-outreach-builder/outreach-<YYYYMMDD>/outreach-summary-<YYYYMMDD>.md", "check": "file", "min_bytes": 200 }
+      ],
+      "spends": false,
+      "publishes": false,
+      "spend_note": "An email_finder API only if the founder configured one. Nothing is sent: the founder imports the export into their own sequencer.",
+      "human_gates": [],
+      "parallel_safe": true
+    },
+    "carousel-builder": {
+      "spec": "agents/carousel-builder/AGENT_CAROUSEL_BUILDER.md",
+      "purpose": "Sourced LinkedIn and Instagram carousel from a deck.json spec, rendered, measured and reviewed locally.",
+      "inputs": [
+        { "name": "topic", "required": true },
+        { "name": "language", "required": false, "default": "project-context voice.language, else en" },
+        { "name": "direction", "required": false, "default": "best ranked direction of the cover board in autonomous mode" }
+      ],
+      "reads": ["project-context/context.json", "project-context/brand.json", "market-signal/market-signal-<YYYYMMDD>.json"],
+      "outputs": [
+        { "id": "deck", "path": "carousel-builder/<label>-<YYYYMMDD>/deck.json", "check": "schema", "schema": "agents/carousel-builder/assets/deck.schema.json" },
+        { "id": "pdf", "path": "carousel-builder/<label>-<YYYYMMDD>/export/carousel.pdf", "check": "file", "min_bytes": 1000 },
+        { "id": "qa", "path": "carousel-builder/<label>-<YYYYMMDD>/export/qa.json", "check": "json" },
+        { "id": "captions", "path": "carousel-builder/<label>-<YYYYMMDD>/captions.md", "check": "file", "min_bytes": 100 }
+      ],
+      "spends": true,
+      "publishes": false,
+      "spend_note": "Renders locally for 0; an image model is a last resort through scripts/generate_image.py, and only with the founder's provider.",
+      "human_gates": [],
+      "parallel_safe": true
+    },
+    "static-ads-builder": {
+      "spec": "agents/static-ads-builder/AGENT_STATIC_ADS_BUILDER.md",
+      "purpose": "Funnel-aware static Meta ads rendered locally with exact copy, proofread, packaged for import (ads PAUSED).",
+      "inputs": [
+        { "name": "project_slug", "required": true, "from": ["project-context/context.json#project_slug"] },
+        { "name": "num_ads", "required": false, "default": "6" },
+        { "name": "performance_file", "required": false, "default": "latest exports/*.csv or insights*.json in the agent folder" }
+      ],
+      "reads": ["project-context/context.json", "project-context/brand.json", "market-signal/market-signal-<YYYYMMDD>.json", "static-ads-builder/ads-performance-<YYYYMMDD>.json"],
+      "outputs": [
+        { "id": "spec", "path": "static-ads-builder/<label>-<YYYYMMDD>/ads.json", "check": "schema", "schema": "agents/static-ads-builder/assets/ads.schema.json" },
+        { "id": "contact-sheet", "path": "static-ads-builder/<label>-<YYYYMMDD>/renders/contact-sheet.jpg", "check": "file", "min_bytes": 1000 },
+        { "id": "report", "path": "static-ads-builder/<label>-<YYYYMMDD>/static-ads-<YYYYMMDD>.md", "check": "file", "min_bytes": 200 }
+      ],
+      "spends": true,
+      "publishes": false,
+      "spend_note": "Image plates only, behind Gate 1 (which plates) and Gate 2 (model, resolution, total) of the agent. The sprint approval never replaces either gate. Ads are imported PAUSED by the founder.",
+      "human_gates": [
+        { "id": "plates-gate-1-and-2", "kind": "spend", "detect": "result_pending", "how": "Open a static-ads-builder session on this run: answer Gate 1 (which plates) and Gate 2 (model, resolution, total) yourself, or drop your own files with --provider manual. Then resolve the needs_human item.", "after_clear": "rerun" }
+      ],
+      "parallel_safe": true
+    },
+    "content-publisher": {
+      "spec": "agents/content-publisher/AGENT_CONTENT_PUBLISHER.md",
+      "purpose": "One variant per network, a checked queue, scheduling of what a person approved only.",
+      "inputs": [
+        { "name": "deliverables", "required": true },
+        { "name": "networks", "required": false, "default": "config.networks, else linkedin, instagram, x" },
+        { "name": "adapter", "required": false, "default": "dry-run" }
+      ],
+      "reads": ["carousel-builder/<label>-<YYYYMMDD>/captions.md", "short-video-builder/<label>-<YYYYMMDD>/posts.md", "founder-content-writer/<label>-<YYYYMMDD>/posts.json"],
+      "outputs": [
+        { "id": "posts", "path": "content-publisher/<label>-<YYYYMMDD>/posts.json", "check": "schema", "schema": "agents/content-publisher/assets/post-spec.schema.json" },
+        { "id": "queue", "path": "content-publisher/queue.json", "check": "schema", "schema": "agents/content-publisher/assets/queue.schema.json" },
+        { "id": "packet", "path": "content-publisher/<label>-<YYYYMMDD>/review-<YYYYMMDD>.md", "check": "file", "min_bytes": 100 }
+      ],
+      "spends": false,
+      "publishes": true,
+      "spend_note": "Dry-run adapter by default; a real adapter needs --live and the founder's key.",
+      "human_gates": [
+        { "id": "publish-approval", "kind": "publish", "detect": { "type": "json_count", "file": "content-publisher/queue.json", "array": "items", "field": "status", "in": ["to_review"], "min": 1 }, "how": "Read the review packet, then approve each item yourself in your own terminal: python3 agents/content-publisher/scripts/pubqueue.py approve <id> --queue <project>/content-publisher/queue.json --by <your-name> (or reject it). Then resolve the needs_human item; the sprint re-runs content-publisher to schedule what you approved.", "after_clear": "rerun" }
+      ],
+      "parallel_safe": false
+    },
+    "founder-content-writer": {
+      "spec": "agents/founder-content-writer/AGENT_FOUNDER_CONTENT_WRITER.md",
+      "purpose": "LinkedIn and X posts in the founder's voice from their raw material, every passage and number checked, handed to content-publisher.",
+      "inputs": [
+        { "name": "raw_material", "required": true },
+        { "name": "language", "required": false, "default": "voice pack, then project-context voice.language, then the language of the raw material" },
+        { "name": "networks", "required": false, "default": "linkedin, x" },
+        { "name": "posts_per_batch", "required": false, "default": "5, never padded past what the material holds" }
+      ],
+      "reads": ["project-context/context.json", "project-context/voice/voice.json", "project-context/memory/decisions.md", "project-context/memory/posts.jsonl", "market-signal/market-signal-<YYYYMMDD>.json", "content-publisher/queue.json"],
+      "outputs": [
+        { "id": "spec", "path": "founder-content-writer/<label>-<YYYYMMDD>/posts-spec.json", "check": "schema", "schema": "agents/founder-content-writer/assets/posts-spec.schema.json" },
+        { "id": "posts", "path": "founder-content-writer/<label>-<YYYYMMDD>/posts.json", "check": "schema", "schema": "agents/content-publisher/assets/post-spec.schema.json" },
+        { "id": "report", "path": "founder-content-writer/<label>-<YYYYMMDD>/founder-content-<YYYYMMDD>.md", "check": "file", "min_bytes": 200 }
+      ],
+      "spends": false,
+      "publishes": false,
+      "spend_note": "Local scripts only. Nothing is queued, approved or published: content-publisher takes posts.json and a person approves there.",
+      "human_gates": [],
+      "parallel_safe": true
+    },
+    "short-video-builder": {
+      "spec": "agents/short-video-builder/AGENT_SHORT_VIDEO_BUILDER.md",
+      "purpose": "Vertical 9:16 shorts from a landscape founder video, transcribed and rendered locally.",
+      "inputs": [
+        { "name": "video", "required": true },
+        { "name": "clips_count", "required": false, "default": "3" }
+      ],
+      "reads": ["project-context/context.json", "project-context/brand.json"],
+      "outputs": [
+        { "id": "clips", "path": "short-video-builder/<label>-<YYYYMMDD>/clips.json", "check": "schema", "schema": "agents/short-video-builder/assets/clips.schema.json" },
+        { "id": "qa", "path": "short-video-builder/<label>-<YYYYMMDD>/export/qa.json", "check": "json" },
+        { "id": "posts", "path": "short-video-builder/<label>-<YYYYMMDD>/posts.md", "check": "file", "min_bytes": 50 }
+      ],
+      "spends": false,
+      "publishes": false,
+      "spend_note": "Local transcription and ffmpeg only. The founder approves and publishes the shorts (through content-publisher).",
+      "human_gates": [],
+      "parallel_safe": true
+    },
+    "growth-pulse": {
+      "spec": "agents/growth-pulse/AGENT_GROWTH_PULSE.md",
+      "purpose": "Week-over-week numbers, correlations flagged as such, and 3 AARRR experiments for the next sprint.",
+      "inputs": [
+        { "name": "sources", "required": false, "default": "the analytics providers configured in growth-pulse/config.json" }
+      ],
+      "reads": ["project-context/memory/runs.jsonl", "content-publisher/queue.json", "growth-pulse/experiments-<YYYYMMDD>.json"],
+      "outputs": [
+        { "id": "experiments", "path": "growth-pulse/experiments-<YYYYMMDD>.json", "check": "schema", "schema": "agents/growth-pulse/assets/experiments.schema.json" },
+        { "id": "report", "path": "growth-pulse/growth-pulse-<YYYYMMDD>.md", "check": "file", "min_bytes": 200 }
+      ],
+      "spends": false,
+      "publishes": false,
+      "spend_note": "Reads the founder's analytics; an experiment that costs money carries spend_requires_approval and goes through the next sprint's approval.",
+      "human_gates": [],
+      "parallel_safe": true,
+      "next_sprint_input": "growth-pulse/experiments-<YYYYMMDD>.json"
+    }
+  }
+}

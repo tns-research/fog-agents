@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "first_name": "Test",
+  "last_name": "Founder",
+  "role": "Founder",
+  "company": "Oakline",
+  "linkedin_url": "https://www.linkedin.com/in/fictional-test-founder-0001/",
+  "geography": "fr",
+  "language": "en",
+  "register": "n/a",
+  "researched_at": "2026-10-12",
+  "relationship": "none",
+  "disqualifiers": [],
+  "prospect_id": "d-ok",
+  "email": "founders@oakline.example",
+  "email_source_url": "https://oakline.example/contact",
+  "pages_read": [
+    "https://www.linkedin.com/posts/fictional-test-founder-0001_first-hire-activity-7505550979891323456-AbCd",
+    "https://oakline.example/blog/launch"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "type": "post",
+      "claim": "The founder posted about hiring a first engineer.",
+      "date": "2026-09-15",
+      "date_source": "post_id",
+      "source_url": "https://www.linkedin.com/posts/fictional-test-founder-0001_first-hire-activity-7505550979891323456-AbCd",
+      "excerpt": "We just hired our first engineer, after four months of doing support ourselves.",
+      "owner": "self"
+    },
+    {
+      "id": "f2",
+      "type": "launch",
+      "claim": "Oakline launched for every bakery in Lyon after a pilot.",
+      "date": "2026-06-03",
+      "date_source": "page",
+      "source_url": "https://oakline.example/blog/launch",
+      "excerpt": "Oakline is live for every bakery in Lyon, after a pilot with nine shops.",
+      "owner": "company"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+---
+import Footer from '../components/Footer.astro';
+const { title, description } = Astro.props;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={Astro.url.href} />
+  </head>
+  <body>
+    <slot />
+    <Footer />
+  </body>
+</html>

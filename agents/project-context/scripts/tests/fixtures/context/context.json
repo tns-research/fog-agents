@@ -1,0 +1,23 @@
+{
+  "_comment": "Fictional fixture: Fixturely, its people and its numbers do not exist. RECENT is replaced by a date 15 days before the test day.",
+  "project_slug": "fixturely",
+  "url": "https://fixturely.example",
+  "one_liner": "Fixturely chases late invoices for freelance designers and small studios.",
+  "what_it_is": "Invoice reminders that go out on their own. The freelancer approves the tone once, Fixturely sends the follow-ups.",
+  "category": "freelance invoicing tools",
+  "icp": { "who": "Freelance designers and studios of two to ten people", "pains": ["Friday afternoons lost chasing late invoices"], "jobs": ["Get paid without writing the awkward email"] },
+  "offer": { "core": "Automatic invoice reminders", "price_model": "Per month", "differentiators": ["Reminders in the freelancer's own tone"] },
+  "positioning": {
+    "against": "A spreadsheet of unpaid invoices and a calendar reminder",
+    "promise": "Invoices that chase themselves",
+    "proof": [
+      "Reminders go out on the due date, then every seven days",
+      { "id": "waitlist", "claim": "1 240 freelancers on the waitlist", "kind": "metric", "source": "https://fixturely.example/blog/waitlist", "date": "RECENT" },
+      { "id": "pilot-2024", "claim": "38 studios sent 2 900 invoices during the pilot", "kind": "metric", "source": "docs/deck.pdf#p3", "date": "2024-05-01" },
+      { "id": "lena-quote", "claim": "We get paid in a week now.", "kind": "testimonial", "source": "https://fixturely.example/stories/parkline", "date": "RECENT",
+        "consent": { "status": "granted", "scope": ["carousel", "posts"], "date": "RECENT", "by": "the studio owner, email" } },
+      { "id": "tone-feature", "claim": "Reminders are written in the freelancer's own tone", "kind": "feature" }
+    ]
+  },
+  "voice": { "tone": "founder", "language": "en", "banned_words": [], "claims_policy": "no invented stats, every metric must trace to a URL or be omitted" }
+}

@@ -1,0 +1,286 @@
+{
+  "id": "photo-poster",
+  "name": "Photo poster",
+  "summary": "Event-poster language: the photo shown whole as the hero, a small logo on a paper bar, a coloured strip and a solid panel carrying heavy condensed uppercase titles. Without a photo, the slide becomes a type poster on solid fields.",
+  "best_for": [
+    "events",
+    "people and places",
+    "product in use",
+    "announcements",
+    "punchy hooks with one big number"
+  ],
+  "avoid_for": [
+    "long nuanced essays that need a quiet reading voice",
+    "dense tables or many-series charts"
+  ],
+  "mood": "light",
+  "rules": {
+    "grid": "Full-bleed horizontal bands, edge to edge: paper logo bar, media or type field, accent strip, solid ink panel. Text sits inside the bands on 64 px side margins. Content slides hang the title panel from the top edge; type-poster slides (stat, quote) stand their panel on the bottom edge.",
+    "type": "Anton (heavy condensed, uppercase, tight leading) for titles, numerals, list items and labels; Archivo (clean grotesque) for body, sub-lines, sources and chart labels. Never mix a third family.",
+    "density": "One idea per slide. Titles run big and short (12 words at most); body text stays under 55 words. Type grows until the bands are full: no empty paper band.",
+    "accent": "The strip is the accent: --accent-fill under ink, framed by ink rules. The accent group of a title takes --accent-fill as text on the ink panel or as a block highlight under ink on paper. Charts: bars in ink, the highlight in --accent-fill with an ink outline. Never a gradient, never a glow, never a big white logo with a shadow.",
+    "photo": "The hero of the cover and media slides, shown whole (contain) over a blurred copy of itself so there are no empty bands. Never cropped, never filtered, never carrying text without a solid band of its own.",
+    "texture": "Light paper grain on paper fields (CSS turbulence, under 8 %), a halftone dot mat behind screenshots and drawings. Panels stay flat."
+  },
+  "palette": {
+    "paper": "#f2ede1",
+    "ink": "#14130f",
+    "muted": "#57534a",
+    "rule": "#14130f",
+    "chart_base": "#14130f",
+    "chart_base_2": "#8d877a",
+    "chart_base_3": "#c9c2b3",
+    "mat": "#e4ddcd",
+    "accent": "#f04e23",
+    "accent_2": "#ffd23f",
+    "inverse": {
+      "paper": "#14130f",
+      "ink": "#f2ede1",
+      "muted": "#b3ad9f",
+      "rule": "#f2ede1",
+      "chart_base": "#f2ede1",
+      "chart_base_2": "#8d877a",
+      "chart_base_3": "#4a463e",
+      "mat": "#24221d"
+    }
+  },
+  "fonts": {
+    "display": {
+      "family": "Anton",
+      "google": "Anton",
+      "fallback": "'Oswald', Impact, 'Arial Narrow', sans-serif"
+    },
+    "text": {
+      "family": "Archivo",
+      "google": "Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900",
+      "fallback": "'Helvetica Neue', Helvetica, sans-serif"
+    }
+  },
+  "brand": {
+    "fonts": false,
+    "inverse_from_brand": true
+  },
+  "chrome": {
+    "logo": [
+      "cover",
+      "cta"
+    ],
+    "handle": [
+      "content"
+    ],
+    "folio": false
+  },
+  "safe_margin": 56,
+  "type_scale": {
+    "cover_title": {
+      "min": 88,
+      "max": 210,
+      "lines": 6,
+      "steps": [
+        88,
+        96,
+        104,
+        112,
+        124,
+        136,
+        148,
+        160,
+        176,
+        192,
+        210
+      ]
+    },
+    "cover_title_media": {
+      "min": 72,
+      "max": 132,
+      "lines": 4,
+      "steps": [
+        72,
+        80,
+        88,
+        96,
+        104,
+        112,
+        124,
+        132
+      ]
+    },
+    "cover_sub": {
+      "min": 30,
+      "max": 40,
+      "lines": 4
+    },
+    "title": {
+      "min": 60,
+      "max": 112,
+      "lines": 4,
+      "steps": [
+        60,
+        68,
+        76,
+        84,
+        92,
+        100,
+        112
+      ]
+    },
+    "title@text": {
+      "min": 72,
+      "max": 136,
+      "lines": 5,
+      "steps": [
+        72,
+        80,
+        88,
+        100,
+        112,
+        124,
+        136
+      ]
+    },
+    "title@chart": {
+      "min": 56,
+      "max": 92,
+      "lines": 3,
+      "steps": [
+        56,
+        64,
+        72,
+        80,
+        92
+      ]
+    },
+    "title_media": {
+      "min": 52,
+      "max": 76,
+      "lines": 3,
+      "steps": [
+        52,
+        60,
+        68,
+        76
+      ]
+    },
+    "sub": {
+      "min": 30,
+      "max": 38,
+      "lines": 3
+    },
+    "body": {
+      "min": 32,
+      "max": 46,
+      "lines": 13
+    },
+    "list": {
+      "min": 40,
+      "max": 64,
+      "lines": 2
+    },
+    "stat_value": {
+      "min": 220,
+      "max": 560,
+      "lines": 1
+    },
+    "stat_label": {
+      "min": 48,
+      "max": 96,
+      "lines": 4,
+      "steps": [
+        48,
+        56,
+        64,
+        72,
+        80,
+        88,
+        96
+      ]
+    },
+    "stat_context": {
+      "min": 30,
+      "max": 40,
+      "lines": 5
+    },
+    "chart_title": {
+      "min": 30,
+      "max": 38,
+      "lines": 2
+    },
+    "quote": {
+      "min": 64,
+      "max": 156,
+      "lines": 8,
+      "steps": [
+        64,
+        72,
+        80,
+        88,
+        96,
+        108,
+        120,
+        132,
+        144,
+        156
+      ]
+    },
+    "cta_title": {
+      "min": 72,
+      "max": 132,
+      "lines": 4
+    },
+    "cta": {
+      "min": 76,
+      "max": 196,
+      "lines": 5,
+      "steps": [
+        76,
+        88,
+        100,
+        112,
+        124,
+        136,
+        152,
+        168,
+        184,
+        196
+      ]
+    },
+    "cta_sub": {
+      "min": 30,
+      "max": 40,
+      "lines": 3
+    }
+  },
+  "budgets": {
+    "title_words": 12,
+    "cover_title_words": 12,
+    "body_words": 55,
+    "list_items": 5
+  },
+  "chart_box": {
+    "default": [
+      952,
+      720
+    ],
+    "chart": [
+      952,
+      760
+    ]
+  },
+  "cover_layouts": [
+    "cover-a",
+    "cover-b"
+  ],
+  "layouts": {
+    "cover-a": "The validated event poster: paper logo bar with a thick ink rule, the photo whole over its blurred copy, the accent strip carrying the source, the ink panel with the title in Anton caps. Without a photo: the title fills a paper type field, the standfirst sits on the ink panel.",
+    "cover-b": "The photo full height over its blurred copy, the title on its own inset ink panel overlapping the lower part, the logo on a paper bar along the bottom edge. Without a photo: a full ink field, strip on top, title in paper caps.",
+    "text": "Ink title panel hanging from the top edge over the accent strip, body in large grotesque on paper.",
+    "list": "Ink title panel, then items in Anton caps on ink rules with numerals in ink squares.",
+    "stat": "Type poster: the numeral fills the width of the paper field, label and context on the ink panel standing on the bottom edge.",
+    "chart": "Ink title panel, chart heading in caps over an ink rule, bars in ink with the highlight in the accent fill outlined in ink.",
+    "quote": "Type poster: the quote in Anton caps on paper with a block-highlighted opening mark, attribution on the ink panel at the bottom.",
+    "media": "Ink title panel, then the photo whole on its blurred mat or the screenshot framed in ink on a halftone mat, numbered legend in accent squares.",
+    "logos": "Ink title panel, logos in a ruled grid of paper cells.",
+    "visual": "Ink title panel, the drawing on a halftone mat framed by ink rules.",
+    "cta": "Paper logo bar, the action in huge caps on the ink panel, the URL on the accent strip, the standfirst on paper."
+  }
+}

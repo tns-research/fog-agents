@@ -1,0 +1,21 @@
+{
+  "_comment": "content-publisher per-project config. Copied to <your-projects-root>/<project>/content-publisher/config.json on the first run, then `scripts/pubqueue.py init --config` seeds queue.json with project and the settings below (the queue keeps its own copy: to change a setting later, edit the settings block of queue.json, then run pubqueue.py validate; init --force writes a new, empty queue, items included). project: the project slug recorded in queue.json. language: language of the variants when neither the deliverable nor context.json sets one. timezone: IANA name, every slot is local time there. slots: weekly publishing times per network (mon..sun, HH:MM); a network without slots gets no slot until one is set with edit --slot. window_minutes: two posts of the same network are never closer than this. lead_minutes: no slot sooner than now plus this. horizon_days: how far plan looks for a free slot. approvers: names allowed in `pubqueue.py approve --by` (empty = any person's name; agent names are always refused). adapter: dry-run (default, sends nothing), zernio, command or webhook, see scripts/README.md; real adapters also need --live and their key in the environment, never in this file. networks: default networks of a new post. x_allow_thread: false keeps X to one tweet plus the link reply. link_in_bio_patterns: regexes one of which an Instagram caption must match when the post has a link. Optional: a \"tools\" object (same keys as shared/tools.example.json, for example {\"critic\": \"builtin\", \"copy_lint\": \"local\"}) overrides the project's tools.json for this agent.",
+  "project": "<project-slug>",
+  "language": "en",
+  "networks": ["linkedin", "instagram", "x"],
+  "timezone": "Europe/Paris",
+  "slots": {
+    "linkedin": [{ "day": "tue", "time": "09:00" }, { "day": "thu", "time": "09:00" }],
+    "instagram": [{ "day": "mon", "time": "12:00" }, { "day": "fri", "time": "12:00" }],
+    "x": [{ "day": "tue", "time": "12:30" }, { "day": "wed", "time": "12:30" }, { "day": "thu", "time": "12:30" }],
+    "threads": [{ "day": "wed", "time": "18:00" }],
+    "bluesky": [{ "day": "wed", "time": "18:00" }]
+  },
+  "window_minutes": 120,
+  "lead_minutes": 60,
+  "horizon_days": 28,
+  "approvers": [],
+  "adapter": "dry-run",
+  "x_allow_thread": false,
+  "link_in_bio_patterns": ["\\blink(?:ed)? in (?:our |the |my )?bio\\b", "\\blien en bio\\b"]
+}

@@ -1,0 +1,59 @@
+{
+  "project": "swanbase-example",
+  "date": "2026-10-12",
+  "channel": "email",
+  "language": "en",
+  "goal": "give feedback",
+  "offer": "swanbase is a Paris accelerator that works with first-time founders all year, from the first prototype to the first round.",
+  "_note_sequence": "Templates for tier B rows. Tier A rows get the steps of messages.json instead. {{hook}} comes from messages.json; {{sender_first_name}} stays as a token for the sequencer.",
+  "sequence": [
+    {
+      "n": 1,
+      "day": 0,
+      "type": "initial_hook",
+      "cialdini_primary": "reciprocity",
+      "subjects": [
+        {
+          "variant": "A",
+          "style": "direct",
+          "text": "a pitch checklist for {{company}}"
+        },
+        {
+          "variant": "B",
+          "style": "question",
+          "text": "before {{company}} raises?"
+        }
+      ],
+      "body": "Hi {{first_name}},\n\n{{hook}}\n\nWe run swanbase, a Paris accelerator that works with first-time founders all year, from the first prototype to the first round. We wrote a one-page checklist of the questions investors ask about early user tests. Want me to send it?\n\n{{sender_first_name}}"
+    },
+    {
+      "n": 2,
+      "day": 3,
+      "type": "bump",
+      "cialdini_primary": "commitment",
+      "subjects": [],
+      "body": "{{first_name}}, a short follow-up on my note about {{company}}.\n\nThe checklist fits on one page and works without us. Should I send it?\n\n{{sender_first_name}}"
+    },
+    {
+      "n": 3,
+      "day": 8,
+      "type": "proof_or_perspective",
+      "branch": "mechanism",
+      "cialdini_primary": "authority",
+      "subjects": [],
+      "body": "{{first_name}}, here is how a year with swanbase works. We work with founders all year, from the first pitch to the months after the round.\n\nIf {{company}} needs that kind of support this year, a 20-minute call is enough to see whether it fits.\n\n{{sender_first_name}}"
+    },
+    {
+      "n": 4,
+      "day": 16,
+      "type": "breakup",
+      "cialdini_primary": "liking",
+      "subjects": [],
+      "body": "{{first_name}}, I will stop writing here. If a year-round program becomes useful for {{company}} later, reply to this thread and we will pick it up from there.\n\n{{sender_first_name}}"
+    }
+  ],
+  "deliverability": {
+    "source": "scripts/check_sender.py output, copied as is",
+    "status": "not run in this example"
+  }
+}

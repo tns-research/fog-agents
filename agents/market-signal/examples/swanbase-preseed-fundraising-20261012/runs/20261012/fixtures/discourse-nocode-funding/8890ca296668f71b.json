@@ -1,0 +1,15 @@
+{
+  "url": "https://forum.example/posts/900091.json",
+  "status": 200,
+  "fetched_at": "2026-10-12T09:00:38Z",
+  "body": {
+    "id": 900091,
+    "topic_id": 90014,
+    "topic_slug": "should-i-cancel-my-team-plan",
+    "username": "user-ddab6c",
+    "created_at": "2026-09-14T08:49:34.999Z",
+    "cooked": "Same here!<br><br>The team plan is too expensive in my opinion, that\u2019s why I downgraded after the last price change. Charging builders serious money to work on client apps, when builders are the reason Blockyard grew at all, feels short-sighted to me. Honestly, Blockyard [...]",
+    "post_number": 3,
+    "reply_count": 1
+  }
+}

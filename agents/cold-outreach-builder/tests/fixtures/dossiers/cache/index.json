@@ -1,0 +1,32 @@
+{
+  "0e621f6cf1994320": {
+    "url": "https://oakline.example/blog/2023",
+    "source": "file:page3.txt",
+    "cached_at": "2026-10-12T08:24:34Z",
+    "chars": 71
+  },
+  "6b68b38b2f85e45a": {
+    "url": "https://www.linkedin.com/posts/fictional-test-founder-0001_first-hire-activity-7505550979891323456-AbCd",
+    "source": "file:page0.txt",
+    "cached_at": "2026-10-12T08:24:33Z",
+    "chars": 111
+  },
+  "c30e6d04004c6b22": {
+    "url": "https://oakline.example/contact",
+    "source": "file:page4.txt",
+    "cached_at": "2026-10-12T08:24:34Z",
+    "chars": 61
+  },
+  "da79684b455ca78d": {
+    "url": "https://www.linkedin.com/posts/someone-else-0002_tagged-activity-7507362919219323456-EfGh",
+    "source": "file:page1.txt",
+    "cached_at": "2026-10-12T08:24:33Z",
+    "chars": 104
+  },
+  "e1635f22266c9c21": {
+    "url": "https://oakline.example/blog/launch",
+    "source": "file:page2.txt",
+    "cached_at": "2026-10-12T08:24:34Z",
+    "chars": 100
+  }
+}

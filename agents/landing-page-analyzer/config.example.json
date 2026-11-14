@@ -1,0 +1,11 @@
+{
+  "_comment": "Copied to <project-root>/<project>/landing-page-analyzer/config.json on first run. Replace placeholders. Never commit a real config to the agent folder. Optional: add a tools object (keys from shared/tools.md, for example screenshot, scrape, page_speed) to override the project tools.json for this agent. repo (optional): path to the site source code on this machine, for example ../acme-site; when set, scripts/repo_patch.py turns every fix validated by the before/after into a patch against it (the repo is only read, never written or committed). Leave it empty when the site is edited only in a hosted builder.",
+  "project": "<project-slug>",
+  "url": "https://example.com/",
+  "goal": "signup",
+  "page_type": "saas | ecom | local | lead | app",
+  "target_user": "<who the page is for>",
+  "context": "<optional: pricing, value prop, competitor URLs>",
+  "language": "en",
+  "repo": ""
+}

@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "content-publisher queue.json",
+  "description": "The publication queue. Written only by scripts/pubqueue.py, never by hand: one item per post and network, statuses to_review -> approved -> scheduled -> published or failed (plus rejected). Only the human command `pubqueue.py approve`, run at an interactive terminal, moves an item to approved; the approval is bound to the content hash and sealed with an HMAC under a local key kept outside the project, so an approval typed into this file is refused by schedule and validate, and any edit sends the item back to to_review. Validate with: python3 shared/scripts/validate_json.py agents/content-publisher/assets/queue.schema.json <queue.json>, then `pubqueue.py validate` for the invariants a schema cannot express (approval hash, slot windows, transitions).",
+  "type": "object",
+  "required": ["schema_version", "settings", "items"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "project": { "type": "string" },
+    "settings": { "$ref": "#/$defs/settings" },
+    "items": { "type": "array", "items": { "$ref": "#/$defs/item" } }
+  },
+  "$defs": {
+    "network": { "type": "string", "enum": ["linkedin", "x", "instagram", "threads", "bluesky"] },
+    "slot": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}$" },
+    "hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "weekly_slot": {
+      "type": "object",
+      "required": ["day", "time"],
+      "additionalProperties": false,
+      "properties": {
+        "day": { "type": "string", "enum": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"] },
+        "time": { "type": "string", "pattern": "^[0-2][0-9]:[0-5][0-9]$" }
+      }
+    },
+    "settings": {
+      "type": "object",
+      "required": ["timezone", "slots", "window_minutes", "lead_minutes"],
+      "additionalProperties": false,
+      "properties": {
+        "timezone": { "type": "string", "description": "IANA name, for example Europe/Paris. Slots are local times in this zone." },
+        "slots": {
+          "type": "object",
+          "additionalProperties": { "type": "array", "items": { "$ref": "#/$defs/weekly_slot" } },
+          "description": "Weekly publishing slots per network."
+        },
+        "window_minutes": {
+          "type": "integer", "minimum": 1, "maximum": 10080,
+          "description": "Two posts of the same network are never closer than this."
+        },
+        "lead_minutes": {
+          "type": "integer", "minimum": 0, "maximum": 10080,
+          "description": "No slot is planned sooner than now plus this."
+        },
+        "horizon_days": { "type": "integer", "minimum": 1, "maximum": 365 },
+        "approvers": {
+          "type": "array", "items": { "type": "string", "minLength": 2 },
+          "description": "Names allowed in approve --by. Empty: any name except the reserved agent names."
+        },
+        "adapter": { "type": "string", "description": "Default publishing adapter, dry-run unless the founder changed it." },
+        "x_allow_thread": { "type": "boolean", "description": "false (default): one tweet, plus the link reply." },
+        "link_in_bio_patterns": {
+          "type": "array", "items": { "type": "string" },
+          "description": "Regexes, case-insensitive, one of which an Instagram caption must match when the post has a link."
+        }
+      }
+    },
+    "media": {
+      "type": "object",
+      "required": ["path", "type"],
+      "additionalProperties": false,
+      "properties": {
+        "path": { "type": "string", "description": "Relative to the queue file." },
+        "type": { "type": "string", "enum": ["image", "video", "document"] },
+        "alt": { "type": "string" },
+        "title": { "type": "string" },
+        "sha256": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "event": {
+      "type": "object",
+      "required": ["at", "action"],
+      "additionalProperties": false,
+      "properties": {
+        "at": { "type": "string" },
+        "action": { "type": "string" },
+        "by": { "type": "string" },
+        "note": { "type": "string" },
+        "from": { "type": "string" },
+        "to": { "type": "string" }
+      }
+    },
+    "item": {
+      "type": "object",
+      "required": ["id", "ref", "network", "status", "text", "content_hash", "checks", "history"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,60}\\.(linkedin|x|instagram|threads|bluesky)$" },
+        "ref": { "type": "string" },
+        "network": { "$ref": "#/$defs/network" },
+        "kind": { "type": "string", "enum": ["carousel", "image", "text", "video", "document"] },
+        "language": { "type": "string" },
+        "status": { "type": "string", "enum": ["to_review", "approved", "scheduled", "published", "failed", "rejected"] },
+        "text": { "type": "string", "minLength": 1 },
+        "first_comment": { "type": ["string", "null"] },
+        "reply": { "type": ["string", "null"] },
+        "link": { "type": ["string", "null"] },
+        "media": { "type": "array", "items": { "$ref": "#/$defs/media" } },
+        "source": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "agent": { "type": "string" },
+            "path": { "type": "string" },
+            "spec": { "type": "string" }
+          }
+        },
+        "slot_target": { "type": ["string", "null"] },
+        "slot": { "type": ["string", "null"] },
+        "content_hash": { "$ref": "#/$defs/hash" },
+        "checks": {
+          "type": "object",
+          "required": ["lint", "writing_gate"],
+          "additionalProperties": false,
+          "properties": {
+            "lint": { "type": "string", "enum": ["pass", "fail"] },
+            "writing_gate": { "type": "string", "enum": ["pass", "fail", "manual"] },
+            "block": { "type": "integer", "minimum": 0 },
+            "warn": { "type": "integer", "minimum": 0 },
+            "length": { "type": "string" },
+            "warnings": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "approval": {
+          "type": ["object", "null"],
+          "required": ["by", "at", "content_hash"],
+          "additionalProperties": false,
+          "properties": {
+            "by": { "type": "string" },
+            "at": { "type": "string" },
+            "content_hash": { "$ref": "#/$defs/hash" },
+            "mac": { "type": "string", "pattern": "^[0-9a-f]{64}$", "description": "HMAC of the item id, content hash, approver and time under the local approval key (~/.config/fog-agents/approval.key or FOG_APPROVAL_KEY_FILE). Written by `pubqueue.py approve` only; schedule, mark and validate refuse an approval without a valid mac." }
+          }
+        },
+        "provider": {
+          "type": ["object", "null"],
+          "additionalProperties": false,
+          "properties": {
+            "name": { "type": "string" },
+            "post_id": { "type": ["string", "null"] },
+            "at": { "type": "string" },
+            "payload": { "type": "string", "description": "Outbox file holding what was sent, relative to the queue file." }
+          }
+        },
+        "error": { "type": ["string", "null"] },
+        "created": { "type": "string" },
+        "updated": { "type": "string" },
+        "history": { "type": "array", "items": { "$ref": "#/$defs/event" } }
+      }
+    }
+  }
+}

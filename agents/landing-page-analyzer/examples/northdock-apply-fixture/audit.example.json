@@ -1,0 +1,48 @@
+{
+  "_comment": "Excerpt of a landing-audit sidecar for the fixture: only the parts that carry evidence. scripts/check_evidence.py resolves every reference against a run of probe.py, journey.py, fixes.py and repo_patch.py on the fixture (see scripts/selftest.py); repo is the fixture source in repo/, relative to this file.",
+  "url": "http://127.0.0.1:8000/index.html",
+  "date": "2026-10-12",
+  "goal": "application",
+  "page_type": "lead",
+  "findings": [
+    {"id": "U039", "dimension": "Usability", "status": "Missing", "severity": 4, "confidence": "high", "viewport": "mobile",
+     "note": "Program table sticks out of the 390 px screen", "evidence": ["probe:mobile.overflow_x_px", "probe:mobile.overflow.offenders", "fix:01-mobile-overflow"]},
+    {"id": "U036", "dimension": "Usability", "status": "Missing", "severity": 3, "confidence": "high", "viewport": "mobile",
+     "note": "Footer links and social icons fail WCAG 2.5.8", "evidence": ["probe:mobile.targets_under_24", "probe:mobile.targets.under_24", "fix:02-touch-targets"]},
+    {"id": "U009", "dimension": "Usability", "status": "Missing", "severity": 5, "confidence": "high", "viewport": "mobile",
+     "note": "Apply now ends below the first mobile screen", "evidence": ["probe:mobile.primary_cta_above_fold", "probe:mobile.primary_cta_bottom_px", "journey:mobile/01-landing.png", "fix:03-hero-cta"]},
+    {"id": "U038", "dimension": "Usability", "status": "Partial", "severity": 3, "confidence": "high", "viewport": "both",
+     "note": "Hero subline and button label under 4.5:1", "evidence": ["probe:mobile.contrast.failures", "probe:desktop.contrast_failures", "fix:03-hero-cta"]},
+    {"id": "U025", "dimension": "Usability", "status": "Missing", "severity": 3, "confidence": "med", "viewport": "mobile",
+     "note": "Late promo banner and a hero image without dimensions push the page down on mobile", "evidence": ["probe:mobile.cls_observed", "probe:mobile.cls.worst", "fix:04-banner-shift"]},
+    {"id": "U029", "dimension": "Usability", "status": "Partial", "severity": 3, "confidence": "high", "viewport": "both",
+     "note": "Phone field labelled by its placeholder only", "evidence": ["journey:mobile/12-fill-phone.png", "fix:05-apply-form"]},
+    {"id": "U041", "dimension": "Usability", "status": "Missing", "severity": 2, "confidence": "high", "viewport": "desktop",
+     "note": "Nav links show no focus indicator", "evidence": ["journey:step:5", "journey:desktop/05-keyboard-focus.png"]},
+    {"id": "T006", "dimension": "Trust", "status": "Missing", "severity": 3, "confidence": "high", "viewport": "both",
+     "note": "Footer Press link returns 404", "evidence": ["journey:step:3"]},
+    {"id": "U031", "dimension": "Usability", "status": "OK", "confidence": "high", "viewport": "both",
+     "note": "Errors are specific and sit 4 px under their field", "evidence": ["journey:step:7", "journey:mobile/07-empty-submit.png"]},
+    {"id": "U089", "dimension": "Usability", "status": "OK", "confidence": "high", "viewport": "both",
+     "note": "Button switches to Sending... and disables on click", "evidence": ["journey:step:15"]}
+  ],
+  "repo": "repo",
+  "repo_patches": [
+    {"fix": "01-mobile-overflow", "status": "ready", "patch": "repo-patches/01-mobile-overflow.patch", "locations": ["src/styles/global.css:47"]},
+    {"fix": "02-touch-targets", "status": "ready", "patch": "repo-patches/02-touch-targets.patch", "locations": ["src/styles/global.css:58", "src/styles/global.css:59", "src/styles/global.css:61", "src/styles/global.css:62"]},
+    {"fix": "03-hero-cta", "status": "ready-needs-import", "patch": "repo-patches/03-hero-cta.patch", "locations": ["src/i18n/en.json:8", "src/styles/global.css:25", "src/styles/global.css:36", "src/styles/lpa-fixes.css:8"], "reason": "creates src/styles/lpa-fixes.css, to import after the main stylesheet"},
+    {"fix": "04-banner-shift", "status": "ready-needs-import", "patch": "repo-patches/04-banner-shift.patch", "locations": ["src/styles/lpa-fixes.css:8", "src/styles/global.css:31"], "reason": "creates src/styles/lpa-fixes.css, to import after the main stylesheet"},
+    {"fix": "05-apply-form", "status": "manual", "locations": ["src/styles/global.css:69"], "candidates": ["src/components/ApplyForm.astro:8", "src/components/ApplyFormLegacy.astro:6"], "reason": "the form exists twice (ApplyForm.astro and ApplyFormLegacy.astro): #email, #phone and #startup are each in 2 places"},
+    {"fix": "all", "status": "ready", "patch": "repo-patches/all.patch"}
+  ],
+  "top_fixes": [
+    {"rank": 1, "fix": "Show Apply now in the first mobile screen and fix its label contrast", "where": "hero", "criteria": ["U009", "U038"], "evidence": ["fix:03-hero-cta"]},
+    {"rank": 2, "fix": "Keep the program table inside the screen", "where": "program table", "criteria": ["U039"], "evidence": ["fix:01-mobile-overflow", "patch:01-mobile-overflow"]},
+    {"rank": 3, "fix": "Reserve the promo banner and hero image space", "where": "top of page", "criteria": ["U025"], "evidence": ["fix:04-banner-shift"]},
+    {"rank": 4, "fix": "Label the phone field and set input types and autocomplete", "where": "application form", "criteria": ["U029", "U032", "U033"], "evidence": ["fix:05-apply-form"]},
+    {"rank": 5, "fix": "Enlarge footer tap targets", "where": "footer", "criteria": ["U036"], "evidence": ["fix:02-touch-targets"]}
+  ],
+  "rewrites": [
+    {"location": "H1", "current": "Unlock your founder potential with next-generation synergy", "evidence": ["page:\"Unlock your founder potential with next-generation synergy\"", "fix:03-hero-cta"]}
+  ]
+}

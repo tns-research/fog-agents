@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "founder-content-writer batch spec (posts-spec.json)",
+  "description": "What the model writes: one entry per post, with the angle, the hook type, the body per network, the source passages copied word for word and every claim the post makes. scripts/check_spec.py checks it against the raw material, positioning.proof, the network limits of content-publisher and the writing gate; scripts/build_batch.py turns a passing spec into posts.json. Validate the shape alone with: python3 shared/scripts/validate_json.py agents/founder-content-writer/assets/posts-spec.schema.json <posts-spec.json>",
+  "type": "object",
+  "required": ["schema_version", "project", "label", "date", "language", "summary", "posts"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "project": { "type": "string", "minLength": 1, "description": "Project slug." },
+    "label": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,60}$", "description": "Batch label, also the folder name without its date." },
+    "date": { "$ref": "#/$defs/date" },
+    "language": { "type": "string", "pattern": "^[a-z]{2}$", "description": "The founder's language, the language of every post and of the summary." },
+    "summary": { "type": "string", "minLength": 1, "description": "Two or three sentences for the founder, in their language: what this batch holds and what was left out. Goes through the writing gate." },
+    "sources_manifest": { "type": "string", "description": "Path of the manifest written by scripts/ingest.py, relative to this file. Default: sources/manifest.json." },
+    "posts": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/post" } },
+    "dropped": {
+      "type": "array",
+      "description": "Material the raw notes hold and the batch does not use because no allowed source covers it: a number that is not in positioning.proof, a client name, a result. The founder decides whether to add it to project-context.",
+      "items": {
+        "type": "object",
+        "required": ["text", "reason"],
+        "additionalProperties": false,
+        "properties": {
+          "text": { "type": "string", "minLength": 1 },
+          "reason": { "type": "string", "minLength": 1 },
+          "fix": { "type": "string", "description": "What would make it usable, for example: add it to positioning.proof with its source." }
+        }
+      }
+    },
+    "limitations": { "type": "array", "items": { "type": "string" }, "description": "What the model knows it could not check. Added to the Limitations the scripts detect." }
+  },
+  "$defs": {
+    "date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "slot": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}$" },
+    "network": { "type": "string", "enum": ["linkedin", "x"] },
+    "post": {
+      "type": "object",
+      "required": ["ref", "angle", "angle_type", "hook_type", "structure", "networks", "variants", "source_passages", "claims"],
+      "additionalProperties": false,
+      "properties": {
+        "ref": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,60}$", "description": "Stable id, same pattern as content-publisher: queue items become <ref>.<network>." },
+        "angle": { "type": "string", "minLength": 10, "description": "The one idea of the post, in one sentence." },
+        "angle_type": { "type": "string", "enum": ["lesson", "method", "story", "market_reading", "behind_the_scenes", "position", "objection"], "description": "Definitions: assets/hook-types.md." },
+        "hook_type": { "type": "string", "enum": ["decision", "confession", "scene", "contrarian", "observation", "question", "number", "customer_words", "how_to"], "description": "Definitions and script tie-ins: assets/hook-types.md." },
+        "structure": { "type": "string", "enum": ["take_then_method", "problem_cause_action", "story_then_lesson", "checklist", "before_after", "single_idea"] },
+        "networks": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/network" } },
+        "variants": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "linkedin": {
+              "type": "object",
+              "required": ["text"],
+              "additionalProperties": false,
+              "properties": {
+                "text": { "type": "string", "description": "The body as published. No URL, no signature, no placeholder." },
+                "first_comment": { "type": "string", "description": "Optional first comment. Must hold the link when the post has one. Default: link_note + link." }
+              }
+            },
+            "x": {
+              "type": "object",
+              "required": ["text"],
+              "additionalProperties": false,
+              "properties": {
+                "text": { "type": "string", "description": "One tweet, 280 weighted characters at most. A thread only when config.x_allow_thread is true." }
+              }
+            }
+          }
+        },
+        "link": { "type": ["string", "null"], "pattern": "^https://[^\\s]+$", "description": "The one link of the post, or null. content-publisher places it in the first comment or first reply. It comes from the founder's material or from context.url." },
+        "link_note": { "type": "string", "maxLength": 120, "description": "Short line before the link in the comment or the reply." },
+        "target_slot": { "$ref": "#/$defs/slot" },
+        "source_passages": {
+          "type": "array",
+          "minItems": 1,
+          "description": "The passages this post comes from, copied word for word. Whitespace, curly or straight quote marks and Unicode composition may differ; nothing else may.",
+          "items": {
+            "type": "object",
+            "required": ["source_id", "passage"],
+            "additionalProperties": false,
+            "properties": {
+              "source_id": { "type": "string", "description": "An id of the sources manifest." },
+              "passage": { "type": "string", "minLength": 1 },
+              "quote_id": { "type": "string", "description": "market-signal sources only: the verified quote the passage sits in." }
+            }
+          }
+        },
+        "claims": {
+          "type": "array",
+          "description": "Every number, name, result or factual statement of the post that a reader could ask the source of. Empty when the post makes none. See assets/claims-model.md.",
+          "items": {
+            "type": "object",
+            "required": ["text", "kind", "source"],
+            "additionalProperties": false,
+            "properties": {
+              "text": { "type": "string", "minLength": 1, "description": "The claim as written in the post, word for word." },
+              "kind": { "type": "string", "enum": ["number", "customer", "testimonial", "press", "ranking", "result", "market", "anecdote", "observation", "post_count", "idiom"] },
+              "source": { "type": "string", "enum": ["proof", "quote", "url", "passage", "structure", "none"] },
+              "proof_index": { "type": "integer", "minimum": 0, "description": "source proof: the index in positioning.proof." },
+              "passage_index": { "type": "integer", "minimum": 0, "description": "source quote, url or passage: the index in source_passages." },
+              "reason": { "type": "string", "description": "source none: why this number word is not a claim." }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "url": "https://api.stackexchange.com/2.3/search/advanced?order=desc&sort=relevance&q=investors&site=startups&fromdate=1783987200&todate=1791849600&page=1&pagesize=15&filter=withbody",
+  "status": 400,
+  "fetched_at": "2026-10-12T09:02:04Z",
+  "body": {
+    "error_id": 400,
+    "error_message": "No site found for name `startups`",
+    "error_name": "bad_parameter"
+  }
+}

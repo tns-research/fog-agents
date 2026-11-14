@@ -1,0 +1,10 @@
+{
+  "_comment": "DNS answers for check_sender.py --records (offline test): two SPF records with +all, revoked DKIM key, no DMARC at the subdomain or the parent, null MX. Fictional domain.",
+  "TXT": {
+    "cold.acme.example": ["v=spf1 include:a.example include:b.example +all", "v=spf1 mx -all"],
+    "s1._domainkey.cold.acme.example": ["v=DKIM1; k=rsa; p="]
+  },
+  "MX": {
+    "cold.acme.example": ["0 ."]
+  }
+}

@@ -1,0 +1,70 @@
+{
+ "key": "GET https://hn.algolia.com/api/v1/search_by_date?hitsPerPage=100&numericFilters=created_at_i%3E1787875200&tags=author_mtrace_fictive",
+ "status": 200,
+ "body": {
+  "exhaustive": {
+   "nbHits": true
+  },
+  "hits": [
+   {
+    "author": "mtrace_fictive",
+    "created_at": "2026-09-20T10:15:00Z",
+    "created_at_i": 1789899300,
+    "objectID": "99000110",
+    "_tags": [
+     "story",
+     "author_mtrace_fictive",
+     "ask_hn"
+    ],
+    "_highlightResult": {},
+    "title": "Ask HN: Solo founder, pre-seed: looking for a cofounder after launch?",
+    "story_text": "Launched a scheduling tool for physiotherapists in June, solo, pre-seed, a handful of paying users. I am now looking for a cofounder with a sales background but every intro feels like a job interview. Did you look for a cofounder after launch, and how did you meet them?",
+    "url": null,
+    "points": 6,
+    "num_comments": 9,
+    "story_id": 99000110
+   },
+   {
+    "author": "mtrace_fictive",
+    "created_at": "2026-09-25T08:00:00Z",
+    "created_at_i": 1790323200,
+    "objectID": "99000301",
+    "_tags": [
+     "comment",
+     "author_mtrace_fictive",
+     "story_99000110"
+    ],
+    "_highlightResult": {},
+    "comment_text": "Thanks all. Two people offered intros, I will report back on how it goes.",
+    "parent_id": 99000110,
+    "story_id": 99000110,
+    "story_title": "Ask HN: Solo founder, pre-seed: looking for a cofounder after launch?",
+    "story_url": null
+   },
+   {
+    "author": "mtrace_fictive",
+    "created_at": "2026-10-01T13:45:00Z",
+    "created_at_i": 1790862300,
+    "objectID": "99000302",
+    "_tags": [
+     "comment",
+     "author_mtrace_fictive",
+     "story_99000300"
+    ],
+    "_highlightResult": {},
+    "comment_text": "Most of the ones I talk to still use paper and a phone, which is why I started.",
+    "parent_id": 99000300,
+    "story_id": 99000300,
+    "story_title": "Ask HN: What do physiotherapists use for scheduling?",
+    "story_url": null
+   }
+  ],
+  "hitsPerPage": 50,
+  "nbHits": 3,
+  "nbPages": 1,
+  "page": 0,
+  "params": "fixture",
+  "processingTimeMS": 1,
+  "query": ""
+ }
+}

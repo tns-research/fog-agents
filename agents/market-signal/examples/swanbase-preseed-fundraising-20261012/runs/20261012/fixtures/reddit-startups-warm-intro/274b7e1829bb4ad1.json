@@ -1,0 +1,142 @@
+{
+  "url": "https://arctic-shift.photon-reddit.com/api/comments/search?subreddit=startups&after=1783987200&before=1791849600&limit=22&sort=desc&body=warm+intro",
+  "status": 200,
+  "fetched_at": "2026-10-12T09:00:49Z",
+  "body": {
+    "data": [
+      {
+        "id": "fictive60",
+        "author": "user-db7670",
+        "body": "contributing to their repo is the best cold outreach there is, much better than any DM. agencies ignoring cold messages is normal, they only move on warm intros or proof. keep going with the open source monitor, that compounds. how long have you been at it?",
+        "created_utc": 1791440013,
+        "permalink": "/r/startups/comments/fictivet30/do_agencies_answer_cold_messages/fictive60/",
+        "score": 0,
+        "subreddit": "startups",
+        "link_id": "t3_fictivet30",
+        "parent_id": "t1_fictivec11"
+      },
+      {
+        "id": "fictive55",
+        "author": "user-78b893",
+        "body": "Most startups don't find vendors at random conferences. They find them through founder groups and warm intros from other ops people or investors.",
+        "created_utc": 1791296372,
+        "permalink": "/r/startups/comments/fictivet27/where_do_early_startups_find_vendors/fictive55/",
+        "score": 2,
+        "subreddit": "startups",
+        "link_id": "t3_fictivet27",
+        "parent_id": "t3_fictivet27"
+      },
+      {
+        "id": "fictive52",
+        "author": "user-13d75b",
+        "body": "Either you are not talking to the right people or they have no need for the product.\n\nIt\u2019s all about warm intros. Cold intros rarely land unless that person happened to be looking at a tool like yours that week.\n\nA warm intro makes people far more willing to listen.\n\nThe best way to get one is [...]",
+        "created_utc": 1791147580,
+        "permalink": "/r/startups/comments/fictivet26/selling_saas_to_small_consulting_firms/fictive52/",
+        "score": 6,
+        "subreddit": "startups",
+        "link_id": "t3_fictivet26",
+        "parent_id": "t3_fictivet26"
+      },
+      {
+        "id": "fictive47",
+        "author": "user-502ac5",
+        "body": "no it isn't lol. you're not attractive to them yet. and go through warm intros, not cold outreach",
+        "created_utc": 1790895503,
+        "permalink": "/r/startups/comments/fictivet21/tips_to_reach_investors_if_you_are_outside_the_hubs/fictive47/",
+        "score": 0,
+        "subreddit": "startups",
+        "link_id": "t3_fictivet21",
+        "parent_id": "t1_fictivec07"
+      },
+      {
+        "id": "fictive46",
+        "author": "user-e86431",
+        "body": "Skip the cold emails.\n\n1. Good: warm intros through people you actually know\n2. Better: a corporate venture arm inside one of your customers\n3. Best: get some real press so investors start chasing you\n\nJust a few ideas. \ud83e\udd13",
+        "created_utc": 1790837396,
+        "permalink": "/r/startups/comments/fictivet21/tips_to_reach_investors_if_you_are_outside_the_hubs/fictive46/",
+        "score": 5,
+        "subreddit": "startups",
+        "link_id": "t3_fictivet21",
+        "parent_id": "t3_fictivet21"
+      },
+      {
+        "id": "fictive41",
+        "author": "user-ef6420",
+        "body": "warm intros beat a cold cofounder search most of the time, but i\u2019d still do a small project together before talking equity. you learn fast how someone deals with boring work and disagreement. what skill gap are you really trying to fill?",
+        "created_utc": 1790709051,
+        "permalink": "/r/startups/comments/fictivet18/where_to_find_a_cofounder/fictive41/",
+        "score": 2,
+        "subreddit": "startups",
+        "link_id": "t3_fictivet18",
+        "parent_id": "t3_fictivet18"
+      },
+      {
+        "id": "fictive40",
+        "author": "user-3d25f2",
+        "body": "[...] one. A pedigree background buys you warm intros, cheaper trust and a safety net, which is why the visible founders tend to have one, but it does not make you any better at finding a problem people will pay for. [...]",
+        "created_utc": 1790696198,
+        "permalink": "/r/startups/comments/fictivet19/does_founder_pedigree_matter_for_a_first_round/fictive40/",
+        "score": 1,
+        "subreddit": "startups",
+        "link_id": "t3_fictivet19",
+        "parent_id": "t3_fictivet19"
+      },
+      {
+        "id": "fictive39",
+        "author": "user-78b893",
+        "body": "Warm intros only work if the mutual has already seen real traction. Send them a 5 line note: what you do, why now, and one proof point like users, revenue or growth, so they can forward it in one click. Cold email can still work, but only after you build a tight investor list, and do not ask random weak ties for intros.",
+        "created_utc": 1790607425,
+        "permalink": "/r/startups/comments/fictivet13/advice_on_warm_intros_to_pre_seed_investors/fictive39/",
+        "score": 1,
+        "subreddit": "startups",
+        "link_id": "t3_fictivet13",
+        "parent_id": "t3_fictivet13"
+      },
+      {
+        "id": "fictive35",
+        "author": "user-f8d6bf",
+        "body": "[...] If anyone here likes the project and happens to know a pre-seed investor who would be a good fit, a warm intro would mean a lot. No pressure at all. [...]",
+        "created_utc": 1790287420,
+        "permalink": "/r/startups/comments/fictivet13/advice_on_warm_intros_to_pre_seed_investors/fictive35/",
+        "score": -2,
+        "subreddit": "startups",
+        "link_id": "t3_fictivet13",
+        "parent_id": "t3_fictivet13"
+      },
+      {
+        "id": "fictive32",
+        "author": "user-7ec79d",
+        "body": "cold outreach dies when you\u2019re a stranger with a generic offer. first clients come from warm paths: people who already trust your work, communities where you\u2019ve helped for weeks, or a close peer. pick one niche channel and be useful there before you pitch. 50 tailored [...]",
+        "created_utc": 1790142904,
+        "permalink": "/r/startups/comments/fictivet10/how_do_new_startups_find_their_first_clients/fictive32/",
+        "score": 1,
+        "subreddit": "startups",
+        "link_id": "t3_fictivet10",
+        "parent_id": "t3_fictivet10"
+      },
+      {
+        "id": "fictive31",
+        "author": "user-7d6172",
+        "body": "Start by listing 20 companies that look like your ideal client, find one specific problem each of them probably has, and send a short personal note with a concrete offer, like a free review or a small piece of work. Also use your network: everyone you know is one step away from someone [...]",
+        "created_utc": 1790052562,
+        "permalink": "/r/startups/comments/fictivet10/how_do_new_startups_find_their_first_clients/fictive31/",
+        "score": 8,
+        "subreddit": "startups",
+        "link_id": "t3_fictivet10",
+        "parent_id": "t3_fictivet10"
+      },
+      {
+        "id": "fictive30",
+        "author": "user-20b562",
+        "body": "I don't think VCs are some evil cabal either. Anyone who thinks so should try angel investing for a year.\n\nMost of the people who pitch me have nothing at stake, nothing beyond a business plan and a few slides, or just [...]",
+        "created_utc": 1789918624,
+        "permalink": "/r/startups/comments/fictivet07/everything_feels_saturated/fictive30/",
+        "score": 1,
+        "subreddit": "startups",
+        "link_id": "t3_fictivet07",
+        "parent_id": "t1_fictivec02"
+      }
+    ],
+    "error": null
+  }
+}

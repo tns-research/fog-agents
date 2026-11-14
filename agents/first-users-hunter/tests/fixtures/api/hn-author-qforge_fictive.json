@@ -1,0 +1,69 @@
+{
+ "key": "GET https://hn.algolia.com/api/v1/search_by_date?hitsPerPage=100&numericFilters=created_at_i%3E1787875200&tags=author_qforge_fictive",
+ "status": 200,
+ "body": {
+  "exhaustive": {
+   "nbHits": true
+  },
+  "hits": [
+   {
+    "author": "qforge_fictive",
+    "created_at": "2026-10-03T14:05:00Z",
+    "created_at_i": 1791036300,
+    "objectID": "99000101",
+    "_tags": [
+     "comment",
+     "author_qforge_fictive",
+     "story_99000100"
+    ],
+    "_highlightResult": {},
+    "comment_text": "<p>Solo founder here, three weeks after launching an MVP for small clinics. I have four users, all friends of friends. Any advice on where pre-seed founders in Europe actually find their first real users? I am based in Paris and starting to feel stuck.</p>",
+    "parent_id": 99000100,
+    "story_id": 99000100,
+    "story_title": "Ask HN: How did you find your first ten users?",
+    "story_url": null
+   },
+   {
+    "author": "qforge_fictive",
+    "created_at": "2026-10-08T09:30:00Z",
+    "created_at_i": 1791451800,
+    "objectID": "99000201",
+    "_tags": [
+     "comment",
+     "author_qforge_fictive",
+     "story_99000200"
+    ],
+    "_highlightResult": {},
+    "comment_text": "Thanks, the no-login link was the part clinics asked for first.",
+    "parent_id": 99000200,
+    "story_id": 99000200,
+    "story_title": "Show HN: A booking page for small clinics",
+    "story_url": null
+   },
+   {
+    "author": "qforge_fictive",
+    "created_at": "2026-09-20T17:00:00Z",
+    "created_at_i": 1789923600,
+    "objectID": "99000202",
+    "_tags": [
+     "comment",
+     "author_qforge_fictive",
+     "story_99000203"
+    ],
+    "_highlightResult": {},
+    "comment_text": "We charge per clinic, not per seat. Small clinics hated per-seat pricing in our interviews.",
+    "parent_id": 99000203,
+    "story_id": 99000203,
+    "story_title": "Ask HN: Pricing for very small B2B customers?",
+    "story_url": null
+   }
+  ],
+  "hitsPerPage": 50,
+  "nbHits": 3,
+  "nbPages": 1,
+  "page": 0,
+  "params": "fixture",
+  "processingTimeMS": 1,
+  "query": ""
+ }
+}

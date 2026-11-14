@@ -1,0 +1,87 @@
+/* Test fixture with planted defects, the source of ../../site/style.css. Northdock is a fictional accelerator. */
+* { box-sizing: border-box; }
+body { margin: 0; background: #030619; color: #ffffff; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 16px; line-height: 1.5; }
+a { color: inherit; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+.promo { display: flex; align-items: center; justify-content: space-between; height: 80px; padding: 0 16px; background: #101224; border-bottom: 1px solid #212435; font-size: 14px; }
+.promo button { width: 20px; height: 20px; padding: 0; border: 0; background: #212435; color: #fff; font-size: 12px; cursor: pointer; }
+header { height: 56px; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-weight: 700; font-size: 20px; text-decoration: none; }
+nav a:focus { outline: none; }
+nav a { font-size: 13px; line-height: 20px; margin-left: 16px; text-decoration: none; color: #c0c1c6; }
+
+.hero {
+  padding: 24px 0 32px;
+  display: grid;
+  gap: 16px;
+}
+.hero h1 {
+  font-size: 34px;
+  line-height: 1.15;
+  margin: 0;
+  font-weight: 600;
+}
+.hero .sub {
+  color: #4a276e;
+  margin: 0;
+}
+.hero img {
+  max-width: 100%;
+  display: block;
+}
+.cta {
+  display: inline-block;
+  justify-self: start;
+  background: #a855f7;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+section { padding: 32px 0; border-top: 1px solid #212435; }
+h2, .why h1 { font-size: 24px; margin: 0 0 12px; font-weight: 600; }
+.glance table {
+  width: 395px;
+  border-collapse: collapse;
+}
+.glance td { border-bottom: 1px solid #212435; padding: 10px 8px; vertical-align: top; }
+.glance td:first-child { color: #c0c1c6; width: 140px; }
+.why p { font-size: 13px; color: #9a9ba3; }
+
+footer { border-top: 1px solid #212435; padding: 24px 0 40px; font-size: 12px; color: #c0c1c6; }
+.newsletter { display: flex; gap: 6px; align-items: center; margin-bottom: 20px; }
+.newsletter input { font-size: 13px; padding: 3px 6px; height: 22px; width: 180px; }
+.newsletter button { height: 22px; padding: 0 8px; font-size: 12px; }
+.social { display: flex; gap: 4px; margin-bottom: 16px; }
+.social a { display: block; width: 18px; height: 18px; background: #212435; border-radius: 4px; }
+.footer-links { list-style: none; padding: 0; margin: 0 0 16px; }
+.footer-links li { line-height: 14px; margin-bottom: 2px; }
+.footer-links a { text-decoration: none; }
+
+form.apply { display: grid; gap: 14px; max-width: 520px; }
+form.apply label { font-size: 14px; color: #c0c1c6; display: block; margin-bottom: 4px; }
+form.apply input,
+form.apply textarea {
+  width: 100%;
+  font-size: 14px;
+  padding: 8px 10px;
+  border: 1px solid #212435;
+  background: #101224;
+  color: #fff;
+  border-radius: 6px;
+}
+form.apply button { justify-self: start; background: #a855f7; color: #fff; border: 0; border-radius: 8px; padding: 10px 22px; font-size: 15px; font-weight: 600; }
+.error { color: #ff8a8a; font-size: 13px; margin: 4px 0 0; }
+.notice { padding: 10px 12px; border: 1px solid #ff8a8a; border-radius: 6px; font-size: 14px; }
+
+@media (min-width: 800px) {
+  .hero { grid-template-columns: 1.1fr 1fr; grid-template-areas: "h1 img" "sub img" "cta img"; align-items: start; column-gap: 40px; }
+  .hero h1 { grid-area: h1; }
+  .hero .sub { grid-area: sub; }
+  .hero img { grid-area: img; }
+  .hero .cta { grid-area: cta; }
+  .hero h1 { font-size: 48px; }
+}

@@ -1,0 +1,10 @@
+{
+ "key": "POST https://www.reddit.com/api/v1/access_token #c349b29ae2fc",
+ "status": 200,
+ "body": {
+  "access_token": "fixture-token",
+  "token_type": "bearer",
+  "expires_in": 86400,
+  "scope": "*"
+ }
+}

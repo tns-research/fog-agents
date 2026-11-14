@@ -1,0 +1,137 @@
+{
+  "schema_version": "1.0",
+  "sprint_id": "demo-calls-20261012",
+  "project": "swanbase",
+  "created": "2026-10-12",
+  "goal": {
+    "text": "20 demo calls booked with first-time founders this month",
+    "metric": "demo calls booked",
+    "target": 20,
+    "deadline": "2026-11-12",
+    "source": "founder"
+  },
+  "context_read": ["project-context/context.json", "project-context/memory/decisions.md"],
+  "decisions_applied": ["D-20261002-01"],
+  "budget": { "cap_eur": 40, "alert_ratio": 0.8, "basis": "founder's ceiling for image plates this month" },
+  "max_wave": 3,
+  "steps": [
+    {
+      "id": "s01-context",
+      "agent": "project-context",
+      "brief": "Reuse the shared context when it is recent; rebuild it only when it is missing or stale.",
+      "depends_on": [],
+      "spends": false,
+      "publishes": false,
+      "estimate_eur": 0,
+      "reuse_if_fresh_days": 180
+    },
+    {
+      "id": "s02-signal",
+      "agent": "market-signal",
+      "brief": "Collect what first-time founders say about demo calls, accelerators and fundraising help, to feed the copy of every later step.",
+      "inputs": { "market": "pre-seed support for first-time founders", "recency_days": 90 },
+      "depends_on": ["s01-context"],
+      "spends": false,
+      "publishes": false,
+      "estimate_eur": 0,
+      "reuse_if_fresh_days": 30
+    },
+    {
+      "id": "s03-people",
+      "agent": "first-users-hunter",
+      "brief": "Find 20 first-time founders with a dated public signal that they look for go-to-market help.",
+      "inputs": { "max_people": 20 },
+      "depends_on": ["s01-context"],
+      "spends": false,
+      "publishes": false,
+      "estimate_eur": 0
+    },
+    {
+      "id": "s04-landing",
+      "agent": "landing-page-analyzer",
+      "brief": "Audit the apply page against the demo call goal and list the fixes ranked by impact.",
+      "inputs": { "goal": "demo" },
+      "depends_on": ["s01-context"],
+      "spends": false,
+      "publishes": false,
+      "estimate_eur": 0
+    },
+    {
+      "id": "s05-carousel",
+      "agent": "carousel-builder",
+      "label": "demo-objections",
+      "brief": "One carousel that answers the objections founders raise before booking a call, built on the market-signal quotes.",
+      "inputs": { "topic": "What a first call with an accelerator covers, answered with founders' own objections" },
+      "depends_on": ["s02-signal"],
+      "spends": true,
+      "publishes": false,
+      "estimate_eur": 0,
+      "estimate_basis": "local render, no image model planned"
+    },
+    {
+      "id": "s06-ads",
+      "agent": "static-ads-builder",
+      "label": "demo-tofu",
+      "brief": "Four TOFU and MOFU ads on the escalated pains, rendered locally, packaged PAUSED for import.",
+      "inputs": { "num_ads": 4, "funnel_stages": "tofu,mofu" },
+      "depends_on": ["s02-signal"],
+      "spends": true,
+      "publishes": false,
+      "estimate_eur": 12,
+      "estimate_basis": "founder's ceiling for photo plates in this batch, confirmed again at the agent's Gate 2"
+    },
+    {
+      "id": "s07-outreach",
+      "agent": "cold-outreach-builder",
+      "brief": "Dossiers and a three-step sequence for the people found, goal: book a call.",
+      "inputs": { "goal": "book call", "channel": "email" },
+      "depends_on": ["s02-signal", "s03-people"],
+      "spends": false,
+      "publishes": false,
+      "estimate_eur": 0
+    },
+    {
+      "id": "s08-publish",
+      "agent": "content-publisher",
+      "label": "demo-week",
+      "brief": "Queue the carousel on LinkedIn and X with the booking page as the link; schedule what the founder approves.",
+      "inputs": { "deliverables": "carousel-builder/demo-objections-<YYYYMMDD>/", "networks": "linkedin, x" },
+      "depends_on": ["s05-carousel"],
+      "spends": false,
+      "publishes": true,
+      "estimate_eur": 0
+    },
+    {
+      "id": "s09-shorts",
+      "agent": "short-video-builder",
+      "label": "pitch-talk",
+      "brief": "Three shorts from the founder's last talk, each ending on the booking page.",
+      "inputs": { "clips_count": 3 },
+      "depends_on": ["s01-context"],
+      "spends": false,
+      "publishes": false,
+      "estimate_eur": 0
+    },
+    {
+      "id": "s10-retarget",
+      "agent": "static-ads-builder",
+      "label": "demo-bofu",
+      "brief": "Two BOFU retargeting ads to apply page visitors, after the first batch.",
+      "inputs": { "num_ads": 2, "funnel_stages": "bofu" },
+      "depends_on": ["s06-ads"],
+      "spends": true,
+      "publishes": false,
+      "estimate_eur": 20,
+      "estimate_basis": "founder's ceiling for two photo plates, confirmed again at the agent's Gate 2"
+    },
+    {
+      "id": "s11-pulse",
+      "agent": "growth-pulse",
+      "brief": "Read the week, tie the numbers to what shipped (correlation only), and propose three experiments for the next sprint.",
+      "depends_on": ["s07-outreach", "s08-publish"],
+      "spends": false,
+      "publishes": false,
+      "estimate_eur": 0
+    }
+  ]
+}

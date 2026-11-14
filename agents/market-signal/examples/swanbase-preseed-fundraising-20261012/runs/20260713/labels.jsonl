@@ -1,0 +1,49 @@
+{"record_id": "discourse:forum.example:900013", "relevant": false, "speaker": "other", "note": "no-code builder forum, not about raising"}
+{"record_id": "discourse:forum.example:900026", "relevant": false, "speaker": "other", "note": "no-code builder forum, not about raising"}
+{"record_id": "discourse:forum.example:900039", "relevant": false, "speaker": "other", "note": "no-code builder forum, not about raising"}
+{"record_id": "discourse:forum.example:900052", "relevant": false, "speaker": "other", "note": "no-code builder forum, not about raising"}
+{"record_id": "discourse:forum.example:900065", "relevant": false, "speaker": "other", "note": "no-code builder forum, not about raising"}
+{"record_id": "discourse:forum.example:900078", "relevant": false, "speaker": "other", "note": "no-code builder forum, not about raising"}
+{"record_id": "hn:90001171", "relevant": false, "speaker": "other", "note": "unrelated, or warm intros for sales or jobs"}
+{"record_id": "hn:90002342", "relevant": true, "speaker": "vendor", "pains": ["pain_investor_access"], "sentiment": "neutral", "awareness": "solution_aware", "note": "warm intro path tool"}
+{"record_id": "hn:90003513", "relevant": true, "speaker": "vendor", "pains": ["pain_investor_access"], "sentiment": "neutral", "awareness": "solution_aware", "note": "warm intro path tool, open source"}
+{"record_id": "hn:90004684", "relevant": false, "speaker": "other", "note": "unrelated, or warm intros for sales or jobs"}
+{"record_id": "hn:90005855", "relevant": false, "speaker": "other", "note": "unrelated, or warm intros for sales or jobs"}
+{"record_id": "hn:90007026", "relevant": false, "speaker": "other", "note": "unrelated, or warm intros for sales or jobs"}
+{"record_id": "hn:90008197", "relevant": false, "speaker": "other", "note": "unrelated, or warm intros for sales or jobs"}
+{"record_id": "hn:90009368", "relevant": true, "speaker": "press", "pains": ["pain_investor_access"], "sentiment": "neutral", "note": "quotes an investor"}
+{"record_id": "hn:90010539", "relevant": true, "speaker": "vendor", "pains": ["pain_investor_access"], "sentiment": "neutral", "awareness": "solution_aware", "note": "warm intro path tool"}
+{"record_id": "hn:90011710", "relevant": false, "speaker": "other", "note": "unrelated, or warm intros for sales or jobs"}
+{"record_id": "hn:90012881", "relevant": true, "speaker": "other", "pains": ["pain_vc_misalignment"], "sentiment": "negative", "note": "VC industry view"}
+{"record_id": "hn:90014052", "relevant": false, "speaker": "other", "note": "unrelated, or warm intros for sales or jobs"}
+{"record_id": "hn:90015223", "relevant": false, "speaker": "other", "note": "unrelated, or warm intros for sales or jobs"}
+{"record_id": "hn:90016394", "relevant": false, "speaker": "other", "note": "unrelated, or warm intros for sales or jobs"}
+{"record_id": "reddit:t1_fictive01", "relevant": true, "speaker": "practitioner", "pains": ["pain_investor_access"], "sentiment": "neutral", "awareness": "problem_aware", "note": "investor view of cold inbound"}
+{"record_id": "reddit:t1_fictive02", "relevant": true, "speaker": "practitioner", "pains": ["pain_investor_access"], "sentiment": "neutral", "forces": ["pull"], "awareness": "solution_aware"}
+{"record_id": "reddit:t1_fictive03", "relevant": true, "speaker": "user", "pains": ["pain_traction_bar"], "sentiment": "negative", "forces": ["anxiety"], "awareness": "problem_aware"}
+{"record_id": "reddit:t1_fictive04", "relevant": true, "speaker": "user", "pains": ["pain_traction_bar"], "sentiment": "neutral", "awareness": "problem_aware"}
+{"record_id": "reddit:t1_fictive05", "relevant": true, "speaker": "practitioner", "pains": ["pain_investor_access"], "sentiment": "positive", "forces": ["pull"], "awareness": "solution_aware", "competitors": ["accelerators"]}
+{"record_id": "reddit:t1_fictive06", "relevant": true, "speaker": "practitioner", "pains": ["pain_investor_access"], "sentiment": "positive", "forces": ["pull"], "awareness": "solution_aware", "competitors": ["accelerators"], "note": "same author as the previous record, a second answer"}
+{"record_id": "reddit:t1_fictive07", "relevant": true, "speaker": "practitioner", "pains": ["pain_investor_access"], "sentiment": "positive", "forces": ["pull"], "awareness": "solution_aware"}
+{"record_id": "reddit:t1_fictive08", "relevant": true, "speaker": "user", "pains": ["pain_investor_access"], "sentiment": "neutral", "forces": ["push"], "awareness": "problem_aware"}
+{"record_id": "reddit:t1_fictive09", "relevant": true, "speaker": "practitioner", "sentiment": "mixed", "awareness": "solution_aware", "competitors": ["accelerators"], "note": "about sales, rates accelerators"}
+{"record_id": "reddit:t1_fictive10", "relevant": true, "speaker": "practitioner", "pains": ["pain_investor_access"], "sentiment": "neutral", "forces": ["push"], "awareness": "problem_aware"}
+{"record_id": "reddit:t1_fictive11", "relevant": false, "speaker": "other", "note": "unrelated, or warm intros for sales or jobs"}
+{"record_id": "reddit:t1_fictive12", "relevant": false, "speaker": "other", "note": "unrelated, or warm intros for sales or jobs"}
+{"record_id": "reddit:t1_fictive13", "relevant": true, "speaker": "practitioner", "pains": ["pain_investor_access"], "sentiment": "negative", "forces": ["push"], "awareness": "problem_aware"}
+{"record_id": "reddit:t1_fictive14", "relevant": false, "speaker": "other", "note": "unrelated, or warm intros for sales or jobs"}
+{"record_id": "reddit:t1_fictive15", "relevant": false, "speaker": "other", "note": "unrelated, or warm intros for sales or jobs"}
+{"record_id": "reddit:t1_fictive16", "relevant": true, "speaker": "practitioner", "pains": ["pain_pitch_story"], "sentiment": "neutral", "forces": ["pull"], "awareness": "solution_aware"}
+{"record_id": "reddit:t1_fictive17", "relevant": true, "speaker": "practitioner", "pains": ["pain_pitch_story"], "sentiment": "neutral", "awareness": "solution_aware"}
+{"record_id": "reddit:t1_fictive18", "relevant": false, "speaker": "other", "note": "unrelated, or warm intros for sales or jobs"}
+{"record_id": "reddit:t1_fictive19", "relevant": true, "speaker": "user", "pains": ["pain_founder_salary"], "sentiment": "neutral", "forces": ["anxiety"], "awareness": "problem_aware"}
+{"record_id": "reddit:t1_fictive20", "relevant": true, "speaker": "practitioner", "pains": ["pain_founder_salary"], "sentiment": "negative", "awareness": "problem_aware"}
+{"record_id": "reddit:t1_fictive21", "relevant": true, "speaker": "practitioner", "pains": ["pain_founder_salary"], "sentiment": "neutral", "awareness": "problem_aware"}
+{"record_id": "reddit:t1_fictive22", "relevant": false, "speaker": "other", "note": "unrelated, or warm intros for sales or jobs"}
+{"record_id": "reddit:t1_fictive23", "relevant": false, "speaker": "other", "note": "unrelated, or warm intros for sales or jobs"}
+{"record_id": "reddit:t1_fictive24", "relevant": true, "speaker": "practitioner", "pains": ["pain_traction_bar"], "sentiment": "neutral", "forces": ["pull"], "awareness": "solution_aware"}
+{"record_id": "se:money:q9000011", "relevant": false, "speaker": "other", "note": "personal finance, not about raising"}
+{"record_id": "se:money:q9000022", "relevant": false, "speaker": "other", "note": "personal finance, not about raising"}
+{"record_id": "se:money:q9000033", "relevant": false, "speaker": "other", "note": "personal finance, not about raising"}
+{"record_id": "se:money:q9000044", "relevant": false, "speaker": "other", "note": "personal finance, not about raising"}
+{"record_id": "se:money:q9000055", "relevant": true, "speaker": "user", "sentiment": "neutral", "awareness": "unaware", "note": "novice question on how selling equity raises money"}

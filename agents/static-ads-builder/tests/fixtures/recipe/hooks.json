@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "id": "acme-batch",
+      "label": "Acme batch notes",
+      "url": "https://acme.example/batches",
+      "accessed": "2026-10-20"
+    }
+  ],
+  "hooks": [
+    {
+      "text": "Fruit first. *Sugar* second, if at all.",
+      "why": "Same contrarian claim, shorter, order reversed."
+    },
+    {
+      "text": "Most jam is sugar with a *fruit* label.",
+      "why": "Names the category's habit instead of the product's promise."
+    },
+    {
+      "text": "We cook *12 jars* per copper pan.",
+      "claims": [
+        {
+          "text": "12 jars per copper pan",
+          "source": "acme-batch",
+          "verified_at": "2026-10-20"
+        }
+      ],
+      "why": "A sourced number in the contrarian frame."
+    },
+    {
+      "text": "If you taste the sugar first, it is *not jam*.",
+      "why": "A rule the reader can test at breakfast."
+    }
+  ],
+  "alternates": {
+    "cta": [
+      {
+        "on_ad": "Taste the difference",
+        "meta": "LEARN_MORE"
+      }
+    ]
+  }
+}

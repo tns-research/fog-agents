@@ -1,0 +1,33 @@
+{
+  "_comment": "How compute_pulse.py names, classifies and derives the metrics of the source files. match is a glob on <source>.<metric>. kind: count (summable events), currency (an amount; its volume is the count named in volume_metric), rate (numerator over denominator, both counts), position (impression-weighted average, lower is better). direction: up when a higher value is better, down when lower is better. Events take their AARRR stage from config.events, else default_event_stage. hidden metrics feed a derived metric only.",
+  "schema_version": "1.0",
+  "default_event_stage": "activation",
+  "web_sources": ["plausible", "umami", "ga4"],
+  "metrics": [
+    { "match": "*.visitors", "label": "Visitors", "stage": "acquisition", "kind": "count", "unit": "visitors", "direction": "up" },
+    { "match": "*.visits", "label": "Visits", "stage": "acquisition", "kind": "count", "unit": "visits", "direction": "up" },
+    { "match": "*.pageviews", "label": "Pageviews", "stage": "acquisition", "kind": "count", "unit": "pageviews", "direction": "up" },
+    { "match": "ga4.new_users", "label": "New users", "stage": "acquisition", "kind": "count", "unit": "users", "direction": "up" },
+    { "match": "gsc.clicks", "label": "Search clicks", "stage": "acquisition", "kind": "count", "unit": "clicks", "direction": "up" },
+    { "match": "gsc.impressions", "label": "Search impressions", "stage": "acquisition", "kind": "count", "unit": "impressions", "direction": "up" },
+    { "match": "gsc.position_weighted", "label": "Position x impressions", "stage": "acquisition", "kind": "count", "unit": "", "direction": "down", "hidden": true },
+    { "match": "social.*.impressions", "label": "Impressions", "stage": "acquisition", "kind": "count", "unit": "impressions", "direction": "up" },
+    { "match": "social.*.clicks", "label": "Link clicks", "stage": "acquisition", "kind": "count", "unit": "clicks", "direction": "up" },
+    { "match": "social.*.engagements", "label": "Engagements", "stage": "acquisition", "kind": "count", "unit": "engagements", "direction": "up" },
+    { "match": "social.*.followers_gained", "label": "New followers", "stage": "acquisition", "kind": "count", "unit": "followers", "direction": "up" },
+    { "match": "social.*.posts", "label": "Posts published", "stage": "acquisition", "kind": "count", "unit": "posts", "direction": "up" },
+    { "match": "social.*.reposts", "label": "Reposts and shares", "stage": "referral", "kind": "count", "unit": "reposts", "direction": "up" },
+    { "match": "revenue.gross", "label": "Revenue, gross", "stage": "revenue", "kind": "currency", "unit": "currency", "direction": "up", "volume_metric": "revenue.payments" },
+    { "match": "revenue.net", "label": "Revenue, net of refunds", "stage": "revenue", "kind": "currency", "unit": "currency", "direction": "up", "volume_metric": "revenue.payments" },
+    { "match": "revenue.refunds", "label": "Refunds", "stage": "revenue", "kind": "currency", "unit": "currency", "direction": "down", "volume_metric": "revenue.payments" },
+    { "match": "revenue.payments", "label": "Payments", "stage": "revenue", "kind": "count", "unit": "payments", "direction": "up" },
+    { "match": "revenue.new_customers", "label": "New paying customers", "stage": "revenue", "kind": "count", "unit": "customers", "direction": "up" },
+    { "match": "revenue.returning_payments", "label": "Payments from returning customers", "stage": "retention", "kind": "count", "unit": "payments", "direction": "up" },
+    { "match": "*.event.*", "label": "Event", "stage": "event", "kind": "count", "unit": "events", "direction": "up" }
+  ],
+  "derived": [
+    { "id": "gsc.ctr", "label": "Search CTR", "stage": "acquisition", "kind": "rate", "numerator": "gsc.clicks", "denominator": "gsc.impressions", "direction": "up" },
+    { "id": "gsc.position", "label": "Average search position", "stage": "acquisition", "kind": "position", "numerator": "gsc.position_weighted", "denominator": "gsc.impressions", "direction": "down" },
+    { "id": "{source}.rate.{event}", "label": "Visitor to {event} rate", "stage": "event", "kind": "rate", "numerator": "{source}.event.{event}", "denominator": "{source}.visitors", "direction": "up", "for_each": "web_event" }
+  ]
+}

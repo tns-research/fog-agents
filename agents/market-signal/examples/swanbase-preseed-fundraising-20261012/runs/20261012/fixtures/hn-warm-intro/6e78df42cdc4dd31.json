@@ -1,0 +1,111 @@
+{
+  "url": "https://hn.algolia.com/api/v1/search?tags=comment%2Cstory_90018736&hitsPerPage=20&page=0&numericFilters=created_at_i%3E%3D1783987200%2Ccreated_at_i%3C1791849600",
+  "status": 200,
+  "fetched_at": "2026-10-12T09:00:36Z",
+  "body": {
+    "nbHits": 7,
+    "nbPages": 1,
+    "page": 0,
+    "hitsPerPage": 20,
+    "hits": [
+      {
+        "objectID": "90026933",
+        "created_at": "2026-07-30T18:08:56Z",
+        "created_at_i": 1785434936,
+        "author": "user-049c5b",
+        "comment_text": "One of those ideas that seems obvious once you see it. I make quite a few intros, and I almost never hear what happened unless I ask, awkwardly, weeks later. Nice that it fits the way people already email instead of asking everyone to adopt yet another tool.",
+        "story_title": "Show HN: Introtrail, find out what happened weeks after your warm intro",
+        "story_id": 90018736,
+        "parent_id": 90018736,
+        "_tags": [
+          "comment",
+          "story_90018736"
+        ]
+      },
+      {
+        "objectID": "90025762",
+        "created_at": "2026-07-28T15:30:29Z",
+        "created_at_i": 1785252629,
+        "author": "user-982fce",
+        "comment_text": "Answers go through a magic link (one tap). You can also reply in the thread in plain words and Introtrail will read it.",
+        "story_title": "Show HN: Introtrail, find out what happened weeks after your warm intro",
+        "story_id": 90018736,
+        "parent_id": 90024591,
+        "_tags": [
+          "comment",
+          "story_90018736"
+        ]
+      },
+      {
+        "objectID": "90024591",
+        "created_at": "2026-07-28T15:20:40Z",
+        "created_at_i": 1785252040,
+        "author": "user-1b9d20",
+        "comment_text": "+1 for keeping it as small as possible. Good principles.\nHow did you build the one-tap answers inside the thread? Is it like a calendar poll?",
+        "story_title": "Show HN: Introtrail, find out what happened weeks after your warm intro",
+        "story_id": 90018736,
+        "parent_id": 90023420,
+        "_tags": [
+          "comment",
+          "story_90018736"
+        ]
+      },
+      {
+        "objectID": "90023420",
+        "created_at": "2026-07-28T14:37:05Z",
+        "created_at_i": 1785249425,
+        "author": "user-982fce",
+        "comment_text": "Thank you! Scheduling bots earned their reputation through a few specific failures, and Introtrail was designed around them. It writes from a clearly labelled automated address and never pretends to be a person. It asks one short question with one-tap answers, not an open thread. It [...]",
+        "story_title": "Show HN: Introtrail, find out what happened weeks after your warm intro",
+        "story_id": 90018736,
+        "parent_id": 90022249,
+        "_tags": [
+          "comment",
+          "story_90018736"
+        ]
+      },
+      {
+        "objectID": "90022249",
+        "created_at": "2026-07-28T14:21:45Z",
+        "created_at_i": 1785248505,
+        "author": "user-1b9d20",
+        "comment_text": "This is great. Feedback on intros matters so much, and I really need something like this in my work. How do the people on the receiving end react to it? The email scheduling bots I have tried were chaotic.",
+        "story_title": "Show HN: Introtrail, find out what happened weeks after your warm intro",
+        "story_id": 90018736,
+        "parent_id": 90018736,
+        "_tags": [
+          "comment",
+          "story_90018736"
+        ]
+      },
+      {
+        "objectID": "90021078",
+        "created_at": "2026-07-28T14:08:12Z",
+        "created_at_i": 1785247692,
+        "author": "user-982fce",
+        "comment_text": "Thanks, that is exactly the case I built it for.\nYes, there is a dashboard. It is optional, so you never have to open an account, but if you do you see every intro in one place (sent and received), with the status of each one, manual edits and [...]",
+        "story_title": "Show HN: Introtrail, find out what happened weeks after your warm intro",
+        "story_id": 90018736,
+        "parent_id": 90019907,
+        "_tags": [
+          "comment",
+          "story_90018736"
+        ]
+      },
+      {
+        "objectID": "90019907",
+        "created_at": "2026-07-28T13:50:45Z",
+        "created_at_i": 1785246645,
+        "author": "user-e7c780",
+        "comment_text": "Part of my job is judged on the quality of the intros I make, so this speaks to me. Does it keep the data in a dashboard, or anywhere central? Is there an API?",
+        "story_title": "Show HN: Introtrail, find out what happened weeks after your warm intro",
+        "story_id": 90018736,
+        "parent_id": 90018736,
+        "_tags": [
+          "comment",
+          "story_90018736"
+        ]
+      }
+    ]
+  }
+}

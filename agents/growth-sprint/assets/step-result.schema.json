@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "growth-sprint step result",
+  "description": "<sprint>/results/<step id>.json, written by whoever ran the step (subagent or the orchestrator's own session) as its last act. It can only send a step to a person (pending items) or record what was spent: a step is never done because this file says so, only when scripts/check_step.py finds its outputs on disk. Validate with: python3 shared/scripts/validate_json.py agents/growth-sprint/assets/step-result.schema.json <file>",
+  "type": "object",
+  "required": ["step", "status", "spent_eur", "pending"],
+  "additionalProperties": false,
+  "properties": {
+    "step": { "type": "string", "pattern": "^s[0-9]{2}(-[a-z0-9]+)*$" },
+    "status": { "enum": ["ok", "partial", "failed"], "description": "Same meaning as the run line status of the agent." },
+    "spent_eur": { "type": "number", "minimum": 0, "description": "Cash actually spent by the step (provider invoices or the agent's own estimate output), 0 when local." },
+    "pending": {
+      "type": "array",
+      "description": "Every decision that waits for a person: a spend gate reached, a publication to approve, an input nobody could supply.",
+      "items": {
+        "type": "object",
+        "required": ["kind", "reason"],
+        "additionalProperties": false,
+        "properties": {
+          "kind": { "enum": ["spend", "publish", "input", "other"] },
+          "reason": { "type": "string", "minLength": 5 },
+          "how": { "type": "string" },
+          "gate": { "type": "string" }
+        }
+      }
+    },
+    "defaults_used": { "type": "array", "items": { "type": "string" }, "description": "Decisions taken without the founder (autonomous mode), for the sprint report." },
+    "notes": { "type": "string" }
+  }
+}

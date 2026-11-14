@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0",
+  "project": "swanbase",
+  "posts": [
+    {
+      "ref": "pitch-deck-order",
+      "kind": "carousel",
+      "language": "en",
+      "source": {
+        "agent": "carousel-builder",
+        "path": "carousel-builder/pitch-deck-order-20261019/"
+      },
+      "link": "https://swanbase.co/en/blog/startup-pitch-deck-guide-2026/",
+      "link_note": "The full pitch deck guide:",
+      "media": [
+        {
+          "path": "carousel-builder/pitch-deck-order-20261019/export/carousel.pdf",
+          "type": "document",
+          "title": "The order of a seed deck"
+        },
+        {
+          "path": "carousel-builder/pitch-deck-order-20261019/export/slide-01.png",
+          "type": "image",
+          "alt": "Cover. Title: The order of a seed deck."
+        },
+        {
+          "path": "carousel-builder/pitch-deck-order-20261019/export/slide-02.png",
+          "type": "image",
+          "alt": "Slide 1 of the deck: your purpose in one sentence."
+        },
+        {
+          "path": "carousel-builder/pitch-deck-order-20261019/export/slide-03.png",
+          "type": "image",
+          "alt": "Then the problem, the solution and the market, in that order."
+        }
+      ],
+      "networks": [
+        "linkedin",
+        "instagram",
+        "x"
+      ],
+      "target_slot": "2026-10-20T09:00",
+      "variants": {
+        "linkedin": {
+          "text": "Investors read a seed deck in the order you give them, so the order is your first argument.\n\nThis carousel walks through an opening that keeps the reader going: purpose in one sentence, the problem, the solution, then the market. Each slide says what goes on it and what to keep for the meeting.\n\nOur full pitch deck guide is linked in the first comment.\n\nWhich slide of your deck do you find hardest to write?",
+          "media": [
+            0
+          ]
+        },
+        "instagram": {
+          "text": "The opening of a seed deck, in order: purpose in one sentence, the problem, the solution, then the market.\n\nSwipe for what goes on each slide. The full pitch deck guide is linked in bio.\n\n#pitchdeck #fundraising #startups",
+          "media": [
+            1,
+            2,
+            3
+          ]
+        },
+        "x": {
+          "text": "Investors read your seed deck in the order you set. Open with your purpose in one sentence, then the problem, the solution and the market.\n\nOur pitch deck guide is in the first reply.",
+          "media": [
+            1
+          ]
+        }
+      }
+    },
+    {
+      "ref": "first-customer-calls",
+      "kind": "text",
+      "language": "en",
+      "source": {
+        "agent": "founder",
+        "path": "notes/first-customer-calls.md"
+      },
+      "link": "https://swanbase.co/en/",
+      "link_note": "Our guides for first-time founders:",
+      "networks": [
+        "linkedin",
+        "x",
+        "threads",
+        "bluesky"
+      ],
+      "target_slot": "2026-10-21T12:30",
+      "variants": {
+        "linkedin": {
+          "text": "Before the first line of code, spend a week talking to people who have the problem you want to solve.\n\nAsk about the last time it happened, what they tried, and what it cost them. Keep your idea out of the call until the end: people are polite about ideas and precise about their own week.\n\nWe keep our guides for first-time founders in one place, linked in the first comment."
+        },
+        "x": {
+          "text": "Before the first line of code, talk to people who have the problem. Ask about the last time it happened and what they tried. Keep your idea for the end of the call.\n\nOur guides for first-time founders are in the first reply."
+        },
+        "threads": {
+          "text": "Before the first line of code, spend a week talking to people who have the problem you want to solve.\n\nAsk about the last time it happened, what they tried, and what it cost them. Keep your idea for the end of the call: people are polite about ideas and precise about their own week.\n\nOur guides for first-time founders are in the first reply."
+        },
+        "bluesky": {
+          "text": "Before the first line of code, talk to people who have the problem. Ask about the last time it happened and what they tried, and keep your idea for the end of the call.\n\nOur guides for first-time founders are in the first reply."
+        }
+      }
+    },
+    {
+      "ref": "apply-checklist",
+      "kind": "image",
+      "language": "en",
+      "source": {
+        "agent": "founder",
+        "path": "media/checklist-4x5.png"
+      },
+      "link": null,
+      "media": [
+        {
+          "path": "media/checklist-4x5.png",
+          "type": "image",
+          "alt": "Checklist: purpose in one sentence, a short demo, who your first users are, what you learned from them."
+        }
+      ],
+      "networks": [
+        "linkedin",
+        "instagram"
+      ],
+      "target_slot": "2026-10-22T09:00",
+      "variants": {
+        "linkedin": {
+          "text": "Four things to have ready before you apply to an accelerator: your purpose in one sentence, a short demo, who your first users are, and what you learned from them.\n\nWrite the last one down before the call: it is what a first conversation is about."
+        },
+        "instagram": {
+          "text": "Four things to have ready before you apply to an accelerator.\n\nYour purpose in one sentence, a short demo, who your first users are, and what you learned from them.\n\nSave this for your next application.\n\n#startups #founders #accelerator"
+        }
+      }
+    }
+  ]
+}

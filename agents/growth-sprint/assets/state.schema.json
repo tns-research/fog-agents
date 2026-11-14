@@ -1,0 +1,402 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "growth-sprint state.json",
+  "description": "Execution state of a sprint. Written only by scripts/sprint.py (atomic write, lock file), never by hand. The approval record is sealed with an HMAC under a local key kept outside the project: an approval typed into this file is refused by next, mark and resolve. Step statuses: pending, running, done, failed, needs_human, skipped. Validate with: python3 shared/scripts/validate_json.py agents/growth-sprint/assets/state.schema.json <state.json>",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "sprint_id",
+    "plan_hash",
+    "status",
+    "approval",
+    "approvals",
+    "halt",
+    "budget",
+    "steps",
+    "needs_human",
+    "events"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "approval": {
+      "type": "object",
+      "required": [
+        "by",
+        "at",
+        "plan_hash",
+        "cap_eur",
+        "spend_steps",
+        "publish_steps"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "by": {
+          "type": "string",
+          "minLength": 2
+        },
+        "at": {
+          "type": "string"
+        },
+        "plan_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "cap_eur": {
+          "type": "number",
+          "minimum": 0
+        },
+        "spend_steps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "publish_steps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "note": {
+          "type": "string"
+        },
+        "mac": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "HMAC of the other fields under the local approval key (~/.config/fog-agents/approval.key or FOG_APPROVAL_KEY_FILE). Written by `sprint.py approve` only; next, mark and resolve refuse an approval whose seal does not verify."
+        }
+      }
+    },
+    "step": {
+      "type": "object",
+      "required": [
+        "status",
+        "attempts",
+        "consecutive_failures",
+        "started_at",
+        "last_started_at",
+        "finished_at",
+        "spent_eur",
+        "outputs",
+        "notes"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "pending",
+            "running",
+            "done",
+            "failed",
+            "needs_human",
+            "skipped"
+          ]
+        },
+        "attempts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "consecutive_failures": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "started_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "First start of the step: outputs must be written after it."
+        },
+        "last_started_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Start of the current attempt: the result file and the run line must be written after it."
+        },
+        "finished_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "spent_eur": {
+          "type": "number",
+          "minimum": 0
+        },
+        "outputs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Verified output files, relative to the project."
+        },
+        "inputs_extra": {
+          "type": "object",
+          "description": "Inputs a person supplied through resolve --set."
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "human": {
+      "type": "object",
+      "required": [
+        "id",
+        "step",
+        "kind",
+        "reason",
+        "how",
+        "opened_at",
+        "resolved"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^H-[0-9]{2,3}$"
+        },
+        "step": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "spend",
+            "publish",
+            "input",
+            "budget",
+            "other"
+          ]
+        },
+        "gate": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "how": {
+          "type": "string"
+        },
+        "opened_at": {
+          "type": "string"
+        },
+        "resolved": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "required": [
+            "by",
+            "at",
+            "then"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "by": {
+              "type": "string"
+            },
+            "at": {
+              "type": "string"
+            },
+            "then": {
+              "enum": [
+                "rerun",
+                "done",
+                "skip"
+              ]
+            },
+            "note": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "event": {
+      "type": "object",
+      "required": [
+        "at",
+        "action"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "at": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "step": {
+          "type": "string"
+        },
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        },
+        "by": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "approval_or_null": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "required": [
+        "by",
+        "at",
+        "plan_hash",
+        "cap_eur",
+        "spend_steps",
+        "publish_steps"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "by": {
+          "type": "string",
+          "minLength": 2
+        },
+        "at": {
+          "type": "string"
+        },
+        "plan_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "cap_eur": {
+          "type": "number",
+          "minimum": 0
+        },
+        "spend_steps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "publish_steps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "note": {
+          "type": "string"
+        },
+        "mac": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    }
+  },
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "sprint_id": {
+      "type": "string"
+    },
+    "plan_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "description": "sha256 of the canonical sprint.json last validated."
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "approved",
+        "running",
+        "halted",
+        "complete"
+      ]
+    },
+    "approval": {
+      "$ref": "#/$defs/approval_or_null"
+    },
+    "approvals": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/approval"
+      }
+    },
+    "halt": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "required": [
+        "reason",
+        "at",
+        "detail"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "reason": {
+          "enum": [
+            "budget",
+            "failures"
+          ]
+        },
+        "at": {
+          "type": "string"
+        },
+        "detail": {
+          "type": "string"
+        },
+        "step": {
+          "type": "string"
+        }
+      }
+    },
+    "budget": {
+      "type": "object",
+      "required": [
+        "cap_eur",
+        "spent_eur",
+        "alerted"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "cap_eur": {
+          "type": "number",
+          "minimum": 0
+        },
+        "spent_eur": {
+          "type": "number",
+          "minimum": 0
+        },
+        "alerted": {
+          "type": "boolean"
+        }
+      }
+    },
+    "steps": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/step"
+      }
+    },
+    "needs_human": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/human"
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/event"
+      }
+    }
+  }
+}

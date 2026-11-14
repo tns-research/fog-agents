@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "project": "swanbase",
+  "posts": [
+    {
+      "ref": "stress-x",
+      "kind": "text",
+      "language": "en",
+      "link": null,
+      "networks": ["x"],
+      "variants": {
+        "x": {
+          "text": "Your seed deck opens with purpose, problem, solution and market, and each of those slides has one job: make the reader turn to the next page without asking what they just read. Write each title as the sentence you want the investor to repeat to a partner on Monday, then cut the slide until that sentence is all that is left.\n---\nPart two of a thread that should not exist."
+        }
+      }
+    },
+    {
+      "ref": "stress-links",
+      "kind": "image",
+      "language": "en",
+      "link": "https://swanbase.co/en/",
+      "media": [
+        { "path": "../swanbase-week-20261019/media/checklist-4x5.png", "type": "image", "alt": "Checklist placeholder." }
+      ],
+      "networks": ["linkedin", "instagram"],
+      "variants": {
+        "linkedin": { "text": "Read our guides for first-time founders at https://swanbase.co/en/ before you apply." },
+        "instagram": { "text": "Our guides for first-time founders are in the first comment.\n\n#a #b #c #d #e #f #g" }
+      }
+    },
+    {
+      "ref": "stress-media",
+      "kind": "carousel",
+      "language": "en",
+      "link": null,
+      "media": [
+        { "path": "../swanbase-week-20261019/carousel-builder/pitch-deck-order-20261019/export/carousel.pdf", "type": "document", "title": "Deck" },
+        { "path": "../swanbase-week-20261019/carousel-builder/pitch-deck-order-20261019/export/slide-01.png", "type": "image", "alt": "One." },
+        { "path": "../swanbase-week-20261019/carousel-builder/pitch-deck-order-20261019/export/slide-02.png", "type": "image", "alt": "Two." },
+        { "path": "../swanbase-week-20261019/carousel-builder/pitch-deck-order-20261019/export/slide-03.png", "type": "image", "alt": "Three." },
+        { "path": "../swanbase-week-20261019/media/checklist-4x5.png", "type": "image", "alt": "Four." },
+        { "path": "media/missing-slide.png", "type": "image", "alt": "Five." }
+      ],
+      "networks": ["instagram", "x", "threads"],
+      "variants": {
+        "instagram": { "text": "The opening of a seed deck, slide by slide.", "media": [0] },
+        "x": { "text": "The opening of a seed deck, slide by slide.", "media": [1, 2, 3, 4, 5] }
+      }
+    },
+    {
+      "ref": "stress-gate",
+      "kind": "text",
+      "language": "en",
+      "link": null,
+      "networks": ["linkedin"],
+      "variants": {
+        "linkedin": { "text": "It's not a tool, it's a habit. Our checklist is a real game-changer \u2014 and you will see why." }
+      }
+    }
+  ]
+}

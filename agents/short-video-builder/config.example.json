@@ -1,0 +1,27 @@
+{
+  "_comment": "short-video-builder per-project config. Copied to <your-projects-root>/<project>/short-video-builder/config.json on the first run; the agent fills missing values from chat and copies them into clips.json. objective: reach, leads or authority. duration: length bounds of each short in seconds (spec field duration_limits). transcription.engine: auto, faster-whisper, whisper-cpp, openai-whisper or import; model: whisper size (medium by default; small mishears too much for on-screen captions in most languages); whisper_cpp_model: path to a ggml file; names_to_spell: proper nouns and acronyms that prime the transcriber and guide proofreading (context.json names are added). style: brand_json points to project-context/brand.json, empty fields take its accent, text, bg and body font; uppercase, words_per_line (1 to 5), position (lower or middle), logo (PNG path or null), progress_bar (true or false). speaker: lower third, empty name = none. cta: optional end card after the last word, the source keeps playing under it; there is no intro card option, by design. audio: loudness target in LUFS, true peak in dBTP and light denoise. review_rounds_max: render review rounds before delivering with the open items listed (3). Optional: a \"tools\" object (same keys as shared/tools.example.json, for example {\"vision\": \"manual\", \"critic\": \"builtin\"}) overrides the project's tools.json for this agent.",
+  "project": "<project-slug>",
+  "language": null,
+  "objective": "authority",
+  "clips_count": 3,
+  "duration": { "min_seconds": 15, "max_seconds": 60 },
+  "transcription": {
+    "engine": "auto",
+    "model": "medium",
+    "whisper_cpp_model": null,
+    "names_to_spell": []
+  },
+  "style": {
+    "brand_json": "../project-context/brand.json",
+    "font": null,
+    "uppercase": true,
+    "words_per_line": 3,
+    "position": "lower",
+    "logo": null,
+    "progress_bar": true
+  },
+  "speaker": { "name": "", "role": "", "show_seconds": 4 },
+  "cta": { "enabled": false, "lines": [], "url": "", "seconds": 2.5 },
+  "audio": { "target_lufs": -14, "true_peak": -1.5, "denoise": true },
+  "review_rounds_max": 3
+}

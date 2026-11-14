@@ -1,0 +1,28 @@
+<style>
+/* steps: 3 to 7 numbered steps. Vertical: badge column and a rule between
+   badges. Horizontal (3 or 4 short steps): badges on one line. */
+.steps { display: flex; flex-direction: column; }
+.step { display: grid; grid-template-columns: 56px 1fr; column-gap: 28px; position: relative; padding-bottom: 34px; }
+.step:last-child { padding-bottom: 0; }
+.step::before { content: ""; position: absolute; left: 27px; top: 64px; bottom: 8px; width: 2px; background: var(--border); }
+.step:last-child::before { display: none; }
+.badge { width: 56px; height: 56px; border-radius: min(var(--radius), 28px); background: var(--accent); color: var(--on-accent);
+  font-family: var(--font-body); font-weight: var(--body-strong); font-size: 26px; line-height: 1; font-variant-numeric: lining-nums tabular-nums;
+  display: flex; align-items: center; justify-content: center; }
+.step-c { padding-top: 10px; }
+.step-t { font-size: 28px; line-height: 1.28; font-weight: var(--body-strong); color: var(--text); }
+.step-x { font-size: 22px; line-height: 1.5; color: var(--text-secondary); margin-top: 8px; }
+.steps.h { display: grid; grid-template-columns: repeat(var(--n), 1fr); column-gap: 32px; }
+.steps.h .step { display: flex; flex-direction: column; gap: 20px; padding-bottom: 0; }
+.steps.h .step::before { left: 72px; top: 27px; bottom: auto; width: calc(100% - 56px); height: 2px; }
+.steps.h .step:last-child::before { display: none; }
+.steps.h .step-c { padding-top: 0; }
+.steps.h .step-t { font-size: 26px; }
+</style>
+<main class="canvas" data-kind="steps">
+  {{head}}
+  <section class="v-body">
+    <ol class="steps {{layout}}" style="--n:{{n}}">{{steps}}</ol>
+  </section>
+  {{foot}}
+</main>

@@ -1,0 +1,5 @@
+URL: https://brightpane.example/about
+
+Brightpane, About
+
+Brightpane helps retail teams plan staff schedules. Our team is based in Lyon.

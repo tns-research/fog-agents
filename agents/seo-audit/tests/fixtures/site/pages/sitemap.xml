@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://swanbase.example/</loc></url>
+  <url><loc>https://swanbase.example/fr/</loc></url>
+  <url><loc>https://swanbase.example/program/</loc></url>
+  <url><loc>https://swanbase.example/blog/</loc></url>
+  <url><loc>https://swanbase.example/blog/first-pitch/</loc></url>
+  <url><loc>https://swanbase.example/blog/pitch-deck-mistakes/</loc></url>
+  <url><loc>https://swanbase.example/blog/orphan-guide/</loc></url>
+  <url><loc>https://swanbase.example/old-program/</loc></url>
+  <url><loc>https://swanbase.example/events/</loc></url>
+  <url><loc>https://swanbase.example/apply/</loc></url>
+</urlset>

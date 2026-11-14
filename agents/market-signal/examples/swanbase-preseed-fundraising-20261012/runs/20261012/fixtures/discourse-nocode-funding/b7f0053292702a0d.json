@@ -1,0 +1,15 @@
+{
+  "url": "https://forum.example/posts/900104.json",
+  "status": 200,
+  "fetched_at": "2026-10-12T09:00:37Z",
+  "body": {
+    "id": 900104,
+    "topic_id": 90021,
+    "topic_slug": "desarrollador-blockyard-y-web-busco-proyectos-freelance",
+    "username": "user-2dc5fe",
+    "created_at": "2026-09-16T06:44:45.597Z",
+    "cooked": "Hola a todos en la comunidad,<br><br>Soy desarrollador con experiencia en Blockyard y desarrollo web. Llevo un tiempo construyendo aplicaciones funcionales y acabo de publicar mi portafolio para que puedan ver lo que hago:<br><br>Mi portafolio: [name], desarrollador y dise\u00f1ador no-code [...]",
+    "post_number": 1,
+    "reply_count": 0
+  }
+}

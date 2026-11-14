@@ -1,0 +1,9 @@
+{
+  "project": "fernhollow",
+  "domain": "https://fernhollow.example/",
+  "language": "en",
+  "write": {
+    "author": { "name": "Fernhollow editorial team", "type": "Organization", "url": "https://fernhollow.example/about/" },
+    "publisher": { "name": "Fernhollow", "logo": "https://fernhollow.example/logo.png" }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "_comment": "Fictional Google autocomplete answers keyed by the exact query sent (tests/test_topics.py reads it with --suggest-file).",
+  "burn rate": [
+    "burn rate",
+    "burn rate formula",
+    "burn rate calculator",
+    "burn rate vs runway",
+    "how to calculate burn rate"
+  ],
+  "burn rate a": [
+    "burn rate and runway",
+    "burn rate accounting"
+  ],
+  "burn rate b": [
+    "burn rate benchmark saas"
+  ],
+  "pitch deck": [
+    "pitch deck",
+    "pitch deck cap table slide",
+    "pitch deck for investors fernhill"
+  ]
+}

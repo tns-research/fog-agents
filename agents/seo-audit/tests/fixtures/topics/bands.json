@@ -1,0 +1,61 @@
+{
+  "_comment": "Fictional bands.json of fernhill.example (only the keys topics.py reads). Every number is invented.",
+  "schema_version": "1.0",
+  "generated_by": "gsc_bands.py",
+  "queries": [
+    {
+      "query": "fernhill pricing",
+      "cur": {
+        "clicks": 40,
+        "impressions": 500,
+        "ctr": 0.08,
+        "position": 1.2
+      },
+      "top_page": "https://fernhill.example/pricing/"
+    },
+    {
+      "query": "burn rate formula",
+      "cur": {
+        "clicks": 2,
+        "impressions": 120,
+        "ctr": 0.0167,
+        "position": 14.0
+      },
+      "top_page": "https://fernhill.example/blog/burn-rate/"
+    },
+    {
+      "query": "startup runway calculator",
+      "cur": {
+        "clicks": 1,
+        "impressions": 300,
+        "ctr": 0.0033,
+        "position": 22.0
+      },
+      "top_page": "https://fernhill.example/blog/burn-rate/"
+    },
+    {
+      "query": "how to calculate burn rate",
+      "cur": {
+        "clicks": 9,
+        "impressions": 400,
+        "ctr": 0.0225,
+        "position": 6.0
+      },
+      "top_page": "https://fernhill.example/blog/burn-rate/"
+    },
+    {
+      "query": "seed round valuation",
+      "cur": {
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0.0,
+        "position": 40.0
+      },
+      "top_page": "https://fernhill.example/blog/pitch-deck-template/"
+    }
+  ],
+  "top_query_by_page": {
+    "https://fernhill.example/blog/burn-rate/": "burn rate calculation",
+    "https://fernhill.example/pricing/": "fernhill pricing"
+  }
+}

@@ -1,0 +1,31 @@
+<style>
+/* decision: a yes / no tree, two levels at most. Questions on the surface
+   with an accent border, outcomes on the accent tint. Connectors are CSS
+   rules: a stub under each question, a bar across the two branches, a drop
+   into each branch. */
+.tree { display: flex; flex-direction: column; align-items: center; }
+.node { border-radius: var(--radius); padding: 20px 28px; text-align: center; font-size: 24px; line-height: 1.35; max-width: 640px; position: relative; z-index: 1; }
+.node.q { background: var(--surface); border: 2px solid var(--accent); color: var(--text); font-weight: var(--body-strong); }
+.node.o { background: var(--accent-tint); border: 1px solid var(--border); color: var(--text-on-tint); }
+.br-row { display: grid; grid-template-columns: 1fr 1fr; column-gap: 32px; width: 100%; position: relative; padding-top: 32px; }
+.br-row::before { content: ""; position: absolute; top: 0; left: calc(50% - 1px); width: 2px; height: 32px; background: var(--border); }
+.br { display: flex; flex-direction: column; align-items: center; position: relative; padding-top: 30px; min-width: 0; }
+.br::before { content: ""; position: absolute; top: 0; height: 2px; background: var(--border); }
+.br.yes::before { left: calc(50% - 1px); right: -17px; }
+.br.no::before { left: -17px; right: calc(50% - 1px); }
+.br::after { content: ""; position: absolute; top: 0; left: calc(50% - 1px); width: 2px; height: 86px; background: var(--border); }
+/* 86 px = 30 px drop + label (38 px) + its 18 px margin: the rule runs behind the label down to the node. */
+.lbl { font-size: 20px; line-height: 1; font-weight: 700; padding: 8px 14px; border-radius: min(var(--radius), 18px); background: var(--bg);
+  border: 1px solid var(--border); margin-bottom: 18px; position: relative; z-index: 1; }
+.br.yes > .lbl { color: var(--accent-ink); }
+.br.no > .lbl { color: var(--text-secondary); }
+.br .node { width: 100%; }
+.br .br-row .node { font-size: 22px; padding: 18px 20px; }
+</style>
+<main class="canvas" data-kind="decision">
+  {{head}}
+  <section class="v-body">
+    <div class="tree">{{tree}}</div>
+  </section>
+  {{foot}}
+</main>

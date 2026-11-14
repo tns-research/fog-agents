@@ -1,0 +1,899 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "growth-pulse pulse.json",
+  "description": "Every number of the weekly report, computed by scripts/compute_pulse.py from the source files and assets/pulse-rules.json. The model reads it and never adds a number to it. scripts/check_report.py accepts a number in the report only when it is in this file or in the experiments handoff. Validate with: python3 shared/scripts/validate_json.py agents/growth-pulse/assets/pulse.schema.json <pulse.json>",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "agent",
+    "project",
+    "generated_on",
+    "week",
+    "previous_week",
+    "baseline",
+    "window",
+    "currency",
+    "rules",
+    "inputs",
+    "inputs_hash",
+    "sources",
+    "metrics",
+    "stage_summary",
+    "notable",
+    "gsc",
+    "correlations",
+    "actions",
+    "previous_experiments",
+    "experiments_followup",
+    "limitations"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "day": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "isoweek": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-W[0-9]{2}$"
+    },
+    "num": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "week": {
+      "type": "object",
+      "required": [
+        "id",
+        "start",
+        "end"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/isoweek"
+        },
+        "start": {
+          "$ref": "#/$defs/day"
+        },
+        "end": {
+          "$ref": "#/$defs/day"
+        }
+      }
+    },
+    "stage": {
+      "enum": [
+        "acquisition",
+        "activation",
+        "retention",
+        "referral",
+        "revenue"
+      ]
+    },
+    "comparison": {
+      "type": "object",
+      "description": "abs: difference in the metric's unit (positions for position, money for currency). pct: percentage change, null under min_events_for_pct events. pp: rate change in percentage points. noise_band: half-width of the flat zone. z: change in standard deviations. signal reads the number; trend reads it with the metric's direction.",
+      "required": [
+        "abs",
+        "pct",
+        "pp",
+        "noise_band",
+        "z",
+        "within_noise",
+        "small_volume",
+        "signal",
+        "trend"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "abs": {
+          "$ref": "#/$defs/num"
+        },
+        "pct": {
+          "$ref": "#/$defs/num"
+        },
+        "pp": {
+          "$ref": "#/$defs/num"
+        },
+        "noise_band": {
+          "$ref": "#/$defs/num"
+        },
+        "z": {
+          "$ref": "#/$defs/num"
+        },
+        "within_noise": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "small_volume": {
+          "type": "boolean"
+        },
+        "signal": {
+          "enum": [
+            "up",
+            "down",
+            "flat",
+            "small_volume",
+            "n/a"
+          ]
+        },
+        "trend": {
+          "enum": [
+            "better",
+            "worse",
+            "flat",
+            "small_volume",
+            "n/a"
+          ]
+        }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "required": [
+        "numerator",
+        "denominator"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "numerator": {
+          "$ref": "#/$defs/num"
+        },
+        "denominator": {
+          "$ref": "#/$defs/num"
+        }
+      }
+    },
+    "gscrow": {
+      "required": [
+        "clicks",
+        "impressions",
+        "position",
+        "clicks_change",
+        "clicks_pct",
+        "impressions_pct",
+        "position_change",
+        "decline",
+        "cause"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "clicks": {
+          "type": "object",
+          "required": [
+            "current",
+            "prior"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "current": {
+              "type": "number"
+            },
+            "prior": {
+              "type": "number"
+            }
+          }
+        },
+        "impressions": {
+          "type": "object",
+          "required": [
+            "current",
+            "prior"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "current": {
+              "type": "number"
+            },
+            "prior": {
+              "type": "number"
+            }
+          }
+        },
+        "position": {
+          "type": "object",
+          "required": [
+            "current",
+            "prior"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "current": {
+              "$ref": "#/$defs/num"
+            },
+            "prior": {
+              "$ref": "#/$defs/num"
+            }
+          }
+        },
+        "clicks_change": {
+          "type": "number"
+        },
+        "clicks_pct": {
+          "$ref": "#/$defs/num"
+        },
+        "impressions_pct": {
+          "$ref": "#/$defs/num"
+        },
+        "position_change": {
+          "$ref": "#/$defs/num"
+        },
+        "decline": {
+          "type": "boolean"
+        },
+        "cause": {
+          "enum": [
+            "position",
+            "demand",
+            "ctr",
+            "gone",
+            null
+          ]
+        }
+      },
+      "description": "A Search Console row (totals, a query or a page): current week against the previous week, judged with the shared decline definition. clicks_pct and impressions_pct are null under min_events_for_pct; the decline itself follows seo-audit's rule."
+    }
+  },
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "agent": {
+      "const": "growth-pulse"
+    },
+    "project": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_on": {
+      "$ref": "#/$defs/day"
+    },
+    "week": {
+      "$ref": "#/$defs/week"
+    },
+    "previous_week": {
+      "$ref": "#/$defs/week"
+    },
+    "baseline": {
+      "type": "object",
+      "required": [
+        "weeks",
+        "count"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "weeks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/isoweek"
+          }
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "window": {
+      "type": "object",
+      "required": [
+        "since",
+        "until",
+        "weeks"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "since": {
+          "$ref": "#/$defs/day"
+        },
+        "until": {
+          "$ref": "#/$defs/day"
+        },
+        "weeks": {
+          "type": "integer",
+          "minimum": 2
+        }
+      }
+    },
+    "currency": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "rules": {
+      "type": "object",
+      "description": "The thresholds applied (assets/pulse-rules.json with the project overrides, comments removed)."
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "file",
+          "source",
+          "sha256"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "file": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    "inputs_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{12}$"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": [
+          "source",
+          "provider",
+          "status",
+          "message",
+          "days_with_data",
+          "missing_days",
+          "report_week_complete",
+          "notes"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "source": {
+            "enum": [
+              "plausible",
+              "umami",
+              "ga4",
+              "gsc",
+              "social",
+              "revenue"
+            ]
+          },
+          "provider": {
+            "enum": [
+              "api",
+              "fixture",
+              "csv",
+              "json",
+              "none"
+            ]
+          },
+          "status": {
+            "enum": [
+              "ok",
+              "partial",
+              "stale",
+              "missing",
+              "error"
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "days_with_data": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "missing_days": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/day"
+            }
+          },
+          "report_week_complete": {
+            "type": "boolean"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "source",
+          "stage",
+          "kind",
+          "unit",
+          "direction",
+          "series",
+          "flags",
+          "current",
+          "previous",
+          "baseline",
+          "baseline_weeks_used",
+          "vs_previous",
+          "vs_baseline"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+(\\.[a-z0-9_\\-]+)+$"
+          },
+          "label": {
+            "type": "string"
+          },
+          "source": {
+            "enum": [
+              "plausible",
+              "umami",
+              "ga4",
+              "gsc",
+              "social",
+              "revenue"
+            ]
+          },
+          "stage": {
+            "$ref": "#/$defs/stage"
+          },
+          "kind": {
+            "enum": [
+              "count",
+              "currency",
+              "rate",
+              "position"
+            ]
+          },
+          "unit": {
+            "type": "string"
+          },
+          "direction": {
+            "enum": [
+              "up",
+              "down"
+            ]
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "week",
+                "value",
+                "complete"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "week": {
+                  "$ref": "#/$defs/isoweek"
+                },
+                "value": {
+                  "$ref": "#/$defs/num"
+                },
+                "complete": {
+                  "type": "boolean"
+                },
+                "numerator": {
+                  "$ref": "#/$defs/num"
+                },
+                "denominator": {
+                  "$ref": "#/$defs/num"
+                }
+              }
+            }
+          },
+          "flags": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "small_volume",
+                "incomplete_week",
+                "unmapped_event",
+                "daily_visitors_summed"
+              ]
+            }
+          },
+          "current": {
+            "$ref": "#/$defs/num"
+          },
+          "previous": {
+            "$ref": "#/$defs/num"
+          },
+          "baseline": {
+            "$ref": "#/$defs/num"
+          },
+          "baseline_weeks_used": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "counts": {
+            "type": "object",
+            "description": "Rates and positions: the numerator and denominator behind each value. A rate under min_events_for_pct events is null and is reported as 'numerator of denominator'.",
+            "required": [
+              "current",
+              "previous",
+              "baseline"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "current": {
+                "$ref": "#/$defs/counts"
+              },
+              "previous": {
+                "$ref": "#/$defs/counts"
+              },
+              "baseline": {
+                "$ref": "#/$defs/counts"
+              }
+            }
+          },
+          "vs_previous": {
+            "$ref": "#/$defs/comparison"
+          },
+          "vs_baseline": {
+            "$ref": "#/$defs/comparison"
+          }
+        }
+      }
+    },
+    "stage_summary": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "stage",
+          "metrics",
+          "better",
+          "worse",
+          "flat",
+          "small_volume",
+          "not_comparable"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "stage": {
+            "$ref": "#/$defs/stage"
+          },
+          "metrics": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "better": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "worse": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "flat": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "small_volume": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "not_comparable": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "notable": {
+      "type": "array",
+      "description": "Metric ids whose trend is the same (better or worse, outside the noise) against last week and against the 4-week mean, largest first.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "gsc": {
+      "type": "object",
+      "required": [
+        "available",
+        "definition",
+        "definition_source",
+        "current_week",
+        "prior_week",
+        "totals",
+        "queries",
+        "pages",
+        "breakdowns_available",
+        "note"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "available": {
+          "type": "boolean"
+        },
+        "definition": {
+          "type": "object",
+          "required": [
+            "min_prior_clicks",
+            "max_change_pct",
+            "cause_position_worse_by",
+            "cause_impressions_change_pct"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "min_prior_clicks": {
+              "type": "number"
+            },
+            "max_change_pct": {
+              "type": "number"
+            },
+            "cause_position_worse_by": {
+              "type": "number"
+            },
+            "cause_impressions_change_pct": {
+              "type": "number"
+            }
+          }
+        },
+        "definition_source": {
+          "type": "string"
+        },
+        "current_week": {
+          "$ref": "#/$defs/isoweek"
+        },
+        "prior_week": {
+          "$ref": "#/$defs/isoweek"
+        },
+        "totals": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "$ref": "#/$defs/gscrow"
+        },
+        "queries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/$defs/gscrow"
+          }
+        },
+        "pages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/$defs/gscrow"
+          }
+        },
+        "breakdowns_available": {
+          "type": "boolean"
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "correlations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "a",
+          "b",
+          "lag_days",
+          "n_days",
+          "r",
+          "label",
+          "causal",
+          "question"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^C[0-9]+$"
+          },
+          "a": {
+            "type": "string"
+          },
+          "b": {
+            "type": "string"
+          },
+          "lag_days": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "n_days": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "r": {
+            "$ref": "#/$defs/num"
+          },
+          "label": {
+            "enum": [
+              "correlated",
+              "weak",
+              "insufficient_data"
+            ]
+          },
+          "causal": {
+            "const": false
+          },
+          "question": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "date",
+          "week",
+          "in_report_week",
+          "channel",
+          "stage",
+          "action"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "date": {
+            "$ref": "#/$defs/day"
+          },
+          "week": {
+            "$ref": "#/$defs/isoweek"
+          },
+          "in_report_week": {
+            "type": "boolean"
+          },
+          "channel": {
+            "type": "string"
+          },
+          "stage": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "previous_experiments": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "required": [
+        "file",
+        "week",
+        "generated_on"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "file": {
+          "type": "string"
+        },
+        "week": {
+          "$ref": "#/$defs/isoweek"
+        },
+        "generated_on": {
+          "$ref": "#/$defs/day"
+        }
+      }
+    },
+    "experiments_followup": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "stage",
+          "metric",
+          "start_date",
+          "end_date",
+          "baseline",
+          "threshold",
+          "weeks_measured",
+          "observed",
+          "verdict",
+          "reason"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "stage": {
+            "$ref": "#/$defs/stage"
+          },
+          "metric": {
+            "type": "string"
+          },
+          "start_date": {
+            "$ref": "#/$defs/day"
+          },
+          "end_date": {
+            "$ref": "#/$defs/day"
+          },
+          "baseline": {
+            "$ref": "#/$defs/num"
+          },
+          "threshold": {
+            "type": "object",
+            "required": [
+              "comparator",
+              "value",
+              "per"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "comparator": {
+                "enum": [
+                  ">=",
+                  "<="
+                ]
+              },
+              "value": {
+                "type": "number"
+              },
+              "per": {
+                "enum": [
+                  "week",
+                  "total"
+                ]
+              }
+            }
+          },
+          "weeks_measured": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/isoweek"
+            }
+          },
+          "observed": {
+            "$ref": "#/$defs/num"
+          },
+          "verdict": {
+            "enum": [
+              "met",
+              "not_met",
+              "running",
+              "not_measurable"
+            ]
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

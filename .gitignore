@@ -1,0 +1,50 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# build / cache
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+
+# misc
+.DS_Store
+*.pem
+.trash/
+
+# debug
+*-debug.log*
+
+# env and secrets
+.env
+.env.*
+!.env.example
+*.key
+*.p12
+credentials*.json
+token*.json
+
+# vendored sub-repos (separate git repos checked out alongside)
+/site/
+
+# editor
+.vscode/
+.idea/
+
+# harness-specific configs (stack must remain harness-agnostic)
+.claude/
+.cursor/
+.codex/
+.gemini/
+
+# internal planning, kept local
+eng/
+
+# python cruft (carousel-builder scripts use a local venv)
+__pycache__/
+*.pyc
+.venv/

@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "runs.jsonl line",
+  "description": "One line of <project>/project-context/memory/runs.jsonl, appended by every agent at the end of every run, failures included. See shared/skills/keeping-project-memory/SKILL.md. Validate with: python3 shared/scripts/validate_json.py --jsonl shared/schemas/run-record.schema.json <runs.jsonl>",
+  "type": "object",
+  "required": ["ts", "agent", "status"],
+  "additionalProperties": false,
+  "properties": {
+    "ts": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}(:[0-9]{2})?(Z|[+-][0-9]{2}:[0-9]{2})$",
+      "description": "Run end time, ISO 8601 with timezone."
+    },
+    "agent": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Agent folder name, for example carousel-builder."
+    },
+    "label": { "type": "string", "description": "The run's output label, for example the carousel topic slug." },
+    "status": {
+      "type": "string",
+      "enum": ["ok", "partial", "failed", "skipped"],
+      "description": "partial: delivered with skipped capabilities or unresolved BLOCKs listed in the report; skipped: an idempotence guard found the output already present."
+    },
+    "inputs_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8,64}$",
+      "description": "sha256 (hex, any prefix of 8+ chars) of the resolved inputs, so a scheduled re-run can skip unchanged work."
+    },
+    "outputs": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Files written, relative to the project folder."
+    },
+    "providers": {
+      "type": "object",
+      "additionalProperties": { "type": "string" },
+      "description": "Provider used per capability (see shared/tools.md), for example {\"web_search\": \"builtin\"}."
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": { "type": "string", "enum": ["pass", "fail", "skipped"] },
+      "description": "Mechanical gates and their result, for example {\"copy_lint\": \"pass\", \"brand_schema\": \"pass\"}."
+    },
+    "critic_verdict": {
+      "type": "string",
+      "enum": ["PASS", "FAIL", "none"],
+      "description": "Overall verdict of reviewing-with-fresh-eyes, none when it did not run."
+    },
+    "render_review_rounds": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "Rounds of reviewing-renders used."
+    },
+    "human_verdict": {
+      "type": "string",
+      "enum": ["approved", "changes_requested", "rejected", "none"],
+      "description": "What the founder said about the deliverable, none when they have not answered yet."
+    },
+    "decisions_added": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Ids of decisions.md entries added or replaced during this run."
+    },
+    "notes": { "type": "string" }
+  }
+}

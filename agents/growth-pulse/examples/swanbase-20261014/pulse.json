@@ -1,0 +1,2652 @@
+{
+  "schema_version": "1.0",
+  "agent": "growth-pulse",
+  "project": "swanbase",
+  "generated_on": "2026-10-14",
+  "week": {
+    "id": "2026-W41",
+    "start": "2026-10-05",
+    "end": "2026-10-11"
+  },
+  "previous_week": {
+    "id": "2026-W40",
+    "start": "2026-09-28",
+    "end": "2026-10-04"
+  },
+  "baseline": {
+    "weeks": [
+      "2026-W37",
+      "2026-W38",
+      "2026-W39",
+      "2026-W40"
+    ],
+    "count": 4
+  },
+  "window": {
+    "since": "2026-08-31",
+    "until": "2026-10-11",
+    "weeks": 6
+  },
+  "currency": "EUR",
+  "rules": {
+    "weeks": {
+      "window_weeks": 6,
+      "baseline_weeks": 4,
+      "min_complete_baseline_weeks": 2
+    },
+    "volume": {
+      "min_events_for_pct": 30
+    },
+    "noise": {
+      "z": 2.0,
+      "min_weeks_for_spread": 3,
+      "position_flat_band": 1.0
+    },
+    "correlation": {
+      "min_days": 28,
+      "min_abs_r": 0.5,
+      "lags_days": [
+        0,
+        1
+      ],
+      "pairs": [
+        {
+          "a": "social.*.impressions",
+          "b": "*.visitors",
+          "same_source": false,
+          "question": "Do social impressions and site visitors move together?"
+        },
+        {
+          "a": "gsc.clicks",
+          "b": "*.visitors",
+          "same_source": false,
+          "question": "Do search clicks and site visitors move together?"
+        },
+        {
+          "a": "*.visitors",
+          "b": "*.event.*",
+          "same_source": true,
+          "question": "Do conversions follow traffic, or move on their own?"
+        }
+      ]
+    },
+    "gsc_decline": {
+      "min_prior_clicks": 10,
+      "max_change_pct": -20,
+      "cause_position_worse_by": 2,
+      "cause_impressions_change_pct": -20
+    },
+    "experiments": {
+      "count": 3,
+      "stages": [
+        "acquisition",
+        "activation",
+        "retention",
+        "referral",
+        "revenue"
+      ],
+      "min_duration_days": 7,
+      "max_duration_days": 28,
+      "min_distinct_stages": 2
+    }
+  },
+  "inputs": [
+    {
+      "file": "ga4.json",
+      "source": "ga4",
+      "sha256": "b29862edac330a3951dda5e258cb40a61a35ada1d0439334217a1cd1155c532b"
+    },
+    {
+      "file": "gsc.json",
+      "source": "gsc",
+      "sha256": "fab33beb69f8310f532295af7805afe7250bd9114a4a3037d92e972a4164b50c"
+    },
+    {
+      "file": "plausible.json",
+      "source": "plausible",
+      "sha256": "e588e391fba9f77450b8dcbb8078717949f2fa04f0d3bdcf63ebbe4137d7acfc"
+    },
+    {
+      "file": "revenue.json",
+      "source": "revenue",
+      "sha256": "0dd1fc6d156f4301a2f1ae0dac914565af4b977f9465897408ce5fa27d8190cb"
+    },
+    {
+      "file": "social.json",
+      "source": "social",
+      "sha256": "4f898e3a88605abe09b736df1f5c8222394f74b70be020a26f9785f4c5d4e330"
+    },
+    {
+      "file": "umami.json",
+      "source": "umami",
+      "sha256": "82acd95c36802ab830b183dedf69ea9ec95ace4b004eb031b38a84ebcb20046f"
+    },
+    {
+      "file": "experiments-20260930.json",
+      "source": "previous_experiments",
+      "sha256": "e611adefa0e045015b2e151eb4fb059db0a64adce3f80fd5129ad7e7e9050353"
+    },
+    {
+      "file": "actions.csv",
+      "source": "actions",
+      "sha256": "d61aaec03f2f732198d39cd45ef733491aef52b13ac11752c6225d27ca9a5ccd"
+    }
+  ],
+  "inputs_hash": "de4b550c7f98",
+  "sources": [
+    {
+      "source": "plausible",
+      "provider": "none",
+      "status": "missing",
+      "message": "not configured, no API key and no CSV: in Plausible, Export > CSV, unzip, pass visitors.csv with --csv; add a date,event,count file for daily goal conversions",
+      "days_with_data": 0,
+      "missing_days": [],
+      "report_week_complete": false,
+      "notes": []
+    },
+    {
+      "source": "umami",
+      "provider": "fixture",
+      "status": "ok",
+      "message": "complete",
+      "days_with_data": 42,
+      "missing_days": [],
+      "report_week_complete": true,
+      "notes": [
+        "visitors = daily sessions from /pageviews (daily unique visitors)"
+      ]
+    },
+    {
+      "source": "ga4",
+      "provider": "none",
+      "status": "missing",
+      "message": "not configured, no API key and no CSV: in GA4, open the report, Share > Download CSV (one table by Date with Active users, Sessions, Views; one by Date and Event name with Event count) and pass the files with --csv",
+      "days_with_data": 0,
+      "missing_days": [],
+      "report_week_complete": false,
+      "notes": []
+    },
+    {
+      "source": "gsc",
+      "provider": "fixture",
+      "status": "ok",
+      "message": "complete",
+      "days_with_data": 42,
+      "missing_days": [],
+      "report_week_complete": true,
+      "notes": [
+        "query rows exclude anonymized queries; their sum is below the totals"
+      ]
+    },
+    {
+      "source": "social",
+      "provider": "csv",
+      "status": "ok",
+      "message": "complete",
+      "days_with_data": 42,
+      "missing_days": [],
+      "report_week_complete": true,
+      "notes": [
+        "linkedin.csv: daily export",
+        "instagram-posts.csv: post-level export, lifetime figures on the publish day"
+      ]
+    },
+    {
+      "source": "revenue",
+      "provider": "csv",
+      "status": "ok",
+      "message": "complete",
+      "days_with_data": 42,
+      "missing_days": [],
+      "report_week_complete": true,
+      "notes": [
+        "read payments.csv, 1 row(s) not succeeded or unreadable left out",
+        "days without a payment count as zero: the export must cover the whole window",
+        "currency EUR; new vs returning judged on 87 day(s) of history before the window"
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "id": "gsc.clicks",
+      "label": "Search clicks",
+      "source": "gsc",
+      "stage": "acquisition",
+      "kind": "count",
+      "unit": "clicks",
+      "direction": "up",
+      "series": [
+        {
+          "week": "2026-W36",
+          "value": 143,
+          "complete": true
+        },
+        {
+          "week": "2026-W37",
+          "value": 176,
+          "complete": true
+        },
+        {
+          "week": "2026-W38",
+          "value": 157,
+          "complete": true
+        },
+        {
+          "week": "2026-W39",
+          "value": 182,
+          "complete": true
+        },
+        {
+          "week": "2026-W40",
+          "value": 124,
+          "complete": true
+        },
+        {
+          "week": "2026-W41",
+          "value": 72,
+          "complete": true
+        }
+      ],
+      "flags": [],
+      "current": 72,
+      "previous": 124,
+      "baseline": 159.8,
+      "baseline_weeks_used": 4,
+      "vs_previous": {
+        "abs": -52,
+        "pct": -41.9,
+        "pp": null,
+        "noise_band": 73.8,
+        "z": -1.4,
+        "within_noise": true,
+        "small_volume": false,
+        "signal": "flat",
+        "trend": "flat"
+      },
+      "vs_baseline": {
+        "abs": -87.8,
+        "pct": -54.9,
+        "pp": null,
+        "noise_band": 58.4,
+        "z": -3,
+        "within_noise": false,
+        "small_volume": false,
+        "signal": "down",
+        "trend": "worse"
+      }
+    },
+    {
+      "id": "gsc.ctr",
+      "label": "Search CTR",
+      "source": "gsc",
+      "stage": "acquisition",
+      "kind": "rate",
+      "unit": "%",
+      "direction": "up",
+      "series": [
+        {
+          "week": "2026-W36",
+          "value": 4.7,
+          "complete": true,
+          "numerator": 143,
+          "denominator": 3044
+        },
+        {
+          "week": "2026-W37",
+          "value": 5.8,
+          "complete": true,
+          "numerator": 176,
+          "denominator": 3049
+        },
+        {
+          "week": "2026-W38",
+          "value": 5.3,
+          "complete": true,
+          "numerator": 157,
+          "denominator": 2959
+        },
+        {
+          "week": "2026-W39",
+          "value": 6.2,
+          "complete": true,
+          "numerator": 182,
+          "denominator": 2920
+        },
+        {
+          "week": "2026-W40",
+          "value": 4.2,
+          "complete": true,
+          "numerator": 124,
+          "denominator": 2925
+        },
+        {
+          "week": "2026-W41",
+          "value": 2.6,
+          "complete": true,
+          "numerator": 72,
+          "denominator": 2812
+        }
+      ],
+      "flags": [],
+      "baseline_weeks_used": 4,
+      "current": 2.6,
+      "previous": 4.2,
+      "counts": {
+        "current": {
+          "numerator": 72,
+          "denominator": 2812
+        },
+        "previous": {
+          "numerator": 124,
+          "denominator": 2925
+        },
+        "baseline": {
+          "numerator": 639,
+          "denominator": 11853
+        }
+      },
+      "baseline": 5.4,
+      "vs_previous": {
+        "abs": null,
+        "pct": null,
+        "pp": -1.7,
+        "noise_band": 1,
+        "z": -3.5,
+        "within_noise": false,
+        "small_volume": false,
+        "signal": "down",
+        "trend": "worse"
+      },
+      "vs_baseline": {
+        "abs": null,
+        "pct": null,
+        "pp": -2.8,
+        "noise_band": 0.9,
+        "z": -6.3,
+        "within_noise": false,
+        "small_volume": false,
+        "signal": "down",
+        "trend": "worse"
+      }
+    },
+    {
+      "id": "gsc.impressions",
+      "label": "Search impressions",
+      "source": "gsc",
+      "stage": "acquisition",
+      "kind": "count",
+      "unit": "impressions",
+      "direction": "up",
+      "series": [
+        {
+          "week": "2026-W36",
+          "value": 3044,
+          "complete": true
+        },
+        {
+          "week": "2026-W37",
+          "value": 3049,
+          "complete": true
+        },
+        {
+          "week": "2026-W38",
+          "value": 2959,
+          "complete": true
+        },
+        {
+          "week": "2026-W39",
+          "value": 2920,
+          "complete": true
+        },
+        {
+          "week": "2026-W40",
+          "value": 2925,
+          "complete": true
+        },
+        {
+          "week": "2026-W41",
+          "value": 2812,
+          "complete": true
+        }
+      ],
+      "flags": [],
+      "current": 2812,
+      "previous": 2925,
+      "baseline": 2963.2,
+      "baseline_weeks_used": 4,
+      "vs_previous": {
+        "abs": -113,
+        "pct": -3.9,
+        "pp": null,
+        "noise_band": 169,
+        "z": -1.3,
+        "within_noise": true,
+        "small_volume": false,
+        "signal": "flat",
+        "trend": "flat"
+      },
+      "vs_baseline": {
+        "abs": -151.2,
+        "pct": -5.1,
+        "pp": null,
+        "noise_band": 133.6,
+        "z": -2.3,
+        "within_noise": false,
+        "small_volume": false,
+        "signal": "down",
+        "trend": "worse"
+      }
+    },
+    {
+      "id": "gsc.position",
+      "label": "Average search position",
+      "source": "gsc",
+      "stage": "acquisition",
+      "kind": "position",
+      "unit": "position",
+      "direction": "down",
+      "series": [
+        {
+          "week": "2026-W36",
+          "value": 9.2,
+          "complete": true,
+          "numerator": 27981.52,
+          "denominator": 3044
+        },
+        {
+          "week": "2026-W37",
+          "value": 9.4,
+          "complete": true,
+          "numerator": 28548.81,
+          "denominator": 3049
+        },
+        {
+          "week": "2026-W38",
+          "value": 9.3,
+          "complete": true,
+          "numerator": 27529.03,
+          "denominator": 2959
+        },
+        {
+          "week": "2026-W39",
+          "value": 9.2,
+          "complete": true,
+          "numerator": 26881.15,
+          "denominator": 2920
+        },
+        {
+          "week": "2026-W40",
+          "value": 9.7,
+          "complete": true,
+          "numerator": 28306.07,
+          "denominator": 2925
+        },
+        {
+          "week": "2026-W41",
+          "value": 12.1,
+          "complete": true,
+          "numerator": 34025.41,
+          "denominator": 2812
+        }
+      ],
+      "flags": [],
+      "baseline_weeks_used": 4,
+      "current": 12.1,
+      "previous": 9.7,
+      "counts": {
+        "current": {
+          "numerator": 34025.41,
+          "denominator": 2812
+        },
+        "previous": {
+          "numerator": 28306.07,
+          "denominator": 2925
+        },
+        "baseline": {
+          "numerator": 111265.06,
+          "denominator": 11853
+        }
+      },
+      "baseline": 9.4,
+      "vs_previous": {
+        "abs": 2.4,
+        "pct": null,
+        "pp": null,
+        "noise_band": 1.0,
+        "z": null,
+        "within_noise": false,
+        "small_volume": false,
+        "signal": "up",
+        "trend": "worse"
+      },
+      "vs_baseline": {
+        "abs": 2.7,
+        "pct": null,
+        "pp": null,
+        "noise_band": 1.0,
+        "z": null,
+        "within_noise": false,
+        "small_volume": false,
+        "signal": "up",
+        "trend": "worse"
+      }
+    },
+    {
+      "id": "social.instagram.engagements",
+      "label": "Instagram engagements",
+      "source": "social",
+      "stage": "acquisition",
+      "kind": "count",
+      "unit": "engagements",
+      "direction": "up",
+      "series": [
+        {
+          "week": "2026-W36",
+          "value": 78,
+          "complete": true
+        },
+        {
+          "week": "2026-W37",
+          "value": 79,
+          "complete": true
+        },
+        {
+          "week": "2026-W38",
+          "value": 78,
+          "complete": true
+        },
+        {
+          "week": "2026-W39",
+          "value": 68,
+          "complete": true
+        },
+        {
+          "week": "2026-W40",
+          "value": 76,
+          "complete": true
+        },
+        {
+          "week": "2026-W41",
+          "value": 97,
+          "complete": true
+        }
+      ],
+      "flags": [],
+      "current": 97,
+      "previous": 76,
+      "baseline": 75.2,
+      "baseline_weeks_used": 4,
+      "vs_previous": {
+        "abs": 21,
+        "pct": 27.6,
+        "pp": null,
+        "noise_band": 26.3,
+        "z": 1.6,
+        "within_noise": true,
+        "small_volume": false,
+        "signal": "flat",
+        "trend": "flat"
+      },
+      "vs_baseline": {
+        "abs": 21.8,
+        "pct": 28.9,
+        "pp": null,
+        "noise_band": 19.4,
+        "z": 2.2,
+        "within_noise": false,
+        "small_volume": false,
+        "signal": "up",
+        "trend": "better"
+      }
+    },
+    {
+      "id": "social.instagram.followers_gained",
+      "label": "Instagram new followers",
+      "source": "social",
+      "stage": "acquisition",
+      "kind": "count",
+      "unit": "followers",
+      "direction": "up",
+      "series": [
+        {
+          "week": "2026-W36",
+          "value": 6,
+          "complete": true
+        },
+        {
+          "week": "2026-W37",
+          "value": 5,
+          "complete": true
+        },
+        {
+          "week": "2026-W38",
+          "value": 3,
+          "complete": true
+        },
+        {
+          "week": "2026-W39",
+          "value": 3,
+          "complete": true
+        },
+        {
+          "week": "2026-W40",
+          "value": 5,
+          "complete": true
+        },
+        {
+          "week": "2026-W41",
+          "value": 5,
+          "complete": true
+        }
+      ],
+      "flags": [
+        "small_volume"
+      ],
+      "current": 5,
+      "previous": 5,
+      "baseline": 4,
+      "baseline_weeks_used": 4,
+      "vs_previous": {
+        "abs": 0,
+        "pct": null,
+        "pp": null,
+        "noise_band": 6.3,
+        "z": 0,
+        "within_noise": true,
+        "small_volume": true,
+        "signal": "flat",
+        "trend": "flat"
+      },
+      "vs_baseline": {
+        "abs": 1,
+        "pct": null,
+        "pp": null,
+        "noise_band": 4.5,
+        "z": 0.4,
+        "within_noise": true,
+        "small_volume": true,
+        "signal": "flat",
+        "trend": "flat"
+      }
+    },
+    {
+      "id": "social.instagram.impressions",
+      "label": "Instagram impressions",
+      "source": "social",
+      "stage": "acquisition",
+      "kind": "count",
+      "unit": "impressions",
+      "direction": "up",
+      "series": [
+        {
+          "week": "2026-W36",
+          "value": 818,
+          "complete": true
+        },
+        {
+          "week": "2026-W37",
+          "value": 1005,
+          "complete": true
+        },
+        {
+          "week": "2026-W38",
+          "value": 823,
+          "complete": true
+        },
+        {
+          "week": "2026-W39",
+          "value": 847,
+          "complete": true
+        },
+        {
+          "week": "2026-W40",
+          "value": 798,
+          "complete": true
+        },
+        {
+          "week": "2026-W41",
+          "value": 764,
+          "complete": true
+        }
+      ],
+      "flags": [],
+      "current": 764,
+      "previous": 798,
+      "baseline": 868.2,
+      "baseline_weeks_used": 4,
+      "vs_previous": {
+        "abs": -34,
+        "pct": -4.3,
+        "pp": null,
+        "noise_band": 264,
+        "z": -0.3,
+        "within_noise": true,
+        "small_volume": false,
+        "signal": "flat",
+        "trend": "flat"
+      },
+      "vs_baseline": {
+        "abs": -104.2,
+        "pct": -12,
+        "pp": null,
+        "noise_band": 208.7,
+        "z": -1,
+        "within_noise": true,
+        "small_volume": false,
+        "signal": "flat",
+        "trend": "flat"
+      }
+    },
+    {
+      "id": "social.instagram.posts",
+      "label": "Instagram posts published",
+      "source": "social",
+      "stage": "acquisition",
+      "kind": "count",
+      "unit": "posts",
+      "direction": "up",
+      "series": [
+        {
+          "week": "2026-W36",
+          "value": 2,
+          "complete": true
+        },
+        {
+          "week": "2026-W37",
+          "value": 2,
+          "complete": true
+        },
+        {
+          "week": "2026-W38",
+          "value": 2,
+          "complete": true
+        },
+        {
+          "week": "2026-W39",
+          "value": 2,
+          "complete": true
+        },
+        {
+          "week": "2026-W40",
+          "value": 2,
+          "complete": true
+        },
+        {
+          "week": "2026-W41",
+          "value": 2,
+          "complete": true
+        }
+      ],
+      "flags": [
+        "small_volume"
+      ],
+      "current": 2,
+      "previous": 2,
+      "baseline": 2,
+      "baseline_weeks_used": 4,
+      "vs_previous": {
+        "abs": 0,
+        "pct": null,
+        "pp": null,
+        "noise_band": 4,
+        "z": 0,
+        "within_noise": true,
+        "small_volume": true,
+        "signal": "flat",
+        "trend": "flat"
+      },
+      "vs_baseline": {
+        "abs": 0,
+        "pct": null,
+        "pp": null,
+        "noise_band": 3.2,
+        "z": 0,
+        "within_noise": true,
+        "small_volume": true,
+        "signal": "flat",
+        "trend": "flat"
+      }
+    },
+    {
+      "id": "social.linkedin.clicks",
+      "label": "LinkedIn link clicks",
+      "source": "social",
+      "stage": "acquisition",
+      "kind": "count",
+      "unit": "clicks",
+      "direction": "up",
+      "series": [
+        {
+          "week": "2026-W36",
+          "value": 80,
+          "complete": true
+        },
+        {
+          "week": "2026-W37",
+          "value": 72,
+          "complete": true
+        },
+        {
+          "week": "2026-W38",
+          "value": 80,
+          "complete": true
+        },
+        {
+          "week": "2026-W39",
+          "value": 71,
+          "complete": true
+        },
+        {
+          "week": "2026-W40",
+          "value": 66,
+          "complete": true
+        },
+        {
+          "week": "2026-W41",
+          "value": 183,
+          "complete": true
+        }
+      ],
+      "flags": [],
+      "current": 183,
+      "previous": 66,
+      "baseline": 72.2,
+      "baseline_weeks_used": 4,
+      "vs_previous": {
+        "abs": 117,
+        "pct": 177.3,
+        "pp": null,
+        "noise_band": 31.6,
+        "z": 7.4,
+        "within_noise": false,
+        "small_volume": false,
+        "signal": "up",
+        "trend": "better"
+      },
+      "vs_baseline": {
+        "abs": 110.8,
+        "pct": 153.3,
+        "pp": null,
+        "noise_band": 19,
+        "z": 11.7,
+        "within_noise": false,
+        "small_volume": false,
+        "signal": "up",
+        "trend": "better"
+      }
+    },
+    {
+      "id": "social.linkedin.engagements",
+      "label": "LinkedIn engagements",
+      "source": "social",
+      "stage": "acquisition",
+      "kind": "count",
+      "unit": "engagements",
+      "direction": "up",
+      "series": [
+        {
+          "week": "2026-W36",
+          "value": 137,
+          "complete": true
+        },
+        {
+          "week": "2026-W37",
+          "value": 136,
+          "complete": true
+        },
+        {
+          "week": "2026-W38",
+          "value": 153,
+          "complete": true
+        },
+        {
+          "week": "2026-W39",
+          "value": 111,
+          "complete": true
+        },
+        {
+          "week": "2026-W40",
+          "value": 153,
+          "complete": true
+        },
+        {
+          "week": "2026-W41",
+          "value": 280,
+          "complete": true
+        }
+      ],
+      "flags": [],
+      "current": 280,
+      "previous": 153,
+      "baseline": 138.2,
+      "baseline_weeks_used": 4,
+      "vs_previous": {
+        "abs": 127,
+        "pct": 83,
+        "pp": null,
+        "noise_band": 56.2,
+        "z": 4.5,
+        "within_noise": false,
+        "small_volume": false,
+        "signal": "up",
+        "trend": "better"
+      },
+      "vs_baseline": {
+        "abs": 141.8,
+        "pct": 102.5,
+        "pp": null,
+        "noise_band": 44.4,
+        "z": 6.4,
+        "within_noise": false,
+        "small_volume": false,
+        "signal": "up",
+        "trend": "better"
+      }
+    },
+    {
+      "id": "social.linkedin.impressions",
+      "label": "LinkedIn impressions",
+      "source": "social",
+      "stage": "acquisition",
+      "kind": "count",
+      "unit": "impressions",
+      "direction": "up",
+      "series": [
+        {
+          "week": "2026-W36",
+          "value": 6414,
+          "complete": true
+        },
+        {
+          "week": "2026-W37",
+          "value": 6499,
+          "complete": true
+        },
+        {
+          "week": "2026-W38",
+          "value": 6477,
+          "complete": true
+        },
+        {
+          "week": "2026-W39",
+          "value": 6127,
+          "complete": true
+        },
+        {
+          "week": "2026-W40",
+          "value": 6505,
+          "complete": true
+        },
+        {
+          "week": "2026-W41",
+          "value": 14365,
+          "complete": true
+        }
+      ],
+      "flags": [],
+      "current": 14365,
+      "previous": 6505,
+      "baseline": 6402,
+      "baseline_weeks_used": 4,
+      "vs_previous": {
+        "abs": 7860,
+        "pct": 120.8,
+        "pp": null,
+        "noise_band": 519.7,
+        "z": 30.3,
+        "within_noise": false,
+        "small_volume": false,
+        "signal": "up",
+        "trend": "better"
+      },
+      "vs_baseline": {
+        "abs": 7963,
+        "pct": 124.4,
+        "pp": null,
+        "noise_band": 410.8,
+        "z": 38.8,
+        "within_noise": false,
+        "small_volume": false,
+        "signal": "up",
+        "trend": "better"
+      }
+    },
+    {
+      "id": "umami.pageviews",
+      "label": "Pageviews (umami)",
+      "source": "umami",
+      "stage": "acquisition",
+      "kind": "count",
+      "unit": "pageviews",
+      "direction": "up",
+      "series": [
+        {
+          "week": "2026-W36",
+          "value": 1077,
+          "complete": true
+        },
+        {
+          "week": "2026-W37",
+          "value": 1026,
+          "complete": true
+        },
+        {
+          "week": "2026-W38",
+          "value": 1084,
+          "complete": true
+        },
+        {
+          "week": "2026-W39",
+          "value": 1169,
+          "complete": true
+        },
+        {
+          "week": "2026-W40",
+          "value": 981,
+          "complete": true
+        },
+        {
+          "week": "2026-W41",
+          "value": 1055,
+          "complete": true
+        }
+      ],
+      "flags": [],
+      "current": 1055,
+      "previous": 981,
+      "baseline": 1065,
+      "baseline_weeks_used": 4,
+      "vs_previous": {
+        "abs": 74,
+        "pct": 7.5,
+        "pp": null,
+        "noise_band": 229.5,
+        "z": 0.6,
+        "within_noise": true,
+        "small_volume": false,
+        "signal": "flat",
+        "trend": "flat"
+      },
+      "vs_baseline": {
+        "abs": -10,
+        "pct": -0.9,
+        "pp": null,
+        "noise_band": 181.4,
+        "z": -0.1,
+        "within_noise": true,
+        "small_volume": false,
+        "signal": "flat",
+        "trend": "flat"
+      }
+    },
+    {
+      "id": "umami.visitors",
+      "label": "Visitors (umami)",
+      "source": "umami",
+      "stage": "acquisition",
+      "kind": "count",
+      "unit": "visitors",
+      "direction": "up",
+      "series": [
+        {
+          "week": "2026-W36",
+          "value": 559,
+          "complete": true
+        },
+        {
+          "week": "2026-W37",
+          "value": 550,
+          "complete": true
+        },
+        {
+          "week": "2026-W38",
+          "value": 560,
+          "complete": true
+        },
+        {
+          "week": "2026-W39",
+          "value": 592,
+          "complete": true
+        },
+        {
+          "week": "2026-W40",
+          "value": 536,
+          "complete": true
+        },
+        {
+          "week": "2026-W41",
+          "value": 529,
+          "complete": true
+        }
+      ],
+      "flags": [
+        "daily_visitors_summed"
+      ],
+      "current": 529,
+      "previous": 536,
+      "baseline": 559.5,
+      "baseline_weeks_used": 4,
+      "vs_previous": {
+        "abs": -7,
+        "pct": -1.3,
+        "pp": null,
+        "noise_band": 67.3,
+        "z": -0.2,
+        "within_noise": true,
+        "small_volume": false,
+        "signal": "flat",
+        "trend": "flat"
+      },
+      "vs_baseline": {
+        "abs": -30.5,
+        "pct": -5.5,
+        "pp": null,
+        "noise_band": 53.2,
+        "z": -1.1,
+        "within_noise": true,
+        "small_volume": false,
+        "signal": "flat",
+        "trend": "flat"
+      }
+    },
+    {
+      "id": "umami.event.apply_click",
+      "label": "Event apply_click (umami)",
+      "source": "umami",
+      "stage": "activation",
+      "kind": "count",
+      "unit": "events",
+      "direction": "up",
+      "series": [
+        {
+          "week": "2026-W36",
+          "value": 56,
+          "complete": true
+        },
+        {
+          "week": "2026-W37",
+          "value": 38,
+          "complete": true
+        },
+        {
+          "week": "2026-W38",
+          "value": 59,
+          "complete": true
+        },
+        {
+          "week": "2026-W39",
+          "value": 45,
+          "complete": true
+        },
+        {
+          "week": "2026-W40",
+          "value": 53,
+          "complete": true
+        },
+        {
+          "week": "2026-W41",
+          "value": 36,
+          "complete": true
+        }
+      ],
+      "flags": [],
+      "current": 36,
+      "previous": 53,
+      "baseline": 48.8,
+      "baseline_weeks_used": 4,
+      "vs_previous": {
+        "abs": -17,
+        "pct": -32.1,
+        "pp": null,
+        "noise_band": 26,
+        "z": -1.3,
+        "within_noise": true,
+        "small_volume": false,
+        "signal": "flat",
+        "trend": "flat"
+      },
+      "vs_baseline": {
+        "abs": -12.8,
+        "pct": -26.2,
+        "pp": null,
+        "noise_band": 20.5,
+        "z": -1.2,
+        "within_noise": true,
+        "small_volume": false,
+        "signal": "flat",
+        "trend": "flat"
+      }
+    },
+    {
+      "id": "umami.event.newsletter_signup",
+      "label": "Event newsletter_signup (umami)",
+      "source": "umami",
+      "stage": "activation",
+      "kind": "count",
+      "unit": "events",
+      "direction": "up",
+      "series": [
+        {
+          "week": "2026-W36",
+          "value": 4,
+          "complete": true
+        },
+        {
+          "week": "2026-W37",
+          "value": 19,
+          "complete": true
+        },
+        {
+          "week": "2026-W38",
+          "value": 7,
+          "complete": true
+        },
+        {
+          "week": "2026-W39",
+          "value": 7,
+          "complete": true
+        },
+        {
+          "week": "2026-W40",
+          "value": 12,
+          "complete": true
+        },
+        {
+          "week": "2026-W41",
+          "value": 13,
+          "complete": true
+        }
+      ],
+      "flags": [
+        "small_volume"
+      ],
+      "current": 13,
+      "previous": 12,
+      "baseline": 11.2,
+      "baseline_weeks_used": 4,
+      "vs_previous": {
+        "abs": 1,
+        "pct": null,
+        "pp": null,
+        "noise_band": 16.1,
+        "z": 0.1,
+        "within_noise": true,
+        "small_volume": true,
+        "signal": "flat",
+        "trend": "flat"
+      },
+      "vs_baseline": {
+        "abs": 1.8,
+        "pct": null,
+        "pp": null,
+        "noise_band": 12.7,
+        "z": 0.3,
+        "within_noise": true,
+        "small_volume": true,
+        "signal": "flat",
+        "trend": "flat"
+      }
+    },
+    {
+      "id": "umami.rate.apply_click",
+      "label": "Visitor to apply_click rate (umami)",
+      "source": "umami",
+      "stage": "activation",
+      "kind": "rate",
+      "unit": "%",
+      "direction": "up",
+      "series": [
+        {
+          "week": "2026-W36",
+          "value": 10,
+          "complete": true,
+          "numerator": 56,
+          "denominator": 559
+        },
+        {
+          "week": "2026-W37",
+          "value": 6.9,
+          "complete": true,
+          "numerator": 38,
+          "denominator": 550
+        },
+        {
+          "week": "2026-W38",
+          "value": 10.5,
+          "complete": true,
+          "numerator": 59,
+          "denominator": 560
+        },
+        {
+          "week": "2026-W39",
+          "value": 7.6,
+          "complete": true,
+          "numerator": 45,
+          "denominator": 592
+        },
+        {
+          "week": "2026-W40",
+          "value": 9.9,
+          "complete": true,
+          "numerator": 53,
+          "denominator": 536
+        },
+        {
+          "week": "2026-W41",
+          "value": 6.8,
+          "complete": true,
+          "numerator": 36,
+          "denominator": 529
+        }
+      ],
+      "flags": [],
+      "baseline_weeks_used": 4,
+      "current": 6.8,
+      "previous": 9.9,
+      "counts": {
+        "current": {
+          "numerator": 36,
+          "denominator": 529
+        },
+        "previous": {
+          "numerator": 53,
+          "denominator": 536
+        },
+        "baseline": {
+          "numerator": 195,
+          "denominator": 2238
+        }
+      },
+      "baseline": 8.7,
+      "vs_previous": {
+        "abs": null,
+        "pct": null,
+        "pp": -3.1,
+        "noise_band": 3.4,
+        "z": -1.8,
+        "within_noise": true,
+        "small_volume": false,
+        "signal": "flat",
+        "trend": "flat"
+      },
+      "vs_baseline": {
+        "abs": null,
+        "pct": null,
+        "pp": -1.9,
+        "noise_band": 2.7,
+        "z": -1.4,
+        "within_noise": true,
+        "small_volume": false,
+        "signal": "flat",
+        "trend": "flat"
+      }
+    },
+    {
+      "id": "umami.rate.newsletter_signup",
+      "label": "Visitor to newsletter_signup rate (umami)",
+      "source": "umami",
+      "stage": "activation",
+      "kind": "rate",
+      "unit": "%",
+      "direction": "up",
+      "series": [
+        {
+          "week": "2026-W36",
+          "value": null,
+          "complete": true,
+          "numerator": 4,
+          "denominator": 559
+        },
+        {
+          "week": "2026-W37",
+          "value": null,
+          "complete": true,
+          "numerator": 19,
+          "denominator": 550
+        },
+        {
+          "week": "2026-W38",
+          "value": null,
+          "complete": true,
+          "numerator": 7,
+          "denominator": 560
+        },
+        {
+          "week": "2026-W39",
+          "value": null,
+          "complete": true,
+          "numerator": 7,
+          "denominator": 592
+        },
+        {
+          "week": "2026-W40",
+          "value": null,
+          "complete": true,
+          "numerator": 12,
+          "denominator": 536
+        },
+        {
+          "week": "2026-W41",
+          "value": null,
+          "complete": true,
+          "numerator": 13,
+          "denominator": 529
+        }
+      ],
+      "flags": [
+        "small_volume"
+      ],
+      "baseline_weeks_used": 4,
+      "current": null,
+      "previous": null,
+      "counts": {
+        "current": {
+          "numerator": 13,
+          "denominator": 529
+        },
+        "previous": {
+          "numerator": 12,
+          "denominator": 536
+        },
+        "baseline": {
+          "numerator": 45,
+          "denominator": 2238
+        }
+      },
+      "baseline": 2,
+      "vs_previous": {
+        "abs": null,
+        "pct": null,
+        "pp": null,
+        "noise_band": null,
+        "z": null,
+        "within_noise": null,
+        "small_volume": true,
+        "signal": "small_volume",
+        "trend": "small_volume"
+      },
+      "vs_baseline": {
+        "abs": null,
+        "pct": null,
+        "pp": null,
+        "noise_band": null,
+        "z": null,
+        "within_noise": null,
+        "small_volume": true,
+        "signal": "small_volume",
+        "trend": "small_volume"
+      }
+    },
+    {
+      "id": "revenue.returning_payments",
+      "label": "Payments from returning customers",
+      "source": "revenue",
+      "stage": "retention",
+      "kind": "count",
+      "unit": "payments",
+      "direction": "up",
+      "series": [
+        {
+          "week": "2026-W36",
+          "value": 3,
+          "complete": true
+        },
+        {
+          "week": "2026-W37",
+          "value": 0,
+          "complete": true
+        },
+        {
+          "week": "2026-W38",
+          "value": 3,
+          "complete": true
+        },
+        {
+          "week": "2026-W39",
+          "value": 1,
+          "complete": true
+        },
+        {
+          "week": "2026-W40",
+          "value": 1,
+          "complete": true
+        },
+        {
+          "week": "2026-W41",
+          "value": 3,
+          "complete": true
+        }
+      ],
+      "flags": [
+        "small_volume"
+      ],
+      "current": 3,
+      "previous": 1,
+      "baseline": 1.2,
+      "baseline_weeks_used": 4,
+      "vs_previous": {
+        "abs": 2,
+        "pct": null,
+        "pp": null,
+        "noise_band": 4,
+        "z": 1,
+        "within_noise": true,
+        "small_volume": true,
+        "signal": "flat",
+        "trend": "flat"
+      },
+      "vs_baseline": {
+        "abs": 1.8,
+        "pct": null,
+        "pp": null,
+        "noise_band": 2.8,
+        "z": 1.2,
+        "within_noise": true,
+        "small_volume": true,
+        "signal": "flat",
+        "trend": "flat"
+      }
+    },
+    {
+      "id": "social.instagram.reposts",
+      "label": "Instagram reposts and shares",
+      "source": "social",
+      "stage": "referral",
+      "kind": "count",
+      "unit": "reposts",
+      "direction": "up",
+      "series": [
+        {
+          "week": "2026-W36",
+          "value": 3,
+          "complete": true
+        },
+        {
+          "week": "2026-W37",
+          "value": 4,
+          "complete": true
+        },
+        {
+          "week": "2026-W38",
+          "value": 6,
+          "complete": true
+        },
+        {
+          "week": "2026-W39",
+          "value": 5,
+          "complete": true
+        },
+        {
+          "week": "2026-W40",
+          "value": 3,
+          "complete": true
+        },
+        {
+          "week": "2026-W41",
+          "value": 5,
+          "complete": true
+        }
+      ],
+      "flags": [
+        "small_volume"
+      ],
+      "current": 5,
+      "previous": 3,
+      "baseline": 4.5,
+      "baseline_weeks_used": 4,
+      "vs_previous": {
+        "abs": 2,
+        "pct": null,
+        "pp": null,
+        "noise_band": 5.7,
+        "z": 0.7,
+        "within_noise": true,
+        "small_volume": true,
+        "signal": "flat",
+        "trend": "flat"
+      },
+      "vs_baseline": {
+        "abs": 0.5,
+        "pct": null,
+        "pp": null,
+        "noise_band": 4.7,
+        "z": 0.2,
+        "within_noise": true,
+        "small_volume": true,
+        "signal": "flat",
+        "trend": "flat"
+      }
+    },
+    {
+      "id": "social.linkedin.reposts",
+      "label": "LinkedIn reposts and shares",
+      "source": "social",
+      "stage": "referral",
+      "kind": "count",
+      "unit": "reposts",
+      "direction": "up",
+      "series": [
+        {
+          "week": "2026-W36",
+          "value": 10,
+          "complete": true
+        },
+        {
+          "week": "2026-W37",
+          "value": 10,
+          "complete": true
+        },
+        {
+          "week": "2026-W38",
+          "value": 8,
+          "complete": true
+        },
+        {
+          "week": "2026-W39",
+          "value": 5,
+          "complete": true
+        },
+        {
+          "week": "2026-W40",
+          "value": 8,
+          "complete": true
+        },
+        {
+          "week": "2026-W41",
+          "value": 17,
+          "complete": true
+        }
+      ],
+      "flags": [
+        "small_volume"
+      ],
+      "current": 17,
+      "previous": 8,
+      "baseline": 7.8,
+      "baseline_weeks_used": 4,
+      "vs_previous": {
+        "abs": 9,
+        "pct": null,
+        "pp": null,
+        "noise_band": 10,
+        "z": 1.8,
+        "within_noise": true,
+        "small_volume": true,
+        "signal": "flat",
+        "trend": "flat"
+      },
+      "vs_baseline": {
+        "abs": 9.2,
+        "pct": null,
+        "pp": null,
+        "noise_band": 6.2,
+        "z": 3,
+        "within_noise": false,
+        "small_volume": true,
+        "signal": "up",
+        "trend": "better"
+      }
+    },
+    {
+      "id": "umami.event.invite_link_copied",
+      "label": "Event invite_link_copied (umami)",
+      "source": "umami",
+      "stage": "referral",
+      "kind": "count",
+      "unit": "events",
+      "direction": "up",
+      "series": [
+        {
+          "week": "2026-W36",
+          "value": 0,
+          "complete": true
+        },
+        {
+          "week": "2026-W37",
+          "value": 3,
+          "complete": true
+        },
+        {
+          "week": "2026-W38",
+          "value": 3,
+          "complete": true
+        },
+        {
+          "week": "2026-W39",
+          "value": 2,
+          "complete": true
+        },
+        {
+          "week": "2026-W40",
+          "value": 2,
+          "complete": true
+        },
+        {
+          "week": "2026-W41",
+          "value": 3,
+          "complete": true
+        }
+      ],
+      "flags": [
+        "small_volume"
+      ],
+      "current": 3,
+      "previous": 2,
+      "baseline": 2.5,
+      "baseline_weeks_used": 4,
+      "vs_previous": {
+        "abs": 1,
+        "pct": null,
+        "pp": null,
+        "noise_band": 4.5,
+        "z": 0.4,
+        "within_noise": true,
+        "small_volume": true,
+        "signal": "flat",
+        "trend": "flat"
+      },
+      "vs_baseline": {
+        "abs": 0.5,
+        "pct": null,
+        "pp": null,
+        "noise_band": 3.5,
+        "z": 0.3,
+        "within_noise": true,
+        "small_volume": true,
+        "signal": "flat",
+        "trend": "flat"
+      }
+    },
+    {
+      "id": "umami.rate.invite_link_copied",
+      "label": "Visitor to invite_link_copied rate (umami)",
+      "source": "umami",
+      "stage": "referral",
+      "kind": "rate",
+      "unit": "%",
+      "direction": "up",
+      "series": [
+        {
+          "week": "2026-W36",
+          "value": null,
+          "complete": true,
+          "numerator": 0,
+          "denominator": 559
+        },
+        {
+          "week": "2026-W37",
+          "value": null,
+          "complete": true,
+          "numerator": 3,
+          "denominator": 550
+        },
+        {
+          "week": "2026-W38",
+          "value": null,
+          "complete": true,
+          "numerator": 3,
+          "denominator": 560
+        },
+        {
+          "week": "2026-W39",
+          "value": null,
+          "complete": true,
+          "numerator": 2,
+          "denominator": 592
+        },
+        {
+          "week": "2026-W40",
+          "value": null,
+          "complete": true,
+          "numerator": 2,
+          "denominator": 536
+        },
+        {
+          "week": "2026-W41",
+          "value": null,
+          "complete": true,
+          "numerator": 3,
+          "denominator": 529
+        }
+      ],
+      "flags": [
+        "small_volume"
+      ],
+      "baseline_weeks_used": 4,
+      "current": null,
+      "previous": null,
+      "counts": {
+        "current": {
+          "numerator": 3,
+          "denominator": 529
+        },
+        "previous": {
+          "numerator": 2,
+          "denominator": 536
+        },
+        "baseline": {
+          "numerator": 10,
+          "denominator": 2238
+        }
+      },
+      "baseline": null,
+      "vs_previous": {
+        "abs": null,
+        "pct": null,
+        "pp": null,
+        "noise_band": null,
+        "z": null,
+        "within_noise": null,
+        "small_volume": true,
+        "signal": "small_volume",
+        "trend": "small_volume"
+      },
+      "vs_baseline": {
+        "abs": null,
+        "pct": null,
+        "pp": null,
+        "noise_band": null,
+        "z": null,
+        "within_noise": null,
+        "small_volume": true,
+        "signal": "small_volume",
+        "trend": "small_volume"
+      }
+    },
+    {
+      "id": "revenue.gross",
+      "label": "Revenue, gross",
+      "source": "revenue",
+      "stage": "revenue",
+      "kind": "currency",
+      "unit": "currency",
+      "direction": "up",
+      "series": [
+        {
+          "week": "2026-W36",
+          "value": 1020,
+          "complete": true
+        },
+        {
+          "week": "2026-W37",
+          "value": 60,
+          "complete": true
+        },
+        {
+          "week": "2026-W38",
+          "value": 720,
+          "complete": true
+        },
+        {
+          "week": "2026-W39",
+          "value": 480,
+          "complete": true
+        },
+        {
+          "week": "2026-W40",
+          "value": 240,
+          "complete": true
+        },
+        {
+          "week": "2026-W41",
+          "value": 420,
+          "complete": true
+        }
+      ],
+      "flags": [
+        "small_volume"
+      ],
+      "current": 420,
+      "previous": 240,
+      "baseline": 375,
+      "baseline_weeks_used": 4,
+      "vs_previous": {
+        "abs": 180,
+        "pct": null,
+        "pp": null,
+        "noise_band": null,
+        "z": null,
+        "within_noise": null,
+        "small_volume": true,
+        "signal": "small_volume",
+        "trend": "small_volume"
+      },
+      "vs_baseline": {
+        "abs": 45,
+        "pct": null,
+        "pp": null,
+        "noise_band": null,
+        "z": null,
+        "within_noise": null,
+        "small_volume": true,
+        "signal": "small_volume",
+        "trend": "small_volume"
+      }
+    },
+    {
+      "id": "revenue.net",
+      "label": "Revenue, net of refunds",
+      "source": "revenue",
+      "stage": "revenue",
+      "kind": "currency",
+      "unit": "currency",
+      "direction": "up",
+      "series": [
+        {
+          "week": "2026-W36",
+          "value": 1020,
+          "complete": true
+        },
+        {
+          "week": "2026-W37",
+          "value": 60,
+          "complete": true
+        },
+        {
+          "week": "2026-W38",
+          "value": 720,
+          "complete": true
+        },
+        {
+          "week": "2026-W39",
+          "value": 480,
+          "complete": true
+        },
+        {
+          "week": "2026-W40",
+          "value": 240,
+          "complete": true
+        },
+        {
+          "week": "2026-W41",
+          "value": 420,
+          "complete": true
+        }
+      ],
+      "flags": [
+        "small_volume"
+      ],
+      "current": 420,
+      "previous": 240,
+      "baseline": 375,
+      "baseline_weeks_used": 4,
+      "vs_previous": {
+        "abs": 180,
+        "pct": null,
+        "pp": null,
+        "noise_band": null,
+        "z": null,
+        "within_noise": null,
+        "small_volume": true,
+        "signal": "small_volume",
+        "trend": "small_volume"
+      },
+      "vs_baseline": {
+        "abs": 45,
+        "pct": null,
+        "pp": null,
+        "noise_band": null,
+        "z": null,
+        "within_noise": null,
+        "small_volume": true,
+        "signal": "small_volume",
+        "trend": "small_volume"
+      }
+    },
+    {
+      "id": "revenue.new_customers",
+      "label": "New paying customers",
+      "source": "revenue",
+      "stage": "revenue",
+      "kind": "count",
+      "unit": "customers",
+      "direction": "up",
+      "series": [
+        {
+          "week": "2026-W36",
+          "value": 1,
+          "complete": true
+        },
+        {
+          "week": "2026-W37",
+          "value": 1,
+          "complete": true
+        },
+        {
+          "week": "2026-W38",
+          "value": 1,
+          "complete": true
+        },
+        {
+          "week": "2026-W39",
+          "value": 0,
+          "complete": true
+        },
+        {
+          "week": "2026-W40",
+          "value": 1,
+          "complete": true
+        },
+        {
+          "week": "2026-W41",
+          "value": 0,
+          "complete": true
+        }
+      ],
+      "flags": [
+        "small_volume"
+      ],
+      "current": 0,
+      "previous": 1,
+      "baseline": 0.8,
+      "baseline_weeks_used": 4,
+      "vs_previous": {
+        "abs": -1,
+        "pct": null,
+        "pp": null,
+        "noise_band": 2,
+        "z": -1,
+        "within_noise": true,
+        "small_volume": true,
+        "signal": "flat",
+        "trend": "flat"
+      },
+      "vs_baseline": {
+        "abs": -0.8,
+        "pct": null,
+        "pp": null,
+        "noise_band": 1.9,
+        "z": -0.8,
+        "within_noise": true,
+        "small_volume": true,
+        "signal": "flat",
+        "trend": "flat"
+      }
+    },
+    {
+      "id": "revenue.payments",
+      "label": "Payments",
+      "source": "revenue",
+      "stage": "revenue",
+      "kind": "count",
+      "unit": "payments",
+      "direction": "up",
+      "series": [
+        {
+          "week": "2026-W36",
+          "value": 4,
+          "complete": true
+        },
+        {
+          "week": "2026-W37",
+          "value": 1,
+          "complete": true
+        },
+        {
+          "week": "2026-W38",
+          "value": 4,
+          "complete": true
+        },
+        {
+          "week": "2026-W39",
+          "value": 1,
+          "complete": true
+        },
+        {
+          "week": "2026-W40",
+          "value": 2,
+          "complete": true
+        },
+        {
+          "week": "2026-W41",
+          "value": 3,
+          "complete": true
+        }
+      ],
+      "flags": [
+        "small_volume"
+      ],
+      "current": 3,
+      "previous": 2,
+      "baseline": 2,
+      "baseline_weeks_used": 4,
+      "vs_previous": {
+        "abs": 1,
+        "pct": null,
+        "pp": null,
+        "noise_band": 4.5,
+        "z": 0.4,
+        "within_noise": true,
+        "small_volume": true,
+        "signal": "flat",
+        "trend": "flat"
+      },
+      "vs_baseline": {
+        "abs": 1,
+        "pct": null,
+        "pp": null,
+        "noise_band": 3.2,
+        "z": 0.6,
+        "within_noise": true,
+        "small_volume": true,
+        "signal": "flat",
+        "trend": "flat"
+      }
+    },
+    {
+      "id": "revenue.refunds",
+      "label": "Refunds",
+      "source": "revenue",
+      "stage": "revenue",
+      "kind": "currency",
+      "unit": "currency",
+      "direction": "down",
+      "series": [
+        {
+          "week": "2026-W36",
+          "value": 0,
+          "complete": true
+        },
+        {
+          "week": "2026-W37",
+          "value": 0,
+          "complete": true
+        },
+        {
+          "week": "2026-W38",
+          "value": 0,
+          "complete": true
+        },
+        {
+          "week": "2026-W39",
+          "value": 0,
+          "complete": true
+        },
+        {
+          "week": "2026-W40",
+          "value": 0,
+          "complete": true
+        },
+        {
+          "week": "2026-W41",
+          "value": 0,
+          "complete": true
+        }
+      ],
+      "flags": [
+        "small_volume"
+      ],
+      "current": 0,
+      "previous": 0,
+      "baseline": 0,
+      "baseline_weeks_used": 4,
+      "vs_previous": {
+        "abs": 0,
+        "pct": null,
+        "pp": null,
+        "noise_band": null,
+        "z": null,
+        "within_noise": null,
+        "small_volume": true,
+        "signal": "small_volume",
+        "trend": "small_volume"
+      },
+      "vs_baseline": {
+        "abs": 0,
+        "pct": null,
+        "pp": null,
+        "noise_band": null,
+        "z": null,
+        "within_noise": null,
+        "small_volume": true,
+        "signal": "small_volume",
+        "trend": "small_volume"
+      }
+    }
+  ],
+  "stage_summary": [
+    {
+      "stage": "acquisition",
+      "metrics": 13,
+      "better": 4,
+      "worse": 4,
+      "flat": 5,
+      "small_volume": 0,
+      "not_comparable": 0
+    },
+    {
+      "stage": "activation",
+      "metrics": 4,
+      "better": 0,
+      "worse": 0,
+      "flat": 3,
+      "small_volume": 1,
+      "not_comparable": 0
+    },
+    {
+      "stage": "retention",
+      "metrics": 1,
+      "better": 0,
+      "worse": 0,
+      "flat": 1,
+      "small_volume": 0,
+      "not_comparable": 0
+    },
+    {
+      "stage": "referral",
+      "metrics": 4,
+      "better": 1,
+      "worse": 0,
+      "flat": 2,
+      "small_volume": 1,
+      "not_comparable": 0
+    },
+    {
+      "stage": "revenue",
+      "metrics": 5,
+      "better": 0,
+      "worse": 0,
+      "flat": 2,
+      "small_volume": 3,
+      "not_comparable": 0
+    }
+  ],
+  "notable": [
+    "social.linkedin.impressions",
+    "social.linkedin.clicks",
+    "social.linkedin.engagements",
+    "gsc.ctr",
+    "gsc.position"
+  ],
+  "gsc": {
+    "available": true,
+    "definition": {
+      "min_prior_clicks": 10,
+      "max_change_pct": -20,
+      "cause_position_worse_by": 2,
+      "cause_impressions_change_pct": -20
+    },
+    "definition_source": "decline object of seo-audit's gsc-bands.json, mirrored in pulse-rules.json gsc_decline",
+    "current_week": "2026-W41",
+    "prior_week": "2026-W40",
+    "totals": {
+      "clicks": {
+        "current": 72,
+        "prior": 124
+      },
+      "impressions": {
+        "current": 2812,
+        "prior": 2925
+      },
+      "position": {
+        "current": 12.1,
+        "prior": 9.7
+      },
+      "clicks_change": -52,
+      "clicks_pct": -41.9,
+      "impressions_pct": -3.9,
+      "position_change": 2.4,
+      "decline": true,
+      "cause": "position"
+    },
+    "queries": [
+      {
+        "clicks": {
+          "current": 30,
+          "prior": 50
+        },
+        "impressions": {
+          "current": 163,
+          "prior": 175
+        },
+        "position": {
+          "current": 3.8,
+          "prior": 1.7
+        },
+        "clicks_change": -20,
+        "clicks_pct": -40,
+        "impressions_pct": -6.9,
+        "position_change": 2.1,
+        "decline": true,
+        "cause": "position",
+        "key": "swanbase"
+      },
+      {
+        "clicks": {
+          "current": 8,
+          "prior": 16
+        },
+        "impressions": {
+          "current": 393,
+          "prior": 386
+        },
+        "position": {
+          "current": 10.9,
+          "prior": 8.8
+        },
+        "clicks_change": -8,
+        "clicks_pct": null,
+        "impressions_pct": 1.8,
+        "position_change": 2.1,
+        "decline": true,
+        "cause": "position",
+        "key": "pre-seed accelerator"
+      }
+    ],
+    "pages": [
+      {
+        "clicks": {
+          "current": 32,
+          "prior": 54
+        },
+        "impressions": {
+          "current": 511,
+          "prior": 547
+        },
+        "position": {
+          "current": 11,
+          "prior": 8.8
+        },
+        "clicks_change": -22,
+        "clicks_pct": -40.7,
+        "impressions_pct": -6.6,
+        "position_change": 2.2,
+        "decline": true,
+        "cause": "position",
+        "key": "https://swanbase.example/"
+      },
+      {
+        "clicks": {
+          "current": 31,
+          "prior": 44
+        },
+        "impressions": {
+          "current": 1055,
+          "prior": 1051
+        },
+        "position": {
+          "current": 10.8,
+          "prior": 7.8
+        },
+        "clicks_change": -13,
+        "clicks_pct": -29.5,
+        "impressions_pct": 0.4,
+        "position_change": 3.1,
+        "decline": true,
+        "cause": "position",
+        "key": "https://swanbase.example/program/"
+      },
+      {
+        "clicks": {
+          "current": 4,
+          "prior": 13
+        },
+        "impressions": {
+          "current": 594,
+          "prior": 628
+        },
+        "position": {
+          "current": 13.6,
+          "prior": 11.4
+        },
+        "clicks_change": -9,
+        "clicks_pct": null,
+        "impressions_pct": -5.4,
+        "position_change": 2.1,
+        "decline": true,
+        "cause": "position",
+        "key": "https://swanbase.example/blog/pre-seed-checklist/"
+      }
+    ],
+    "breakdowns_available": true,
+    "note": ""
+  },
+  "correlations": [
+    {
+      "id": "C1",
+      "a": "social.instagram.impressions",
+      "b": "umami.visitors",
+      "lag_days": 0,
+      "n_days": 42,
+      "r": 0.22,
+      "label": "weak",
+      "causal": false,
+      "question": "Do social impressions and site visitors move together?"
+    },
+    {
+      "id": "C2",
+      "a": "social.instagram.impressions",
+      "b": "umami.visitors",
+      "lag_days": 1,
+      "n_days": 41,
+      "r": -0.05,
+      "label": "weak",
+      "causal": false,
+      "question": "Do social impressions and site visitors move together?"
+    },
+    {
+      "id": "C3",
+      "a": "social.linkedin.impressions",
+      "b": "umami.visitors",
+      "lag_days": 0,
+      "n_days": 42,
+      "r": 0.06,
+      "label": "weak",
+      "causal": false,
+      "question": "Do social impressions and site visitors move together?"
+    },
+    {
+      "id": "C4",
+      "a": "social.linkedin.impressions",
+      "b": "umami.visitors",
+      "lag_days": 1,
+      "n_days": 41,
+      "r": -0.34,
+      "label": "weak",
+      "causal": false,
+      "question": "Do social impressions and site visitors move together?"
+    },
+    {
+      "id": "C5",
+      "a": "gsc.clicks",
+      "b": "umami.visitors",
+      "lag_days": 0,
+      "n_days": 42,
+      "r": 0.51,
+      "label": "correlated",
+      "causal": false,
+      "question": "Do search clicks and site visitors move together?"
+    },
+    {
+      "id": "C6",
+      "a": "gsc.clicks",
+      "b": "umami.visitors",
+      "lag_days": 1,
+      "n_days": 41,
+      "r": 0.43,
+      "label": "weak",
+      "causal": false,
+      "question": "Do search clicks and site visitors move together?"
+    },
+    {
+      "id": "C7",
+      "a": "umami.visitors",
+      "b": "umami.event.apply_click",
+      "lag_days": 0,
+      "n_days": 42,
+      "r": 0.03,
+      "label": "weak",
+      "causal": false,
+      "question": "Do conversions follow traffic, or move on their own?"
+    },
+    {
+      "id": "C8",
+      "a": "umami.visitors",
+      "b": "umami.event.apply_click",
+      "lag_days": 1,
+      "n_days": 41,
+      "r": -0.13,
+      "label": "weak",
+      "causal": false,
+      "question": "Do conversions follow traffic, or move on their own?"
+    },
+    {
+      "id": "C9",
+      "a": "umami.visitors",
+      "b": "umami.event.newsletter_signup",
+      "lag_days": 0,
+      "n_days": 42,
+      "r": -0.13,
+      "label": "weak",
+      "causal": false,
+      "question": "Do conversions follow traffic, or move on their own?"
+    },
+    {
+      "id": "C10",
+      "a": "umami.visitors",
+      "b": "umami.event.newsletter_signup",
+      "lag_days": 1,
+      "n_days": 41,
+      "r": -0.06,
+      "label": "weak",
+      "causal": false,
+      "question": "Do conversions follow traffic, or move on their own?"
+    },
+    {
+      "id": "C11",
+      "a": "umami.visitors",
+      "b": "umami.event.invite_link_copied",
+      "lag_days": 0,
+      "n_days": 42,
+      "r": -0.1,
+      "label": "weak",
+      "causal": false,
+      "question": "Do conversions follow traffic, or move on their own?"
+    },
+    {
+      "id": "C12",
+      "a": "umami.visitors",
+      "b": "umami.event.invite_link_copied",
+      "lag_days": 1,
+      "n_days": 41,
+      "r": 0.02,
+      "label": "weak",
+      "causal": false,
+      "question": "Do conversions follow traffic, or move on their own?"
+    }
+  ],
+  "actions": [
+    {
+      "date": "2026-09-15",
+      "week": "2026-W38",
+      "in_report_week": false,
+      "channel": "site",
+      "stage": "activation",
+      "action": "Apply button moved above the fold on the program page"
+    },
+    {
+      "date": "2026-10-01",
+      "week": "2026-W40",
+      "in_report_week": false,
+      "channel": "site",
+      "stage": "acquisition",
+      "action": "Program page title and meta description rewritten"
+    },
+    {
+      "date": "2026-10-05",
+      "week": "2026-W41",
+      "in_report_week": true,
+      "channel": "blog",
+      "stage": "activation",
+      "action": "Newsletter box added at the end of every blog article"
+    },
+    {
+      "date": "2026-10-06",
+      "week": "2026-W41",
+      "in_report_week": true,
+      "channel": "linkedin",
+      "stage": "acquisition",
+      "action": "Carousel: what a pre-seed jury reads first"
+    },
+    {
+      "date": "2026-10-08",
+      "week": "2026-W41",
+      "in_report_week": true,
+      "channel": "linkedin",
+      "stage": "acquisition",
+      "action": "Post: pitch night recap"
+    }
+  ],
+  "previous_experiments": {
+    "file": "experiments-20260930.json",
+    "week": "2026-W39",
+    "generated_on": "2026-09-30"
+  },
+  "experiments_followup": [
+    {
+      "id": "E-20260930-1",
+      "title": "One LinkedIn carousel a week instead of one text post",
+      "stage": "acquisition",
+      "metric": "social.linkedin.impressions",
+      "start_date": "2026-10-05",
+      "end_date": "2026-10-11",
+      "baseline": 6463.3,
+      "threshold": {
+        "comparator": ">=",
+        "value": 9000,
+        "per": "week"
+      },
+      "weeks_measured": [
+        "2026-W41"
+      ],
+      "observed": 14365,
+      "verdict": "met",
+      "reason": "observed within the experiment window; a met threshold is a correlation with the change, not proof of its effect"
+    },
+    {
+      "id": "E-20260930-2",
+      "title": "Newsletter box at the end of every blog article",
+      "stage": "activation",
+      "metric": "umami.event.newsletter_signup",
+      "start_date": "2026-10-05",
+      "end_date": "2026-10-18",
+      "baseline": 10,
+      "threshold": {
+        "comparator": ">=",
+        "value": 15,
+        "per": "week"
+      },
+      "weeks_measured": [
+        "2026-W41"
+      ],
+      "observed": 13,
+      "verdict": "running",
+      "reason": "ends 2026-10-18, after the report week"
+    },
+    {
+      "id": "E-20260930-3",
+      "title": "Invite link in the application confirmation email",
+      "stage": "referral",
+      "metric": "new:umami.event.referral_signup",
+      "start_date": "2026-10-05",
+      "end_date": "2026-10-11",
+      "baseline": null,
+      "threshold": {
+        "comparator": ">=",
+        "value": 3,
+        "per": "total"
+      },
+      "weeks_measured": [],
+      "observed": null,
+      "verdict": "not_measurable",
+      "reason": "metric still absent from the data: the tracking is not live yet"
+    }
+  ],
+  "limitations": [
+    "plausible: missing (not configured, no API key and no CSV: in Plausible, Export > CSV, unzip, pass visitors.csv with --csv; add a date,event,count file for daily goal conversions)",
+    "ga4: missing (not configured, no API key and no CSV: in GA4, open the report, Share > Download CSV (one table by Date with Active users, Sessions, Views; one by Date and Event name with Event count) and pass the files with --csv)",
+    "weekly visitors are daily unique visitors summed: one person visiting on two days counts twice",
+    "14 metric(s) under 30 events: counts only, no percentage",
+    "correlations come from 6 weeks of one site: they show what moved together, never what caused what"
+  ]
+}

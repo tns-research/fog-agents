@@ -1,0 +1,291 @@
+{
+  "$schema": "../../assets/deck.schema.json",
+  "meta": {
+    "id": "swanbase-seed-deck",
+    "title": "A VC reads your seed deck in 3 min 44",
+    "format": "linkedin",
+    "direction": "editorial-paper",
+    "language": "en",
+    "brand": "project-context/brand.json",
+    "handle": "swanbase.co",
+    "angle": "Numerical lens on the DocSend seed deck study: where the VC reading time goes, section by section, and what to fix first.",
+    "audience": "Founders preparing a pre-seed or seed raise.",
+    "covers": {
+      "hooks": [
+        {
+          "id": "a",
+          "title": "A VC reads your seed deck in 3 min 44",
+          "accent": "3 min 44",
+          "sub": "The business model holds their attention for 64 seconds, the \"Why now\" slide for 23. Here is the breakdown, section by section."
+        },
+        {
+          "id": "b",
+          "title": "Only 58% of seed decks get read to the end",
+          "accent": "58%",
+          "sub": "DocSend timed how long VCs spend on each section. Here are the ones that hold their attention and the ones they skim."
+        }
+      ]
+    },
+    "captions": {
+      "linkedin": "A VC spends 3 min 44 on a seed deck on average, and only 58% of decks get read to the last page.\n\nIn March 2026 DocSend updated its study of how investors read seed decks, section by section. The business model comes first with 64 seconds, ahead of the product (59 s) and traction (40 s). The \"Why now\" slide comes last with 23 seconds.\n\nTwo things to change in your next deck. Start with the section VCs read the longest: your pricing, gross margin, customer acquisition cost and payback period, as soon as you measure them. Then work on the opening, since 42% of decks are not read to the end: purpose in one sentence, problem, solution, then market.\n\nThe section-by-section breakdown is in the carousel, and our full pitch deck guide is linked in the first comment.\n\nWhich section of your deck will you rewrite first?",
+      "first_comment": "The swanbase pitch deck guide, 14-slide structure: https://swanbase.co/en/blog/startup-pitch-deck-guide-2026/\n\nSource for the numbers: DocSend, \"What VCs really want to see inside your seed deck\", updated March 10, 2026: https://www.docsend.com/blog/what-vcs-really-want-to-see-inside-your-seed-deck/",
+      "instagram": "A VC spends 3 min 44 on a seed deck on average, and only 58% of decks get read to the last page (DocSend, March 2026).\n\nThe business model holds their attention the longest, 64 seconds. The \"Why now\" slide holds it the least, 23 seconds. Open with purpose, problem, solution and market, in that order.\n\nThe full pitch deck guide is linked in bio.",
+      "hashtags": [
+        "#pitchdeck",
+        "#fundraising",
+        "#startup",
+        "#founders",
+        "#vc"
+      ]
+    }
+  },
+  "sources": [
+    {
+      "id": "docsend",
+      "label": "DocSend, seed deck study, March 2026 update",
+      "url": "https://www.docsend.com/blog/what-vcs-really-want-to-see-inside-your-seed-deck/",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "guide",
+      "label": "swanbase, pitch deck guide",
+      "url": "https://swanbase.co/en/blog/startup-pitch-deck-guide-2026/",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "slides": [
+    {
+      "id": "cover",
+      "role": "cover",
+      "notes": "Gives the number and half the answer (64 s vs 23 s); the swipe promises the section-by-section detail.",
+      "alt": "Cover. Title: A VC reads your seed deck in 3 min 44. Photo of a polaroid pinned on cork: a dark room, people seen from behind facing a screen.",
+      "blocks": [
+        {
+          "type": "title",
+          "text": "A VC reads your seed deck in 3 min 44",
+          "accent": "3 min 44",
+          "sub": "The business model holds their attention for 64 seconds, the \"Why now\" slide for 23. Here is the breakdown, section by section.",
+          "source": "docsend"
+        },
+        {
+          "type": "photo",
+          "src": "media/screening-room-polaroid.jpg",
+          "alt": "Polaroid pinned on cork: a dark room, people seen from behind facing a screen.",
+          "credit": "Photo swanbase"
+        }
+      ]
+    },
+    {
+      "id": "completion",
+      "role": "content",
+      "notes": "Stakes: almost half the decks lose the reader before the ask.",
+      "blocks": [
+        {
+          "type": "stat",
+          "value": "58%",
+          "label": "of seed decks get read to the last page.",
+          "context": "The other VCs drop off before your funding ask. Every slide has to make them want to read the next one.",
+          "source": "docsend"
+        }
+      ]
+    },
+    {
+      "id": "sections",
+      "role": "content",
+      "notes": "The whole dataset, one accent on the section that carries the message.",
+      "blocks": [
+        {
+          "type": "title",
+          "text": "The business model gets the longest read",
+          "accent": "business model"
+        },
+        {
+          "type": "chart",
+          "kind": "bar",
+          "title": "Average reading time per section",
+          "unit": "seconds",
+          "value_suffix": " s",
+          "highlight": "Business model",
+          "note": "Average over the decks that include the section.",
+          "data": [
+            {
+              "label": "Business model",
+              "value": 64
+            },
+            {
+              "label": "Product",
+              "value": 59
+            },
+            {
+              "label": "Traction",
+              "value": 40
+            },
+            {
+              "label": "Team",
+              "value": 38
+            },
+            {
+              "label": "Financials",
+              "value": 37
+            },
+            {
+              "label": "Problem",
+              "value": 34
+            },
+            {
+              "label": "Solution",
+              "value": 34
+            },
+            {
+              "label": "Competition",
+              "value": 34
+            },
+            {
+              "label": "Funding ask",
+              "value": 32
+            },
+            {
+              "label": "Market size",
+              "value": 29
+            },
+            {
+              "label": "Purpose",
+              "value": 26
+            },
+            {
+              "label": "Why now",
+              "value": 23
+            }
+          ],
+          "source": "docsend"
+        }
+      ]
+    },
+    {
+      "id": "business-model",
+      "role": "content",
+      "notes": "What to put in the section that gets the longest look.",
+      "blocks": [
+        {
+          "type": "title",
+          "text": "64 seconds to show how you make money",
+          "accent": "64 seconds"
+        },
+        {
+          "type": "body",
+          "text": "VCs read this section longer than any other. Give your pricing, gross margin, customer acquisition cost and payback period, as soon as you measure them.\n\nDocSend also notes that an honest, conservative model convinces more than a hockey-stick curve.",
+          "source": "docsend"
+        }
+      ]
+    },
+    {
+      "id": "quote",
+      "role": "content",
+      "notes": "Calm slide. Verbatim from the DocSend article.",
+      "blocks": [
+        {
+          "type": "quote",
+          "text": "Every slide must earn the right to the next slide's attention.",
+          "author": "Justin Izzo",
+          "role": "Research Lead, Dropbox DocSend",
+          "source": "docsend"
+        }
+      ]
+    },
+    {
+      "id": "opening",
+      "role": "content",
+      "notes": "Real sequence, so numbered. Every sub-line comes from the DocSend dos.",
+      "blocks": [
+        {
+          "type": "title",
+          "text": "Open your deck with these four sections, in this order",
+          "accent": "in this order",
+          "sub": "According to DocSend, founders who follow this order are more likely to raise.",
+          "source": "docsend"
+        },
+        {
+          "type": "list",
+          "style": "numbered",
+          "items": [
+            {
+              "text": "Purpose, in one sentence",
+              "sub": "Test it on people outside your industry."
+            },
+            {
+              "text": "The problem",
+              "sub": "If your friends and family don't get it, a VC won't either."
+            },
+            {
+              "text": "The solution",
+              "sub": "No technical detail yet: the product comes later."
+            },
+            {
+              "text": "Market size",
+              "sub": "With credible sources and a precise first segment."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "why-now",
+      "role": "content",
+      "surface": "inverse",
+      "notes": "Calm, inverse surface for rhythm. The least-read section.",
+      "blocks": [
+        {
+          "type": "stat",
+          "value": "23 s",
+          "label": "for the \"Why now\" slide, the least read of all.",
+          "context": "One slide is enough: name what changed, technology, regulation or behaviour, and what that change makes possible today.",
+          "source": "docsend"
+        }
+      ]
+    },
+    {
+      "id": "signature",
+      "role": "content",
+      "notes": "The swanbase structure, from the published English guide.",
+      "blocks": [
+        {
+          "type": "title",
+          "text": "Our structure adds three slides most templates skip",
+          "accent": "three slides",
+          "source": "guide"
+        },
+        {
+          "type": "list",
+          "style": "numbered",
+          "items": [
+            {
+              "text": "Slide 3: the metaproblem",
+              "sub": "The problem of the person trying to solve the first problem. It is what sells."
+            },
+            {
+              "text": "Slide 4: why nobody has pulled it off",
+              "sub": "What stopped the teams that tried before you."
+            },
+            {
+              "text": "Slide 5: we cracked the code",
+              "sub": "Why you will succeed where others failed: a breakthrough, a rule change, a market shift."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "role": "cta",
+      "notes": "One question for the comments, the guide URL as text.",
+      "blocks": [
+        {
+          "type": "cta",
+          "text": "Which slide will you rewrite first?",
+          "url": "swanbase.co/en/blog/startup-pitch-deck-guide-2026",
+          "sub": "The full guide: 14 slides, four reference decks, seven common mistakes."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+ "key": "GET https://recherche-entreprises.api.gouv.fr/search?departement=75&etat_administratif=A&page=1&per_page=25&q=logiciel&section_activite_principale=J",
+ "status": 200,
+ "body": {
+  "results": [
+   {
+    "siren": "999000111",
+    "nom_complet": "TIDEMARK LABS",
+    "nom_raison_sociale": "TIDEMARK LABS",
+    "date_creation": "2026-09-22",
+    "etat_administratif": "A",
+    "activite_principale": "62.01Z",
+    "section_activite_principale": "J",
+    "siege": {
+     "code_postal": "75002",
+     "libelle_commune": "PARIS"
+    },
+    "dirigeants": [
+     {
+      "nom": "LEMAIRE",
+      "prenoms": "HUGO",
+      "annee_de_naissance": "1994",
+      "date_de_naissance": "1994-03",
+      "qualite": "Président de SAS",
+      "nationalite": "Française",
+      "type_dirigeant": "personne physique"
+     },
+     {
+      "siren": "999000999",
+      "denomination": "HOLDING FICTIVE",
+      "qualite": "Directeur général",
+      "type_dirigeant": "personne morale"
+     }
+    ]
+   },
+   {
+    "siren": "999000222",
+    "nom_complet": "OLDCO SOFTWARE",
+    "nom_raison_sociale": "OLDCO SOFTWARE",
+    "date_creation": "2025-01-10",
+    "etat_administratif": "A",
+    "activite_principale": "62.01Z",
+    "section_activite_principale": "J",
+    "dirigeants": [
+     {
+      "nom": "BLANC",
+      "prenoms": "MARIE",
+      "qualite": "Gérant",
+      "type_dirigeant": "personne physique",
+      "date_de_naissance": "1980-01"
+     }
+    ]
+   }
+  ],
+  "total_results": 2,
+  "page": 1,
+  "per_page": 25,
+  "total_pages": 1
+ }
+}

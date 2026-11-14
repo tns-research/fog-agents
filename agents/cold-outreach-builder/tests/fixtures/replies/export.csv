@@ -1,0 +1,50 @@
+prospect_id,tier,email,first_name,last_name,company,hook,hook_fact_id,step_1_subject,step_1_body,step_1_delay_days,step_2_subject,step_2_body,step_2_delay_days,step_3_subject,step_3_body,step_3_delay_days
+p001,B,ana@quill.example,Ana,Test,Quill,h,f1,a question,"Hi.
+
+{{sender_first_name}}",0,,"Bump.
+
+{{sender_first_name}}",3,,"Bye.
+
+{{sender_first_name}}",7
+p002,B,ben@larch.example,Ben,Test,Larch,h,f1,a question,"Hi.
+
+{{sender_first_name}}",0,,"Bump.
+
+{{sender_first_name}}",3,,"Bye.
+
+{{sender_first_name}}",7
+p003,B,chloe@fennel.example,Chloe,Test,Fennel,h,f1,a question,"Hi.
+
+{{sender_first_name}}",0,,"Bump.
+
+{{sender_first_name}}",3,,"Bye.
+
+{{sender_first_name}}",7
+p004,B,dev@oriel.example,Dev,Test,Oriel,h,f1,a question,"Hi.
+
+{{sender_first_name}}",0,,"Bump.
+
+{{sender_first_name}}",3,,"Bye.
+
+{{sender_first_name}}",7
+p005,B,eli@sorrel.example,Eli,Test,Sorrel,h,f1,a question,"Hi.
+
+{{sender_first_name}}",0,,"Bump.
+
+{{sender_first_name}}",3,,"Bye.
+
+{{sender_first_name}}",7
+p006,B,fay@tansy.example,Fay,Test,Tansy,h,f1,a question,"Hi.
+
+{{sender_first_name}}",0,,"Bump.
+
+{{sender_first_name}}",3,,"Bye.
+
+{{sender_first_name}}",7
+p007,B,hal@birch.example,Hal,Test,Birch,h,f1,a question,"Hi.
+
+{{sender_first_name}}",0,,"Bump.
+
+{{sender_first_name}}",3,,"Bye.
+
+{{sender_first_name}}",7

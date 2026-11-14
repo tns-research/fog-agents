@@ -1,0 +1,223 @@
+{
+  "schema_version": "1.0",
+  "agent": "growth-pulse",
+  "project": "swanbase",
+  "generated_on": "2026-10-14",
+  "week": {
+    "id": "2026-W41",
+    "start": "2026-10-05",
+    "end": "2026-10-11"
+  },
+  "pulse": {
+    "file": "pulse.json",
+    "inputs_hash": "de4b550c7f98"
+  },
+  "experiments": [
+    {
+      "id": "E-20261014-1",
+      "title": "Restore the previous program page title and meta description",
+      "stage": "acquisition",
+      "hypothesis": "We believe that restoring the program page title and meta description used before the rewrite will bring the average search position back toward its 4-week mean because the position started to worsen in the days after the rewrite while search impressions moved far less than clicks.",
+      "change": "Put back the previous title and meta description of the program page, request indexing in Search Console, and change nothing else on the page until the experiment ends.",
+      "channel": "search",
+      "metric": {
+        "id": "gsc.position",
+        "label": "Average search position"
+      },
+      "baseline": {
+        "value": 12.1,
+        "basis": "report week"
+      },
+      "success_threshold": {
+        "comparator": "<=",
+        "value": 10.5,
+        "per": "week",
+        "unit": "average position"
+      },
+      "duration_days": 14,
+      "start_date": "2026-10-19",
+      "cost": {
+        "cash_eur": 0,
+        "hours": 1,
+        "spend_requires_approval": false
+      },
+      "owner": "seo-audit",
+      "evidence": [
+        "gsc/totals",
+        "gsc/pages/https://swanbase.example/program/",
+        "actions/2026-10-01",
+        "metrics/gsc.position"
+      ],
+      "ice": {
+        "impact": 7,
+        "confidence": 6,
+        "ease": 9
+      },
+      "kill_criterion": "Stop and investigate if the served page still shows the rewritten title after the first week.",
+      "readout": {
+        "detectable": null,
+        "noise_band_per_week": null,
+        "reason": "not assessed for a position metric"
+      },
+      "status": "proposed"
+    },
+    {
+      "id": "E-20261014-2",
+      "title": "Program link on the last slide and in the first comment of each carousel",
+      "stage": "acquisition",
+      "hypothesis": "We believe that a program page link on the last slide and in the first comment of each carousel will turn more LinkedIn readers into site visitors because LinkedIn impressions more than doubled this week while site visitors stayed inside their noise band.",
+      "change": "carousel-builder adds a closing slide that names the program page; the founder posts the tagged link as the first comment right after publishing, on every carousel of the sprint.",
+      "channel": "linkedin",
+      "metric": {
+        "id": "umami.visitors",
+        "label": "Visitors (umami)"
+      },
+      "baseline": {
+        "value": 559.5,
+        "basis": "4-week mean"
+      },
+      "success_threshold": {
+        "comparator": ">=",
+        "value": 640,
+        "per": "week",
+        "unit": "visitors"
+      },
+      "duration_days": 14,
+      "start_date": "2026-10-19",
+      "cost": {
+        "cash_eur": 0,
+        "hours": 3,
+        "spend_requires_approval": false
+      },
+      "owner": "carousel-builder",
+      "evidence": [
+        "metrics/social.linkedin.impressions",
+        "metrics/umami.visitors",
+        "correlations/C3",
+        "followup/E-20260930-1"
+      ],
+      "ice": {
+        "impact": 6,
+        "confidence": 5,
+        "ease": 8
+      },
+      "readout": {
+        "detectable": true,
+        "noise_band_per_week": 41.2,
+        "reason": "the target is outside the noise band of the weekly mean over 14 days"
+      },
+      "status": "proposed"
+    },
+    {
+      "id": "E-20261014-3",
+      "title": "Track invite signups, then rerun the invite link test",
+      "stage": "referral",
+      "hypothesis": "We believe that an invite link in the application confirmation email will bring referred signups because visitors already copy the invite link today without any prompt.",
+      "change": "Fire a referral_signup event in Umami when a signup arrives through an invite link, check it on a test signup, then keep the invite link in the confirmation email until the experiment ends.",
+      "channel": "email",
+      "metric": {
+        "id": "new:umami.event.referral_signup",
+        "label": "Signups through an invite link"
+      },
+      "baseline": {
+        "value": null,
+        "basis": "none"
+      },
+      "success_threshold": {
+        "comparator": ">=",
+        "value": 3,
+        "per": "total",
+        "unit": "signups"
+      },
+      "duration_days": 14,
+      "start_date": "2026-10-19",
+      "cost": {
+        "cash_eur": 0,
+        "hours": 3,
+        "spend_requires_approval": false
+      },
+      "owner": "founder",
+      "evidence": [
+        "followup/E-20260930-3",
+        "metrics/umami.event.invite_link_copied"
+      ],
+      "ice": {
+        "impact": 4,
+        "confidence": 4,
+        "ease": 7
+      },
+      "readout": {
+        "detectable": null,
+        "noise_band_per_week": null,
+        "reason": "metric to instrument first: no baseline to read against"
+      },
+      "status": "proposed"
+    }
+  ],
+  "followup": [
+    {
+      "id": "E-20260930-1",
+      "title": "One LinkedIn carousel a week instead of one text post",
+      "stage": "acquisition",
+      "metric": "social.linkedin.impressions",
+      "start_date": "2026-10-05",
+      "end_date": "2026-10-11",
+      "baseline": 6463.3,
+      "threshold": {
+        "comparator": ">=",
+        "value": 9000,
+        "per": "week"
+      },
+      "weeks_measured": [
+        "2026-W41"
+      ],
+      "observed": 14365,
+      "verdict": "met",
+      "reason": "observed within the experiment window; a met threshold is a correlation with the change, not proof of its effect"
+    },
+    {
+      "id": "E-20260930-2",
+      "title": "Newsletter box at the end of every blog article",
+      "stage": "activation",
+      "metric": "umami.event.newsletter_signup",
+      "start_date": "2026-10-05",
+      "end_date": "2026-10-18",
+      "baseline": 10,
+      "threshold": {
+        "comparator": ">=",
+        "value": 15,
+        "per": "week"
+      },
+      "weeks_measured": [
+        "2026-W41"
+      ],
+      "observed": 13,
+      "verdict": "running",
+      "reason": "ends 2026-10-18, after the report week"
+    },
+    {
+      "id": "E-20260930-3",
+      "title": "Invite link in the application confirmation email",
+      "stage": "referral",
+      "metric": "new:umami.event.referral_signup",
+      "start_date": "2026-10-05",
+      "end_date": "2026-10-11",
+      "baseline": null,
+      "threshold": {
+        "comparator": ">=",
+        "value": 3,
+        "per": "total"
+      },
+      "weeks_measured": [],
+      "observed": null,
+      "verdict": "not_measurable",
+      "reason": "metric still absent from the data: the tracking is not live yet"
+    }
+  ],
+  "budget": {
+    "cash_eur_total": 0,
+    "hours_total": 7,
+    "requires_approval": false
+  },
+  "usage": "Input of the next sprint. Each experiment is a hypothesis to test, never a finding: run it as written, record the start date, let the next growth-pulse run judge it from its metric. Spending needs the founder's approval first (spend_requires_approval)."
+}

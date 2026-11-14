@@ -1,0 +1,72 @@
+{
+  "_comment": "Platform limits checked by scripts/variants.py. Each number carries the URL it comes from and the date it was checked. When a platform's help page disagrees with this file, the help page wins: update the number, the source and checked. Counting modes: chars = Unicode code points; x_weighted = X weighted count (URL 23, emoji and CJK 2); graphemes = user-perceived characters (stdlib approximation).",
+  "checked": "2026-10-12",
+  "networks": {
+    "linkedin": {
+      "label": "LinkedIn",
+      "count": "chars",
+      "text_max": 3000,
+      "first_comment_max": 1250,
+      "fold_hint": 210,
+      "link_placement": "first_comment",
+      "media": { "document": true, "images_max": null },
+      "sources": {
+        "text_max": "https://support.buffer.com/articles/character-limits-for-each-social-network-mNDqsEV9Nf",
+        "first_comment_max": "https://support.buffer.com/articles/character-limits-for-each-social-network-mNDqsEV9Nf",
+        "fold_hint": "https://contentin.io/glossary/character-limit"
+      }
+    },
+    "x": {
+      "label": "X",
+      "count": "x_weighted",
+      "text_max": 280,
+      "reply_max": 280,
+      "url_weight": 23,
+      "link_placement": "reply",
+      "media": { "document": false, "images_max": 4 },
+      "sources": {
+        "text_max": "https://docs.x.com/fundamentals/counting-characters",
+        "url_weight": "https://docs.x.com/fundamentals/counting-characters",
+        "images_max": "https://help.x.com/en/using-x/posting-gifs-and-pictures"
+      }
+    },
+    "instagram": {
+      "label": "Instagram",
+      "count": "chars",
+      "text_max": 2200,
+      "hashtags_max": 5,
+      "fold_hint": 125,
+      "link_placement": "bio",
+      "media": { "document": false, "images_max": null, "required": true },
+      "sources": {
+        "text_max": "https://support.buffer.com/articles/character-limits-for-each-social-network-mNDqsEV9Nf",
+        "hashtags_max": "https://www.instagram.com/p/DSalTolEbvf/",
+        "fold_hint": "https://charactercounter.com/instagram"
+      }
+    },
+    "threads": {
+      "label": "Threads",
+      "count": "chars",
+      "text_max": 500,
+      "reply_max": 500,
+      "bytes_hint": 500,
+      "link_placement": "reply",
+      "media": { "document": false, "images_max": null },
+      "sources": {
+        "text_max": "https://support.buffer.com/articles/character-limits-for-each-social-network-mNDqsEV9Nf",
+        "bytes_hint": "https://support.buffer.com/articles/character-limits-for-each-social-network-mNDqsEV9Nf"
+      }
+    },
+    "bluesky": {
+      "label": "Bluesky",
+      "count": "graphemes",
+      "text_max": 300,
+      "reply_max": 300,
+      "link_placement": "reply",
+      "media": { "document": false, "images_max": null },
+      "sources": {
+        "text_max": "https://support.buffer.com/articles/character-limits-for-each-social-network-mNDqsEV9Nf"
+      }
+    }
+  }
+}

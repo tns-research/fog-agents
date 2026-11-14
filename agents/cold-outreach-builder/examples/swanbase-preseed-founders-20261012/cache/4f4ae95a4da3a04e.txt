@@ -1,0 +1,10 @@
+URL: https://tidewell.example/blog/private-beta
+
+Tidewell blog
+
+Tidewell is in private beta
+Published 29 September 2026
+
+Today we open the Tidewell private beta to the first forty finance teams on our waitlist. Tidewell matches supplier invoices to purchase orders and flags the ones that do not add up, before anyone pays them.
+
+We built the first version with five design partners over the summer. If your finance team still reconciles invoices in a spreadsheet, reply to this post and we will add you to the next wave.

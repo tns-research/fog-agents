@@ -1,0 +1,28 @@
+{
+  "_comment": "Copied to <your-projects-root>/<project>/seo-audit/config.json on the first run. Never commit a real config to the agent folder. country filters Search Console only ('all' or empty = no filter); serp_country is the two-letter code for live SERP fetches (empty = country when it is a real code, else project-context geography.country, else 'us'). crawl: start_url (default: the domain's home page), max_pages, delay_s between requests, as_origin to audit a local build with production URLs. repo_path: optional path of the site's source repository; it turns on repo mode (scripts/repo_fix.py): each fixable defect traced to its file and line as a patch checked by git apply, never applied, the repository only read. briefs.top: refresh briefs written per run. geo: draws per question and surface, surfaces to measure, provider per surface (perplexity, command, manual, none), command = the founder's answer-engine CLI for the command provider, competitors (name, aliases, domains), brand_aliases. gsc_bands, crawl_rules and eeat override keys of assets/gsc-bands.json, assets/crawl-rules.json and assets/eeat-weights.json for this project only (an eeat override changes the scores: write it in Methodology). Optional, same merge: a links object overrides assets/link-rules.json (scripts/links.py), a topics object assets/topics-rules.json (scripts/topics.py), a write object assets/write-rules.json (scripts/write_article.py: thresholds, assemble.url_pattern, frontmatter presets, plus author and publisher of the JSON-LD). Optional: a tools object (same keys as shared/tools.example.json, e.g. {\"serp\": \"builtin\", \"search_console\": \"manual\", \"ai_answers\": \"manual\"}) pins providers for this agent. Every API is optional.",
+  "project": "<project-slug>",
+  "domain": "https://example.com/",
+  "target_queries": [
+    "primary query the site should rank for",
+    "secondary query",
+    "tertiary query"
+  ],
+  "period_days": 28,
+  "country": "all",
+  "serp_country": "",
+  "language": "en",
+  "crawl": { "start_url": null, "max_pages": 200, "delay_s": 0.5, "as_origin": null },
+  "repo_path": null,
+  "briefs": { "top": 8 },
+  "geo": {
+    "draws": 3,
+    "surfaces": ["chatgpt", "perplexity", "google"],
+    "provider": { "chatgpt": "manual", "perplexity": "manual", "google": "manual" },
+    "command": null,
+    "brand_aliases": [],
+    "competitors": []
+  },
+  "gsc_bands": {},
+  "crawl_rules": {},
+  "eeat": {}
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "prospect_id": "p002",
+  "first_name": "Jonas",
+  "last_name": "Weber",
+  "role": "Founder",
+  "company": "Ferncast",
+  "company_url": "https://ferncast.example",
+  "email": "jonas@ferncast.example",
+  "email_source_url": "lead_list",
+  "profile_url": "https://hardwarenight.example/talks/2026-03-ferncast",
+  "geography": "de",
+  "language": "en",
+  "register": "n/a",
+  "researched_at": "2026-10-12",
+  "relationship": "none",
+  "facts": [
+    {
+      "id": "f1",
+      "type": "talk",
+      "claim": "Jonas gave a talk on how the Ferncast prototype failed on three farms and was rebuilt before any sale.",
+      "date": "2026-03-18",
+      "date_source": "page",
+      "source_url": "https://hardwarenight.example/talks/2026-03-ferncast",
+      "excerpt": "Jonas showed how the Ferncast soil sensor prototype failed in the first week on three farms",
+      "owner": "self"
+    }
+  ],
+  "disqualifiers": [],
+  "pages_read": [
+    "https://hardwarenight.example/talks/2026-03-ferncast"
+  ],
+  "notes": "No dated fact from the last 120 days found on public pages."
+}

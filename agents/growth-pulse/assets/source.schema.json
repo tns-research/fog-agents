@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "growth-pulse source file",
+  "description": "Written by every connector (scripts/connect_*.py) into <run>/data/<source>.json, whatever the provider (API, fixture replay, CSV export, none). Daily values are summable counts or amounts; non-summable figures travel as sums (position_weighted = position x impressions) and are derived by compute_pulse.py. Validate with: python3 shared/scripts/validate_json.py agents/growth-pulse/assets/source.schema.json <file>",
+  "type": "object",
+  "required": ["schema_version", "source", "provider", "status", "message", "generated_on", "range", "days_with_data", "missing_days", "metrics", "daily", "breakdowns", "notes"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "source": { "enum": ["plausible", "umami", "ga4", "gsc", "social", "revenue"] },
+    "provider": { "enum": ["api", "fixture", "csv", "json", "none"], "description": "fixture = recorded API responses replayed offline; json = an API-shaped file written by another tool" },
+    "status": { "enum": ["ok", "partial", "stale", "missing", "error"], "description": "ok: every day of the window; partial: days missing inside the window; stale: days missing at the end only; missing: no provider; error: the provider failed" },
+    "message": { "type": "string" },
+    "generated_on": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "range": {
+      "type": "object",
+      "required": ["since", "until"],
+      "additionalProperties": false,
+      "properties": {
+        "since": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "until": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" }
+      }
+    },
+    "days_with_data": { "type": "integer", "minimum": 0 },
+    "missing_days": { "type": "array", "items": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" } },
+    "metrics": { "type": "array", "items": { "type": "string", "pattern": "^[a-z0-9_.\\-]+$" } },
+    "daily": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["date", "values"],
+        "additionalProperties": false,
+        "properties": {
+          "date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+          "values": { "type": "object", "additionalProperties": { "type": "number" } }
+        }
+      }
+    },
+    "breakdowns": {
+      "type": "array",
+      "description": "Weekly rows by dimension (Search Console query and page). Only what the provider returned: anonymized queries are absent.",
+      "items": {
+        "type": "object",
+        "required": ["dimension", "key", "week", "values"],
+        "additionalProperties": false,
+        "properties": {
+          "dimension": { "enum": ["query", "page"] },
+          "key": { "type": "string" },
+          "week": { "type": "string", "pattern": "^[0-9]{4}-W[0-9]{2}$" },
+          "values": { "type": "object", "additionalProperties": { "type": "number" } }
+        }
+      }
+    },
+    "notes": { "type": "array", "items": { "type": "string" } }
+  }
+}

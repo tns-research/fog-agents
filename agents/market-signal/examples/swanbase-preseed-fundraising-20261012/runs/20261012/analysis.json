@@ -1,0 +1,501 @@
+{
+  "schema_version": "2.0",
+  "project": "swanbase",
+  "market": "pre-seed fundraising for first-time founders",
+  "language": "en",
+  "geography": "global",
+  "as_of": "2026-10-12",
+  "window": {
+    "since": "2026-07-14",
+    "until": "2026-10-12"
+  },
+  "summary": "Fictional example: every post, author, id and URL in this corpus is invented, and any resemblance to real people, posts or companies is coincidental. First-time founders in this window talk about getting a meeting more than about any other part of the raise. Warm introductions work as the gate: practitioners tell founders to skip cold email, and founders without a network say they cannot get meetings even with paying customers. The second escalated pain is the proof bar, where practitioners contradict each other on how much traction a pre-seed round needs. Accelerators appear both as a way in front of investors and as programmes founders doubt.",
+  "pains": [
+    {
+      "pain_id": "pain_investor_access",
+      "summary": "Getting in front of investors without a network: warm introductions act as the gate",
+      "kind": "pain",
+      "force": "push",
+      "awareness_stage": "problem_aware"
+    },
+    {
+      "pain_id": "pain_traction_bar",
+      "summary": "Not knowing which proof is enough for a pre-seed yes, while practitioners disagree on the bar",
+      "kind": "pain",
+      "force": "anxiety",
+      "awareness_stage": "problem_aware"
+    },
+    {
+      "pain_id": "pain_pitch_story",
+      "summary": "Turning an early company into one story an investor can repeat",
+      "kind": "pain",
+      "force": "push",
+      "awareness_stage": "solution_aware"
+    },
+    {
+      "pain_id": "pain_intro_black_box",
+      "summary": "Introductions disappear: the connector never learns what happened",
+      "kind": "pain",
+      "force": "push",
+      "awareness_stage": "problem_aware"
+    },
+    {
+      "pain_id": "pain_vc_misalignment",
+      "summary": "Pre-seed investors bet on a few winners and expect the rest to fail, which founders read as misalignment",
+      "kind": "meta_problem",
+      "force": "anxiety",
+      "awareness_stage": "problem_aware",
+      "existing_solution": "venture capital"
+    }
+  ],
+  "rejected_pains": [
+    {
+      "summary": "Warm introductions to find first clients, vendors or a cofounder",
+      "reason": "Same words, different market: these threads are about sales and hiring, not the raise. Labelled not relevant."
+    },
+    {
+      "summary": "Fundraising mechanics for novices",
+      "reason": "One Stack Exchange question in the previous run, none in this one."
+    }
+  ],
+  "quotes": [
+    {
+      "quote_id": "q_no_meetings",
+      "record_id": "reddit:t1_fictive48",
+      "passage": "My startup has a working product with paying customers and I can't even get meetings with VCs.",
+      "pain_id": "pain_investor_access",
+      "persona_id": "persona_first_time_raiser",
+      "usable_as": [
+        "headline",
+        "hook"
+      ]
+    },
+    {
+      "quote_id": "q_sparkle",
+      "record_id": "reddit:t1_fictive48",
+      "passage": "You need a hook to get through the door with VCs, and usually that hook is some \"sparkle\".",
+      "pain_id": "pain_investor_access",
+      "persona_id": "persona_first_time_raiser",
+      "usable_as": [
+        "support"
+      ]
+    },
+    {
+      "quote_id": "q_zero_connections",
+      "record_id": "reddit:t1_fictive37",
+      "passage": "I'm not rich, and neither is my family. I have zero connections to VCs or to big money.",
+      "pain_id": "pain_investor_access",
+      "persona_id": "persona_first_time_raiser",
+      "usable_as": [
+        "headline",
+        "outreach_opener"
+      ]
+    },
+    {
+      "quote_id": "q_mutual_traction",
+      "record_id": "reddit:t1_fictive39",
+      "passage": "Warm intros only work if the mutual has already seen real traction.",
+      "pain_id": "pain_investor_access",
+      "usable_as": [
+        "headline",
+        "support"
+      ]
+    },
+    {
+      "quote_id": "q_pedigree",
+      "record_id": "reddit:t1_fictive40",
+      "passage": "A pedigree background buys you warm intros, cheaper trust and a safety net",
+      "pain_id": "pain_investor_access",
+      "usable_as": [
+        "support",
+        "quote_slide"
+      ]
+    },
+    {
+      "quote_id": "q_skip_cold",
+      "record_id": "reddit:t1_fictive46",
+      "passage": "Skip the cold emails.",
+      "pain_id": "pain_investor_access",
+      "usable_as": [
+        "hook"
+      ]
+    },
+    {
+      "quote_id": "q_ask_intro",
+      "record_id": "reddit:t1_fictive35",
+      "passage": "If anyone here likes the project and happens to know a pre-seed investor who would be a good fit, a warm intro would mean a lot.",
+      "pain_id": "pain_investor_access",
+      "persona_id": "persona_first_time_raiser",
+      "usable_as": [
+        "support"
+      ]
+    },
+    {
+      "quote_id": "q_warm_overrated",
+      "record_id": "reddit:t1_fictive62",
+      "passage": "Warm intros are overrated IMO, and not required.",
+      "pain_id": "pain_investor_access",
+      "usable_as": [
+        "objection"
+      ]
+    },
+    {
+      "quote_id": "q_not_ready",
+      "record_id": "reddit:t1_fictive28",
+      "passage": "Honest advice: you aren't ready for funding. Not even pre-seed.",
+      "pain_id": "pain_traction_bar",
+      "persona_id": "persona_first_time_raiser",
+      "usable_as": [
+        "objection",
+        "headline"
+      ]
+    },
+    {
+      "quote_id": "q_fff",
+      "record_id": "reddit:t1_fictive28",
+      "passage": "The round that comes before is the FFF round (friends, family and fools)",
+      "pain_id": "pain_traction_bar",
+      "usable_as": [
+        "support"
+      ]
+    },
+    {
+      "quote_id": "q_above_market",
+      "record_id": "reddit:t1_fictive58",
+      "passage": "Raising a pre-seed at $500k ARR is still way above market I think",
+      "pain_id": "pain_traction_bar",
+      "usable_as": [
+        "support"
+      ]
+    },
+    {
+      "quote_id": "q_loi",
+      "record_id": "reddit:t1_fictive54",
+      "passage": "Even with signed LOIs from big companies it's hard to raise.",
+      "pain_id": "pain_traction_bar",
+      "usable_as": [
+        "headline",
+        "support"
+      ]
+    },
+    {
+      "quote_id": "q_revenue_king",
+      "record_id": "reddit:t1_fictive56",
+      "passage": "Traction doesn't have to mean revenue, but revenue is king.",
+      "pain_id": "pain_traction_bar",
+      "usable_as": [
+        "support",
+        "quote_slide"
+      ]
+    },
+    {
+      "quote_id": "q_roulette",
+      "record_id": "reddit:t1_fictive34",
+      "passage": "For an investor, pre-seed is a roulette table: they know most of these startups will fail.",
+      "pain_id": "pain_vc_misalignment",
+      "persona_id": "persona_first_time_raiser",
+      "usable_as": [
+        "support"
+      ]
+    },
+    {
+      "quote_id": "q_not_aligned",
+      "record_id": "reddit:t1_fictive25",
+      "passage": "VCs are not really on your side as a founder.",
+      "pain_id": "pain_vc_misalignment",
+      "usable_as": [
+        "support"
+      ]
+    },
+    {
+      "quote_id": "q_one_pager",
+      "record_id": "reddit:t1_fictive43",
+      "passage": "pre-seed? a one pager is plenty.",
+      "pain_id": "pain_pitch_story",
+      "usable_as": [
+        "hook"
+      ]
+    },
+    {
+      "quote_id": "q_one_sentence",
+      "record_id": "reddit:t1_fictive44",
+      "passage": "Begin with the one sentence an investor can repeat to a partner: who is hurting, what you do, and the strongest single proof you have today",
+      "pain_id": "pain_pitch_story",
+      "usable_as": [
+        "support",
+        "quote_slide"
+      ]
+    },
+    {
+      "quote_id": "q_one_wedge",
+      "record_id": "reddit:t1_fictive36",
+      "passage": "At pre-seed, investors buy one wedge, not a group of companies.",
+      "pain_id": "pain_pitch_story",
+      "usable_as": [
+        "headline"
+      ]
+    },
+    {
+      "quote_id": "q_intro_never",
+      "record_id": "hn:90026933",
+      "passage": "I make quite a few intros, and I almost never hear what happened unless I ask, awkwardly, weeks later.",
+      "pain_id": "pain_intro_black_box",
+      "usable_as": [
+        "support"
+      ]
+    },
+    {
+      "quote_id": "q_overindex",
+      "record_id": "reddit:t1_fictive37",
+      "passage": "You're WAY over indexing on Hatchery Twelve.",
+      "pain_id": null,
+      "usable_as": [
+        "objection"
+      ]
+    },
+    {
+      "quote_id": "q_program_bad",
+      "record_id": "reddit:t1_fictive45",
+      "passage": "I think Cohort Zero is a bad program, especially the way they run their regional cohorts.",
+      "pain_id": null,
+      "usable_as": [
+        "objection"
+      ]
+    }
+  ],
+  "hooks": [
+    {
+      "hook_id": "hook_no_meetings",
+      "text": "I can't even get meetings with VCs",
+      "verbatim": true,
+      "pain_id": "pain_investor_access",
+      "quote_ids": [
+        "q_no_meetings"
+      ]
+    },
+    {
+      "hook_id": "hook_mutual_traction",
+      "text": "Warm intros only work if the mutual has already seen real traction.",
+      "verbatim": true,
+      "pain_id": "pain_investor_access",
+      "quote_ids": [
+        "q_mutual_traction"
+      ]
+    },
+    {
+      "hook_id": "hook_which_proof",
+      "text": "Which proof gets a first-time founder a first pre-seed meeting?",
+      "verbatim": false,
+      "pain_id": "pain_traction_bar",
+      "quote_ids": [
+        "q_not_ready",
+        "q_above_market",
+        "q_loi"
+      ]
+    }
+  ],
+  "objections": [
+    {
+      "objection_id": "obj_not_ready",
+      "text": "you aren't ready for funding. Not even pre-seed.",
+      "force": "anxiety",
+      "pain_id": "pain_traction_bar",
+      "quote_ids": [
+        "q_not_ready"
+      ]
+    },
+    {
+      "objection_id": "obj_warm_overrated",
+      "text": "Warm intros are overrated IMO, and not required.",
+      "force": "habit",
+      "pain_id": "pain_investor_access",
+      "quote_ids": [
+        "q_warm_overrated"
+      ]
+    },
+    {
+      "objection_id": "obj_program_doubt",
+      "text": "I think Cohort Zero is a bad program",
+      "force": "anxiety",
+      "pain_id": null,
+      "quote_ids": [
+        "q_program_bad"
+      ]
+    },
+    {
+      "objection_id": "obj_overindex",
+      "text": "You're WAY over indexing on Hatchery Twelve.",
+      "force": "habit",
+      "pain_id": null,
+      "quote_ids": [
+        "q_overindex"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "angle_id": "angle_access_gate",
+      "pain_id": "pain_investor_access",
+      "force": "push",
+      "awareness_stage": "problem_aware",
+      "funnel_stage": "tofu",
+      "headline_quote_id": "q_no_meetings",
+      "support_quote_ids": [
+        "q_zero_connections",
+        "q_pedigree"
+      ],
+      "contrast": "cold email to a fund's inbox",
+      "formats": [
+        "carousel",
+        "static_ad",
+        "cold_outreach"
+      ],
+      "why": "The most repeated pain, in founders' own words, and it names the moment that hurts: no meeting."
+    },
+    {
+      "angle_id": "angle_proof_bar",
+      "pain_id": "pain_traction_bar",
+      "force": "anxiety",
+      "awareness_stage": "problem_aware",
+      "funnel_stage": "mofu",
+      "headline_quote_id": "q_loi",
+      "support_quote_ids": [
+        "q_above_market",
+        "q_revenue_king"
+      ],
+      "contrast": "waiting for more traction before talking to anyone",
+      "formats": [
+        "carousel",
+        "landing_page"
+      ],
+      "why": "Practitioners contradict each other on the bar; a sourced answer is useful content before any offer."
+    },
+    {
+      "angle_id": "angle_mutual_traction",
+      "pain_id": "pain_investor_access",
+      "force": "pull",
+      "awareness_stage": "solution_aware",
+      "funnel_stage": "bofu",
+      "headline_quote_id": "q_mutual_traction",
+      "support_quote_ids": [
+        "q_skip_cold"
+      ],
+      "contrast": "asking weak ties for introductions",
+      "formats": [
+        "cold_outreach",
+        "static_ad"
+      ],
+      "why": "Founders who already know intros matter want the condition that makes an intro work."
+    }
+  ],
+  "existing_solutions": [
+    {
+      "name": "Hatchery Twelve",
+      "type": "direct",
+      "sentiment": "mixed",
+      "quote_ids": [
+        "q_overindex"
+      ]
+    },
+    {
+      "name": "Cohort Zero",
+      "type": "direct",
+      "sentiment": "negative",
+      "quote_ids": [
+        "q_program_bad"
+      ]
+    },
+    {
+      "name": "friends and family round",
+      "type": "status_quo",
+      "sentiment": "mixed",
+      "quote_ids": [
+        "q_fff"
+      ]
+    },
+    {
+      "name": "cold email",
+      "type": "status_quo",
+      "sentiment": "mixed",
+      "quote_ids": [
+        "q_skip_cold",
+        "q_warm_overrated"
+      ]
+    }
+  ],
+  "personas": [
+    {
+      "persona_id": "persona_first_time_raiser",
+      "name": "First-time founder raising a first round without investor connections",
+      "context": "Pre-seed, first company, posting in r/startups and r/venturecapital, often with early revenue or letters of intent",
+      "primary": true,
+      "pain_ids": [
+        "pain_investor_access",
+        "pain_traction_bar",
+        "pain_pitch_story"
+      ],
+      "jtbd_forces": {
+        "push": [
+          "q_no_meetings",
+          "q_zero_connections"
+        ],
+        "pull": [
+          "q_mutual_traction"
+        ],
+        "anxiety": [
+          "q_not_ready",
+          "q_roulette"
+        ],
+        "habit": []
+      },
+      "hook_ids": [
+        "hook_no_meetings",
+        "hook_which_proof"
+      ],
+      "anti_personas": [
+        {
+          "segment": "Founders with strong traction who reach funds directly",
+          "reason": "They get meetings without introductions; the access pain is not theirs.",
+          "quote_ids": [
+            "q_warm_overrated"
+          ]
+        }
+      ]
+    }
+  ],
+  "recommendations": [
+    {
+      "text": "Test founder-facing copy that leads with getting the first investor meeting, in the founders' words, against copy that leads with the programme content.",
+      "falsified_if": "The access-led variant converts no better on the same traffic, or the next watch run shows the access pain falling.",
+      "quote_ids": [
+        "q_no_meetings",
+        "q_zero_connections"
+      ]
+    },
+    {
+      "text": "Publish a sourced piece on what proof pre-seed investors ask for, since practitioners in the corpus contradict each other on the bar.",
+      "falsified_if": "Readers' replies say the bar was already clear to them, or the piece draws less engagement than the account's usual posts.",
+      "quote_ids": [
+        "q_loi",
+        "q_above_market",
+        "q_revenue_king"
+      ]
+    },
+    {
+      "text": "Answer the programme doubts on the application page with what the programme can show, before using introductions as a selling point.",
+      "falsified_if": "Applicants never raise programme quality or introductions in their questions.",
+      "quote_ids": [
+        "q_program_bad",
+        "q_overindex",
+        "q_warm_overrated"
+      ]
+    }
+  ],
+  "limitations": [
+    "Fictional example: the corpus, the recorded API answers, the authors, ids and URLs were written to show the agent's output and describe no real post, person or company.",
+    "English sources only; no French community was collected in this run.",
+    "Reddit comes from the Arctic Shift archive: deleted comments are absent and the most recent days may be missing.",
+    "The App Store feed returned no review for Tablesplit in this run, so there is no review mining.",
+    "Hacker News search for the exact phrase pre-seed returns mostly hiring threads; Stack Exchange has no active startup site."
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "_comment": "Fictional larkspur.example site for eeat.py and repo_fix.py, served by tests/fixture_server.py. Built from the mini repository tests/fixtures/eeat-repo/. A strong article (byline, author page, dates, sources, citations), a weak one (no author, no update date, long title, no description, two H1, image without alt, no canonical), About, Contact and Privacy pages but no legal notice, Organization JSON-LD with sameAs, an AggregateRating, a testimonial block, a footer link that answers 404, a page without title, a page without H1 and without source file.",
+  "routes": {
+    "/": {
+      "status": 200,
+      "file": "home.html"
+    },
+    "/about/": {
+      "status": 200,
+      "file": "about.html"
+    },
+    "/contact/": {
+      "status": 200,
+      "file": "contact.html"
+    },
+    "/privacy/": {
+      "status": 200,
+      "file": "privacy.html"
+    },
+    "/changelog/": {
+      "status": 200,
+      "file": "changelog.html"
+    },
+    "/blog/": {
+      "status": 200,
+      "file": "blog.html"
+    },
+    "/blog/pricing-experiments/": {
+      "status": 200,
+      "file": "pricing-experiments.html"
+    },
+    "/blog/onboarding-checklist/": {
+      "status": 200,
+      "file": "onboarding-checklist.html"
+    },
+    "/authors/ana-ruiz/": {
+      "status": 200,
+      "file": "author-ana-ruiz.html"
+    },
+    "/customers/": {
+      "status": 200,
+      "file": "customers.html"
+    },
+    "/robots.txt": {
+      "status": 200,
+      "file": "robots.txt",
+      "headers": {
+        "Content-Type": "text/plain; charset=utf-8"
+      }
+    },
+    "/sitemap.xml": {
+      "status": 200,
+      "file": "sitemap.xml",
+      "headers": {
+        "Content-Type": "application/xml"
+      }
+    }
+  }
+}

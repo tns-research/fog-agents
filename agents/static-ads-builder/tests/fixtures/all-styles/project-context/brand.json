@@ -1,0 +1,79 @@
+{
+  "schema_version": "2.0",
+  "name": "Acme Preserves",
+  "source_url": "https://example.com",
+  "as_of": "2026-10-12",
+  "mode": "light",
+  "colors": {
+    "bg": "#fbf7f0",
+    "surface": "#f2ebdf",
+    "text": "#1d1a17",
+    "text_secondary": "#4a443d",
+    "text_muted": "#6b645b",
+    "border": "#ddd3c4",
+    "accent": "#b23a48",
+    "accent_secondary": "#2f5d50",
+    "on_accent": "#ffffff"
+  },
+  "radius": "10px",
+  "fonts": {
+    "display": {
+      "family": "Instrument Serif",
+      "fallback": "Georgia, serif",
+      "weights": [
+        400
+      ],
+      "source": "system"
+    },
+    "body": {
+      "family": "Inter",
+      "fallback": "system-ui, sans-serif",
+      "weights": [
+        400,
+        500,
+        600,
+        700,
+        800
+      ],
+      "source": "system"
+    }
+  },
+  "logos": {
+    "on_dark": {
+      "wordmark": {
+        "path": "assets/logos/wordmark-on-dark.svg",
+        "format": "svg",
+        "width": 1726,
+        "height": 533,
+        "ink": "#ffffff"
+      },
+      "mark": {
+        "path": "assets/logos/mark-on-dark.svg",
+        "format": "svg",
+        "width": 72,
+        "height": 90,
+        "ink": "#ffffff"
+      }
+    },
+    "on_light": {
+      "wordmark": {
+        "path": "assets/logos/wordmark-on-light.svg",
+        "format": "svg",
+        "width": 1726,
+        "height": 533,
+        "ink": "#1d1a17"
+      },
+      "mark": {
+        "path": "assets/logos/mark-on-light.svg",
+        "format": "svg",
+        "width": 72,
+        "height": 90,
+        "ink": "#1d1a17"
+      }
+    }
+  },
+  "logo_text": "acme",
+  "logo_audit": {
+    "status": "unchecked"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "$schema": "../../assets/deck.schema.json",
+  "meta": {
+    "id": "blocks-tour",
+    "title": "France created 1.05 million businesses in 2023",
+    "format": "linkedin",
+    "direction": "editorial-paper",
+    "language": "en",
+    "brand": "../swanbase-seed-deck-20261010/project-context/brand.json",
+    "handle": "swanbase.co",
+    "angle": "Test deck: every block type a direction must style (line chart, donut, visual, logo row), on official INSEE data.",
+    "captions": {
+      "linkedin": "France created 1,051,500 businesses in 2023, almost twice the 2015 figure (INSEE). Most of the growth comes from sole traders under the micro-entrepreneur scheme: companies (sociétés) were 269,900, about one creation in four.",
+      "first_comment": "Source: INSEE Première no. 1984, business creations in 2023: https://www.insee.fr/fr/statistiques/7759412",
+      "instagram": "France created 1,051,500 businesses in 2023 (INSEE). About one in four was a company.",
+      "hashtags": ["#startup", "#france", "#entrepreneurship"]
+    }
+  },
+  "sources": [
+    { "id": "insee", "label": "INSEE Première no. 1984, 2024", "url": "https://www.insee.fr/fr/statistiques/7759412", "accessed": "2026-10-10" }
+  ],
+  "slides": [
+    {
+      "role": "cover",
+      "blocks": [
+        { "type": "title", "text": "France created 1.05 million businesses in 2023", "accent": "1.05 million", "sub": "One in four was a company. The rest were mostly sole traders under the micro-entrepreneur scheme.", "source": "insee" }
+      ]
+    },
+    {
+      "role": "content",
+      "blocks": [
+        { "type": "title", "text": "Companies grew too, but slower", "accent": "slower" },
+        {
+          "type": "chart", "kind": "line", "title": "Business creations in France per year", "unit": "thousands",
+          "x": ["2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"],
+          "series": [
+            { "name": "Micro", "values": [303.3, 271.9, 281.4, 276.4, 285.3, 317.5, 399.3, 498.7, 548.3, 638.8, 647.1, 667.4] },
+            { "name": "Companies", "values": [163.4, 165.3, 172.3, 179.2, 197.3, 206.8, 206.2, 223.6, 224.6, 279.9, 293.2, 269.9] },
+            { "name": "Sole props", "values": [100.7, 129.6, 129.0, 109.1, 121.0, 133.4, 143.9, 142.2, 127.3, 131.9, 121.7, 114.1] }
+          ],
+          "highlight": "Companies", "decimals": 0,
+          "note": "Micro: micro-entrepreneurs. Sole props: classic sole proprietorships.",
+          "source": "insee"
+        }
+      ]
+    },
+    {
+      "role": "content",
+      "blocks": [
+        { "type": "title", "text": "One creation in four is a company", "accent": "in four" },
+        {
+          "type": "chart", "kind": "donut", "title": "Business creations in 2023 by legal form", "unit": "thousands",
+          "data": [
+            { "label": "Companies", "value": 269.9 },
+            { "label": "Micro", "value": 667.4 },
+            { "label": "Sole props", "value": 114.1 }
+          ],
+          "highlight": "Companies", "decimals": 0,
+          "source": "insee"
+        }
+      ]
+    },
+    {
+      "role": "content",
+      "blocks": [
+        { "type": "title", "text": "What a creation counts", "sub": "INSEE counts every new legal unit, active or not." },
+        {
+          "type": "visual",
+          "alt": "Three stacked cards labelled micro-entrepreneur, sole proprietorship and company, the company card highlighted.",
+          "svg": "<svg viewBox='0 0 900 520' xmlns='http://www.w3.org/2000/svg'><rect class='c-paper s-ink' x='40' y='40' width='520' height='300' stroke-width='4'/><rect class='c-paper s-ink' x='190' y='120' width='520' height='300' stroke-width='4'/><rect class='c-fill s-ink' x='340' y='200' width='520' height='300' stroke-width='4'/><text x='70' y='100' font-size='34' font-weight='700'>Micro-entrepreneur</text><text x='220' y='180' font-size='34' font-weight='700'>Sole proprietorship</text><text x='370' y='260' font-size='34' font-weight='700'>Company (société)</text><text x='370' y='310' font-size='28'>SAS, SARL, SA and the rest</text></svg>",
+          "caption": "Three legal forms, one count.",
+          "source": "insee"
+        }
+      ]
+    },
+    {
+      "role": "cta",
+      "blocks": [
+        { "type": "cta", "text": "Which form did you pick, and why?", "url": "swanbase.co", "sub": "Tell us in the comments." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "_comment": "Fictional fernwood.example site of tests/test_links.py, served by tests/fixture_server.py. /about answers a redirect to /about/; /blog/pitch-deck/ is reached only through the blog listing card and the sitemap.",
+  "routes": {
+    "/": {
+      "status": 200,
+      "file": "home.html"
+    },
+    "/blog/": {
+      "status": 200,
+      "file": "blog.html"
+    },
+    "/blog/burn-rate/": {
+      "status": 200,
+      "file": "burn-rate.html"
+    },
+    "/guides/runway/": {
+      "status": 200,
+      "file": "runway.html"
+    },
+    "/blog/pitch-deck/": {
+      "status": 200,
+      "file": "pitch-deck.html"
+    },
+    "/about/": {
+      "status": 200,
+      "file": "about.html"
+    },
+    "/about": {
+      "status": 301,
+      "headers": {
+        "Location": "/about/"
+      }
+    },
+    "/legal/": {
+      "status": 200,
+      "file": "legal.html"
+    },
+    "/fr/": {
+      "status": 200,
+      "file": "fr.html"
+    },
+    "/sitemap.xml": {
+      "status": 200,
+      "file": "sitemap.xml",
+      "headers": {
+        "Content-Type": "application/xml"
+      }
+    },
+    "/robots.txt": {
+      "status": 200,
+      "file": "robots.txt",
+      "headers": {
+        "Content-Type": "text/plain"
+      }
+    }
+  }
+}

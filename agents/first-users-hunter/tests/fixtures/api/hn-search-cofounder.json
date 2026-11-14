@@ -1,0 +1,36 @@
+{
+ "key": "GET https://hn.algolia.com/api/v1/search_by_date?hitsPerPage=50&numericFilters=created_at_i%3E1786579200&query=cofounder&tags=%28story%2Ccomment%29",
+ "status": 200,
+ "body": {
+  "exhaustive": {
+   "nbHits": true
+  },
+  "hits": [
+   {
+    "author": "mtrace_fictive",
+    "created_at": "2026-09-20T10:15:00Z",
+    "created_at_i": 1789899300,
+    "objectID": "99000110",
+    "_tags": [
+     "story",
+     "author_mtrace_fictive",
+     "ask_hn"
+    ],
+    "_highlightResult": {},
+    "title": "Ask HN: Solo founder, pre-seed: looking for a cofounder after launch?",
+    "story_text": "Launched a scheduling tool for physiotherapists in June, solo, pre-seed, a handful of paying users. I am now looking for a cofounder with a sales background but every intro feels like a job interview. Did you look for a cofounder after launch, and how did you meet them?",
+    "url": null,
+    "points": 6,
+    "num_comments": 9,
+    "story_id": 99000110
+   }
+  ],
+  "hitsPerPage": 50,
+  "nbHits": 1,
+  "nbPages": 1,
+  "page": 0,
+  "params": "fixture",
+  "processingTimeMS": 1,
+  "query": "cofounder"
+ }
+}

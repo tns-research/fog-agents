@@ -1,0 +1,135 @@
+{
+  "url": "https://itunes.apple.com/fr/rss/customerreviews/page=1/id=9990000002/sortby=mostrecent/json",
+  "status": 200,
+  "fetched_at": "2026-10-12T09:01:35Z",
+  "body": {
+    "feed": {
+      "entry": [
+        {
+          "author": {
+            "name": {
+              "label": "user-8586dc"
+            }
+          },
+          "updated": {
+            "label": "2026-10-09T21:01:11-07:00"
+          },
+          "im:rating": {
+            "label": "5"
+          },
+          "im:version": {
+            "label": "20261008.0"
+          },
+          "id": {
+            "label": "90000000001"
+          },
+          "title": {
+            "label": "Le meilleur compte pro que je connaisse"
+          },
+          "content": {
+            "label": "Ouverture en dix minutes, carte re\u00e7ue en trois jours, rien \u00e0 redire.",
+            "attributes": {
+              "type": "text"
+            }
+          },
+          "im:voteSum": {
+            "label": "0"
+          }
+        },
+        {
+          "author": {
+            "name": {
+              "label": "user-60cc09"
+            }
+          },
+          "updated": {
+            "label": "2026-10-09T03:38:31-07:00"
+          },
+          "im:rating": {
+            "label": "5"
+          },
+          "im:version": {
+            "label": "20261005.0"
+          },
+          "id": {
+            "label": "90000000008"
+          },
+          "title": {
+            "label": "Parfait"
+          },
+          "content": {
+            "label": "10/10",
+            "attributes": {
+              "type": "text"
+            }
+          },
+          "im:voteSum": {
+            "label": "0"
+          }
+        },
+        {
+          "author": {
+            "name": {
+              "label": "user-cfd03f"
+            }
+          },
+          "updated": {
+            "label": "2026-10-08T23:29:10-07:00"
+          },
+          "im:rating": {
+            "label": "1"
+          },
+          "im:version": {
+            "label": "20261007.2"
+          },
+          "id": {
+            "label": "90000000015"
+          },
+          "title": {
+            "label": "Service client injoignable"
+          },
+          "content": {
+            "label": "Trois semaines pour d\u00e9bloquer un virement qui venait d'une erreur de leur c\u00f4t\u00e9, plus de 200 \u20ac bloqu\u00e9s, des [...]",
+            "attributes": {
+              "type": "text"
+            }
+          },
+          "im:voteSum": {
+            "label": "0"
+          }
+        },
+        {
+          "author": {
+            "name": {
+              "label": "user-84ef6a"
+            }
+          },
+          "updated": {
+            "label": "2026-10-08T06:43:02-07:00"
+          },
+          "im:rating": {
+            "label": "1"
+          },
+          "im:version": {
+            "label": "20261005.0"
+          },
+          "id": {
+            "label": "90000000022"
+          },
+          "title": {
+            "label": "Assurance de la carte Premium"
+          },
+          "content": {
+            "label": "Ne prenez pas la carte la plus ch\u00e8re en pensant que vous serez couvert si vous avez un [...]",
+            "attributes": {
+              "type": "text"
+            }
+          },
+          "im:voteSum": {
+            "label": "0"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "schema_version": "2.0",
+  "name": "swanbase",
+  "source_url": "https://swanbase.co",
+  "as_of": "2026-10-10",
+  "mode": "dark",
+  "colors": {
+    "bg": "#030619",
+    "surface": "#101224",
+    "text": "#ffffff",
+    "text_secondary": "#c0c1c6",
+    "text_muted": "#9a9ba3",
+    "border": "#212435",
+    "accent": "#a855f7",
+    "accent_secondary": "#4a276e",
+    "on_accent": "#ffffff"
+  },
+  "radius": "14px",
+  "fonts": {
+    "display": {
+      "family": "Instrument Serif",
+      "fallback": "Georgia, serif",
+      "weights": [400],
+      "source": "google_fonts",
+      "files": [
+        { "path": "assets/fonts/InstrumentSerif-Regular.woff2", "weight": 400, "style": "normal", "format": "woff2" },
+        { "path": "assets/fonts/InstrumentSerif-Italic.woff2", "weight": 400, "style": "italic", "format": "woff2" }
+      ]
+    },
+    "body": {
+      "family": "Inter",
+      "fallback": "system-ui, sans-serif",
+      "weights": [400, 500, 600, 700],
+      "source": "google_fonts"
+    },
+    "fonts_url": "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
+  },
+  "logos": {
+    "on_dark": {
+      "wordmark": { "path": "assets/logos/wordmark-on-dark.svg", "format": "svg", "width": 3213, "height": 753, "ink": "#ffffff" },
+      "mark": { "path": "assets/logos/mark-on-dark.svg", "format": "svg", "width": 1496, "height": 1374, "ink": "#ffffff" }
+    },
+    "on_light": {
+      "wordmark": { "path": "assets/logos/wordmark-on-light.svg", "format": "svg", "width": 3213, "height": 753, "ink": "#14130f" },
+      "mark": { "path": "assets/logos/mark-on-light.svg", "format": "svg", "width": 1496, "height": 1374, "ink": "#14130f" }
+    }
+  },
+  "logo_text": "swanbase",
+  "logo_audit": {
+    "status": "pass",
+    "method": "render",
+    "checked_at": "2026-10-10",
+    "checks": [
+      { "variant": "on_dark", "kind": "wordmark", "status": "pass", "viewbox_clips_ink": false, "contrast_ratio": 20.1 },
+      { "variant": "on_dark", "kind": "mark", "status": "pass", "viewbox_clips_ink": false, "contrast_ratio": 20.1 },
+      { "variant": "on_light", "kind": "wordmark", "status": "pass", "viewbox_clips_ink": false, "contrast_ratio": 18.6 },
+      { "variant": "on_light", "kind": "mark", "status": "pass", "viewbox_clips_ink": false, "contrast_ratio": 18.6 }
+    ],
+    "issues": []
+  },
+  "assets": {
+    "og_image_path": "assets/site/og-image.jpg",
+    "favicon_path": "assets/site/favicon.png",
+    "screenshot_path": "assets/site/screenshot.png",
+    "images": [
+      { "path": "assets/site/asset-01.webp", "role": "illustration", "w": 800, "h": 800, "alt": "Winged black cat mascot" }
+    ]
+  },
+  "warnings": [
+    "Display and body fonts load from Google Fonts: the render machine needs network access unless the local files are present."
+  ]
+}

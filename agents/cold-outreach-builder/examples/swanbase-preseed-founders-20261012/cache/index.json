@@ -1,0 +1,32 @@
+{
+  "26a7f9b80077cbc7": {
+    "url": "https://mayaokafor.example/notes/first-ten-design-partners",
+    "source": "file:notes.txt",
+    "cached_at": "2026-10-12T08:21:47Z",
+    "chars": 410
+  },
+  "4f4ae95a4da3a04e": {
+    "url": "https://tidewell.example/blog/private-beta",
+    "source": "file:beta.txt",
+    "cached_at": "2026-10-12T08:21:47Z",
+    "chars": 473
+  },
+  "5401cdaacbf0ab09": {
+    "url": "https://brightpane.example/about",
+    "source": "file:brightpane.txt",
+    "cached_at": "2026-10-12T08:21:47Z",
+    "chars": 98
+  },
+  "d83cf5f76c4fa94e": {
+    "url": "https://registry.example/companies/tidewell-sas",
+    "source": "file:registry.txt",
+    "cached_at": "2026-10-12T08:21:46Z",
+    "chars": 216
+  },
+  "e2f6ac5828716f0f": {
+    "url": "https://hardwarenight.example/talks/2026-03-ferncast",
+    "source": "file:meetup.txt",
+    "cached_at": "2026-10-12T08:21:47Z",
+    "chars": 317
+  }
+}

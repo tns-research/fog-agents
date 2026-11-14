@@ -1,0 +1,310 @@
+{
+  "$schema": "../../assets/deck.schema.json",
+  "meta": {
+    "id": "stress",
+    "title": "Stress test",
+    "format": "linkedin",
+    "direction": "editorial-paper",
+    "language": "en"
+  },
+  "slides": [
+    {
+      "role": "cover",
+      "notes": "Overlong title: fit.js must fail at the minimum and qa.py must report text-too-long.",
+      "blocks": [
+        {
+          "type": "title",
+          "text": "This title is deliberately far too long for any cover because it keeps adding clause after clause about pricing, positioning, onboarding, retention and every other topic a founder could want on one slide",
+          "sub": "A sub-line that is also rather long so the cover has no room left at all for anything else to breathe."
+        }
+      ]
+    },
+    {
+      "role": "content",
+      "notes": "Empty body: schema error (minLength), rendered as an empty block.",
+      "blocks": [
+        {
+          "type": "title",
+          "text": "A slide whose body is empty"
+        },
+        {
+          "type": "body",
+          "text": "   "
+        }
+      ]
+    },
+    {
+      "role": "content",
+      "notes": "Missing photo file: missing-asset error and a visible placeholder.",
+      "blocks": [
+        {
+          "type": "title",
+          "text": "A photo that does not exist"
+        },
+        {
+          "type": "photo",
+          "src": "media/does-not-exist.jpg",
+          "alt": "Missing on purpose."
+        }
+      ]
+    },
+    {
+      "role": "content",
+      "notes": "Chart with a highlight that is not a label, and a stat with no source.",
+      "blocks": [
+        {
+          "type": "title",
+          "text": "A chart with a wrong highlight"
+        },
+        {
+          "type": "chart",
+          "kind": "bar",
+          "title": "Weekly signups",
+          "unit": "signups",
+          "highlight": "Week 9",
+          "data": [
+            {
+              "label": "Week 1",
+              "value": 12
+            },
+            {
+              "label": "Week 2",
+              "value": 18
+            },
+            {
+              "label": "Week 3",
+              "value": 25
+            }
+          ],
+          "source": {
+            "label": "Internal dashboard"
+          }
+        }
+      ]
+    },
+    {
+      "role": "content",
+      "notes": "Stat without source: schema error, claims gate.",
+      "blocks": [
+        {
+          "type": "stat",
+          "value": "87 %",
+          "label": "of founders say something nobody measured."
+        }
+      ]
+    },
+    {
+      "role": "content",
+      "notes": "Em dash in the copy and an accent that is not in the text.",
+      "blocks": [
+        {
+          "type": "title",
+          "text": "Dashes are banned \u2014 even here",
+          "accent": "not in the title"
+        }
+      ]
+    },
+    {
+      "role": "content",
+      "layout": "does-not-exist",
+      "notes": "Unknown layout: warning, falls back to auto.",
+      "blocks": [
+        {
+          "type": "title",
+          "text": "Unknown layout name"
+        },
+        {
+          "type": "body",
+          "text": "The build warns and picks a layout from the blocks."
+        }
+      ]
+    },
+    {
+      "role": "content",
+      "notes": "List over budget: 7 items.",
+      "blocks": [
+        {
+          "type": "title",
+          "text": "Seven items is too many"
+        },
+        {
+          "type": "list",
+          "style": "bullets",
+          "items": [
+            "One",
+            "Two",
+            "Three",
+            "Four",
+            "Five",
+            "Six",
+            "Seven"
+          ]
+        }
+      ]
+    },
+    {
+      "role": "content",
+      "notes": "Body far over budget: must overflow or fail fit.",
+      "blocks": [
+        {
+          "type": "title",
+          "text": "A wall of text"
+        },
+        {
+          "type": "body",
+          "text": "Founders keep adding one more sentence because every detail feels important when you are close to the product. Founders keep adding one more sentence because every detail feels important when you are close to the product. Founders keep adding one more sentence because every detail feels important when you are close to the product. Founders keep adding one more sentence because every detail feels important when you are close to the product. Founders keep adding one more sentence because every detail feels important when you are close to the product."
+        }
+      ]
+    },
+    {
+      "role": "content",
+      "notes": "Unknown block type.",
+      "blocks": [
+        {
+          "type": "title",
+          "text": "An unknown block type"
+        },
+        {
+          "type": "carousel-inside-carousel",
+          "text": "nope"
+        }
+      ]
+    },
+    {
+      "role": "content",
+      "blocks": [
+        {
+          "type": "title",
+          "text": "Filler slide eleven"
+        },
+        {
+          "type": "body",
+          "text": "Plain text to reach twenty-one slides."
+        }
+      ]
+    },
+    {
+      "role": "content",
+      "blocks": [
+        {
+          "type": "title",
+          "text": "Filler slide twelve"
+        },
+        {
+          "type": "body",
+          "text": "Plain text to reach twenty-one slides."
+        }
+      ]
+    },
+    {
+      "role": "content",
+      "blocks": [
+        {
+          "type": "title",
+          "text": "Filler slide thirteen"
+        },
+        {
+          "type": "body",
+          "text": "Plain text to reach twenty-one slides."
+        }
+      ]
+    },
+    {
+      "role": "content",
+      "notes": "Unbreakable word wider than the slide.",
+      "blocks": [
+        {
+          "type": "title",
+          "text": "Supercalifragilisticexpialidociousnessly"
+        }
+      ]
+    },
+    {
+      "role": "content",
+      "blocks": [
+        {
+          "type": "title",
+          "text": "Filler slide fifteen"
+        },
+        {
+          "type": "body",
+          "text": "Plain text to reach twenty-one slides."
+        }
+      ]
+    },
+    {
+      "role": "content",
+      "blocks": [
+        {
+          "type": "title",
+          "text": "Filler slide sixteen"
+        },
+        {
+          "type": "body",
+          "text": "Plain text to reach twenty-one slides."
+        }
+      ]
+    },
+    {
+      "role": "content",
+      "blocks": [
+        {
+          "type": "title",
+          "text": "Filler slide seventeen"
+        },
+        {
+          "type": "body",
+          "text": "Plain text to reach twenty-one slides."
+        }
+      ]
+    },
+    {
+      "role": "content",
+      "blocks": [
+        {
+          "type": "title",
+          "text": "Filler slide eighteen"
+        },
+        {
+          "type": "body",
+          "text": "Plain text to reach twenty-one slides."
+        }
+      ]
+    },
+    {
+      "role": "content",
+      "blocks": [
+        {
+          "type": "title",
+          "text": "Filler slide nineteen"
+        },
+        {
+          "type": "body",
+          "text": "Plain text to reach twenty-one slides."
+        }
+      ]
+    },
+    {
+      "role": "content",
+      "blocks": [
+        {
+          "type": "title",
+          "text": "Filler slide twenty"
+        },
+        {
+          "type": "body",
+          "text": "Plain text to reach twenty-one slides."
+        }
+      ]
+    },
+    {
+      "role": "cta",
+      "blocks": [
+        {
+          "type": "cta",
+          "text": "Twenty-one slides is over the hard maximum"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,674 @@
+{
+  "schema_version": "1.0",
+  "meta": {
+    "project": "acme",
+    "brand": "project-context/brand.json",
+    "language": "en",
+    "date": "2026-10-12",
+    "campaign": "all-styles"
+  },
+  "sources": [],
+  "ads": [
+    {
+      "id": "bold",
+      "n": 1,
+      "stage": "tofu",
+      "angle": "anti-category",
+      "style": "bold-statement",
+      "formats": [
+        "1:1",
+        "4:5",
+        "9:16"
+      ],
+      "copy": {
+        "headline": "Jam should taste like *the fruit*, not the sugar.",
+        "subhead": "Cooked in small copper pans, one batch at a time.",
+        "cta": "See how"
+      },
+      "meta_ad": {
+        "primary_text": "Jam should taste like the fruit, not the sugar.",
+        "headline": "Acme fig and vanilla jam",
+        "cta": "LEARN_MORE",
+        "destination_url": "https://example.com/jam",
+        "ad_set": "tofu-test"
+      }
+    },
+    {
+      "id": "meme",
+      "n": 2,
+      "stage": "tofu",
+      "angle": "quiet-confession",
+      "style": "meme-static",
+      "formats": [
+        "1:1",
+        "4:5",
+        "9:16"
+      ],
+      "copy": {
+        "headline": "Me reading the label of a supermarket jam: sugar, glucose syrup, then the fruit.",
+        "subhead": "We put the fruit first."
+      },
+      "meta_ad": {
+        "primary_text": "Me reading the label of a supermarket jam: sugar, glucose syrup, then the fruit.",
+        "headline": "Acme fig and vanilla jam",
+        "cta": "LEARN_MORE",
+        "destination_url": "https://example.com/jam",
+        "ad_set": "tofu-test"
+      }
+    },
+    {
+      "id": "benefits",
+      "n": 3,
+      "stage": "mofu",
+      "angle": "process-reveal",
+      "style": "three-benefits-card",
+      "formats": [
+        "1:1",
+        "4:5",
+        "9:16"
+      ],
+      "copy": {
+        "headline": "What goes into *one jar*.",
+        "bullets": [
+          "Figs picked ripe",
+          "Real vanilla pods",
+          "Cane sugar, and less of it"
+        ],
+        "cta": "Shop the jar"
+      },
+      "media": [
+        {
+          "role": "product",
+          "src": "../media/acme-jar.png",
+          "alt": "Acme fig and vanilla jam jar",
+          "visible_text": [
+            "ACME",
+            "FIG",
+            "&",
+            "VANILLA",
+            "JAM"
+          ]
+        }
+      ],
+      "meta_ad": {
+        "primary_text": "What goes into one jar.",
+        "headline": "Acme fig and vanilla jam",
+        "cta": "LEARN_MORE",
+        "destination_url": "https://example.com/jam",
+        "ad_set": "mofu-test"
+      }
+    },
+    {
+      "id": "compare",
+      "n": 4,
+      "stage": "mofu",
+      "angle": "comparison-without-a-competitor",
+      "style": "us-vs-them-comparison",
+      "formats": [
+        "1:1",
+        "4:5",
+        "9:16"
+      ],
+      "copy": {
+        "headline": "Not all fig jams are the same.",
+        "columns": {
+          "them": {
+            "label": "Usual jam",
+            "items": [
+              "Fruit from concentrate",
+              "Vanilla flavouring",
+              "Sugar listed first"
+            ]
+          },
+          "us": {
+            "label": "Acme",
+            "items": [
+              "Whole figs",
+              "Vanilla pods",
+              "Fruit listed first"
+            ]
+          }
+        },
+        "cta": "Compare labels"
+      },
+      "meta_ad": {
+        "primary_text": "Not all fig jams are the same.",
+        "headline": "Acme fig and vanilla jam",
+        "cta": "LEARN_MORE",
+        "destination_url": "https://example.com/jam",
+        "ad_set": "mofu-test"
+      }
+    },
+    {
+      "id": "crossed",
+      "n": 5,
+      "stage": "mofu",
+      "angle": "skeptic-disarm",
+      "style": "crossed-out-problems",
+      "formats": [
+        "1:1",
+        "4:5",
+        "9:16"
+      ],
+      "copy": {
+        "headline": "What you will not find in the jar.",
+        "bullets": [
+          "Glucose syrup",
+          "Added pectin powder",
+          "Artificial flavouring"
+        ],
+        "subhead": "Figs, vanilla, cane sugar, lemon.",
+        "cta": "Read the label"
+      },
+      "meta_ad": {
+        "primary_text": "What you will not find in the jar.",
+        "headline": "Acme fig and vanilla jam",
+        "cta": "LEARN_MORE",
+        "destination_url": "https://example.com/jam",
+        "ad_set": "mofu-test"
+      }
+    },
+    {
+      "id": "social",
+      "n": 6,
+      "stage": "bofu",
+      "angle": "social-proof-with-specificity",
+      "style": "social-proof-card",
+      "formats": [
+        "1:1",
+        "4:5",
+        "9:16"
+      ],
+      "copy": {
+        "headline": "What a reader wrote to us.",
+        "cta": "Order a jar"
+      },
+      "proof": {
+        "text": "The *first fig jam* my kids eat with a spoon.",
+        "source": "positioning.proof[0]",
+        "attribution": "Camille, customer since 2025",
+        "rating": 5
+      },
+      "claims": [],
+      "meta_ad": {
+        "primary_text": "What a reader wrote to us.",
+        "headline": "Acme fig and vanilla jam",
+        "cta": "SHOP_NOW",
+        "destination_url": "https://example.com/jam",
+        "ad_set": "bofu-test"
+      }
+    },
+    {
+      "id": "callout",
+      "n": 7,
+      "stage": "mofu",
+      "angle": "process-reveal",
+      "style": "feature-callout-arrows",
+      "formats": [
+        "1:1",
+        "4:5",
+        "9:16"
+      ],
+      "copy": {
+        "headline": "Every order, *one screen*.",
+        "callouts": [
+          {
+            "text": "Orders by day",
+            "x": 50,
+            "y": 60
+          },
+          {
+            "text": "Best seller",
+            "x": 88,
+            "y": 45
+          },
+          {
+            "text": "Filters",
+            "x": 10,
+            "y": 30
+          }
+        ]
+      },
+      "media": [
+        {
+          "role": "screenshot",
+          "src": "../media/acme-dashboard.png",
+          "alt": "Order dashboard",
+          "visible_text": []
+        }
+      ],
+      "meta_ad": {
+        "primary_text": "Every order, one screen.",
+        "headline": "Acme fig and vanilla jam",
+        "cta": "LEARN_MORE",
+        "destination_url": "https://example.com/jam",
+        "ad_set": "mofu-test"
+      }
+    },
+    {
+      "id": "myth",
+      "n": 8,
+      "stage": "tofu",
+      "angle": "wrong-answer",
+      "style": "myth-vs-fact",
+      "formats": [
+        "1:1",
+        "4:5",
+        "9:16"
+      ],
+      "copy": {
+        "headline": "The sugar question.",
+        "columns": {
+          "them": {
+            "label": "Myth",
+            "items": [
+              "Jam needs as much sugar as fruit."
+            ]
+          },
+          "us": {
+            "label": "Fact",
+            "items": [
+              "Ripe figs carry most of the sweetness."
+            ]
+          }
+        }
+      },
+      "meta_ad": {
+        "primary_text": "The sugar question.",
+        "headline": "Acme fig and vanilla jam",
+        "cta": "LEARN_MORE",
+        "destination_url": "https://example.com/jam",
+        "ad_set": "tofu-test"
+      }
+    },
+    {
+      "id": "reply",
+      "n": 9,
+      "stage": "bofu",
+      "angle": "easy-first-step",
+      "style": "reply-to-comment",
+      "formats": [
+        "1:1",
+        "4:5",
+        "9:16"
+      ],
+      "copy": {
+        "headline": "You asked, we answered.",
+        "comment": {
+          "author": "@fictional_reader",
+          "text": "Does it keep once opened?",
+          "reply": "Yes, in the fridge, for a few weeks.",
+          "source": "https://example.com/post"
+        },
+        "cta": "Order now"
+      },
+      "meta_ad": {
+        "primary_text": "You asked, we answered.",
+        "headline": "Acme fig and vanilla jam",
+        "cta": "SHOP_NOW",
+        "destination_url": "https://example.com/jam",
+        "ad_set": "bofu-test"
+      }
+    },
+    {
+      "id": "landing",
+      "n": 10,
+      "stage": "bofu",
+      "angle": "easy-first-step",
+      "style": "mini-landing-page",
+      "formats": [
+        "1:1",
+        "4:5",
+        "9:16"
+      ],
+      "copy": {
+        "headline": "Fig and vanilla jam, *made in small batches*.",
+        "bullets": [
+          "Whole figs",
+          "Vanilla pods",
+          "Less sugar"
+        ],
+        "cta": "Order a jar"
+      },
+      "media": [
+        {
+          "role": "product",
+          "src": "../media/acme-jar.png",
+          "alt": "Acme fig and vanilla jam jar",
+          "visible_text": [
+            "ACME",
+            "FIG",
+            "&",
+            "VANILLA",
+            "JAM"
+          ]
+        }
+      ],
+      "proof": {
+        "text": "Rated 5 stars by our readers.",
+        "source": "positioning.proof[0]"
+      },
+      "claims": [
+        {
+          "text": "Rated 5 stars",
+          "source": "positioning.proof[0]"
+        }
+      ],
+      "meta_ad": {
+        "primary_text": "Fig and vanilla jam, made in small batches.",
+        "headline": "Acme fig and vanilla jam",
+        "cta": "SHOP_NOW",
+        "destination_url": "https://example.com/jam",
+        "ad_set": "bofu-test"
+      }
+    },
+    {
+      "id": "timeline",
+      "n": 11,
+      "stage": "mofu",
+      "angle": "specific-ritual",
+      "style": "benefit-timeline",
+      "formats": [
+        "1:1",
+        "4:5",
+        "9:16"
+      ],
+      "copy": {
+        "headline": "From orchard to jar.",
+        "bullets": [
+          {
+            "label": "Morning",
+            "text": "Figs picked ripe"
+          },
+          {
+            "label": "Noon",
+            "text": "Cooked in copper pans"
+          },
+          {
+            "label": "Evening",
+            "text": "Jarred and sealed"
+          }
+        ],
+        "cta": "Follow a batch"
+      },
+      "meta_ad": {
+        "primary_text": "From orchard to jar.",
+        "headline": "Acme fig and vanilla jam",
+        "cta": "LEARN_MORE",
+        "destination_url": "https://example.com/jam",
+        "ad_set": "mofu-test"
+      }
+    },
+    {
+      "id": "flow",
+      "n": 12,
+      "stage": "tofu",
+      "angle": "parallel",
+      "style": "flowchart-decision",
+      "formats": [
+        "1:1",
+        "4:5",
+        "9:16"
+      ],
+      "copy": {
+        "headline": "Do you read the label before you buy jam?",
+        "bullets": [
+          {
+            "label": "Yes",
+            "text": "You will like ours: fruit comes first."
+          },
+          {
+            "label": "No",
+            "text": "Try it once, then read it."
+          }
+        ],
+        "cta": "Read our label"
+      },
+      "meta_ad": {
+        "primary_text": "Do you read the label before you buy jam?",
+        "headline": "Acme fig and vanilla jam",
+        "cta": "LEARN_MORE",
+        "destination_url": "https://example.com/jam",
+        "ad_set": "tofu-test"
+      }
+    },
+    {
+      "id": "testimonial",
+      "n": 13,
+      "stage": "bofu",
+      "angle": "social-proof-with-specificity",
+      "style": "testimonial-screenshot",
+      "formats": [
+        "1:1",
+        "4:5",
+        "9:16"
+      ],
+      "copy": {
+        "headline": "A review we did not write.",
+        "cta": "Order a jar"
+      },
+      "proof": {
+        "text": "Not too sweet, you taste the figs and the vanilla. I bought a second jar for my mother.",
+        "source": "positioning.proof[0]",
+        "attribution": "Lucas, verified buyer",
+        "rating": 5
+      },
+      "meta_ad": {
+        "primary_text": "A review we did not write.",
+        "headline": "Acme fig and vanilla jam",
+        "cta": "SHOP_NOW",
+        "destination_url": "https://example.com/jam",
+        "ad_set": "bofu-test"
+      }
+    },
+    {
+      "id": "cost",
+      "n": 14,
+      "stage": "bofu",
+      "angle": "cost-reframe",
+      "style": "cost-reframe-card",
+      "formats": [
+        "1:1",
+        "4:5",
+        "9:16"
+      ],
+      "copy": {
+        "headline": "Less than a coffee per week of breakfasts.",
+        "columns": {
+          "them": {
+            "label": "A coffee out",
+            "items": [
+              "4.50 EUR"
+            ]
+          },
+          "us": {
+            "label": "A week of Acme jam",
+            "items": [
+              "2.10 EUR"
+            ]
+          }
+        },
+        "cta": "Shop the jar"
+      },
+      "claims": [
+        {
+          "text": "Jar at 8.40 EUR lasts four weeks: 2.10 EUR per week",
+          "source": "positioning.proof[0]"
+        },
+        {
+          "text": "coffee 4.50 EUR",
+          "source": "positioning.proof[0]"
+        }
+      ],
+      "meta_ad": {
+        "primary_text": "Less than a coffee per week of breakfasts.",
+        "headline": "Acme fig and vanilla jam",
+        "cta": "SHOP_NOW",
+        "destination_url": "https://example.com/jam",
+        "ad_set": "bofu-test"
+      }
+    },
+    {
+      "id": "ugc",
+      "n": 15,
+      "stage": "tofu",
+      "angle": "specific-ritual",
+      "style": "ugc-text-overlay",
+      "formats": [
+        "1:1",
+        "4:5",
+        "9:16"
+      ],
+      "copy": {
+        "headline": "Sunday toast at the orchard.",
+        "subhead": "Figs picked this morning."
+      },
+      "media": [
+        {
+          "role": "photo",
+          "src": "../media/acme-orchard.jpg",
+          "alt": "Fig orchard",
+          "visible_text": []
+        }
+      ],
+      "meta_ad": {
+        "primary_text": "Sunday toast at the orchard.",
+        "headline": "Acme fig and vanilla jam",
+        "cta": "LEARN_MORE",
+        "destination_url": "https://example.com/jam",
+        "ad_set": "tofu-test"
+      }
+    },
+    {
+      "id": "beforeafter",
+      "n": 16,
+      "stage": "mofu",
+      "angle": "false-choice-collapse",
+      "style": "before-after-asymmetric",
+      "formats": [
+        "1:1",
+        "4:5",
+        "9:16"
+      ],
+      "copy": {
+        "headline": "Breakfast, before and after.",
+        "columns": {
+          "them": {
+            "label": "Before",
+            "items": [
+              "Sweet and flat"
+            ]
+          },
+          "us": {
+            "label": "After",
+            "items": [
+              "Fruit you can taste",
+              "Vanilla you can see"
+            ]
+          }
+        }
+      },
+      "media": [
+        {
+          "role": "product",
+          "src": "../media/acme-jar.png",
+          "alt": "Acme fig and vanilla jam jar",
+          "visible_text": [
+            "ACME",
+            "FIG",
+            "&",
+            "VANILLA",
+            "JAM"
+          ]
+        }
+      ],
+      "meta_ad": {
+        "primary_text": "Breakfast, before and after.",
+        "headline": "Acme fig and vanilla jam",
+        "cta": "LEARN_MORE",
+        "destination_url": "https://example.com/jam",
+        "ad_set": "mofu-test"
+      }
+    },
+    {
+      "id": "origin",
+      "n": 17,
+      "stage": "mofu",
+      "angle": "insider",
+      "style": "ingredient-origin-strip",
+      "formats": [
+        "1:1",
+        "4:5",
+        "9:16"
+      ],
+      "copy": {
+        "headline": "From this orchard to this jar.",
+        "subhead": "Figs from one orchard, picked the day we cook."
+      },
+      "media": [
+        {
+          "role": "photo",
+          "src": "../media/acme-orchard.jpg",
+          "alt": "Fig orchard",
+          "visible_text": []
+        },
+        {
+          "role": "product",
+          "src": "../media/acme-jar.png",
+          "alt": "Acme fig and vanilla jam jar",
+          "visible_text": [
+            "ACME",
+            "FIG",
+            "&",
+            "VANILLA",
+            "JAM"
+          ]
+        }
+      ],
+      "meta_ad": {
+        "primary_text": "From this orchard to this jar.",
+        "headline": "Acme fig and vanilla jam",
+        "cta": "LEARN_MORE",
+        "destination_url": "https://example.com/jam",
+        "ad_set": "mofu-test"
+      }
+    },
+    {
+      "id": "hybrid",
+      "n": 18,
+      "stage": "tofu",
+      "angle": "quiet-flex",
+      "style": "hybrid-2d-3d-fusion",
+      "formats": [
+        "1:1",
+        "4:5",
+        "9:16"
+      ],
+      "copy": {
+        "headline": "Small batch, *big fig*.",
+        "subhead": "Fig and vanilla jam."
+      },
+      "media": [
+        {
+          "role": "product",
+          "src": "../media/acme-jar.png",
+          "alt": "Acme fig and vanilla jam jar",
+          "visible_text": [
+            "ACME",
+            "FIG",
+            "&",
+            "VANILLA",
+            "JAM"
+          ]
+        }
+      ],
+      "meta_ad": {
+        "primary_text": "Small batch, big fig.",
+        "headline": "Acme fig and vanilla jam",
+        "cta": "LEARN_MORE",
+        "destination_url": "https://example.com/jam",
+        "ad_set": "tofu-test"
+      }
+    }
+  ]
+}

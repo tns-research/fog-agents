@@ -1,0 +1,6 @@
+{
+  "_comment": "Copied to <project-root>/<project>/<agent-name>/config.json on first run. Replace placeholders, never commit a real config to the agent folder. Optional: add a \"tools\" object (same keys as shared/tools.example.json, e.g. {\"web_search\": \"builtin\", \"scrape\": \"firecrawl\"}) to override the project's tools.json for this agent only.",
+  "project": "<project-slug>",
+  "language": "en",
+  "$schema_hint": "Add agent-specific parameters below. Examples: market, target_user, geography, audience, locale."
+}

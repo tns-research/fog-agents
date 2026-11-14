@@ -1,0 +1,95 @@
+{
+  "_comment": "Reference schema for project-context/context.json. This is the single source of truth for the business-context contract every consumer agent reads. Consumers MUST read defensively: a missing field means ask the user or omit, never hard-error. Do not add consumer-specific fields here; per-run parameters belong in each agent's own config.json.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["project_slug", "one_liner", "what_it_is", "icp", "offer", "positioning", "voice"],
+  "properties": {
+    "project_slug": { "type": "string", "description": "Names the shared folder; kebab-case." },
+    "url": { "type": ["string", "null"], "description": "Founder's primary site. Optional." },
+    "one_liner": { "type": "string", "description": "One sentence: what it is and who it's for." },
+    "what_it_is": { "type": "string", "description": "2-3 sentences a stranger would understand." },
+    "category": { "type": "string", "description": "Market category in the words a buyer would search, e.g. 'freelance invoicing tools'." },
+    "geography": {
+      "type": "object",
+      "description": "Where the buyers are. Optional. Consumers use it for search locale (SERP country, community scans) and never hard-error when it is absent.",
+      "properties": {
+        "country": { "type": ["string", "null"], "description": "Primary market country, ISO 3166-1 alpha-2 lowercase, e.g. 'fr', 'us'. null when the market is global." },
+        "notes": { "type": "string", "description": "Free-text scope, e.g. 'France and Belgium, French-speaking'." }
+      }
+    },
+    "icp": {
+      "type": "object",
+      "required": ["who", "pains", "jobs"],
+      "properties": {
+        "who": { "type": "string", "description": "Concrete buyer + qualifier (size, spend, role)." },
+        "pains": { "type": "array", "items": { "type": "string" }, "description": "Real frustrations, ideally in the buyer's words." },
+        "jobs": { "type": "array", "items": { "type": "string" }, "description": "Jobs-to-be-done they are hiring the product for." }
+      }
+    },
+    "offer": {
+      "type": "object",
+      "required": ["core"],
+      "properties": {
+        "core": { "type": "string", "description": "The core thing you sell." },
+        "price_model": { "type": "string", "description": "How it's priced (freemium, per-seat, usage, ...)." },
+        "differentiators": { "type": "array", "items": { "type": "string" }, "description": "Why you over the alternative." }
+      }
+    },
+    "positioning": {
+      "type": "object",
+      "required": ["promise"],
+      "properties": {
+        "against": { "type": "string", "description": "The status-quo alternative you displace." },
+        "promise": { "type": "string", "description": "The single outcome you promise." },
+        "proof": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              { "type": "string", "minLength": 1, "description": "V1 item: a plain sentence. Still accepted, read as an item with no kind, no source and no date (a warning in proof.py check)." },
+              { "$ref": "#/definitions/proof_item" }
+            ]
+          },
+          "description": "Evidence for the promise, and the only list of allowed claims copy-writing agents may use without a new source URL. An item is a sourced, dated object (definitions.proof_item) or, in the V1 format, a plain string. Consumers read it through shared/scripts/proof.py: only items usable() accepts for the copy's scope (fresh, sourced, consent granted when someone is named) enter a copy. validate_json.py ignores oneOf: run python3 shared/scripts/proof.py check <context.json> for the item rules. See voice.claims_policy."
+        }
+      }
+    },
+    "voice": {
+      "type": "object",
+      "required": ["tone", "language", "claims_policy"],
+      "properties": {
+        "tone": { "type": "string", "enum": ["founder", "expert", "casual"], "description": "Default copywriting tone." },
+        "language": { "type": "string", "description": "BCP-47-ish code, e.g. 'en', 'fr'." },
+        "banned_words": { "type": "array", "items": { "type": "string" }, "description": "Words/phrases to never use in copy." },
+        "claims_policy": { "type": "string", "description": "Rule consumers enforce when writing copy. Default: 'no invented stats, every metric must trace to a URL or be omitted'." }
+      }
+    }
+  },
+  "definitions": {
+    "proof_item": {
+      "type": "object",
+      "required": ["id", "claim", "kind"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$", "description": "Stable kebab-case id, unique in the list, e.g. waitlist-size." },
+        "claim": { "type": "string", "minLength": 1, "description": "The fact as copy may state it, numbers written exactly as the source writes them." },
+        "kind": { "type": "string", "enum": ["metric", "testimonial", "customer", "press", "award", "feature"], "description": "Rules per kind (staleness, source, date, consent): agents/project-context/assets/proof-kinds.json." },
+        "source": { "type": "string", "pattern": "^(https?://\\S+|(?!/)(?![A-Za-z]:)(?!project-context/)(?!.*\\.\\.)[A-Za-z0-9._/-]+(#p[1-9][0-9]*)?)$", "description": "A public URL, or a file of the project relative to the project-context/ folder, with #pN for a page of an ingested document, e.g. docs/deck.pdf#p7." },
+        "date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$", "description": "Date of the fact itself (the day the number was measured, the quote given, the article published), YYYY-MM-DD. Never the day it was typed in." },
+        "valid_days": { "type": "integer", "minimum": 1, "description": "Days the fact stays usable after date. Default per kind in proof-kinds.json (metric: 180)." },
+        "consent": { "$ref": "#/definitions/proof_consent" }
+      }
+    },
+    "proof_consent": {
+      "type": "object",
+      "required": ["status"],
+      "additionalProperties": false,
+      "description": "Required for kind testimonial and customer: the named person or company agreed to appear, for these scopes.",
+      "properties": {
+        "status": { "type": "string", "enum": ["granted", "refused", "unknown"] },
+        "scope": { "type": "array", "items": {"type": "string", "enum": ["ads", "carousel", "posts", "outreach", "site", "video"]}, "description": "Uses covered: ads, carousel, posts, outreach, site, video." },
+        "date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$", "description": "Day the consent was given or refused." },
+        "by": { "type": "string", "minLength": 1, "description": "Who gave it and how, e.g. 'the customer, email of 2026-10-02'." }
+      }
+    }
+  }
+}

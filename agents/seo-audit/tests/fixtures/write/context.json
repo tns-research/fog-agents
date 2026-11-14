@@ -1,0 +1,16 @@
+{
+  "project_slug": "fernhollow",
+  "url": "https://fernhollow.example/",
+  "one_liner": "Fernhollow is a fictional bookkeeping app for freelancers, used only by the offline tests of seo-audit.",
+  "category": "bookkeeping software for freelancers",
+  "geography": { "country": "us", "notes": "fictional" },
+  "icp": { "who": "freelance designers and developers", "pains": ["late payments"], "jobs": ["send an invoice", "get paid on time"] },
+  "offer": { "core": "invoices and expense tracking", "price_model": "monthly subscription", "differentiators": [] },
+  "positioning": { "against": "spreadsheets", "promise": "get paid without chasing", "proof": [] },
+  "voice": {
+    "tone": "expert",
+    "language": "en",
+    "banned_words": ["seamless", "game-changer"],
+    "claims_policy": "no invented stats, every metric must trace to a URL or be omitted"
+  }
+}

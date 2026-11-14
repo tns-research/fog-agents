@@ -1,0 +1,2 @@
+prospect_id,first_name,last_name,role,company,company_url,profile_url,email,linkedin_url,channel,fit_rationale,source_url,language,geography,found_on
+p001,Jordan,Example,Founder,Example Labs,https://example.com,https://example.com/jordan,,,event,Fictional fixture person: asked where to find first customers in a public thread.,https://example.com/thread,en,fr,2026-10-12

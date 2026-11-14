@@ -1,0 +1,65 @@
+{"record_id": "discourse:forum.example:900091", "relevant": false, "speaker": "other", "note": "no-code builder forum, not about raising"}
+{"record_id": "discourse:forum.example:900104", "relevant": false, "speaker": "other", "note": "no-code builder forum, not about raising"}
+{"record_id": "discourse:forum.example:900117", "relevant": false, "speaker": "other", "note": "no-code builder forum, not about raising"}
+{"record_id": "discourse:forum.example:900130", "relevant": false, "speaker": "other", "note": "no-code builder forum, not about raising"}
+{"record_id": "discourse:forum.example:900143", "relevant": false, "speaker": "other", "note": "no-code builder forum, not about raising"}
+{"record_id": "discourse:forum.example:900156", "relevant": false, "speaker": "other", "note": "no-code builder forum, not about raising"}
+{"record_id": "hn:90017565", "relevant": true, "speaker": "vendor", "pains": ["pain_investor_access"], "sentiment": "neutral", "awareness": "solution_aware", "note": "tool launch: warm intro investor map"}
+{"record_id": "hn:90018736", "relevant": true, "speaker": "vendor", "pains": ["pain_intro_black_box"], "sentiment": "neutral", "awareness": "solution_aware", "note": "Show HN of an intro follow-up tool"}
+{"record_id": "hn:90019907", "relevant": true, "speaker": "user", "pains": ["pain_intro_black_box"], "sentiment": "positive", "forces": ["pull"], "awareness": "solution_aware"}
+{"record_id": "hn:90021078", "relevant": false, "speaker": "vendor", "note": "tool author answering"}
+{"record_id": "hn:90022249", "relevant": true, "speaker": "user", "pains": ["pain_intro_black_box"], "sentiment": "positive", "forces": ["pull"], "awareness": "solution_aware"}
+{"record_id": "hn:90023420", "relevant": false, "speaker": "vendor", "note": "tool author answering"}
+{"record_id": "hn:90024591", "relevant": false, "speaker": "user", "note": "product question"}
+{"record_id": "hn:90025762", "relevant": false, "speaker": "vendor", "note": "tool author answering"}
+{"record_id": "hn:90026933", "relevant": true, "speaker": "user", "pains": ["pain_intro_black_box"], "sentiment": "positive", "forces": ["push"], "awareness": "problem_aware"}
+{"record_id": "hn:90031617", "relevant": false, "speaker": "other", "note": "hiring thread or unrelated"}
+{"record_id": "hn:90032788", "relevant": false, "speaker": "other", "note": "hiring thread or unrelated"}
+{"record_id": "hn:90036301", "relevant": false, "speaker": "other", "note": "criticises a model launch that says it is raising"}
+{"record_id": "hn:90038643", "relevant": false, "speaker": "other", "note": "security, pre-seed as an example only"}
+{"record_id": "hn:90040985", "relevant": false, "speaker": "vendor", "note": "product pitch mentioning its own raise"}
+{"record_id": "hn:90043327", "relevant": false, "speaker": "other", "note": "hiring thread or unrelated"}
+{"record_id": "hn:90044498", "relevant": false, "speaker": "other", "note": "hiring thread or unrelated"}
+{"record_id": "hn:90045669", "relevant": false, "speaker": "other", "note": "hiring thread or unrelated"}
+{"record_id": "reddit:t1_fictive25", "relevant": true, "speaker": "user", "pains": ["pain_vc_misalignment"], "sentiment": "negative", "forces": ["anxiety"], "awareness": "problem_aware"}
+{"record_id": "reddit:t1_fictive26", "relevant": true, "speaker": "practitioner", "pains": ["pain_investor_access"], "sentiment": "neutral", "forces": ["pull"], "awareness": "solution_aware"}
+{"record_id": "reddit:t1_fictive27", "relevant": false, "speaker": "vendor", "note": "a fund describing itself"}
+{"record_id": "reddit:t1_fictive28", "relevant": true, "speaker": "practitioner", "pains": ["pain_traction_bar"], "sentiment": "negative", "forces": ["anxiety"], "awareness": "problem_aware", "competitors": ["friends and family round"]}
+{"record_id": "reddit:t1_fictive29", "relevant": true, "speaker": "vendor", "pains": ["pain_investor_access"], "sentiment": "neutral", "awareness": "solution_aware", "note": "link to an investor list"}
+{"record_id": "reddit:t1_fictive30", "relevant": true, "speaker": "practitioner", "pains": ["pain_traction_bar"], "sentiment": "negative", "forces": ["anxiety"], "awareness": "problem_aware", "note": "angel investor view of founders without proof"}
+{"record_id": "reddit:t1_fictive31", "relevant": false, "speaker": "practitioner", "note": "warm intros for first clients, not fundraising"}
+{"record_id": "reddit:t1_fictive32", "relevant": false, "speaker": "vendor", "note": "warm intros for first clients, offers intros"}
+{"record_id": "reddit:t1_fictive33", "relevant": false, "speaker": "other"}
+{"record_id": "reddit:t1_fictive34", "relevant": true, "speaker": "practitioner", "pains": ["pain_traction_bar", "pain_vc_misalignment"], "sentiment": "mixed", "forces": ["anxiety"], "awareness": "problem_aware", "competitors": ["SAFE"]}
+{"record_id": "reddit:t1_fictive35", "relevant": true, "speaker": "user", "pains": ["pain_investor_access"], "sentiment": "neutral", "forces": ["push"], "awareness": "problem_aware", "note": "asks for a warm intro to a pre-seed investor"}
+{"record_id": "reddit:t1_fictive36", "relevant": true, "speaker": "practitioner", "pains": ["pain_pitch_story"], "sentiment": "neutral", "forces": ["push"], "awareness": "solution_aware"}
+{"record_id": "reddit:t1_fictive37", "relevant": true, "speaker": "user", "pains": ["pain_investor_access"], "sentiment": "mixed", "forces": ["push"], "awareness": "problem_aware", "competitors": ["Hatchery Twelve"]}
+{"record_id": "reddit:t1_fictive38", "relevant": true, "speaker": "user", "pains": ["pain_traction_bar"], "sentiment": "negative", "forces": ["push"], "awareness": "problem_aware", "note": "Series A, two years without a yes"}
+{"record_id": "reddit:t1_fictive39", "relevant": true, "speaker": "practitioner", "pains": ["pain_investor_access"], "sentiment": "neutral", "forces": ["pull"], "awareness": "solution_aware"}
+{"record_id": "reddit:t1_fictive40", "relevant": true, "speaker": "practitioner", "pains": ["pain_investor_access"], "sentiment": "negative", "forces": ["push"], "awareness": "problem_aware"}
+{"record_id": "reddit:t1_fictive41", "relevant": false, "speaker": "practitioner", "note": "warm intros for a cofounder search"}
+{"record_id": "reddit:t1_fictive42", "relevant": true, "speaker": "other", "pains": ["pain_traction_bar"], "sentiment": "neutral", "note": "third-person claim about who raises"}
+{"record_id": "reddit:t1_fictive43", "relevant": true, "speaker": "practitioner", "pains": ["pain_pitch_story"], "sentiment": "neutral", "awareness": "solution_aware"}
+{"record_id": "reddit:t1_fictive44", "relevant": true, "speaker": "practitioner", "pains": ["pain_pitch_story"], "sentiment": "neutral", "forces": ["pull"], "awareness": "solution_aware"}
+{"record_id": "reddit:t1_fictive45", "relevant": true, "speaker": "practitioner", "pains": ["pain_traction_bar"], "sentiment": "negative", "forces": ["anxiety"], "awareness": "solution_aware", "competitors": ["Cohort Zero"]}
+{"record_id": "reddit:t1_fictive46", "relevant": true, "speaker": "practitioner", "pains": ["pain_investor_access"], "sentiment": "neutral", "forces": ["pull"], "awareness": "solution_aware"}
+{"record_id": "reddit:t1_fictive47", "relevant": true, "speaker": "practitioner", "pains": ["pain_investor_access"], "sentiment": "negative", "forces": ["push"], "awareness": "problem_aware"}
+{"record_id": "reddit:t1_fictive48", "relevant": true, "speaker": "user", "pains": ["pain_investor_access", "pain_traction_bar"], "sentiment": "negative", "forces": ["push"], "awareness": "problem_aware"}
+{"record_id": "reddit:t1_fictive49", "relevant": false, "speaker": "practitioner", "note": "building on proprietary data, not the raise"}
+{"record_id": "reddit:t1_fictive50", "relevant": false, "speaker": "practitioner", "note": "consumer social"}
+{"record_id": "reddit:t1_fictive51", "relevant": true, "speaker": "practitioner", "pains": ["pain_vc_misalignment"], "sentiment": "negative", "forces": ["anxiety"], "awareness": "problem_aware", "note": "fundraising mode again is a pain"}
+{"record_id": "reddit:t1_fictive52", "relevant": false, "speaker": "practitioner", "note": "warm intros for SaaS sales"}
+{"record_id": "reddit:t1_fictive53", "relevant": false, "speaker": "practitioner", "note": "valuation mechanics"}
+{"record_id": "reddit:t1_fictive54", "relevant": true, "speaker": "practitioner", "pains": ["pain_traction_bar"], "sentiment": "negative", "forces": ["anxiety"], "awareness": "problem_aware"}
+{"record_id": "reddit:t1_fictive55", "relevant": false, "speaker": "practitioner", "note": "finding vendors"}
+{"record_id": "reddit:t1_fictive56", "relevant": true, "speaker": "practitioner", "pains": ["pain_traction_bar", "pain_pitch_story"], "sentiment": "neutral", "forces": ["anxiety"], "awareness": "solution_aware", "competitors": ["Deckpeek"]}
+{"record_id": "reddit:t1_fictive57", "relevant": false, "speaker": "other"}
+{"record_id": "reddit:t1_fictive58", "relevant": true, "speaker": "practitioner", "pains": ["pain_traction_bar"], "sentiment": "negative", "forces": ["anxiety"], "awareness": "problem_aware"}
+{"record_id": "reddit:t1_fictive59", "relevant": true, "speaker": "practitioner", "pains": ["pain_traction_bar"], "sentiment": "positive", "forces": ["pull"], "awareness": "solution_aware", "note": "letters of intent as pre-seed proof"}
+{"record_id": "reddit:t1_fictive60", "relevant": false, "speaker": "practitioner", "note": "agency outreach"}
+{"record_id": "reddit:t1_fictive61", "relevant": false, "speaker": "other"}
+{"record_id": "reddit:t1_fictive62", "relevant": true, "speaker": "practitioner", "pains": ["pain_investor_access", "pain_vc_misalignment"], "sentiment": "mixed", "forces": ["habit"], "awareness": "solution_aware", "competitors": ["cold email"], "note": "contrarian: raised without warm intros"}
+{"record_id": "reddit:t1_fictive63", "relevant": false, "speaker": "practitioner", "note": "share classes"}
+{"record_id": "se:money:q9000066", "relevant": false, "speaker": "other", "note": "personal finance, not about raising"}
+{"record_id": "se:money:q9000077", "relevant": false, "speaker": "other", "note": "personal finance, not about raising"}
+{"record_id": "se:money:q9000088", "relevant": false, "speaker": "other", "note": "personal finance, not about raising"}

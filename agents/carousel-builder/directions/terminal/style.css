@@ -1,0 +1,108 @@
+/* terminal: a quiet terminal buffer on graphite.
+   One column, flush left, prompt glyph on titles, comments for sources and
+   standfirsts, one phosphor accent. No glow, no scanlines. */
+
+.d-terminal .slide{--pad-top:92px;--pad-x:90px;--pad-bottom:66px;--gap:40px;--logo-h:44px;--font-chart:var(--font-text);
+  font-family:var(--font-text)}
+.d-terminal .s-deco::before{content:"";position:absolute;left:90px;right:90px;top:62px;height:2px;background:var(--rule)}
+.d-terminal .s-deco::after{content:"";position:absolute;left:90px;top:56px;width:14px;height:14px;background:var(--accent-mark)}
+.d-terminal .s-foot{border-top:2px solid var(--rule);padding-top:16px;margin-top:34px}
+.d-terminal .src,.d-terminal .handle,.d-terminal .folio{font-family:var(--font-text);font-size:21px}
+.d-terminal .src::before{content:"# ";color:var(--accent-text)}
+.d-terminal .handle{color:var(--ink)}
+
+/* Titles: prompt line */
+.d-terminal .t{font-family:var(--font-display);font-weight:640;font-stretch:87.5%;line-height:1.12;letter-spacing:-.025em;color:var(--ink)}
+.d-terminal .t::before{content:">\00a0";color:var(--accent-text);font-weight:700}
+.d-terminal .t .hl{color:var(--accent-text)}
+.d-terminal .sub{font-family:var(--font-text);line-height:1.45;color:var(--muted);margin-top:1em}
+.d-terminal .sub::before{content:"//\00a0";color:var(--accent-text)}
+.d-terminal .body{font-family:var(--font-text);line-height:1.52;color:var(--ink)}
+.d-terminal .body .hl{background:var(--accent-fill);color:var(--on-accent-fill);padding:0 .15em}
+
+/* Cover A: window photo, prompt title at the bottom */
+.d-terminal .role-cover .s-deco::before,.d-terminal .role-cta .s-deco::before{top:150px}
+.d-terminal .role-cover .s-deco::after,.d-terminal .role-cta .s-deco::after{display:none}
+.d-terminal .role-cover,.d-terminal .role-cta{--pad-top:66px}
+.d-terminal .role-cover .s-main{padding-top:60px;gap:44px;justify-content:flex-end}
+.d-terminal .layout-cover-a.has-photo .b-photo{order:-1;flex:1 1 0;min-height:440px}
+.d-terminal .layout-cover-a:not(.has-photo) .b-title{flex:1 1 auto;display:flex;flex-direction:column;justify-content:flex-end}
+
+/* Cover B: title first, standfirst and photo share the bottom row */
+.d-terminal .layout-cover-b .s-main{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;column-gap:40px;row-gap:44px}
+.d-terminal .layout-cover-b .b-title{display:contents}
+.d-terminal .layout-cover-b .t{grid-column:1 / -1;grid-row:1}
+.d-terminal .layout-cover-b .sub{grid-column:1;grid-row:2;align-self:end;margin:0}
+.d-terminal .layout-cover-b .b-photo{grid-column:2;grid-row:2;min-height:0}
+.d-terminal .layout-cover-b:not(.has-photo) .sub{grid-column:1 / -1}
+
+/* Photos and screenshots: window frames */
+.d-terminal .ph-box{background:var(--mat);border:2px solid var(--rule)}
+.d-terminal .b-photo:not(.mat-blur) .ph-mat{display:none}
+.d-terminal .ph-cap{font-family:var(--font-text);font-size:21px;margin-top:12px}
+.d-terminal .ph-cap::before{content:"#\00a0";color:var(--accent-text)}
+.d-terminal .frame-browser .shot-frame{border:2px solid var(--rule);background:var(--mat)}
+.d-terminal .shot-bar{border-bottom:2px solid var(--rule);background:var(--mat)}
+.d-terminal .shot-url{font-family:var(--font-text);color:var(--muted)}
+.d-terminal .shot-legend li{font-family:var(--font-text);font-size:28px;line-height:1.4}
+.d-terminal .ann-n{border-radius:0;font-family:var(--font-text)}
+.d-terminal .ann-pin circle{fill:var(--accent-solid)}
+
+/* Text */
+.d-terminal .layout-text .s-main{justify-content:space-between}
+.d-terminal .layout-text .b-body{padding-top:34px;border-top:2px solid var(--rule)}
+
+/* List: [1] [2] indices */
+.d-terminal .list{font-family:var(--font-text);line-height:1.3}
+.d-terminal .list li{padding:.55em 0;border-top:2px solid var(--rule);gap:.8em}
+.d-terminal .list li:last-child{border-bottom:2px solid var(--rule)}
+.d-terminal .list-numbered .li-n{color:var(--accent-text);font-weight:700;min-width:2.4ch}
+.d-terminal .list-numbered .li-n::before{content:"["}
+.d-terminal .list-numbered .li-n::after{content:"]"}
+.d-terminal .list-bullets .li-n::before{content:"-";width:auto;height:auto;background:none;transform:none;color:var(--accent-text)}
+.d-terminal .li-t{font-weight:600}
+.d-terminal .li-s{font-size:max(26px,.66em);line-height:1.4;color:var(--muted);margin-top:.35em}
+.d-terminal .li-s::before{content:"//\00a0"}
+.d-terminal .b-list{flex:1 1 auto}
+
+/* Stat: numeral with a block cursor */
+.d-terminal .layout-stat .s-main{justify-content:flex-end}
+.d-terminal .b-stat{display:flex;flex-direction:column;flex:1 1 auto;justify-content:flex-end}
+.d-terminal .stat-v{font-family:var(--font-display);font-weight:700;font-stretch:87.5%;line-height:.9;letter-spacing:-.05em;color:var(--ink)}
+.d-terminal .stat-v::after{content:"";display:inline-block;width:.38em;height:.72em;background:var(--accent-mark);margin-left:.1em;vertical-align:-.02em}
+.d-terminal .stat-l{font-family:var(--font-display);font-weight:560;font-stretch:87.5%;line-height:1.2;letter-spacing:-.02em;margin-top:.6em;max-width:880px}
+.d-terminal .stat-c{font-family:var(--font-text);line-height:1.5;color:var(--muted);margin-top:1.2em;padding-top:1em;border-top:2px solid var(--rule)}
+.d-terminal .stat-c::before{content:"//\00a0";color:var(--accent-text)}
+
+/* Chart */
+.d-terminal .layout-chart .s-main{gap:34px}
+.d-terminal .c-title{font-family:var(--font-text);color:var(--muted);padding-bottom:14px;margin-bottom:20px;border-bottom:2px solid var(--rule)}
+.d-terminal .c-title::before{content:"//\00a0";color:var(--accent-text)}
+.d-terminal .c-axis{stroke:var(--ink);stroke-width:2}
+.d-terminal .c-note{font-family:var(--font-text);font-size:21px}
+
+/* Quote */
+.d-terminal .layout-quote .s-main{justify-content:center}
+.d-terminal .q-t{font-family:var(--font-display);font-weight:500;font-stretch:87.5%;line-height:1.22;letter-spacing:-.02em}
+.d-terminal .q-mark{color:var(--accent-text);font-family:var(--font-display)}
+.d-terminal .q-a{font-family:var(--font-text);font-size:24px;flex-direction:column;gap:4px;margin-top:44px}
+.d-terminal .q-a::before{content:"--";color:var(--accent-text)}
+
+/* Media */
+.d-terminal .layout-media .s-main{gap:34px}
+
+/* CTA: prompt with a cursor, URL as a path */
+.d-terminal .role-cta .s-main{padding-top:64px}
+.d-terminal .role-cta .b-cta{flex:1 1 auto;display:flex;flex-direction:column}
+.d-terminal .cta-t{font-family:var(--font-display);font-weight:640;font-stretch:87.5%;line-height:1.12;letter-spacing:-.025em}
+.d-terminal .cta-t::before{content:">\00a0";color:var(--accent-text)}
+.d-terminal .cta-t::after{content:"";display:inline-block;width:.5em;height:.9em;background:var(--accent-mark);margin-left:.15em;vertical-align:-.12em}
+.d-terminal .cta-url{margin-top:auto;font-family:var(--font-text);font-weight:700;font-size:30px;color:var(--accent-text);overflow-wrap:anywhere}
+.d-terminal .cta-url::before{content:"$ open";display:block;color:var(--muted);font-weight:400}
+.d-terminal .cta-sub{font-family:var(--font-text);color:var(--muted);margin-top:24px;line-height:1.45}
+.d-terminal .cta-sub::before{content:"//\00a0";color:var(--accent-text)}
+
+/* Photos hug their own ratio (fit.js), on the left edge of the buffer. */
+.d-terminal .ph-box{--ph-hug:1}
+.d-terminal .b-photo{align-items:flex-start}
+.d-terminal .layout-cover-b .b-photo{align-items:flex-end}

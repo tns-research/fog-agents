@@ -1,0 +1,52 @@
+{
+ "key": "POST https://founders-directory-example.notion.site/api/v3/loadPageChunk #e462c85097f3",
+ "status": 200,
+ "body": {
+  "cursor": {
+   "stack": []
+  },
+  "recordMap": {
+   "block": {
+    "11111111-2222-3333-4444-555555555555": {
+     "value": {
+      "value": {
+       "id": "11111111-2222-3333-4444-555555555555",
+       "type": "collection_view_page",
+       "collection_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+       "view_ids": [
+        "66666666-7777-8888-9999-000000000000"
+       ]
+      }
+     }
+    }
+   },
+   "collection": {
+    "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee": {
+     "value": {
+      "value": {
+       "id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+       "schema": {
+        "title": {
+         "name": "Name",
+         "type": "title"
+        },
+        "a1b2": {
+         "name": "LinkedIn",
+         "type": "url"
+        },
+        "c3d4": {
+         "name": "Role",
+         "type": "text"
+        },
+        "e5f6": {
+         "name": "Added",
+         "type": "date"
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

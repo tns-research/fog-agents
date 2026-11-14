@@ -1,0 +1,46 @@
+{
+  "_comment": "Config of the fictional swanbase example (a filled copy of config.example.json). The example replays the recorded API responses and the CSV exports of scripts/fixtures/; every id is a placeholder.",
+  "project": "swanbase",
+  "language": "en",
+  "sources": {
+    "umami": {
+      "website_id": "<umami-website-id>",
+      "csv": []
+    },
+    "plausible": {
+      "site_id": null,
+      "csv": []
+    },
+    "ga4": {
+      "property_id": null,
+      "events": [],
+      "csv": []
+    },
+    "gsc": {
+      "site_url": "sc-domain:swanbase.example",
+      "csv": []
+    },
+    "social": {
+      "csv": [
+        "linkedin=exports/linkedin.csv",
+        "instagram=exports/instagram-posts.csv"
+      ]
+    },
+    "revenue": {
+      "currency": "eur",
+      "csv": [
+        "exports/payments.csv"
+      ]
+    }
+  },
+  "events": {
+    "apply_click": "activation",
+    "newsletter_signup": "activation",
+    "invite_link_copied": "referral",
+    "referral_signup": "referral"
+  },
+  "focus_stage": null,
+  "budget_eur_per_sprint": 0,
+  "pulse_rules": {},
+  "gsc_bands": {}
+}

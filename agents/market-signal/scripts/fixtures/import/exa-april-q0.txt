@@ -1,0 +1,17 @@
+Found 2 results
+[
+  {
+    "url": "https://actu.example/2023/04/06/fictive-integrer-un-accelerateur-americain",
+    "id": "https://actu.example/2023/04/06/fictive-integrer-un-accelerateur-americain",
+    "title": "Int\u00e9grer un acc\u00e9l\u00e9rateur am\u00e9ricain : mission impossible ?",
+    "score": 1,
+    "author": "user-0fe21b"
+  },
+  {
+    "url": "https://blog.example/fictive/why-foreign-founders-should-think-twice-about-a-big-campus",
+    "id": "https://blog.example/fictive/why-foreign-founders-should-think-twice-about-a-big-campus",
+    "title": "Why foreign founders should think twice about a big startup campus - Blog Example",
+    "score": 0.8571428571428572,
+    "author": "user-84b6b6"
+  }
+]

@@ -1,0 +1,54 @@
+---
+import Base from "../layouts/Base.astro";
+import Footer from "../components/Footer.astro";
+import t from "../i18n/en.json";
+---
+<Base title="Northdock: apply (test fixture)">
+  <div id="promo-slot"></div>
+  <div class="wrap">
+    <header>
+      <a class="logo" href="/">Northdock</a>
+      <nav><a href="#program">{t.nav.program}</a><a href="#why">{t.nav.why}</a><a href="/apply">{t.nav.apply}</a></nav>
+    </header>
+    <div class="hero">
+      <h1>{t.hero.title}</h1>
+      <p class="sub">{t.hero.sub}</p>
+      <img src="/hero.svg" loading="lazy" alt="Founders working at desks in the Northdock space">
+      <a class="cta" href="/apply">{t.hero.cta}</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <section id="program">
+      <h2>What you get</h2>
+      <ul>
+        <li>A desk in Paris, all year</li>
+        <li>Weekly sessions with operators who have built companies</li>
+        <li>Public pitch nights to practise in front of a room</li>
+      </ul>
+    </section>
+    <section class="glance">
+      <h2>Program at a glance</h2>
+      <table>
+        <tr><td>Cost</td><td>0 €, on application</td></tr>
+        <tr><td>In return</td><td>Northdock takes equity</td></tr>
+        <tr><td>Where</td><td>Paris</td></tr>
+        <tr><td>Format</td><td>Year-round support, no fixed cohort length</td></tr>
+      </table>
+    </section>
+    <section class="why" id="why">
+      <h1>Why Northdock</h1>
+      <p>Founders get a place to work, people who answer their questions, and a room
+        to test their pitch before investors see it. Applications are read by the team
+        and every applicant gets an answer.</p>
+    </section>
+  </div>
+  <Footer />
+  <script>
+    window.addEventListener("load", () => {
+      requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(() => {
+        const slot = document.getElementById("promo-slot");
+        slot.innerHTML = '<div class="promo"><span>Next public pitch night: register</span><button type="button" aria-label="Close">x</button></div>';
+      }, 300)));
+    });
+  </script>
+</Base>

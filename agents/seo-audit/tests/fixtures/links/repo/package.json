@@ -1,0 +1,5 @@
+{
+  "name": "fernwood-fixture",
+  "private": true,
+  "description": "Fictional Astro source of tests/fixtures/links/site/ for tests/test_links.py. Never installed."
+}

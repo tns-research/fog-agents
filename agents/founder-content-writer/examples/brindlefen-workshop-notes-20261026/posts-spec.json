@@ -1,0 +1,224 @@
+{
+  "schema_version": "1.0",
+  "project": "brindlefen",
+  "label": "workshop-notes",
+  "date": "2026-10-26",
+  "language": "en",
+  "summary": "Five posts from your voice note and your call notes, plus one verified forum quote. The lost deal stays out: its number and its client name are not in your proof list.",
+  "posts": [
+    {
+      "ref": "import-on-day-one",
+      "angle": "Asking for a customer file during the first call kills the conversation, so start from the work already in front of the workshop.",
+      "angle_type": "lesson",
+      "hook_type": "decision",
+      "structure": "problem_cause_action",
+      "networks": [
+        "linkedin",
+        "x"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "We stopped asking workshops to import their customer list on day one.\n\nEvery time we asked for it during the first call, the conversation died. Nobody in a repair workshop keeps that list in one place: part of it sits in a paper ledger, part of it in the owner's phone.\n\nSo we start with the repairs already hanging on the wall, and the list builds itself as the bikes come through.\n\nIf your onboarding asks for a file before it gives anything back, check at which call the conversation stops."
+        },
+        "x": {
+          "text": "Nobody in a repair workshop keeps a customer list in one place. Part of it sits in a paper ledger, part of it in the owner's phone. So we start with the repairs already hanging on the wall, and the list builds itself."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "voice-note",
+          "passage": "We stopped asking workshops to import their customer list on day one. Every time we asked for it during the first call the conversation died, because nobody in a repair workshop keeps that list in one place."
+        },
+        {
+          "source_id": "voice-note",
+          "passage": "Now we start with the repairs already hanging on the wall and the list builds itself as the bikes come through."
+        }
+      ],
+      "claims": [
+        {
+          "text": "Every time we asked for it during the first call, the conversation died",
+          "kind": "anecdote",
+          "source": "passage",
+          "passage_index": 0
+        }
+      ]
+    },
+    {
+      "ref": "calendar-nobody-wanted",
+      "angle": "I built a calendar for mechanics because I assumed how they plan, and watching them work showed the assumption was wrong.",
+      "angle_type": "story",
+      "hook_type": "confession",
+      "structure": "story_then_lesson",
+      "networks": [
+        "linkedin",
+        "x"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "I spent weeks on a calendar view for bike mechanics, then threw it away in July.\n\nI had assumed mechanics plan their day. They look at the wall, they look at which bike is closest to done, and they pick that one.\n\nNobody asked for the calendar back.\n\nIf you build for people who work with their hands, check what they look at before they pick the next job."
+        },
+        "x": {
+          "text": "Weeks of work on a calendar view, because I assumed mechanics plan their day. They look at the wall and pick the bike closest to done. I threw the calendar away in July and nobody asked for it back."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "voice-note",
+          "passage": "I spent weeks on a calendar view because I assumed mechanics plan their day."
+        },
+        {
+          "source_id": "voice-note",
+          "passage": "They look at the wall, they look at which bike is closest to done, and they pick that one. I threw the calendar away in July and nobody asked for it back."
+        }
+      ],
+      "claims": [
+        {
+          "text": "threw it away in July",
+          "kind": "anecdote",
+          "source": "passage",
+          "passage_index": 1
+        },
+        {
+          "text": "I threw the calendar away in July and nobody asked for it back",
+          "kind": "anecdote",
+          "source": "passage",
+          "passage_index": 1
+        }
+      ]
+    },
+    {
+      "ref": "phone-they-would-pay-to-remove",
+      "angle": "The ringing phone is the pain mechanics name first, and it is why our status texts leave without anyone touching a screen.",
+      "angle_type": "position",
+      "hook_type": "observation",
+      "structure": "take_then_method",
+      "networks": [
+        "linkedin",
+        "x"
+      ],
+      "link": "https://brindlefen.example/status-texts",
+      "link_note": "How the status texts work:",
+      "variants": {
+        "linkedin": {
+          "text": "Mechanics keep telling me the phone is the problem they would pay to remove.\n\nIt rings while their hands are covered in grease, so they stop answering once the first bikes are on the stands. Then the customer walks in angry, asking if the bike is ready.\n\nStatus texts go out automatically when a repair moves to done, without anyone touching a screen with greasy hands.\n\nThe page that explains how is in the first comment."
+        },
+        "x": {
+          "text": "The phone rings while a mechanic's hands are covered in grease, so it stops getting answered. Then the customer walks in angry. Our status texts leave when the repair moves to done. How it works is in the first reply."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "voice-note",
+          "passage": "The thing I keep hearing from mechanics is that the phone is the problem they would pay to remove. It rings while their hands are covered in grease, so they stop answering once the first bikes are on the stands."
+        },
+        {
+          "source_id": "call-notes",
+          "passage": "He cares that the text goes out when the bike moves to the finished hook, without anyone touching a screen with greasy hands."
+        }
+      ],
+      "claims": [
+        {
+          "text": "Status texts go out automatically when a repair moves to done",
+          "kind": "result",
+          "source": "proof",
+          "proof_index": 1
+        },
+        {
+          "text": "Mechanics keep telling me the phone is the problem they would pay to remove",
+          "kind": "observation",
+          "source": "passage",
+          "passage_index": 0
+        }
+      ]
+    },
+    {
+      "ref": "pilot-first-week-slower",
+      "angle": "The first week of a new tool can feel slower for a workshop, and the owner only noticed the change when the phone calmed down.",
+      "angle_type": "behind_the_scenes",
+      "hook_type": "number",
+      "structure": "before_after",
+      "networks": [
+        "linkedin"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "18 independent workshops ran the Brindlefen pilot between June and September 2026, and one owner told me how the start felt.\n\nThe first week felt slower, because the team was entering bikes they would normally just remember.\n\nThe second week was when the status texts started going out on their own, and the phone calmed down enough that he noticed it.\n\nThen he asked for a way to say a part is on order, because that is the question customers ask most."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "call-notes",
+          "passage": "The owner told me the first week felt slower, because the team was entering bikes they would normally just remember."
+        },
+        {
+          "source_id": "call-notes",
+          "passage": "The second week was when the status texts started going out on their own, and the phone calmed down enough that he noticed it."
+        },
+        {
+          "source_id": "call-notes",
+          "passage": "What he asked for next: a way to say a part is on order, because that is the question customers ask most."
+        }
+      ],
+      "claims": [
+        {
+          "text": "18 independent workshops ran the Brindlefen pilot between June and September 2026",
+          "kind": "number",
+          "source": "proof",
+          "proof_index": 0
+        },
+        {
+          "text": "The first week felt slower, because the team was entering bikes they would normally just remember",
+          "kind": "anecdote",
+          "source": "passage",
+          "passage_index": 0
+        }
+      ]
+    },
+    {
+      "ref": "forum-hour-a-day",
+      "angle": "A mechanic's own words on a public forum name the cost of the status question better than we could.",
+      "angle_type": "market_reading",
+      "hook_type": "customer_words",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin",
+        "x"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "\"I lose an hour a day telling people their bike isn't ready yet\"\n\nA mechanic wrote that on a public forum. The sentence holds the whole job: the repair is going fine, and the work stops anyway to answer a question the customer could read on a screen.\n\nIf you sell to a trade, read what people in it write when they are not talking to a vendor."
+        },
+        "x": {
+          "text": "\"I lose an hour a day telling people their bike isn't ready yet\"\n\nA mechanic wrote that on a public forum. The repair is going fine, and the work stops anyway."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "market-signal",
+          "quote_id": "q_phone_hour",
+          "passage": "I lose an hour a day telling people their bike isn't ready yet"
+        }
+      ],
+      "claims": [
+        {
+          "text": "I lose an hour a day telling people their bike isn't ready yet",
+          "kind": "market",
+          "source": "quote",
+          "passage_index": 0
+        }
+      ]
+    }
+  ],
+  "dropped": [
+    {
+      "text": "We also lost the Fictivelo deal, forty-two stands",
+      "reason": "the number and the client name are not in positioning.proof, and the founder does not want to name them.",
+      "fix": "add the lesson to positioning.proof without the name if you want the post."
+    }
+  ],
+  "limitations": []
+}

@@ -1,0 +1,9 @@
+{
+  "_comment": "Written by the model at Step 3 from evidence, never from a name alone. Each group lists keys of one person; evidence gives the page that links them.",
+  "merge": [
+    ["hn:qforge_fictive", "linkedin:alex-dupuis-fictive"]
+  ],
+  "evidence": {
+    "hn:qforge_fictive": "https://news.ycombinator.com/user?id=qforge_fictive (the about field links linkedin.com/in/alex-dupuis-fictive)"
+  }
+}

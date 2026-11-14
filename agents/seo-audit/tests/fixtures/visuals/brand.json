@@ -1,0 +1,32 @@
+{
+  "schema_version": "2.0",
+  "name": "Larkspur",
+  "source_url": "https://larkspur.example",
+  "as_of": "2026-11-01",
+  "mode": "light",
+  "colors": {
+    "bg": "#f7f5f0",
+    "surface": "#ffffff",
+    "text": "#1c1b17",
+    "text_secondary": "#47443c",
+    "text_muted": "#66625a",
+    "border": "#dcd7cc",
+    "accent": "#2f5d50",
+    "on_accent": "#ffffff"
+  },
+  "radius": "12px",
+  "fonts": {
+    "display": { "family": "Fraunces", "fallback": "Georgia, serif", "weights": [600], "source": "system" },
+    "body": { "family": "Inter", "fallback": "system-ui, sans-serif", "weights": [400, 600], "source": "system" }
+  },
+  "logos": {
+    "on_light": {
+      "wordmark": { "path": "assets/logos/wordmark-on-light.svg", "format": "svg", "width": 540, "height": 160, "ink": "#1c1b17" }
+    },
+    "on_dark": {
+      "wordmark": { "path": "assets/logos/wordmark-on-dark.svg", "format": "svg", "width": 540, "height": 160, "ink": "#f4f1ea" }
+    }
+  },
+  "logo_text": "larkspur",
+  "logo_audit": { "status": "unchecked" }
+}

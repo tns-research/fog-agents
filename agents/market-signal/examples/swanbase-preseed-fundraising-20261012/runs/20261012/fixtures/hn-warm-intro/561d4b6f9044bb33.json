@@ -1,0 +1,45 @@
+{
+  "url": "https://hn.algolia.com/api/v1/search?query=%22warm+intro%22&tags=%28story%2Ccomment%29&numericFilters=created_at_i%3E%3D1783987200%2Ccreated_at_i%3C1791849600&hitsPerPage=20&page=0&advancedSyntax=true&typoTolerance=false",
+  "status": 200,
+  "fetched_at": "2026-10-12T09:00:34Z",
+  "body": {
+    "nbHits": 2,
+    "nbPages": 1,
+    "page": 0,
+    "hitsPerPage": 20,
+    "hits": [
+      {
+        "objectID": "90018736",
+        "created_at": "2026-07-28T13:32:26Z",
+        "created_at_i": 1785245546,
+        "author": "user-982fce",
+        "story_text": "Introtrail closes the loop on email introductions. You add it in CC ([email]) on any intro email, and two or three weeks later it privately asks each side what came of the connection, including any further intros one side made for the [...]",
+        "title": "Show HN: Introtrail, find out what happened weeks after your warm intro",
+        "story_id": 90018736,
+        "points": 6,
+        "num_comments": 7,
+        "url": "https://introtrail.example",
+        "_tags": [
+          "story",
+          "story_90018736",
+          "show_hn"
+        ]
+      },
+      {
+        "objectID": "90017565",
+        "created_at": "2026-07-23T03:50:51Z",
+        "created_at_i": 1784778651,
+        "author": "user-f0b60d",
+        "title": "I mapped warm intro paths to angel investors in three cities",
+        "story_id": 90017565,
+        "points": 1,
+        "num_comments": 0,
+        "url": "https://intro-map.example/",
+        "_tags": [
+          "story",
+          "story_90017565"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "schema_version": "2.0",
+  "project": "swanbase",
+  "market": "pre-seed fundraising for first-time founders",
+  "language": "en",
+  "geography": "global",
+  "as_of": "2026-10-12",
+  "window": {
+    "since": "2026-07-14",
+    "until": "2026-10-12"
+  },
+  "caps": {
+    "records_per_job": 10,
+    "pages_per_job": 2
+  },
+  "hypotheses": [
+    "First-time founders without a network cannot get investor meetings (icp.pains, to test)",
+    "Founders do not know what traction a pre-seed investor expects (icp.pains, to test)"
+  ],
+  "jobs": [
+    {
+      "id": "reddit-startups-preseed",
+      "source": "reddit",
+      "why": "largest founder community, comment bodies mentioning pre-seed",
+      "args": {
+        "subreddit": "startups",
+        "query": "pre-seed",
+        "kind": "comments"
+      },
+      "limit": 12
+    },
+    {
+      "id": "reddit-startups-warm-intro",
+      "source": "reddit",
+      "why": "access to investors through introductions",
+      "args": {
+        "subreddit": "startups",
+        "query": "warm intro",
+        "kind": "comments"
+      },
+      "limit": 12
+    },
+    {
+      "id": "reddit-ycombinator-raise",
+      "source": "reddit",
+      "why": "founders applying to accelerators talk about raising",
+      "args": {
+        "subreddit": "ycombinator",
+        "query": "raise",
+        "kind": "comments"
+      },
+      "limit": 10
+    },
+    {
+      "id": "reddit-venturecapital-preseed",
+      "source": "reddit",
+      "why": "the investor side answering founders",
+      "args": {
+        "subreddit": "venturecapital",
+        "query": "pre-seed",
+        "kind": "comments"
+      },
+      "limit": 10
+    },
+    {
+      "id": "hn-warm-intro",
+      "source": "hn",
+      "why": "exact phrase, with the comments of the best thread",
+      "args": {
+        "query": "\"warm intro\"",
+        "thread_comments": 1
+      },
+      "limit": 10
+    },
+    {
+      "id": "hn-pre-seed",
+      "source": "hn",
+      "why": "exact phrase in comments",
+      "args": {
+        "query": "\"pre-seed\"",
+        "tags": "comment"
+      },
+      "limit": 8
+    },
+    {
+      "id": "se-money-investors",
+      "source": "stackexchange",
+      "why": "the only active Stack Exchange site near fundraising (startups.stackexchange closed)",
+      "args": {
+        "site": "money",
+        "query": "investors"
+      },
+      "limit": 5
+    },
+    {
+      "id": "discourse-nocode-funding",
+      "source": "discourse",
+      "why": "no-code founders building an MVP before a raise (forum of a fictional builder)",
+      "args": {
+        "host": "forum.example",
+        "query": "funding"
+      },
+      "limit": 6
+    },
+    {
+      "id": "appstore-tablesplit-us",
+      "source": "appstore",
+      "why": "cap table tool founders meet at their first raise (fictional app)",
+      "args": {
+        "app_id": "9990000001",
+        "country": "us",
+        "app_name": "Tablesplit"
+      },
+      "limit": 10
+    }
+  ]
+}

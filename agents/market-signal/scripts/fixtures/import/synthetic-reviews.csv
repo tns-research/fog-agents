@@ -1,0 +1,5 @@
+url,date,author,rating,title,text,community
+https://example.com/reviews/examplecap/1,2026-09-02,reviewer_a,2,Cap table chaos,"We spent two evenings reconciling the cap table before the angel round, and the export still did not match the SAFE notes.",G2: ExampleCap (synthetic)
+https://example.com/reviews/examplecap/2,2026-09-20,reviewer_b,4,Fine for one round,"Good enough for a first round, but the pricing jumps as soon as you add a second entity.",G2: ExampleCap (synthetic)
+https://example.com/reviews/examplecap/3,,reviewer_c,1,No date on this row,"This row has no date, so the importer must drop it.",G2: ExampleCap (synthetic)
+https://example.com/reviews/examplecap/4,2025-01-15,reviewer_d,3,Too old,"This review is outside the window and must be dropped.",G2: ExampleCap (synthetic)

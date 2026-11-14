@@ -1,0 +1,116 @@
+/* base.css: shared frame of every ad (static-ads-builder).
+ * Colour roles come from build.py per surface (.sf-brand, .sf-light,
+ * .sf-accent): --paper --ink --ink-2 --muted --rule --card --accent-text
+ * --accent-mark --solid --on-solid --hl --on-hl. A surface class on an inner
+ * element (a review card, a caption box) switches the roles for that subtree.
+ * Rules kept mechanical by qa.py: no blurred shadow, no glow, no gradient
+ * text, no backdrop filter, no text-transform (the proofread compares the
+ * exact case of every word). */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #8a8a8a; }
+body { display: flex; flex-direction: column; align-items: flex-start; }
+
+.ad {
+  position: relative; overflow: hidden; flex: 0 0 auto;
+  background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 30px; line-height: 1.3;
+  -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision;
+  font-kerning: normal; font-feature-settings: "kern", "liga";
+}
+.ad .bg { position: absolute; inset: 0; z-index: 0; }
+.ad .safe {
+  position: absolute; top: var(--st); right: var(--sr); bottom: var(--sb); left: var(--sl);
+  z-index: 1; display: flex; flex-direction: column; gap: 36px; overflow: hidden;
+}
+.safe > * { flex-shrink: 0; }
+.ad .main { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; gap: 28px; overflow: hidden; }
+.main > * { flex-shrink: 0; }
+
+/* Top row: logo left, badge right. The logo is a measured lockup (build.py
+ * logo_size): mark height --logo-h, wordmark --logo-word, clear space
+ * --logo-clear kept free by the row gap and the space under the row. */
+.top { display: flex; align-items: center; justify-content: space-between; gap: max(24px, var(--logo-clear, 0px)); min-height: 48px; margin-bottom: max(0px, var(--logo-clear, 0px) - 36px); }
+.top-r { display: flex; align-items: center; gap: 16px; }
+.logo { display: flex; align-items: center; gap: var(--logo-gap, 0px); color: var(--ink); flex: 0 0 auto; }
+.logo-mark { height: var(--logo-h, 64px); width: auto; display: block; flex: 0 0 auto; }
+.logo-word { height: var(--logo-word, 40px); width: auto; display: block; flex: 0 0 auto; }
+.lk-wordmark .logo-word { height: var(--logo-h, 48px); }
+.logo-name { font-family: var(--font-display); font-weight: var(--display-weight); font-size: 40px; line-height: 1; }
+.lk-mark .logo-name { font-size: calc(var(--logo-h, 64px) * .56); }
+.badge {
+  font-size: 24px; font-weight: 600; line-height: 1; letter-spacing: .02em; white-space: nowrap;
+  padding: 10px 18px; border: 2px solid var(--accent-mark); color: var(--accent-text); border-radius: 999px;
+}
+
+/* Type */
+.head { font-weight: var(--body-strong); line-height: 1.06; letter-spacing: -.012em; color: inherit; text-wrap: balance; }
+.head.display { font-family: var(--font-display); font-weight: var(--display-weight); line-height: 1.0; letter-spacing: -.01em; }
+.em { font-style: normal; color: var(--accent-text); }
+.head.display .em, .pq .em { font-style: italic; }
+.sub { line-height: 1.3; color: var(--ink-2); text-wrap: pretty; }
+
+/* Lists */
+.list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+.list li { display: flex; gap: 18px; align-items: flex-start; }
+.ico { width: 36px; height: 36px; flex: 0 0 36px; color: var(--accent-mark); margin-top: .12em; }
+.list li > .ico, .cell > .ico { width: 1.05em; height: 1.05em; flex-basis: 1.05em; margin-top: .1em; }
+.li-b { display: flex; flex-direction: column; gap: 4px; min-width: 0; flex: 1 1 auto; }
+.li-t { line-height: 1.24; font-weight: 500; min-width: 0; text-wrap: balance; }
+.li-l { font-size: max(22px, .6em); font-weight: 700; line-height: 1.1; letter-spacing: .03em; color: var(--accent-text); }
+
+/* Footer: proof left, CTA right */
+.foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; }
+.cta { display: inline-flex; align-items: center; gap: 14px; font-weight: 700; line-height: 1.1; white-space: nowrap; flex: 0 0 auto; margin-left: auto; }
+.cta .ico { color: currentColor; width: 32px; height: 32px; flex-basis: 32px; margin: 0; }
+.cta.button { background: var(--solid); color: var(--on-solid); padding: 20px 30px; border-radius: var(--radius); }
+.cta.link { color: var(--accent-text); border-bottom: 3px solid var(--accent-mark); padding-bottom: 8px; }
+.cta.wide { width: 100%; justify-content: center; margin-left: 0; }
+
+/* Proof */
+.proof { display: flex; flex-direction: column; gap: 10px; max-width: 64%; min-width: 0; }
+.pf { line-height: 1.28; font-weight: 500; }
+.pcap { display: flex; flex-direction: column; gap: 4px; }
+.attr { font-size: 24px; font-weight: 600; color: var(--ink-2); line-height: 1.2; }
+.src { font-size: 22px; color: var(--muted); line-height: 1.2; }
+.stars { display: flex; gap: 6px; color: var(--accent-mark); }
+.star { width: 34px; height: 34px; }
+.star.off { color: var(--rule); }
+
+/* Media: shown whole by default, never cropped (fit-contain) */
+.media {
+  flex: 1 1 0; min-height: 220px; min-width: 0; position: relative; width: 100%;
+  border-radius: var(--radius); overflow: hidden; background: var(--card); align-self: center;
+}
+.media .m-img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.media.fit-cover .m-img { object-fit: cover; }
+.media.hugged { background: transparent; }
+.media.missing { display: flex; align-items: center; justify-content: center; border: 3px dashed var(--muted); }
+.asset-missing { display: flex; flex-direction: column; gap: 6px; font-size: 24px; color: var(--muted); text-align: center; padding: 24px; }
+
+/* Fit failures stay visible on the render */
+.fit-fail { outline: 4px solid #e0004d; outline-offset: 4px; }
+
+/* 9:16: Meta's Reels zones (top 14 %, bottom 35 %) carry no word, logo or
+ * CTA; the paper, the photo and the panels run through them. Media styles
+ * put the photo under the CTA in .ext, which starts in the text zone and
+ * ends near the bottom edge (--sbl moves the layout box down; qa still holds
+ * text to --sb). The other styles extend the footer into a .slab that reaches
+ * the bottom edge (fit.js sets its top from the footer). */
+.f-9x16.has-ext .safe { bottom: var(--sbl); }
+.ext { flex: 1 1 0; min-height: calc(var(--sb) - var(--sbl) + var(--straddle, 80px)); display: flex; gap: 24px; justify-content: center; align-items: center; min-width: 0; }
+.ext > .media, .ext > .hy-stage { flex: 1 1 0; align-self: stretch; min-height: 0; }
+.slab { position: absolute; left: 0; right: 0; bottom: 0; top: calc(100% - var(--sb) + 24px); background: var(--paper); }
+.stage { position: absolute; left: 0; right: 0; bottom: 0; top: calc(100% - var(--sb)); background: var(--card); }
+.foot.on-slab { color: var(--ink); padding-top: 44px; }
+.ad.f-9x16 .main { justify-content: space-evenly; }
+.ad.f-9x16.has-ext .main { flex: 0 1 auto; justify-content: flex-start; }
+.ad.f-9x16.has-ext .main > *, .has-ext .ml-text, .has-ext .tb-text, .has-ext .os-text { flex: 0 0 auto; }
+
+/* A whole (contain) photo on a canvas of another ratio: its own edge
+ * colours continue it into the bands it leaves. */
+.edge { position: absolute; display: block; }
+.edge.t { top: 0; left: 0; right: 0; height: 50%; }
+.edge.b { bottom: 0; left: 0; right: 0; height: 50%; }
+.edge.l { top: 0; bottom: 0; left: 0; width: 50%; }
+.edge.r { top: 0; bottom: 0; right: 0; width: 50%; }
+.bg .media.full { background: transparent; z-index: 1; }

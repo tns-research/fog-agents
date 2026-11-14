@@ -1,0 +1,451 @@
+{
+ "dailyData": [
+  {
+   "date": "2026-08-31",
+   "postCount": 1,
+   "platforms": {
+    "instagram": 1
+   },
+   "metrics": {
+    "impressions": 0,
+    "reach": 0,
+    "likes": 25,
+    "comments": 2,
+    "shares": 1,
+    "saves": 2,
+    "clicks": 0,
+    "views": 458
+   }
+  },
+  {
+   "date": "2026-09-01",
+   "postCount": 1,
+   "platforms": {
+    "linkedin": 1
+   },
+   "metrics": {
+    "impressions": 2480,
+    "reach": 1736,
+    "likes": 47,
+    "comments": 7,
+    "shares": 1,
+    "saves": 0,
+    "clicks": 28,
+    "views": 0
+   }
+  },
+  {
+   "date": "2026-09-02",
+   "postCount": 1,
+   "platforms": {
+    "twitter": 1
+   },
+   "metrics": {
+    "impressions": 121,
+    "reach": 0,
+    "likes": 2,
+    "comments": 0,
+    "shares": 1,
+    "saves": 0,
+    "clicks": 2,
+    "views": 0
+   }
+  },
+  {
+   "date": "2026-09-03",
+   "postCount": 1,
+   "platforms": {
+    "instagram": 1
+   },
+   "metrics": {
+    "impressions": 0,
+    "reach": 0,
+    "likes": 34,
+    "comments": 6,
+    "shares": 2,
+    "saves": 6,
+    "clicks": 0,
+    "views": 360
+   }
+  },
+  {
+   "date": "2026-09-07",
+   "postCount": 1,
+   "platforms": {
+    "instagram": 1
+   },
+   "metrics": {
+    "impressions": 0,
+    "reach": 0,
+    "likes": 28,
+    "comments": 2,
+    "shares": 0,
+    "saves": 7,
+    "clicks": 0,
+    "views": 463
+   }
+  },
+  {
+   "date": "2026-09-08",
+   "postCount": 1,
+   "platforms": {
+    "linkedin": 1
+   },
+   "metrics": {
+    "impressions": 2691,
+    "reach": 1884,
+    "likes": 48,
+    "comments": 9,
+    "shares": 4,
+    "saves": 0,
+    "clicks": 24,
+    "views": 0
+   }
+  },
+  {
+   "date": "2026-09-09",
+   "postCount": 1,
+   "platforms": {
+    "twitter": 1
+   },
+   "metrics": {
+    "impressions": 117,
+    "reach": 0,
+    "likes": 5,
+    "comments": 0,
+    "shares": 2,
+    "saves": 0,
+    "clicks": 1,
+    "views": 0
+   }
+  },
+  {
+   "date": "2026-09-10",
+   "postCount": 1,
+   "platforms": {
+    "instagram": 1
+   },
+   "metrics": {
+    "impressions": 0,
+    "reach": 0,
+    "likes": 30,
+    "comments": 4,
+    "shares": 4,
+    "saves": 4,
+    "clicks": 0,
+    "views": 542
+   }
+  },
+  {
+   "date": "2026-09-14",
+   "postCount": 1,
+   "platforms": {
+    "instagram": 1
+   },
+   "metrics": {
+    "impressions": 0,
+    "reach": 0,
+    "likes": 24,
+    "comments": 4,
+    "shares": 2,
+    "saves": 5,
+    "clicks": 0,
+    "views": 479
+   }
+  },
+  {
+   "date": "2026-09-15",
+   "postCount": 1,
+   "platforms": {
+    "linkedin": 1
+   },
+   "metrics": {
+    "impressions": 2558,
+    "reach": 1791,
+    "likes": 50,
+    "comments": 6,
+    "shares": 5,
+    "saves": 0,
+    "clicks": 33,
+    "views": 0
+   }
+  },
+  {
+   "date": "2026-09-16",
+   "postCount": 1,
+   "platforms": {
+    "twitter": 1
+   },
+   "metrics": {
+    "impressions": 49,
+    "reach": 0,
+    "likes": 5,
+    "comments": 2,
+    "shares": 0,
+    "saves": 0,
+    "clicks": 1,
+    "views": 0
+   }
+  },
+  {
+   "date": "2026-09-17",
+   "postCount": 1,
+   "platforms": {
+    "instagram": 1
+   },
+   "metrics": {
+    "impressions": 0,
+    "reach": 0,
+    "likes": 32,
+    "comments": 1,
+    "shares": 4,
+    "saves": 6,
+    "clicks": 0,
+    "views": 344
+   }
+  },
+  {
+   "date": "2026-09-21",
+   "postCount": 1,
+   "platforms": {
+    "instagram": 1
+   },
+   "metrics": {
+    "impressions": 0,
+    "reach": 0,
+    "likes": 23,
+    "comments": 6,
+    "shares": 4,
+    "saves": 3,
+    "clicks": 0,
+    "views": 412
+   }
+  },
+  {
+   "date": "2026-09-22",
+   "postCount": 1,
+   "platforms": {
+    "linkedin": 1
+   },
+   "metrics": {
+    "impressions": 2541,
+    "reach": 1779,
+    "likes": 39,
+    "comments": 4,
+    "shares": 0,
+    "saves": 0,
+    "clicks": 35,
+    "views": 0
+   }
+  },
+  {
+   "date": "2026-09-23",
+   "postCount": 1,
+   "platforms": {
+    "twitter": 1
+   },
+   "metrics": {
+    "impressions": 100,
+    "reach": 0,
+    "likes": 3,
+    "comments": 0,
+    "shares": 1,
+    "saves": 0,
+    "clicks": 0,
+    "views": 0
+   }
+  },
+  {
+   "date": "2026-09-24",
+   "postCount": 1,
+   "platforms": {
+    "instagram": 1
+   },
+   "metrics": {
+    "impressions": 0,
+    "reach": 0,
+    "likes": 24,
+    "comments": 4,
+    "shares": 1,
+    "saves": 3,
+    "clicks": 0,
+    "views": 435
+   }
+  },
+  {
+   "date": "2026-09-28",
+   "postCount": 1,
+   "platforms": {
+    "instagram": 1
+   },
+   "metrics": {
+    "impressions": 0,
+    "reach": 0,
+    "likes": 30,
+    "comments": 3,
+    "shares": 1,
+    "saves": 3,
+    "clicks": 0,
+    "views": 431
+   }
+  },
+  {
+   "date": "2026-09-29",
+   "postCount": 1,
+   "platforms": {
+    "linkedin": 1
+   },
+   "metrics": {
+    "impressions": 2788,
+    "reach": 1952,
+    "likes": 58,
+    "comments": 12,
+    "shares": 4,
+    "saves": 0,
+    "clicks": 34,
+    "views": 0
+   }
+  },
+  {
+   "date": "2026-09-30",
+   "postCount": 1,
+   "platforms": {
+    "twitter": 1
+   },
+   "metrics": {
+    "impressions": 148,
+    "reach": 0,
+    "likes": 1,
+    "comments": 1,
+    "shares": 2,
+    "saves": 0,
+    "clicks": 2,
+    "views": 0
+   }
+  },
+  {
+   "date": "2026-10-01",
+   "postCount": 1,
+   "platforms": {
+    "instagram": 1
+   },
+   "metrics": {
+    "impressions": 0,
+    "reach": 0,
+    "likes": 26,
+    "comments": 6,
+    "shares": 2,
+    "saves": 5,
+    "clicks": 0,
+    "views": 367
+   }
+  },
+  {
+   "date": "2026-10-05",
+   "postCount": 1,
+   "platforms": {
+    "instagram": 1
+   },
+   "metrics": {
+    "impressions": 0,
+    "reach": 0,
+    "likes": 42,
+    "comments": 2,
+    "shares": 4,
+    "saves": 5,
+    "clicks": 0,
+    "views": 433
+   }
+  },
+  {
+   "date": "2026-10-06",
+   "postCount": 1,
+   "platforms": {
+    "linkedin": 1
+   },
+   "metrics": {
+    "impressions": 5722,
+    "reach": 4005,
+    "likes": 88,
+    "comments": 15,
+    "shares": 7,
+    "saves": 0,
+    "clicks": 75,
+    "views": 0
+   }
+  },
+  {
+   "date": "2026-10-07",
+   "postCount": 1,
+   "platforms": {
+    "twitter": 1
+   },
+   "metrics": {
+    "impressions": 52,
+    "reach": 0,
+    "likes": 1,
+    "comments": 0,
+    "shares": 0,
+    "saves": 0,
+    "clicks": 0,
+    "views": 0
+   }
+  },
+  {
+   "date": "2026-10-08",
+   "postCount": 2,
+   "platforms": {
+    "instagram": 1,
+    "linkedin": 1
+   },
+   "metrics": {
+    "impressions": 3246,
+    "reach": 2272,
+    "likes": 97,
+    "comments": 14,
+    "shares": 2,
+    "saves": 4,
+    "clicks": 42,
+    "views": 331
+   }
+  }
+ ],
+ "platformBreakdown": [
+  {
+   "platform": "instagram",
+   "postCount": 12,
+   "impressions": 0,
+   "reach": 0,
+   "likes": 351,
+   "comments": 46,
+   "shares": 26,
+   "saves": 53,
+   "clicks": 0,
+   "views": 5055
+  },
+  {
+   "platform": "linkedin",
+   "postCount": 7,
+   "impressions": 46387,
+   "reach": 32471,
+   "likes": 802,
+   "comments": 110,
+   "shares": 58,
+   "saves": 0,
+   "clicks": 552,
+   "views": 0
+  },
+  {
+   "platform": "twitter",
+   "postCount": 6,
+   "impressions": 3920,
+   "reach": 0,
+   "likes": 128,
+   "comments": 34,
+   "shares": 45,
+   "saves": 0,
+   "clicks": 75,
+   "views": 0
+  }
+ ]
+}

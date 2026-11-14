@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "content-publisher post spec",
+  "description": "What the model writes before anything enters the queue: one entry per post, one text per network. Links never sit in a body: the script places the link in the LinkedIn first comment, the first reply on X, Threads and Bluesky, and checks that the Instagram caption points to the link in bio. Validate with: python3 shared/scripts/validate_json.py agents/content-publisher/assets/post-spec.schema.json <posts.json>. scripts/variants.py lint adds the platform rules and the writing gate.",
+  "type": "object",
+  "required": ["schema_version", "posts"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "project": { "type": "string", "description": "Project slug." },
+    "posts": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/post" } }
+  },
+  "$defs": {
+    "network": { "type": "string", "enum": ["linkedin", "x", "instagram", "threads", "bluesky"] },
+    "slot": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}$",
+      "description": "Local time in the queue timezone, YYYY-MM-DDTHH:MM."
+    },
+    "variant": {
+      "type": "object",
+      "required": ["text"],
+      "additionalProperties": false,
+      "properties": {
+        "text": { "type": "string", "description": "The body as published. No URL: the link goes to link." },
+        "first_comment": { "type": "string", "description": "LinkedIn only: the first comment. Must hold the link when the post has one. Default: link_note + link." },
+        "media": {
+          "type": "array",
+          "items": { "type": "integer", "minimum": 0 },
+          "description": "Indexes into post.media used on this network, in order. Default: every media item the network accepts."
+        }
+      }
+    },
+    "media": {
+      "type": "object",
+      "required": ["path", "type"],
+      "additionalProperties": false,
+      "properties": {
+        "path": { "type": "string", "description": "Relative to the spec file." },
+        "type": { "type": "string", "enum": ["image", "video", "document"] },
+        "alt": { "type": "string", "description": "Alt text, required for images." },
+        "title": { "type": "string", "description": "Document title shown by LinkedIn." }
+      }
+    },
+    "post": {
+      "type": "object",
+      "required": ["ref", "kind", "language", "networks", "variants"],
+      "additionalProperties": false,
+      "properties": {
+        "ref": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]{2,60}$",
+          "description": "Stable id of the post. Queue item ids are <ref>.<network>."
+        },
+        "kind": { "type": "string", "enum": ["carousel", "image", "text", "video", "document"] },
+        "language": { "type": "string", "pattern": "^[a-z]{2}$" },
+        "source": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "agent": { "type": "string", "description": "Producer agent, for example carousel-builder." },
+            "path": { "type": "string", "description": "Producer output the post comes from, relative to the project folder." }
+          }
+        },
+        "link": {
+          "type": ["string", "null"],
+          "pattern": "^https://[^\\s]+$",
+          "description": "The one link of the post, or null."
+        },
+        "link_note": {
+          "type": "string",
+          "maxLength": 120,
+          "description": "Short line placed before the link in the first comment or the reply, for example: The full guide:"
+        },
+        "media": { "type": "array", "items": { "$ref": "#/$defs/media" } },
+        "networks": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/network" } },
+        "target_slot": { "$ref": "#/$defs/slot" },
+        "variants": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "linkedin": { "$ref": "#/$defs/variant" },
+            "x": { "$ref": "#/$defs/variant" },
+            "instagram": { "$ref": "#/$defs/variant" },
+            "threads": { "$ref": "#/$defs/variant" },
+            "bluesky": { "$ref": "#/$defs/variant" }
+          }
+        }
+      }
+    }
+  }
+}

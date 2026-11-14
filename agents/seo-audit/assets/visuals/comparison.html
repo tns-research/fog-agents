@@ -1,0 +1,32 @@
+<style>
+/* comparison: 2 to 4 columns, 2 to 8 rows; yes / no / partial cells drawn
+   as icons. The row-label column takes 30 % of the width. */
+.cmp-wrap { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--surface); }
+.cmp { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.cmp th, .cmp td { padding: 20px 24px; text-align: left; vertical-align: middle; border-bottom: 1px solid var(--border); }
+.cmp tr:last-child td { border-bottom: 0; }
+.cmp th + th, .cmp td + td { border-left: 1px solid var(--border); }
+.cmp thead th { background: var(--bg); font-size: 24px; line-height: 1.25; font-weight: var(--body-strong); color: var(--text); }
+.cmp thead th.corner { color: var(--text-muted); font-weight: 400; font-size: 20px; }
+.cmp thead th.hi { background: var(--accent); color: var(--on-accent); }
+.cmp td.hi { background: var(--accent-tint); }
+.cmp td.rl { font-size: 22px; line-height: 1.35; font-weight: var(--body-strong); color: var(--text); }
+.cmp td.c { font-size: 22px; line-height: 1.4; color: var(--text); }
+.cmp td.hi.c { color: var(--text-on-tint); }
+.cell-i { display: flex; align-items: center; gap: 14px; }
+.cell-n { font-size: 20px; line-height: 1.35; color: var(--text-secondary); }
+.cmp td.hi .cell-n { color: var(--text-on-tint); }
+</style>
+<main class="canvas" data-kind="comparison">
+  {{head}}
+  <section class="v-body">
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <colgroup>{{cols}}</colgroup>
+        <thead><tr><th class="corner"><div class="tx" data-where="corner">{{corner}}</div></th>{{header_cells}}</tr></thead>
+        <tbody>{{rows}}</tbody>
+      </table>
+    </div>
+  </section>
+  {{foot}}
+</main>

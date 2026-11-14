@@ -1,0 +1,4 @@
+# content-publisher scripts: Python 3.9+ standard library only, nothing to install.
+# zoneinfo (stdlib) needs the system tz database; on Windows without it, add:
+#   pip install tzdata
+# The scripts fall back to UTC and say so in the slot times if it is missing.

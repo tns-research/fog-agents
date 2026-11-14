@@ -1,0 +1,96 @@
+<!doctype html>
+<!--
+Brand board template, filled by scripts/render_brand_preview.py from a brand.json V2
+(draft or final). Every {{key}} is replaced; CSS custom properties carry the brand
+tokens so the components below are composed with the brand's own values.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Brand board: {{name}}</title>
+{{font_link}}
+<style>
+{{font_faces}}
+:root {
+  --bg: {{bg}}; --surface: {{surface}}; --text: {{text}}; --text-secondary: {{text_secondary}};
+  --text-muted: {{text_muted}}; --border: {{border}}; --accent: {{accent}};
+  --accent-secondary: {{accent_secondary}}; --on-accent: {{on_accent}}; --radius: {{radius}};
+  --shadow: {{shadow}};
+  --font-display: {{font_display}}; --font-body: {{font_body}};
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #e9e9ec; color: #1b1b1f; font: 14px/1.4 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+.board { width: 1200px; padding: 28px; display: grid; gap: 18px; }
+.panel { background: #ffffff; border: 1px solid #d4d4da; border-radius: 10px; padding: 20px 22px; }
+.label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #6b6b75; margin: 0 0 12px; font-weight: 600; }
+.meta { color: #55555f; font-size: 13px; }
+.head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; }
+.head h1 { font-family: var(--font-display); font-size: 46px; line-height: 1; margin: 0; font-weight: 400; }
+.status { font-size: 12px; padding: 4px 10px; border-radius: 99px; background: #f1f1f4; border: 1px solid #d4d4da; white-space: nowrap; }
+.swatches { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+.sw { border: 1px solid #c9c9d1; border-radius: 8px; overflow: hidden; }
+.sw .chip { height: 64px; border-bottom: 1px solid #c9c9d1; }
+.sw .txt { padding: 8px 10px; font-size: 12px; }
+.sw .txt b { display: block; font-size: 13px; }
+.sw .ratio { color: #55555f; }
+.type { display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; }
+.spec .fam { font-size: 12px; color: #55555f; margin-bottom: 8px; }
+.spec .bad { color: #b42318; font-weight: 600; }
+.disp { font-family: var(--font-display); color: #121216; line-height: 1.05; margin: 0 0 6px; }
+.bodyt { font-family: var(--font-body); color: #121216; margin: 0 0 8px; }
+.logos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.logo-cell { border: 1px solid #c9c9d1; border-radius: 8px; overflow: hidden; }
+.logo-cell .stage { height: 118px; display: flex; align-items: center; justify-content: center; padding: 16px; }
+.logo-cell .stage img { max-height: 54px; max-width: 92%; }
+.logo-cell .stage .missing { font-size: 12px; opacity: 0.75; }
+.logo-cell .cap { font-size: 12px; padding: 7px 10px; border-top: 1px solid #c9c9d1; background: #fafafb; }
+.demo { background: var(--bg); border-radius: 10px; padding: 26px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 26px; align-items: center; border: 1px solid #c9c9d1; }
+.demo h2 { font-family: var(--font-display); color: var(--text); font-size: 38px; line-height: 1.05; margin: 0 0 10px; font-weight: 400; }
+.demo p { font-family: var(--font-body); color: var(--text-secondary); font-size: 16px; margin: 0 0 18px; }
+.demo .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.b1 { font-family: var(--font-body); background: var(--accent); color: var(--on-accent); border-radius: var(--radius); padding: 13px 22px; font-weight: 600; font-size: 15px; display: inline-block; }
+.b2 { font-family: var(--font-body); background: transparent; color: var(--text); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 21px; font-weight: 600; font-size: 15px; display: inline-block; }
+.lnk { font-family: var(--font-body); color: var(--accent); text-decoration: underline; font-size: 15px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 22px; }
+.card h3 { font-family: var(--font-display); color: var(--text); font-size: 24px; margin: 0 0 8px; font-weight: 400; }
+.card p { font-family: var(--font-body); color: var(--text-secondary); font-size: 15px; margin: 0 0 10px; }
+.card small { font-family: var(--font-body); color: var(--text-muted); font-size: 12px; }
+.imgs { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+.im { border: 1px solid #c9c9d1; border-radius: 8px; overflow: hidden; background: #f4f4f6; }
+.im img { width: 100%; height: 120px; object-fit: cover; display: block; }
+.im .cap { font-size: 11px; padding: 6px 8px; color: #44444c; }
+.issues { margin: 0; padding-left: 18px; font-size: 12.5px; color: #33333b; }
+.issues li { margin: 3px 0; }
+.issues li.fail { color: #b42318; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="board">
+  <div class="panel head">
+    <div><p class="label">Brand board</p><h1>{{name}}</h1><div class="meta">{{meta}}</div></div>
+    <div class="status">{{status}}</div>
+  </div>
+  <div class="panel"><p class="label">Color roles (contrast against bg, or against accent for on_accent)</p><div class="swatches">{{swatches}}</div></div>
+  <div class="panel type">
+    <div class="spec"><p class="label">Display</p><div class="fam">{{display_label}}</div>
+      <p class="disp" style="font-size:72px">{{name}}</p>
+      <p class="disp" style="font-size:44px">Read the room, then the deck</p>
+      <p class="disp" style="font-size:28px">Headlines at 28 px keep their shape: 0123456789</p></div>
+    <div class="spec"><p class="label">Body</p><div class="fam">{{body_label}}</div>
+      <p class="bodyt" style="font-size:18px">Body at 18 px. Founders read this line on a phone between two meetings, so it has to hold at small sizes.</p>
+      <p class="bodyt" style="font-size:15px">Body at 15 px: the size of a card paragraph, a caption under a chart, a line in an email signature.</p>
+      <p class="bodyt" style="font-size:13px">Small print at 13 px: sources, footers, legal lines. 0123456789</p></div>
+  </div>
+  <div class="panel"><p class="label">Logos on light and on dark (pixel test result per file)</p><div class="logos">{{logos}}</div></div>
+  <div class="panel"><p class="label">Components composed with the tokens, on colors.bg</p>
+    <div class="demo">
+      <div><h2>A headline set in the brand</h2><p>A paragraph in text_secondary sits under it, then the two buttons and a link.</p>
+        <div class="row"><span class="b1">Primary action</span><span class="b2">Secondary</span><span class="lnk">A text link</span></div></div>
+      <div class="card"><h3>A card on surface</h3><p>Card paragraph in text_secondary, border, radius and shadow from the brand.</p><small>Caption in text_muted</small></div>
+    </div>
+  </div>
+  <div class="panel"><p class="label">Harvested images (role, license)</p><div class="imgs">{{images}}</div></div>
+  <div class="panel"><p class="label">To check before approving</p><ul class="issues">{{issues}}</ul></div>
+</div>
+</body>
+</html>

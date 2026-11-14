@@ -1,0 +1,1340 @@
+{
+  "schema_version": "2.0",
+  "agent": "market-signal",
+  "project": "swanbase",
+  "date": "2026-10-12",
+  "market": "pre-seed fundraising for first-time founders",
+  "language": "en",
+  "geography": "global",
+  "window": {
+    "since": "2026-07-14",
+    "until": "2026-10-12",
+    "days": 91
+  },
+  "valid_until": "2027-01-10",
+  "corpus": {
+    "path": "runs/20261012/corpus.jsonl",
+    "sha256": "7df688c4669ee13b807cfd83808797b0b41c0a1461020795749ccd388e4a4789",
+    "records": 65
+  },
+  "stats": {
+    "records_collected": 65,
+    "records_relevant": 30,
+    "voices": 26,
+    "quotes_verified": 21,
+    "by_source": [
+      {
+        "source": "discourse",
+        "records": 6,
+        "share": 0.092
+      },
+      {
+        "source": "hn",
+        "records": 17,
+        "share": 0.262
+      },
+      {
+        "source": "reddit",
+        "records": 39,
+        "share": 0.6
+      },
+      {
+        "source": "se",
+        "records": 3,
+        "share": 0.046
+      }
+    ],
+    "voices_by_source": [
+      {
+        "source": "hn",
+        "records": 3,
+        "share": 0.115
+      },
+      {
+        "source": "reddit",
+        "records": 23,
+        "share": 0.885
+      }
+    ],
+    "sentiment": {
+      "counted": 26,
+      "counts": {
+        "mixed": 3,
+        "negative": 11,
+        "neutral": 8,
+        "positive": 4
+      },
+      "shares": {
+        "mixed": 0.115,
+        "negative": 0.423,
+        "neutral": 0.308,
+        "positive": 0.154
+      }
+    },
+    "forces": {
+      "anxiety": 9,
+      "habit": 1,
+      "pull": 7,
+      "push": 8
+    },
+    "escalation_rule": {
+      "min_authors": 5,
+      "min_communities": 2,
+      "counted_speakers": [
+        "user",
+        "practitioner"
+      ]
+    },
+    "capped_jobs": [
+      "discourse-nocode-funding",
+      "hn-pre-seed",
+      "reddit-startups-preseed",
+      "reddit-startups-warm-intro",
+      "reddit-ycombinator-raise"
+    ]
+  },
+  "source_health": [
+    {
+      "job_id": "reddit-startups-preseed",
+      "source": "reddit",
+      "target": "r/startups comments 'pre-seed'",
+      "status": "ok",
+      "records": 12,
+      "capped": true,
+      "message": ""
+    },
+    {
+      "job_id": "reddit-startups-warm-intro",
+      "source": "reddit",
+      "target": "r/startups comments 'warm intro'",
+      "status": "ok",
+      "records": 12,
+      "capped": true,
+      "message": ""
+    },
+    {
+      "job_id": "reddit-ycombinator-raise",
+      "source": "reddit",
+      "target": "r/ycombinator comments 'raise'",
+      "status": "ok",
+      "records": 10,
+      "capped": true,
+      "message": ""
+    },
+    {
+      "job_id": "reddit-venturecapital-preseed",
+      "source": "reddit",
+      "target": "r/venturecapital comments 'pre-seed'",
+      "status": "ok",
+      "records": 6,
+      "capped": false,
+      "message": ""
+    },
+    {
+      "job_id": "hn-warm-intro",
+      "source": "hn",
+      "target": "\"warm intro\"",
+      "status": "ok",
+      "records": 9,
+      "capped": false,
+      "message": ""
+    },
+    {
+      "job_id": "hn-pre-seed",
+      "source": "hn",
+      "target": "\"pre-seed\"",
+      "status": "ok",
+      "records": 8,
+      "capped": true,
+      "message": ""
+    },
+    {
+      "job_id": "se-money-investors",
+      "source": "se",
+      "target": "money 'investors'",
+      "status": "ok",
+      "records": 3,
+      "capped": false,
+      "message": ""
+    },
+    {
+      "job_id": "discourse-nocode-funding",
+      "source": "discourse",
+      "target": "forum.example 'funding'",
+      "status": "ok",
+      "records": 6,
+      "capped": true,
+      "message": ""
+    },
+    {
+      "job_id": "appstore-tablesplit-us",
+      "source": "appstore",
+      "target": "App Store us: Tablesplit",
+      "status": "empty",
+      "records": 0,
+      "capped": false,
+      "message": "the iTunes review feed answered no entries; it does this intermittently, retry later or with another --country"
+    }
+  ],
+  "pains": [
+    {
+      "pain_id": "pain_traction_bar",
+      "summary": "Not knowing which proof is enough for a pre-seed yes, while practitioners disagree on the bar",
+      "kind": "pain",
+      "force": "anxiety",
+      "awareness_stage": "problem_aware",
+      "existing_solution": null,
+      "escalated": true,
+      "mention_count": 10,
+      "distinct_authors": 10,
+      "distinct_communities": 3,
+      "communities": [
+        "r/startups",
+        "r/venturecapital",
+        "r/ycombinator"
+      ],
+      "by_source": {
+        "reddit": 10
+      },
+      "source_shares": {
+        "reddit": 1.0
+      },
+      "first_seen": "2026-09-19",
+      "last_seen": "2026-10-07",
+      "by_month": {
+        "2026-09": 5,
+        "2026-10": 5
+      },
+      "trend": "unknown",
+      "volume": "lower_bound",
+      "quote_ids": [
+        "q_not_ready",
+        "q_fff",
+        "q_above_market",
+        "q_loi",
+        "q_revenue_king"
+      ]
+    },
+    {
+      "pain_id": "pain_investor_access",
+      "summary": "Getting in front of investors without a network: warm introductions act as the gate",
+      "kind": "pain",
+      "force": "push",
+      "awareness_stage": "problem_aware",
+      "existing_solution": null,
+      "escalated": true,
+      "mention_count": 9,
+      "distinct_authors": 9,
+      "distinct_communities": 2,
+      "communities": [
+        "r/startups",
+        "r/venturecapital"
+      ],
+      "by_source": {
+        "reddit": 9
+      },
+      "source_shares": {
+        "reddit": 1.0
+      },
+      "first_seen": "2026-07-24",
+      "last_seen": "2026-10-10",
+      "by_month": {
+        "2026-07": 1,
+        "2026-09": 4,
+        "2026-10": 4
+      },
+      "trend": "unknown",
+      "volume": "lower_bound",
+      "quote_ids": [
+        "q_no_meetings",
+        "q_sparkle",
+        "q_zero_connections",
+        "q_mutual_traction",
+        "q_pedigree",
+        "q_skip_cold",
+        "q_ask_intro",
+        "q_warm_overrated"
+      ]
+    },
+    {
+      "pain_id": "pain_pitch_story",
+      "summary": "Turning an early company into one story an investor can repeat",
+      "kind": "pain",
+      "force": "push",
+      "awareness_stage": "solution_aware",
+      "existing_solution": null,
+      "escalated": false,
+      "mention_count": 4,
+      "distinct_authors": 4,
+      "distinct_communities": 1,
+      "communities": [
+        "r/startups"
+      ],
+      "by_source": {
+        "reddit": 4
+      },
+      "source_shares": {
+        "reddit": 1.0
+      },
+      "first_seen": "2026-09-26",
+      "last_seen": "2026-10-06",
+      "by_month": {
+        "2026-09": 3,
+        "2026-10": 1
+      },
+      "trend": "unknown",
+      "volume": "lower_bound",
+      "quote_ids": [
+        "q_one_pager",
+        "q_one_sentence",
+        "q_one_wedge"
+      ]
+    },
+    {
+      "pain_id": "pain_vc_misalignment",
+      "summary": "Pre-seed investors bet on a few winners and expect the rest to fail, which founders read as misalignment",
+      "kind": "meta_problem",
+      "force": "anxiety",
+      "awareness_stage": "problem_aware",
+      "existing_solution": "venture capital",
+      "escalated": false,
+      "mention_count": 4,
+      "distinct_authors": 4,
+      "distinct_communities": 3,
+      "communities": [
+        "r/startups",
+        "r/venturecapital",
+        "r/ycombinator"
+      ],
+      "by_source": {
+        "reddit": 4
+      },
+      "source_shares": {
+        "reddit": 1.0
+      },
+      "first_seen": "2026-07-16",
+      "last_seen": "2026-10-10",
+      "by_month": {
+        "2026-07": 1,
+        "2026-09": 1,
+        "2026-10": 2
+      },
+      "trend": "unknown",
+      "volume": "lower_bound",
+      "quote_ids": [
+        "q_roulette",
+        "q_not_aligned"
+      ]
+    },
+    {
+      "pain_id": "pain_intro_black_box",
+      "summary": "Introductions disappear: the connector never learns what happened",
+      "kind": "pain",
+      "force": "push",
+      "awareness_stage": "problem_aware",
+      "existing_solution": null,
+      "escalated": false,
+      "mention_count": 3,
+      "distinct_authors": 3,
+      "distinct_communities": 1,
+      "communities": [
+        "Hacker News"
+      ],
+      "by_source": {
+        "hn": 3
+      },
+      "source_shares": {
+        "hn": 1.0
+      },
+      "first_seen": "2026-07-28",
+      "last_seen": "2026-07-30",
+      "by_month": {
+        "2026-07": 3
+      },
+      "trend": "falling",
+      "volume": "complete",
+      "quote_ids": [
+        "q_intro_never"
+      ]
+    }
+  ],
+  "quotes": [
+    {
+      "quote_id": "q_no_meetings",
+      "record_id": "reddit:t1_fictive48",
+      "text_verbatim": "My startup has a working product with paying customers and I can't even get meetings with VCs.",
+      "char_count": 94,
+      "language": "en",
+      "permalink": "https://www.reddit.com/r/startups/comments/fictivet22/anyone_else_feel_the_raise_is_about_sparkle/fictive48/",
+      "date": "2026-10-02",
+      "source": "reddit",
+      "community": "r/startups",
+      "kind": "comment",
+      "author_hash": "e979112dbbf0",
+      "speaker": "user",
+      "sentiment": "negative",
+      "pain_id": "pain_investor_access",
+      "persona_id": "persona_first_time_raiser",
+      "usable_as": [
+        "headline",
+        "hook"
+      ],
+      "verified": true,
+      "warnings": []
+    },
+    {
+      "quote_id": "q_sparkle",
+      "record_id": "reddit:t1_fictive48",
+      "text_verbatim": "You need a hook to get through the door with VCs, and usually that hook is some \"sparkle\".",
+      "char_count": 90,
+      "language": "en",
+      "permalink": "https://www.reddit.com/r/startups/comments/fictivet22/anyone_else_feel_the_raise_is_about_sparkle/fictive48/",
+      "date": "2026-10-02",
+      "source": "reddit",
+      "community": "r/startups",
+      "kind": "comment",
+      "author_hash": "e979112dbbf0",
+      "speaker": "user",
+      "sentiment": "negative",
+      "pain_id": "pain_investor_access",
+      "persona_id": "persona_first_time_raiser",
+      "usable_as": [
+        "support"
+      ],
+      "verified": true,
+      "warnings": []
+    },
+    {
+      "quote_id": "q_zero_connections",
+      "record_id": "reddit:t1_fictive37",
+      "text_verbatim": "I'm not rich, and neither is my family. I have zero connections to VCs or to big money.",
+      "char_count": 87,
+      "language": "en",
+      "permalink": "https://www.reddit.com/r/startups/comments/fictivet14/moving_forward_without_investors_or_a_network/fictive37/",
+      "date": "2026-09-27",
+      "source": "reddit",
+      "community": "r/startups",
+      "kind": "comment",
+      "author_hash": "c481365e94bb",
+      "speaker": "user",
+      "sentiment": "mixed",
+      "pain_id": "pain_investor_access",
+      "persona_id": "persona_first_time_raiser",
+      "usable_as": [
+        "headline",
+        "outreach_opener"
+      ],
+      "verified": true,
+      "warnings": []
+    },
+    {
+      "quote_id": "q_mutual_traction",
+      "record_id": "reddit:t1_fictive39",
+      "text_verbatim": "Warm intros only work if the mutual has already seen real traction.",
+      "char_count": 67,
+      "language": "en",
+      "permalink": "https://www.reddit.com/r/startups/comments/fictivet13/advice_on_warm_intros_to_pre_seed_investors/fictive39/",
+      "date": "2026-09-28",
+      "source": "reddit",
+      "community": "r/startups",
+      "kind": "comment",
+      "author_hash": "ad0b0999f5f3",
+      "speaker": "practitioner",
+      "sentiment": "neutral",
+      "pain_id": "pain_investor_access",
+      "persona_id": null,
+      "usable_as": [
+        "headline",
+        "support"
+      ],
+      "verified": true,
+      "warnings": []
+    },
+    {
+      "quote_id": "q_pedigree",
+      "record_id": "reddit:t1_fictive40",
+      "text_verbatim": "A pedigree background buys you warm intros, cheaper trust and a safety net",
+      "char_count": 74,
+      "language": "en",
+      "permalink": "https://www.reddit.com/r/startups/comments/fictivet19/does_founder_pedigree_matter_for_a_first_round/fictive40/",
+      "date": "2026-09-29",
+      "source": "reddit",
+      "community": "r/startups",
+      "kind": "comment",
+      "author_hash": "8ac4cb2f6a1d",
+      "speaker": "practitioner",
+      "sentiment": "negative",
+      "pain_id": "pain_investor_access",
+      "persona_id": null,
+      "usable_as": [
+        "support",
+        "quote_slide"
+      ],
+      "verified": true,
+      "warnings": []
+    },
+    {
+      "quote_id": "q_skip_cold",
+      "record_id": "reddit:t1_fictive46",
+      "text_verbatim": "Skip the cold emails.",
+      "char_count": 21,
+      "language": "en",
+      "permalink": "https://www.reddit.com/r/startups/comments/fictivet21/tips_to_reach_investors_if_you_are_outside_the_hubs/fictive46/",
+      "date": "2026-10-01",
+      "source": "reddit",
+      "community": "r/startups",
+      "kind": "comment",
+      "author_hash": "a4981110c578",
+      "speaker": "practitioner",
+      "sentiment": "neutral",
+      "pain_id": "pain_investor_access",
+      "persona_id": null,
+      "usable_as": [
+        "hook"
+      ],
+      "verified": true,
+      "warnings": []
+    },
+    {
+      "quote_id": "q_ask_intro",
+      "record_id": "reddit:t1_fictive35",
+      "text_verbatim": "If anyone here likes the project and happens to know a pre-seed investor who would be a good fit, a warm intro would mean a lot.",
+      "char_count": 128,
+      "language": "en",
+      "permalink": "https://www.reddit.com/r/startups/comments/fictivet13/advice_on_warm_intros_to_pre_seed_investors/fictive35/",
+      "date": "2026-09-24",
+      "source": "reddit",
+      "community": "r/startups",
+      "kind": "comment",
+      "author_hash": "8ddf6a574eb0",
+      "speaker": "user",
+      "sentiment": "neutral",
+      "pain_id": "pain_investor_access",
+      "persona_id": "persona_first_time_raiser",
+      "usable_as": [
+        "support"
+      ],
+      "verified": true,
+      "warnings": []
+    },
+    {
+      "quote_id": "q_warm_overrated",
+      "record_id": "reddit:t1_fictive62",
+      "text_verbatim": "Warm intros are overrated IMO, and not required.",
+      "char_count": 48,
+      "language": "en",
+      "permalink": "https://www.reddit.com/r/venturecapital/comments/fictivet31/how_do_i_get_in_front_of_top_funds/fictive62/",
+      "date": "2026-10-10",
+      "source": "reddit",
+      "community": "r/venturecapital",
+      "kind": "comment",
+      "author_hash": "b5a3f2ee90f5",
+      "speaker": "practitioner",
+      "sentiment": "mixed",
+      "pain_id": "pain_investor_access",
+      "persona_id": null,
+      "usable_as": [
+        "objection"
+      ],
+      "verified": true,
+      "warnings": []
+    },
+    {
+      "quote_id": "q_not_ready",
+      "record_id": "reddit:t1_fictive28",
+      "text_verbatim": "Honest advice: you aren’t ready for funding. Not even pre-seed.",
+      "char_count": 63,
+      "language": "en",
+      "permalink": "https://www.reddit.com/r/venturecapital/comments/fictivet08/raising_pre_seed_for_a_music_app/fictive28/",
+      "date": "2026-09-19",
+      "source": "reddit",
+      "community": "r/venturecapital",
+      "kind": "comment",
+      "author_hash": "57f4c33d6461",
+      "speaker": "practitioner",
+      "sentiment": "negative",
+      "pain_id": "pain_traction_bar",
+      "persona_id": "persona_first_time_raiser",
+      "usable_as": [
+        "objection",
+        "headline"
+      ],
+      "verified": true,
+      "warnings": []
+    },
+    {
+      "quote_id": "q_fff",
+      "record_id": "reddit:t1_fictive28",
+      "text_verbatim": "The round that comes before is the FFF round (friends, family and fools)",
+      "char_count": 72,
+      "language": "en",
+      "permalink": "https://www.reddit.com/r/venturecapital/comments/fictivet08/raising_pre_seed_for_a_music_app/fictive28/",
+      "date": "2026-09-19",
+      "source": "reddit",
+      "community": "r/venturecapital",
+      "kind": "comment",
+      "author_hash": "57f4c33d6461",
+      "speaker": "practitioner",
+      "sentiment": "negative",
+      "pain_id": "pain_traction_bar",
+      "persona_id": null,
+      "usable_as": [
+        "support"
+      ],
+      "verified": true,
+      "warnings": []
+    },
+    {
+      "quote_id": "q_above_market",
+      "record_id": "reddit:t1_fictive58",
+      "text_verbatim": "Raising a pre-seed at $500k ARR is still way above market I think",
+      "char_count": 65,
+      "language": "en",
+      "permalink": "https://www.reddit.com/r/startups/comments/fictivet28/first_time_founder_started_raising_what_now/fictive58/",
+      "date": "2026-10-07",
+      "source": "reddit",
+      "community": "r/startups",
+      "kind": "comment",
+      "author_hash": "9d3c48a8cb2b",
+      "speaker": "practitioner",
+      "sentiment": "negative",
+      "pain_id": "pain_traction_bar",
+      "persona_id": null,
+      "usable_as": [
+        "support"
+      ],
+      "verified": true,
+      "warnings": []
+    },
+    {
+      "quote_id": "q_loi",
+      "record_id": "reddit:t1_fictive54",
+      "text_verbatim": "Even with signed LOIs from big companies it’s hard to raise.",
+      "char_count": 60,
+      "language": "en",
+      "permalink": "https://www.reddit.com/r/ycombinator/comments/fictivet25/is_it_worth_eight_years_to_launch_a_hardware_product/fictive54/",
+      "date": "2026-10-05",
+      "source": "reddit",
+      "community": "r/ycombinator",
+      "kind": "comment",
+      "author_hash": "f67a2c0fb8a8",
+      "speaker": "practitioner",
+      "sentiment": "negative",
+      "pain_id": "pain_traction_bar",
+      "persona_id": null,
+      "usable_as": [
+        "headline",
+        "support"
+      ],
+      "verified": true,
+      "warnings": []
+    },
+    {
+      "quote_id": "q_revenue_king",
+      "record_id": "reddit:t1_fictive56",
+      "text_verbatim": "Traction doesn’t have to mean revenue, but revenue is king.",
+      "char_count": 59,
+      "language": "en",
+      "permalink": "https://www.reddit.com/r/startups/comments/fictivet28/first_time_founder_started_raising_what_now/fictive56/",
+      "date": "2026-10-06",
+      "source": "reddit",
+      "community": "r/startups",
+      "kind": "comment",
+      "author_hash": "ccbcaeb6a2b4",
+      "speaker": "practitioner",
+      "sentiment": "neutral",
+      "pain_id": "pain_traction_bar",
+      "persona_id": null,
+      "usable_as": [
+        "support",
+        "quote_slide"
+      ],
+      "verified": true,
+      "warnings": []
+    },
+    {
+      "quote_id": "q_roulette",
+      "record_id": "reddit:t1_fictive34",
+      "text_verbatim": "For an investor, pre-seed is a roulette table: they know most of these startups will fail.",
+      "char_count": 90,
+      "language": "en",
+      "permalink": "https://www.reddit.com/r/startups/comments/fictivet09/what_actually_gets_a_b2b_tool_funded/fictive34/",
+      "date": "2026-09-24",
+      "source": "reddit",
+      "community": "r/startups",
+      "kind": "comment",
+      "author_hash": "335db7051777",
+      "speaker": "practitioner",
+      "sentiment": "mixed",
+      "pain_id": "pain_vc_misalignment",
+      "persona_id": "persona_first_time_raiser",
+      "usable_as": [
+        "support"
+      ],
+      "verified": true,
+      "warnings": []
+    },
+    {
+      "quote_id": "q_not_aligned",
+      "record_id": "reddit:t1_fictive25",
+      "text_verbatim": "VCs are not really on your side as a founder.",
+      "char_count": 45,
+      "language": "en",
+      "permalink": "https://www.reddit.com/r/venturecapital/comments/fictivet04/the_dark_side_of_venture_money/fictive25/",
+      "date": "2026-07-16",
+      "source": "reddit",
+      "community": "r/venturecapital",
+      "kind": "comment",
+      "author_hash": "beedd0ffde1f",
+      "speaker": "user",
+      "sentiment": "negative",
+      "pain_id": "pain_vc_misalignment",
+      "persona_id": null,
+      "usable_as": [
+        "support"
+      ],
+      "verified": true,
+      "warnings": []
+    },
+    {
+      "quote_id": "q_one_pager",
+      "record_id": "reddit:t1_fictive43",
+      "text_verbatim": "pre-seed? a one pager is plenty.",
+      "char_count": 32,
+      "language": "en",
+      "permalink": "https://www.reddit.com/r/startups/comments/fictivet17/how_should_a_pre_seed_deck_open/fictive43/",
+      "date": "2026-09-30",
+      "source": "reddit",
+      "community": "r/startups",
+      "kind": "comment",
+      "author_hash": "ab3e890f763e",
+      "speaker": "practitioner",
+      "sentiment": "neutral",
+      "pain_id": "pain_pitch_story",
+      "persona_id": null,
+      "usable_as": [
+        "hook"
+      ],
+      "verified": true,
+      "warnings": []
+    },
+    {
+      "quote_id": "q_one_sentence",
+      "record_id": "reddit:t1_fictive44",
+      "text_verbatim": "Begin with the one sentence an investor can repeat to a partner: who is hurting, what you do, and the strongest single proof you have today",
+      "char_count": 139,
+      "language": "en",
+      "permalink": "https://www.reddit.com/r/startups/comments/fictivet17/how_should_a_pre_seed_deck_open/fictive44/",
+      "date": "2026-09-30",
+      "source": "reddit",
+      "community": "r/startups",
+      "kind": "comment",
+      "author_hash": "f98164ffe6cb",
+      "speaker": "practitioner",
+      "sentiment": "neutral",
+      "pain_id": "pain_pitch_story",
+      "persona_id": null,
+      "usable_as": [
+        "support",
+        "quote_slide"
+      ],
+      "verified": true,
+      "warnings": []
+    },
+    {
+      "quote_id": "q_one_wedge",
+      "record_id": "reddit:t1_fictive36",
+      "text_verbatim": "At pre-seed, investors buy one wedge, not a group of companies.",
+      "char_count": 63,
+      "language": "en",
+      "permalink": "https://www.reddit.com/r/startups/comments/fictivet15/my_deck_tries_to_cover_three_markets/fictive36/",
+      "date": "2026-09-26",
+      "source": "reddit",
+      "community": "r/startups",
+      "kind": "comment",
+      "author_hash": "069ee4badf3c",
+      "speaker": "practitioner",
+      "sentiment": "neutral",
+      "pain_id": "pain_pitch_story",
+      "persona_id": null,
+      "usable_as": [
+        "headline"
+      ],
+      "verified": true,
+      "warnings": []
+    },
+    {
+      "quote_id": "q_intro_never",
+      "record_id": "hn:90026933",
+      "text_verbatim": "I make quite a few intros, and I almost never hear what happened unless I ask, awkwardly, weeks later.",
+      "char_count": 102,
+      "language": "en",
+      "permalink": "https://news.ycombinator.com/item?id=90026933",
+      "date": "2026-07-30",
+      "source": "hn",
+      "community": "Hacker News",
+      "kind": "comment",
+      "author_hash": "24ebf3db6708",
+      "speaker": "user",
+      "sentiment": "positive",
+      "pain_id": "pain_intro_black_box",
+      "persona_id": null,
+      "usable_as": [
+        "support"
+      ],
+      "verified": true,
+      "warnings": []
+    },
+    {
+      "quote_id": "q_overindex",
+      "record_id": "reddit:t1_fictive37",
+      "text_verbatim": "You're WAY over indexing on Hatchery Twelve.",
+      "char_count": 44,
+      "language": "en",
+      "permalink": "https://www.reddit.com/r/startups/comments/fictivet14/moving_forward_without_investors_or_a_network/fictive37/",
+      "date": "2026-09-27",
+      "source": "reddit",
+      "community": "r/startups",
+      "kind": "comment",
+      "author_hash": "c481365e94bb",
+      "speaker": "user",
+      "sentiment": "mixed",
+      "pain_id": null,
+      "persona_id": null,
+      "usable_as": [
+        "objection"
+      ],
+      "verified": true,
+      "warnings": []
+    },
+    {
+      "quote_id": "q_program_bad",
+      "record_id": "reddit:t1_fictive45",
+      "text_verbatim": "I think Cohort Zero is a bad program, especially the way they run their regional cohorts.",
+      "char_count": 89,
+      "language": "en",
+      "permalink": "https://www.reddit.com/r/ycombinator/comments/fictivet11/winter_batch_megathread/fictive45/",
+      "date": "2026-09-30",
+      "source": "reddit",
+      "community": "r/ycombinator",
+      "kind": "comment",
+      "author_hash": "0bc1a3e645c6",
+      "speaker": "practitioner",
+      "sentiment": "negative",
+      "pain_id": null,
+      "persona_id": null,
+      "usable_as": [
+        "objection"
+      ],
+      "verified": true,
+      "warnings": []
+    }
+  ],
+  "hooks": [
+    {
+      "hook_id": "hook_no_meetings",
+      "text": "I can't even get meetings with VCs",
+      "verbatim": true,
+      "pain_id": "pain_investor_access",
+      "quote_ids": [
+        "q_no_meetings"
+      ],
+      "char_count": 34
+    },
+    {
+      "hook_id": "hook_mutual_traction",
+      "text": "Warm intros only work if the mutual has already seen real traction.",
+      "verbatim": true,
+      "pain_id": "pain_investor_access",
+      "quote_ids": [
+        "q_mutual_traction"
+      ],
+      "char_count": 67
+    },
+    {
+      "hook_id": "hook_which_proof",
+      "text": "Which proof gets a first-time founder a first pre-seed meeting?",
+      "verbatim": false,
+      "pain_id": "pain_traction_bar",
+      "quote_ids": [
+        "q_not_ready",
+        "q_above_market",
+        "q_loi"
+      ],
+      "char_count": 63
+    }
+  ],
+  "objections": [
+    {
+      "objection_id": "obj_not_ready",
+      "text": "you aren't ready for funding. Not even pre-seed.",
+      "force": "anxiety",
+      "pain_id": "pain_traction_bar",
+      "quote_ids": [
+        "q_not_ready"
+      ]
+    },
+    {
+      "objection_id": "obj_warm_overrated",
+      "text": "Warm intros are overrated IMO, and not required.",
+      "force": "habit",
+      "pain_id": "pain_investor_access",
+      "quote_ids": [
+        "q_warm_overrated"
+      ]
+    },
+    {
+      "objection_id": "obj_program_doubt",
+      "text": "I think Cohort Zero is a bad program",
+      "force": "anxiety",
+      "pain_id": null,
+      "quote_ids": [
+        "q_program_bad"
+      ]
+    },
+    {
+      "objection_id": "obj_overindex",
+      "text": "You're WAY over indexing on Hatchery Twelve.",
+      "force": "habit",
+      "pain_id": null,
+      "quote_ids": [
+        "q_overindex"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "angle_id": "angle_access_gate",
+      "pain_id": "pain_investor_access",
+      "pain_escalated": true,
+      "force": "push",
+      "awareness_stage": "problem_aware",
+      "funnel_stage": "tofu",
+      "headline_quote_id": "q_no_meetings",
+      "headline_char_count": 94,
+      "support_quote_ids": [
+        "q_zero_connections",
+        "q_pedigree"
+      ],
+      "contrast": "cold email to a fund's inbox",
+      "formats": [
+        "carousel",
+        "static_ad",
+        "cold_outreach"
+      ],
+      "why": "The most repeated pain, in founders' own words, and it names the moment that hurts: no meeting."
+    },
+    {
+      "angle_id": "angle_proof_bar",
+      "pain_id": "pain_traction_bar",
+      "pain_escalated": true,
+      "force": "anxiety",
+      "awareness_stage": "problem_aware",
+      "funnel_stage": "mofu",
+      "headline_quote_id": "q_loi",
+      "headline_char_count": 60,
+      "support_quote_ids": [
+        "q_above_market",
+        "q_revenue_king"
+      ],
+      "contrast": "waiting for more traction before talking to anyone",
+      "formats": [
+        "carousel",
+        "landing_page"
+      ],
+      "why": "Practitioners contradict each other on the bar; a sourced answer is useful content before any offer."
+    },
+    {
+      "angle_id": "angle_mutual_traction",
+      "pain_id": "pain_investor_access",
+      "pain_escalated": true,
+      "force": "pull",
+      "awareness_stage": "solution_aware",
+      "funnel_stage": "bofu",
+      "headline_quote_id": "q_mutual_traction",
+      "headline_char_count": 67,
+      "support_quote_ids": [
+        "q_skip_cold"
+      ],
+      "contrast": "asking weak ties for introductions",
+      "formats": [
+        "cold_outreach",
+        "static_ad"
+      ],
+      "why": "Founders who already know intros matter want the condition that makes an intro work."
+    }
+  ],
+  "existing_solutions": [
+    {
+      "name": "Hatchery Twelve",
+      "type": "direct",
+      "sentiment": "mixed",
+      "quote_ids": [
+        "q_overindex"
+      ],
+      "mentions": {
+        "records": 1,
+        "distinct_authors": 1
+      }
+    },
+    {
+      "name": "Cohort Zero",
+      "type": "direct",
+      "sentiment": "negative",
+      "quote_ids": [
+        "q_program_bad"
+      ],
+      "mentions": {
+        "records": 1,
+        "distinct_authors": 1
+      }
+    },
+    {
+      "name": "friends and family round",
+      "type": "status_quo",
+      "sentiment": "mixed",
+      "quote_ids": [
+        "q_fff"
+      ],
+      "mentions": {
+        "records": 1,
+        "distinct_authors": 1
+      }
+    },
+    {
+      "name": "cold email",
+      "type": "status_quo",
+      "sentiment": "mixed",
+      "quote_ids": [
+        "q_skip_cold",
+        "q_warm_overrated"
+      ],
+      "mentions": {
+        "records": 1,
+        "distinct_authors": 1
+      }
+    }
+  ],
+  "personas": [
+    {
+      "persona_id": "persona_first_time_raiser",
+      "name": "First-time founder raising a first round without investor connections",
+      "context": "Pre-seed, first company, posting in r/startups and r/venturecapital, often with early revenue or letters of intent",
+      "primary": true,
+      "pain_ids": [
+        "pain_investor_access",
+        "pain_traction_bar",
+        "pain_pitch_story"
+      ],
+      "jtbd_forces": {
+        "push": [
+          "q_no_meetings",
+          "q_zero_connections"
+        ],
+        "pull": [
+          "q_mutual_traction"
+        ],
+        "anxiety": [
+          "q_not_ready",
+          "q_roulette"
+        ],
+        "habit": []
+      },
+      "hook_ids": [
+        "hook_no_meetings",
+        "hook_which_proof"
+      ],
+      "anti_personas": [
+        {
+          "segment": "Founders with strong traction who reach funds directly",
+          "reason": "They get meetings without introductions; the access pain is not theirs.",
+          "quote_ids": [
+            "q_warm_overrated"
+          ]
+        }
+      ]
+    }
+  ],
+  "language_bank": [],
+  "marketing_copy": {
+    "candidate_headlines": [
+      {
+        "text": "My startup has a working product with paying customers and I can't even get meetings with VCs.",
+        "source_quote_id": "q_no_meetings"
+      },
+      {
+        "text": "Even with signed LOIs from big companies it’s hard to raise.",
+        "source_quote_id": "q_loi"
+      },
+      {
+        "text": "Warm intros only work if the mutual has already seen real traction.",
+        "source_quote_id": "q_mutual_traction"
+      }
+    ],
+    "candidate_subheads": [
+      {
+        "text": "I'm not rich, and neither is my family. I have zero connections to VCs or to big money.",
+        "source_quote_id": "q_zero_connections"
+      },
+      {
+        "text": "A pedigree background buys you warm intros, cheaper trust and a safety net",
+        "source_quote_id": "q_pedigree"
+      },
+      {
+        "text": "Raising a pre-seed at $500k ARR is still way above market I think",
+        "source_quote_id": "q_above_market"
+      },
+      {
+        "text": "Traction doesn’t have to mean revenue, but revenue is king.",
+        "source_quote_id": "q_revenue_king"
+      },
+      {
+        "text": "Skip the cold emails.",
+        "source_quote_id": "q_skip_cold"
+      }
+    ],
+    "objection_responses": []
+  },
+  "weak_signals": [
+    {
+      "pain_id": "pain_pitch_story",
+      "summary": "Turning an early company into one story an investor can repeat",
+      "distinct_authors": 4,
+      "distinct_communities": 1,
+      "quote_ids": [
+        "q_one_pager",
+        "q_one_sentence",
+        "q_one_wedge"
+      ]
+    },
+    {
+      "pain_id": "pain_vc_misalignment",
+      "summary": "Pre-seed investors bet on a few winners and expect the rest to fail, which founders read as misalignment",
+      "distinct_authors": 4,
+      "distinct_communities": 3,
+      "quote_ids": [
+        "q_roulette",
+        "q_not_aligned"
+      ]
+    },
+    {
+      "pain_id": "pain_intro_black_box",
+      "summary": "Introductions disappear: the connector never learns what happened",
+      "distinct_authors": 3,
+      "distinct_communities": 1,
+      "quote_ids": [
+        "q_intro_never"
+      ]
+    }
+  ],
+  "rejected_pains": [
+    {
+      "summary": "Warm introductions to find first clients, vendors or a cofounder",
+      "reason": "Same words, different market: these threads are about sales and hiring, not the raise. Labelled not relevant."
+    },
+    {
+      "summary": "Fundraising mechanics for novices",
+      "reason": "One Stack Exchange question in the previous run, none in this one."
+    }
+  ],
+  "recommendations": [
+    {
+      "text": "Test founder-facing copy that leads with getting the first investor meeting, in the founders' words, against copy that leads with the programme content.",
+      "falsified_if": "The access-led variant converts no better on the same traffic, or the next watch run shows the access pain falling.",
+      "quote_ids": [
+        "q_no_meetings",
+        "q_zero_connections"
+      ]
+    },
+    {
+      "text": "Publish a sourced piece on what proof pre-seed investors ask for, since practitioners in the corpus contradict each other on the bar.",
+      "falsified_if": "Readers' replies say the bar was already clear to them, or the piece draws less engagement than the account's usual posts.",
+      "quote_ids": [
+        "q_loi",
+        "q_above_market",
+        "q_revenue_king"
+      ]
+    },
+    {
+      "text": "Answer the programme doubts on the application page with what the programme can show, before using introductions as a selling point.",
+      "falsified_if": "Applicants never raise programme quality or introductions in their questions.",
+      "quote_ids": [
+        "q_program_bad",
+        "q_overindex",
+        "q_warm_overrated"
+      ]
+    }
+  ],
+  "limitations": [
+    "Fictional example: the corpus, the recorded API answers, the authors, ids and URLs were written to show the agent's output and describe no real post, person or company.",
+    "English sources only; no French community was collected in this run.",
+    "Reddit comes from the Arctic Shift archive: deleted comments are absent and the most recent days may be missing.",
+    "The App Store feed returned no review for Tablesplit in this run, so there is no review mining.",
+    "Hacker News search for the exact phrase pre-seed returns mostly hiring threads; Stack Exchange has no active startup site."
+  ],
+  "changes": {
+    "schema_version": "2.0",
+    "previous_window": {
+      "since": "2026-04-15",
+      "until": "2026-07-13",
+      "days": 90
+    },
+    "current_window": {
+      "since": "2026-07-14",
+      "until": "2026-10-12",
+      "days": 91
+    },
+    "rules": {
+      "rise_ratio": 1.5,
+      "min_delta_per_30_days": 2.0
+    },
+    "pains": [
+      {
+        "pain_id": "pain_vc_misalignment",
+        "status": "new",
+        "previous": {
+          "distinct_authors": 0,
+          "per_30_days": 0.0,
+          "escalated": false
+        },
+        "current": {
+          "distinct_authors": 4,
+          "per_30_days": 1.3,
+          "escalated": false
+        },
+        "newly_escalated": false,
+        "no_longer_escalated": false,
+        "lower_bound": true
+      },
+      {
+        "pain_id": "pain_intro_black_box",
+        "status": "new",
+        "previous": {
+          "distinct_authors": 0,
+          "per_30_days": 0.0,
+          "escalated": false
+        },
+        "current": {
+          "distinct_authors": 3,
+          "per_30_days": 1.0,
+          "escalated": false
+        },
+        "newly_escalated": false,
+        "no_longer_escalated": false,
+        "lower_bound": false
+      },
+      {
+        "pain_id": "pain_traction_bar",
+        "status": "rising",
+        "previous": {
+          "distinct_authors": 3,
+          "per_30_days": 1.0,
+          "escalated": false
+        },
+        "current": {
+          "distinct_authors": 10,
+          "per_30_days": 3.3,
+          "escalated": true
+        },
+        "newly_escalated": true,
+        "no_longer_escalated": false,
+        "lower_bound": true
+      },
+      {
+        "pain_id": "pain_founder_salary",
+        "status": "disappeared",
+        "previous": {
+          "distinct_authors": 3,
+          "per_30_days": 1.0,
+          "escalated": false
+        },
+        "current": {
+          "distinct_authors": 0,
+          "per_30_days": 0.0,
+          "escalated": false
+        },
+        "newly_escalated": false,
+        "no_longer_escalated": false,
+        "lower_bound": true
+      },
+      {
+        "pain_id": "pain_investor_access",
+        "status": "stable",
+        "previous": {
+          "distinct_authors": 7,
+          "per_30_days": 2.3,
+          "escalated": true
+        },
+        "current": {
+          "distinct_authors": 9,
+          "per_30_days": 3.0,
+          "escalated": true
+        },
+        "newly_escalated": false,
+        "no_longer_escalated": false,
+        "lower_bound": true
+      },
+      {
+        "pain_id": "pain_pitch_story",
+        "status": "stable",
+        "previous": {
+          "distinct_authors": 2,
+          "per_30_days": 0.7,
+          "escalated": false
+        },
+        "current": {
+          "distinct_authors": 4,
+          "per_30_days": 1.3,
+          "escalated": false
+        },
+        "newly_escalated": false,
+        "no_longer_escalated": false,
+        "lower_bound": true
+      }
+    ],
+    "summary": {
+      "new": [
+        "pain_vc_misalignment",
+        "pain_intro_black_box"
+      ],
+      "rising": [
+        "pain_traction_bar"
+      ],
+      "falling": [],
+      "disappeared": [
+        "pain_founder_salary"
+      ],
+      "stable": [
+        "pain_investor_access",
+        "pain_pitch_story"
+      ]
+    },
+    "newly_escalated": [
+      "pain_traction_bar"
+    ],
+    "no_longer_escalated": [],
+    "sources": [
+      {
+        "job_id": "reddit-ycombinator-raise",
+        "previous": "quota",
+        "current": "ok",
+        "message": ""
+      }
+    ],
+    "competitors": {
+      "new": [
+        "Cohort Zero",
+        "Deckpeek",
+        "Hatchery Twelve",
+        "SAFE",
+        "cold email",
+        "friends and family round"
+      ],
+      "gone": [
+        "accelerators"
+      ]
+    },
+    "new_phrases": []
+  },
+  "usage": "Quotes are public strangers' words about a problem: reuse them as language (pain phrasing, objections, headline raw material), verbatim and in their original language, with the permalink kept in the consumer's report. Never present one as a testimonial of the founder's product, never imply its author is a customer, never attach it to a company or a face. author_hash is a pseudonym: never resolve it. Hooks with verbatim false are analyst lines and go through the consumer's claims gate like its own copy."
+}

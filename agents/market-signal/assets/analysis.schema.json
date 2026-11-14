@@ -1,0 +1,186 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/tns-research/fog-agents/agents/market-signal/assets/analysis.schema.json",
+  "title": "market-signal analysis spec (runs/<YYYYMMDD>/analysis.json)",
+  "description": "The only file the model writes after labels.jsonl. It names pains, cites quotes by record_id + passage, and builds hooks, objections, angles and personas on quote ids. It holds no count and no quote text of its own: build_handoff.py extracts the exact text from the corpus, reads every number from compute_signals.py, and writes the sidecar and the report.",
+  "type": "object",
+  "required": ["schema_version", "market", "window", "summary", "pains", "quotes"],
+  "additionalProperties": false,
+  "$defs": {
+    "id_list": { "type": "array", "items": { "type": "string", "pattern": "^q_[a-z0-9_]+$" } },
+    "force": { "enum": ["push", "pull", "anxiety", "habit"] },
+    "awareness": { "enum": ["unaware", "problem_aware", "solution_aware", "product_aware", "most_aware"] },
+    "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" }
+  },
+  "properties": {
+    "schema_version": { "const": "2.0" },
+    "project": { "type": "string" },
+    "market": { "type": "string", "minLength": 3 },
+    "language": { "type": "string" },
+    "geography": { "type": "string" },
+    "as_of": { "$ref": "#/$defs/date" },
+    "window": {
+      "type": "object",
+      "required": ["since", "until"],
+      "additionalProperties": false,
+      "properties": { "since": { "$ref": "#/$defs/date" }, "until": { "$ref": "#/$defs/date" } }
+    },
+    "summary": { "type": "string", "minLength": 20, "description": "3 to 4 sentences of analyst prose. No number: the report prints the computed ones next to it." },
+    "pains": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["pain_id", "summary", "force"],
+        "additionalProperties": false,
+        "properties": {
+          "pain_id": { "type": "string", "pattern": "^pain_[a-z0-9_]+$" },
+          "summary": { "type": "string", "minLength": 5 },
+          "kind": { "enum": ["pain", "meta_problem", "desire"] },
+          "force": { "$ref": "#/$defs/force" },
+          "awareness_stage": { "$ref": "#/$defs/awareness" },
+          "existing_solution": { "type": ["string", "null"], "description": "For a meta_problem: the solution whose use creates the problem." },
+          "aliases": { "type": "array", "items": { "type": "string" }, "description": "pain_id values of previous runs that mean the same pain (watch mode)." }
+        }
+      }
+    },
+    "rejected_pains": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["summary", "reason"],
+        "additionalProperties": false,
+        "properties": { "summary": { "type": "string" }, "reason": { "type": "string" } }
+      }
+    },
+    "quotes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["quote_id", "record_id", "passage"],
+        "additionalProperties": false,
+        "properties": {
+          "quote_id": { "type": "string", "pattern": "^q_[a-z0-9_]+$" },
+          "record_id": { "type": ["string", "null"] },
+          "passage": { "type": "string", "minLength": 2, "description": "Copied from the record text, contiguous, no ellipsis. Cut a long post into several quotes." },
+          "pain_id": { "type": ["string", "null"] },
+          "persona_id": { "type": ["string", "null"] },
+          "usable_as": { "type": "array", "items": { "enum": ["headline", "support", "hook", "objection", "outreach_opener", "quote_slide"] } }
+        }
+      }
+    },
+    "hooks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["hook_id", "text", "verbatim", "quote_ids"],
+        "additionalProperties": false,
+        "properties": {
+          "hook_id": { "type": "string", "pattern": "^hook_[a-z0-9_]+$" },
+          "text": { "type": "string", "minLength": 3 },
+          "verbatim": { "type": "boolean", "description": "true: text is a contiguous part of one of its quotes (checked). false: an analyst line built on the quotes, which consumers treat as their own copy." },
+          "pain_id": { "type": ["string", "null"] },
+          "quote_ids": { "$ref": "#/$defs/id_list", "minItems": 1 }
+        }
+      }
+    },
+    "objections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["objection_id", "text", "force", "quote_ids"],
+        "additionalProperties": false,
+        "properties": {
+          "objection_id": { "type": "string", "pattern": "^obj_[a-z0-9_]+$" },
+          "text": { "type": "string", "description": "The objection in the buyer's words: a contiguous part of one of its quotes (checked)." },
+          "force": { "enum": ["anxiety", "habit"] },
+          "pain_id": { "type": ["string", "null"] },
+          "quote_ids": { "$ref": "#/$defs/id_list", "minItems": 1 }
+        }
+      }
+    },
+    "angles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["angle_id", "pain_id", "force", "awareness_stage", "funnel_stage", "headline_quote_id", "formats"],
+        "additionalProperties": false,
+        "properties": {
+          "angle_id": { "type": "string", "pattern": "^angle_[a-z0-9_]+$" },
+          "pain_id": { "type": "string" },
+          "force": { "$ref": "#/$defs/force" },
+          "awareness_stage": { "$ref": "#/$defs/awareness" },
+          "funnel_stage": { "enum": ["tofu", "mofu", "bofu"] },
+          "headline_quote_id": { "type": "string", "pattern": "^q_[a-z0-9_]+$" },
+          "support_quote_ids": { "$ref": "#/$defs/id_list" },
+          "contrast": { "type": ["string", "null"], "description": "Status quo or named alternative the angle sets itself against." },
+          "formats": { "type": "array", "minItems": 1, "items": { "enum": ["carousel", "static_ad", "cold_outreach", "landing_page"] } },
+          "why": { "type": "string" }
+        }
+      }
+    },
+    "existing_solutions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "type", "quote_ids"],
+        "additionalProperties": false,
+        "properties": {
+          "name": { "type": "string" },
+          "type": { "enum": ["direct", "indirect", "status_quo"] },
+          "sentiment": { "enum": ["positive", "negative", "mixed"] },
+          "quote_ids": { "$ref": "#/$defs/id_list" }
+        }
+      }
+    },
+    "personas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["persona_id", "name", "context", "primary"],
+        "additionalProperties": false,
+        "properties": {
+          "persona_id": { "type": "string", "pattern": "^persona_[a-z0-9_]+$" },
+          "name": { "type": "string", "description": "Descriptive title, never a made-up person." },
+          "context": { "type": "string" },
+          "primary": { "type": "boolean" },
+          "pain_ids": { "type": "array", "items": { "type": "string" } },
+          "jtbd_forces": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "push": { "$ref": "#/$defs/id_list" }, "pull": { "$ref": "#/$defs/id_list" },
+              "anxiety": { "$ref": "#/$defs/id_list" }, "habit": { "$ref": "#/$defs/id_list" }
+            }
+          },
+          "hook_ids": { "type": "array", "items": { "type": "string" } },
+          "anti_personas": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["segment", "reason", "quote_ids"],
+              "additionalProperties": false,
+              "properties": { "segment": { "type": "string" }, "reason": { "type": "string" }, "quote_ids": { "$ref": "#/$defs/id_list" } }
+            }
+          }
+        }
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["text", "falsified_if"],
+        "additionalProperties": false,
+        "properties": {
+          "text": { "type": "string" },
+          "falsified_if": { "type": "string", "description": "The observation that would prove the recommendation wrong." },
+          "quote_ids": { "$ref": "#/$defs/id_list" },
+          "source_urls": { "type": "array", "items": { "type": "string", "pattern": "^https?://" } }
+        }
+      }
+    },
+    "limitations": { "type": "array", "items": { "type": "string" } }
+  }
+}

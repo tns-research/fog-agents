@@ -1,0 +1,290 @@
+{
+  "id": "riso-print",
+  "name": "Riso print",
+  "summary": "A risograph print on uncoated paper: near-black key plate plus one or two spot inks, halftone fades, hard offset stickers and a slight misregistration on every title.",
+  "best_for": [
+    "culture and events",
+    "playful education",
+    "community and program announcements",
+    "punchy numbers with one strong claim",
+    "zine-like explainers"
+  ],
+  "avoid_for": [
+    "sober corporate or legal topics",
+    "dense research summaries that need a quiet serif voice",
+    "photo-led stories where the photo must keep its original colours"
+  ],
+  "mood": "light",
+  "rules": {
+    "grid": "Single column on 80 px margins. Titles hang from the top of the frame; a heavy 4 px ink rule carries the footer (source left, handle and folio right, in mono). Covers and the CTA put the logo top-left, small.",
+    "type": "Condensed heavy grotesque (Archivo at width 62 to 75, weight 800 to 900) in uppercase for titles, stat numerals, quotes and the CTA; a sturdy grotesque (Schibsted Grotesk) for body, list items and chart text; a monospace (IBM Plex Mono) for sources, captions, folios and chart headings. Every display line gets the misregistration: a zero-blur text-shadow a few px off, in the second ink at partial opacity.",
+    "density": "One idea per slide. About half the slides are calm (plain paper, one huge numeral or a poster quote), the other half dense (chart, list, screenshot) and carry a halftone fade in the top margin. A text slide is a title plus at most 55 words.",
+    "accent": "Two spot inks. The first brand colour is the misregistration drum (title ghosts, offset shadows of plates); the contrast-safe accent roles do the rest: highlight under ink words (accent-fill, 7:1), highlighted bar and URL underline (accent-mark), list stickers. Without a brand the drums are fluorescent pink and federal blue.",
+    "photo": "Shown whole (contain) on a halftone mat inside a 3 px ink frame with a hard offset shadow in the second ink. The photo is printed as a key-plate duotone: grayscale, multiplied over the dotted mat so its highlights take the screen.",
+    "texture": "Paper grain on every slide (SVG feTurbulence mask, about 7 %), mottled grain on the ink plate, halftone dot fades (CSS radial-gradient rows of decreasing dot size) only in margins and on mats, never under body text above 10 %."
+  },
+  "palette": {
+    "paper": "#f2ede1",
+    "ink": "#191814",
+    "muted": "#57524a",
+    "rule": "#191814",
+    "chart_base": "#191814",
+    "chart_base_2": "#6f695d",
+    "chart_base_3": "#b3ab9a",
+    "mat": "#e6dfcd",
+    "accent": "#ff48b0",
+    "accent_2": "#3d5588",
+    "inverse": {
+      "paper": "#191814",
+      "ink": "#f2ede1",
+      "muted": "#bdb6a6",
+      "rule": "#f2ede1",
+      "chart_base": "#f2ede1",
+      "chart_base_2": "#9a9383",
+      "chart_base_3": "#5c574d",
+      "mat": "#2a2823"
+    }
+  },
+  "fonts": {
+    "display": {
+      "family": "Archivo",
+      "google": "Archivo:wdth,wght@62..125,100..900",
+      "fallback": "'Arial Narrow', 'Helvetica Neue Condensed', Impact, sans-serif"
+    },
+    "text": {
+      "family": "Schibsted Grotesk",
+      "google": "Schibsted Grotesk:ital,wght@0,400..900;1,400..900",
+      "fallback": "'Helvetica Neue', Helvetica, Arial, sans-serif"
+    },
+    "mono": {
+      "family": "IBM Plex Mono",
+      "google": "IBM Plex Mono:wght@400;500;600",
+      "fallback": "ui-monospace, Menlo, Consolas, monospace"
+    }
+  },
+  "brand": {
+    "fonts": false,
+    "inverse_from_brand": true
+  },
+  "chrome": {
+    "logo": [
+      "cover",
+      "cta"
+    ],
+    "handle": [
+      "content"
+    ],
+    "folio": true
+  },
+  "safe_margin": 64,
+  "type_scale": {
+    "cover_title": {
+      "min": 96,
+      "max": 230,
+      "lines": 5,
+      "steps": [
+        96,
+        108,
+        120,
+        132,
+        148,
+        164,
+        180,
+        200,
+        230
+      ]
+    },
+    "cover_title_media": {
+      "min": 84,
+      "max": 164,
+      "lines": 4,
+      "steps": [
+        84,
+        92,
+        100,
+        108,
+        120,
+        132,
+        148,
+        164
+      ]
+    },
+    "cover_sub": {
+      "min": 32,
+      "max": 40,
+      "lines": 4
+    },
+    "title": {
+      "min": 64,
+      "max": 120,
+      "lines": 4,
+      "steps": [
+        64,
+        72,
+        80,
+        90,
+        100,
+        110,
+        120
+      ]
+    },
+    "title_media": {
+      "min": 56,
+      "max": 88,
+      "lines": 3,
+      "steps": [
+        56,
+        64,
+        72,
+        80,
+        88
+      ]
+    },
+    "title@text": {
+      "min": 72,
+      "max": 150,
+      "lines": 5,
+      "steps": [
+        72,
+        80,
+        90,
+        100,
+        110,
+        120,
+        132,
+        150
+      ]
+    },
+    "title@chart": {
+      "min": 60,
+      "max": 96,
+      "lines": 3,
+      "steps": [
+        60,
+        68,
+        76,
+        84,
+        96
+      ]
+    },
+    "title@list": {
+      "min": 64,
+      "max": 110,
+      "lines": 4,
+      "steps": [
+        64,
+        72,
+        80,
+        90,
+        100,
+        110
+      ]
+    },
+    "sub": {
+      "min": 30,
+      "max": 38,
+      "lines": 3
+    },
+    "body": {
+      "min": 32,
+      "max": 44,
+      "lines": 12
+    },
+    "list": {
+      "min": 36,
+      "max": 54,
+      "lines": 3
+    },
+    "stat_value": {
+      "min": 200,
+      "max": 600,
+      "lines": 1
+    },
+    "stat_label": {
+      "min": 40,
+      "max": 64,
+      "lines": 3
+    },
+    "stat_context": {
+      "min": 30,
+      "max": 36,
+      "lines": 5
+    },
+    "chart_title": {
+      "min": 26,
+      "max": 30,
+      "lines": 2
+    },
+    "quote": {
+      "min": 64,
+      "max": 150,
+      "lines": 7
+    },
+    "cta_title": {
+      "min": 80,
+      "max": 150,
+      "lines": 4
+    },
+    "cta": {
+      "min": 80,
+      "max": 220,
+      "lines": 5,
+      "steps": [
+        80,
+        90,
+        100,
+        110,
+        120,
+        132,
+        146,
+        160,
+        180,
+        200,
+        220
+      ]
+    },
+    "cta_sub": {
+      "min": 30,
+      "max": 42,
+      "lines": 4
+    },
+    "cover_sub_media": {
+      "min": 30,
+      "max": 38,
+      "lines": 6
+    }
+  },
+  "budgets": {
+    "title_words": 12,
+    "cover_title_words": 12,
+    "body_words": 55,
+    "list_items": 5
+  },
+  "chart_box": {
+    "default": [
+      920,
+      760
+    ],
+    "chart": [
+      920,
+      800
+    ]
+  },
+  "cover_layouts": [
+    "cover-a",
+    "cover-b"
+  ],
+  "layouts": {
+    "cover-a": "Poster: logo top-left, a halftone fade bleeding from the top edge, the title stacked huge in condensed uppercase with its misregistered ghost. With a photo: the title tops the page, the photo plate (halftone mat, offset shadow) and the standfirst share the bottom row.",
+    "cover-b": "Plate and sticker: the photo plate (or a big halftone disc when there is none) fills the upper part, the title sits under it and its accent words become a tilted sticker with an ink border and a hard offset shadow.",
+    "text": "Title stacked large from the top, body in the grotesque below a heavy ink rule; accent words of the body on a fluorescent highlight.",
+    "list": "Title, then items separated by ink rules; numbered items carry square sticker numerals (accent fill, ink border, hard shadow).",
+    "stat": "Calm poster: one huge condensed numeral with its offset ghost, the label in condensed uppercase, a context line under a heavy rule.",
+    "chart": "Title, a mono chart heading over a rule, bars in solid ink and the highlighted bar in the accent with a hard ink offset.",
+    "quote": "Calm poster: the quote set in condensed uppercase with oversized marks in the second ink, attribution in mono under a short rule.",
+    "media": "Title over a matted photo or a browser-framed screenshot drawn as a sticker (ink border, hard shadow), numbered annotations as square stamps.",
+    "logos": "Title, then logos in ink on a quiet row, a halftone fade in the margin.",
+    "visual": "Title over a bespoke SVG drawn in ink with one accent fill, offset ghost on the accent shapes.",
+    "cta": "Logo top-left, the action set huge in condensed uppercase, the URL as an ink-bordered sticker with a hard shadow, the standfirst under it."
+  }
+}

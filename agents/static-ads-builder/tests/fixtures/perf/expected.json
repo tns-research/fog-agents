@@ -1,0 +1,41 @@
+{
+  "account": "post_click",
+  "ads": {
+    "acme_01_tofu_anti-category_bold-statement_4x5": [
+      "winner",
+      "healthy"
+    ],
+    "acme_02_tofu_quiet-confession_meme-static_4x5": [
+      "loser",
+      "creative"
+    ],
+    "acme_03_mofu_process-reveal_three-benefits-card_4x5": [
+      "loser",
+      "post_click"
+    ],
+    "acme_04_mofu_comparison-without-a-competitor_us-vs-them-comparison_1x1": [
+      "winner",
+      "healthy"
+    ],
+    "acme_05_bofu_easy-first-step_mini-landing-page_4x5": [
+      "loser",
+      "post_click"
+    ],
+    "acme_06_bofu_cost-reframe_cost-reframe-card_4x5": [
+      "insufficient_data",
+      "healthy"
+    ],
+    "Old creative v2 FINAL": [
+      "winner",
+      "healthy"
+    ],
+    "acme_07_tofu_specific-ritual_ugc-text-overlay_9x16": [
+      "loser",
+      "both"
+    ],
+    "acme_08_mofu_skeptic-disarm_crossed-out-problems_4x5": [
+      "inconclusive",
+      "healthy"
+    ]
+  }
+}

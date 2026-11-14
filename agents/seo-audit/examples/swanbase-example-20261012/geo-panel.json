@@ -1,0 +1,29 @@
+{
+  "_comment": "Fictional GEO panel for the fictional site swanbase.example (seo-audit tests). Competitors are invented names on .example domains.",
+  "schema_version": "1.0",
+  "brand": { "name": "swanbase", "aliases": ["swan base"], "domains": ["swanbase.example"] },
+  "competitors": [
+    { "name": "Northpier", "aliases": [], "domains": ["northpier.example"] },
+    { "name": "Launchyard", "aliases": ["Launch Yard"], "domains": ["launchyard.example"] }
+  ],
+  "language": "en",
+  "draws": 3,
+  "surfaces": ["perplexity", "chatgpt", "claude"],
+  "topics": [
+    {
+      "id": "paris-accelerators",
+      "name": "Pre-seed accelerators in Paris",
+      "questions": [
+        { "id": "q1", "text": "Which pre-seed accelerators in Paris accept first-time founders?", "source": "icp.jobs[0]" },
+        { "id": "q2", "text": "Is there a free startup accelerator in Paris?", "source": "autocomplete: free startup accelerator paris" }
+      ]
+    },
+    {
+      "id": "first-pitch",
+      "name": "Preparing a first pitch",
+      "questions": [
+        { "id": "q1", "text": "How should I prepare my first pitch to investors?", "source": "People also ask, query first pitch accelerator" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/tns-research/fog-agents/agents/static-ads-builder/assets/recipe.schema.json",
+  "title": "static-ads-builder recipe.json (mode winning_recipe)",
+  "description": "The decomposition of the winning ad (named by scripts/perf.py or given by the founder). scripts/recipe_variants.py seed fills the measured fields from the ad as it ran; the model writes the judgement fields (hook type, layout zones, palette roles). scripts/recipe_variants.py build turns it and a hooks.json into ads.json variants that keep the structure and change one variable each.",
+  "type": "object",
+  "required": ["schema_version", "source", "angle", "hook_type", "text_length", "layout", "style", "palette", "cta", "funnel_stage", "formats", "control"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "source": {
+      "type": "object",
+      "required": ["ad_name", "picked_by", "why"],
+      "additionalProperties": false,
+      "properties": {
+        "ad_name": { "type": "string", "minLength": 1, "description": "The winner as named in Ads Manager." },
+        "picked_by": { "type": "string", "enum": ["perf", "manual"], "description": "perf: first winner of ads-performance-YYYYMMDD.json. manual: the founder named it." },
+        "why": { "type": "string", "minLength": 1, "description": "The metric that made it the winner, as read in the perf file, or the founder's reason." },
+        "perf_file": { "type": "string", "description": "ads-performance-YYYYMMDD.json it was read from, relative to this file." },
+        "spec": { "type": "string", "description": "ads.json of the run that produced the winner, relative to this file. Its meta, sources and brand carry over to the variants." }
+      }
+    },
+    "angle": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$", "description": "Angle slug (assets/ad-library.md section 1). Kept by every variant." },
+    "hook_type": { "type": "string", "enum": ["problem-agitate-solve", "before-after", "question", "number-list", "contrarian", "story-open", "direct-promise", "urgency"], "description": "Headline structure of the winner (assets/ad-library.md section 2). New hooks keep it." },
+    "text_length": {
+      "type": "object",
+      "required": ["headline_words", "subhead_words", "band"],
+      "additionalProperties": false,
+      "properties": {
+        "headline_words": { "type": "integer", "minimum": 1, "description": "Measured on the control headline." },
+        "subhead_words": { "type": "integer", "minimum": 0 },
+        "band": { "type": "string", "enum": ["short", "medium", "long"], "description": "short: headline up to 8 words. medium: 9 to 14. long: 15 and more." }
+      }
+    },
+    "layout": {
+      "type": "object",
+      "required": ["zones", "hierarchy"],
+      "additionalProperties": false,
+      "properties": {
+        "zones": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 10,
+          "items": {
+            "type": "object",
+            "required": ["role", "area"],
+            "additionalProperties": false,
+            "properties": {
+              "role": { "$ref": "#/$defs/role" },
+              "area": { "type": "string", "enum": ["top", "upper-third", "center", "lower-third", "bottom", "left", "right", "full"] },
+              "note": { "type": "string" }
+            }
+          }
+        },
+        "hierarchy": { "type": "array", "minItems": 2, "maxItems": 10, "items": { "$ref": "#/$defs/role" }, "description": "Reading order, first seen first." }
+      }
+    },
+    "style": {
+      "type": "string",
+      "enum": ["ugc-text-overlay", "meme-static", "testimonial-screenshot", "before-after-asymmetric", "ingredient-origin-strip", "cost-reframe-card", "hybrid-2d-3d-fusion", "three-benefits-card", "us-vs-them-comparison", "crossed-out-problems", "social-proof-card", "feature-callout-arrows", "myth-vs-fact", "reply-to-comment", "bold-statement", "mini-landing-page", "benefit-timeline", "flowchart-decision"]
+    },
+    "palette": {
+      "type": "object",
+      "required": ["surface", "accent_role"],
+      "additionalProperties": false,
+      "properties": {
+        "surface": { "type": "string", "enum": ["brand", "light", "accent"] },
+        "accent_role": { "type": "string", "minLength": 1, "description": "Where the accent colour sits on the winner (emphasis word, button, a band)." },
+        "colors": { "type": "array", "items": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" }, "description": "brand.json colours seen on the render, when worth naming." }
+      }
+    },
+    "cta": {
+      "type": "object",
+      "required": ["on_ad", "meta"],
+      "additionalProperties": false,
+      "properties": {
+        "on_ad": { "type": "string", "description": "Button text on the creative, empty when there was none." },
+        "meta": { "type": "string", "description": "Meta call-to-action type of the winner." }
+      }
+    },
+    "funnel_stage": { "type": "string", "enum": ["tofu", "mofu", "bofu"] },
+    "formats": { "type": "array", "minItems": 1, "maxItems": 3, "items": { "type": "string", "enum": ["1:1", "4:5", "9:16"] } },
+    "control": { "type": "object", "description": "The winning ad as an ads.json ad object (validated against assets/ads.schema.json $defs/ad). Every variant is a copy of it with one variable changed." },
+    "notes": { "type": "string" }
+  },
+  "$defs": {
+    "role": { "type": "string", "enum": ["badge", "headline", "subhead", "media", "bullets", "columns", "proof", "comment", "callouts", "cta", "logo"] }
+  }
+}

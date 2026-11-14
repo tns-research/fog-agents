@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/tns-research/fog-agents/agents/market-signal/assets/labels.schema.json",
+  "title": "market-signal label (one line of runs/<YYYYMMDD>/labels.jsonl)",
+  "description": "Written by the model after reading every record of the corpus (skills/coding-the-corpus). One line per record read, relevant or not. compute_signals.py counts from these lines; the model never writes a count.",
+  "type": "object",
+  "required": ["record_id", "relevant"],
+  "additionalProperties": false,
+  "properties": {
+    "record_id": { "type": "string" },
+    "relevant": { "type": "boolean" },
+    "speaker": {
+      "enum": ["user", "practitioner", "vendor", "press", "other"],
+      "description": "user: first person about their own situation. practitioner: first-hand advice from someone who did it (founder, investor, operator). vendor: promotes their own product or service. press: reports someone else's words. other: anything else."
+    },
+    "pains": { "type": "array", "items": { "type": "string", "pattern": "^pain_[a-z0-9_]+$" } },
+    "sentiment": { "enum": ["negative", "neutral", "positive", "mixed"] },
+    "forces": { "type": "array", "items": { "enum": ["push", "pull", "anxiety", "habit"] } },
+    "awareness": { "enum": ["unaware", "problem_aware", "solution_aware", "product_aware", "most_aware"] },
+    "competitors": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "note": { "type": "string" }
+  }
+}

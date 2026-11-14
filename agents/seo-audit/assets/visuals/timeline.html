@@ -1,0 +1,20 @@
+<style>
+/* timeline: 3 to 8 dated events on a vertical rule. */
+.tl { list-style: none; display: flex; flex-direction: column; }
+.ev { display: grid; grid-template-columns: 210px 36px 1fr; column-gap: 24px; position: relative; padding-bottom: 36px; }
+.ev:last-child { padding-bottom: 0; }
+.ev-d { font-family: var(--font-display); font-weight: var(--display-weight); font-size: 30px; line-height: 1.2; color: var(--accent-ink); text-align: right; }
+.ev-m { position: relative; }
+.ev-m::before { content: ""; position: absolute; left: 9px; top: 9px; width: 18px; height: 18px; border-radius: min(var(--radius), 9px); background: var(--accent); }
+.ev-m::after { content: ""; position: absolute; left: 17px; top: 35px; bottom: -28px; width: 2px; background: var(--border); }
+.ev:last-child .ev-m::after { display: none; }
+.ev-t { font-size: 26px; line-height: 1.3; font-weight: var(--body-strong); color: var(--text); padding-top: 1px; }
+.ev-x { font-size: 22px; line-height: 1.5; color: var(--text-secondary); margin-top: 6px; }
+</style>
+<main class="canvas" data-kind="timeline">
+  {{head}}
+  <section class="v-body">
+    <ol class="tl">{{events}}</ol>
+  </section>
+  {{foot}}
+</main>

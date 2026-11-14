@@ -1,0 +1,23 @@
+{
+  "_comment": "Copied to <your-projects-root>/<project>/cold-outreach-builder/config.json on the first run. Replace placeholders; never commit a real config to the agent folder. goal: book call | try free | give feedback | partnership | relationship. sender.first_name is rendered into {{sender_first_name}} at export only, from this private file; leave it empty to let the sequencer fill the token. sender.domain and sender.dkim_selector feed scripts/check_sender.py (DNS only, never an SMTP probe). research.agent_cmd is an optional model CLI that reads a brief on stdin (run_dossiers.py run); empty means sub-agents or sequential work in the session. Project copies of criteria.json, limits.json and reply-rules.json, next to this file, override the shipped assets key by key. Optional: a \"tools\" object (same keys as shared/tools.example.json) overrides the project's tool choices for this agent only.",
+  "project": "<project-slug>",
+  "offer": "<2-sentence offer: the promise + the unique angle>",
+  "icp": "<role + company size + vertical + geography>",
+  "goal": "give feedback",
+  "channel": "email",
+  "prospect_list": null,
+  "language": "en",
+  "seniority": "founder",
+  "validated_template": null,
+  "sender": {
+    "first_name": "",
+    "domain": "<sending domain, e.g. outreach.example.com>",
+    "dkim_selector": "",
+    "inbox_age_days": null
+  },
+  "research": {
+    "wave_size": 3,
+    "agent_cmd": ""
+  },
+  "state_path": "state/state.json"
+}

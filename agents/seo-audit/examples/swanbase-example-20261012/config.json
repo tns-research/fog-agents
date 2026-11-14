@@ -1,0 +1,28 @@
+{
+  "_comment": "Example config of the fictional swanbase.example run. Every number of this example (Search Console, answers) is invented for the tests; the site is served locally by tests/fixture_server.py.",
+  "project": "swanbase-example",
+  "domain": "https://swanbase.example/",
+  "target_queries": ["pre-seed accelerator paris", "first pitch accelerator", "free startup accelerator paris"],
+  "period_days": 28,
+  "country": "all",
+  "serp_country": "fr",
+  "language": "en",
+  "crawl": { "start_url": "http://127.0.0.1:8765/", "max_pages": 200, "delay_s": 0, "as_origin": "https://swanbase.example" },
+  "repo_path": null,
+  "briefs": { "top": 8 },
+  "geo": {
+    "draws": 3,
+    "surfaces": ["perplexity", "chatgpt", "claude"],
+    "provider": { "perplexity": "command", "chatgpt": "manual", "claude": "none" },
+    "command": "python3 agents/seo-audit/tests/fixtures/geo/fake_answers.py",
+    "brand_aliases": ["swan base"],
+    "competitors": [
+      { "name": "Northpier", "aliases": [], "domains": ["northpier.example"] },
+      { "name": "Launchyard", "aliases": ["Launch Yard"], "domains": ["launchyard.example"] }
+    ]
+  },
+  "gsc_bands": {},
+  "crawl_rules": {},
+  "eeat": {},
+  "tools": { "search_console": "manual", "serp": "none", "ai_answers": "manual" }
+}

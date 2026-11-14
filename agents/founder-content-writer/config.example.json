@@ -1,0 +1,10 @@
+{
+  "_comment": "founder-content-writer per-project config. Copied to <your-projects-root>/<project>/founder-content-writer/config.json on the first run. language: the founder's language when project-context does not say it (null: voice pack, then context.json, then the raw material). address: null keeps the default of assets/voice-defaults.json (French posts use vous); tu or vous overrides it. networks: default networks of a post, linkedin and x. posts_per_batch: how many posts a batch aims for when the material allows it; never padded. x_allow_thread: false keeps X to one tweet of 280 weighted characters; true also needs x_allow_thread in content-publisher's queue settings. allowed_names: tools, places or other names the posts may use without a cited passage. Optional: a \"tools\" object (same keys as shared/tools.example.json, for example {\"critic\": \"builtin\", \"copy_lint\": \"local\", \"transcription\": \"manual\"}) overrides the project's tools.json for this agent.",
+  "project": "<project-slug>",
+  "language": null,
+  "address": null,
+  "networks": ["linkedin", "x"],
+  "posts_per_batch": 5,
+  "x_allow_thread": false,
+  "allowed_names": []
+}

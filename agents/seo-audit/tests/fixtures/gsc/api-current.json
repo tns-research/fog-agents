@@ -1,0 +1,161 @@
+{
+ "_comment": "Fictional Search Console API export for the fictional site swanbase.example (seo-audit tests). Every number is invented for the test.",
+ "dimensions": [
+  "query",
+  "page"
+ ],
+ "startDate": "2026-09-12",
+ "endDate": "2026-10-09",
+ "rows": [
+  {
+   "keys": [
+    "swanbase",
+    "https://swanbase.example/"
+   ],
+   "clicks": 150,
+   "impressions": 300,
+   "ctr": 0.5,
+   "position": 1.1
+  },
+  {
+   "keys": [
+    "first pitch accelerator",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 12,
+   "impressions": 420,
+   "ctr": 0.0286,
+   "position": 7.8
+  },
+  {
+   "keys": [
+    "what to expect first pitch",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 0,
+   "impressions": 60,
+   "ctr": 0.0,
+   "position": 15.0
+  },
+  {
+   "keys": [
+    "startup program paris",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 9,
+   "impressions": 900,
+   "ctr": 0.01,
+   "position": 8.5
+  },
+  {
+   "keys": [
+    "pitch deck mistakes",
+    "https://swanbase.example/blog/pitch-deck-mistakes/"
+   ],
+   "clicks": 6,
+   "impressions": 300,
+   "ctr": 0.02,
+   "position": 9.0
+  },
+  {
+   "keys": [
+    "pitch deck mistakes",
+    "https://swanbase.example/blog/pitch-deck-mistakes"
+   ],
+   "clicks": 3,
+   "impressions": 160,
+   "ctr": 0.0187,
+   "position": 12.0
+  },
+  {
+   "keys": [
+    "pitch deck mistakes",
+    "https://swanbase.example/blog/first-pitch/"
+   ],
+   "clicks": 1,
+   "impressions": 90,
+   "ctr": 0.0111,
+   "position": 18.0
+  },
+  {
+   "keys": [
+    "pre seed round paris guide",
+    "https://swanbase.example/blog/orphan-guide/"
+   ],
+   "clicks": 0,
+   "impressions": 40,
+   "ctr": 0.0,
+   "position": 34.0
+  },
+  {
+   "keys": [
+    "events startup paris",
+    "https://swanbase.example/events/"
+   ],
+   "clicks": 0,
+   "impressions": 150,
+   "ctr": 0.0,
+   "position": 61.0
+  },
+  {
+   "keys": [
+    "pre-seed accelerator paris",
+    "https://swanbase.example/"
+   ],
+   "clicks": 30,
+   "impressions": 600,
+   "ctr": 0.05,
+   "position": 7.0
+  },
+  {
+   "keys": [
+    "startup accelerator paris",
+    "https://swanbase.example/"
+   ],
+   "clicks": 20,
+   "impressions": 500,
+   "ctr": 0.04,
+   "position": 8.0
+  },
+  {
+   "keys": [
+    "accelerator for first-time founders",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 14,
+   "impressions": 300,
+   "ctr": 0.0467,
+   "position": 6.5
+  },
+  {
+   "keys": [
+    "free startup accelerator",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 10,
+   "impressions": 250,
+   "ctr": 0.04,
+   "position": 9.0
+  },
+  {
+   "keys": [
+    "paris founders program",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 10,
+   "impressions": 200,
+   "ctr": 0.05,
+   "position": 7.5
+  },
+  {
+   "keys": [
+    "pre seed program europe",
+    "https://swanbase.example/program/"
+   ],
+   "clicks": 2,
+   "impressions": 400,
+   "ctr": 0.005,
+   "position": 8.2
+  }
+ ]
+}

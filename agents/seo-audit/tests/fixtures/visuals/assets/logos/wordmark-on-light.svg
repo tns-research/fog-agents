@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fictional logo for tests: Larkspur (larkspur.example). -->
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="160" viewBox="0 0 540 160">
+  <g fill="#2f5d50">
+    <circle cx="60" cy="34" r="22"/>
+    <circle cx="36" cy="80" r="22"/>
+    <circle cx="84" cy="80" r="22"/>
+    <rect x="54" y="96" width="12" height="56" rx="6"/>
+  </g>
+  <text x="140" y="112" font-family="Georgia, 'Times New Roman', serif" font-size="96" fill="#1c1b17">larkspur</text>
+</svg>

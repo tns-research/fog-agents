@@ -1,0 +1,18 @@
+<style>
+/* stat: 1 to 3 figures, each with its source printed in the card. The value
+   is fitted on one line. */
+.stats { display: grid; grid-template-columns: repeat(var(--n), 1fr); gap: 24px; }
+.stat { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 40px 36px 32px;
+  display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.stat-v { font-family: var(--font-display); font-weight: var(--display-weight); line-height: 1; color: var(--accent-ink);
+  white-space: nowrap; letter-spacing: -0.02em; font-size: 96px; }
+.stat-l { font-size: 26px; line-height: 1.38; color: var(--text); }
+.stat-s { margin-top: auto; padding-top: 6px; }
+</style>
+<main class="canvas" data-kind="stat">
+  {{head}}
+  <section class="v-body">
+    <div class="stats" style="--n:{{n}}">{{stats}}</div>
+  </section>
+  {{foot}}
+</main>

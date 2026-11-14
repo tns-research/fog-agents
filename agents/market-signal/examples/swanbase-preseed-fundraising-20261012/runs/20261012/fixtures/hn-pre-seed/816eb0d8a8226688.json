@@ -1,0 +1,125 @@
+{
+  "url": "https://hn.algolia.com/api/v1/search?query=%22pre-seed%22&tags=comment&numericFilters=created_at_i%3E%3D1783987200%2Ccreated_at_i%3C1791849600&hitsPerPage=18&page=0&advancedSyntax=true&typoTolerance=false",
+  "status": 200,
+  "fetched_at": "2026-10-12T09:00:39Z",
+  "body": {
+    "nbHits": 21,
+    "nbPages": 2,
+    "page": 0,
+    "hitsPerPage": 18,
+    "hits": [
+      {
+        "objectID": "90045669",
+        "created_at": "2026-10-05T12:22:10Z",
+        "created_at_i": 1791202930,
+        "author": "user-f39bd3",
+        "comment_text": "Watchpost | Software engineer | London or NYC | HYBRID (UK or US) | Full-time | https://watchpost.example\nScams reach people through ads, cloned shop sites and generated videos, faster than any manual review. Watchpost spots them while [...]",
+        "story_title": "Ask HN: Who is hiring? (October 2026)",
+        "story_id": 90042156,
+        "parent_id": 90042156,
+        "_tags": [
+          "comment",
+          "story_90042156"
+        ]
+      },
+      {
+        "objectID": "90044498",
+        "created_at": "2026-10-05T08:54:10Z",
+        "created_at_i": 1791190450,
+        "author": "user-cf2605",
+        "comment_text": "Quillon | Co-founder and CTO | London, UK preferred, REMOTE considered | Full-time | Pre-seed\nWe build models that forecast how clinical trials will turn out, and how much trust each forecast deserves. By linking the evidence published at [...]",
+        "story_title": "Ask HN: Who is hiring? (October 2026)",
+        "story_id": 90042156,
+        "parent_id": 90042156,
+        "_tags": [
+          "comment",
+          "story_90042156"
+        ]
+      },
+      {
+        "objectID": "90043327",
+        "created_at": "2026-10-02T07:48:10Z",
+        "created_at_i": 1790927290,
+        "author": "user-e03941",
+        "comment_text": "Fieldnote Events | Senior full-stack engineer | Berlin, Germany | REMOTE (CET) | Full-time | fieldnote.example\nWe use AI to plan company offsites.\nWe are looking for a senior engineer with ten years or more of full-stack work, a strong product and UX sense, and some experience [...]",
+        "story_title": "Ask HN: Who is hiring? (October 2026)",
+        "story_id": 90042156,
+        "parent_id": 90042156,
+        "_tags": [
+          "comment",
+          "story_90042156"
+        ]
+      },
+      {
+        "objectID": "90040985",
+        "created_at": "2026-09-29T20:08:55Z",
+        "created_at_i": 1790712535,
+        "author": "user-d1a7a0",
+        "comment_text": "If you want to try a setup like this on open-weight models (text, image, video and sound) with zero data retention, send me a message: [email]. I'll send an invite code.\nOur platform, Greenroom, is an alternative and we are not after your data. We are raising our pre-seed [...]",
+        "story_title": "Always-on agents for small teams",
+        "story_id": 90039814,
+        "parent_id": 90039814,
+        "_tags": [
+          "comment",
+          "story_90039814"
+        ]
+      },
+      {
+        "objectID": "90038643",
+        "created_at": "2026-09-25T02:27:15Z",
+        "created_at_i": 1790303235,
+        "author": "user-a62ca5",
+        "comment_text": "I think you two are using the same words with different meanings.\n\"Good enough\" in everyday speech usually means the minimum for a given requirement.\nFor security there is rarely a clean line between insecure and secure. It is a spectrum that [...]",
+        "story_title": "Security reviews in the age of good-enough AI",
+        "story_id": 90035130,
+        "parent_id": 90037472,
+        "_tags": [
+          "comment",
+          "story_90035130"
+        ]
+      },
+      {
+        "objectID": "90036301",
+        "created_at": "2026-09-22T03:09:55Z",
+        "created_at_i": 1790046595,
+        "author": "user-a73dc0",
+        "comment_text": "It's a fine-tune tuned hard to a few benchmark question types, and it is nowhere near the frontier models in real use. Nothing to see here.\nI'd normally give them a pass since it is open source, but then I read\n&gt; Raising pre-seed. All angels and VCs welcome\nWhich [...]",
+        "story_title": "An open-weight coding model from a two-person lab claims to beat the frontier",
+        "story_id": 90033959,
+        "parent_id": 90033959,
+        "_tags": [
+          "comment",
+          "story_90033959"
+        ]
+      },
+      {
+        "objectID": "90032788",
+        "created_at": "2026-09-15T09:33:07Z",
+        "created_at_i": 1789464787,
+        "author": "user-192f0a",
+        "comment_text": "Very cool!\nThe obvious next step would be to train a small model to generate random flags, [...]",
+        "story_title": "Encoding a country flag in 11 bits",
+        "story_id": 90028104,
+        "parent_id": 90028104,
+        "_tags": [
+          "comment",
+          "story_90028104"
+        ]
+      },
+      {
+        "objectID": "90031617",
+        "created_at": "2026-09-13T14:47:38Z",
+        "created_at_i": 1789310858,
+        "author": "user-7d3bfd",
+        "comment_text": "I don't have a strong view on the company either way, but this is an odd objection. Being backed by a well-known accelerator [...]",
+        "story_title": "Delivery robot company sues city over sidewalk permits",
+        "story_id": 90029275,
+        "parent_id": 90030446,
+        "_tags": [
+          "comment",
+          "story_90029275"
+        ]
+      }
+    ]
+  }
+}

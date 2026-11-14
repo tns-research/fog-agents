@@ -1,0 +1,39 @@
+{
+ "key": "GET https://oauth.reddit.com/r/startups/search?limit=50&q=first+users&restrict_sr=1&sort=new&t=month",
+ "status": 200,
+ "body": {
+  "kind": "Listing",
+  "data": {
+   "children": [
+    {
+     "kind": "t3",
+     "data": {
+      "id": "1fict01",
+      "name": "t3_1fict01",
+      "author": "paris_soloist_fictive",
+      "created_utc": 1791115200,
+      "permalink": "/r/startups/comments/1fict01/how_do_you_get_first_users_without_an_audience/",
+      "title": "How do you get first users without an audience?",
+      "selftext": "Pre-seed, no audience, no budget. Any advice on the first ten users?",
+      "score": 14,
+      "num_comments": 22
+     }
+    },
+    {
+     "kind": "t3",
+     "data": {
+      "id": "1fict00",
+      "name": "t3_1fict00",
+      "author": "[deleted]",
+      "created_utc": 1791028800,
+      "permalink": "/r/startups/comments/1fict00/x/",
+      "title": "deleted",
+      "selftext": "",
+      "score": 1,
+      "num_comments": 0
+     }
+    }
+   ]
+  }
+ }
+}

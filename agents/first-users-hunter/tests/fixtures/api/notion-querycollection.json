@@ -1,0 +1,86 @@
+{
+ "key": "POST https://founders-directory-example.notion.site/api/v3/queryCollection #944585454ede",
+ "status": 200,
+ "body": {
+  "result": {
+   "type": "reducer",
+   "reducerResults": {
+    "collection_group_results": {
+     "type": "results",
+     "blockIds": [
+      "bbbbbbbb-0000-0000-0000-000000000001",
+      "bbbbbbbb-0000-0000-0000-000000000002"
+     ]
+    }
+   }
+  },
+  "recordMap": {
+   "block": {
+    "bbbbbbbb-0000-0000-0000-000000000001": {
+     "value": {
+      "value": {
+       "id": "bbbbbbbb-0000-0000-0000-000000000001",
+       "type": "page",
+       "properties": {
+        "title": [
+         [
+          "Camille Roux"
+         ]
+        ],
+        "a1b2": [
+         [
+          "https://www.linkedin.com/in/camille-roux-fictive"
+         ]
+        ],
+        "c3d4": [
+         [
+          "Co-founder, pre-seed"
+         ]
+        ],
+        "e5f6": [
+         [
+          "‣",
+          [
+           [
+            "d",
+            {
+             "type": "date",
+             "start_date": "2026-07-02"
+            }
+           ]
+          ]
+         ]
+        ]
+       }
+      }
+     }
+    },
+    "bbbbbbbb-0000-0000-0000-000000000002": {
+     "value": {
+      "value": {
+       "id": "bbbbbbbb-0000-0000-0000-000000000002",
+       "type": "page",
+       "properties": {
+        "title": [
+         [
+          "Samuel Petit"
+         ]
+        ],
+        "a1b2": [
+         [
+          "https://www.linkedin.com/in/samuel-petit-fictive"
+         ]
+        ],
+        "c3d4": [
+         [
+          "Founder"
+         ]
+        ]
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/tns-research/fog-agents/agents/static-ads-builder/assets/photo-edits.schema.json",
+  "title": "static-ads-builder photo-edits.json (mode photo_edit)",
+  "description": "The spec the model writes for a real photo the founder took (founder, product in hand, team). Per photo, 3 to 5 edit concepts: an image editing model rebuilds 30 to 80 % of the frame (background, light, surface, crop, clutter) and keeps the people and the object untouched. No concept ever asks the model for text: the ad copy is set afterwards by the local HTML renderer. scripts/photo_edit.py validates, checks consent against project-context/people.json, renders and checks the result.",
+  "type": "object",
+  "required": ["schema_version", "project", "photos"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "project": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "project_context": { "type": "string", "description": "Folder holding people.json, relative to this file. Default: the nearest project-context/ folder up to three levels above." },
+    "photos": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 10,
+      "items": { "$ref": "#/$defs/photo" }
+    }
+  },
+  "$defs": {
+    "slug": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{0,40}$" },
+    "photo": {
+      "type": "object",
+      "required": ["id", "src", "subject", "people_present", "concepts"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "src": { "type": "string", "minLength": 1, "description": "The founder's original photo, relative to this file. Never edited in place." },
+        "subject": { "type": "string", "minLength": 1, "description": "What the photo shows, one English sentence." },
+        "people_present": { "type": "string", "enum": ["none", "hands-only", "partial-body", "face-visible", "group"], "description": "Anything but none needs a person_slug on every concept, cleared for the ads scope in people.json." },
+        "people": { "type": "string", "description": "What the people do, where they sit in the frame, what they wear, skin and hair details. Repeated in every prompt so the model does not redraw them. Required when people_present is not none." },
+        "held_object": { "type": "string", "description": "The object in hand or on show (product, jar, laptop), when there is one. It never changes." },
+        "visible_text": { "type": "array", "items": { "type": "string", "minLength": 1 }, "description": "Every word printed on the photo itself (label, shirt, sign). Copied to the ads.json media visible_text; the proofread diff expects it on the render." },
+        "weaknesses": { "type": "array", "items": { "type": "string", "minLength": 1 }, "description": "What makes the photo a snapshot (flat office light, cables, cluttered desk, tilted horizon)." },
+        "concepts": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 5,
+          "items": { "$ref": "#/$defs/concept" }
+        }
+      }
+    },
+    "concept": {
+      "type": "object",
+      "required": ["id", "title", "edit_level", "changes", "never_changes", "text_zone", "prompt"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "title": { "type": "string", "minLength": 1, "maxLength": 60 },
+        "edit_level": { "type": "integer", "enum": [30, 50, 80], "description": "Share of the frame that changes. 30: regrade and clutter removed, setting and crop kept. 50: background simplified or replaced, tighter crop or slight tilt. 80: subject set on a new surface or backdrop, new light, props reduced to the object." },
+        "changes": { "type": "array", "minItems": 1, "maxItems": 8, "items": { "type": "string", "minLength": 1 }, "description": "Concrete edits, in order: background or surface, clutter removed, light and grade, crop and tilt." },
+        "never_changes": { "type": "array", "minItems": 1, "maxItems": 10, "items": { "type": "string", "minLength": 1 }, "description": "What survives untouched. With people: the face, the expression, the pose, the hands with five fingers each. With a held object: the object, its shape and its label." },
+        "person_slug": {
+          "oneOf": [
+            { "$ref": "#/$defs/slug" },
+            { "type": "array", "minItems": 1, "maxItems": 8, "items": { "$ref": "#/$defs/slug" } }
+          ],
+          "description": "people.json slug (or slugs for a group) of every person in the photo. Required when people_present is not none."
+        },
+        "size": { "type": "string", "enum": ["1024x1024", "1536x1024", "1024x1536"], "description": "Output size asked from the editing model. Default: config photo_edit.size." },
+        "text_zone": { "type": "string", "minLength": 1, "description": "Where the HTML copy will sit (for example 'upper third, left'): the edit keeps that area calm and empty, never with text in it." },
+        "prompt": { "type": "string", "minLength": 80, "description": "The full English prompt sent with the photo, labelled fields one per line: 'edit level: NN% of the frame changes', 'keep:', 'transform:', 'people:' (when people are present), 'text zone:', 'grade:', 'Avoid:'. It must say no text and no letters." }
+      }
+    }
+  }
+}

@@ -1,0 +1,3 @@
+# growth-sprint scripts: Python 3.9+ standard library only, nothing to install.
+# The JSON Schema checks import shared/scripts/validate_json.py from this repo:
+# copy shared/ next to agents/ when you copy this agent elsewhere.

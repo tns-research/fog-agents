@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "growth-sprint sprint.json",
+  "description": "The sprint plan the model writes and the founder approves once: one goal, a budget cap, a bounded graph of agent steps. Written by the model, checked by scripts/sprint.py validate (this schema, then the registry, the graph, the flags and the budget). Any change after approval invalidates the approval. Validate with: python3 shared/scripts/validate_json.py agents/growth-sprint/assets/sprint.schema.json <sprint.json>",
+  "type": "object",
+  "required": ["schema_version", "sprint_id", "project", "created", "goal", "budget", "steps"],
+  "additionalProperties": false,
+  "$defs": {
+    "day": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "step": {
+      "type": "object",
+      "required": ["id", "agent", "brief", "depends_on", "spends", "publishes", "estimate_eur"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^s[0-9]{2}(-[a-z0-9]+)*$" },
+        "agent": { "$ref": "#/$defs/slug" },
+        "label": { "$ref": "#/$defs/slug", "description": "Run label passed to the agent; fills <label> in the registry output paths." },
+        "brief": { "type": "string", "minLength": 10, "description": "What this step must produce for the goal, in one or two sentences." },
+        "inputs": { "type": "object", "description": "Values passed to the agent (names from its Inputs table)." },
+        "depends_on": { "type": "array", "items": { "type": "string" } },
+        "spends": { "type": "boolean", "description": "Must be true when the registry says the agent can spend." },
+        "publishes": { "type": "boolean", "description": "Must be true when the registry says the agent can publish." },
+        "estimate_eur": { "type": "number", "minimum": 0, "description": "Maximum cash this step may spend. 0 for local agents." },
+        "estimate_basis": { "type": "string", "minLength": 5, "description": "Where the estimate comes from (the agent's own quote, the founder's provider price). Required when spends is true." },
+        "reuse_if_fresh_days": { "type": "integer", "minimum": 1, "maximum": 365, "description": "Skip the step when its outputs already exist, pass their checks and are this recent." },
+        "done_when": { "type": "string", "description": "Extra end criterion for the report; the disk check of the registry always applies." }
+      }
+    }
+  },
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "sprint_id": { "$ref": "#/$defs/slug" },
+    "project": { "$ref": "#/$defs/slug" },
+    "created": { "$ref": "#/$defs/day" },
+    "goal": {
+      "type": "object",
+      "required": ["text", "metric", "source"],
+      "additionalProperties": false,
+      "properties": {
+        "text": { "type": "string", "minLength": 5, "description": "The founder's objective, in their words." },
+        "metric": { "type": "string", "minLength": 3, "description": "What is counted to know the goal was met." },
+        "target": { "type": ["number", "null"] },
+        "deadline": { "$ref": "#/$defs/day" },
+        "source": {
+          "type": "string",
+          "pattern": "^(founder|growth-pulse/experiments-[0-9]{8}\\.json#E-[0-9]{8}-[0-9]+)$",
+          "description": "founder, or an experiment of a growth-pulse handoff: growth-pulse/experiments-<YYYYMMDD>.json#<experiment id>."
+        }
+      }
+    },
+    "context_read": { "type": "array", "items": { "type": "string" }, "description": "Project files read to build the plan." },
+    "decisions_applied": { "type": "array", "items": { "type": "string", "pattern": "^D-[0-9]{8}-[0-9]{2}$" } },
+    "budget": {
+      "type": "object",
+      "required": ["cap_eur", "basis"],
+      "additionalProperties": false,
+      "properties": {
+        "cap_eur": { "type": "number", "minimum": 0, "description": "Cap in EUR of cash spent on optional paid APIs from the founder's own accounts (image-model photo backgrounds, paid SERP calls); 0 means no paid call; never ad spend. Spent is what steps report, and above the cap the circuit breaker trips." },
+        "alert_ratio": { "type": "number", "minimum": 0.1, "maximum": 1, "description": "Warn when spent reaches this share of the cap (default 0.8)." },
+        "basis": { "type": "string", "minLength": 3, "description": "Why this cap: the founder's figure or the sum of the step estimates." }
+      }
+    },
+    "max_wave": { "type": "integer", "minimum": 1, "maximum": 3, "description": "Steps in flight at once (default 3)." },
+    "steps": { "type": "array", "minItems": 1, "maxItems": 20, "items": { "$ref": "#/$defs/step" } }
+  }
+}

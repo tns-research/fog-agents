@@ -1,0 +1,60 @@
+{
+  "_comment": "Scoring grid read by scripts/score_prospects.py. The model never scores a prospect: it writes facts into prospect.json, scripts/verify_dossiers.py checks them, this grid turns the verified ones into a score and a tier. Copy to <project>/cold-outreach-builder/criteria.json and edit for your ICP. Points are a ranking device, not a prediction of replies.",
+  "schema_version": "1.0",
+  "freshness": {
+    "_comment": "A verified fact older than fact_max_age_days is kept in the dossier but never scores and never becomes a hook. A strong signal must be younger than strong_max_age_days to put a prospect in tier A.",
+    "fact_max_age_days": 730,
+    "strong_max_age_days": 120
+  },
+  "fact_types": {
+    "_comment": "points per verified fact type (the best fact of each type counts once), strong = can carry a tier A email on its own.",
+    "funding": { "points": 25, "strong": true },
+    "company_creation": { "points": 25, "strong": true },
+    "launch": { "points": 20, "strong": true },
+    "hiring": { "points": 20, "strong": true },
+    "job_change": { "points": 15, "strong": true },
+    "post": { "points": 12, "strong": false },
+    "talk": { "points": 12, "strong": false },
+    "press": { "points": 10, "strong": false },
+    "other": { "points": 5, "strong": false }
+  },
+  "facts_max": 40,
+  "recency": {
+    "_comment": "Bonus from the age in days of the freshest verified fact: the first step whose max_days holds wins.",
+    "steps": [
+      { "max_days": 30, "points": 15 },
+      { "max_days": 90, "points": 10 },
+      { "max_days": 180, "points": 5 },
+      { "max_days": 100000, "points": 0 }
+    ]
+  },
+  "role": {
+    "_comment": "First tier whose pattern is found in the role (case-insensitive) wins. An empty pattern matches every role.",
+    "max": 25,
+    "tiers": [
+      { "points": 25, "label": "founder", "patterns": ["founder", "co-founder", "cofounder", "fondateur", "fondatrice", "cofondateur", "cofondatrice", "ceo"] },
+      { "points": 15, "label": "c-level or head", "patterns": ["cto", "coo", "cpo", "chief", "head of", "directeur", "directrice", "vp "] },
+      { "points": 5, "label": "other role", "patterns": [""] }
+    ]
+  },
+  "geography": {
+    "_comment": "Compared with prospect.json geography (ISO 3166-1 alpha-2, lowercase).",
+    "max": 10,
+    "target": ["fr"],
+    "points": { "target": 10, "other": 0, "unknown": 3 }
+  },
+  "icp_keywords": {
+    "_comment": "Counted in the claims and excerpts of verified facts, plus role and company.",
+    "max": 10,
+    "points_per_hit": 5,
+    "keywords": ["pre-seed", "preseed", "first-time founder", "first startup", "b2b saas", "saas", "prototype", "mvp", "first customers", "design partners"]
+  },
+  "tiers": {
+    "A": { "min_score": 65, "requires_strong_fact": true },
+    "B": { "min_score": 35, "requires_verified_fact": true }
+  },
+  "exclude": {
+    "_comment": "Any disqualifier in prospect.json, or a relationship other than none, sends the prospect to tier C with the reason: a known contact gets a personal note from the founder, not a cold sequence.",
+    "relationships": ["customer", "investor", "partner", "in_conversation", "known"]
+  }
+}

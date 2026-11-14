@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "visuals.json",
+  "description": "Manifest written by scripts/article_visuals.py next to the rendered files and read by the article assembly step. Paths are POSIX, relative to the article folder (the parent of the visuals folder). width and height are CSS pixels, the values of the img width and height attributes; the PNG holds width x scale by height x scale pixels.",
+  "type": "object",
+  "required": ["schema_version", "scale", "cover", "body"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "type": "string", "enum": ["1.0"] },
+    "scale": { "type": "number", "minimum": 1, "maximum": 3 },
+    "brand": { "type": "string", "description": "Brand name read from brand.json." },
+    "cover": { "$ref": "#/$defs/file" },
+    "body": { "type": "array", "items": { "$ref": "#/$defs/body_file" } }
+  },
+  "$defs": {
+    "path": { "type": "string", "pattern": "^(?!/)(?![A-Za-z]:)(?!.*\\.\\.)[A-Za-z0-9._/-]+\\.(png|svg)$" },
+    "file": {
+      "type": "object",
+      "required": ["path", "alt", "width", "height"],
+      "additionalProperties": false,
+      "properties": {
+        "path": { "$ref": "#/$defs/path" },
+        "svg": { "$ref": "#/$defs/path" },
+        "alt": { "type": "string", "minLength": 1 },
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "body_file": {
+      "type": "object",
+      "required": ["id", "kind", "path", "alt", "after_h2", "width", "height"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{0,31}$" },
+        "kind": { "type": "string", "enum": ["comparison", "steps", "checklist", "stat", "timeline", "decision"] },
+        "path": { "$ref": "#/$defs/path" },
+        "svg": { "$ref": "#/$defs/path" },
+        "alt": { "type": "string", "minLength": 1 },
+        "after_h2": { "type": "string", "minLength": 1 },
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 }
+      }
+    }
+  }
+}

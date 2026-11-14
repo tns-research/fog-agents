@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "<project>/project-context/memory/posts.jsonl line",
+  "description": "One post per network, appended by scripts/project_memory.py and read by scripts/check_spec.py: openings already used, hook types, angles, and the posts the founder rejected with their reason. Validate with: python3 shared/scripts/validate_json.py --jsonl agents/founder-content-writer/assets/past-post.schema.json <project>/project-context/memory/posts.jsonl",
+  "type": "object",
+  "required": ["ts", "agent", "ref", "network", "status", "opening", "sha256"],
+  "additionalProperties": false,
+  "properties": {
+    "ts": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}(:[0-9]{2})?(Z|[+-][0-9]{2}:[0-9]{2})$" },
+    "agent": { "const": "founder-content-writer" },
+    "label": { "type": "string" },
+    "ref": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,60}$" },
+    "network": { "type": "string", "enum": ["linkedin", "x"] },
+    "status": { "type": "string", "enum": ["written", "rejected"] },
+    "opening": { "type": "string", "minLength": 1, "description": "First line of the body as written." },
+    "hook_type": { "type": "string" },
+    "angle": { "type": "string" },
+    "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$", "description": "Hash of the full body, so a re-run does not record the same text twice." },
+    "reason": { "type": "string", "description": "rejected only: the founder's words." },
+    "decision": { "type": "string", "description": "rejected only: the decisions.md entry this rejection produced." }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "_comment": "carousel-builder per-project config. Copied to <your-projects-root>/<project>/carousel-builder/config.json on the first run; the agent fills missing values from chat. format: linkedin and instagram are 1080x1350, square is 1080x1080. directions_preferred narrows the cover board at stop 1; directions_excluded never appear (rejections are also kept in project-context/memory/decisions.md). locked_direction skips stop 1 for a series. slide_count bounds the deck (build.py refuses more than 20 slides). handle and use_brand_fonts go into deck.json meta.handle and meta.use_brand_fonts (null = the direction's brand.fonts default). Optional: a \"tools\" object (same keys as shared/tools.example.json, for example {\"image_gen\": \"none\", \"critic\": \"builtin\"}) overrides the project's tools.json for this agent. video: aspects rendered by skills/animate-deck after the stills pass (empty = no video unless asked; values 4:5, 9:16, 1:1), max_duration caps the total in seconds by shortening holds (null = reading time only), music is a local file the founder owns or licensed (null = silent).",
+  "project": "<project-slug>",
+  "format": "linkedin",
+  "language": "en",
+  "slide_count": { "min": 6, "max": 10 },
+  "handle": "",
+  "directions_preferred": [],
+  "directions_excluded": [],
+  "locked_direction": null,
+  "use_brand_fonts": null,
+  "review_rounds_max": 3,
+  "image_gen_max": 0,
+  "video": { "aspects": [], "max_duration": null, "music": null }
+}

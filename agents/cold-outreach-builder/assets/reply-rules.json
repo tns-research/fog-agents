@@ -1,0 +1,37 @@
+{
+  "_comment": "Cue patterns read by scripts/ingest_replies.py to classify a reply (English and French). Quoted history (lines starting with '>' and everything after an 'On ... wrote:' or 'Le ... a écrit :' line) is removed before matching. A reply that matches one class is classified with confidence high; no match or matches in several of positive, negative and off_topic give confidence low and needs_review, and the agent then reads the reply and writes an override that quotes it (see skills/triaging-replies/SKILL.md). Edit per project in <project>/cold-outreach-builder/reply-rules.json (same shape, lists replace these).",
+  "schema_version": "1.0",
+  "auto_reply_headers": {
+    "Auto-Submitted": "^auto-(?:replied|generated)",
+    "X-Autoreply": ".",
+    "X-Autorespond": ".",
+    "Precedence": "^(?:auto_reply|bulk|junk)$"
+  },
+  "classes": {
+    "bounce": {
+      "from": ["mailer-daemon@", "postmaster@"],
+      "subject": ["undeliverable", "delivery status notification", "mail delivery failed", "returned mail", "non remis", "échec de la remise", "address not found"],
+      "body": ["550[ -]5\\.1\\.1", "user unknown", "mailbox unavailable", "recipient address rejected", "adresse introuvable"]
+    },
+    "out_of_office": {
+      "subject": ["out of (?:the )?office", "automatic reply", "auto(?:matic)?[ -]?reply", "absence", "absent", "réponse automatique", "en congés?", "on vacation", "on leave"],
+      "body": ["\\bI(?:'m| am) (?:currently )?(?:out of (?:the )?office|away|on (?:vacation|holiday|leave|parental leave))", "\\bje suis (?:actuellement )?(?:absente?|en (?:congés?|vacances|déplacement))", "\\blimited access to (?:my )?e-?mail", "\\baccès limité à (?:mes|ma) (?:e-?mails?|messagerie)"]
+    },
+    "unsubscribe": {
+      "body": ["\\bunsubscribe\\b", "\\bremove me\\b", "\\btake me off\\b", "\\bstop (?:emailing|contacting|writing)\\b", "\\bdo not (?:contact|email) me\\b", "\\bdésinscri", "\\bne plus (?:me )?(?:recevoir|contacter|écrire)\\b", "\\bretirez-moi\\b", "^\\s*stop\\s*\\.?\\s*$"]
+    },
+    "negative": {
+      "body": ["\\bnot interested\\b", "\\bno thanks?\\b", "\\bno,? thank you\\b", "\\bnot (?:a )?(?:fit|priority)\\b", "\\bwe(?:'re| are) (?:all )?(?:set|good)\\b", "\\bpas intéressée?\\b", "\\bnon merci\\b", "\\bça ne (?:nous|m')intéresse pas\\b", "\\bpas (?:le bon moment|une priorité)\\b", "\\bpas pour (?:nous|moi)\\b"]
+    },
+    "off_topic": {
+      "body": ["\\bnot the right person\\b", "\\bno longer (?:at|with|work)\\b", "\\bI(?:'ve| have) left\\b", "\\bwrong person\\b", "\\breach out to\\b", "\\bpas la bonne personne\\b", "\\bne travaille plus\\b", "\\bj'ai quitté\\b", "\\bvoyez (?:plutôt )?avec\\b", "\\bcontactez plutôt\\b"]
+    },
+    "positive": {
+      "body": ["(?<!not )(?<!not really )\\binterested\\b", "\\bsounds (?:good|great|interesting)\\b", "\\bhappy to (?:chat|talk|meet|hop on)\\b", "\\blet'?s (?:talk|chat|meet|do it)\\b", "\\bsend (?:it|me|over)\\b", "\\bworks for me\\b", "\\bbook(?:ed)? a (?:call|slot|time)\\b", "\\bwhen are you (?:free|available)\\b", "\\bvolontiers\\b", "\\bça m'intéresse\\b", "\\bavec plaisir\\b", "\\bje suis (?:partante?|dispo(?:nible)?)\\b", "\\bon peut (?:en parler|s'appeler|échanger)\\b", "\\benvoyez(?:-moi)?\\b", "\\bquand êtes-vous disponible\\b"]
+    }
+  },
+  "out_of_office_return": [
+    "(?:until|back on|returning on|return on|back in the office on|jusqu'au|de retour le|retour prévu le)\\s+(?P<date>[^.\\n]{3,30})"
+  ],
+  "default_resume_days": 7
+}

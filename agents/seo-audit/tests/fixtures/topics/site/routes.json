@@ -1,0 +1,73 @@
+{
+  "_comment": "Fictional fernhill.example site for the topic registry tests (tests/test_topics.py), served by tests/fixture_server.py. Three articles with H2 and H3 (one in French), a page without H1, and the pages the registry must leave out: home, blog index, contact, legal, tag, pagination, a redirect, a noindex page, a slash variant with a canonical elsewhere. Every page carries the same footer headings (template headings).",
+  "routes": {
+    "/": {
+      "status": 200,
+      "file": "home.html"
+    },
+    "/blog/": {
+      "status": 200,
+      "file": "blog.html"
+    },
+    "/blog/burn-rate/": {
+      "status": 200,
+      "file": "burn-rate.html"
+    },
+    "/blog/burn-rate": {
+      "status": 200,
+      "file": "burn-rate.html"
+    },
+    "/blog/pitch-deck-template/": {
+      "status": 200,
+      "file": "pitch-deck-template.html"
+    },
+    "/fr/blog/levee-de-fonds/": {
+      "status": 200,
+      "file": "levee-de-fonds.html"
+    },
+    "/pricing/": {
+      "status": 200,
+      "file": "pricing.html"
+    },
+    "/contact/": {
+      "status": 200,
+      "file": "contact.html"
+    },
+    "/legal/": {
+      "status": 200,
+      "file": "legal.html"
+    },
+    "/tag/finance/": {
+      "status": 200,
+      "file": "tag.html"
+    },
+    "/blog/page/2/": {
+      "status": 200,
+      "file": "page2.html"
+    },
+    "/blog/hidden-draft/": {
+      "status": 200,
+      "file": "hidden-draft.html"
+    },
+    "/blog/old-post/": {
+      "status": 301,
+      "headers": {
+        "Location": "/blog/burn-rate/"
+      }
+    },
+    "/robots.txt": {
+      "status": 200,
+      "file": "robots.txt",
+      "headers": {
+        "Content-Type": "text/plain; charset=utf-8"
+      }
+    },
+    "/sitemap.xml": {
+      "status": 200,
+      "file": "sitemap.xml",
+      "headers": {
+        "Content-Type": "application/xml"
+      }
+    }
+  }
+}

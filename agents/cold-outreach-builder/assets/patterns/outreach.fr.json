@@ -1,0 +1,77 @@
+{
+  "pack": "outreach-fr",
+  "language": "fr",
+  "description": "Cold-outreach rules added on top of the shared French pack by scripts/lint_outreach.py (format: shared/schemas/copy-rules.schema.json). Ritual openers, pitch disclaimers, announced asks, staged setups, the 'Pas pour [X]' construction, flattery and invented scarcity.",
+  "rules": [
+    {
+      "code": "ouverture-cliche",
+      "family": "cold-opener",
+      "level": "BLOCK",
+      "pattern": "\\bj'esp[eè]re que (?:vous allez|tu vas|ce message (?:vous|te) trouve|tout va)\\b|\\bje me permets de (?:vous|te) (?:contacter|[ée]crire|solliciter)\\b|^\\s*question rapide\\b|\\bje suis tomb[ée]e? sur (?:votre|ton) profil\\b",
+      "flags": "im",
+      "message": "Ouvrez sur le fait trouvé chez la personne, pas sur une formule rituelle.",
+      "bad": ["J'espère que vous allez bien.", "Je me permets de vous contacter au sujet de votre levée.", "Question rapide sur votre onboarding.", "Je suis tombé sur votre profil."],
+      "good": ["Votre post du 3 mars sur les prix annuels m'a fait revoir les nôtres.", "J'espère vous croiser au meetup."]
+    },
+    {
+      "code": "disclaimer-pitch",
+      "family": "cold-opener",
+      "level": "BLOCK",
+      "pattern": "\\bpas de (?:pitch|vente)\\b|\\bce n'est pas un pitch\\b|\\bje ne cherche pas [àa] (?:vous|te) vendre\\b|\\bsans arri[èe]re-pens[ée]e\\b",
+      "flags": "i",
+      "message": "Supprimez l'avertissement : un message qui dit ne pas vendre se lit comme une vente.",
+      "bad": ["Pas de pitch, juste de la curiosité.", "Je ne cherche pas à vous vendre quoi que ce soit."],
+      "good": ["Comment avez-vous choisi vos dix premiers clients pilotes ?"]
+    },
+    {
+      "code": "annonce-demande",
+      "family": "staging",
+      "level": "BLOCK",
+      "pattern": "\\bje (?:vais|serai) (?:[êe]tre )?(?:bref|br[èe]ve|direct|directe|court)\\b|\\bla raison (?:de mon message|pour laquelle je (?:vous|t')[ée]cris)\\b|\\bje (?:vous|te) contacte (?:car|parce que|pour)\\b|\\bje reviens vers (?:vous|toi)\\b",
+      "flags": "i",
+      "message": "Dites la chose au lieu d'annoncer que vous allez la dire.",
+      "bad": ["Je vais être bref.", "La raison de mon message est simple.", "Je vous contacte car nous aidons les fondateurs."],
+      "good": ["Nous accompagnons des fondateurs pré-seed toute l'année, à Paris."]
+    },
+    {
+      "code": "setup-dramatique",
+      "family": "staging",
+      "level": "BLOCK",
+      "pattern": "\\bsi je (?:vous|te) (?:[ée]cris|contacte)(?: aujourd'hui)?, c'est\\b|\\bc'est pour une raison pr[ée]cise\\b|\\bje vais [êe]tre honn[êe]te\\b",
+      "flags": "i",
+      "message": "Supprimez la mise en scène, ouvrez sur le fait.",
+      "bad": ["Si je vous écris aujourd'hui, c'est pour une raison précise.", "Je vais être honnête avec vous."],
+      "good": ["Je vous écris au sujet de votre offre d'emploi du 2 octobre."]
+    },
+    {
+      "code": "pas-pour",
+      "family": "two-step-correction",
+      "level": "BLOCK",
+      "pattern": "(?:^|[.!?]\\s+)Pas pour\\b",
+      "flags": "m",
+      "message": "Dites pour qui c'est, en phrase affirmative, au lieu de dire pour qui ce n'est pas.",
+      "bad": ["Pas pour les fondateurs pressés.", "Un programme annuel. Pas pour ceux qui veulent un sprint."],
+      "good": ["Ce n'est pas pour demain.", "Pour les fondateurs qui lancent leur première société."]
+    },
+    {
+      "code": "flatterie",
+      "family": "fake-closeness",
+      "level": "WARN",
+      "pattern": "\\bj'adore (?:ce que|votre|ton)\\b|\\bsuper (?:post|article)\\b|\\bbravo pour (?:votre|ton) parcours\\b|\\bparcours impressionnant\\b",
+      "flags": "i",
+      "message": "Remplacez le compliment par le point précis du post auquel vous réagissez.",
+      "bad": ["J'adore ce que vous construisez.", "Super post !"],
+      "good": ["Votre remarque sur les plans annuels m'a fait revoir les nôtres."]
+    },
+    {
+      "code": "fausse-rarete",
+      "family": "pressure",
+      "level": "BLOCK",
+      "pattern": "\\b(?:plus que|il (?:nous )?reste|seulement|on a) \\d+ (?:places?|cr[ée]neaux?|slots?)\\b|\\bderni[èe]re chance\\b",
+      "flags": "i",
+      "message": "Retirez la pression ; une vraie date limite s'écrit avec sa date et sa source.",
+      "bad": ["Il reste 2 places en juin.", "On a 2 places début juin.", "Dernière chance pour candidater."],
+      "good": ["Les candidatures pour la promotion d'octobre ferment le 21 octobre."]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0",
+  "scale": 2,
+  "brand": "Fernhollow",
+  "cover": { "path": "visuals/cover.png", "alt": "Invoice checklist for freelancers", "width": 1200, "height": 630 },
+  "body": [
+    { "id": "v1", "kind": "checklist", "path": "visuals/fields.png", "alt": "The seven fields of a freelance invoice", "after_h2": "What to include on a freelance invoice", "width": 1200, "height": 800 },
+    { "id": "v2", "kind": "timeline", "path": "visuals/terms.png", "alt": "Net 15 and net 30 on a calendar", "after_h2": "Payment terms", "width": 1200, "height": 600 }
+  ]
+}

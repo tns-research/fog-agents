@@ -1,0 +1,12 @@
+{
+  "name": "northdock-site-fixture",
+  "private": true,
+  "description": "Test fixture for landing-page-analyzer scripts/repo_patch.py: a fictional Astro source of ../site/, with planted traps (an old copy of the form, text in an i18n file). Northdock is a fictional accelerator.",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build"
+  },
+  "dependencies": {
+    "astro": "^7.4.11"
+  }
+}

@@ -1,0 +1,228 @@
+/* photo-poster: the event-poster language transposed to a carousel.
+   Bands, edge to edge: paper logo bar (thick ink rule), media or type field,
+   accent strip (--accent-fill between ink rules), solid ink panel carrying
+   Anton caps. The photo is always shown whole over its blurred copy.
+   The frame has no padding: every block spans the full width and carries
+   its own side margin (--pad-x), so bands bleed without negative margins.
+   Fonts: --font-display (Anton: titles, numerals, labels), --font-text
+   (Archivo: body, sub-lines, sources, chart labels). */
+
+.d-photo-poster .slide{--pad-top:64px;--pad-x:64px;--pad-bottom:56px;--pad-end:76px;--gap:44px;--logo-h:58px;--font-chart:var(--font-text);
+  --bw:6px;--strip:22px;--bar-h:136px;
+  --on-ink:var(--paper);--on-ink-muted:color-mix(in srgb,var(--paper) 76%,var(--ink));
+  font-family:var(--font-text)}
+.d-photo-poster .s-frame{padding:0}
+.d-photo-poster .s-main > .b{padding-left:var(--pad-x);padding-right:var(--pad-x)}
+.d-photo-poster .role-content .s-main > .b:first-child:not(.b-title){margin-top:var(--pad-top)}
+
+/* Paper grain, drawn in CSS so the PDF keeps it. Panels sit above it. */
+.d-photo-poster .s-deco::before{content:"";position:absolute;inset:0;opacity:.07;pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-size:220px 220px}
+
+/* Footer: source left, handle right, under an ink rule. */
+.d-photo-poster .s-foot{align-items:center;gap:28px;margin-top:36px;padding:24px var(--pad-x) var(--pad-bottom)}
+.d-photo-poster .role-content .s-foot::before{content:"";position:absolute;left:var(--pad-x);right:var(--pad-x);top:0;height:var(--bw);background:var(--rule)}
+.d-photo-poster .src{font-family:var(--font-text);font-size:21px;line-height:1.25;color:var(--muted);font-stretch:92%}
+.d-photo-poster .handle{font-family:var(--font-display);font-size:26px;line-height:1;letter-spacing:.03em;text-transform:uppercase;color:var(--ink)}
+
+/* Display type: Anton caps. Leading at 1 so accented capitals clear the line above. */
+.d-photo-poster .t,.d-photo-poster .cta-t,.d-photo-poster .stat-v,.d-photo-poster .stat-l,.d-photo-poster .q-t,.d-photo-poster .li-t{
+  font-family:var(--font-display);font-weight:400;text-transform:uppercase;letter-spacing:.004em}
+.d-photo-poster .stat-v{text-transform:none}
+.d-photo-poster .t{line-height:var(--lh-d)}
+/* Anton capitals are .86 em tall and their accents reach 1.11 em: languages
+   with accented capitals get looser leading so an accent never hits the line above. */
+.d-photo-poster .slide{--lh-d:.98}
+.d-photo-poster .slide:lang(fr),.d-photo-poster .slide:lang(es),.d-photo-poster .slide:lang(de),.d-photo-poster .slide:lang(pt),.d-photo-poster .slide:lang(it){--lh-d:1.12}
+.d-photo-poster .sub{font-family:var(--font-text);font-weight:450;line-height:1.3;margin-top:.8em}
+.d-photo-poster .body{font-family:var(--font-text);font-weight:420;line-height:1.36;color:var(--ink)}
+.d-photo-poster .body .hl{background:var(--accent-fill);color:var(--on-accent-fill);font-weight:600;
+  box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 .14em}
+
+/* ------------------------------------------------------------------ */
+/* Content slides: ink title panel hanging from the top edge, strip under it */
+.d-photo-poster .role-content .b-title{flex:none;padding-top:calc(var(--pad-top) + 6px);padding-bottom:40px;background:var(--ink);color:var(--on-ink);
+  border-bottom:var(--strip) solid var(--accent-fill);box-shadow:0 var(--bw) 0 0 var(--ink)}
+.d-photo-poster .role-content .t{color:var(--on-ink)}
+.d-photo-poster .role-content .t .hl{color:var(--accent-fill)}
+.d-photo-poster .role-content .sub{color:var(--on-ink-muted)}
+.d-photo-poster .role-content .b-title + .b{margin-top:var(--bw)}
+
+/* Text */
+.d-photo-poster .layout-text .s-main{gap:52px}
+.d-photo-poster .layout-text .b-body{flex:1 1 auto}
+
+/* List: Anton caps items on ink rules, numerals in ink squares */
+.d-photo-poster .layout-list .s-main{gap:44px}
+.d-photo-poster .b-list{flex:1 1 auto;display:flex;flex-direction:column}
+.d-photo-poster .list{flex:1 1 auto;display:flex;flex-direction:column;justify-content:space-between;line-height:1}
+.d-photo-poster .list li{align-items:flex-start;gap:.42em;padding:.34em 0 .38em;border-top:var(--bw) solid var(--rule)}
+.d-photo-poster .list li:first-child{border-top:0;padding-top:0}
+.d-photo-poster .li-t{line-height:var(--lh-d)}
+.d-photo-poster .li-s{font-family:var(--font-text);font-weight:450;font-size:max(30px,.5em);line-height:1.28;color:var(--muted);margin-top:.32em}
+.d-photo-poster .list-numbered .li-n{font-family:var(--font-display);font-size:.86em;line-height:1;width:1.36em;height:1.36em;
+  display:flex;align-items:center;justify-content:center;background:var(--ink);color:var(--paper);transform:translateY(-.02em)}
+.d-photo-poster .list-bullets .li-n::before{width:.36em;height:.36em;transform:translateY(-.1em)}
+
+/* Stat: type poster. Numeral on paper, label and context on the ink panel
+   that stands on the bottom edge (the footer joins it). */
+.d-photo-poster .layout-stat .s-main{gap:0}
+.d-photo-poster .layout-stat .s-main > .b-stat{flex:1 1 auto;display:flex;flex-direction:column;padding:0;margin-top:var(--pad-top)}
+.d-photo-poster .stat-v{line-height:.84;letter-spacing:-.01em;color:var(--ink);margin:auto var(--pad-x) .06em;padding-top:.1em}
+.d-photo-poster .stat-l{line-height:var(--lh-d);color:var(--on-ink);background:var(--ink);padding:44px var(--pad-x) 0;
+  border-top:var(--strip) solid var(--accent-fill);box-shadow:0 calc(-1 * var(--bw)) 0 0 var(--ink)}
+.d-photo-poster .stat-c{font-family:var(--font-text);font-weight:430;line-height:1.36;color:var(--on-ink-muted);background:var(--ink);
+  padding:.9em var(--pad-x) 0}
+.d-photo-poster .layout-stat .s-foot,.d-photo-poster .layout-quote .s-foot{margin-top:0;padding-top:40px;background:var(--ink)}
+.d-photo-poster .layout-stat .s-foot::before,.d-photo-poster .layout-quote .s-foot::before{display:none}
+.d-photo-poster .layout-stat .src,.d-photo-poster .layout-quote .src{color:var(--on-ink-muted)}
+.d-photo-poster .layout-stat .handle,.d-photo-poster .layout-quote .handle{color:var(--on-ink)}
+.d-photo-poster .layout-stat:has(.b-title) .s-main > .b-stat{margin-top:0}
+.d-photo-poster .layout-stat:has(.b-title) .stat-v{margin-top:40px}
+
+/* Chart */
+.d-photo-poster .layout-chart .s-main{gap:40px}
+.d-photo-poster .c-title{font-family:var(--font-display);font-weight:400;text-transform:uppercase;letter-spacing:.02em;line-height:1.05;color:var(--ink);
+  padding-bottom:14px;margin-bottom:26px;border-bottom:var(--bw) solid var(--rule)}
+.d-photo-poster .chart-svg .c-label{font-weight:560}
+.d-photo-poster .chart-svg .c-label.is-hl{font-weight:800}
+.d-photo-poster .chart-svg .c-value{font-family:var(--font-display);font-weight:400}
+.d-photo-poster .c-bar{fill:var(--chart-base)}
+.d-photo-poster .c-bar.is-hl{fill:var(--accent-fill);stroke:var(--ink);stroke-width:5}
+.d-photo-poster .c-axis{stroke:var(--ink);stroke-width:5}
+.d-photo-poster .c-grid{stroke:var(--rule);stroke-opacity:.35;stroke-width:2}
+.d-photo-poster .c-line{stroke:var(--chart-base-2);stroke-width:5}
+.d-photo-poster .c-line.is-hl{stroke:var(--accent-mark);stroke-width:10}
+.d-photo-poster .c-dot{fill:var(--accent-mark);stroke:var(--ink);stroke-width:4}
+.d-photo-poster .c-seg{stroke:var(--chart-base)}
+.d-photo-poster .c-seg.g2{stroke:var(--chart-base-2)}
+.d-photo-poster .c-seg.g3{stroke:var(--chart-base-3)}
+.d-photo-poster .c-seg.is-hl{stroke:var(--accent-mark)}
+.d-photo-poster .c-swatch.is-hl{fill:var(--accent-mark)}
+.d-photo-poster .c-note{font-size:24px;color:var(--muted);margin-top:18px}
+
+/* Quote: type poster, attribution on the ink panel at the bottom */
+.d-photo-poster .layout-quote .s-main{gap:0}
+.d-photo-poster .s-main > .b-quote{flex:1 1 auto;display:flex;flex-direction:column;padding:0;margin-top:var(--pad-top)}
+.d-photo-poster .q-t{line-height:var(--lh-d);color:var(--ink);margin:auto var(--pad-x) 0}
+.d-photo-poster .q-mark{font-family:var(--font-display)}
+.d-photo-poster .q-open{display:inline-block;background:var(--accent-fill);color:var(--on-accent-fill);padding:0 .1em;margin-right:.14em;line-height:1}
+.d-photo-poster .q-close{margin-left:.08em}
+.d-photo-poster .q-a{flex-direction:column;gap:6px;margin:56px 0 0;padding:44px var(--pad-x) 0;background:var(--ink);color:var(--on-ink);
+  border-top:var(--strip) solid var(--accent-fill);box-shadow:0 calc(-1 * var(--bw)) 0 0 var(--ink);font-size:30px}
+.d-photo-poster .q-name{font-family:var(--font-display);font-weight:400;text-transform:uppercase;letter-spacing:.02em;font-size:44px;line-height:1}
+.d-photo-poster .q-role,.d-photo-poster .q-tr{color:var(--on-ink-muted)}
+
+/* Media: photo whole on its blurred copy, screenshot framed on a halftone mat */
+.d-photo-poster .layout-media .s-main{gap:40px}
+.d-photo-poster .ph-box{background:var(--mat)}
+.d-photo-poster .role-content .b-photo .ph-box{outline:var(--bw) solid var(--ink);outline-offset:calc(-1 * var(--bw))}
+.d-photo-poster .ph-cap{font-family:var(--font-text);font-size:22px;color:var(--muted);margin-top:14px}
+.d-photo-poster .s-main > .b-shot{gap:32px;padding:0}
+.d-photo-poster .shot-legend,.d-photo-poster .shot-cap{margin:0 var(--pad-x)}
+.d-photo-poster .shot-wrap{padding:30px var(--pad-x);background-color:var(--mat);
+  background-image:radial-gradient(color-mix(in srgb,var(--ink) 26%,transparent) 1.6px,transparent 2.2px);background-size:14px 14px;
+  border-bottom:var(--bw) solid var(--ink)}
+.d-photo-poster .frame-browser .shot-frame,.d-photo-poster .frame-plain .shot-frame{border:var(--bw) solid var(--ink);box-shadow:12px 12px 0 0 var(--ink)}
+.d-photo-poster .frame-browser .shot-frame{--bar-h:50px}
+.d-photo-poster .shot-bar{border-bottom:var(--bw) solid var(--ink);background:var(--paper)}
+.d-photo-poster .shot-url{font-family:var(--font-text);font-weight:600;font-size:21px;color:var(--ink)}
+.d-photo-poster .ann-box{stroke:var(--ink);stroke-width:7}
+.d-photo-poster .ann-pin circle{fill:var(--accent-fill);stroke:var(--ink);stroke-width:5}
+.d-photo-poster .ann-pin text{fill:var(--on-accent-fill);font-family:var(--font-display);font-weight:400}
+.d-photo-poster .shot-legend{gap:18px}
+.d-photo-poster .shot-legend li{font-family:var(--font-text);font-weight:500;font-size:31px;line-height:1.24;align-items:flex-start;gap:20px}
+.d-photo-poster .ann-n{width:50px;height:50px;border-radius:0;background:var(--accent-fill);color:var(--on-accent-fill);border:4px solid var(--ink);
+  font-family:var(--font-display);font-weight:400;font-size:28px;margin-top:-4px}
+.d-photo-poster .shot-cap{font-size:24px;color:var(--muted)}
+
+/* Logos */
+.d-photo-poster .lr-label{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.03em;font-size:32px;color:var(--ink)}
+.d-photo-poster .lr{gap:0;border-top:var(--bw) solid var(--rule);border-left:var(--bw) solid var(--rule)}
+.d-photo-poster .lr-item{flex:1 1 33%;min-height:150px;display:flex;align-items:center;justify-content:center;padding:28px;
+  border-right:var(--bw) solid var(--rule);border-bottom:var(--bw) solid var(--rule)}
+
+/* Visual: drawing on a halftone mat under the title panel */
+.d-photo-poster .layout-visual .s-main{gap:0}
+.d-photo-poster .s-main > .b-visual{padding-top:40px;padding-bottom:28px;background-color:var(--mat);
+  background-image:radial-gradient(color-mix(in srgb,var(--ink) 22%,transparent) 1.6px,transparent 2.2px);background-size:14px 14px;
+  border-bottom:var(--bw) solid var(--ink)}
+.d-photo-poster .vis .s-ink{stroke-width:5}
+.d-photo-poster .vis text{font-family:var(--font-text)}
+.d-photo-poster .vis-cap{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.03em;font-size:30px;color:var(--ink);margin-top:20px}
+
+/* ------------------------------------------------------------------ */
+/* Covers and CTA: the paper logo bar */
+.d-photo-poster .role-cover .s-head,.d-photo-poster .role-cta .s-head{flex:none;height:var(--bar-h);display:flex;align-items:center;
+  padding:0 var(--pad-x);background:var(--paper);border-bottom:var(--bw) solid var(--ink);color:var(--ink)}
+.d-photo-poster .role-cover .s-main{gap:0}
+.d-photo-poster .role-cover .s-foot{margin:0;padding:0 var(--pad-x) var(--pad-end);background:var(--ink)}
+.d-photo-poster .role-cover .src{color:var(--on-ink-muted)}
+
+/* Cover A, with photo: bar / photo / strip / ink panel with title, standfirst, source */
+.d-photo-poster .layout-cover-a .s-main > .b-photo{flex:1 1 0;min-height:540px;padding:0}
+.d-photo-poster .layout-cover-a .s-main > .b-photo.ph-landscape{min-height:470px}
+.d-photo-poster .layout-cover-a .b-photo .ph-cap{display:none}
+.d-photo-poster .layout-cover-a.has-photo .b-title{order:2}
+.d-photo-poster .layout-cover-a .b-title{flex:none;padding-top:40px;padding-bottom:36px;background:var(--ink);color:var(--on-ink);
+  border-top:var(--strip) solid var(--accent-fill);box-shadow:0 calc(-1 * var(--bw)) 0 0 var(--ink)}
+.d-photo-poster .layout-cover-a .t{color:var(--on-ink)}
+.d-photo-poster .layout-cover-a .t .hl{color:var(--accent-fill)}
+.d-photo-poster .layout-cover-a .sub{color:var(--on-ink-muted);margin-top:.75em;max-width:920px}
+.d-photo-poster .layout-cover-a:not(:has(.s-foot)) .b-title{padding-bottom:var(--pad-end)}
+
+/* Cover A, no photo: type poster. Title on a paper field, standfirst on the ink panel */
+.d-photo-poster .layout-cover-a:not(.has-photo) .s-main > .b-title{flex:1 1 auto;display:flex;flex-direction:column;padding:0;background:none;border-top:0;box-shadow:none}
+.d-photo-poster .layout-cover-a:not(.has-photo) .t{margin:auto var(--pad-x) 0;padding:48px 0 44px;color:var(--ink);line-height:var(--lh-d)}
+.d-photo-poster .layout-cover-a:not(.has-photo) .t .hl{color:var(--on-accent-fill);padding:0 .06em;
+  background:linear-gradient(var(--accent-fill),var(--accent-fill)) 0 52% / 100% .9em no-repeat;
+  box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.d-photo-poster .layout-cover-a:not(.has-photo) .sub{margin:0;padding:40px var(--pad-x) 36px;max-width:none;background:var(--ink);color:var(--on-ink);
+  border-top:var(--strip) solid var(--accent-fill);box-shadow:0 calc(-1 * var(--bw)) 0 0 var(--ink)}
+.d-photo-poster .layout-cover-a:not(.has-photo):not(:has(.s-foot)) .sub{padding-bottom:var(--pad-end)}
+
+/* Cover B, with photo: photo full height on its blurred copy, inset ink
+   panel over the lower part, logo bar along the bottom edge. The sharp image
+   stops where the panel starts, so no text ever sits on the photo. */
+.d-photo-poster .layout-cover-b{--cb-panel:520px;--cb-inset:40px;--bar-h:150px}
+.d-photo-poster .layout-cover-b .s-head{order:9;border-bottom:0;border-top:var(--bw) solid var(--ink);position:relative;z-index:3}
+.d-photo-poster .layout-cover-b .s-main{order:1}
+.d-photo-poster .layout-cover-b.has-photo .s-main > .b-photo{position:absolute;inset:0;z-index:0;padding:0}
+.d-photo-poster .layout-cover-b.has-photo .ph-img{inset:48px 0 auto 0;height:calc(100% - var(--cb-panel) - var(--cb-inset) - var(--bw) - 48px - 24px)}
+.d-photo-poster .layout-cover-b.has-photo .ph-cap{display:none}
+.d-photo-poster .layout-cover-b.has-photo .s-main > .b-title{flex:none;position:relative;z-index:2;margin:auto var(--cb-inset) var(--cb-inset);height:var(--cb-panel);
+  display:flex;flex-direction:column;padding:40px 28px 0;background:var(--ink);color:var(--on-ink);
+  border-top:var(--strip) solid var(--accent-fill);border-bottom:40px solid var(--ink);box-shadow:0 0 0 var(--bw) var(--ink)}
+/* The bottom margin is a border, not padding: text that fit.js tolerates past
+   the content box still lands on ink, never on the photo. */
+.d-photo-poster .layout-cover-b .t{color:var(--on-ink)}
+.d-photo-poster .layout-cover-b.has-photo .t{margin-top:auto}
+.d-photo-poster .layout-cover-b .t .hl{color:var(--accent-fill)}
+.d-photo-poster .layout-cover-b .sub{color:var(--on-ink-muted)}
+.d-photo-poster .layout-cover-b .s-foot{position:absolute;z-index:4;right:var(--pad-x);bottom:0;height:var(--bar-h);max-width:560px;
+  display:flex;align-items:flex-start;padding:34px 0 0;background:none}
+.d-photo-poster .layout-cover-b .s-foot .src{text-align:right;color:var(--muted);font-stretch:84%;text-wrap:balance}
+
+/* Cover B, no photo: full ink field, strip on top, title in paper caps */
+.d-photo-poster .layout-cover-b:not(.has-photo) .s-frame{background:var(--ink)}
+.d-photo-poster .layout-cover-b:not(.has-photo) .s-frame::before{content:"";display:block;flex:none;order:0;height:var(--strip);
+  background:var(--accent-fill);border-bottom:var(--bw) solid var(--ink)}
+.d-photo-poster .layout-cover-b:not(.has-photo) .s-main > .b-title{flex:1 1 auto;display:flex;flex-direction:column;padding-top:72px;padding-bottom:48px}
+.d-photo-poster .layout-cover-b:not(.has-photo) .sub{margin-top:auto;padding-top:40px;max-width:900px}
+
+/* CTA: bar / ink panel with the action / URL on the strip / standfirst on paper */
+.d-photo-poster .role-cta .s-main{gap:0}
+.d-photo-poster .role-cta .s-main > .b-cta{flex:1 1 auto;display:flex;flex-direction:column;background:var(--ink);padding:0}
+.d-photo-poster .cta-t{margin:auto var(--pad-x) 0;padding:56px 0 48px;line-height:var(--lh-d);color:var(--on-ink)}
+.d-photo-poster .cta-url{flex:none;padding:20px var(--pad-x) 18px;background:var(--accent-fill);color:var(--on-accent-fill);
+  border-top:var(--bw) solid var(--ink);border-bottom:var(--bw) solid var(--ink);
+  font-family:var(--font-text);font-weight:750;font-size:34px;line-height:1.2;word-break:break-all}
+.d-photo-poster .cta-sub{flex:none;padding:36px var(--pad-x) var(--pad-end);background:var(--paper);color:var(--ink);
+  font-family:var(--font-text);font-weight:450;line-height:1.3}
+.d-photo-poster .role-cta .s-foot{margin:0;padding-top:0;background:var(--paper)}
+
+/* No footer (no source, no handle): the last band keeps the bottom margin. */
+.d-photo-poster .role-content:not(.layout-stat):not(.layout-quote):not(:has(.s-foot)) .s-main{padding-bottom:var(--pad-end)}
+.d-photo-poster .layout-stat:not(:has(.s-foot)) .b-stat > :last-child,
+.d-photo-poster .layout-quote:not(:has(.s-foot)) .q-a{padding-bottom:var(--pad-end)}

@@ -1,0 +1,15 @@
+{
+  "url": "https://forum.example/posts/900156.json",
+  "status": 200,
+  "fetched_at": "2026-10-12T09:00:33Z",
+  "body": {
+    "id": 900156,
+    "topic_id": 90042,
+    "topic_slug": "monthly-community-update-october-2026",
+    "username": "user-7e1799",
+    "created_at": "2026-10-08T19:06:39.960Z",
+    "cooked": "After almost two years, loops and branching are only now arriving in workflows, and those are the basics. That is exactly why I stopped using Blockyard for now: for many apps these features are simply required to make the app [...]",
+    "post_number": 66,
+    "reply_count": 0
+  }
+}

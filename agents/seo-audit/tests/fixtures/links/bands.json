@@ -1,0 +1,54 @@
+{
+  "_comment": "Fictional bands.json of fernwood.example (only the keys links.py reads). Every number is invented.",
+  "schema_version": "1.0",
+  "generated_by": "gsc_bands.py",
+  "pages": [
+    {
+      "page": "https://fernwood.example/guides/runway/",
+      "cur": {
+        "clicks": 3,
+        "impressions": 400,
+        "ctr": 0.0075,
+        "position": 8.0
+      },
+      "bands": [
+        "quick_win"
+      ]
+    },
+    {
+      "page": "https://fernwood.example/",
+      "cur": {
+        "clicks": 50,
+        "impressions": 900,
+        "ctr": 0.055,
+        "position": 1.5
+      },
+      "bands": []
+    }
+  ],
+  "queries": [
+    {
+      "query": "startup runway",
+      "cur": {
+        "clicks": 2,
+        "impressions": 200,
+        "ctr": 0.01,
+        "position": 8.0
+      },
+      "top_page": "https://fernwood.example/guides/runway/"
+    },
+    {
+      "query": "burn rate formula",
+      "cur": {
+        "clicks": 1,
+        "impressions": 90,
+        "ctr": 0.011,
+        "position": 12.0
+      },
+      "top_page": "https://fernwood.example/blog/burn-rate/"
+    }
+  ],
+  "top_query_by_page": {
+    "https://fernwood.example/guides/runway/": "startup runway"
+  }
+}

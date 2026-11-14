@@ -1,0 +1,10 @@
+Campaign name,Ad set name,Ad name,Reporting starts,Reporting ends,Amount spent (EUR),Impressions,Reach,Link clicks,CTR (link click-through rate),"CPM (cost per 1,000 impressions) (EUR)",Landing page views,Adds to cart,Purchases,Cost per purchase (EUR)
+Acme prospecting (fictional),tofu-broad,acme_01_tofu_anti-category_bold-statement_4x5,2026-09-07,2026-09-20,171.00,40740,28518,760,1.87,4.20,700,40,21,8.14
+Acme prospecting (fictional),tofu-broad,acme_02_tofu_quiet-confession_meme-static_4x5,2026-09-07,2026-09-20,142.50,38800,27160,300,0.77,3.67,270,9,3,47.50
+Acme prospecting (fictional),mofu-visitors,acme_03_mofu_process-reveal_three-benefits-card_4x5,2026-09-07,2026-09-20,114.00,20370,14259,520,2.55,5.60,480,22,3,38.00
+Acme prospecting (fictional),mofu-visitors,acme_04_mofu_comparison-without-a-competitor_us-vs-them-comparison_1x1,2026-09-07,2026-09-20,90.25,18430,12901,390,2.12,4.90,360,25,11,8.20
+Acme prospecting (fictional),bofu-cart,acme_05_bofu_easy-first-step_mini-landing-page_4x5,2026-09-07,2026-09-20,57.00,8730,6111,210,2.41,6.53,120,6,1,57.00
+Acme prospecting (fictional),bofu-cart,acme_06_bofu_cost-reframe_cost-reframe-card_4x5,2026-09-07,2026-09-20,13.30,2522,1765,40,1.59,5.27,36,2,2,6.65
+Acme prospecting (fictional),tofu-broad,Old creative v2 FINAL,2026-09-07,2026-09-20,66.50,15520,10864,330,2.13,4.28,300,14,7,9.50
+Acme prospecting (fictional),tofu-broad,acme_07_tofu_specific-ritual_ugc-text-overlay_9x16,2026-09-07,2026-09-20,42.75,14550,10185,140,0.96,2.94,130,3,2,21.38
+Acme prospecting (fictional),mofu-visitors,acme_08_mofu_skeptic-disarm_crossed-out-problems_4x5,2026-09-07,2026-09-20,28.50,5820,4073,120,2.06,4.90,110,5,1,28.50

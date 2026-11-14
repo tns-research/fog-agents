@@ -1,0 +1,40 @@
+{
+  "_comment": "Copied to <project-root>/<project>/first-users-hunter/config.json on first run. Replace placeholders; never commit a real config to the agent folder. founder.handles: your own public handles (excluded from results, counted for Confidence). icp_keywords: words a matching signal must contain. recency_days: max signal age per type (ask, switch, complaint, question, trigger, event, build), overriding assets/criteria.json. activity: overrides of the activity gate (window_days, min_weighted_posts...). sources: one block per collector, see scripts/collectors/<name>.py --help. Reddit needs a free script app (REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET in the environment); GitHub discussions need a free GITHUB_TOKEN; every other source needs no key. Optional: a \"tools\" object (same keys as shared/tools.example.json) overrides the project's tool choices for this agent.",
+  "project": "<project-slug>",
+  "idea": "<one paragraph: what the product does and what problem it solves>",
+  "target_user": "<who is the early adopter: role, stage or vertical, size, place>",
+  "geography": "global",
+  "language": "en",
+  "founder": {
+    "handles": { "hn": "", "x": "", "linkedin": "", "github": "", "reddit": "" },
+    "weekly_hours": 3
+  },
+  "icp_keywords": ["<word the person writes about themselves>", "<word of the problem>"],
+  "exclude_handles": [],
+  "max_people": 20,
+  "ledger_purge_days": 60,
+  "recency_days": {},
+  "activity": {},
+  "sources": {
+    "hn": {
+      "enabled": true,
+      "queries": [
+        { "id": "hn_need", "query": "<phrase written when the need is live>", "tags": "(story,comment)", "hits": 50 }
+      ]
+    },
+    "github": {
+      "enabled": true,
+      "queries": [ { "id": "gh_need", "q": "\"<phrase>\" type:issue" } ],
+      "discussions": []
+    },
+    "reddit": { "enabled": false, "subreddits": ["<subreddit>"], "query": "<phrase>", "limit": 100 },
+    "luma": { "enabled": true, "places": ["<city slug, e.g. paris>"], "events": [], "keywords": [] },
+    "notion": { "enabled": false, "lists": [] },
+    "folk": { "enabled": false, "views": [] },
+    "registry_fr": {
+      "enabled": false,
+      "queries": [ { "id": "fr_new_companies", "q": "<word>", "section_activite_principale": "J", "departement": "75", "per_page": 25, "pages": 3 } ]
+    },
+    "manual": { "signals_csv": "manual-signals.csv", "activity_csv": "activity-manual.csv" }
+  }
+}

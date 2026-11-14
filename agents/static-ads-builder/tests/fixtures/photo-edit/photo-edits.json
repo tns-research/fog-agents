@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "project": "acme",
+  "project_context": "project-context",
+  "photos": [
+    {
+      "id": "founder-jar",
+      "src": "media/founder-jar.jpg",
+      "subject": "The founder holds a jar of fig jam in her kitchen.",
+      "people_present": "face-visible",
+      "people": "A woman in a green apron stands at a kitchen counter, smiling at the camera, holding a glass jar at chest height in her right hand; short dark hair, freckles, rolled sleeves.",
+      "held_object": "a glass jar of fig jam with a cream paper label",
+      "visible_text": [
+        "FIG",
+        "JAM"
+      ],
+      "weaknesses": [
+        "flat overhead kitchen light",
+        "kettle and cables on the counter",
+        "busy background"
+      ],
+      "concepts": [
+        {
+          "id": "clean-counter",
+          "title": "Same kitchen, cleared and regraded",
+          "edit_level": 30,
+          "changes": [
+            "clutter removed from the counter: kettle, cables, mugs",
+            "regrade to warm daylight with natural contrast"
+          ],
+          "never_changes": [
+            "face and expression",
+            "pose",
+            "both hands, five fingers each",
+            "the jar held and its label",
+            "the kitchen setting and the crop"
+          ],
+          "person_slug": "ana-ruiz",
+          "size": "1024x1536",
+          "text_zone": "upper third, over the plain wall",
+          "prompt": "edit level: 30% of the frame changes, regrade and clutter removed, setting and crop kept.\nkeep: her face and expression, her pose, both hands with five fingers each, the glass jar she holds and its paper label, exactly as in the photo.\ntransform: kettle, cables and mugs are removed from the counter, the counter stays bare oak; the light becomes warm late-morning daylight from the window.\npeople: the same woman, green apron, short dark hair, freckles, smiling, the jar at chest height in her right hand; skin texture, hair strands and apron creases stay as they are. No other person enters the frame.\ntext zone: the plain wall in the upper third stays calm and empty for the headline added later.\ngrade: warm, natural contrast, true skin tones.\nAvoid: no text, no letters, no logo, no extra people, no extra fingers, no skin smoothing, no change to the face or the jar."
+        },
+        {
+          "id": "plaster-wall",
+          "title": "Plain plaster wall, tighter crop",
+          "edit_level": 50,
+          "changes": [
+            "the kitchen background becomes a plain warm plaster wall",
+            "crop tightened to waist up",
+            "soft window light from the left"
+          ],
+          "never_changes": [
+            "face and expression",
+            "pose",
+            "both hands, five fingers each",
+            "the jar held and its label"
+          ],
+          "person_slug": "ana-ruiz",
+          "size": "1024x1536",
+          "text_zone": "upper third, plain wall",
+          "prompt": "edit level: 50% of the frame changes, background replaced, tighter crop.\nkeep: her face and expression, her pose, both hands with five fingers each, the glass jar she holds and its paper label, exactly as in the photo.\ntransform: the kitchen background becomes a plain warm plaster wall; the crop tightens to waist up; soft window light from the left with a gentle shadow on the wall.\npeople: the same woman, green apron, short dark hair, freckles, smiling, the jar at chest height in her right hand; skin texture, hair strands and apron creases stay as they are. No other person enters the frame.\ntext zone: the upper third of the wall stays plain and empty for the headline added later.\ngrade: warm, soft contrast, true skin tones.\nAvoid: no text, no letters, no logo, no extra people, no extra fingers, no skin smoothing, no change to the face or the jar."
+        },
+        {
+          "id": "paper-backdrop",
+          "title": "Studio paper backdrop",
+          "edit_level": 80,
+          "changes": [
+            "the subject is set on a seamless warm paper backdrop",
+            "directional studio light with a soft floor shadow",
+            "props reduced to the jar"
+          ],
+          "never_changes": [
+            "face and expression",
+            "pose",
+            "both hands, five fingers each",
+            "the jar held and its label"
+          ],
+          "person_slug": "ana-ruiz",
+          "size": "1536x1024",
+          "text_zone": "left half, plain backdrop",
+          "prompt": "edit level: 80% of the frame changes, subject set on a new backdrop with new light.\nkeep: her face and expression, her pose, both hands with five fingers each, the glass jar she holds and its paper label, exactly as in the photo.\ntransform: the whole kitchen becomes a seamless warm paper backdrop; every prop is removed except the jar in her hand; directional studio light from the right with a soft floor shadow; she stands in the right half of the frame.\npeople: the same woman, green apron, short dark hair, freckles, smiling, the jar at chest height in her right hand; skin texture, hair strands and apron creases stay as they are. No other person enters the frame.\ntext zone: the left half stays plain backdrop, calm and empty, for the copy added later.\ngrade: warm, crisp contrast, true skin tones.\nAvoid: no text, no letters, no logo, no extra people, no extra fingers, no skin smoothing, no change to the face or the jar."
+        }
+      ]
+    }
+  ]
+}

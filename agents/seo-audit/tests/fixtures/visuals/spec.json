@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "lang": "fr",
+  "cover": {
+    "kind": "cover",
+    "title": "Choisir un outil de planification d'équipe sans perdre trois mois",
+    "kicker": "Guide pratique",
+    "alt": "Couverture : titre « Choisir un outil de planification d'équipe sans perdre trois mois », logo Larkspur."
+  },
+  "body": [
+    {
+      "id": "v1",
+      "kind": "comparison",
+      "title": "Tableur, outil dédié ou suite complète : ce que chacun couvre",
+      "after_h2": "Les trois familles d'outils",
+      "alt": "Tableau comparatif de trois options (tableur, outil dédié, suite complète) sur cinq critères : prise en main, rappels automatiques, vue par équipe, export, coût par poste.",
+      "source": "relevé des pages tarifs publiques, novembre 2026",
+      "data": {
+        "corner": "Critère",
+        "columns": ["Tableur", "Outil dédié", "Suite complète"],
+        "highlight": 1,
+        "rows": [
+          { "label": "Prise en main", "cells": ["Immédiate", "Une heure", "Une semaine"] },
+          { "label": "Rappels automatiques", "cells": ["no", "yes", "yes"] },
+          { "label": "Vue par équipe", "cells": ["partial: à construire", "yes", "yes"] },
+          { "label": "Export", "cells": ["yes", "yes: CSV et iCal", "partial: offre Pro"] },
+          { "label": "Coût par poste", "cells": ["0 €", "6 € par mois", "18 € par mois"] }
+        ]
+      }
+    },
+    {
+      "id": "v2",
+      "kind": "steps",
+      "title": "Déployer l'outil en cinq étapes",
+      "after_h2": "La mise en place",
+      "alt": "Cinq étapes numérotées : lister les contraintes, importer l'équipe, créer les modèles de semaine, tester sur une équipe pilote, ouvrir à tous.",
+      "data": {
+        "steps": [
+          { "title": "Lister les contraintes", "text": "Horaires, congés, compétences requises par créneau : tout ce qui bloque une affectation." },
+          { "title": "Importer l'équipe", "text": "Un fichier CSV avec les noms, les rôles et les contrats suffit pour démarrer." },
+          { "title": "Créer les modèles de semaine", "text": "Deux ou trois semaines types couvrent la plupart des cas." },
+          { "title": "Tester sur une équipe pilote", "text": "Deux semaines sur une seule équipe montrent ce qui manque avant le déploiement." },
+          { "title": "Ouvrir à tous", "text": "Chaque responsable reçoit ses accès et la semaine type de son équipe." }
+        ]
+      }
+    },
+    {
+      "id": "v3",
+      "kind": "checklist",
+      "title": "Avant de signer : six points à vérifier",
+      "after_h2": "Bien choisir",
+      "alt": "Liste de contrôle de six points avant de signer, dont deux à surveiller et un à éviter.",
+      "data": {
+        "items": [
+          { "text": "Import CSV de l'équipe existante" },
+          { "text": "Rappels par e-mail et SMS" },
+          { "text": "Droits par responsable" },
+          { "text": "Export iCal vers les agendas" },
+          { "text": "Engagement annuel imposé", "state": "warn" },
+          { "text": "Données hébergées hors UE", "state": "cross" }
+        ]
+      }
+    },
+    {
+      "id": "v4",
+      "kind": "stat",
+      "title": "Ce que coûte une semaine mal planifiée",
+      "after_h2": "Le coût du statu quo",
+      "alt": "Deux chiffres : 4 h par semaine passées à refaire le planning, 23 % de créneaux modifiés après publication, sources citées.",
+      "data": {
+        "stats": [
+          { "value": "4 h", "label": "par semaine passées à refaire le planning à la main", "source": "enquête fictive Larkspur 2026" },
+          { "value": "23 %", "label": "des créneaux modifiés après la publication du planning", "source": "panel fictif de 40 équipes" }
+        ]
+      }
+    },
+    {
+      "id": "v5",
+      "kind": "timeline",
+      "title": "Un déploiement type sur un mois",
+      "after_h2": "Le calendrier",
+      "alt": "Frise chronologique en quatre jalons : semaine 1 cadrage, semaine 2 import, semaine 3 pilote, semaine 4 ouverture.",
+      "data": {
+        "events": [
+          { "date": "Semaine 1", "title": "Cadrage", "text": "Les contraintes sont listées et validées par les responsables." },
+          { "date": "Semaine 2", "title": "Import", "text": "L'équipe et les modèles de semaine sont dans l'outil." },
+          { "date": "Semaine 3", "title": "Pilote", "text": "Une équipe planifie pour de vrai et note ce qui manque." },
+          { "date": "Semaine 4", "title": "Ouverture", "text": "Toutes les équipes basculent." }
+        ]
+      }
+    },
+    {
+      "id": "v6",
+      "kind": "decision",
+      "title": "Faut-il un outil dédié ?",
+      "after_h2": "Décider",
+      "alt": "Arbre de décision : plus de dix personnes planifiées ? Si non, un tableur suffit. Si oui, horaires variables chaque semaine ? Si oui, outil dédié ; si non, modèle de tableur partagé.",
+      "data": {
+        "question": "Plus de dix personnes à planifier ?",
+        "no": { "outcome": "Un tableur partagé suffit" },
+        "yes": {
+          "question": "Les horaires changent-ils chaque semaine ?",
+          "yes": { "outcome": "Outil dédié" },
+          "no": { "outcome": "Modèle de tableur avec rappels" }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,289 @@
+{
+  "id": "swiss-grid",
+  "name": "Swiss grid",
+  "summary": "International Typographic Style: a strict six-column grid, one grotesque in three weights, flush-left type, oversized numerals, thick ink rules and one signal accent.",
+  "best_for": [
+    "data and benchmarks",
+    "frameworks and step-by-step sequences",
+    "numbers-first hooks",
+    "annual figures, rankings, comparisons"
+  ],
+  "avoid_for": [
+    "intimate personal stories that want a warm voice",
+    "photo-led event recaps with many pictures"
+  ],
+  "mood": "light",
+  "rules": {
+    "grid": "Six columns of 136 px with 24 px gutters on 72 px margins (936 px measure). Every block starts on a column line: titles span five columns, body and context sit in the right four columns, sources and labels in the left columns. A 14 px ink bar anchors the top of every slide, a 2 px rule carries the footer.",
+    "type": "One grotesque (Schibsted Grotesk) in three weights: 800 for titles and numerals, 500 for standfirsts and list items, 400 for body. Titles tight (negative tracking, line-height under 1), flush left, ragged right. Stat numerals set huge in lining figures, kept proportional because the tabular set widens the decimal point; chart values and the folio are tabular. Labels and sources at a fixed 22 px.",
+    "density": "One idea per slide. Titles hang from the top bar, the rest anchors to the footer rule, so the space between is a deliberate interval, never a dead band. Calm slides (one number, one quote) alternate with dense ones.",
+    "accent": "One signal accent per slide, applied to one thing: the accent words of the title (full-strength accent, titles are large enough for 3:1), the highlighted bar or line, the 10 px rule over a stat label, the opening quote mark, or the CTA link rule. List numerals, other rules and the other bars stay ink or grey.",
+    "photo": "In a grid module, edge to edge within its columns, shown whole (contain) on a neutral grey mat. No crop, no filter, no frame ornament.",
+    "texture": "None. Flat paper, solid ink, the grid does the work."
+  },
+  "palette": {
+    "paper": "#f4f4f1",
+    "ink": "#111111",
+    "muted": "#55554f",
+    "rule": "#111111",
+    "chart_base": "#b4b4ae",
+    "chart_base_2": "#85857f",
+    "chart_base_3": "#d4d4ce",
+    "mat": "#e2e2dd",
+    "accent": "#e8361c",
+    "inverse": {
+      "paper": "#111111",
+      "ink": "#f4f4f1",
+      "muted": "#b3b3ac",
+      "rule": "#f4f4f1",
+      "chart_base": "#5c5c57",
+      "chart_base_2": "#7d7d77",
+      "chart_base_3": "#3a3a36",
+      "mat": "#262624"
+    }
+  },
+  "fonts": {
+    "display": {
+      "family": "Schibsted Grotesk",
+      "google": "Schibsted Grotesk:ital,wght@0,400..900;1,400..900",
+      "fallback": "'Helvetica Neue', Helvetica, Arial, sans-serif"
+    },
+    "text": {
+      "family": "Schibsted Grotesk",
+      "google": "Schibsted Grotesk:ital,wght@0,400..900;1,400..900",
+      "fallback": "'Helvetica Neue', Helvetica, Arial, sans-serif"
+    },
+    "label": {
+      "family": "Schibsted Grotesk",
+      "google": "Schibsted Grotesk:ital,wght@0,400..900;1,400..900",
+      "fallback": "'Helvetica Neue', Helvetica, Arial, sans-serif"
+    }
+  },
+  "brand": {
+    "fonts": false,
+    "inverse_from_brand": true
+  },
+  "chrome": {
+    "logo": [
+      "cover",
+      "cta"
+    ],
+    "handle": [
+      "content"
+    ],
+    "folio": true
+  },
+  "safe_margin": 60,
+  "type_scale": {
+    "cover_title": {
+      "min": 80,
+      "max": 156,
+      "lines": 6,
+      "steps": [
+        80,
+        88,
+        96,
+        104,
+        112,
+        124,
+        136,
+        148,
+        156
+      ]
+    },
+    "cover_title_media": {
+      "min": 72,
+      "max": 124,
+      "lines": 5,
+      "steps": [
+        72,
+        80,
+        88,
+        96,
+        104,
+        112,
+        124
+      ]
+    },
+    "cover_sub": {
+      "min": 30,
+      "max": 38,
+      "lines": 5
+    },
+    "title": {
+      "min": 56,
+      "max": 104,
+      "lines": 4,
+      "steps": [
+        56,
+        64,
+        72,
+        80,
+        88,
+        96,
+        104
+      ]
+    },
+    "title@text": {
+      "min": 64,
+      "max": 124,
+      "lines": 5,
+      "steps": [
+        64,
+        72,
+        80,
+        88,
+        96,
+        104,
+        112,
+        124
+      ]
+    },
+    "title@chart": {
+      "min": 52,
+      "max": 80,
+      "lines": 3,
+      "steps": [
+        52,
+        58,
+        64,
+        72,
+        80
+      ]
+    },
+    "title@list": {
+      "min": 56,
+      "max": 88,
+      "lines": 4,
+      "steps": [
+        56,
+        64,
+        72,
+        80,
+        88
+      ]
+    },
+    "title_media": {
+      "min": 52,
+      "max": 88,
+      "lines": 3,
+      "steps": [
+        52,
+        58,
+        64,
+        72,
+        80,
+        88
+      ]
+    },
+    "sub": {
+      "min": 30,
+      "max": 36,
+      "lines": 3
+    },
+    "body": {
+      "min": 32,
+      "max": 42,
+      "lines": 14
+    },
+    "list": {
+      "min": 36,
+      "max": 56,
+      "lines": 2
+    },
+    "stat_value": {
+      "min": 180,
+      "max": 540,
+      "lines": 1
+    },
+    "stat_label": {
+      "min": 40,
+      "max": 76,
+      "lines": 3
+    },
+    "stat_context": {
+      "min": 30,
+      "max": 36,
+      "lines": 5
+    },
+    "chart_title": {
+      "min": 26,
+      "max": 30,
+      "lines": 2
+    },
+    "quote": {
+      "min": 56,
+      "max": 112,
+      "lines": 7,
+      "steps": [
+        56,
+        64,
+        72,
+        80,
+        88,
+        100,
+        112
+      ]
+    },
+    "cta_title": {
+      "min": 72,
+      "max": 132,
+      "lines": 4
+    },
+    "cta": {
+      "min": 72,
+      "max": 156,
+      "lines": 5,
+      "steps": [
+        72,
+        80,
+        88,
+        96,
+        104,
+        112,
+        124,
+        136,
+        148,
+        156
+      ]
+    },
+    "cta_sub": {
+      "min": 30,
+      "max": 36,
+      "lines": 3
+    }
+  },
+  "budgets": {
+    "title_words": 12,
+    "cover_title_words": 12,
+    "body_words": 55,
+    "list_items": 5
+  },
+  "chart_box": {
+    "default": [
+      936,
+      760
+    ],
+    "chart": [
+      936,
+      800
+    ]
+  },
+  "cover_layouts": [
+    "cover-a",
+    "cover-b"
+  ],
+  "layouts": {
+    "cover-a": "Poster: logo under the top bar, the title filling the upper grid with its accent words broken out as an oversized line, the standfirst bottom-left in three columns and the photo (if any) as a module in the right three columns.",
+    "cover-b": "Split: a solid ink field carries the title across the lower grid; the photo module sits in columns 1 to 3 above it, the standfirst in columns 4 to 6.",
+    "text": "Title over five columns hanging from the top bar; body in columns 3 to 6 anchored to the footer, under a short ink rule.",
+    "list": "Title over five columns; items on a thick-ruled table, tabular numerals in column 1, text in columns 2 to 6.",
+    "stat": "The numeral set huge across the grid, tabular; label in five columns under a thick rule; context in columns 3 to 6 at the foot.",
+    "chart": "Title over five columns, the chart heading as a fixed 26 px label on a rule, the chart across all six columns, grey bars, one accent bar.",
+    "quote": "Opening mark hanging in column 1, the quote in columns 2 to 6, attribution in columns 2 to 4 anchored to the foot.",
+    "media": "Title over five columns, the screenshot or photo across the grid, numbered legend under it.",
+    "logos": "Title, then logos in ink on the six-column grid.",
+    "visual": "Title over five columns, a bespoke SVG in ink and one accent across the grid.",
+    "cta": "Logo under the top bar, the action set large over five columns, the URL on a thick accent rule, the reason in columns 1 to 4."
+  }
+}

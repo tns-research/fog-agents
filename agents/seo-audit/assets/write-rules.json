@@ -1,0 +1,55 @@
+{
+  "_comment": "Single source of the thresholds of scripts/write_article.py (mode write). A project overrides any key with a write object in its config.json (deep merge, --config); the title and description bounds stay in assets/crawl-rules.json (crawl_rules override). concision: share of words the concision pass cuts between draft.md and final.md. outbound_links: links to other sites in final.md. internal_links.min: links to 200 pages of the crawl. outline: how competitor headings are grouped (similarity = Jaccard of normalized words) and which H2 groups are marked must (seen on at least max(must_min_sources, ceil(must_min_share x pages)) pages). faq.heading_patterns: regular expressions of an FAQ H2. placeholders: regular expressions that block. assemble: defaults of the assembled article. frontmatter_presets: key names per site generator (null drops the key); check them against the site's content schema.",
+  "schema_version": "1.0",
+  "concision": { "min_cut": 0.15, "max_cut": 0.25 },
+  "outbound_links": { "min": 1, "max": 4 },
+  "internal_links": { "min": 2 },
+  "length": { "warn_below_median_share": 0.6 },
+  "outline": {
+    "similarity": 0.5,
+    "must_min_sources": 2,
+    "must_min_share": 0.3,
+    "keep_min_sources": 2,
+    "max_h2": 25,
+    "max_h3_per_h2": 8,
+    "boilerplate": [
+      "related", "related articles", "related posts", "you may also like", "read more", "read next", "share", "share this",
+      "comments", "leave a comment", "leave a reply", "newsletter", "subscribe", "table of contents", "contents", "about the author",
+      "author", "tags", "categories", "recent posts", "popular posts", "conclusion", "summary", "sources", "references",
+      "articles similaires", "à lire aussi", "a lire aussi", "lire aussi", "partager", "commentaires", "laisser un commentaire",
+      "sommaire", "table des matières", "à propos de l'auteur", "auteur", "catégories", "articles récents", "en résumé", "pour aller plus loin"
+    ]
+  },
+  "coverage_similarity": 0.5,
+  "faq": {
+    "min_questions": 2,
+    "heading_patterns": ["\\bfaq\\b", "frequently asked", "common questions", "questions fréquentes", "foire aux questions", "vos questions", "questions courantes"]
+  },
+  "terms": { "max": 25, "min_pages": 2 },
+  "question_words": {
+    "en": ["what", "how", "why", "when", "which", "who", "where", "is", "are", "can", "does", "do", "should", "will"],
+    "fr": ["comment", "pourquoi", "quel", "quelle", "quels", "quelles", "quand", "combien", "où", "qu'est-ce", "est-ce", "faut-il", "peut-on", "doit-on", "qui"]
+  },
+  "stopwords": {
+    "en": ["a", "an", "and", "are", "as", "at", "be", "best", "by", "can", "do", "does", "for", "from", "guide", "how", "in", "into", "is", "it", "its", "of", "on", "or", "the", "this", "to", "vs", "what", "when", "which", "why", "with", "you", "your", "2024", "2025", "2026", "2027"],
+    "fr": ["à", "a", "au", "aux", "avec", "ce", "ces", "comment", "dans", "de", "des", "du", "en", "et", "est", "guide", "il", "la", "le", "les", "leur", "ou", "où", "par", "pour", "pourquoi", "quel", "quelle", "qui", "sa", "se", "ses", "son", "sur", "un", "une", "vos", "votre", "vous", "l", "d", "qu", "s", "n", "c", "j"]
+  },
+  "placeholders": [
+    "\\bTODO\\b", "\\bTBD\\b", "\\bFIXME\\b", "\\bXXX\\b", "lorem ipsum", "\\{\\{[^}]*\\}\\}",
+    "\\[(?:INSERT|PLACEHOLDER|SOURCE|LINK|URL|CITATION)[^\\]]*\\]", "SOURCE NEEDED", "<!--\\s*(?:IMAGE|INFOGRAPHIC|VISUAL)\\s*:", "\\(→"
+  ],
+  "assemble": {
+    "article_type": "BlogPosting",
+    "body_h1": false,
+    "embed_jsonld": true,
+    "url_pattern": "/blog/{slug}/",
+    "breadcrumb_home": { "en": "Home", "fr": "Accueil" }
+  },
+  "frontmatter_presets": {
+    "default": { "title": "title", "description": "description", "slug": "slug", "date": "date", "dateModified": "dateModified", "author": "author", "cover": "cover", "cover_alt": "coverAlt", "tags": "tags" },
+    "astro": { "title": "title", "description": "description", "slug": null, "date": "pubDate", "dateModified": "updatedDate", "author": "author", "cover": "heroImage", "cover_alt": null, "tags": "tags" },
+    "hugo": { "title": "title", "description": "description", "slug": "slug", "date": "date", "dateModified": "lastmod", "author": "author", "cover": "image", "cover_alt": null, "tags": "tags" },
+    "eleventy": { "title": "title", "description": "description", "slug": null, "date": "date", "dateModified": "updated", "author": "author", "cover": "image", "cover_alt": "imageAlt", "tags": "tags" },
+    "next": { "title": "title", "description": "excerpt", "slug": null, "date": "date", "dateModified": "updated", "author": "author", "cover": "coverImage", "cover_alt": null, "tags": "tags" }
+  }
+}

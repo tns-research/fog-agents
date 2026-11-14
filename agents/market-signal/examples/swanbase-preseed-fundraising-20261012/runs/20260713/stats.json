@@ -1,0 +1,341 @@
+{
+  "schema_version": "2.0",
+  "window": {
+    "since": "2026-04-15",
+    "until": "2026-07-13",
+    "days": 90
+  },
+  "capped_jobs": [
+    "discourse-nocode-funding",
+    "hn-pre-seed",
+    "hn-warm-intro",
+    "reddit-startups-preseed",
+    "reddit-startups-warm-intro",
+    "reddit-venturecapital-preseed",
+    "se-money-investors"
+  ],
+  "thresholds": {
+    "min_authors": 5,
+    "min_communities": 2,
+    "counted_speakers": [
+      "user",
+      "practitioner"
+    ],
+    "phrase_records": 3,
+    "phrase_authors": 3
+  },
+  "corpus": {
+    "records": 49,
+    "labelled": 49,
+    "unlabelled": 0,
+    "relevant": 23,
+    "voices": 18,
+    "out_of_window": 0,
+    "by_source": [
+      {
+        "source": "discourse",
+        "records": 6,
+        "share": 0.122
+      },
+      {
+        "source": "hn",
+        "records": 14,
+        "share": 0.286
+      },
+      {
+        "source": "reddit",
+        "records": 24,
+        "share": 0.49
+      },
+      {
+        "source": "se",
+        "records": 5,
+        "share": 0.102
+      }
+    ],
+    "voices_by_source": [
+      {
+        "source": "reddit",
+        "records": 17,
+        "share": 0.944
+      },
+      {
+        "source": "se",
+        "records": 1,
+        "share": 0.056
+      }
+    ],
+    "by_community": [
+      {
+        "community": "r/startups",
+        "records": 16
+      },
+      {
+        "community": "Hacker News",
+        "records": 14
+      },
+      {
+        "community": "r/venturecapital",
+        "records": 8
+      },
+      {
+        "community": "forum.example",
+        "records": 6
+      },
+      {
+        "community": "money.stackexchange",
+        "records": 5
+      }
+    ],
+    "by_speaker": {
+      "other": 1,
+      "practitioner": 13,
+      "press": 1,
+      "user": 5,
+      "vendor": 3
+    }
+  },
+  "sentiment": {
+    "counted": 18,
+    "counts": {
+      "mixed": 1,
+      "negative": 3,
+      "neutral": 11,
+      "positive": 3
+    },
+    "shares": {
+      "mixed": 0.056,
+      "negative": 0.167,
+      "neutral": 0.611,
+      "positive": 0.167
+    }
+  },
+  "forces": {
+    "anxiety": 2,
+    "pull": 6,
+    "push": 3
+  },
+  "pains": [
+    {
+      "pain_id": "pain_investor_access",
+      "records": 12,
+      "voices": 8,
+      "distinct_authors": 7,
+      "distinct_communities": 2,
+      "communities": [
+        "r/startups",
+        "r/venturecapital"
+      ],
+      "by_source": {
+        "reddit": 8
+      },
+      "source_shares": {
+        "reddit": 1.0
+      },
+      "first_seen": "2026-05-13",
+      "last_seen": "2026-07-09",
+      "by_month": {
+        "2026-05": 1,
+        "2026-06": 5,
+        "2026-07": 2
+      },
+      "halves": {
+        "first": 1,
+        "second": 7
+      },
+      "trend": "unknown",
+      "volume": "lower_bound",
+      "resonance": 0.67,
+      "sentiment": {
+        "negative": 1,
+        "neutral": 4,
+        "positive": 3
+      },
+      "forces": {
+        "pull": 4,
+        "push": 3
+      },
+      "escalated": true,
+      "record_ids": [
+        "reddit:t1_fictive01",
+        "reddit:t1_fictive02",
+        "reddit:t1_fictive05",
+        "reddit:t1_fictive06",
+        "reddit:t1_fictive07",
+        "reddit:t1_fictive08",
+        "reddit:t1_fictive10",
+        "reddit:t1_fictive13"
+      ]
+    },
+    {
+      "pain_id": "pain_founder_salary",
+      "records": 3,
+      "voices": 3,
+      "distinct_authors": 3,
+      "distinct_communities": 1,
+      "communities": [
+        "r/startups"
+      ],
+      "by_source": {
+        "reddit": 3
+      },
+      "source_shares": {
+        "reddit": 1.0
+      },
+      "first_seen": "2026-07-11",
+      "last_seen": "2026-07-11",
+      "by_month": {
+        "2026-07": 3
+      },
+      "halves": {
+        "first": 0,
+        "second": 3
+      },
+      "trend": "unknown",
+      "volume": "lower_bound",
+      "resonance": 3.33,
+      "sentiment": {
+        "negative": 1,
+        "neutral": 2
+      },
+      "forces": {
+        "anxiety": 1
+      },
+      "escalated": false,
+      "record_ids": [
+        "reddit:t1_fictive19",
+        "reddit:t1_fictive20",
+        "reddit:t1_fictive21"
+      ]
+    },
+    {
+      "pain_id": "pain_traction_bar",
+      "records": 3,
+      "voices": 3,
+      "distinct_authors": 3,
+      "distinct_communities": 2,
+      "communities": [
+        "r/startups",
+        "r/venturecapital"
+      ],
+      "by_source": {
+        "reddit": 3
+      },
+      "source_shares": {
+        "reddit": 1.0
+      },
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-07-12",
+      "by_month": {
+        "2026-06": 2,
+        "2026-07": 1
+      },
+      "halves": {
+        "first": 0,
+        "second": 3
+      },
+      "trend": "unknown",
+      "volume": "lower_bound",
+      "resonance": 1.33,
+      "sentiment": {
+        "negative": 1,
+        "neutral": 2
+      },
+      "forces": {
+        "anxiety": 1,
+        "pull": 1
+      },
+      "escalated": false,
+      "record_ids": [
+        "reddit:t1_fictive03",
+        "reddit:t1_fictive04",
+        "reddit:t1_fictive24"
+      ]
+    },
+    {
+      "pain_id": "pain_pitch_story",
+      "records": 2,
+      "voices": 2,
+      "distinct_authors": 2,
+      "distinct_communities": 1,
+      "communities": [
+        "r/startups"
+      ],
+      "by_source": {
+        "reddit": 2
+      },
+      "source_shares": {
+        "reddit": 1.0
+      },
+      "first_seen": "2026-07-10",
+      "last_seen": "2026-07-10",
+      "by_month": {
+        "2026-07": 2
+      },
+      "halves": {
+        "first": 0,
+        "second": 2
+      },
+      "trend": "unknown",
+      "volume": "lower_bound",
+      "resonance": 1.67,
+      "sentiment": {
+        "neutral": 2
+      },
+      "forces": {
+        "pull": 1
+      },
+      "escalated": false,
+      "record_ids": [
+        "reddit:t1_fictive16",
+        "reddit:t1_fictive17"
+      ]
+    },
+    {
+      "pain_id": "pain_vc_misalignment",
+      "records": 1,
+      "voices": 0,
+      "distinct_authors": 0,
+      "distinct_communities": 0,
+      "communities": [],
+      "by_source": {},
+      "source_shares": {},
+      "first_seen": null,
+      "last_seen": null,
+      "by_month": {},
+      "halves": {
+        "first": 0,
+        "second": 0
+      },
+      "trend": "flat",
+      "volume": "complete",
+      "resonance": null,
+      "sentiment": {},
+      "forces": {},
+      "escalated": false,
+      "record_ids": []
+    }
+  ],
+  "escalated": [
+    "pain_investor_access"
+  ],
+  "competitors": [
+    {
+      "name": "accelerators",
+      "records": 3,
+      "distinct_authors": 2
+    }
+  ],
+  "language_bank": [],
+  "community_medians": {
+    "Hacker News|story": 1,
+    "money.stackexchange|question": 2,
+    "r/startups|comment": 1.5,
+    "r/venturecapital|comment": 1.5
+  },
+  "inputs": {
+    "corpus": "corpus.jsonl",
+    "corpus_sha256": "80b11a287bfc3257f7d36c77c7354b70f0de02995ed2a1954f2a905c9e5e6fb4",
+    "labels_sha256": "d579b5806ba078b1066208652dc55ca65e074cbf7d64931c61c9ba9784634252"
+  }
+}

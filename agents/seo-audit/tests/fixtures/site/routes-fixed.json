@@ -1,0 +1,90 @@
+{
+  "_comment": "Same fictional site after the refresh of /blog/first-pitch/ shipped: new title, og:url on the right host, no leftover template token or brief comment, the trailing-slash duplicate now 301s, robots.txt declares only its own sitemap. Used by the verify and diff tests.",
+  "routes": {
+    "/": {
+      "status": 200,
+      "file": "home.html"
+    },
+    "/fr/": {
+      "status": 200,
+      "file": "fr-home.html"
+    },
+    "/program/": {
+      "status": 200,
+      "file": "program.html"
+    },
+    "/blog/": {
+      "status": 200,
+      "file": "blog.html"
+    },
+    "/blog/first-pitch/": {
+      "status": 200,
+      "file": "first-pitch-fixed.html"
+    },
+    "/blog/pitch-deck-mistakes/": {
+      "status": 200,
+      "file": "pitch-deck-mistakes.html"
+    },
+    "/blog/pitch-deck-mistakes": {
+      "status": 301,
+      "headers": {
+        "Location": "/blog/pitch-deck-mistakes/"
+      }
+    },
+    "/blog/orphan-guide/": {
+      "status": 200,
+      "file": "orphan-guide.html"
+    },
+    "/blog/first-pitch": {
+      "status": 301,
+      "headers": {
+        "Location": "/blog/first-pitch/"
+      }
+    },
+    "/program": {
+      "status": 301,
+      "headers": {
+        "Location": "/program/"
+      }
+    },
+    "/old-program/": {
+      "status": 301,
+      "headers": {
+        "Location": "/program/"
+      }
+    },
+    "/events/": {
+      "status": 200,
+      "file": "events.html"
+    },
+    "/apply/": {
+      "status": 200,
+      "file": "apply.html"
+    },
+    "/legal/": {
+      "status": 200,
+      "file": "legal.html",
+      "headers": {
+        "X-Robots-Tag": "noindex"
+      }
+    },
+    "/private/": {
+      "status": 200,
+      "file": "legal.html"
+    },
+    "/robots.txt": {
+      "status": 200,
+      "file": "robots-fixed.txt",
+      "headers": {
+        "Content-Type": "text/plain; charset=utf-8"
+      }
+    },
+    "/sitemap.xml": {
+      "status": 200,
+      "file": "sitemap.xml",
+      "headers": {
+        "Content-Type": "application/xml"
+      }
+    }
+  }
+}

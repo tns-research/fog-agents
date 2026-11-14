@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://larkspur.example/</loc></url>
+  <url><loc>https://larkspur.example/about/</loc></url>
+  <url><loc>https://larkspur.example/contact/</loc></url>
+  <url><loc>https://larkspur.example/privacy/</loc></url>
+  <url><loc>https://larkspur.example/changelog/</loc></url>
+  <url><loc>https://larkspur.example/blog/</loc></url>
+  <url><loc>https://larkspur.example/blog/pricing-experiments/</loc></url>
+  <url><loc>https://larkspur.example/blog/onboarding-checklist/</loc></url>
+  <url><loc>https://larkspur.example/authors/ana-ruiz/</loc></url>
+  <url><loc>https://larkspur.example/customers/</loc></url>
+</urlset>

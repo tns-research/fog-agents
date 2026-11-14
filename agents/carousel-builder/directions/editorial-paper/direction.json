@@ -1,0 +1,259 @@
+{
+  "id": "editorial-paper",
+  "name": "Editorial paper",
+  "summary": "Warm paper, editorial serif, hairline rules, magazine hierarchy. Calm and credible.",
+  "best_for": [
+    "explainers",
+    "opinion",
+    "research summaries",
+    "founder essays",
+    "decks with one chart"
+  ],
+  "avoid_for": [
+    "very short punchy hooks that want shouting type",
+    "screenshot-heavy product tours"
+  ],
+  "mood": "light",
+  "rules": {
+    "grid": "Single 904 px column on 88 px margins. Titles hang from the top rule; footer sits on a hairline. No centred layouts except the quote.",
+    "type": "Display serif (Fraunces) for titles, stat numerals and quotes; text serif (Source Serif 4) for body; a grotesque (Instrument Sans) only for labels, sources and chart text. Two weights per family.",
+    "density": "One idea per slide. A text slide is a title plus at most 50 words. Calm slides (one number, one quote) alternate with dense ones.",
+    "accent": "The brand accent appears once per slide at most: the accent words of a title (italic, accent colour), the highlighted bar, the list numerals. Never as a background block except on an accent surface slide.",
+    "photo": "Shown whole on a paper mat with a 2 px ink keyline and a caption line beneath. No crop, no filter.",
+    "texture": "None. Flat paper colour, ink rules."
+  },
+  "palette": {
+    "paper": "#f3eee4",
+    "ink": "#1a1915",
+    "muted": "#5e584c",
+    "rule": "#1a1915",
+    "chart_base": "#c4bcab",
+    "chart_base_2": "#a69d8a",
+    "chart_base_3": "#dcd5c6",
+    "mat": "#e8e1d3",
+    "accent": "#b5321f",
+    "accent_2": "#f2c94c",
+    "inverse": {
+      "paper": "#1a1915",
+      "ink": "#f3eee4",
+      "muted": "#b9b1a1",
+      "rule": "#f3eee4",
+      "chart_base": "#5e584c",
+      "chart_base_2": "#7c7566",
+      "chart_base_3": "#3d3a33",
+      "mat": "#2a2823"
+    }
+  },
+  "fonts": {
+    "display": {
+      "family": "Fraunces",
+      "google": "Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800",
+      "fallback": "Georgia, 'Times New Roman', serif"
+    },
+    "text": {
+      "family": "Source Serif 4",
+      "google": "Source Serif 4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700",
+      "fallback": "Georgia, serif"
+    },
+    "label": {
+      "family": "Instrument Sans",
+      "google": "Instrument Sans:wght@400..700",
+      "fallback": "'Helvetica Neue', Arial, sans-serif"
+    }
+  },
+  "brand": {
+    "fonts": false,
+    "inverse_from_brand": true
+  },
+  "chrome": {
+    "logo": [
+      "cover",
+      "cta"
+    ],
+    "handle": [
+      "content"
+    ],
+    "folio": false
+  },
+  "safe_margin": 64,
+  "type_scale": {
+    "cover_title": {
+      "min": 76,
+      "max": 150,
+      "lines": 5,
+      "steps": [
+        76,
+        84,
+        92,
+        100,
+        112,
+        124,
+        136,
+        150
+      ]
+    },
+    "cover_sub": {
+      "min": 32,
+      "max": 40,
+      "lines": 4
+    },
+    "title": {
+      "min": 58,
+      "max": 100,
+      "lines": 4,
+      "steps": [
+        58,
+        64,
+        72,
+        80,
+        88,
+        100
+      ]
+    },
+    "sub": {
+      "min": 30,
+      "max": 38,
+      "lines": 3
+    },
+    "body": {
+      "min": 32,
+      "max": 44,
+      "lines": 12
+    },
+    "list": {
+      "min": 34,
+      "max": 58,
+      "lines": 3
+    },
+    "stat_value": {
+      "min": 150,
+      "max": 440,
+      "lines": 1
+    },
+    "stat_label": {
+      "min": 40,
+      "max": 60,
+      "lines": 3
+    },
+    "stat_context": {
+      "min": 30,
+      "max": 36,
+      "lines": 5
+    },
+    "chart_title": {
+      "min": 28,
+      "max": 32,
+      "lines": 2
+    },
+    "quote": {
+      "min": 52,
+      "max": 112,
+      "lines": 7
+    },
+    "cta_title": {
+      "min": 72,
+      "max": 132,
+      "lines": 4
+    },
+    "cta": {
+      "min": 64,
+      "max": 210,
+      "lines": 5
+    },
+    "cta_sub": {
+      "min": 30,
+      "max": 38,
+      "lines": 3
+    },
+    "cover_title_media": {
+      "min": 72,
+      "max": 112,
+      "lines": 4,
+      "steps": [
+        72,
+        80,
+        88,
+        96,
+        104,
+        112
+      ]
+    },
+    "title_media": {
+      "min": 52,
+      "max": 72,
+      "lines": 3
+    },
+    "title@text": {
+      "min": 64,
+      "max": 132,
+      "lines": 5,
+      "steps": [
+        64,
+        72,
+        80,
+        88,
+        100,
+        112,
+        124,
+        132
+      ]
+    },
+    "title@chart": {
+      "min": 56,
+      "max": 88,
+      "lines": 3
+    },
+    "cover_title@cover-b": {
+      "min": 72,
+      "max": 140,
+      "lines": 4,
+      "steps": [
+        72,
+        84,
+        96,
+        108,
+        120,
+        132,
+        140
+      ]
+    },
+    "cover_sub@cover-b": {
+      "min": 30,
+      "max": 36,
+      "lines": 8
+    }
+  },
+  "budgets": {
+    "title_words": 14,
+    "cover_title_words": 14,
+    "body_words": 55,
+    "list_items": 5
+  },
+  "chart_box": {
+    "default": [
+      904,
+      760
+    ],
+    "chart": [
+      904,
+      760
+    ]
+  },
+  "cover_layouts": [
+    "cover-a",
+    "cover-b"
+  ],
+  "layouts": {
+    "cover-a": "Masthead: logo top-left over a thick rule, photo (if any) as a matted plate, title set large at the bottom, standfirst in italic.",
+    "cover-b": "Title first, filling the upper half; standfirst and photo share the bottom row.",
+    "text": "Title hanging from the top rule, body below in a 904 px column.",
+    "list": "Title, then numbered or ruled items separated by hairlines; accent on numerals only.",
+    "stat": "One oversized serif numeral, its label in display serif, a short context line under a rule.",
+    "chart": "Title, chart heading in small grotesque, the chart filling the rest.",
+    "quote": "Large italic serif quote with a hanging opening mark, attribution under a short rule.",
+    "media": "Title over a matted photo or a framed screenshot with numbered annotations.",
+    "logos": "Title, then logos in ink on a quiet grid.",
+    "visual": "Title over a bespoke SVG drawn in ink and one accent.",
+    "cta": "Logo top-left, one action set large, the URL underlined in accent."
+  }
+}

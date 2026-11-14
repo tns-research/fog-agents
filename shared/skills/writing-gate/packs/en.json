@@ -1,0 +1,343 @@
+{
+  "pack": "en",
+  "language": "en",
+  "description": "Shared English pack: common machine-writing tics. Every rule carries bad and good examples tested by tests/run_tests.py.",
+  "rules": [
+    {
+      "code": "not-x-its-y",
+      "family": "two-step-correction",
+      "level": "BLOCK",
+      "pattern": "\\b(?:it|this|that|the (?:problem|point|goal|issue|question|answer))(?:['’]s not| is not| isn['’]t| was not| wasn['’]t)\\b[^!?\\n]{1,80}?[,;.:]\\s*(?:it|this|that|the [a-z]+)(?:['’]s| is| was)\\b",
+      "flags": "i",
+      "message": "State what it is. Drop the straw man you knock down first.",
+      "bad": [
+        "It's not a tool, it's a habit.",
+        "This isn't about speed. It's about trust.",
+        "The problem is not the price; the problem is the onboarding."
+      ],
+      "good": [
+        "It's not ready yet, so we wait until Monday.",
+        "It is not cheap: plans start at 49 euros."
+      ]
+    },
+    {
+      "code": "not-just-but",
+      "family": "two-step-correction",
+      "level": "BLOCK",
+      "pattern": "\\bnot (?:just|only|merely|simply)\\b[^.!?\\n]{1,80}?\\bbut\\b",
+      "flags": "i",
+      "message": "Say the second half directly, with its fact.",
+      "bad": [
+        "It is not just a CRM but a growth engine.",
+        "We are not only fast but also cheap."
+      ],
+      "good": [
+        "Not just yet.",
+        "It works, but only on Chrome."
+      ]
+    },
+    {
+      "code": "no-x-no-y-just-z",
+      "family": "two-step-correction",
+      "level": "BLOCK",
+      "pattern": "\\bNo [^.!?\\n]{1,40}[.!]\\s+No [^.!?\\n]{1,40}[.!]\\s+(?:Just|Only)\\b",
+      "message": "Say what the reader gets, once.",
+      "bad": [
+        "No setup. No meetings. Just results."
+      ],
+      "good": [
+        "No setup is needed. Install the plugin and connect your inbox."
+      ]
+    },
+    {
+      "code": "buzzword",
+      "family": "hollow-intensifier",
+      "level": "BLOCK",
+      "pattern": "\\b(?:delve[sd]?|delving|tapestry|testament to|game[- ]chang(?:er|ers|ing)|cutting[- ]edge|world[- ]class|best[- ]in[- ]class|next[- ]level|unlock(?:s|ing)? (?:the |your |its )?(?:full |true )?potential|in today['’]s (?:fast[- ]paced|digital|ever[- ]changing|competitive) (?:world|landscape|market)|ever[- ](?:evolving|changing) landscape|navigat(?:e|ing) the complexit(?:y|ies)|plays? a (?:pivotal|crucial|vital|key) role|cannot be overstated)\\b",
+      "flags": "i",
+      "message": "Delete the phrase and put the fact, the number or the name in its place.",
+      "bad": [
+        "Let's delve into the data.",
+        "A game-changer for small teams.",
+        "Our cutting-edge engine.",
+        "Unlock your full potential."
+      ],
+      "good": [
+        "We changed the onboarding flow.",
+        "The edge case fails on Safari."
+      ]
+    },
+    {
+      "code": "soft-buzzword",
+      "family": "hollow-intensifier",
+      "level": "WARN",
+      "pattern": "\\b(?:leverag(?:e|es|ed|ing)|robust|seamless(?:ly)?|crucial|pivotal|empower(?:s|ed|ing)?|streamlin(?:e|es|ed|ing)|supercharg(?:e|es|ed|ing)|revolutioni[sz](?:e|es|ed|ing)|synerg(?:y|ies)|holistic|elevat(?:e|es|ing) your)\\b",
+      "flags": "i",
+      "escalate_at": 3,
+      "message": "Replace with the concrete verb or fact (use, cut, add, 3 clicks).",
+      "bad": [
+        "We leverage AI to streamline your workflow."
+      ],
+      "good": [
+        "We use a script to cut the export from 40 minutes to 2."
+      ]
+    },
+    {
+      "code": "hollow-adverb",
+      "family": "hollow-intensifier",
+      "level": "WARN",
+      "pattern": "\\b(?:truly|genuinely|incredibly|extremely|literally|absolutely|deeply|profoundly|remarkably|insanely)\\b",
+      "flags": "i",
+      "escalate_at": 3,
+      "message": "Delete the adverb. If the sentence loses nothing, it was empty; if it does, add the fact instead.",
+      "bad": [
+        "This is truly unique.",
+        "It is incredibly fast."
+      ],
+      "good": [
+        "It loads in 0.8 seconds."
+      ]
+    },
+    {
+      "code": "staged-question",
+      "family": "staging",
+      "level": "BLOCK",
+      "pattern": "(?:^|(?<=[.!:]\\s))(?:The (?:result|catch|answer|kicker|twist|problem|truth|secret|best part|bottom line|takeaway|reason)|Why|How|What happened(?: next)?|The outcome)\\s?\\?",
+      "flags": "m",
+      "message": "Give the information instead of asking a question you answer yourself.",
+      "bad": [
+        "The result? A 3x lift.",
+        "We cut the price. Why? Churn was high."
+      ],
+      "good": [
+        "What does the result show for March?"
+      ]
+    },
+    {
+      "code": "question-then-answer",
+      "family": "staging",
+      "level": "WARN",
+      "pattern": "\\?[ \\t]+[A-Z]\\S*(?:[ \\t]+\\S+){0,3}[.!](?=\\s|$)",
+      "escalate_at": 2,
+      "message": "Turn the question and its short answer into one statement.",
+      "bad": [
+        "Want more leads? Fix your page."
+      ],
+      "good": [
+        "Do you export to CSV? The export button sits in Settings, under Data, next to the import."
+      ]
+    },
+    {
+      "code": "fake-suspense",
+      "family": "staging",
+      "level": "BLOCK",
+      "pattern": "\\b(?:here['’]s (?:the (?:thing|kicker|catch|twist|truth|deal|secret)|where it gets interesting|what (?:most people|nobody|no one) (?:miss(?:es)?|tells? you|talks? about|knows?))|let that sink in|plot twist|spoiler(?: alert)?\\s?:|(?:nobody|no one) (?:talks about|tells you|is talking about)|but wait,? there['’]s more|buckle up)",
+      "flags": "i",
+      "message": "Delete the teaser and give the fact.",
+      "bad": [
+        "Here's the thing: churn is a pricing problem.",
+        "Let that sink in.",
+        "Nobody talks about this."
+      ],
+      "good": [
+        "Here is the export for March."
+      ]
+    },
+    {
+      "code": "length-announcement",
+      "family": "staging",
+      "level": "BLOCK",
+      "pattern": "\\b(?:(?:method|approach|thesis|difference|idea|strategy|logic|answer|secret|lesson|rule|playbook|pitch|philosophy|vision|all|everything)\\s+(?:fits|can be summed up)\\b[^.!?\\n]{0,20}?\\b(?:one|a single|two|three) (?:line|sentence|word|page|paragraph)s?\\b|(?:comes|boils) down to (?:one|a single|two|three) (?:thing|word|question|idea)s?\\b|in a nutshell\\b|in (?:one|a single) (?:sentence|word|line)\\s*:)",
+      "flags": "i",
+      "message": "Write the content itself; do not announce how short it will be.",
+      "bad": [
+        "Our method fits in one sentence.",
+        "It all boils down to one thing.",
+        "In one word: focus."
+      ],
+      "good": [
+        "The contract fits on two pages of A4.",
+        "The answer came down to the wire on Friday."
+      ]
+    },
+    {
+      "code": "imagine-scene",
+      "family": "staging",
+      "level": "BLOCK",
+      "pattern": "(?:^|(?<=[.!?]\\s))Imagine (?:a|an|this|that|you|if|waking|being)\\b",
+      "flags": "m",
+      "message": "Explain with the real case instead of an invented scene.",
+      "bad": [
+        "Imagine a world where invoices pay themselves."
+      ],
+      "good": [
+        "We imagined the feature in March and shipped it in May."
+      ]
+    },
+    {
+      "code": "chatbot-ritual",
+      "family": "staging",
+      "level": "BLOCK",
+      "pattern": "\\b(?:I hope this helps|great question|in conclusion,|in summary,|let['’]s (?:dive|jump) (?:in|into)|without further ado|as an AI\\b|in this (?:article|post|guide),? (?:we|I)(?:['’]ll| will)|whether you['’]re a|feel free to)",
+      "flags": "i",
+      "message": "Delete the ritual sentence; start or end on the content.",
+      "bad": [
+        "In conclusion, focus wins.",
+        "Let's dive in.",
+        "Whether you're a founder or a marketer, this works."
+      ],
+      "good": [
+        "The conclusion of the audit is in section 3."
+      ]
+    },
+    {
+      "code": "trailing-participle",
+      "family": "trailing-participle",
+      "level": "BLOCK",
+      "pattern": ",\\s+(?:highlighting|underscoring|emphasi[sz]ing|showcasing|reflecting|fostering|paving the way|cementing|solidifying|signal(?:l)?ing|marking a|reinforcing|demonstrating)\\b[^.!?\\n]*[.!?]",
+      "flags": "i",
+      "message": "End the sentence before the participle, or replace it with the evidence.",
+      "bad": [
+        "Revenue grew 20%, highlighting the strength of the model.",
+        "The team shipped twice a week, fostering a culture of speed."
+      ],
+      "good": [
+        "Highlighting a row turns it yellow."
+      ]
+    },
+    {
+      "code": "grandiosity",
+      "family": "grandiosity",
+      "level": "BLOCK",
+      "pattern": "\\b(?:(?:a |this )?(?:pivotal|watershed|defining) moment|lasting legacy|(?:a|the) new era|(?:the )?next era|changes? everything|chang(?:e|ing) the world|paradigm shift|(?:redefin|reshap|transform)(?:e|es|ing) the (?:future|landscape|industry|way we)|the future of [a-z]+ is (?:here|now)|unprecedented|stands? as a (?:testament|beacon))\\b",
+      "flags": "i",
+      "message": "Size the claim to the facts: say what changed, for whom, by how much.",
+      "bad": [
+        "This launch marks a new era for founders.",
+        "It changes everything.",
+        "An unprecedented opportunity."
+      ],
+      "good": [
+        "The new pricing changes the invoice layout."
+      ]
+    },
+    {
+      "code": "at-the-heart",
+      "family": "grandiosity",
+      "level": "WARN",
+      "pattern": "\\b(?:at the (?:heart|core) of|in the realm of|in the world of|journey|ecosystem)\\b",
+      "flags": "i",
+      "escalate_at": 2,
+      "message": "Name the actual thing (the market, the network, the process).",
+      "bad": [
+        "Customers are at the heart of everything we do."
+      ],
+      "good": [
+        "The heart rate monitor ships in May."
+      ]
+    },
+    {
+      "code": "object-as-agent",
+      "family": "object-as-agent",
+      "level": "BLOCK",
+      "pattern": "\\b(?:the|this|that|our|your|their) (?:data|numbers?|platform|tool|product|strategy|approach|method|framework|process|system|market|algorithm|software|AI|model|funnel|dashboard|hat|page)\\s+(?:decides?|knows?|wants?|believes?|thinks?|understands?|refuses?|forgives?|rewards?|punishes?|cares?|remembers?|does the (?:rest|heavy lifting|work for you)|tells? (?:you|the story)|speaks? for itself|speak for themselves|(?:does|do)n['’]t lie)\\b",
+      "flags": "i",
+      "message": "Put the person who acts back as the subject (you decide, we review, the buyer chooses).",
+      "bad": [
+        "The data decides.",
+        "The numbers speak for themselves.",
+        "The platform does the heavy lifting."
+      ],
+      "good": [
+        "The founder decides the price.",
+        "The dashboard shows weekly revenue."
+      ]
+    },
+    {
+      "code": "vague-authority",
+      "family": "vague-authority",
+      "level": "WARN",
+      "pattern": "\\b(?:studies (?:show|prove|suggest)|research (?:shows|proves|suggests)|experts (?:agree|say)|it is (?:widely )?(?:known|accepted) that|science says)\\b",
+      "flags": "i",
+      "escalate_at": 2,
+      "message": "Name the source with its link, or state it as your own view.",
+      "bad": [
+        "Studies show that founders sleep less."
+      ],
+      "good": [
+        "A 2024 survey by the ministry (link) counts 1,200 respondents."
+      ]
+    },
+    {
+      "code": "crowd-claim",
+      "family": "vague-authority",
+      "level": "WARN",
+      "pattern": "\\b(?:most (?:founders|people|startups|teams|companies|marketers)|everyone knows|many (?:founders|teams|startups) (?:struggle|fail|think))\\b",
+      "flags": "i",
+      "escalate_at": 2,
+      "message": "Give a sourced number, or speak about the reader directly.",
+      "bad": [
+        "Most founders ignore SEO."
+      ],
+      "good": [
+        "You can check SEO in ten minutes."
+      ]
+    },
+    {
+      "code": "staccato",
+      "family": "staging",
+      "level": "WARN",
+      "pattern": "(?:^|(?<=[.!?][ \\t]))(?:(?=[^\\W\\d_])[^\\s.!?]+(?:[ \\t]+[^\\s.!?]+){0,3}[.!?][ \\t]+){2}(?=[^\\W\\d_])[^\\s.!?]+(?:[ \\t]+[^\\s.!?]+){0,3}[.!?](?=\\s|$)",
+      "flags": "m",
+      "escalate_at": 2,
+      "message": "Merge the short punch sentences into one sentence that carries a fact.",
+      "bad": [
+        "You build. You test. You learn."
+      ],
+      "good": [
+        "You build the page on Monday and test it with five users on Tuesday.",
+        "2. Propose angles. You pick one."
+      ]
+    },
+    {
+      "code": "spaced-hyphen",
+      "family": "dash",
+      "level": "WARN",
+      "pattern": "(?<=\\w) - (?=\\w)",
+      "escalate_at": 3,
+      "message": "A spaced hyphen reads as a dash: use a period, a comma or a colon.",
+      "bad": [
+        "We shipped it - finally."
+      ],
+      "good": [
+        "A two-step check runs first."
+      ]
+    },
+    {
+      "code": "em-dash",
+      "family": "dash",
+      "level": "BLOCK",
+      "pattern": "\u2014",
+      "message": "Replace the em dash with a period, a comma, a colon or parentheses.",
+      "bad": [
+        "We shipped it \u2014 finally."
+      ],
+      "good": [
+        "We shipped it, finally."
+      ]
+    },
+    {
+      "code": "spaced-en-dash",
+      "family": "dash",
+      "level": "BLOCK",
+      "pattern": "\\s\u2013\\s",
+      "message": "Replace the spaced en dash with a period, a comma or a colon. Ranges take a plain hyphen: 10-20.",
+      "bad": [
+        "We shipped it \u2013 finally."
+      ],
+      "good": [
+        "Pages 10\u201320 hold the data."
+      ]
+    }
+  ]
+}

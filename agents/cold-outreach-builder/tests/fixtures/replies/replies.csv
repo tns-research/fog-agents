@@ -1,0 +1,9 @@
+message_id,from,date,subject,body
+r-ana-1,Ana Test <ana@quill.example>,2026-10-14,Re: a question,"Sounds interesting, happy to chat next week. Tuesday works for me.
+
+On Mon, 12 Oct 2026, Alex wrote:
+> If you are not interested, tell me and I will stop."
+r-ben-1,ben@larch.example,2026-10-14,Re: a question,"Thanks, but we're not interested at the moment."
+r-chloe-1,chloe@fennel.example,2026-10-15,Re: a question,Please remove me from your list.
+r-hal-1,hal@birch.example,2026-10-15,Re: a question,"Not interested right now, but happy to chat in the spring once the round is closed."
+r-gil-1,gil@unknown.example,2026-10-15,Re: hello,"Interested, tell me more."

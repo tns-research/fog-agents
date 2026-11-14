@@ -1,0 +1,147 @@
+/* _base.css: structure shared by every direction. build.py inlines it before
+   the direction's style.css, then the theme variables (palette, accents,
+   fonts) computed from direction.json and brand.json.
+
+   Variables a direction gets for free (set per surface by build.py):
+     --paper --ink --muted --rule --chart-base --chart-base-2 --chart-base-3 --mat
+     --accent-mark  graphics, 3:1 on paper     --accent-text  words, 4.5:1 on paper
+     --accent-fill  highlight under ink, 7:1   --on-accent-fill
+     --accent-solid accent surface             --on-accent-solid
+     --font-display --font-text --font-mono    --W --H (slide size)
+   Export rules learned in production: no backdrop-filter, no blurred shadow,
+   no navigation UI in the slides, fonts awaited before measuring (fit.js). */
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#8a8a86}
+body{font-synthesis-weight:none;-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision;font-kerning:normal}
+img,svg{display:block}
+
+.deck{display:flex;flex-direction:column;align-items:center;gap:48px;padding:48px 0}
+.slide{position:relative;flex:none;width:var(--W);height:var(--H);overflow:hidden;
+  background:var(--paper);color:var(--ink);font-family:var(--font-text)}
+.s-deco{position:absolute;inset:0;z-index:0}
+.s-frame{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;
+  padding:var(--pad-top,72px) var(--pad-x,80px) var(--pad-bottom,64px)}
+.s-head{flex:none;position:relative;z-index:2}
+.s-main{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;gap:var(--gap,40px);position:relative}
+.s-foot{flex:none;display:flex;align-items:baseline;gap:24px;position:relative;z-index:2}
+.b{min-width:0;position:relative}
+
+/* Text roles: block-level so fit.js can measure overflow against the box. */
+.t,.sub,.body,.list,.stat-v,.stat-l,.stat-c,.q-t,.cta-t,.cta-sub,.cta-url,.c-title{display:block}
+.t{text-wrap:balance;hyphens:manual}
+.sub,.body p,.li-t,.li-s,.stat-l,.stat-c,.cta-sub,.q-t{text-wrap:pretty}
+.nw{white-space:nowrap}
+.stat-v{white-space:nowrap;font-variant-numeric:lining-nums}
+.body p+p{margin-top:.62em}
+.list{list-style:none}
+.list li{display:flex;align-items:baseline;gap:.6em}
+.li-n{flex:none}
+.li-body{flex:1 1 auto;min-width:0}
+.li-t,.li-s{display:block}
+.list-bullets .li-n::before{content:"";display:inline-block;width:.42em;height:.42em;background:currentColor;transform:translateY(-.12em)}
+.list-checks .li-n::before{content:"\2713"}
+.list-plain .li-n{display:none}
+.src,.handle,.folio{font-size:22px;line-height:1.3;color:var(--muted)}
+.src{flex:1 1 auto;min-width:0}
+.handle,.folio{flex:none}
+.folio-of{opacity:.7}
+
+/* Logo lockup. One-colour SVG logos inherit the text colour. */
+.logo{display:flex;align-items:center;gap:calc(var(--logo-h,52px)*.24);color:var(--logo-color,var(--ink))}
+.logo-mark{height:var(--logo-h,52px);width:auto}
+.logo-word{height:calc(var(--logo-h,52px)*.56);width:auto}
+.logo-full{height:var(--logo-h,52px);width:auto}
+.logo-name{font-family:var(--font-display);font-size:calc(var(--logo-h,52px)*.62);line-height:1}
+
+/* Charts (SVG from scripts/charts.py). */
+.b-chart{display:flex;flex-direction:column;flex:1 1 auto;min-height:0}
+.c-box{flex:1 1 auto;min-height:0;display:flex;align-items:stretch}
+.chart-svg{width:100%;height:100%;overflow:visible}
+.chart-svg text{font-family:var(--font-chart,var(--font-text));fill:var(--ink)}
+.c-bar{fill:var(--chart-base)}
+.c-bar.is-hl{fill:var(--accent-mark)}
+.c-label{font-weight:500}
+.c-label.is-hl,.c-value.is-hl{font-weight:700}
+.c-value{font-weight:600;font-variant-numeric:tabular-nums}
+.chart-svg .c-tick{fill:var(--muted)}
+.c-axis{stroke:var(--ink);stroke-width:2.5}
+.c-grid{stroke:var(--rule);stroke-opacity:.25;stroke-width:1.5}
+.c-line{stroke:var(--chart-base);stroke-width:4;stroke-linejoin:round;stroke-linecap:round}
+.c-line.is-hl{stroke:var(--accent-mark);stroke-width:7}
+.c-dot{fill:var(--accent-mark)}
+.c-seg{stroke:var(--chart-base)}
+.c-seg.g2{stroke:var(--chart-base-2,var(--chart-base))}
+.c-seg.g3{stroke:var(--chart-base-3,var(--chart-base))}
+.c-seg.is-hl{stroke:var(--accent-mark)}
+.c-swatch{fill:var(--chart-base)}
+.c-swatch.g2{fill:var(--chart-base-2,var(--chart-base))}
+.c-swatch.g3{fill:var(--chart-base-3,var(--chart-base))}
+.c-swatch.is-hl{fill:var(--accent-mark)}
+.chart-svg .c-center{font-family:var(--font-display);font-weight:700}
+.c-note{font-size:24px;color:var(--muted);margin-top:12px}
+
+/* Photos: contain by default, never a destructive crop. */
+.b-photo{display:flex;flex-direction:column;flex:1 1 auto;min-height:0}
+.ph-box{position:relative;flex:1 1 auto;min-height:0;overflow:hidden;background:var(--mat,var(--paper))}
+.ph-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.fit-cover .ph-img{object-fit:cover}
+.ph-mat{position:absolute;inset:-48px;width:calc(100% + 96px);height:calc(100% + 96px);object-fit:cover;filter:blur(32px) saturate(1.05) brightness(.9)}
+.mat-paper .ph-mat,.mat-none .ph-mat,.mat-ink .ph-mat{display:none}
+.mat-ink .ph-box{background:var(--ink)}
+.mat-none .ph-box{background:transparent}
+.ph-cap{font-size:24px;line-height:1.3;color:var(--muted);margin-top:14px;display:flex;justify-content:space-between;gap:24px}
+.ph-credit{flex:none}
+
+/* Screenshots: the frame keeps the image ratio inside the space it gets. */
+.b-shot{display:flex;flex-direction:column;flex:1 1 auto;min-height:0;gap:28px}
+.shot-wrap{flex:1 1 0;min-height:0;container-type:size;display:flex;align-items:center;justify-content:center}
+.shot-frame{--bar-h:0px;width:min(100cqw,calc((100cqh - var(--bar-h)) * var(--shot-w) / var(--shot-h)));background:var(--paper)}
+.frame-browser .shot-frame{--bar-h:48px;border:3px solid var(--ink)}
+.frame-plain .shot-frame{border:2px solid var(--ink)}
+.shot-bar{height:var(--bar-h);display:flex;align-items:center;padding:0 18px;border-bottom:3px solid var(--ink);background:var(--paper)}
+.shot-url{font-family:var(--font-mono);font-size:22px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.shot-img{position:relative;width:100%;aspect-ratio:var(--shot-ar)}
+.shot-img img{width:100%;height:100%;object-fit:contain}
+.shot-ann{position:absolute;inset:0;width:100%;height:100%}
+.ann-box{fill:none;stroke:var(--accent-mark);stroke-width:5}
+.ann-pin circle{fill:var(--accent-solid)}
+.ann-pin text{fill:var(--on-accent-solid);font-family:var(--font-text);font-weight:700}
+.shot-legend{list-style:none;display:flex;flex-direction:column;gap:14px;flex:none}
+.shot-legend li{display:flex;align-items:center;gap:18px;font-size:32px;line-height:1.25}
+.ann-n{flex:none;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:var(--accent-solid);color:var(--on-accent-solid);font-weight:700;font-size:24px}
+
+/* Quote, logos, visual, CTA. */
+.q-mark{font-family:var(--font-display)}
+.q-a{display:flex;flex-wrap:wrap;gap:.2em .6em;font-size:28px;line-height:1.3;margin-top:28px}
+.q-name{font-weight:700}
+.q-role,.q-tr{color:var(--muted)}
+.q-tr{font-style:italic}
+.lr{list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:40px 56px}
+.lr-img{height:64px;width:auto;max-width:240px;object-fit:contain}
+.lr-img.ink{filter:brightness(0)}
+.surface-inverse .lr-img.ink{filter:brightness(0) invert(1)}
+.lr-label{font-size:28px;color:var(--muted);margin-bottom:28px}
+.b-visual{display:flex;flex-direction:column;flex:1 1 auto;min-height:0}
+.vis{flex:1 1 auto;min-height:0;display:flex;align-items:center;justify-content:center}
+.vis svg{width:100%;height:100%}
+.vis-cap{font-size:24px;color:var(--muted);margin-top:14px}
+.vis .c-ink{fill:var(--ink)}.vis .c-paper{fill:var(--paper)}.vis .c-muted{fill:var(--muted)}
+.vis .c-accent{fill:var(--accent-mark)}.vis .c-fill{fill:var(--accent-fill)}
+.vis .s-ink{stroke:var(--ink)}.vis .s-muted{stroke:var(--muted)}.vis .s-accent{stroke:var(--accent-mark)}
+.vis text{font-family:var(--font-text);fill:var(--ink)}
+
+/* Errors made visible: a failed fit or a missing file shows in the render. */
+.asset-missing{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;height:100%;min-height:180px;
+  border:4px dashed #c0392b;color:#c0392b;font:600 28px/1.25 ui-monospace,monospace;text-align:center;padding:24px;
+  background:repeating-linear-gradient(45deg,transparent 0 18px,rgba(192,57,43,.08) 18px 36px)}
+.asset-missing code{font-size:22px;word-break:break-all}
+.fit-fail{outline:5px dashed #e0245e;outline-offset:4px}
+.fit-overflow .s-main{outline:5px dashed #e0245e;outline-offset:-5px}
+
+@media print{
+  html,body{background:none}
+  .deck{display:block;padding:0}
+  .slide{break-after:page;page-break-after:always}
+}

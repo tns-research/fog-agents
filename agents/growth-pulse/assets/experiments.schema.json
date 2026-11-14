@@ -1,0 +1,359 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "growth-pulse experiments handoff",
+  "description": "The three AARRR experiments of the week, input of the next sprint (growth-sprint or the founder). The model writes the experiments; scripts/check_experiments.py --fill writes every measured figure (baseline, readout, follow-up of last run's experiments) from pulse.json, then checks the rules. The next growth-pulse run reads this file back to judge each experiment. Validate with: python3 shared/scripts/validate_json.py agents/growth-pulse/assets/experiments.schema.json <experiments.json>",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "agent",
+    "project",
+    "generated_on",
+    "week",
+    "pulse",
+    "experiments",
+    "followup",
+    "budget",
+    "usage"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "day": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "stage": {
+      "enum": [
+        "acquisition",
+        "activation",
+        "retention",
+        "referral",
+        "revenue"
+      ]
+    }
+  },
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "agent": {
+      "const": "growth-pulse"
+    },
+    "project": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_on": {
+      "$ref": "#/$defs/day"
+    },
+    "week": {
+      "type": "object",
+      "required": [
+        "id",
+        "start",
+        "end"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-W[0-9]{2}$"
+        },
+        "start": {
+          "$ref": "#/$defs/day"
+        },
+        "end": {
+          "$ref": "#/$defs/day"
+        }
+      }
+    },
+    "pulse": {
+      "type": "object",
+      "description": "The pulse.json the experiments were built on.",
+      "required": [
+        "file",
+        "inputs_hash"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "file": {
+          "type": "string"
+        },
+        "inputs_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{12}$"
+        }
+      }
+    },
+    "experiments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "stage",
+          "hypothesis",
+          "change",
+          "channel",
+          "metric",
+          "baseline",
+          "success_threshold",
+          "duration_days",
+          "start_date",
+          "cost",
+          "owner",
+          "evidence",
+          "ice",
+          "readout",
+          "status"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^E-[0-9]{8}-[0-9]+$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 90
+          },
+          "stage": {
+            "$ref": "#/$defs/stage"
+          },
+          "hypothesis": {
+            "type": "string",
+            "pattern": "^We believe .+ because .+",
+            "description": "We believe that <change> will move <metric> because <reason drawn from the evidence>."
+          },
+          "change": {
+            "type": "string",
+            "minLength": 10,
+            "description": "What is done, concretely, by whom, where."
+          },
+          "channel": {
+            "type": "string",
+            "minLength": 2
+          },
+          "metric": {
+            "type": "object",
+            "required": [
+              "id",
+              "label"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^(new:)?[a-z0-9_]+(\\.[a-z0-9_\\-]+)+$",
+                "description": "A metric id of pulse.json, or new:<future metric id> for a metric to instrument first (the experiment's first task is then the tracking; the next run finds it once it records)."
+              },
+              "label": {
+                "type": "string"
+              }
+            }
+          },
+          "baseline": {
+            "type": "object",
+            "required": [
+              "value",
+              "basis"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "value": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Written by check_experiments.py --fill from pulse.json, never typed."
+              },
+              "basis": {
+                "enum": [
+                  "4-week mean",
+                  "report week",
+                  "none"
+                ],
+                "description": "4-week mean: the reference most experiments should use; report week: the week of pulse.json; none: a metric to instrument first (new:<id>)."
+              }
+            }
+          },
+          "success_threshold": {
+            "type": "object",
+            "required": [
+              "comparator",
+              "value",
+              "per",
+              "unit"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "comparator": {
+                "enum": [
+                  ">=",
+                  "<="
+                ]
+              },
+              "value": {
+                "type": "number"
+              },
+              "per": {
+                "enum": [
+                  "week",
+                  "total"
+                ],
+                "description": "week: mean of the complete weeks inside the experiment; total: their sum."
+              },
+              "unit": {
+                "type": "string"
+              }
+            }
+          },
+          "duration_days": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "start_date": {
+            "$ref": "#/$defs/day"
+          },
+          "cost": {
+            "type": "object",
+            "required": [
+              "cash_eur",
+              "hours",
+              "spend_requires_approval"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "cash_eur": {
+                "type": "number",
+                "minimum": 0
+              },
+              "hours": {
+                "type": "number",
+                "minimum": 0
+              },
+              "spend_requires_approval": {
+                "type": "boolean",
+                "description": "true whenever cash_eur > 0: nobody spends before the founder approves."
+              }
+            }
+          },
+          "owner": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+            "description": "founder, or the stack agent that runs the change (carousel-builder, landing-page-analyzer, cold-outreach-builder, seo-audit, ...)."
+          },
+          "evidence": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "pattern": "^(metrics|correlations|gsc|sources|followup|actions)/.+$"
+            },
+            "description": "References into pulse.json: metrics/<id>, correlations/<C id>, gsc/totals, gsc/queries/<key>, sources/<source>, followup/<experiment id>, actions/<date>."
+          },
+          "ice": {
+            "type": "object",
+            "required": [
+              "impact",
+              "confidence",
+              "ease"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "impact": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 10
+              },
+              "confidence": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 10
+              },
+              "ease": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 10
+              }
+            }
+          },
+          "kill_criterion": {
+            "type": "string",
+            "description": "Optional: when to stop before the end."
+          },
+          "readout": {
+            "type": "object",
+            "description": "Written by check_experiments.py --fill: can the threshold be told from noise in this duration?",
+            "required": [
+              "detectable",
+              "noise_band_per_week",
+              "reason"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "detectable": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "noise_band_per_week": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "reason": {
+                "type": "string"
+              }
+            }
+          },
+          "status": {
+            "enum": [
+              "proposed",
+              "approved",
+              "running",
+              "done",
+              "dropped"
+            ]
+          }
+        }
+      }
+    },
+    "followup": {
+      "type": "array",
+      "description": "Copied by check_experiments.py --fill from pulse.json experiments_followup: the verdicts of the previous run's experiments.",
+      "items": {
+        "type": "object"
+      }
+    },
+    "budget": {
+      "type": "object",
+      "required": [
+        "cash_eur_total",
+        "hours_total",
+        "requires_approval"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "cash_eur_total": {
+          "type": "number",
+          "minimum": 0
+        },
+        "hours_total": {
+          "type": "number",
+          "minimum": 0
+        },
+        "requires_approval": {
+          "type": "boolean"
+        }
+      }
+    },
+    "usage": {
+      "type": "string"
+    }
+  }
+}

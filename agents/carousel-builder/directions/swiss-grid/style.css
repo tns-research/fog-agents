@@ -1,0 +1,156 @@
+/* swiss-grid: International Typographic Style.
+   Grid: six columns of 136 px, 24 px gutters, 72 px margins (936 px measure).
+   Column starts (inside the frame): 0, 160, 320, 480, 640, 800.
+   Spans: 1 = 136, 2 = 296, 3 = 456, 4 = 616, 5 = 776, 6 = 936.
+   Anchors: a 14 px ink bar at the top of every slide, a 2 px rule over the footer.
+   One grotesque (--font-display = --font-text = --font-label) in 400, 500, 800. */
+
+.d-swiss-grid .slide{--pad-top:118px;--pad-x:72px;--pad-bottom:60px;--gap:40px;--logo-h:44px;--font-chart:var(--font-label);
+  --c1:136px;--c2:296px;--c3:456px;--c4:616px;--c5:776px;--o1:160px;--o2:320px;--o3:480px;--bar:14px;
+  font-feature-settings:"kern" 1}
+.d-swiss-grid .s-deco::before{content:"";position:absolute;left:72px;right:72px;top:60px;height:var(--bar);background:var(--rule)}
+
+/* Footer: source in columns 1 to 4, handle in 5, folio in 6. */
+.d-swiss-grid .s-foot{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));column-gap:24px;align-items:start;
+  border-top:2px solid var(--rule);padding-top:14px;margin-top:40px;font-family:var(--font-label)}
+.d-swiss-grid .src,.d-swiss-grid .handle,.d-swiss-grid .folio{font-size:22px;line-height:1.25;letter-spacing:0}
+.d-swiss-grid .src{grid-column:1 / 5;color:var(--muted)}
+.d-swiss-grid .handle{grid-column:5;font-weight:700;color:var(--ink)}
+.d-swiss-grid .folio{grid-column:6;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.d-swiss-grid .folio-of{opacity:1;color:var(--muted);font-weight:400}
+
+/* Type */
+.d-swiss-grid .t{font-family:var(--font-display);font-weight:800;line-height:.96;letter-spacing:-.038em;color:var(--ink);
+  text-wrap:pretty;max-width:var(--c5)}
+.d-swiss-grid .t .hl{color:var(--accent-mark);white-space:nowrap}
+.d-swiss-grid .sub{font-family:var(--font-text);font-weight:500;line-height:1.24;letter-spacing:-.01em;color:var(--ink);margin-top:.85em;max-width:var(--c4)}
+.d-swiss-grid .body{font-family:var(--font-text);font-weight:400;line-height:1.34;letter-spacing:-.005em;color:var(--ink)}
+.d-swiss-grid .body .hl{background:var(--accent-fill);color:var(--on-accent-fill);font-weight:500;padding:0 .08em;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone}
+
+/* ---------- Cover A: poster ---------- */
+.d-swiss-grid .role-cover{--pad-top:100px}
+.d-swiss-grid .role-cover .s-head{padding-bottom:0}
+.d-swiss-grid .role-cover .s-main{padding-top:44px}
+.d-swiss-grid .layout-cover-a .s-main{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));column-gap:24px;
+  grid-template-rows:auto 1fr;row-gap:40px}
+.d-swiss-grid .layout-cover-a.has-photo .s-main{grid-template-rows:auto minmax(500px,1fr)}
+.d-swiss-grid .layout-cover-a .b-title{display:contents}
+.d-swiss-grid .layout-cover-a .t{grid-column:1 / -1;grid-row:1;max-width:none;line-height:.93}
+.d-swiss-grid .layout-cover-a .t .hl{display:block;font-size:1.62em;line-height:.9;letter-spacing:-.05em;margin:.04em 0 .06em -.03em;
+  white-space:normal}
+.d-swiss-grid .layout-cover-a .sub{grid-column:1 / 4;grid-row:2;align-self:end;margin:0;max-width:none;
+  padding-top:18px;border-top:6px solid var(--rule)}
+.d-swiss-grid .layout-cover-a:not(.has-photo) .sub{grid-column:1 / 5}
+/* The photo module keeps the picture's ratio (no mat band) and pins to the right margin. */
+.d-swiss-grid .layout-cover-a .b-photo{grid-column:4 / -1;grid-row:2;align-self:stretch;min-height:0;container-type:size;
+  align-items:flex-end;justify-content:flex-end;--ar:.75}
+.d-swiss-grid .layout-cover-a .b-photo.ph-landscape{--ar:1.5}
+.d-swiss-grid .layout-cover-a .b-photo.ph-square{--ar:1}
+/* Shared by both covers: the box takes the picture's ratio inside its module. */
+.d-swiss-grid .role-cover .b-photo .ph-box{flex:none;height:min(calc(100cqh - 44px),calc(100cqw / var(--ar)));
+  width:min(100cqw,calc((100cqh - 44px) * var(--ar)))}
+.d-swiss-grid .role-cover .b-photo .ph-cap{width:min(100cqw,calc((100cqh - 44px) * var(--ar)))}
+
+/* ---------- Cover B: split, title on a solid ink field ---------- */
+.d-swiss-grid .layout-cover-b .s-main{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));column-gap:24px;
+  grid-template-rows:1fr auto;row-gap:0}
+.d-swiss-grid .layout-cover-b .b-title{display:contents}
+.d-swiss-grid .layout-cover-b .sub{grid-column:4 / -1;grid-row:1;align-self:end;margin:0 0 44px;max-width:none;
+  padding-top:18px;border-top:6px solid var(--rule)}
+.d-swiss-grid .layout-cover-b:not(.has-photo) .sub{grid-column:1 / 5}
+.d-swiss-grid .layout-cover-b .b-photo{grid-column:1 / 4;grid-row:1;align-self:stretch;min-height:0;margin-bottom:44px;
+  container-type:size;align-items:flex-start;justify-content:flex-end;--ar:.75}
+.d-swiss-grid .layout-cover-b .b-photo.ph-landscape{--ar:1.5}
+.d-swiss-grid .layout-cover-b .b-photo.ph-square{--ar:1}
+.d-swiss-grid .layout-cover-b.has-photo .s-main{grid-template-rows:minmax(420px,1fr) auto}
+.d-swiss-grid .layout-cover-b .t{grid-column:1 / -1;grid-row:2;max-width:none;background:var(--ink);color:var(--paper);
+  margin:0 -72px;padding:44px 72px 36px;line-height:.93;text-wrap:balance}
+.d-swiss-grid .layout-cover-b .t .hl{color:var(--paper);text-decoration:underline;text-decoration-color:var(--accent-mark);
+  text-decoration-thickness:.11em;text-underline-offset:.1em;text-decoration-skip-ink:none}
+.d-swiss-grid .layout-cover-b .s-foot{background:var(--ink);border-top:0;margin:0 -72px -60px;padding:4px 72px 60px}
+.d-swiss-grid .layout-cover-b .s-foot .src{color:var(--paper);opacity:.78}
+
+/* Photos: a module on the grid, shown whole on a neutral mat. */
+.d-swiss-grid .ph-box{background:var(--mat)}
+.d-swiss-grid .b-photo:not(.mat-blur) .ph-mat{display:none}
+.d-swiss-grid .ph-cap{font-family:var(--font-label);font-size:22px;margin-top:12px}
+
+/* ---------- Text ---------- */
+.d-swiss-grid .layout-text .s-main{justify-content:space-between}
+.d-swiss-grid .layout-text .b-body{margin-left:var(--o2);width:var(--c4);padding-top:26px;border-top:6px solid var(--rule)}
+
+/* ---------- List: a ruled table on the grid ---------- */
+.d-swiss-grid .layout-list .s-main{gap:48px}
+.d-swiss-grid .layout-list .sub{max-width:var(--c4)}
+.d-swiss-grid .b-list{flex:1 1 auto;display:flex;flex-direction:column}
+.d-swiss-grid .list{flex:1 1 auto;display:flex;flex-direction:column;font-family:var(--font-text);line-height:1.1;
+  border-top:6px solid var(--rule)}
+.d-swiss-grid .list li{flex:1 1 auto;display:grid;grid-template-columns:var(--c1) minmax(0,1fr);column-gap:24px;align-items:start;
+  padding:.42em 0 .5em;border-top:2px solid var(--rule)}
+.d-swiss-grid .list li:first-child{border-top:0}
+.d-swiss-grid .li-t{font-weight:700;letter-spacing:-.025em}
+.d-swiss-grid .li-s{font-weight:400;font-size:.6em;line-height:1.3;letter-spacing:0;color:var(--muted);margin-top:.45em}
+.d-swiss-grid .list-numbered .li-n{font-weight:800;font-size:1.7em;line-height:.8;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.d-swiss-grid .list-bullets .li-n::before{width:.5em;height:.5em;transform:none}
+
+/* ---------- Stat ---------- */
+.d-swiss-grid .b-stat{flex:1 1 auto;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));column-gap:24px;
+  grid-template-rows:auto auto 1fr}
+.d-swiss-grid .stat-v{grid-column:1 / -1;font-family:var(--font-display);font-weight:800;line-height:.8;letter-spacing:-.06em;
+  font-variant-numeric:lining-nums;margin-left:-.02em;padding:.02em .07em 0 0}
+.d-swiss-grid .stat-l{grid-column:1 / 6;font-family:var(--font-display);font-weight:700;line-height:1.04;letter-spacing:-.03em;
+  margin-top:48px;padding-top:24px;border-top:10px solid var(--accent-mark);text-wrap:balance}
+.d-swiss-grid .stat-c{grid-column:3 / -1;align-self:end;font-family:var(--font-text);font-weight:400;line-height:1.34;margin-top:40px}
+
+/* ---------- Chart ---------- */
+.d-swiss-grid .layout-chart .s-main{gap:40px}
+.d-swiss-grid .c-title{font-family:var(--font-label);font-weight:700;letter-spacing:-.005em;color:var(--ink);
+  padding-top:14px;margin-bottom:26px;border-top:6px solid var(--rule)}
+.d-swiss-grid .chart-svg .c-label{font-weight:500}
+.d-swiss-grid .chart-svg .c-label.is-hl,.d-swiss-grid .chart-svg .c-value.is-hl{font-weight:800}
+.d-swiss-grid .chart-svg .c-value{font-weight:700}
+.d-swiss-grid .c-axis{stroke:var(--ink);stroke-width:3}
+.d-swiss-grid .c-grid{stroke-opacity:0}
+.d-swiss-grid .c-line{stroke:var(--chart-base-2);stroke-width:5;stroke-linejoin:miter;stroke-linecap:butt}
+.d-swiss-grid .c-line.is-hl{stroke:var(--accent-mark);stroke-width:10}
+.d-swiss-grid .chart-svg .c-center{font-weight:800;letter-spacing:-.04em}
+.d-swiss-grid .c-note{font-family:var(--font-label);font-size:22px;margin-top:14px;max-width:var(--c4)}
+
+/* ---------- Quote: mark hanging in column 1, text in 2 to 6 ---------- */
+.d-swiss-grid .b-quote{flex:1 1 auto;display:flex;flex-direction:column;padding-left:var(--o1)}
+.d-swiss-grid .q-t{position:relative;font-family:var(--font-display);font-weight:700;line-height:1.02;letter-spacing:-.032em;text-wrap:balance}
+.d-swiss-grid .q-open{position:absolute;left:calc(-1 * var(--o1));top:.02em;font-size:2em;line-height:.8;letter-spacing:-.06em;
+  color:var(--accent-mark);font-weight:800}
+.d-swiss-grid .q-close{color:var(--accent-mark);font-weight:800}
+.d-swiss-grid .q-a{margin-top:auto;padding-top:18px;border-top:6px solid var(--rule);width:var(--c3);
+  flex-direction:column;gap:4px;font-family:var(--font-label);font-size:26px}
+.d-swiss-grid .q-name{font-weight:800}
+
+/* ---------- Media ---------- */
+.d-swiss-grid .layout-media .s-main{gap:40px}
+.d-swiss-grid .frame-browser .shot-frame{border-width:3px}
+.d-swiss-grid .shot-wrap{align-items:flex-start}
+.d-swiss-grid .shot-bar{border-bottom-width:3px;background:var(--paper)}
+.d-swiss-grid .shot-legend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px;row-gap:18px;
+  padding-top:18px;border-top:6px solid var(--rule)}
+.d-swiss-grid .shot-legend li{align-items:flex-start;font-family:var(--font-text);font-weight:500;font-size:28px;line-height:1.2;letter-spacing:-.01em}
+.d-swiss-grid .ann-n{font-family:var(--font-label);font-weight:800}
+.d-swiss-grid .shot-cap{font-size:22px;color:var(--muted)}
+
+/* ---------- Logos, visual ---------- */
+.d-swiss-grid .lr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:56px 24px;border-top:6px solid var(--rule);padding-top:40px}
+.d-swiss-grid .lr-label{font-family:var(--font-label);font-weight:700;font-size:24px;color:var(--ink)}
+.d-swiss-grid .vis text{font-family:var(--font-text)}
+.d-swiss-grid .vis-cap{font-family:var(--font-label);font-size:22px}
+
+/* ---------- CTA: action across the grid, reason offset in columns 3 to 6, URL on an accent rule ---------- */
+.d-swiss-grid .role-cta{--pad-top:100px}
+.d-swiss-grid .role-cta .s-main{padding-top:44px}
+.d-swiss-grid .role-cta .b-cta{flex:1 1 auto;display:flex;flex-direction:column}
+.d-swiss-grid .cta-t{font-family:var(--font-display);font-weight:800;line-height:.94;letter-spacing:-.042em}
+.d-swiss-grid .cta-sub{order:2;font-family:var(--font-text);font-weight:500;line-height:1.26;letter-spacing:-.01em;color:var(--ink);
+  margin:56px 0 0 var(--o2);padding-top:22px;border-top:6px solid var(--rule)}
+.d-swiss-grid .role-cta .cta-t + .cta-url + .cta-sub,.d-swiss-grid .role-cta .cta-t + .cta-sub{margin-top:auto}
+.d-swiss-grid .cta-url{order:3;margin-top:auto;font-family:var(--font-label);font-weight:700;font-size:34px;line-height:1.2;letter-spacing:-.01em;
+  padding:40px 0 18px;border-bottom:12px solid var(--accent-mark);word-break:break-all}

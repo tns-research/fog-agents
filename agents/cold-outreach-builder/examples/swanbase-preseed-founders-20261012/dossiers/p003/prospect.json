@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "prospect_id": "p003",
+  "first_name": "Noor",
+  "last_name": "Haddad",
+  "role": "Head of Growth",
+  "company": "Brightpane",
+  "company_url": "https://brightpane.example",
+  "email": "noor@brightpane.example",
+  "email_source_url": "lead_list",
+  "profile_url": "https://brightpane.example/about",
+  "geography": "fr",
+  "language": "en",
+  "register": "n/a",
+  "researched_at": "2026-10-12",
+  "relationship": "none",
+  "facts": [],
+  "disqualifiers": [],
+  "pages_read": [
+    "https://brightpane.example/about"
+  ],
+  "notes": "The About page carries no date and nothing written by Noor; nothing true and dated to open on."
+}

@@ -1,0 +1,411 @@
+{
+  "schema_version": "2.0",
+  "window": {
+    "since": "2026-07-14",
+    "until": "2026-10-12",
+    "days": 91
+  },
+  "capped_jobs": [
+    "discourse-nocode-funding",
+    "hn-pre-seed",
+    "reddit-startups-preseed",
+    "reddit-startups-warm-intro",
+    "reddit-ycombinator-raise"
+  ],
+  "thresholds": {
+    "min_authors": 5,
+    "min_communities": 2,
+    "counted_speakers": [
+      "user",
+      "practitioner"
+    ],
+    "phrase_records": 3,
+    "phrase_authors": 3
+  },
+  "corpus": {
+    "records": 65,
+    "labelled": 65,
+    "unlabelled": 0,
+    "relevant": 30,
+    "voices": 26,
+    "out_of_window": 0,
+    "by_source": [
+      {
+        "source": "discourse",
+        "records": 6,
+        "share": 0.092
+      },
+      {
+        "source": "hn",
+        "records": 17,
+        "share": 0.262
+      },
+      {
+        "source": "reddit",
+        "records": 39,
+        "share": 0.6
+      },
+      {
+        "source": "se",
+        "records": 3,
+        "share": 0.046
+      }
+    ],
+    "voices_by_source": [
+      {
+        "source": "hn",
+        "records": 3,
+        "share": 0.115
+      },
+      {
+        "source": "reddit",
+        "records": 23,
+        "share": 0.885
+      }
+    ],
+    "by_community": [
+      {
+        "community": "r/startups",
+        "records": 23
+      },
+      {
+        "community": "Hacker News",
+        "records": 17
+      },
+      {
+        "community": "r/ycombinator",
+        "records": 10
+      },
+      {
+        "community": "forum.example",
+        "records": 6
+      },
+      {
+        "community": "r/venturecapital",
+        "records": 6
+      },
+      {
+        "community": "money.stackexchange",
+        "records": 3
+      }
+    ],
+    "by_speaker": {
+      "other": 1,
+      "practitioner": 18,
+      "user": 8,
+      "vendor": 3
+    }
+  },
+  "sentiment": {
+    "counted": 26,
+    "counts": {
+      "mixed": 3,
+      "negative": 11,
+      "neutral": 8,
+      "positive": 4
+    },
+    "shares": {
+      "mixed": 0.115,
+      "negative": 0.423,
+      "neutral": 0.308,
+      "positive": 0.154
+    }
+  },
+  "forces": {
+    "anxiety": 9,
+    "habit": 1,
+    "pull": 7,
+    "push": 8
+  },
+  "pains": [
+    {
+      "pain_id": "pain_traction_bar",
+      "records": 11,
+      "voices": 10,
+      "distinct_authors": 10,
+      "distinct_communities": 3,
+      "communities": [
+        "r/startups",
+        "r/venturecapital",
+        "r/ycombinator"
+      ],
+      "by_source": {
+        "reddit": 10
+      },
+      "source_shares": {
+        "reddit": 1.0
+      },
+      "first_seen": "2026-09-19",
+      "last_seen": "2026-10-07",
+      "by_month": {
+        "2026-09": 5,
+        "2026-10": 5
+      },
+      "halves": {
+        "first": 0,
+        "second": 10
+      },
+      "trend": "unknown",
+      "volume": "lower_bound",
+      "resonance": 1.5,
+      "sentiment": {
+        "mixed": 1,
+        "negative": 7,
+        "neutral": 1,
+        "positive": 1
+      },
+      "forces": {
+        "anxiety": 7,
+        "pull": 1,
+        "push": 2
+      },
+      "escalated": true,
+      "record_ids": [
+        "reddit:t1_fictive28",
+        "reddit:t1_fictive30",
+        "reddit:t1_fictive34",
+        "reddit:t1_fictive38",
+        "reddit:t1_fictive45",
+        "reddit:t1_fictive48",
+        "reddit:t1_fictive54",
+        "reddit:t1_fictive56",
+        "reddit:t1_fictive58",
+        "reddit:t1_fictive59"
+      ]
+    },
+    {
+      "pain_id": "pain_investor_access",
+      "records": 11,
+      "voices": 9,
+      "distinct_authors": 9,
+      "distinct_communities": 2,
+      "communities": [
+        "r/startups",
+        "r/venturecapital"
+      ],
+      "by_source": {
+        "reddit": 9
+      },
+      "source_shares": {
+        "reddit": 1.0
+      },
+      "first_seen": "2026-07-24",
+      "last_seen": "2026-10-10",
+      "by_month": {
+        "2026-07": 1,
+        "2026-09": 4,
+        "2026-10": 4
+      },
+      "halves": {
+        "first": 1,
+        "second": 8
+      },
+      "trend": "unknown",
+      "volume": "lower_bound",
+      "resonance": 1.0,
+      "sentiment": {
+        "mixed": 2,
+        "negative": 3,
+        "neutral": 4
+      },
+      "forces": {
+        "habit": 1,
+        "pull": 3,
+        "push": 5
+      },
+      "escalated": true,
+      "record_ids": [
+        "reddit:t1_fictive26",
+        "reddit:t1_fictive35",
+        "reddit:t1_fictive37",
+        "reddit:t1_fictive39",
+        "reddit:t1_fictive40",
+        "reddit:t1_fictive46",
+        "reddit:t1_fictive47",
+        "reddit:t1_fictive48",
+        "reddit:t1_fictive62"
+      ]
+    },
+    {
+      "pain_id": "pain_pitch_story",
+      "records": 4,
+      "voices": 4,
+      "distinct_authors": 4,
+      "distinct_communities": 1,
+      "communities": [
+        "r/startups"
+      ],
+      "by_source": {
+        "reddit": 4
+      },
+      "source_shares": {
+        "reddit": 1.0
+      },
+      "first_seen": "2026-09-26",
+      "last_seen": "2026-10-06",
+      "by_month": {
+        "2026-09": 3,
+        "2026-10": 1
+      },
+      "halves": {
+        "first": 0,
+        "second": 4
+      },
+      "trend": "unknown",
+      "volume": "lower_bound",
+      "resonance": 2.0,
+      "sentiment": {
+        "neutral": 4
+      },
+      "forces": {
+        "anxiety": 1,
+        "pull": 1,
+        "push": 1
+      },
+      "escalated": false,
+      "record_ids": [
+        "reddit:t1_fictive36",
+        "reddit:t1_fictive43",
+        "reddit:t1_fictive44",
+        "reddit:t1_fictive56"
+      ]
+    },
+    {
+      "pain_id": "pain_vc_misalignment",
+      "records": 4,
+      "voices": 4,
+      "distinct_authors": 4,
+      "distinct_communities": 3,
+      "communities": [
+        "r/startups",
+        "r/venturecapital",
+        "r/ycombinator"
+      ],
+      "by_source": {
+        "reddit": 4
+      },
+      "source_shares": {
+        "reddit": 1.0
+      },
+      "first_seen": "2026-07-16",
+      "last_seen": "2026-10-10",
+      "by_month": {
+        "2026-07": 1,
+        "2026-09": 1,
+        "2026-10": 2
+      },
+      "halves": {
+        "first": 1,
+        "second": 3
+      },
+      "trend": "unknown",
+      "volume": "lower_bound",
+      "resonance": 1.0,
+      "sentiment": {
+        "mixed": 2,
+        "negative": 2
+      },
+      "forces": {
+        "anxiety": 3,
+        "habit": 1
+      },
+      "escalated": false,
+      "record_ids": [
+        "reddit:t1_fictive25",
+        "reddit:t1_fictive34",
+        "reddit:t1_fictive51",
+        "reddit:t1_fictive62"
+      ]
+    },
+    {
+      "pain_id": "pain_intro_black_box",
+      "records": 4,
+      "voices": 3,
+      "distinct_authors": 3,
+      "distinct_communities": 1,
+      "communities": [
+        "Hacker News"
+      ],
+      "by_source": {
+        "hn": 3
+      },
+      "source_shares": {
+        "hn": 1.0
+      },
+      "first_seen": "2026-07-28",
+      "last_seen": "2026-07-30",
+      "by_month": {
+        "2026-07": 3
+      },
+      "halves": {
+        "first": 3,
+        "second": 0
+      },
+      "trend": "falling",
+      "volume": "complete",
+      "resonance": null,
+      "sentiment": {
+        "positive": 3
+      },
+      "forces": {
+        "pull": 2,
+        "push": 1
+      },
+      "escalated": false,
+      "record_ids": [
+        "hn:90019907",
+        "hn:90022249",
+        "hn:90026933"
+      ]
+    }
+  ],
+  "escalated": [
+    "pain_traction_bar",
+    "pain_investor_access"
+  ],
+  "competitors": [
+    {
+      "name": "Cohort Zero",
+      "records": 1,
+      "distinct_authors": 1
+    },
+    {
+      "name": "Deckpeek",
+      "records": 1,
+      "distinct_authors": 1
+    },
+    {
+      "name": "Hatchery Twelve",
+      "records": 1,
+      "distinct_authors": 1
+    },
+    {
+      "name": "SAFE",
+      "records": 1,
+      "distinct_authors": 1
+    },
+    {
+      "name": "cold email",
+      "records": 1,
+      "distinct_authors": 1
+    },
+    {
+      "name": "friends and family round",
+      "records": 1,
+      "distinct_authors": 1
+    }
+  ],
+  "language_bank": [],
+  "community_medians": {
+    "Hacker News|story": 3.5,
+    "money.stackexchange|question": 0,
+    "r/startups|comment": 1,
+    "r/venturecapital|comment": 2.0,
+    "r/ycombinator|comment": 1.0
+  },
+  "inputs": {
+    "corpus": "corpus.jsonl",
+    "corpus_sha256": "7df688c4669ee13b807cfd83808797b0b41c0a1461020795749ccd388e4a4789",
+    "labels_sha256": "87db2b8b1b67c015a090be1673de7d0ee15033d64ba117537f0869cb196c95a1"
+  }
+}

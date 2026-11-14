@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "doc-candidates.json",
+  "description": "What the model proposes after reading a deck or notes ingested by scripts/ingest_docs.py extract, written to <project>/project-context/brand-debug/doc-candidates.json. fields: context.json values, each with the excerpt of the cited page it rests on. proof: positioning.proof objects (definitions.proof_item of context-schema.json) whose source cites the page, e.g. docs/deck.pdf#p7, and whose claim is on that page word for word. ingest_docs.py check refuses the rest; ingest_docs.py apply writes only what the founder approved.",
+  "type": "object",
+  "required": ["version", "proof"],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "const": 1 },
+    "fields": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["field", "value", "source", "excerpt"],
+        "additionalProperties": false,
+        "properties": {
+          "field": { "type": "string", "pattern": "^[a-z_]+(\\.[a-z_]+)?$", "description": "Dotted path in context.json, e.g. one_liner, icp.who, offer.differentiators." },
+          "value": { "type": ["string", "array"], "items": { "type": "string", "minLength": 1 }, "description": "Proposed value, in the founder's words where the page has them. A list for icp.pains, icp.jobs, offer.differentiators." },
+          "source": { "type": "string", "pattern": "^docs/[A-Za-z0-9._/-]+#p[1-9][0-9]*$" },
+          "excerpt": { "type": "string", "minLength": 3, "description": "The words of the page the value rests on, copied exactly." }
+        }
+      }
+    },
+    "proof": { "type": "array", "items": { "type": "object" } }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "larkspur-site",
+  "private": true,
+  "description": "Fictional source repository of larkspur.example, the fixture of repo_fix.py. Never modified by the tests."
+}

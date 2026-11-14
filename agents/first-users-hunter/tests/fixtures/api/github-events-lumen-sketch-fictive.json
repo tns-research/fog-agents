@@ -1,0 +1,75 @@
+{
+ "key": "GET https://api.github.com/users/lumen-sketch-fictive/events/public?per_page=100",
+ "status": 200,
+ "body": [
+  {
+   "id": "880003",
+   "type": "PushEvent",
+   "actor": {
+    "login": "lumen-sketch-fictive"
+   },
+   "repo": {
+    "name": "lumen-sketch-fictive/waitlist-proto"
+   },
+   "payload": {
+    "size": 1
+   },
+   "public": true,
+   "created_at": "2026-10-09T18:00:00Z"
+  },
+  {
+   "id": "880002",
+   "type": "IssueCommentEvent",
+   "actor": {
+    "login": "lumen-sketch-fictive"
+   },
+   "repo": {
+    "name": "acme-fictional/launchkit"
+   },
+   "payload": {
+    "action": "created",
+    "issue": {
+     "html_url": "https://github.com/acme-fictional/launchkit/issues/42"
+    },
+    "comment": {
+     "html_url": "https://github.com/acme-fictional/launchkit/issues/42#issuecomment-5501"
+    }
+   },
+   "public": true,
+   "created_at": "2026-10-08T10:00:00Z"
+  },
+  {
+   "id": "880001",
+   "type": "IssuesEvent",
+   "actor": {
+    "login": "lumen-sketch-fictive"
+   },
+   "repo": {
+    "name": "acme-fictional/launchkit"
+   },
+   "payload": {
+    "action": "opened",
+    "issue": {
+     "html_url": "https://github.com/acme-fictional/launchkit/issues/42"
+    }
+   },
+   "public": true,
+   "created_at": "2026-10-06T15:20:00Z"
+  },
+  {
+   "id": "870001",
+   "type": "WatchEvent",
+   "actor": {
+    "login": "lumen-sketch-fictive"
+   },
+   "repo": {
+    "name": "acme-fictional/other"
+   },
+   "payload": {
+    "action": "started"
+   },
+   "public": true,
+   "created_at": "2026-10-02T10:00:00Z"
+  }
+ ]
+}

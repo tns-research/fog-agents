@@ -1,0 +1,76 @@
+{
+  "url": "https://arctic-shift.photon-reddit.com/api/comments/search?subreddit=venturecapital&after=1783987200&before=1791849600&limit=20&sort=desc&body=pre-seed",
+  "status": 200,
+  "fetched_at": "2026-10-12T09:01:02Z",
+  "body": {
+    "data": [
+      {
+        "id": "fictive62",
+        "author": "user-de57bf",
+        "body": "Warm intros are overrated IMO, and not required. We got in front of most VCs in the valley by sending two sentences on the company, 3 bullet points of traction, and saying we would be in SF the next week if they had time to meet in person. [...]",
+        "created_utc": 1791644875,
+        "permalink": "/r/venturecapital/comments/fictivet31/how_do_i_get_in_front_of_top_funds/fictive62/",
+        "score": 2,
+        "subreddit": "venturecapital",
+        "link_id": "t3_fictivet31",
+        "parent_id": "t3_fictivet31"
+      },
+      {
+        "id": "fictive29",
+        "author": "user-27f4b4",
+        "body": "Pre-seed investor list: fund sites, stages, sectors, cities and portfolio links, built from recent rounds.\n\nhttps://preseed-list.example/",
+        "created_utc": 1789911700,
+        "permalink": "/r/venturecapital/comments/fictivet06/a_list_of_active_pre_seed_investors/fictive29/",
+        "score": 0,
+        "subreddit": "venturecapital",
+        "link_id": "t3_fictivet06",
+        "parent_id": "t3_fictivet06"
+      },
+      {
+        "id": "fictive28",
+        "author": "user-8023e8",
+        "body": "Sorry, wrong sub.\n\nHonest advice: you aren\u2019t ready for funding. Not even pre-seed.\nNot from funds, not from angels either.\nThe round that comes before is the FFF round (friends, family and fools): spend your time raising from the people who already know you and from your first real users.",
+        "created_utc": 1789840539,
+        "permalink": "/r/venturecapital/comments/fictivet08/raising_pre_seed_for_a_music_app/fictive28/",
+        "score": 8,
+        "subreddit": "venturecapital",
+        "link_id": "t3_fictivet08",
+        "parent_id": "t3_fictivet08"
+      },
+      {
+        "id": "fictive27",
+        "author": "user-2494be",
+        "body": "We only do pre-seed and seed. We lead each round and keep following on until the Series A and after. Very hands-on, closer to an operator model than a classic fund.",
+        "created_utc": 1788393306,
+        "permalink": "/r/venturecapital/comments/fictivet05/is_working_at_a_fund_supposed_to_be_this_intense/fictive27/",
+        "score": 2,
+        "subreddit": "venturecapital",
+        "link_id": "t3_fictivet05",
+        "parent_id": "t1_fictivec01"
+      },
+      {
+        "id": "fictive26",
+        "author": "user-30e4dc",
+        "body": "I would not pick one channel for every investor. Match the channel to the way that investor actually finds companies.\n\nIf a fund has a real application form, use it: someone built a process to read inbound. If a founder from their portfolio [...]",
+        "created_utc": 1784913316,
+        "permalink": "/r/venturecapital/comments/fictivet03/best_channel_to_reach_pre_seed_investors/fictive26/",
+        "score": 1,
+        "subreddit": "venturecapital",
+        "link_id": "t3_fictivet03",
+        "parent_id": "t3_fictivet03"
+      },
+      {
+        "id": "fictive25",
+        "author": "user-cac112",
+        "body": "[...] VCs are not really on your side as a founder. They run a portfolio of bets and need only one of them to win. [...]",
+        "created_utc": 1784166963,
+        "permalink": "/r/venturecapital/comments/fictivet04/the_dark_side_of_venture_money/fictive25/",
+        "score": 3,
+        "subreddit": "venturecapital",
+        "link_id": "t3_fictivet04",
+        "parent_id": "t3_fictivet04"
+      }
+    ],
+    "error": null
+  }
+}

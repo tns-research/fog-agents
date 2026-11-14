@@ -1,0 +1,196 @@
+/* riso-print: a risograph print on uncoated paper.
+   Key plate in near-black ink, the brand colour as the second drum
+   (--brand-accent: title ghosts, offset shadows), the contrast-safe accent
+   roles for highlights, bars and stickers.
+   Fonts: --font-display (condensed heavy grotesque, uppercase),
+   --font-text (sturdy grotesque), --font-mono (labels, sources, folios).
+   Textures are drawn in CSS so the PDF keeps them:
+   - grain: an SVG feTurbulence data URI used as a mask over an ink layer;
+   - halftone fade: rows of radial-gradient dots whose radius shrinks row by
+     row (a true amplitude-modulated screen, coloured by currentColor). */
+
+.d-riso-print .slide{--pad-top:72px;--pad-x:80px;--pad-bottom:60px;--gap:40px;--logo-h:46px;--font-chart:var(--font-text);
+  --ghost:color-mix(in srgb,var(--brand-accent) 58%,transparent);
+  --ghost-solid:color-mix(in srgb,var(--brand-accent) 78%,var(--paper));
+  --mis-x:.045em;--mis-y:.032em}
+.d-riso-print .slide.surface-inverse{--ghost:color-mix(in srgb,var(--brand-accent) 70%,transparent)}
+
+/* Paper grain on every slide: neutral specks drawn as a tiled SVG
+   (feTurbulence), so the PDF keeps one small tile instead of a page raster.
+   On the ink plate the specks are paper showing through, plus a slow mottle
+   of uneven ink coverage. */
+.d-riso-print .s-deco::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.24;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280'%3E%3Cfilter id='g' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3.4 0 0 0 -1.78'/%3E%3C/filter%3E%3Crect width='280' height='280' filter='url(%23g)'/%3E%3C/svg%3E") 0 0/280px 280px repeat}
+.d-riso-print .surface-inverse .s-deco::after{opacity:.16;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280'%3E%3Cfilter id='g' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 3.4 0 0 0 -1.78'/%3E%3C/filter%3E%3Crect width='280' height='280' filter='url(%23g)'/%3E%3C/svg%3E") 0 0/280px 280px repeat,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1080' height='1350'%3E%3Cfilter id='m' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.006 .011' numOctaves='4' seed='11'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 1.7 0 0 0 -.82'/%3E%3C/filter%3E%3Crect width='1080' height='1350' filter='url(%23m)'/%3E%3C/svg%3E") 0 0/100% 100% no-repeat}
+
+/* Halftone fade: 16 rows, dot radius shrinking from 5.6 px to 1.4 px on a
+   12 px staggered screen. 162 px tall at scale 1; scale it per use. */
+.d-riso-print .s-deco::before{content:"";position:absolute;left:-100%;right:-100%;top:0;height:162px;display:none;pointer-events:none;
+  color:var(--ghost-solid);transform-origin:50% 0;
+  background:radial-gradient(circle,currentColor 5.60px,transparent 6.30px) 0px 0px/12px 12px repeat-x,radial-gradient(circle,currentColor 5.42px,transparent 6.12px) 6px 10px/12px 12px repeat-x,radial-gradient(circle,currentColor 5.24px,transparent 5.94px) 0px 20px/12px 12px repeat-x,radial-gradient(circle,currentColor 5.05px,transparent 5.75px) 6px 30px/12px 12px repeat-x,radial-gradient(circle,currentColor 4.85px,transparent 5.55px) 0px 40px/12px 12px repeat-x,radial-gradient(circle,currentColor 4.64px,transparent 5.34px) 6px 50px/12px 12px repeat-x,radial-gradient(circle,currentColor 4.43px,transparent 5.13px) 0px 60px/12px 12px repeat-x,radial-gradient(circle,currentColor 4.20px,transparent 4.90px) 6px 70px/12px 12px repeat-x,radial-gradient(circle,currentColor 3.96px,transparent 4.66px) 0px 80px/12px 12px repeat-x,radial-gradient(circle,currentColor 3.70px,transparent 4.40px) 6px 90px/12px 12px repeat-x,radial-gradient(circle,currentColor 3.43px,transparent 4.13px) 0px 100px/12px 12px repeat-x,radial-gradient(circle,currentColor 3.13px,transparent 3.83px) 6px 110px/12px 12px repeat-x,radial-gradient(circle,currentColor 2.80px,transparent 3.50px) 0px 120px/12px 12px repeat-x,radial-gradient(circle,currentColor 2.42px,transparent 3.12px) 6px 130px/12px 12px repeat-x,radial-gradient(circle,currentColor 1.98px,transparent 2.68px) 0px 140px/12px 12px repeat-x,radial-gradient(circle,currentColor 1.40px,transparent 2.10px) 6px 150px/12px 12px repeat-x}
+.d-riso-print .surface-inverse .s-deco::before{color:var(--ghost)}
+/* Dense slides: a finer screen prints in the top margin only (scale .42 = 68 px). */
+.d-riso-print .tone-dense .s-deco::before{display:block;transform:scale(.42)}
+
+/* Footer: heavy ink rule, mono line. */
+.d-riso-print .s-foot{border-top:4px solid var(--rule);padding-top:14px;margin-top:34px;font-family:var(--font-mono);gap:28px}
+.d-riso-print .src,.d-riso-print .handle,.d-riso-print .folio{font-size:21px;line-height:1.3;letter-spacing:0}
+.d-riso-print .src{color:var(--muted)}
+.d-riso-print .handle{font-weight:600;color:var(--ink)}
+.d-riso-print .folio{font-weight:600;color:var(--ink)}
+.d-riso-print .folio-of{opacity:1;color:var(--muted);font-weight:400}
+
+/* Display type: condensed, uppercase, misregistered. */
+.d-riso-print .t,.d-riso-print .stat-v,.d-riso-print .stat-l,.d-riso-print .q-t,.d-riso-print .cta-t{font-family:var(--font-display);
+  font-weight:860;font-stretch:66%;font-variation-settings:"wdth" 66;text-transform:uppercase;color:var(--ink);
+  text-shadow:var(--mis-x) var(--mis-y) 0 var(--ghost)}
+.d-riso-print .t{line-height:.9;letter-spacing:-.004em}
+.d-riso-print .t .hl{background:linear-gradient(var(--accent-fill),var(--accent-fill)) no-repeat;background-size:100% 74%;background-position:.08em 62%;
+  color:var(--on-accent-fill);padding:0 .06em;margin:0 -.03em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.d-riso-print .sub{font-family:var(--font-text);font-weight:500;line-height:1.3;color:var(--ink);margin-top:.85em;max-width:900px}
+
+.d-riso-print .body{font-family:var(--font-text);font-weight:400;line-height:1.4;color:var(--ink)}
+.d-riso-print .body .hl{background:linear-gradient(var(--accent-fill),var(--accent-fill)) no-repeat;background-size:100% 70%;background-position:0 70%;
+  color:var(--on-accent-fill);font-weight:600;-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 .08em}
+
+/* Logo: small and posed. */
+.d-riso-print .logo{color:var(--ink)}
+
+/* ---------- Cover A: poster ---------- */
+.d-riso-print .role-cover{--pad-top:64px}
+.d-riso-print .role-cover .s-deco::before{display:block}
+.d-riso-print .layout-cover-a .s-deco::before{top:0;transform:none}
+.d-riso-print .layout-cover-a .s-head{padding-bottom:0}
+/* Bottom anchoring uses an auto margin, never justify-content:flex-end: an
+   overflow must spill downward where fit.js can measure it. */
+.d-riso-print .layout-cover-a .s-main{padding-top:48px;gap:36px}
+.d-riso-print .layout-cover-a:not(.has-photo) .b-title{margin-top:auto}
+.d-riso-print .layout-cover-a .b-title{flex:none}
+.d-riso-print .layout-cover-a .t{letter-spacing:-.006em}
+.d-riso-print .layout-cover-a .sub{font-size:34px;padding-top:26px;border-top:4px solid var(--rule);margin-top:40px}
+/* With a photo: title on top, photo and standfirst share the bottom row. */
+.d-riso-print .layout-cover-a.has-photo .s-main{display:grid;grid-template-columns:400px minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);column-gap:36px;row-gap:40px;justify-content:stretch}
+.d-riso-print .layout-cover-a.has-photo .b-title{display:contents}
+.d-riso-print .layout-cover-a.has-photo .t{grid-column:1 / -1;grid-row:1;align-self:start}
+.d-riso-print .layout-cover-a.has-photo .sub{grid-column:2;grid-row:2;align-self:end;margin:0}
+.d-riso-print .layout-cover-a.has-photo .b-photo{grid-column:1;grid-row:2;min-height:0}
+.d-riso-print .layout-cover-a.has-photo .ph-cap{display:none}
+
+/* ---------- Cover B: plate and sticker ---------- */
+.d-riso-print .layout-cover-b .s-deco::before{display:none}
+.d-riso-print .layout-cover-b .s-main{padding-top:40px;gap:44px}
+.d-riso-print .layout-cover-b .b-photo{order:-1;flex:1 1 0;min-height:520px}
+.d-riso-print .layout-cover-b .b-title{flex:none}
+.d-riso-print .layout-cover-b .t .hl{display:inline-block;background:var(--accent-fill);border:.035em solid var(--ink);
+  box-shadow:.06em .06em 0 var(--ink);padding:.06em .1em .01em;margin:.05em .02em .09em;transform:rotate(-2.5deg);text-shadow:none;line-height:.92;white-space:nowrap}
+.d-riso-print .layout-cover-b .sub{font-size:34px;margin-top:40px}
+/* Without a photo: a big halftone disc in the second ink prints behind the top. */
+.d-riso-print .layout-cover-b:not(.has-photo) .s-deco::before{display:block;left:auto;right:-150px;top:-170px;width:820px;height:820px;transform:none;border-radius:50%;
+  background:radial-gradient(circle,currentColor 3.4px,transparent 4.1px) 0 0/13px 13px;
+  -webkit-mask-image:radial-gradient(circle,#000 0 34%,transparent 71%);mask-image:radial-gradient(circle,#000 0 34%,transparent 71%)}
+.d-riso-print .layout-cover-b:not(.has-photo) .b-title{margin-top:auto}
+
+/* ---------- Photos: duotone on a halftone mat, framed plate ---------- */
+.d-riso-print .ph-box{border:3px solid var(--ink);box-shadow:10px 10px 0 var(--ink);
+  background-color:color-mix(in srgb,var(--brand-accent) 42%,var(--paper));
+  background-image:radial-gradient(circle,color-mix(in srgb,var(--ink) 22%,transparent) 1.8px,transparent 2.4px);background-size:8px 8px}
+.d-riso-print .b-photo .ph-mat{display:none}
+/* Key-plate duotone: the grayscale photo multiplies over the spot-ink plate. */
+.d-riso-print .ph-img{filter:grayscale(1) contrast(1.18) brightness(1.06);mix-blend-mode:multiply}
+.d-riso-print .ph-cap{font-family:var(--font-mono);font-size:21px;margin-top:20px}
+.d-riso-print .b-photo{padding:0 10px 10px 0}
+
+/* ---------- Text ---------- */
+.d-riso-print .layout-text .s-main{justify-content:space-between}
+.d-riso-print .layout-text .b-body{padding-top:34px;border-top:4px solid var(--rule)}
+
+/* ---------- List: square sticker numerals ---------- */
+.d-riso-print .layout-list .s-main{gap:30px}
+.d-riso-print .b-list{flex:1 1 auto;display:flex;flex-direction:column}
+.d-riso-print .b-list .list{margin-top:auto}
+.d-riso-print .list{font-family:var(--font-text);line-height:1.15}
+.d-riso-print .list li{padding:.46em 0 .5em;border-top:3px solid var(--rule);gap:.62em;align-items:center}
+.d-riso-print .li-t{font-weight:700}
+.d-riso-print .li-s{font-size:.66em;line-height:1.3;color:var(--muted);margin-top:.3em;font-weight:400}
+.d-riso-print .list-numbered .li-n{width:1.6em;height:1.6em;display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-display);font-weight:860;font-variation-settings:"wdth" 66;font-size:1.05em;line-height:1;
+  background:var(--accent-fill);color:var(--on-accent-fill);border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);transform:rotate(-3deg)}
+.d-riso-print .list-numbered li:nth-child(even) .li-n{transform:rotate(2deg)}
+.d-riso-print .list-bullets .li-n::before{width:.5em;height:.5em;border-radius:50%;background:var(--ink);box-shadow:.08em .06em 0 var(--ghost)}
+
+/* ---------- Stat: calm poster ---------- */
+.d-riso-print .b-stat{display:flex;flex-direction:column;flex:1 1 auto}
+.d-riso-print .b-stat .stat-v{margin-top:auto}
+.d-riso-print .stat-v{font-weight:900;font-stretch:62%;font-variation-settings:"wdth" 62;line-height:.8;letter-spacing:-.01em;margin-left:-.02em;
+  --mis-x:.022em;--mis-y:.016em}
+.d-riso-print .stat-l{font-weight:820;line-height:.98;letter-spacing:0;margin-top:.45em;max-width:920px}
+.d-riso-print .stat-c{font-family:var(--font-text);line-height:1.38;color:var(--ink);margin-top:1em;padding-top:.8em;border-top:4px solid var(--rule)}
+.d-riso-print .layout-stat.tone-calm .s-deco::before{display:none}
+
+/* ---------- Chart ---------- */
+.d-riso-print .layout-chart .s-main{gap:34px}
+.d-riso-print .c-title{font-family:var(--font-mono);font-weight:500;letter-spacing:0;color:var(--ink);
+  padding-bottom:14px;margin-bottom:22px;border-bottom:4px solid var(--rule)}
+.d-riso-print .c-note{font-family:var(--font-mono);font-size:21px}
+.d-riso-print .c-bar{fill:var(--chart-base)}
+.d-riso-print .c-bar.is-hl{fill:var(--accent-mark);filter:drop-shadow(6px 6px 0 var(--ink))}
+.d-riso-print .chart-svg .c-value{font-family:var(--font-display);font-weight:860;font-variation-settings:"wdth" 70;font-size:40px}
+.d-riso-print .chart-svg .c-label{font-weight:500}
+.d-riso-print .chart-svg .c-label.is-hl,.d-riso-print .chart-svg .c-value.is-hl{font-weight:800}
+.d-riso-print .chart-svg .c-tick{font-family:var(--font-mono)}
+.d-riso-print .c-axis{stroke:var(--ink);stroke-width:4}
+.d-riso-print .c-grid{stroke:var(--ink);stroke-opacity:.3;stroke-width:1.5;stroke-dasharray:2 7;stroke-linecap:round}
+.d-riso-print .c-line{stroke-width:5}
+.d-riso-print .c-line.is-hl{stroke-width:9;filter:drop-shadow(4px 4px 0 var(--ink))}
+.d-riso-print .c-dot{filter:drop-shadow(4px 3px 0 var(--ink))}
+.d-riso-print .c-seg.is-hl{filter:drop-shadow(6px 6px 0 var(--ink))}
+.d-riso-print .chart-svg .c-center{font-family:var(--font-display);font-weight:900;font-variation-settings:"wdth" 64;text-shadow:.04em .03em 0 var(--ghost)}
+
+/* ---------- Quote: calm poster ---------- */
+.d-riso-print .layout-quote .s-main > .b:first-child{margin-top:auto}
+.d-riso-print .q-t{font-weight:850;line-height:.95;letter-spacing:0}
+.d-riso-print .q-mark{color:var(--accent-text);text-shadow:none}
+.d-riso-print .q-a{font-family:var(--font-mono);font-size:26px;flex-direction:column;gap:4px;padding-top:20px;margin-top:44px;border-top:4px solid var(--rule);max-width:560px}
+.d-riso-print .q-name{font-weight:600}
+.d-riso-print .q-role,.d-riso-print .q-tr{font-size:22px}
+.d-riso-print .q-tr{font-style:normal}
+
+/* ---------- Media: screenshot as a sticker ---------- */
+.d-riso-print .layout-media .s-main{gap:34px}
+.d-riso-print .frame-browser .shot-frame,.d-riso-print .frame-plain .shot-frame{border:3px solid var(--ink);box-shadow:10px 10px 0 var(--ink)}
+.d-riso-print .b-shot .shot-wrap{padding:0 10px 10px 0}
+.d-riso-print .shot-bar{border-bottom:3px solid var(--ink);background:var(--mat)}
+.d-riso-print .shot-url{font-family:var(--font-mono);font-size:21px;color:var(--ink)}
+.d-riso-print .ann-box{stroke:var(--accent-mark);stroke-width:6}
+.d-riso-print .shot-legend{gap:16px}
+.d-riso-print .shot-legend li{font-family:var(--font-text);font-weight:500;font-size:30px;line-height:1.25;align-items:flex-start}
+.d-riso-print .ann-n{border-radius:0;width:46px;height:46px;font-family:var(--font-display);font-variation-settings:"wdth" 70;font-weight:860;font-size:28px;
+  background:var(--accent-solid);color:var(--on-accent-solid);border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);margin-top:-2px}
+.d-riso-print .ann-pin circle{stroke:var(--ink);stroke-width:3;vector-effect:non-scaling-stroke}
+
+/* ---------- Logos, visual ---------- */
+.d-riso-print .lr-label{font-family:var(--font-mono)}
+.d-riso-print .vis-cap{font-family:var(--font-mono);font-size:21px}
+.d-riso-print .vis .c-fill,.d-riso-print .vis .c-accent{filter:drop-shadow(6px 6px 0 var(--ink))}
+.d-riso-print .vis text{font-family:var(--font-text)}
+
+/* ---------- CTA ---------- */
+.d-riso-print .role-cta{--pad-top:64px;--pad-bottom:100px}
+.d-riso-print .role-cta .s-main{padding-top:56px}
+.d-riso-print .role-cta .b-cta{flex:1 1 auto;display:flex;flex-direction:column}
+.d-riso-print .cta-t{line-height:.9}
+.d-riso-print .cta-url{align-self:flex-start;margin-top:auto;font-family:var(--font-mono);font-weight:600;font-size:30px;line-height:1.25;color:var(--ink);
+  background:var(--accent-fill);border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:14px 22px;word-break:normal;overflow-wrap:anywhere;max-width:100%}
+.d-riso-print .cta-sub{order:1;font-family:var(--font-text);font-weight:500;line-height:1.3;color:var(--ink);margin-top:40px;margin-bottom:200px;max-width:880px}
+.d-riso-print .cta-url{order:2}
+.d-riso-print .b-cta:not(:has(.cta-sub)) .cta-t{margin-bottom:200px}
+/* The fade rises from the bottom edge (turned over, scale 2: 324 px; bottom
+   offset 81 x (scale - 1) keeps the big dots on the edge). The URL sticker
+   sits on it; the standfirst keeps 200 px clear above the URL so text never
+   prints over the dots, whatever its length. */
+.d-riso-print .role-cta .s-deco::before{display:block;top:auto;bottom:81px;transform-origin:50% 50%;transform:rotate(180deg) scale(2)}
+
+/* ---------- Inverse: full ink plate ---------- */
+.d-riso-print .surface-inverse .t .hl{color:var(--on-accent-fill)}
+.d-riso-print .surface-inverse .stat-c,.d-riso-print .surface-inverse .sub{color:var(--ink)}

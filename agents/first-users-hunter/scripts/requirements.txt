@@ -1,0 +1,2 @@
+# first-users-hunter scripts: Python 3.9+ standard library only.
+# No third-party package is needed. The collectors use urllib; the tests run offline on frozen fixtures.

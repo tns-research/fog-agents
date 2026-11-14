@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fixturely | Invoices that chase themselves</title>
+<meta property="og:site_name" content="Fixturely">
+<meta property="og:image" content="og.png">
+<meta name="theme-color" content="#0b0d14">
+<link rel="icon" href="favicon.png" sizes="192x192">
+<style>
+  :root { --fx-bg: #0b0d14; --fx-surface: #161a26; --fx-text: #f2f3f7; --fx-text-2: #a9adbd; --fx-muted: #6c7086; --fx-border: #262b3a; --fx-accent: #a855f7; --fx-accent-deep: #6d28d9; }
+  @font-face { font-family: "Fixture Display"; src: url("fonts/fixture-display-missing.woff2") format("woff2"); font-weight: 400; }
+  html, body { margin: 0; background: var(--fx-bg); color: var(--fx-text); font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 17px; line-height: 1.5; }
+  header { display: flex; align-items: center; gap: 24px; padding: 18px 64px; }
+  header button.menu { width: 40px; height: 40px; background: transparent; border: 0; color: var(--fx-text); padding: 8px; }
+  header nav { display: flex; gap: 28px; margin-left: auto; align-items: center; }
+  header nav a { color: var(--fx-text-2); text-decoration: none; font-size: 15px; }
+  .logo img { height: 30px; display: block; filter: invert(1); }
+  .btn { display: inline-block; padding: 14px 26px; border-radius: 10px; color: #ffffff; text-decoration: none; font-weight: 600; background-image: linear-gradient(90deg, var(--fx-accent-deep), var(--fx-accent)); }
+  .btn.ghost { background: transparent; border: 1px solid var(--fx-border); color: var(--fx-text); }
+  h1, h2, h3 { font-family: "Fixture Display", Georgia, serif; font-weight: 400; color: var(--fx-text); margin: 0 0 16px; }
+  h1 { font-size: 64px; line-height: 1.05; }
+  h2 { font-size: 40px; }
+  h3 { font-size: 24px; }
+  p { color: var(--fx-text-2); }
+  .hero { padding: 96px 64px 64px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; }
+  .hero img { width: 100%; border-radius: 12px; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 32px 64px; }
+  .card { background: var(--fx-surface); border: 1px solid var(--fx-border); border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35); padding: 28px; min-height: 180px; }
+  .card small, .caption { color: var(--fx-muted); font-size: 13px; }
+  .grain { height: 420px; margin: 32px 64px; background-image: url("grain.png"); background-repeat: repeat; border-radius: 12px; }
+  .glow { height: 380px; margin: 32px 64px; background: url("glow.png") center / cover no-repeat; }
+  .team { padding: 32px 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .team img { width: 100%; border-radius: 12px; }
+  footer { padding: 48px 64px; color: var(--fx-muted); font-size: 13px; border-top: 1px solid var(--fx-border); }
+  #cookie-consent { position: fixed; left: 0; right: 0; bottom: 0; background: #1d2130; padding: 24px 64px; display: flex; gap: 24px; align-items: center; z-index: 50; }
+  #cookie-consent button { background: #22c55e; color: #04130a; border: 0; padding: 18px 48px; font-size: 18px; border-radius: 8px; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></symbol></svg>
+<header>
+  <button class="menu" aria-label="Open menu"><svg width="24" height="24"><use href="#i-menu"/></svg></button>
+  <a class="logo" href="/" aria-label="Fixturely home"><img src="logo-mono.svg" alt="Fixturely logo"></a>
+  <nav>
+    <a href="#how">How it works</a>
+    <a href="#pricing">Pricing</a>
+    <a class="btn" href="#start">Start free</a>
+  </nav>
+</header>
+<main>
+  <section class="hero">
+    <div>
+      <h1>Invoices that chase themselves</h1>
+      <p>Fixturely sends the reminder, logs the reply and tells you who paid. Set it up once per client and stop writing follow-ups by hand.</p>
+      <p><a class="btn" href="#start">Start free</a> <a class="btn ghost" href="#demo">Watch the demo</a></p>
+      <p class="caption">No card needed. Cancel from the settings page.</p>
+    </div>
+    <img src="product.png" alt="Dashboard screenshot of the reminder queue" width="640" height="400">
+  </section>
+  <section class="cards">
+    <div class="card"><h3>Reminders on a schedule</h3><p>Pick the days, Fixturely sends the emails from your own address.</p><small>Works with Gmail and Outlook</small></div>
+    <div class="card"><h3>Replies in one place</h3><p>Every answer from a client lands next to the invoice it is about.</p><small>Searchable by client</small></div>
+    <div class="card"><h3>Paid means paid</h3><p>Mark an invoice as paid and every reminder for it stops the same minute.</p><small>Synced with your bank feed</small></div>
+  </section>
+  <div class="grain" aria-hidden="true"></div>
+  <section class="team">
+    <img src="team.jpg" alt="Team photo at the studio" width="600" height="600" loading="lazy">
+    <div><h2>Built by two former freelancers</h2><p>We wrote the reminders we wished we had sent ourselves, and kept the tone of a person, not of a collection agency.</p></div>
+  </section>
+  <div class="glow" aria-hidden="true"></div>
+  <section class="team">
+    <div><h2>Your clients see your name</h2><p>Emails leave from your address with your signature. Fixturely stays out of the conversation.</p></div>
+    <img src="illustration.png" alt="Envelope illustration" width="520" height="520" loading="lazy">
+  </section>
+  <img src="pixel.gif" width="1" height="1" alt="">
+</main>
+<footer>Fixturely is a fictional product used to test the project-context agent. 2026.</footer>
+<div id="cookie-consent" role="dialog" aria-label="Cookie consent"><span>We use cookies to measure visits.</span><button>Accept all</button></div>
+</body>
+</html>

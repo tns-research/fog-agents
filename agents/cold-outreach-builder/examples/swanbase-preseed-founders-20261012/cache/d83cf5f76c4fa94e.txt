@@ -1,0 +1,9 @@
+URL: https://registry.example/companies/tidewell-sas
+
+Company register (fictional demo registry)
+
+TIDEWELL SAS
+Registered on 20 August 2026 (2026-08-20)
+Registered office: Paris, France
+Activity: software publishing (62.01Z)
+Legal representative: Maya Okafor, President

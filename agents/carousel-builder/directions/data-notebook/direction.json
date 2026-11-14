@@ -1,0 +1,242 @@
+{
+  "id": "data-notebook",
+  "name": "Data notebook",
+  "summary": "Graph paper, the chart as the hero, figures numbered like a lab notebook, marker highlights.",
+  "best_for": [
+    "numbers-first carousels",
+    "benchmarks",
+    "survey results",
+    "before and after",
+    "teardowns of a metric"
+  ],
+  "avoid_for": [
+    "decks with no data at all",
+    "emotional stories",
+    "photo-led events"
+  ],
+  "mood": "light",
+  "rules": {
+    "grid": "A 30 px graph-paper grid with a margin rule on the left; content on a 900 px column starting after the margin. Charts take the largest box of any direction.",
+    "type": "Bricolage Grotesque for titles and numerals, IBM Plex Sans for body, IBM Plex Mono for figure captions, axes, sources.",
+    "density": "Dense is allowed when it is data: one chart per slide, numbered figures, a note under each. Text slides stay short.",
+    "accent": "The marker: highlighted words get an accent-fill band, the chart message gets the accent mark. Nothing else is coloured.",
+    "photo": "Shown whole on white photo paper with a thin ink border, caption in mono.",
+    "texture": "The graph-paper grid only, faint (under 35 % opacity lines), never under a chart's labels in a way that hurts reading."
+  },
+  "palette": {
+    "paper": "#f8f7f1",
+    "ink": "#1b2230",
+    "muted": "#556072",
+    "rule": "#1b2230",
+    "chart_base": "#b9c1cc",
+    "chart_base_2": "#8e99a8",
+    "chart_base_3": "#d6dbe2",
+    "mat": "#ffffff",
+    "accent": "#1f6feb",
+    "accent_2": "#ffd84d",
+    "inverse": {
+      "paper": "#1b2230",
+      "ink": "#f1f0ea",
+      "muted": "#aeb6c2",
+      "rule": "#f1f0ea",
+      "chart_base": "#4e5a6c",
+      "chart_base_2": "#6d7a8d",
+      "chart_base_3": "#36404f",
+      "mat": "#262f3f"
+    }
+  },
+  "fonts": {
+    "display": {
+      "family": "Bricolage Grotesque",
+      "google": "Bricolage Grotesque:opsz,wdth,wght@12..96,75..100,200..800",
+      "fallback": "'Arial Narrow', 'Helvetica Neue', Arial, sans-serif"
+    },
+    "text": {
+      "family": "IBM Plex Sans",
+      "google": "IBM Plex Sans:ital,wght@0,400..700;1,400..700",
+      "fallback": "'Helvetica Neue', Arial, sans-serif"
+    },
+    "mono": {
+      "family": "IBM Plex Mono",
+      "google": "IBM Plex Mono:wght@400;500;600",
+      "fallback": "ui-monospace, Menlo, monospace"
+    }
+  },
+  "brand": {
+    "fonts": false,
+    "inverse_from_brand": true
+  },
+  "chrome": {
+    "logo": [
+      "cover",
+      "cta"
+    ],
+    "handle": [
+      "content"
+    ],
+    "folio": false
+  },
+  "safe_margin": 64,
+  "type_scale": {
+    "cover_title": {
+      "min": 72,
+      "max": 150,
+      "lines": 5,
+      "steps": [
+        72,
+        84,
+        96,
+        108,
+        120,
+        136,
+        150
+      ]
+    },
+    "cover_title_media": {
+      "min": 64,
+      "max": 108,
+      "lines": 4,
+      "steps": [
+        64,
+        72,
+        80,
+        88,
+        96,
+        108
+      ]
+    },
+    "cover_sub": {
+      "min": 30,
+      "max": 38,
+      "lines": 4
+    },
+    "title": {
+      "min": 52,
+      "max": 88,
+      "lines": 3,
+      "steps": [
+        52,
+        60,
+        68,
+        76,
+        88
+      ]
+    },
+    "title@text": {
+      "min": 60,
+      "max": 116,
+      "lines": 5,
+      "steps": [
+        60,
+        68,
+        76,
+        88,
+        100,
+        116
+      ]
+    },
+    "title@chart": {
+      "min": 46,
+      "max": 72,
+      "lines": 2
+    },
+    "title_media": {
+      "min": 46,
+      "max": 68,
+      "lines": 3
+    },
+    "sub": {
+      "min": 28,
+      "max": 34,
+      "lines": 3
+    },
+    "body": {
+      "min": 30,
+      "max": 40,
+      "lines": 12
+    },
+    "list": {
+      "min": 32,
+      "max": 50,
+      "lines": 3
+    },
+    "stat_value": {
+      "min": 160,
+      "max": 380,
+      "lines": 1
+    },
+    "stat_label": {
+      "min": 38,
+      "max": 60,
+      "lines": 3
+    },
+    "stat_context": {
+      "min": 28,
+      "max": 36,
+      "lines": 5
+    },
+    "chart_title": {
+      "min": 24,
+      "max": 28,
+      "lines": 2
+    },
+    "quote": {
+      "min": 46,
+      "max": 124,
+      "lines": 7
+    },
+    "cta_title": {
+      "min": 64,
+      "max": 140,
+      "lines": 5
+    },
+    "cta": {
+      "min": 64,
+      "max": 210,
+      "lines": 5
+    },
+    "cta_sub": {
+      "min": 28,
+      "max": 36,
+      "lines": 3
+    },
+    "cover_sub@cover-b": {
+      "min": 28,
+      "max": 36,
+      "lines": 8
+    }
+  },
+  "budgets": {
+    "title_words": 12,
+    "cover_title_words": 14,
+    "body_words": 50,
+    "list_items": 5
+  },
+  "chart_box": {
+    "default": [
+      900,
+      820
+    ],
+    "chart": [
+      900,
+      820
+    ]
+  },
+  "cover_layouts": [
+    "cover-a",
+    "cover-b"
+  ],
+  "layouts": {
+    "cover-a": "Logo top-left, the photo on white photo paper, the title large at the bottom with a marker highlight on the accent.",
+    "cover-b": "Title first, then the standfirst as a margin note beside the photo.",
+    "text": "Title, a ruled body column.",
+    "list": "Title, items with circled numbers in the accent.",
+    "stat": "The numeral on a double underline, its label, a context note.",
+    "chart": "Short title, numbered figure caption in mono, the chart filling the page, the note under it.",
+    "quote": "The quote set large, attribution as a mono note.",
+    "media": "Title over the photo on photo paper or a framed screenshot with numbered annotations.",
+    "logos": "Title, logos in ink on the grid.",
+    "visual": "Title over the SVG drawn in ink with the marker accent.",
+    "cta": "Logo top-left, the action large, the URL in mono with a marker underline."
+  }
+}

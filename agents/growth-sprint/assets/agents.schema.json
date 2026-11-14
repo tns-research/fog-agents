@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "growth-sprint agent registry",
+  "description": "agents.json: what each stack agent needs, what it writes and how the sprint verifies it on disk. Validate with: python3 shared/scripts/validate_json.py agents/growth-sprint/assets/agents.schema.json agents/growth-sprint/assets/agents.json",
+  "type": "object",
+  "required": ["schema_version", "agents"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "_comment": { "type": "string" },
+    "agents": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/agent" }
+    }
+  },
+  "$defs": {
+    "agent": {
+      "type": "object",
+      "required": ["spec", "purpose", "inputs", "outputs", "spends", "publishes", "human_gates", "parallel_safe"],
+      "additionalProperties": false,
+      "properties": {
+        "spec": { "type": "string", "pattern": "^agents/[a-z0-9-]+/AGENT_[A-Z_]+\\.md$" },
+        "purpose": { "type": "string", "minLength": 10 },
+        "inputs": { "type": "array", "items": { "$ref": "#/$defs/input" } },
+        "reads": { "type": "array", "items": { "type": "string" } },
+        "outputs": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/output" } },
+        "spends": { "type": "boolean" },
+        "publishes": { "type": "boolean" },
+        "spend_note": { "type": "string" },
+        "human_gates": { "type": "array", "items": { "$ref": "#/$defs/gate" } },
+        "parallel_safe": { "type": "boolean", "description": "false: never two steps of this agent in flight, and the step runs alone in its wave (it writes a shared file such as queue.json)." },
+        "next_sprint_input": { "type": "string", "description": "Output that can seed the goal of the next sprint." }
+      }
+    },
+    "input": {
+      "type": "object",
+      "required": ["name", "required"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string", "pattern": "^[a-z_]+$" },
+        "required": { "type": "boolean" },
+        "from": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[a-z0-9_./<>-]+(#[a-z_.]+)?$" },
+          "description": "Project files that provide the input: path, or path#dotted.field (the field must be non-empty). Any one satisfies it."
+        },
+        "default": { "type": "string" }
+      }
+    },
+    "output": {
+      "type": "object",
+      "required": ["id", "path", "check"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "path": { "type": "string", "minLength": 3 },
+        "check": { "enum": ["file", "dir", "json", "schema", "jsonl_schema", "csv_header"] },
+        "schema": { "type": "string", "pattern": "^(agents|shared)/.+\\.json$" },
+        "columns": { "type": "array", "items": { "type": "string" } },
+        "min_bytes": { "type": "integer", "minimum": 1 },
+        "min_rows": { "type": "integer", "minimum": 0 },
+        "min_files": { "type": "integer", "minimum": 1 },
+        "required": { "type": "boolean" }
+      }
+    },
+    "gate": {
+      "type": "object",
+      "required": ["id", "kind", "detect", "how", "after_clear"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "kind": { "enum": ["spend", "publish", "input", "other"] },
+        "detect": {
+          "type": ["string", "object"],
+          "description": "result_pending: the step result file lists a pending item of this kind. Or an on-disk test: {type: json_count, file, array, field, in, min}.",
+          "required": ["type", "file", "array", "field", "in", "min"],
+          "additionalProperties": false,
+          "properties": {
+            "type": { "const": "json_count" },
+            "file": { "type": "string" },
+            "array": { "type": "string" },
+            "field": { "type": "string" },
+            "in": { "type": "array", "items": { "type": "string" } },
+            "min": { "type": "integer", "minimum": 1 }
+          }
+        },
+        "how": { "type": "string", "minLength": 10 },
+        "after_clear": { "enum": ["rerun", "done"] }
+      }
+    }
+  }
+}

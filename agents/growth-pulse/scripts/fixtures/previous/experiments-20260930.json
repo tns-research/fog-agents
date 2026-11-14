@@ -1,0 +1,156 @@
+{
+  "schema_version": "1.0",
+  "agent": "growth-pulse",
+  "project": "swanbase",
+  "generated_on": "2026-09-30",
+  "week": {
+    "id": "2026-W39",
+    "start": "2026-09-21",
+    "end": "2026-09-27"
+  },
+  "pulse": {
+    "file": "pulse.json",
+    "inputs_hash": "048b00edcbd8"
+  },
+  "experiments": [
+    {
+      "id": "E-20260930-1",
+      "title": "One LinkedIn carousel a week instead of one text post",
+      "stage": "acquisition",
+      "hypothesis": "We believe that publishing one carousel a week on the company page will raise weekly LinkedIn impressions because the weekly text posts of the last four weeks stayed flat and a carousel keeps readers on the post for several slides.",
+      "change": "Publish one carousel built with carousel-builder on Tuesday morning, in place of the weekly text post.",
+      "channel": "linkedin",
+      "metric": {
+        "id": "social.linkedin.impressions",
+        "label": "LinkedIn impressions"
+      },
+      "baseline": {
+        "value": 6463.3,
+        "basis": "4-week mean"
+      },
+      "success_threshold": {
+        "comparator": ">=",
+        "value": 9000,
+        "per": "week",
+        "unit": "impressions"
+      },
+      "duration_days": 7,
+      "start_date": "2026-10-05",
+      "cost": {
+        "cash_eur": 0,
+        "hours": 3,
+        "spend_requires_approval": false
+      },
+      "owner": "carousel-builder",
+      "evidence": [
+        "metrics/social.linkedin.impressions"
+      ],
+      "ice": {
+        "impact": 6,
+        "confidence": 6,
+        "ease": 8
+      },
+      "readout": {
+        "detectable": true,
+        "noise_band_per_week": 185.7,
+        "reason": "a change of the weekly mean beyond the band reads in 1 week(s)"
+      },
+      "status": "running"
+    },
+    {
+      "id": "E-20260930-2",
+      "title": "Newsletter box at the end of every blog article",
+      "stage": "activation",
+      "hypothesis": "We believe that a newsletter box at the end of each article will raise weekly signups because readers who finish an article have no next step today.",
+      "change": "Add the signup box under the last paragraph of every article, same copy everywhere.",
+      "channel": "blog",
+      "metric": {
+        "id": "umami.event.newsletter_signup",
+        "label": "Newsletter signups"
+      },
+      "baseline": {
+        "value": 10,
+        "basis": "4-week mean"
+      },
+      "success_threshold": {
+        "comparator": ">=",
+        "value": 15,
+        "per": "week",
+        "unit": "signups"
+      },
+      "duration_days": 14,
+      "start_date": "2026-10-05",
+      "cost": {
+        "cash_eur": 0,
+        "hours": 2,
+        "spend_requires_approval": false
+      },
+      "owner": "founder",
+      "evidence": [
+        "metrics/umami.event.newsletter_signup"
+      ],
+      "ice": {
+        "impact": 5,
+        "confidence": 5,
+        "ease": 9
+      },
+      "readout": {
+        "detectable": false,
+        "noise_band_per_week": 14.5,
+        "reason": "the target sits inside the noise of 2 week(s): lengthen it, pick a bigger lever or a metric with more volume"
+      },
+      "status": "running"
+    },
+    {
+      "id": "E-20260930-3",
+      "title": "Invite link in the application confirmation email",
+      "stage": "referral",
+      "hypothesis": "We believe that an invite link in the confirmation email will bring referred applicants because applicants often apply with a cofounder or a friend in mind.",
+      "change": "Add a personal invite link to the confirmation email and track the signups that come through it.",
+      "channel": "email",
+      "metric": {
+        "id": "new:umami.event.referral_signup",
+        "label": "Signups through an invite link"
+      },
+      "baseline": {
+        "value": null,
+        "basis": "none"
+      },
+      "success_threshold": {
+        "comparator": ">=",
+        "value": 3,
+        "per": "total",
+        "unit": "signups"
+      },
+      "duration_days": 7,
+      "start_date": "2026-10-05",
+      "cost": {
+        "cash_eur": 0,
+        "hours": 4,
+        "spend_requires_approval": false
+      },
+      "owner": "founder",
+      "evidence": [
+        "metrics/umami.event.invite_link_copied"
+      ],
+      "ice": {
+        "impact": 4,
+        "confidence": 4,
+        "ease": 6
+      },
+      "readout": {
+        "detectable": null,
+        "noise_band_per_week": null,
+        "reason": "metric to instrument first: no baseline to read against"
+      },
+      "status": "running"
+    }
+  ],
+  "followup": [],
+  "budget": {
+    "cash_eur_total": 0,
+    "hours_total": 9,
+    "requires_approval": false
+  },
+  "usage": "Input of the next sprint. Each experiment is a hypothesis to test, never a finding: run it as written, record the start date, let the next growth-pulse run judge it from its metric. Spending needs the founder's approval first (spend_requires_approval)."
+}

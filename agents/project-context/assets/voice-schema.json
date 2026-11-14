@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "voice.json (voice pack)",
+  "description": "The founder's writing voice, measured on their own texts by scripts/build_voice.py and written to <project>/project-context/voice/voice.json. Copy agents read rules, examples and banned before writing, and run the writing gate with the project pack (voice/rules.json, path in pack_path). Every rule is a measured fact, never a tone adjective. Paths are relative to the project-context/ folder. Validate with: python3 shared/scripts/validate_json.py agents/project-context/assets/voice-schema.json <voice.json>",
+  "type": "object",
+  "required": ["schema_version", "language", "as_of", "sources", "metrics", "rules", "examples", "banned", "pack_path", "calibration"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "type": "string", "enum": ["1.0"] },
+    "language": { "type": "string", "enum": ["en", "fr"], "description": "Language of the founder's texts, and of the copy the rules apply to." },
+    "as_of": { "$ref": "#/$defs/date" },
+    "brand_name": { "type": "string", "description": "Brand name as the founder writes it (casing measured in metrics.brand_casing)." },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "description": "The founder's texts the pack was measured on, copied verbatim under voice/exemplars/.",
+      "items": {
+        "type": "object",
+        "required": ["path", "channel", "words"],
+        "additionalProperties": false,
+        "properties": {
+          "path": { "$ref": "#/$defs/rel_path" },
+          "channel": { "type": "string", "enum": ["post", "about", "email", "newsletter", "site", "talk", "other"] },
+          "source": { "type": "string", "description": "Where the text comes from: a URL, or a note such as 'pasted by the founder'." },
+          "captured_at": { "$ref": "#/$defs/date" },
+          "words": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "required": ["texts", "words", "sentences", "sentence_words", "person", "address", "per_1000_words", "low_sample"],
+      "additionalProperties": false,
+      "properties": {
+        "texts": { "type": "integer", "minimum": 0 },
+        "words": { "type": "integer", "minimum": 0 },
+        "sentences": { "type": "integer", "minimum": 0 },
+        "sentence_words": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "median": { "type": "number" }, "p25": { "type": "number" }, "p75": { "type": "number" }, "p90": { "type": "number" }, "max": { "type": "number" }
+          }
+        },
+        "paragraph_words_median": { "type": "number" },
+        "person": {
+          "type": "object",
+          "description": "Share of personal pronouns (0 to 1) by grammatical person. brand_third_person counts the brand name used as a subject stand-in.",
+          "additionalProperties": false,
+          "properties": {
+            "first_singular": { "type": "number", "minimum": 0, "maximum": 1 },
+            "first_plural": { "type": "number", "minimum": 0, "maximum": 1 },
+            "on": { "type": "number", "minimum": 0, "maximum": 1 },
+            "second": { "type": "number", "minimum": 0, "maximum": 1 },
+            "brand_third_person": { "type": "number", "minimum": 0, "maximum": 1 }
+          }
+        },
+        "address": {
+          "type": "object",
+          "required": ["form"],
+          "additionalProperties": false,
+          "properties": {
+            "form": { "type": "string", "enum": ["you", "tu", "vous", "mixed", "none"] },
+            "tu": { "type": "integer", "minimum": 0 },
+            "vous": { "type": "integer", "minimum": 0 },
+            "you": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "per_1000_words": {
+          "type": "object",
+          "additionalProperties": { "type": "number" },
+          "description": "exclamation, question, colon, semicolon, parenthesis, ellipsis, emoji, contraction (English), each per 1000 words."
+        },
+        "texts_with_exclamation": { "type": "integer", "minimum": 0 },
+        "texts_with_emoji": { "type": "integer", "minimum": 0 },
+        "brand_casing": { "type": "object", "additionalProperties": { "type": "integer" } },
+        "top_words": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["word", "count"],
+            "additionalProperties": false,
+            "properties": { "word": { "type": "string" }, "count": { "type": "integer", "minimum": 1 } }
+          }
+        },
+        "low_sample": { "type": "boolean", "description": "true under 600 words or under 3 texts: the rules are a first draft, add texts." }
+      }
+    },
+    "rules": {
+      "type": "array",
+      "description": "Measured rules, written as instructions. enforced_by names the writing-gate code that checks the rule mechanically, or is null when only the writer applies it.",
+      "items": {
+        "type": "object",
+        "required": ["id", "rule", "evidence"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+          "rule": { "type": "string", "minLength": 1 },
+          "evidence": { "type": "string", "minLength": 1 },
+          "enforced_by": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "examples": {
+      "type": "array",
+      "description": "Verbatim sentences from the founder's texts that pass the gate: the register to imitate, never to copy into new copy as is.",
+      "items": {
+        "type": "object",
+        "required": ["text", "source"],
+        "additionalProperties": false,
+        "properties": {
+          "text": { "type": "string", "minLength": 1 },
+          "source": { "$ref": "#/$defs/rel_path" },
+          "channel": { "type": "string" }
+        }
+      }
+    },
+    "banned": {
+      "type": "array",
+      "description": "Words and phrases never to write. Mirrored in rules.json banned_words (BLOCK).",
+      "items": {
+        "type": "object",
+        "required": ["text", "source"],
+        "additionalProperties": false,
+        "properties": {
+          "text": { "type": "string", "minLength": 1 },
+          "reason": { "type": "string" },
+          "source": { "type": "string", "enum": ["founder", "decision", "context"] }
+        }
+      }
+    },
+    "pack_path": { "$ref": "#/$defs/rel_path", "description": "The writing-gate project pack generated with this file, normally voice/rules.json." },
+    "calibration": {
+      "type": "object",
+      "required": ["status", "checked_at", "texts"],
+      "additionalProperties": false,
+      "properties": {
+        "status": { "type": "string", "enum": ["pass", "adjusted", "conflict"], "description": "pass: the founder's texts passed at 0 BLOCK as generated; adjusted: shared rules were lowered or disabled for this voice until they passed; conflict: a word the founder banned appears in their own texts (ask them)." },
+        "checked_at": { "$ref": "#/$defs/date" },
+        "texts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["path", "block_before", "block_after"],
+            "additionalProperties": false,
+            "properties": {
+              "path": { "$ref": "#/$defs/rel_path" },
+              "block_before": { "type": "integer", "minimum": 0 },
+              "block_after": { "type": "integer", "minimum": 0 },
+              "warn_after": { "type": "integer", "minimum": 0 }
+            }
+          }
+        },
+        "adjustments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["code", "change", "example"],
+            "additionalProperties": false,
+            "properties": {
+              "code": { "type": "string" },
+              "change": { "type": "string", "enum": ["level-warn", "disable", "drop-project-rule"] },
+              "example": { "type": "string", "description": "The founder's sentence that the rule blocked, with its file and line." }
+            }
+          }
+        },
+        "conflicts": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "how_to_use": { "type": "string" }
+  },
+  "$defs": {
+    "date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "rel_path": {
+      "type": "string",
+      "pattern": "^(?!/)(?![A-Za-z]:)(?!project-context/)(?!.*\\.\\.)[A-Za-z0-9._/-]+$"
+    }
+  }
+}

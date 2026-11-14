@@ -1,0 +1,1249 @@
+{
+ "rows": [
+  {
+   "dimensionValues": [
+    {
+     "value": "20260831"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "7"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260901"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "11"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260902"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "10"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260902"
+    },
+    {
+     "value": "newsletter_signup"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260903"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "10"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260903"
+    },
+    {
+     "value": "newsletter_signup"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260904"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "10"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260905"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "7"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260905"
+    },
+    {
+     "value": "newsletter_signup"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260906"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260907"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "4"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260907"
+    },
+    {
+     "value": "newsletter_signup"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260907"
+    },
+    {
+     "value": "invite_link_copied"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260908"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "10"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260908"
+    },
+    {
+     "value": "newsletter_signup"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "3"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260908"
+    },
+    {
+     "value": "invite_link_copied"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260909"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "11"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260909"
+    },
+    {
+     "value": "newsletter_signup"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "7"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260910"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "5"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260910"
+    },
+    {
+     "value": "newsletter_signup"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "4"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260911"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260911"
+    },
+    {
+     "value": "newsletter_signup"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "3"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260911"
+    },
+    {
+     "value": "invite_link_copied"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260912"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "4"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260912"
+    },
+    {
+     "value": "newsletter_signup"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260913"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "3"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260914"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "12"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260914"
+    },
+    {
+     "value": "newsletter_signup"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "3"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260914"
+    },
+    {
+     "value": "invite_link_copied"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260915"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "10"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260915"
+    },
+    {
+     "value": "newsletter_signup"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260915"
+    },
+    {
+     "value": "invite_link_copied"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260916"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "9"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260917"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "7"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260917"
+    },
+    {
+     "value": "invite_link_copied"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260918"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "12"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260919"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "6"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260919"
+    },
+    {
+     "value": "newsletter_signup"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260920"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "3"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260920"
+    },
+    {
+     "value": "newsletter_signup"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260921"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "11"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260921"
+    },
+    {
+     "value": "invite_link_copied"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260922"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "11"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260922"
+    },
+    {
+     "value": "newsletter_signup"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260922"
+    },
+    {
+     "value": "invite_link_copied"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260923"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "6"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260924"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "4"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260924"
+    },
+    {
+     "value": "newsletter_signup"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260925"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "8"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260926"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "4"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260926"
+    },
+    {
+     "value": "newsletter_signup"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260927"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260927"
+    },
+    {
+     "value": "newsletter_signup"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260928"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "8"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260928"
+    },
+    {
+     "value": "newsletter_signup"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "4"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260929"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "11"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260930"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "8"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260930"
+    },
+    {
+     "value": "newsletter_signup"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "3"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20260930"
+    },
+    {
+     "value": "invite_link_copied"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20261001"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "8"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20261001"
+    },
+    {
+     "value": "newsletter_signup"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20261002"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "6"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20261002"
+    },
+    {
+     "value": "newsletter_signup"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20261002"
+    },
+    {
+     "value": "invite_link_copied"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20261003"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "8"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20261004"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "4"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20261004"
+    },
+    {
+     "value": "newsletter_signup"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20261005"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "7"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20261005"
+    },
+    {
+     "value": "newsletter_signup"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20261006"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "10"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20261006"
+    },
+    {
+     "value": "newsletter_signup"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20261007"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "6"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20261007"
+    },
+    {
+     "value": "newsletter_signup"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "4"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20261007"
+    },
+    {
+     "value": "invite_link_copied"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20261008"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "3"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20261008"
+    },
+    {
+     "value": "newsletter_signup"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20261008"
+    },
+    {
+     "value": "invite_link_copied"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20261009"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "7"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20261009"
+    },
+    {
+     "value": "newsletter_signup"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "4"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20261010"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20261010"
+    },
+    {
+     "value": "invite_link_copied"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20261011"
+    },
+    {
+     "value": "apply_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20261011"
+    },
+    {
+     "value": "newsletter_signup"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "2.0",
+  "project": "swanbase",
+  "market": "pre-seed fundraising for first-time founders",
+  "language": "en",
+  "geography": "global",
+  "as_of": "2026-07-13",
+  "window": {
+    "since": "2026-04-15",
+    "until": "2026-07-13"
+  },
+  "summary": "Previous watch run of the fictional example, kept for the comparison: investor access through warm introductions already leads, salaries at pre-seed come up in one thread, and warm intro path tools launch on Hacker News.",
+  "pains": [
+    {
+      "pain_id": "pain_investor_access",
+      "summary": "Getting in front of investors without a network: warm introductions act as the gate",
+      "force": "push",
+      "awareness_stage": "problem_aware"
+    },
+    {
+      "pain_id": "pain_traction_bar",
+      "summary": "Not knowing which proof is enough for a pre-seed yes",
+      "force": "anxiety",
+      "awareness_stage": "problem_aware"
+    },
+    {
+      "pain_id": "pain_pitch_story",
+      "summary": "Turning an early company into one story an investor can repeat",
+      "force": "push",
+      "awareness_stage": "solution_aware"
+    },
+    {
+      "pain_id": "pain_founder_salary",
+      "summary": "How much a pre-seed founder can pay themselves",
+      "force": "anxiety",
+      "awareness_stage": "problem_aware"
+    },
+    {
+      "pain_id": "pain_vc_misalignment",
+      "summary": "Pre-seed investors bet on a few winners and expect the rest to fail, which founders read as misalignment",
+      "kind": "meta_problem",
+      "force": "anxiety"
+    }
+  ],
+  "quotes": [
+    {
+      "quote_id": "q_invisible",
+      "record_id": "reddit:t1_fictive13",
+      "passage": "if the network you already have sends weak signal you're invisible however good the product is",
+      "pain_id": "pain_investor_access"
+    },
+    {
+      "quote_id": "q_warm_intro_problem",
+      "record_id": "reddit:t1_fictive05",
+      "passage": "getting into an accelerator or a demo day circuit puts you in front of hundreds of investors who are already looking for deals",
+      "pain_id": "pain_investor_access"
+    }
+  ]
+}

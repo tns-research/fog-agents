@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0",
+  "meta": {
+    "project": "acme",
+    "brand": "../all-styles/project-context/brand.json",
+    "language": "en",
+    "date": "2026-10-12",
+    "campaign": "stress"
+  },
+  "sources": [],
+  "ads": [
+    {
+      "id": "too-long",
+      "n": 1,
+      "stage": "tofu",
+      "angle": "anti-category",
+      "style": "bold-statement",
+      "formats": [
+        "1:1"
+      ],
+      "copy": {
+        "headline": "This headline keeps going and going because nobody cut it, it repeats the same idea in more words, then adds a second clause, a third one and a fourth one that no reader will ever finish on a phone screen in a feed, and still more words after that"
+      },
+      "meta_ad": {
+        "primary_text": "A stress ad whose headline cannot fit at the minimum size.",
+        "headline": "Stress",
+        "cta": "LEARN_MORE",
+        "destination_url": "https://example.com"
+      }
+    },
+    {
+      "id": "needs-and-number",
+      "n": 2,
+      "stage": "mofu",
+      "angle": "process-reveal",
+      "style": "three-benefits-card",
+      "formats": [
+        "4:5"
+      ],
+      "copy": {
+        "headline": "73% of buyers read the label.",
+        "bullets": [
+          "Only one bullet"
+        ]
+      },
+      "meta_ad": {
+        "primary_text": "A stress ad with an unsourced number and too few bullets.",
+        "headline": "Stress",
+        "cta": "LEARN_MORE",
+        "destination_url": "https://example.com"
+      }
+    },
+    {
+      "id": "dash",
+      "n": 3,
+      "stage": "tofu",
+      "angle": "wrong-answer",
+      "style": "bold-statement",
+      "formats": [
+        "4:5"
+      ],
+      "copy": {
+        "headline": "Jam \u2014 the honest kind."
+      },
+      "meta_ad": {
+        "primary_text": "A stress ad with a forbidden dash in the headline copy.",
+        "headline": "Stress",
+        "cta": "SHOP_NOW",
+        "destination_url": "https://example.com"
+      }
+    },
+    {
+      "id": "plate",
+      "n": 4,
+      "stage": "tofu",
+      "angle": "specific-ritual",
+      "style": "ugc-text-overlay",
+      "formats": [
+        "4:5",
+        "9:16"
+      ],
+      "copy": {
+        "headline": "Breakfast at dawn."
+      },
+      "media": [
+        {
+          "role": "plate",
+          "src": "plates/04-plate.jpg",
+          "prompt": "A wooden kitchen table at dawn, low side light from a window, a linen cloth, crumbs, an empty plate.",
+          "fit": "cover"
+        }
+      ],
+      "meta_ad": {
+        "primary_text": "A stress ad whose plate background was never generated.",
+        "headline": "Stress",
+        "cta": "LEARN_MORE",
+        "destination_url": "https://example.com"
+      }
+    },
+    {
+      "id": "cropped-photo",
+      "n": 5,
+      "stage": "mofu",
+      "angle": "insider",
+      "style": "ingredient-origin-strip",
+      "formats": [
+        "1:1"
+      ],
+      "copy": {
+        "headline": "From this orchard."
+      },
+      "media": [
+        {
+          "role": "photo",
+          "src": "../media/acme-orchard.jpg",
+          "fit": "cover"
+        }
+      ]
+    },
+    {
+      "id": "bad-style",
+      "n": 6,
+      "stage": "bofu",
+      "angle": "easy-first-step",
+      "style": "carousel-of-doom",
+      "formats": [
+        "1:1"
+      ],
+      "copy": {
+        "headline": "Unknown style."
+      },
+      "meta_ad": {
+        "primary_text": "A stress ad with a style that is not in the library.",
+        "headline": "Stress",
+        "cta": "BUY_IT",
+        "destination_url": "https://example.com"
+      }
+    }
+  ]
+}

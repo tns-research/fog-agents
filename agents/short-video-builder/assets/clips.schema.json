@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "short-video-builder clips.json",
+  "description": "The spec the model writes: which excerpts of one landscape talk become 9:16 shorts, with the hook, the reason and the style. scripts/clipspec.py validates it against this schema (stdlib subset of shared/scripts/validate_json.py), then checks it against the transcript. There is deliberately no intro or title card field: a short opens on the speaker's first words.",
+  "type": "object",
+  "required": ["version", "source", "transcript", "clips"],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "const": 1 },
+    "source": { "type": "string", "minLength": 1, "description": "The landscape video, relative to this file or absolute." },
+    "transcript": { "type": "string", "minLength": 1, "description": "words.json written by transcribe.py and signed by proofread.py." },
+    "language": { "type": "string", "pattern": "^[a-z]{2}(-[A-Z]{2})?$" },
+    "objective": { "enum": ["reach", "leads", "authority"], "description": "What the clips are for; shapes the choice of excerpts." },
+    "duration_limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "min_seconds": { "type": "number", "minimum": 3, "maximum": 120 },
+        "max_seconds": { "type": "number", "minimum": 5, "maximum": 180 }
+      }
+    },
+    "speaker": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Optional lower third over the first seconds of every clip.",
+      "properties": {
+        "name": { "type": "string", "maxLength": 40 },
+        "role": { "type": "string", "maxLength": 48 },
+        "show_seconds": { "type": "number", "minimum": 0, "maximum": 8 }
+      }
+    },
+    "style": { "$ref": "#/$defs/style" },
+    "audio": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "target_lufs": { "type": "number", "minimum": -24, "maximum": -9 },
+        "true_peak": { "type": "number", "minimum": -6, "maximum": -0.5 },
+        "denoise": { "type": "boolean" }
+      }
+    },
+    "cta": { "$ref": "#/$defs/cta" },
+    "clips": { "type": "array", "minItems": 1, "maxItems": 20, "items": { "$ref": "#/$defs/clip" } }
+  },
+  "$defs": {
+    "time": {
+      "type": ["number", "string"],
+      "pattern": "^\\d+(:\\d{1,2}){0,2}(\\.\\d+)?$",
+      "description": "Seconds (12.5) or M:SS.s on the source timeline."
+    },
+    "clip": {
+      "type": "object",
+      "required": ["id", "start", "end", "hook", "reason"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{0,47}$", "description": "Kebab-case, becomes the file name." },
+        "start": { "$ref": "#/$defs/time" },
+        "end": { "$ref": "#/$defs/time" },
+        "hook": { "type": "string", "minLength": 3, "maxLength": 200, "description": "The first sentence the speaker says in the clip, verbatim from the proofread transcript." },
+        "reason": { "type": "string", "minLength": 10, "maxLength": 400, "description": "Why this excerpt, for this objective: what a stranger gets from it with no context." },
+        "title": { "type": "string", "maxLength": 100, "description": "Post title or first line of the caption (copy, goes through the writing gate)." },
+        "post": { "type": "string", "maxLength": 2200, "description": "Optional post caption (copy, goes through the writing gate)." },
+        "framing": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "mode": { "enum": ["track", "fixed"] },
+            "x": { "type": "number", "minimum": 0, "maximum": 1, "description": "fixed: horizontal centre of the crop as a fraction of the source width. track: the person to follow when several faces are visible." }
+          }
+        },
+        "cta": { "$ref": "#/$defs/cta" }
+      }
+    },
+    "cta": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Optional end card. It dissolves in after the last word while the source keeps playing under it, never a silent frozen card.",
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "lines": { "type": "array", "maxItems": 3, "items": { "type": "string", "minLength": 1, "maxLength": 40 } },
+        "url": { "type": "string", "maxLength": 40 },
+        "seconds": { "type": "number", "minimum": 1.5, "maximum": 5 }
+      }
+    },
+    "style": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "brand_json": { "type": "string", "description": "project-context/brand.json; its colors.accent, colors.bg, colors.text and fonts.body.family fill the fields left empty here." },
+        "accent": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$", "description": "Active-word colour, progress bar, CTA link." },
+        "text": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+        "background": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$", "description": "End card ground." },
+        "font": { "type": "string", "minLength": 1, "description": "Fontconfig family installed on the machine." },
+        "uppercase": { "type": "boolean" },
+        "words_per_line": { "type": "integer", "minimum": 1, "maximum": 5 },
+        "position": { "enum": ["middle", "lower"] },
+        "logo": { "type": "string", "description": "PNG with transparency, shown top right. SVG is not read: export a PNG." },
+        "progress_bar": { "type": "boolean" }
+      }
+    }
+  }
+}

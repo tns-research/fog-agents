@@ -1,0 +1,54 @@
+/* base.css: shared by every article visual. Colors, fonts and radius come
+   from brand.json through the custom properties of :root (see
+   shared/schemas/README.md, "Mapping to CSS custom properties"); derived
+   roles (--accent-ink, --accent-tint, --display-weight, --body-strong) are
+   computed by article_visuals.py. No remote asset, no gradient, no blur. */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg); }
+body {
+  width: 1200px;
+  font-family: var(--font-body);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  font-kerning: normal;
+  font-variant-numeric: lining-nums;
+}
+.canvas {
+  width: 1200px;
+  background: var(--bg);
+  padding: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.canvas.fixed { height: 630px; }
+.tx { overflow-wrap: normal; word-break: normal; hyphens: manual; }
+.v-head { display: flex; flex-direction: column; gap: 12px; }
+.v-title {
+  font-family: var(--font-display);
+  font-weight: var(--display-weight);
+  font-size: 44px;
+  line-height: 1.14;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  max-width: 1040px;
+}
+.v-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+  min-height: 52px;
+}
+.v-foot.no-rule { border-top: 0; padding-top: 0; }
+.meta { font-size: 18px; line-height: 1.4; color: var(--text-muted); }
+.logo { display: flex; align-items: center; gap: 12px; height: 30px; flex: 0 0 auto; margin-left: auto; }
+.logo svg, .logo img { height: 100%; width: auto; display: block; }
+.logo-text { font-family: var(--font-display); font-weight: var(--display-weight); font-size: 24px; line-height: 1; color: var(--text); white-space: nowrap; }
+.ico { width: 32px; height: 32px; flex: 0 0 auto; display: block; }
+.nw { white-space: nowrap; }

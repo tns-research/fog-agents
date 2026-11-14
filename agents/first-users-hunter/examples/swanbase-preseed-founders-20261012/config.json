@@ -1,0 +1,52 @@
+{
+  "_comment": "Example config of the swanbase run of 2026-10-12. Every person in this example is fictional; the API answers are frozen in tests/fixtures/api/ (shape of the real APIs, fictional content).",
+  "project": "swanbase-example",
+  "idea": "swanbase is a Paris accelerator that works with first-time founders all year, from the first prototype to the first round.",
+  "target_user": "Pre-seed founders, solo or with one co-founder, in Paris or elsewhere in Europe, before or during their first raise",
+  "geography": "FR",
+  "language": "en",
+  "founder": {
+    "handles": { "hn": "", "x": "", "linkedin": "", "github": "", "reddit": "" },
+    "weekly_hours": 4
+  },
+  "icp_keywords": ["founder", "pre-seed", "preseed", "cofounder", "co-founder", "first users", "beta testers", "mvp", "accelerator", "program"],
+  "exclude_handles": [],
+  "max_people": 20,
+  "recency_days": {},
+  "activity": {},
+  "sources": {
+    "hn": {
+      "enabled": true,
+      "queries": [
+        { "id": "hn_first_users", "query": "first users", "tags": "(story,comment)", "hits": 50 },
+        { "id": "hn_cofounder", "query": "cofounder", "tags": "(story,comment)", "hits": 50 }
+      ]
+    },
+    "github": {
+      "enabled": true,
+      "queries": [ { "id": "gh_beta_testers", "q": "\"beta testers\" type:issue" } ],
+      "discussions": []
+    },
+    "reddit": { "enabled": false, "subreddits": ["startups"], "query": "first users", "limit": 50 },
+    "luma": { "enabled": true, "places": ["paris"], "keywords": ["founder", "pre-seed", "startup"] },
+    "notion": {
+      "enabled": true,
+      "lists": [
+        {
+          "id": "fictional-founders-directory",
+          "site": "https://founders-directory-example.notion.site",
+          "page_id": "11111111-2222-3333-4444-555555555555",
+          "view_id": "66666666-7777-8888-9999-000000000000",
+          "columns": { "name": "Name", "linkedin": "LinkedIn", "role": "Role" },
+          "signal_type": "listed"
+        }
+      ]
+    },
+    "folk": { "enabled": false, "views": [] },
+    "registry_fr": {
+      "enabled": true,
+      "queries": [ { "id": "fr_software_paris", "q": "logiciel", "section_activite_principale": "J", "departement": "75", "per_page": 25 } ]
+    },
+    "manual": { "signals_csv": "manual-signals.csv", "activity_csv": "activity-manual.csv" }
+  }
+}

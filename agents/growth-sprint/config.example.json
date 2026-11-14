@@ -1,0 +1,16 @@
+{
+  "_comment": "growth-sprint per-project config. Copied to <your-projects-root>/<project>/growth-sprint/config.json on the first run. budget_cap_eur: default cap of a sprint when the founder gives none, on cash spent on optional paid APIs from the founder's own accounts (image-model photo backgrounds, paid SERP calls, paid GEO panel runs), never ad spend (0 = no paid call). alert_ratio: share of the cap that records a budget alert. max_wave: steps in flight at once, 1 to 3 (1 = strictly sequential, also the fallback without subagents). approvers: names allowed in `sprint.py approve --by` (empty = any person's name; agent and tool names are always refused). reuse_if_fresh_days: per agent, how recent its outputs must be to skip its step (copied into each step of the plan by the planner). agents_excluded: agents never planned for this project. Optional: a \"tools\" object (same keys as shared/tools.example.json, for example {\"critic\": \"builtin\"}) overrides the project's tools.json for this agent.",
+  "project": "<project-slug>",
+  "budget_cap_eur": 0,
+  "alert_ratio": 0.8,
+  "max_wave": 3,
+  "approvers": [],
+  "reuse_if_fresh_days": {
+    "project-context": 180,
+    "market-signal": 30,
+    "first-users-hunter": 14,
+    "seo-audit": 28,
+    "landing-page-analyzer": 30
+  },
+  "agents_excluded": []
+}

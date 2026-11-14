@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "people": [
+    {
+      "slug": "ana-ruiz",
+      "name": "Ana Ruiz",
+      "role": "Founder",
+      "photo": "assets/people/ana-ruiz.jpg",
+      "is_operator": true,
+      "consent": { "status": "granted", "scope": ["ads", "carousel", "posts", "site"], "date": "2026-10-02", "source": "operator, set up the project" }
+    },
+    {
+      "slug": "lena-park",
+      "name": "Lena Park",
+      "role": "Studio owner, Parkline Design",
+      "photo": "assets/people/lena-park.jpg",
+      "consent": { "status": "granted", "scope": ["carousel", "posts"], "date": "2026-10-02", "source": "email of 2026-10-02" }
+    },
+    {
+      "slug": "tom-weller",
+      "name": "Tom Weller",
+      "role": "Freelance illustrator",
+      "consent": { "status": "unknown" }
+    }
+  ]
+}

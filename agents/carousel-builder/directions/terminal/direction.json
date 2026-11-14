@@ -1,0 +1,251 @@
+{
+  "id": "terminal",
+  "name": "Terminal",
+  "summary": "Controlled dark graphite ground, monospace throughout, one phosphor accent, prompt and comment conventions.",
+  "best_for": [
+    "developer tools",
+    "technical how-tos",
+    "AI and automation topics",
+    "changelogs",
+    "benchmarks"
+  ],
+  "avoid_for": [
+    "lifestyle and people stories",
+    "brands whose only colour is a mid-tone violet or blue (the accent would glow)"
+  ],
+  "mood": "dark",
+  "rules": {
+    "grid": "One 900 px column on 90 px margins, everything flush left like a terminal buffer. A one-line status bar at the top of content slides, the footer as a comment line.",
+    "type": "Martian Mono (wide, heavy) for titles and numerals, JetBrains Mono for everything else. No proportional face.",
+    "density": "Short lines, generous line-height, one idea per screen. Calm slides are a single number with a block cursor.",
+    "accent": "One phosphor accent (the brand colour that stands out most on graphite): the prompt glyph, the accent words, the highlighted bar, the cursor. Never a glow, never on large fills except the accent surface.",
+    "photo": "Inside a window frame with a mono title bar, shown whole on a dark mat.",
+    "texture": "None. Flat graphite; no scanlines, no CRT curvature, no glow."
+  },
+  "palette": {
+    "paper": "#121411",
+    "ink": "#ebe8dd",
+    "muted": "#9a9d93",
+    "rule": "#3b3e37",
+    "chart_base": "#565a51",
+    "chart_base_2": "#767a70",
+    "chart_base_3": "#3b3e37",
+    "mat": "#1c1e1a",
+    "accent": "#8fe388",
+    "accent_2": "#ffb547",
+    "inverse": {
+      "paper": "#ebe8dd",
+      "ink": "#121411",
+      "muted": "#55584f",
+      "rule": "#121411",
+      "chart_base": "#b6b3a8",
+      "chart_base_2": "#8f8c82",
+      "chart_base_3": "#d3d0c5",
+      "mat": "#dedbd0"
+    }
+  },
+  "fonts": {
+    "display": {
+      "family": "Martian Mono",
+      "google": "Martian Mono:wdth,wght@75..112.5,100..800",
+      "fallback": "'JetBrains Mono', ui-monospace, Menlo, monospace"
+    },
+    "text": {
+      "family": "JetBrains Mono",
+      "google": "JetBrains Mono:ital,wght@0,400..800;1,400..800",
+      "fallback": "ui-monospace, Menlo, Consolas, monospace"
+    },
+    "mono": {
+      "family": "JetBrains Mono",
+      "google": "JetBrains Mono:ital,wght@0,400..800;1,400..800",
+      "fallback": "ui-monospace, Menlo, Consolas, monospace"
+    }
+  },
+  "brand": {
+    "fonts": false,
+    "inverse_from_brand": false,
+    "accent_pick": "max-contrast"
+  },
+  "chrome": {
+    "logo": [
+      "cover",
+      "cta"
+    ],
+    "handle": [
+      "content"
+    ],
+    "folio": false
+  },
+  "safe_margin": 64,
+  "type_scale": {
+    "cover_title": {
+      "min": 64,
+      "max": 116,
+      "lines": 6,
+      "steps": [
+        64,
+        72,
+        80,
+        88,
+        96,
+        104,
+        116
+      ]
+    },
+    "cover_title_media": {
+      "min": 56,
+      "max": 88,
+      "lines": 5,
+      "steps": [
+        56,
+        64,
+        72,
+        80,
+        88
+      ]
+    },
+    "cover_sub": {
+      "min": 30,
+      "max": 36,
+      "lines": 5
+    },
+    "title": {
+      "min": 50,
+      "max": 84,
+      "lines": 4,
+      "steps": [
+        50,
+        56,
+        64,
+        72,
+        84
+      ]
+    },
+    "title@text": {
+      "min": 56,
+      "max": 104,
+      "lines": 5,
+      "steps": [
+        56,
+        64,
+        72,
+        84,
+        96,
+        104
+      ]
+    },
+    "title@chart": {
+      "min": 46,
+      "max": 72,
+      "lines": 3
+    },
+    "title_media": {
+      "min": 44,
+      "max": 64,
+      "lines": 3
+    },
+    "sub": {
+      "min": 28,
+      "max": 34,
+      "lines": 3
+    },
+    "body": {
+      "min": 30,
+      "max": 38,
+      "lines": 13
+    },
+    "list": {
+      "min": 32,
+      "max": 46,
+      "lines": 3
+    },
+    "stat_value": {
+      "min": 150,
+      "max": 330,
+      "lines": 1
+    },
+    "stat_label": {
+      "min": 38,
+      "max": 64,
+      "lines": 4
+    },
+    "stat_context": {
+      "min": 28,
+      "max": 38,
+      "lines": 6
+    },
+    "chart_title": {
+      "min": 26,
+      "max": 30,
+      "lines": 2
+    },
+    "quote": {
+      "min": 44,
+      "max": 84,
+      "lines": 8
+    },
+    "cta_title": {
+      "min": 64,
+      "max": 120,
+      "lines": 5
+    },
+    "cta": {
+      "min": 60,
+      "max": 150,
+      "lines": 6,
+      "steps": [
+        60,
+        72,
+        84,
+        96,
+        108,
+        124,
+        140,
+        150
+      ]
+    },
+    "cta_sub": {
+      "min": 28,
+      "max": 34,
+      "lines": 4
+    },
+    "cover_sub@cover-b": {
+      "min": 28,
+      "max": 36,
+      "lines": 8
+    }
+  },
+  "budgets": {
+    "title_words": 12,
+    "cover_title_words": 12,
+    "body_words": 50,
+    "list_items": 5
+  },
+  "chart_box": {
+    "default": [
+      900,
+      760
+    ],
+    "chart": [
+      900,
+      760
+    ]
+  },
+  "cover_layouts": [
+    "cover-a",
+    "cover-b"
+  ],
+  "layouts": {
+    "cover-a": "Logo top-left, the photo in a window frame, the title as a prompt line set large at the bottom, the standfirst as comment lines.",
+    "cover-b": "Title first at full width, then a row: standfirst as comments on the left, the framed photo on the right.",
+    "text": "Status bar, prompt title, body below a rule.",
+    "list": "Prompt title, items indexed [1] [2] in the accent.",
+    "stat": "One numeral with a block cursor, its label and a comment line of context.",
+    "chart": "Prompt title, chart heading as a comment, bars in greys with the accent on the message.",
+    "quote": "The quote in large mono between accent quotation marks, attribution as a comment.",
+    "media": "Prompt title over a framed screenshot with numbered annotations.",
+    "logos": "Prompt title, logos in the ink colour on graphite.",
+    "visual": "Prompt title over the SVG drawn in ink and accent.",
+    "cta": "Logo top-left, the action as a prompt with a cursor, the URL as a path."
+  }
+}

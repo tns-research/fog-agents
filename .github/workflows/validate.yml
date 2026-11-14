@@ -1,0 +1,84 @@
+name: validate
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-stack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: "3.x"
+      - name: Validate the agent stack
+        run: python3 scripts/validate_stack.py
+      - name: Shared JSON validator tests
+        run: python3 shared/scripts/tests/test_validate_json.py
+      - name: Brand font files from Google Fonts (local fake server)
+        run: python3 shared/scripts/tests/test_fetch_fonts.py
+      - name: Writing gate tests
+        run: python3 shared/skills/writing-gate/tests/run_tests.py
+      - name: cold-outreach-builder tests (offline fixtures)
+        run: python3 agents/cold-outreach-builder/tests/run_tests.py
+      - name: first-users-hunter tests (offline fixtures)
+        run: python3 agents/first-users-hunter/tests/run_tests.py
+      - name: market-signal selftest (frozen corpus, quote verification, watch diff)
+        run: python3 agents/market-signal/scripts/selftest.py
+      - name: founder-content-writer selftest (source passages, claims, hand-off to content-publisher)
+        run: python3 agents/founder-content-writer/scripts/selftest.py
+      - name: content-publisher selftest (offline queue, approval gate, dry-run adapter)
+        run: python3 agents/content-publisher/scripts/selftest.py
+      - name: growth-pulse selftest (connectors API vs CSV, pulse rules, number check, experiments)
+        run: python3 agents/growth-pulse/scripts/selftest.py
+      - name: growth-sprint selftest (simulated sprint, approval gate, disk checks, breaker, needs_human)
+        run: python3 agents/growth-sprint/scripts/selftest.py
+      - name: seo-audit tests (local fixture site, GSC bands, GEO panel, topic registry, write mode; visuals render skipped)
+        run: python3 agents/seo-audit/tests/run_tests.py
+      - name: Proof objects and people/partners registries
+        run: python3 shared/scripts/tests/test_proof_registry.py
+      - name: Example brand matches the V2 schema
+        run: python3 shared/scripts/validate_json.py shared/schemas/brand.schema.json shared/schemas/examples/brand.swanbase.json
+
+  carousel-engine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: "3.x"
+      - name: Install the carousel engine
+        run: |
+          pip install -r agents/carousel-builder/scripts/requirements.txt
+          python3 -m playwright install --with-deps chromium
+          sudo apt-get install -y ffmpeg
+      - name: seo-audit article visuals with a real Chromium render
+        run: python3 agents/seo-audit/tests/test_visuals.py
+      - name: Carousel selftest (stress deck, reference deck, video smoke test)
+        working-directory: agents/carousel-builder
+        run: python3 scripts/selftest.py
+      - name: static-ads-builder selftest (local render, proofread, perf fixtures)
+        working-directory: agents/static-ads-builder
+        run: |
+          pip install -r scripts/requirements.txt
+          python3 scripts/selftest.py --quick
+      - name: short-video-builder selftest (synthetic talk, proofread gate, fps guard)
+        working-directory: agents/short-video-builder
+        run: |
+          sudo apt-get install -y fonts-dejavu-core
+          pip install -r scripts/requirements.txt
+          python3 scripts/selftest.py
+      - name: landing-page-analyzer selftest (local fixture site, probe, journey, evidence check)
+        working-directory: agents/landing-page-analyzer
+        run: |
+          pip install -r scripts/requirements.txt
+          python3 scripts/selftest.py
+      - name: project-context selftest (brand extraction, logo variants, brand board, voice pack)
+        working-directory: agents/project-context
+        run: |
+          pip install -r scripts/requirements.txt
+          python3 scripts/selftest.py

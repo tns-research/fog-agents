@@ -1,0 +1,241 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/tns-research/fog-agents/agents/market-signal/assets/market-signal.schema.json",
+  "title": "market-signal handoff sidecar v2 (market-signal-<YYYYMMDD>.json)",
+  "description": "Written by scripts/build_handoff.py, never by hand. Read by cold-outreach-builder, static-ads-builder, carousel-builder and landing-page-analyzer. Every quote text was extracted from the stored corpus and verified; every number comes from compute_signals.py. Contract and reading rules: shared/handoffs.md.",
+  "type": "object",
+  "required": ["schema_version", "agent", "project", "date", "market", "window", "valid_until", "corpus", "stats", "source_health", "pains", "quotes", "hooks", "objections", "angles", "personas", "usage"],
+  "additionalProperties": false,
+  "$defs": {
+    "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "qids": { "type": "array", "items": { "type": "string", "pattern": "^q_[a-z0-9_]+$" } },
+    "force": { "enum": ["push", "pull", "anxiety", "habit"] },
+    "awareness": { "enum": ["unaware", "problem_aware", "solution_aware", "product_aware", "most_aware"] },
+    "count_share": {
+      "type": "object",
+      "required": ["source", "records", "share"],
+      "additionalProperties": false,
+      "properties": { "source": { "type": "string" }, "records": { "type": "integer", "minimum": 0 }, "share": { "type": ["number", "null"] } }
+    }
+  },
+  "properties": {
+    "schema_version": { "const": "2.0" },
+    "agent": { "const": "market-signal" },
+    "project": { "type": "string" },
+    "date": { "$ref": "#/$defs/date" },
+    "market": { "type": "string" },
+    "language": { "type": "string" },
+    "geography": { "type": "string" },
+    "window": {
+      "type": "object",
+      "required": ["since", "until", "days"],
+      "additionalProperties": false,
+      "properties": { "since": { "$ref": "#/$defs/date" }, "until": { "$ref": "#/$defs/date" }, "days": { "type": "integer", "minimum": 1 } }
+    },
+    "valid_until": { "$ref": "#/$defs/date" },
+    "corpus": {
+      "type": "object",
+      "required": ["path", "sha256", "records"],
+      "additionalProperties": false,
+      "properties": {
+        "path": { "type": "string", "description": "Relative to the sidecar's folder." },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "records": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "stats": {
+      "type": "object",
+      "required": ["records_collected", "records_relevant", "voices", "quotes_verified", "by_source", "sentiment", "escalation_rule"],
+      "additionalProperties": false,
+      "properties": {
+        "records_collected": { "type": "integer", "minimum": 0 },
+        "records_relevant": { "type": "integer", "minimum": 0 },
+        "voices": { "type": "integer", "minimum": 0 },
+        "quotes_verified": { "type": "integer", "minimum": 0 },
+        "by_source": { "type": "array", "items": { "$ref": "#/$defs/count_share" } },
+        "voices_by_source": { "type": "array", "items": { "$ref": "#/$defs/count_share" } },
+        "sentiment": {
+          "type": "object",
+          "required": ["counted", "counts"],
+          "additionalProperties": false,
+          "properties": { "counted": { "type": "integer" }, "counts": { "type": "object" }, "shares": { "type": "object" } }
+        },
+        "forces": { "type": "object" },
+        "escalation_rule": {
+          "type": "object",
+          "required": ["min_authors", "min_communities", "counted_speakers"],
+          "additionalProperties": false,
+          "properties": {
+            "min_authors": { "type": "integer" }, "min_communities": { "type": "integer" },
+            "counted_speakers": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "capped_jobs": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "source_health": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["job_id", "source", "status", "records"],
+        "additionalProperties": false,
+        "properties": {
+          "job_id": { "type": "string" }, "source": { "type": "string" }, "target": { "type": "string" },
+          "status": { "enum": ["ok", "empty", "error", "quota"] },
+          "records": { "type": "integer", "minimum": 0 }, "capped": { "type": "boolean" }, "message": { "type": "string" }
+        }
+      }
+    },
+    "pains": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["pain_id", "summary", "force", "escalated", "mention_count", "distinct_authors", "distinct_communities", "trend", "volume", "quote_ids"],
+        "additionalProperties": false,
+        "properties": {
+          "pain_id": { "type": "string", "pattern": "^pain_[a-z0-9_]+$" },
+          "summary": { "type": "string" },
+          "kind": { "enum": ["pain", "meta_problem", "desire"] },
+          "force": { "$ref": "#/$defs/force" },
+          "awareness_stage": { "$ref": "#/$defs/awareness" },
+          "existing_solution": { "type": ["string", "null"] },
+          "escalated": { "type": "boolean" },
+          "mention_count": { "type": "integer", "minimum": 0, "description": "Voices: labelled records whose speaker counts." },
+          "distinct_authors": { "type": "integer", "minimum": 0 },
+          "distinct_communities": { "type": "integer", "minimum": 0 },
+          "communities": { "type": "array", "items": { "type": "string" } },
+          "by_source": { "type": "object" },
+          "source_shares": { "type": "object" },
+          "first_seen": { "type": ["string", "null"] },
+          "last_seen": { "type": ["string", "null"] },
+          "by_month": { "type": "object" },
+          "trend": { "enum": ["rising", "falling", "flat", "unknown"] },
+          "volume": { "enum": ["complete", "lower_bound"] },
+          "quote_ids": { "$ref": "#/$defs/qids" }
+        }
+      }
+    },
+    "quotes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["quote_id", "record_id", "text_verbatim", "char_count", "permalink", "date", "source", "community", "verified"],
+        "additionalProperties": false,
+        "properties": {
+          "quote_id": { "type": "string", "pattern": "^q_[a-z0-9_]+$" },
+          "record_id": { "type": "string" },
+          "text_verbatim": { "type": "string", "minLength": 1 },
+          "char_count": { "type": "integer", "minimum": 1 },
+          "language": { "type": ["string", "null"] },
+          "permalink": { "type": "string", "pattern": "^https?://" },
+          "date": { "$ref": "#/$defs/date" },
+          "source": { "type": "string" },
+          "community": { "type": "string" },
+          "kind": { "type": "string" },
+          "author_hash": { "type": ["string", "null"] },
+          "speaker": { "type": ["string", "null"] },
+          "sentiment": { "type": ["string", "null"] },
+          "pain_id": { "type": ["string", "null"] },
+          "persona_id": { "type": ["string", "null"] },
+          "usable_as": { "type": "array", "items": { "type": "string" } },
+          "verified": { "const": true },
+          "warnings": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "hooks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["hook_id", "text", "verbatim", "char_count", "quote_ids"],
+        "additionalProperties": false,
+        "properties": {
+          "hook_id": { "type": "string" }, "text": { "type": "string" }, "verbatim": { "type": "boolean" },
+          "char_count": { "type": "integer" }, "pain_id": { "type": ["string", "null"] },
+          "quote_ids": { "$ref": "#/$defs/qids", "minItems": 1 }
+        }
+      }
+    },
+    "objections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["objection_id", "text", "force", "quote_ids"],
+        "additionalProperties": false,
+        "properties": {
+          "objection_id": { "type": "string" }, "text": { "type": "string" }, "force": { "enum": ["anxiety", "habit"] },
+          "pain_id": { "type": ["string", "null"] }, "quote_ids": { "$ref": "#/$defs/qids", "minItems": 1 }
+        }
+      }
+    },
+    "angles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["angle_id", "pain_id", "force", "awareness_stage", "funnel_stage", "headline_quote_id", "headline_char_count", "support_quote_ids", "formats", "pain_escalated"],
+        "additionalProperties": false,
+        "properties": {
+          "angle_id": { "type": "string" }, "pain_id": { "type": "string" },
+          "pain_escalated": { "type": "boolean" },
+          "force": { "$ref": "#/$defs/force" }, "awareness_stage": { "$ref": "#/$defs/awareness" },
+          "funnel_stage": { "enum": ["tofu", "mofu", "bofu"] },
+          "headline_quote_id": { "type": "string" }, "headline_char_count": { "type": "integer" },
+          "support_quote_ids": { "$ref": "#/$defs/qids" },
+          "contrast": { "type": ["string", "null"] },
+          "formats": { "type": "array", "items": { "enum": ["carousel", "static_ad", "cold_outreach", "landing_page"] } },
+          "why": { "type": "string" }
+        }
+      }
+    },
+    "existing_solutions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "type", "quote_ids"],
+        "additionalProperties": false,
+        "properties": {
+          "name": { "type": "string" }, "type": { "enum": ["direct", "indirect", "status_quo"] },
+          "sentiment": { "enum": ["positive", "negative", "mixed"] },
+          "mentions": { "type": ["object", "null"] },
+          "quote_ids": { "$ref": "#/$defs/qids" }
+        }
+      }
+    },
+    "personas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["persona_id", "name", "context", "primary"],
+        "additionalProperties": false,
+        "properties": {
+          "persona_id": { "type": "string" }, "name": { "type": "string" }, "context": { "type": "string" },
+          "primary": { "type": "boolean" },
+          "pain_ids": { "type": "array", "items": { "type": "string" } },
+          "jtbd_forces": { "type": "object" },
+          "hook_ids": { "type": "array", "items": { "type": "string" } },
+          "anti_personas": { "type": "array" }
+        }
+      }
+    },
+    "language_bank": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["phrase", "records", "distinct_authors"],
+        "additionalProperties": false,
+        "properties": {
+          "phrase": { "type": "string" }, "records": { "type": "integer" }, "distinct_authors": { "type": "integer" },
+          "pain_id": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "marketing_copy": { "type": "object", "description": "V1 compatibility, derived from angles and objections." },
+    "weak_signals": { "type": "array" },
+    "rejected_pains": { "type": "array" },
+    "recommendations": { "type": "array" },
+    "limitations": { "type": "array", "items": { "type": "string" } },
+    "changes": { "type": ["object", "null"] },
+    "usage": { "type": "string" }
+  }
+}

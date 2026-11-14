@@ -1,0 +1,9 @@
+{
+ "key": "GET https://api.github.com/users/ghost-builder-fictive/events/public?per_page=100",
+ "status": 404,
+ "body": {
+  "message": "Not Found",
+  "documentation_url": "https://docs.github.com/rest/activity/events#list-public-events-for-a-user",
+  "status": "404"
+ }
+}

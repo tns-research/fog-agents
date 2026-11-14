@@ -1,0 +1,2949 @@
+{
+ "_comment": "Fictional Search Console rows for the growth-pulse tests. Invented numbers.",
+ "dimensions": [
+  "date",
+  "query"
+ ],
+ "rows": [
+  {
+   "keys": [
+    "2026-08-31",
+    "startup accelerator paris"
+   ],
+   "clicks": 5,
+   "impressions": 105,
+   "ctr": 0.0476,
+   "position": 6.49
+  },
+  {
+   "keys": [
+    "2026-08-31",
+    "pre-seed accelerator"
+   ],
+   "clicks": 4,
+   "impressions": 72,
+   "ctr": 0.0556,
+   "position": 8.24
+  },
+  {
+   "keys": [
+    "2026-08-31",
+    "how to pitch investors"
+   ],
+   "clicks": 1,
+   "impressions": 63,
+   "ctr": 0.0159,
+   "position": 11.02
+  },
+  {
+   "keys": [
+    "2026-08-31",
+    "swanbase"
+   ],
+   "clicks": 8,
+   "impressions": 26,
+   "ctr": 0.3077,
+   "position": 1.13
+  },
+  {
+   "keys": [
+    "2026-08-31",
+    "pre seed checklist"
+   ],
+   "clicks": 2,
+   "impressions": 36,
+   "ctr": 0.0556,
+   "position": 9.76
+  },
+  {
+   "keys": [
+    "2026-08-31",
+    "startup events paris"
+   ],
+   "clicks": 1,
+   "impressions": 29,
+   "ctr": 0.0345,
+   "position": 11.15
+  },
+  {
+   "keys": [
+    "2026-08-31",
+    "fundraising mistakes"
+   ],
+   "clicks": 1,
+   "impressions": 23,
+   "ctr": 0.0435,
+   "position": 12.38
+  },
+  {
+   "keys": [
+    "2026-09-01",
+    "startup accelerator paris"
+   ],
+   "clicks": 10,
+   "impressions": 128,
+   "ctr": 0.0781,
+   "position": 6.08
+  },
+  {
+   "keys": [
+    "2026-09-01",
+    "pre-seed accelerator"
+   ],
+   "clicks": 1,
+   "impressions": 82,
+   "ctr": 0.0122,
+   "position": 8.79
+  },
+  {
+   "keys": [
+    "2026-09-01",
+    "how to pitch investors"
+   ],
+   "clicks": 3,
+   "impressions": 59,
+   "ctr": 0.0508,
+   "position": 10.99
+  },
+  {
+   "keys": [
+    "2026-09-01",
+    "swanbase"
+   ],
+   "clicks": 9,
+   "impressions": 36,
+   "ctr": 0.25,
+   "position": 1.78
+  },
+  {
+   "keys": [
+    "2026-09-01",
+    "pre seed checklist"
+   ],
+   "clicks": 2,
+   "impressions": 51,
+   "ctr": 0.0392,
+   "position": 10.26
+  },
+  {
+   "keys": [
+    "2026-09-01",
+    "startup events paris"
+   ],
+   "clicks": 0,
+   "impressions": 35,
+   "ctr": 0.0,
+   "position": 11.68
+  },
+  {
+   "keys": [
+    "2026-09-01",
+    "fundraising mistakes"
+   ],
+   "clicks": 1,
+   "impressions": 24,
+   "ctr": 0.0417,
+   "position": 12.04
+  },
+  {
+   "keys": [
+    "2026-09-02",
+    "startup accelerator paris"
+   ],
+   "clicks": 6,
+   "impressions": 87,
+   "ctr": 0.069,
+   "position": 6.15
+  },
+  {
+   "keys": [
+    "2026-09-02",
+    "pre-seed accelerator"
+   ],
+   "clicks": 2,
+   "impressions": 54,
+   "ctr": 0.037,
+   "position": 8.22
+  },
+  {
+   "keys": [
+    "2026-09-02",
+    "how to pitch investors"
+   ],
+   "clicks": 1,
+   "impressions": 51,
+   "ctr": 0.0196,
+   "position": 11.06
+  },
+  {
+   "keys": [
+    "2026-09-02",
+    "swanbase"
+   ],
+   "clicks": 8,
+   "impressions": 23,
+   "ctr": 0.3478,
+   "position": 1.1
+  },
+  {
+   "keys": [
+    "2026-09-02",
+    "pre seed checklist"
+   ],
+   "clicks": 2,
+   "impressions": 42,
+   "ctr": 0.0476,
+   "position": 9.89
+  },
+  {
+   "keys": [
+    "2026-09-02",
+    "startup events paris"
+   ],
+   "clicks": 0,
+   "impressions": 32,
+   "ctr": 0.0,
+   "position": 11.44
+  },
+  {
+   "keys": [
+    "2026-09-02",
+    "fundraising mistakes"
+   ],
+   "clicks": 0,
+   "impressions": 20,
+   "ctr": 0.0,
+   "position": 12.57
+  },
+  {
+   "keys": [
+    "2026-09-03",
+    "startup accelerator paris"
+   ],
+   "clicks": 6,
+   "impressions": 108,
+   "ctr": 0.0556,
+   "position": 6.6
+  },
+  {
+   "keys": [
+    "2026-09-03",
+    "pre-seed accelerator"
+   ],
+   "clicks": 3,
+   "impressions": 59,
+   "ctr": 0.0508,
+   "position": 8.52
+  },
+  {
+   "keys": [
+    "2026-09-03",
+    "how to pitch investors"
+   ],
+   "clicks": 0,
+   "impressions": 54,
+   "ctr": 0.0,
+   "position": 10.79
+  },
+  {
+   "keys": [
+    "2026-09-03",
+    "swanbase"
+   ],
+   "clicks": 3,
+   "impressions": 27,
+   "ctr": 0.1111,
+   "position": 1.49
+  },
+  {
+   "keys": [
+    "2026-09-03",
+    "pre seed checklist"
+   ],
+   "clicks": 1,
+   "impressions": 40,
+   "ctr": 0.025,
+   "position": 10.03
+  },
+  {
+   "keys": [
+    "2026-09-03",
+    "startup events paris"
+   ],
+   "clicks": 2,
+   "impressions": 35,
+   "ctr": 0.0571,
+   "position": 11.54
+  },
+  {
+   "keys": [
+    "2026-09-03",
+    "fundraising mistakes"
+   ],
+   "clicks": 0,
+   "impressions": 24,
+   "ctr": 0.0,
+   "position": 13.04
+  },
+  {
+   "keys": [
+    "2026-09-04",
+    "startup accelerator paris"
+   ],
+   "clicks": 2,
+   "impressions": 95,
+   "ctr": 0.0211,
+   "position": 6.83
+  },
+  {
+   "keys": [
+    "2026-09-04",
+    "pre-seed accelerator"
+   ],
+   "clicks": 0,
+   "impressions": 52,
+   "ctr": 0.0,
+   "position": 8.74
+  },
+  {
+   "keys": [
+    "2026-09-04",
+    "how to pitch investors"
+   ],
+   "clicks": 2,
+   "impressions": 52,
+   "ctr": 0.0385,
+   "position": 11.29
+  },
+  {
+   "keys": [
+    "2026-09-04",
+    "swanbase"
+   ],
+   "clicks": 3,
+   "impressions": 23,
+   "ctr": 0.1304,
+   "position": 1.84
+  },
+  {
+   "keys": [
+    "2026-09-04",
+    "pre seed checklist"
+   ],
+   "clicks": 1,
+   "impressions": 32,
+   "ctr": 0.0312,
+   "position": 10.13
+  },
+  {
+   "keys": [
+    "2026-09-04",
+    "startup events paris"
+   ],
+   "clicks": 0,
+   "impressions": 28,
+   "ctr": 0.0,
+   "position": 11.83
+  },
+  {
+   "keys": [
+    "2026-09-04",
+    "fundraising mistakes"
+   ],
+   "clicks": 0,
+   "impressions": 18,
+   "ctr": 0.0,
+   "position": 12.4
+  },
+  {
+   "keys": [
+    "2026-09-05",
+    "startup accelerator paris"
+   ],
+   "clicks": 7,
+   "impressions": 86,
+   "ctr": 0.0814,
+   "position": 6.35
+  },
+  {
+   "keys": [
+    "2026-09-05",
+    "pre-seed accelerator"
+   ],
+   "clicks": 4,
+   "impressions": 49,
+   "ctr": 0.0816,
+   "position": 7.77
+  },
+  {
+   "keys": [
+    "2026-09-05",
+    "how to pitch investors"
+   ],
+   "clicks": 0,
+   "impressions": 44,
+   "ctr": 0.0,
+   "position": 10.44
+  },
+  {
+   "keys": [
+    "2026-09-05",
+    "swanbase"
+   ],
+   "clicks": 5,
+   "impressions": 22,
+   "ctr": 0.2273,
+   "position": 1.1
+  },
+  {
+   "keys": [
+    "2026-09-05",
+    "pre seed checklist"
+   ],
+   "clicks": 3,
+   "impressions": 26,
+   "ctr": 0.1154,
+   "position": 9.27
+  },
+  {
+   "keys": [
+    "2026-09-05",
+    "startup events paris"
+   ],
+   "clicks": 0,
+   "impressions": 23,
+   "ctr": 0.0,
+   "position": 10.86
+  },
+  {
+   "keys": [
+    "2026-09-05",
+    "fundraising mistakes"
+   ],
+   "clicks": 0,
+   "impressions": 17,
+   "ctr": 0.0,
+   "position": 12.2
+  },
+  {
+   "keys": [
+    "2026-09-06",
+    "startup accelerator paris"
+   ],
+   "clicks": 5,
+   "impressions": 81,
+   "ctr": 0.0617,
+   "position": 5.9
+  },
+  {
+   "keys": [
+    "2026-09-06",
+    "pre-seed accelerator"
+   ],
+   "clicks": 2,
+   "impressions": 59,
+   "ctr": 0.0339,
+   "position": 8.25
+  },
+  {
+   "keys": [
+    "2026-09-06",
+    "how to pitch investors"
+   ],
+   "clicks": 0,
+   "impressions": 44,
+   "ctr": 0.0,
+   "position": 10.49
+  },
+  {
+   "keys": [
+    "2026-09-06",
+    "swanbase"
+   ],
+   "clicks": 12,
+   "impressions": 27,
+   "ctr": 0.4444,
+   "position": 1.1
+  },
+  {
+   "keys": [
+    "2026-09-06",
+    "pre seed checklist"
+   ],
+   "clicks": 2,
+   "impressions": 39,
+   "ctr": 0.0513,
+   "position": 9.34
+  },
+  {
+   "keys": [
+    "2026-09-06",
+    "startup events paris"
+   ],
+   "clicks": 0,
+   "impressions": 29,
+   "ctr": 0.0,
+   "position": 10.98
+  },
+  {
+   "keys": [
+    "2026-09-06",
+    "fundraising mistakes"
+   ],
+   "clicks": 1,
+   "impressions": 20,
+   "ctr": 0.05,
+   "position": 12.11
+  },
+  {
+   "keys": [
+    "2026-09-07",
+    "startup accelerator paris"
+   ],
+   "clicks": 4,
+   "impressions": 99,
+   "ctr": 0.0404,
+   "position": 6.07
+  },
+  {
+   "keys": [
+    "2026-09-07",
+    "pre-seed accelerator"
+   ],
+   "clicks": 4,
+   "impressions": 73,
+   "ctr": 0.0548,
+   "position": 8.33
+  },
+  {
+   "keys": [
+    "2026-09-07",
+    "how to pitch investors"
+   ],
+   "clicks": 1,
+   "impressions": 55,
+   "ctr": 0.0182,
+   "position": 11.19
+  },
+  {
+   "keys": [
+    "2026-09-07",
+    "swanbase"
+   ],
+   "clicks": 9,
+   "impressions": 32,
+   "ctr": 0.2812,
+   "position": 1.64
+  },
+  {
+   "keys": [
+    "2026-09-07",
+    "pre seed checklist"
+   ],
+   "clicks": 0,
+   "impressions": 44,
+   "ctr": 0.0,
+   "position": 9.65
+  },
+  {
+   "keys": [
+    "2026-09-07",
+    "startup events paris"
+   ],
+   "clicks": 2,
+   "impressions": 30,
+   "ctr": 0.0667,
+   "position": 11.2
+  },
+  {
+   "keys": [
+    "2026-09-07",
+    "fundraising mistakes"
+   ],
+   "clicks": 1,
+   "impressions": 25,
+   "ctr": 0.04,
+   "position": 12.34
+  },
+  {
+   "keys": [
+    "2026-09-08",
+    "startup accelerator paris"
+   ],
+   "clicks": 8,
+   "impressions": 127,
+   "ctr": 0.063,
+   "position": 6.5
+  },
+  {
+   "keys": [
+    "2026-09-08",
+    "pre-seed accelerator"
+   ],
+   "clicks": 0,
+   "impressions": 81,
+   "ctr": 0.0,
+   "position": 8.8
+  },
+  {
+   "keys": [
+    "2026-09-08",
+    "how to pitch investors"
+   ],
+   "clicks": 3,
+   "impressions": 70,
+   "ctr": 0.0429,
+   "position": 11.03
+  },
+  {
+   "keys": [
+    "2026-09-08",
+    "swanbase"
+   ],
+   "clicks": 14,
+   "impressions": 34,
+   "ctr": 0.4118,
+   "position": 1.58
+  },
+  {
+   "keys": [
+    "2026-09-08",
+    "pre seed checklist"
+   ],
+   "clicks": 2,
+   "impressions": 43,
+   "ctr": 0.0465,
+   "position": 9.74
+  },
+  {
+   "keys": [
+    "2026-09-08",
+    "startup events paris"
+   ],
+   "clicks": 2,
+   "impressions": 40,
+   "ctr": 0.05,
+   "position": 11.88
+  },
+  {
+   "keys": [
+    "2026-09-08",
+    "fundraising mistakes"
+   ],
+   "clicks": 1,
+   "impressions": 27,
+   "ctr": 0.037,
+   "position": 12.46
+  },
+  {
+   "keys": [
+    "2026-09-09",
+    "startup accelerator paris"
+   ],
+   "clicks": 7,
+   "impressions": 91,
+   "ctr": 0.0769,
+   "position": 6.51
+  },
+  {
+   "keys": [
+    "2026-09-09",
+    "pre-seed accelerator"
+   ],
+   "clicks": 2,
+   "impressions": 62,
+   "ctr": 0.0323,
+   "position": 8.71
+  },
+  {
+   "keys": [
+    "2026-09-09",
+    "how to pitch investors"
+   ],
+   "clicks": 2,
+   "impressions": 46,
+   "ctr": 0.0435,
+   "position": 10.99
+  },
+  {
+   "keys": [
+    "2026-09-09",
+    "swanbase"
+   ],
+   "clicks": 5,
+   "impressions": 26,
+   "ctr": 0.1923,
+   "position": 1.89
+  },
+  {
+   "keys": [
+    "2026-09-09",
+    "pre seed checklist"
+   ],
+   "clicks": 3,
+   "impressions": 45,
+   "ctr": 0.0667,
+   "position": 10.31
+  },
+  {
+   "keys": [
+    "2026-09-09",
+    "startup events paris"
+   ],
+   "clicks": 0,
+   "impressions": 32,
+   "ctr": 0.0,
+   "position": 11.8
+  },
+  {
+   "keys": [
+    "2026-09-09",
+    "fundraising mistakes"
+   ],
+   "clicks": 2,
+   "impressions": 21,
+   "ctr": 0.0952,
+   "position": 12.17
+  },
+  {
+   "keys": [
+    "2026-09-10",
+    "startup accelerator paris"
+   ],
+   "clicks": 5,
+   "impressions": 90,
+   "ctr": 0.0556,
+   "position": 6.68
+  },
+  {
+   "keys": [
+    "2026-09-10",
+    "pre-seed accelerator"
+   ],
+   "clicks": 5,
+   "impressions": 70,
+   "ctr": 0.0714,
+   "position": 8.44
+  },
+  {
+   "keys": [
+    "2026-09-10",
+    "how to pitch investors"
+   ],
+   "clicks": 1,
+   "impressions": 49,
+   "ctr": 0.0204,
+   "position": 10.74
+  },
+  {
+   "keys": [
+    "2026-09-10",
+    "swanbase"
+   ],
+   "clicks": 8,
+   "impressions": 27,
+   "ctr": 0.2963,
+   "position": 1.54
+  },
+  {
+   "keys": [
+    "2026-09-10",
+    "pre seed checklist"
+   ],
+   "clicks": 1,
+   "impressions": 42,
+   "ctr": 0.0238,
+   "position": 10.4
+  },
+  {
+   "keys": [
+    "2026-09-10",
+    "startup events paris"
+   ],
+   "clicks": 3,
+   "impressions": 35,
+   "ctr": 0.0857,
+   "position": 11.9
+  },
+  {
+   "keys": [
+    "2026-09-10",
+    "fundraising mistakes"
+   ],
+   "clicks": 2,
+   "impressions": 24,
+   "ctr": 0.0833,
+   "position": 12.35
+  },
+  {
+   "keys": [
+    "2026-09-11",
+    "startup accelerator paris"
+   ],
+   "clicks": 6,
+   "impressions": 84,
+   "ctr": 0.0714,
+   "position": 6.31
+  },
+  {
+   "keys": [
+    "2026-09-11",
+    "pre-seed accelerator"
+   ],
+   "clicks": 1,
+   "impressions": 54,
+   "ctr": 0.0185,
+   "position": 8.12
+  },
+  {
+   "keys": [
+    "2026-09-11",
+    "how to pitch investors"
+   ],
+   "clicks": 2,
+   "impressions": 49,
+   "ctr": 0.0408,
+   "position": 10.85
+  },
+  {
+   "keys": [
+    "2026-09-11",
+    "swanbase"
+   ],
+   "clicks": 11,
+   "impressions": 28,
+   "ctr": 0.3929,
+   "position": 1.79
+  },
+  {
+   "keys": [
+    "2026-09-11",
+    "pre seed checklist"
+   ],
+   "clicks": 2,
+   "impressions": 35,
+   "ctr": 0.0571,
+   "position": 9.65
+  },
+  {
+   "keys": [
+    "2026-09-11",
+    "startup events paris"
+   ],
+   "clicks": 0,
+   "impressions": 34,
+   "ctr": 0.0,
+   "position": 11.3
+  },
+  {
+   "keys": [
+    "2026-09-11",
+    "fundraising mistakes"
+   ],
+   "clicks": 0,
+   "impressions": 23,
+   "ctr": 0.0,
+   "position": 12.39
+  },
+  {
+   "keys": [
+    "2026-09-12",
+    "startup accelerator paris"
+   ],
+   "clicks": 11,
+   "impressions": 74,
+   "ctr": 0.1486,
+   "position": 6.15
+  },
+  {
+   "keys": [
+    "2026-09-12",
+    "pre-seed accelerator"
+   ],
+   "clicks": 2,
+   "impressions": 52,
+   "ctr": 0.0385,
+   "position": 8.76
+  },
+  {
+   "keys": [
+    "2026-09-12",
+    "how to pitch investors"
+   ],
+   "clicks": 0,
+   "impressions": 37,
+   "ctr": 0.0,
+   "position": 10.95
+  },
+  {
+   "keys": [
+    "2026-09-12",
+    "swanbase"
+   ],
+   "clicks": 4,
+   "impressions": 22,
+   "ctr": 0.1818,
+   "position": 1.73
+  },
+  {
+   "keys": [
+    "2026-09-12",
+    "pre seed checklist"
+   ],
+   "clicks": 1,
+   "impressions": 34,
+   "ctr": 0.0294,
+   "position": 9.7
+  },
+  {
+   "keys": [
+    "2026-09-12",
+    "startup events paris"
+   ],
+   "clicks": 2,
+   "impressions": 27,
+   "ctr": 0.0741,
+   "position": 11.67
+  },
+  {
+   "keys": [
+    "2026-09-12",
+    "fundraising mistakes"
+   ],
+   "clicks": 0,
+   "impressions": 18,
+   "ctr": 0.0,
+   "position": 12.33
+  },
+  {
+   "keys": [
+    "2026-09-13",
+    "startup accelerator paris"
+   ],
+   "clicks": 8,
+   "impressions": 88,
+   "ctr": 0.0909,
+   "position": 6.91
+  },
+  {
+   "keys": [
+    "2026-09-13",
+    "pre-seed accelerator"
+   ],
+   "clicks": 2,
+   "impressions": 52,
+   "ctr": 0.0385,
+   "position": 8.84
+  },
+  {
+   "keys": [
+    "2026-09-13",
+    "how to pitch investors"
+   ],
+   "clicks": 1,
+   "impressions": 37,
+   "ctr": 0.027,
+   "position": 11.0
+  },
+  {
+   "keys": [
+    "2026-09-13",
+    "swanbase"
+   ],
+   "clicks": 5,
+   "impressions": 21,
+   "ctr": 0.2381,
+   "position": 1.88
+  },
+  {
+   "keys": [
+    "2026-09-13",
+    "pre seed checklist"
+   ],
+   "clicks": 3,
+   "impressions": 32,
+   "ctr": 0.0938,
+   "position": 9.74
+  },
+  {
+   "keys": [
+    "2026-09-13",
+    "startup events paris"
+   ],
+   "clicks": 1,
+   "impressions": 26,
+   "ctr": 0.0385,
+   "position": 11.44
+  },
+  {
+   "keys": [
+    "2026-09-13",
+    "fundraising mistakes"
+   ],
+   "clicks": 2,
+   "impressions": 18,
+   "ctr": 0.1111,
+   "position": 12.83
+  },
+  {
+   "keys": [
+    "2026-09-14",
+    "startup accelerator paris"
+   ],
+   "clicks": 13,
+   "impressions": 99,
+   "ctr": 0.1313,
+   "position": 6.12
+  },
+  {
+   "keys": [
+    "2026-09-14",
+    "pre-seed accelerator"
+   ],
+   "clicks": 5,
+   "impressions": 62,
+   "ctr": 0.0806,
+   "position": 8.15
+  },
+  {
+   "keys": [
+    "2026-09-14",
+    "how to pitch investors"
+   ],
+   "clicks": 1,
+   "impressions": 64,
+   "ctr": 0.0156,
+   "position": 10.82
+  },
+  {
+   "keys": [
+    "2026-09-14",
+    "swanbase"
+   ],
+   "clicks": 10,
+   "impressions": 31,
+   "ctr": 0.3226,
+   "position": 1.17
+  },
+  {
+   "keys": [
+    "2026-09-14",
+    "pre seed checklist"
+   ],
+   "clicks": 3,
+   "impressions": 49,
+   "ctr": 0.0612,
+   "position": 9.88
+  },
+  {
+   "keys": [
+    "2026-09-14",
+    "startup events paris"
+   ],
+   "clicks": 0,
+   "impressions": 36,
+   "ctr": 0.0,
+   "position": 11.29
+  },
+  {
+   "keys": [
+    "2026-09-14",
+    "fundraising mistakes"
+   ],
+   "clicks": 1,
+   "impressions": 28,
+   "ctr": 0.0357,
+   "position": 12.76
+  },
+  {
+   "keys": [
+    "2026-09-15",
+    "startup accelerator paris"
+   ],
+   "clicks": 2,
+   "impressions": 97,
+   "ctr": 0.0206,
+   "position": 6.32
+  },
+  {
+   "keys": [
+    "2026-09-15",
+    "pre-seed accelerator"
+   ],
+   "clicks": 5,
+   "impressions": 67,
+   "ctr": 0.0746,
+   "position": 8.48
+  },
+  {
+   "keys": [
+    "2026-09-15",
+    "how to pitch investors"
+   ],
+   "clicks": 1,
+   "impressions": 49,
+   "ctr": 0.0204,
+   "position": 10.8
+  },
+  {
+   "keys": [
+    "2026-09-15",
+    "swanbase"
+   ],
+   "clicks": 11,
+   "impressions": 29,
+   "ctr": 0.3793,
+   "position": 1.37
+  },
+  {
+   "keys": [
+    "2026-09-15",
+    "pre seed checklist"
+   ],
+   "clicks": 0,
+   "impressions": 43,
+   "ctr": 0.0,
+   "position": 9.98
+  },
+  {
+   "keys": [
+    "2026-09-15",
+    "startup events paris"
+   ],
+   "clicks": 0,
+   "impressions": 27,
+   "ctr": 0.0,
+   "position": 11.48
+  },
+  {
+   "keys": [
+    "2026-09-15",
+    "fundraising mistakes"
+   ],
+   "clicks": 0,
+   "impressions": 22,
+   "ctr": 0.0,
+   "position": 12.74
+  },
+  {
+   "keys": [
+    "2026-09-16",
+    "startup accelerator paris"
+   ],
+   "clicks": 4,
+   "impressions": 111,
+   "ctr": 0.036,
+   "position": 6.44
+  },
+  {
+   "keys": [
+    "2026-09-16",
+    "pre-seed accelerator"
+   ],
+   "clicks": 1,
+   "impressions": 71,
+   "ctr": 0.0141,
+   "position": 8.93
+  },
+  {
+   "keys": [
+    "2026-09-16",
+    "how to pitch investors"
+   ],
+   "clicks": 3,
+   "impressions": 53,
+   "ctr": 0.0566,
+   "position": 10.82
+  },
+  {
+   "keys": [
+    "2026-09-16",
+    "swanbase"
+   ],
+   "clicks": 10,
+   "impressions": 29,
+   "ctr": 0.3448,
+   "position": 1.34
+  },
+  {
+   "keys": [
+    "2026-09-16",
+    "pre seed checklist"
+   ],
+   "clicks": 1,
+   "impressions": 41,
+   "ctr": 0.0244,
+   "position": 9.96
+  },
+  {
+   "keys": [
+    "2026-09-16",
+    "startup events paris"
+   ],
+   "clicks": 1,
+   "impressions": 30,
+   "ctr": 0.0333,
+   "position": 11.2
+  },
+  {
+   "keys": [
+    "2026-09-16",
+    "fundraising mistakes"
+   ],
+   "clicks": 1,
+   "impressions": 27,
+   "ctr": 0.037,
+   "position": 12.62
+  },
+  {
+   "keys": [
+    "2026-09-17",
+    "startup accelerator paris"
+   ],
+   "clicks": 5,
+   "impressions": 98,
+   "ctr": 0.051,
+   "position": 6.07
+  },
+  {
+   "keys": [
+    "2026-09-17",
+    "pre-seed accelerator"
+   ],
+   "clicks": 3,
+   "impressions": 60,
+   "ctr": 0.05,
+   "position": 7.93
+  },
+  {
+   "keys": [
+    "2026-09-17",
+    "how to pitch investors"
+   ],
+   "clicks": 0,
+   "impressions": 57,
+   "ctr": 0.0,
+   "position": 10.91
+  },
+  {
+   "keys": [
+    "2026-09-17",
+    "swanbase"
+   ],
+   "clicks": 9,
+   "impressions": 23,
+   "ctr": 0.3913,
+   "position": 1.61
+  },
+  {
+   "keys": [
+    "2026-09-17",
+    "pre seed checklist"
+   ],
+   "clicks": 2,
+   "impressions": 41,
+   "ctr": 0.0488,
+   "position": 10.05
+  },
+  {
+   "keys": [
+    "2026-09-17",
+    "startup events paris"
+   ],
+   "clicks": 0,
+   "impressions": 31,
+   "ctr": 0.0,
+   "position": 11.39
+  },
+  {
+   "keys": [
+    "2026-09-17",
+    "fundraising mistakes"
+   ],
+   "clicks": 0,
+   "impressions": 20,
+   "ctr": 0.0,
+   "position": 12.5
+  },
+  {
+   "keys": [
+    "2026-09-18",
+    "startup accelerator paris"
+   ],
+   "clicks": 7,
+   "impressions": 82,
+   "ctr": 0.0854,
+   "position": 6.54
+  },
+  {
+   "keys": [
+    "2026-09-18",
+    "pre-seed accelerator"
+   ],
+   "clicks": 2,
+   "impressions": 51,
+   "ctr": 0.0392,
+   "position": 8.36
+  },
+  {
+   "keys": [
+    "2026-09-18",
+    "how to pitch investors"
+   ],
+   "clicks": 1,
+   "impressions": 51,
+   "ctr": 0.0196,
+   "position": 11.44
+  },
+  {
+   "keys": [
+    "2026-09-18",
+    "swanbase"
+   ],
+   "clicks": 4,
+   "impressions": 23,
+   "ctr": 0.1739,
+   "position": 1.8
+  },
+  {
+   "keys": [
+    "2026-09-18",
+    "pre seed checklist"
+   ],
+   "clicks": 3,
+   "impressions": 40,
+   "ctr": 0.075,
+   "position": 9.83
+  },
+  {
+   "keys": [
+    "2026-09-18",
+    "startup events paris"
+   ],
+   "clicks": 0,
+   "impressions": 27,
+   "ctr": 0.0,
+   "position": 11.75
+  },
+  {
+   "keys": [
+    "2026-09-18",
+    "fundraising mistakes"
+   ],
+   "clicks": 0,
+   "impressions": 23,
+   "ctr": 0.0,
+   "position": 12.67
+  },
+  {
+   "keys": [
+    "2026-09-19",
+    "startup accelerator paris"
+   ],
+   "clicks": 5,
+   "impressions": 79,
+   "ctr": 0.0633,
+   "position": 6.06
+  },
+  {
+   "keys": [
+    "2026-09-19",
+    "pre-seed accelerator"
+   ],
+   "clicks": 2,
+   "impressions": 54,
+   "ctr": 0.037,
+   "position": 8.64
+  },
+  {
+   "keys": [
+    "2026-09-19",
+    "how to pitch investors"
+   ],
+   "clicks": 2,
+   "impressions": 41,
+   "ctr": 0.0488,
+   "position": 10.56
+  },
+  {
+   "keys": [
+    "2026-09-19",
+    "swanbase"
+   ],
+   "clicks": 5,
+   "impressions": 18,
+   "ctr": 0.2778,
+   "position": 1.42
+  },
+  {
+   "keys": [
+    "2026-09-19",
+    "pre seed checklist"
+   ],
+   "clicks": 3,
+   "impressions": 32,
+   "ctr": 0.0938,
+   "position": 9.99
+  },
+  {
+   "keys": [
+    "2026-09-19",
+    "startup events paris"
+   ],
+   "clicks": 0,
+   "impressions": 26,
+   "ctr": 0.0,
+   "position": 11.12
+  },
+  {
+   "keys": [
+    "2026-09-19",
+    "fundraising mistakes"
+   ],
+   "clicks": 1,
+   "impressions": 15,
+   "ctr": 0.0667,
+   "position": 12.5
+  },
+  {
+   "keys": [
+    "2026-09-20",
+    "startup accelerator paris"
+   ],
+   "clicks": 2,
+   "impressions": 86,
+   "ctr": 0.0233,
+   "position": 6.81
+  },
+  {
+   "keys": [
+    "2026-09-20",
+    "pre-seed accelerator"
+   ],
+   "clicks": 1,
+   "impressions": 45,
+   "ctr": 0.0222,
+   "position": 8.38
+  },
+  {
+   "keys": [
+    "2026-09-20",
+    "how to pitch investors"
+   ],
+   "clicks": 0,
+   "impressions": 41,
+   "ctr": 0.0,
+   "position": 11.11
+  },
+  {
+   "keys": [
+    "2026-09-20",
+    "swanbase"
+   ],
+   "clicks": 9,
+   "impressions": 22,
+   "ctr": 0.4091,
+   "position": 2.04
+  },
+  {
+   "keys": [
+    "2026-09-20",
+    "pre seed checklist"
+   ],
+   "clicks": 1,
+   "impressions": 30,
+   "ctr": 0.0333,
+   "position": 9.81
+  },
+  {
+   "keys": [
+    "2026-09-20",
+    "startup events paris"
+   ],
+   "clicks": 0,
+   "impressions": 22,
+   "ctr": 0.0,
+   "position": 11.76
+  },
+  {
+   "keys": [
+    "2026-09-20",
+    "fundraising mistakes"
+   ],
+   "clicks": 1,
+   "impressions": 18,
+   "ctr": 0.0556,
+   "position": 13.03
+  },
+  {
+   "keys": [
+    "2026-09-21",
+    "startup accelerator paris"
+   ],
+   "clicks": 7,
+   "impressions": 122,
+   "ctr": 0.0574,
+   "position": 6.14
+  },
+  {
+   "keys": [
+    "2026-09-21",
+    "pre-seed accelerator"
+   ],
+   "clicks": 2,
+   "impressions": 61,
+   "ctr": 0.0328,
+   "position": 8.12
+  },
+  {
+   "keys": [
+    "2026-09-21",
+    "how to pitch investors"
+   ],
+   "clicks": 1,
+   "impressions": 57,
+   "ctr": 0.0175,
+   "position": 10.98
+  },
+  {
+   "keys": [
+    "2026-09-21",
+    "swanbase"
+   ],
+   "clicks": 13,
+   "impressions": 30,
+   "ctr": 0.4333,
+   "position": 1.1
+  },
+  {
+   "keys": [
+    "2026-09-21",
+    "pre seed checklist"
+   ],
+   "clicks": 1,
+   "impressions": 42,
+   "ctr": 0.0238,
+   "position": 9.43
+  },
+  {
+   "keys": [
+    "2026-09-21",
+    "startup events paris"
+   ],
+   "clicks": 2,
+   "impressions": 32,
+   "ctr": 0.0625,
+   "position": 11.09
+  },
+  {
+   "keys": [
+    "2026-09-21",
+    "fundraising mistakes"
+   ],
+   "clicks": 0,
+   "impressions": 24,
+   "ctr": 0.0,
+   "position": 12.04
+  },
+  {
+   "keys": [
+    "2026-09-22",
+    "startup accelerator paris"
+   ],
+   "clicks": 5,
+   "impressions": 108,
+   "ctr": 0.0463,
+   "position": 6.22
+  },
+  {
+   "keys": [
+    "2026-09-22",
+    "pre-seed accelerator"
+   ],
+   "clicks": 5,
+   "impressions": 60,
+   "ctr": 0.0833,
+   "position": 8.6
+  },
+  {
+   "keys": [
+    "2026-09-22",
+    "how to pitch investors"
+   ],
+   "clicks": 0,
+   "impressions": 52,
+   "ctr": 0.0,
+   "position": 11.03
+  },
+  {
+   "keys": [
+    "2026-09-22",
+    "swanbase"
+   ],
+   "clicks": 8,
+   "impressions": 25,
+   "ctr": 0.32,
+   "position": 1.37
+  },
+  {
+   "keys": [
+    "2026-09-22",
+    "pre seed checklist"
+   ],
+   "clicks": 1,
+   "impressions": 42,
+   "ctr": 0.0238,
+   "position": 9.82
+  },
+  {
+   "keys": [
+    "2026-09-22",
+    "startup events paris"
+   ],
+   "clicks": 3,
+   "impressions": 33,
+   "ctr": 0.0909,
+   "position": 11.11
+  },
+  {
+   "keys": [
+    "2026-09-22",
+    "fundraising mistakes"
+   ],
+   "clicks": 1,
+   "impressions": 27,
+   "ctr": 0.037,
+   "position": 11.96
+  },
+  {
+   "keys": [
+    "2026-09-23",
+    "startup accelerator paris"
+   ],
+   "clicks": 10,
+   "impressions": 108,
+   "ctr": 0.0926,
+   "position": 6.28
+  },
+  {
+   "keys": [
+    "2026-09-23",
+    "pre-seed accelerator"
+   ],
+   "clicks": 4,
+   "impressions": 60,
+   "ctr": 0.0667,
+   "position": 8.37
+  },
+  {
+   "keys": [
+    "2026-09-23",
+    "how to pitch investors"
+   ],
+   "clicks": 2,
+   "impressions": 55,
+   "ctr": 0.0364,
+   "position": 10.61
+  },
+  {
+   "keys": [
+    "2026-09-23",
+    "swanbase"
+   ],
+   "clicks": 11,
+   "impressions": 24,
+   "ctr": 0.4583,
+   "position": 1.45
+  },
+  {
+   "keys": [
+    "2026-09-23",
+    "pre seed checklist"
+   ],
+   "clicks": 6,
+   "impressions": 42,
+   "ctr": 0.1429,
+   "position": 9.7
+  },
+  {
+   "keys": [
+    "2026-09-23",
+    "startup events paris"
+   ],
+   "clicks": 1,
+   "impressions": 30,
+   "ctr": 0.0333,
+   "position": 11.45
+  },
+  {
+   "keys": [
+    "2026-09-23",
+    "fundraising mistakes"
+   ],
+   "clicks": 0,
+   "impressions": 20,
+   "ctr": 0.0,
+   "position": 12.14
+  },
+  {
+   "keys": [
+    "2026-09-24",
+    "startup accelerator paris"
+   ],
+   "clicks": 5,
+   "impressions": 104,
+   "ctr": 0.0481,
+   "position": 6.57
+  },
+  {
+   "keys": [
+    "2026-09-24",
+    "pre-seed accelerator"
+   ],
+   "clicks": 3,
+   "impressions": 52,
+   "ctr": 0.0577,
+   "position": 8.65
+  },
+  {
+   "keys": [
+    "2026-09-24",
+    "how to pitch investors"
+   ],
+   "clicks": 2,
+   "impressions": 54,
+   "ctr": 0.037,
+   "position": 10.8
+  },
+  {
+   "keys": [
+    "2026-09-24",
+    "swanbase"
+   ],
+   "clicks": 12,
+   "impressions": 24,
+   "ctr": 0.5,
+   "position": 1.73
+  },
+  {
+   "keys": [
+    "2026-09-24",
+    "pre seed checklist"
+   ],
+   "clicks": 2,
+   "impressions": 42,
+   "ctr": 0.0476,
+   "position": 10.24
+  },
+  {
+   "keys": [
+    "2026-09-24",
+    "startup events paris"
+   ],
+   "clicks": 2,
+   "impressions": 29,
+   "ctr": 0.069,
+   "position": 11.13
+  },
+  {
+   "keys": [
+    "2026-09-24",
+    "fundraising mistakes"
+   ],
+   "clicks": 1,
+   "impressions": 23,
+   "ctr": 0.0435,
+   "position": 12.41
+  },
+  {
+   "keys": [
+    "2026-09-25",
+    "startup accelerator paris"
+   ],
+   "clicks": 3,
+   "impressions": 73,
+   "ctr": 0.0411,
+   "position": 6.26
+  },
+  {
+   "keys": [
+    "2026-09-25",
+    "pre-seed accelerator"
+   ],
+   "clicks": 3,
+   "impressions": 62,
+   "ctr": 0.0484,
+   "position": 8.82
+  },
+  {
+   "keys": [
+    "2026-09-25",
+    "how to pitch investors"
+   ],
+   "clicks": 1,
+   "impressions": 45,
+   "ctr": 0.0222,
+   "position": 11.08
+  },
+  {
+   "keys": [
+    "2026-09-25",
+    "swanbase"
+   ],
+   "clicks": 7,
+   "impressions": 23,
+   "ctr": 0.3043,
+   "position": 1.42
+  },
+  {
+   "keys": [
+    "2026-09-25",
+    "pre seed checklist"
+   ],
+   "clicks": 0,
+   "impressions": 31,
+   "ctr": 0.0,
+   "position": 10.0
+  },
+  {
+   "keys": [
+    "2026-09-25",
+    "startup events paris"
+   ],
+   "clicks": 1,
+   "impressions": 26,
+   "ctr": 0.0385,
+   "position": 11.7
+  },
+  {
+   "keys": [
+    "2026-09-25",
+    "fundraising mistakes"
+   ],
+   "clicks": 0,
+   "impressions": 21,
+   "ctr": 0.0,
+   "position": 12.41
+  },
+  {
+   "keys": [
+    "2026-09-26",
+    "startup accelerator paris"
+   ],
+   "clicks": 11,
+   "impressions": 82,
+   "ctr": 0.1341,
+   "position": 6.05
+  },
+  {
+   "keys": [
+    "2026-09-26",
+    "pre-seed accelerator"
+   ],
+   "clicks": 5,
+   "impressions": 51,
+   "ctr": 0.098,
+   "position": 8.07
+  },
+  {
+   "keys": [
+    "2026-09-26",
+    "how to pitch investors"
+   ],
+   "clicks": 1,
+   "impressions": 41,
+   "ctr": 0.0244,
+   "position": 10.99
+  },
+  {
+   "keys": [
+    "2026-09-26",
+    "swanbase"
+   ],
+   "clicks": 5,
+   "impressions": 18,
+   "ctr": 0.2778,
+   "position": 1.61
+  },
+  {
+   "keys": [
+    "2026-09-26",
+    "pre seed checklist"
+   ],
+   "clicks": 2,
+   "impressions": 33,
+   "ctr": 0.0606,
+   "position": 10.07
+  },
+  {
+   "keys": [
+    "2026-09-26",
+    "startup events paris"
+   ],
+   "clicks": 1,
+   "impressions": 22,
+   "ctr": 0.0455,
+   "position": 10.96
+  },
+  {
+   "keys": [
+    "2026-09-26",
+    "fundraising mistakes"
+   ],
+   "clicks": 0,
+   "impressions": 15,
+   "ctr": 0.0,
+   "position": 12.2
+  },
+  {
+   "keys": [
+    "2026-09-27",
+    "startup accelerator paris"
+   ],
+   "clicks": 3,
+   "impressions": 76,
+   "ctr": 0.0395,
+   "position": 6.01
+  },
+  {
+   "keys": [
+    "2026-09-27",
+    "pre-seed accelerator"
+   ],
+   "clicks": 2,
+   "impressions": 47,
+   "ctr": 0.0426,
+   "position": 8.67
+  },
+  {
+   "keys": [
+    "2026-09-27",
+    "how to pitch investors"
+   ],
+   "clicks": 1,
+   "impressions": 47,
+   "ctr": 0.0213,
+   "position": 10.99
+  },
+  {
+   "keys": [
+    "2026-09-27",
+    "swanbase"
+   ],
+   "clicks": 6,
+   "impressions": 18,
+   "ctr": 0.3333,
+   "position": 1.18
+  },
+  {
+   "keys": [
+    "2026-09-27",
+    "pre seed checklist"
+   ],
+   "clicks": 0,
+   "impressions": 31,
+   "ctr": 0.0,
+   "position": 9.8
+  },
+  {
+   "keys": [
+    "2026-09-27",
+    "startup events paris"
+   ],
+   "clicks": 1,
+   "impressions": 23,
+   "ctr": 0.0435,
+   "position": 11.68
+  },
+  {
+   "keys": [
+    "2026-09-27",
+    "fundraising mistakes"
+   ],
+   "clicks": 0,
+   "impressions": 17,
+   "ctr": 0.0,
+   "position": 12.58
+  },
+  {
+   "keys": [
+    "2026-09-28",
+    "startup accelerator paris"
+   ],
+   "clicks": 4,
+   "impressions": 116,
+   "ctr": 0.0345,
+   "position": 6.55
+  },
+  {
+   "keys": [
+    "2026-09-28",
+    "pre-seed accelerator"
+   ],
+   "clicks": 2,
+   "impressions": 56,
+   "ctr": 0.0357,
+   "position": 7.9
+  },
+  {
+   "keys": [
+    "2026-09-28",
+    "how to pitch investors"
+   ],
+   "clicks": 0,
+   "impressions": 50,
+   "ctr": 0.0,
+   "position": 10.54
+  },
+  {
+   "keys": [
+    "2026-09-28",
+    "swanbase"
+   ],
+   "clicks": 6,
+   "impressions": 27,
+   "ctr": 0.2222,
+   "position": 1.1
+  },
+  {
+   "keys": [
+    "2026-09-28",
+    "pre seed checklist"
+   ],
+   "clicks": 3,
+   "impressions": 41,
+   "ctr": 0.0732,
+   "position": 10.04
+  },
+  {
+   "keys": [
+    "2026-09-28",
+    "startup events paris"
+   ],
+   "clicks": 1,
+   "impressions": 37,
+   "ctr": 0.027,
+   "position": 11.07
+  },
+  {
+   "keys": [
+    "2026-09-28",
+    "fundraising mistakes"
+   ],
+   "clicks": 0,
+   "impressions": 21,
+   "ctr": 0.0,
+   "position": 12.19
+  },
+  {
+   "keys": [
+    "2026-09-29",
+    "startup accelerator paris"
+   ],
+   "clicks": 3,
+   "impressions": 108,
+   "ctr": 0.0278,
+   "position": 6.37
+  },
+  {
+   "keys": [
+    "2026-09-29",
+    "pre-seed accelerator"
+   ],
+   "clicks": 4,
+   "impressions": 57,
+   "ctr": 0.0702,
+   "position": 8.33
+  },
+  {
+   "keys": [
+    "2026-09-29",
+    "how to pitch investors"
+   ],
+   "clicks": 1,
+   "impressions": 54,
+   "ctr": 0.0185,
+   "position": 10.91
+  },
+  {
+   "keys": [
+    "2026-09-29",
+    "swanbase"
+   ],
+   "clicks": 11,
+   "impressions": 28,
+   "ctr": 0.3929,
+   "position": 1.73
+  },
+  {
+   "keys": [
+    "2026-09-29",
+    "pre seed checklist"
+   ],
+   "clicks": 2,
+   "impressions": 41,
+   "ctr": 0.0488,
+   "position": 9.92
+  },
+  {
+   "keys": [
+    "2026-09-29",
+    "startup events paris"
+   ],
+   "clicks": 2,
+   "impressions": 32,
+   "ctr": 0.0625,
+   "position": 11.38
+  },
+  {
+   "keys": [
+    "2026-09-29",
+    "fundraising mistakes"
+   ],
+   "clicks": 0,
+   "impressions": 22,
+   "ctr": 0.0,
+   "position": 12.48
+  },
+  {
+   "keys": [
+    "2026-09-30",
+    "startup accelerator paris"
+   ],
+   "clicks": 7,
+   "impressions": 105,
+   "ctr": 0.0667,
+   "position": 6.59
+  },
+  {
+   "keys": [
+    "2026-09-30",
+    "pre-seed accelerator"
+   ],
+   "clicks": 2,
+   "impressions": 61,
+   "ctr": 0.0328,
+   "position": 8.88
+  },
+  {
+   "keys": [
+    "2026-09-30",
+    "how to pitch investors"
+   ],
+   "clicks": 0,
+   "impressions": 49,
+   "ctr": 0.0,
+   "position": 11.4
+  },
+  {
+   "keys": [
+    "2026-09-30",
+    "swanbase"
+   ],
+   "clicks": 5,
+   "impressions": 26,
+   "ctr": 0.1923,
+   "position": 1.72
+  },
+  {
+   "keys": [
+    "2026-09-30",
+    "pre seed checklist"
+   ],
+   "clicks": 2,
+   "impressions": 39,
+   "ctr": 0.0513,
+   "position": 10.36
+  },
+  {
+   "keys": [
+    "2026-09-30",
+    "startup events paris"
+   ],
+   "clicks": 1,
+   "impressions": 35,
+   "ctr": 0.0286,
+   "position": 11.89
+  },
+  {
+   "keys": [
+    "2026-09-30",
+    "fundraising mistakes"
+   ],
+   "clicks": 0,
+   "impressions": 27,
+   "ctr": 0.0,
+   "position": 12.87
+  },
+  {
+   "keys": [
+    "2026-10-01",
+    "startup accelerator paris"
+   ],
+   "clicks": 9,
+   "impressions": 96,
+   "ctr": 0.0938,
+   "position": 6.29
+  },
+  {
+   "keys": [
+    "2026-10-01",
+    "pre-seed accelerator"
+   ],
+   "clicks": 0,
+   "impressions": 53,
+   "ctr": 0.0,
+   "position": 8.54
+  },
+  {
+   "keys": [
+    "2026-10-01",
+    "how to pitch investors"
+   ],
+   "clicks": 2,
+   "impressions": 56,
+   "ctr": 0.0357,
+   "position": 10.74
+  },
+  {
+   "keys": [
+    "2026-10-01",
+    "swanbase"
+   ],
+   "clicks": 6,
+   "impressions": 24,
+   "ctr": 0.25,
+   "position": 1.75
+  },
+  {
+   "keys": [
+    "2026-10-01",
+    "pre seed checklist"
+   ],
+   "clicks": 0,
+   "impressions": 33,
+   "ctr": 0.0,
+   "position": 10.33
+  },
+  {
+   "keys": [
+    "2026-10-01",
+    "startup events paris"
+   ],
+   "clicks": 0,
+   "impressions": 27,
+   "ctr": 0.0,
+   "position": 11.77
+  },
+  {
+   "keys": [
+    "2026-10-01",
+    "fundraising mistakes"
+   ],
+   "clicks": 0,
+   "impressions": 20,
+   "ctr": 0.0,
+   "position": 12.77
+  },
+  {
+   "keys": [
+    "2026-10-02",
+    "startup accelerator paris"
+   ],
+   "clicks": 3,
+   "impressions": 95,
+   "ctr": 0.0316,
+   "position": 6.61
+  },
+  {
+   "keys": [
+    "2026-10-02",
+    "pre-seed accelerator"
+   ],
+   "clicks": 5,
+   "impressions": 61,
+   "ctr": 0.082,
+   "position": 8.79
+  },
+  {
+   "keys": [
+    "2026-10-02",
+    "how to pitch investors"
+   ],
+   "clicks": 3,
+   "impressions": 50,
+   "ctr": 0.06,
+   "position": 10.9
+  },
+  {
+   "keys": [
+    "2026-10-02",
+    "swanbase"
+   ],
+   "clicks": 9,
+   "impressions": 27,
+   "ctr": 0.3333,
+   "position": 1.44
+  },
+  {
+   "keys": [
+    "2026-10-02",
+    "pre seed checklist"
+   ],
+   "clicks": 1,
+   "impressions": 38,
+   "ctr": 0.0263,
+   "position": 9.86
+  },
+  {
+   "keys": [
+    "2026-10-02",
+    "startup events paris"
+   ],
+   "clicks": 0,
+   "impressions": 28,
+   "ctr": 0.0,
+   "position": 11.35
+  },
+  {
+   "keys": [
+    "2026-10-02",
+    "fundraising mistakes"
+   ],
+   "clicks": 0,
+   "impressions": 24,
+   "ctr": 0.0,
+   "position": 12.36
+  },
+  {
+   "keys": [
+    "2026-10-03",
+    "startup accelerator paris"
+   ],
+   "clicks": 1,
+   "impressions": 68,
+   "ctr": 0.0147,
+   "position": 9.33
+  },
+  {
+   "keys": [
+    "2026-10-03",
+    "pre-seed accelerator"
+   ],
+   "clicks": 0,
+   "impressions": 51,
+   "ctr": 0.0,
+   "position": 9.75
+  },
+  {
+   "keys": [
+    "2026-10-03",
+    "how to pitch investors"
+   ],
+   "clicks": 2,
+   "impressions": 37,
+   "ctr": 0.0541,
+   "position": 11.8
+  },
+  {
+   "keys": [
+    "2026-10-03",
+    "swanbase"
+   ],
+   "clicks": 6,
+   "impressions": 21,
+   "ctr": 0.2857,
+   "position": 2.12
+  },
+  {
+   "keys": [
+    "2026-10-03",
+    "pre seed checklist"
+   ],
+   "clicks": 0,
+   "impressions": 36,
+   "ctr": 0.0,
+   "position": 11.22
+  },
+  {
+   "keys": [
+    "2026-10-03",
+    "startup events paris"
+   ],
+   "clicks": 0,
+   "impressions": 23,
+   "ctr": 0.0,
+   "position": 12.68
+  },
+  {
+   "keys": [
+    "2026-10-03",
+    "fundraising mistakes"
+   ],
+   "clicks": 0,
+   "impressions": 19,
+   "ctr": 0.0,
+   "position": 13.21
+  },
+  {
+   "keys": [
+    "2026-10-04",
+    "startup accelerator paris"
+   ],
+   "clicks": 1,
+   "impressions": 77,
+   "ctr": 0.013,
+   "position": 9.66
+  },
+  {
+   "keys": [
+    "2026-10-04",
+    "pre-seed accelerator"
+   ],
+   "clicks": 3,
+   "impressions": 47,
+   "ctr": 0.0638,
+   "position": 9.71
+  },
+  {
+   "keys": [
+    "2026-10-04",
+    "how to pitch investors"
+   ],
+   "clicks": 0,
+   "impressions": 42,
+   "ctr": 0.0,
+   "position": 11.83
+  },
+  {
+   "keys": [
+    "2026-10-04",
+    "swanbase"
+   ],
+   "clicks": 7,
+   "impressions": 22,
+   "ctr": 0.3182,
+   "position": 2.28
+  },
+  {
+   "keys": [
+    "2026-10-04",
+    "pre seed checklist"
+   ],
+   "clicks": 1,
+   "impressions": 28,
+   "ctr": 0.0357,
+   "position": 10.84
+  },
+  {
+   "keys": [
+    "2026-10-04",
+    "startup events paris"
+   ],
+   "clicks": 0,
+   "impressions": 28,
+   "ctr": 0.0,
+   "position": 12.3
+  },
+  {
+   "keys": [
+    "2026-10-04",
+    "fundraising mistakes"
+   ],
+   "clicks": 0,
+   "impressions": 17,
+   "ctr": 0.0,
+   "position": 13.74
+  },
+  {
+   "keys": [
+    "2026-10-05",
+    "startup accelerator paris"
+   ],
+   "clicks": 7,
+   "impressions": 86,
+   "ctr": 0.0814,
+   "position": 10.64
+  },
+  {
+   "keys": [
+    "2026-10-05",
+    "pre-seed accelerator"
+   ],
+   "clicks": 0,
+   "impressions": 63,
+   "ctr": 0.0,
+   "position": 10.83
+  },
+  {
+   "keys": [
+    "2026-10-05",
+    "how to pitch investors"
+   ],
+   "clicks": 1,
+   "impressions": 47,
+   "ctr": 0.0213,
+   "position": 12.96
+  },
+  {
+   "keys": [
+    "2026-10-05",
+    "swanbase"
+   ],
+   "clicks": 5,
+   "impressions": 27,
+   "ctr": 0.1852,
+   "position": 3.74
+  },
+  {
+   "keys": [
+    "2026-10-05",
+    "pre seed checklist"
+   ],
+   "clicks": 1,
+   "impressions": 34,
+   "ctr": 0.0294,
+   "position": 12.08
+  },
+  {
+   "keys": [
+    "2026-10-05",
+    "startup events paris"
+   ],
+   "clicks": 0,
+   "impressions": 29,
+   "ctr": 0.0,
+   "position": 13.88
+  },
+  {
+   "keys": [
+    "2026-10-05",
+    "fundraising mistakes"
+   ],
+   "clicks": 0,
+   "impressions": 19,
+   "ctr": 0.0,
+   "position": 14.91
+  },
+  {
+   "keys": [
+    "2026-10-06",
+    "startup accelerator paris"
+   ],
+   "clicks": 8,
+   "impressions": 119,
+   "ctr": 0.0672,
+   "position": 11.1
+  },
+  {
+   "keys": [
+    "2026-10-06",
+    "pre-seed accelerator"
+   ],
+   "clicks": 2,
+   "impressions": 63,
+   "ctr": 0.0317,
+   "position": 11.26
+  },
+  {
+   "keys": [
+    "2026-10-06",
+    "how to pitch investors"
+   ],
+   "clicks": 1,
+   "impressions": 57,
+   "ctr": 0.0175,
+   "position": 13.33
+  },
+  {
+   "keys": [
+    "2026-10-06",
+    "swanbase"
+   ],
+   "clicks": 3,
+   "impressions": 25,
+   "ctr": 0.12,
+   "position": 4.42
+  },
+  {
+   "keys": [
+    "2026-10-06",
+    "pre seed checklist"
+   ],
+   "clicks": 0,
+   "impressions": 44,
+   "ctr": 0.0,
+   "position": 12.94
+  },
+  {
+   "keys": [
+    "2026-10-06",
+    "startup events paris"
+   ],
+   "clicks": 0,
+   "impressions": 30,
+   "ctr": 0.0,
+   "position": 14.15
+  },
+  {
+   "keys": [
+    "2026-10-06",
+    "fundraising mistakes"
+   ],
+   "clicks": 0,
+   "impressions": 21,
+   "ctr": 0.0,
+   "position": 15.13
+  },
+  {
+   "keys": [
+    "2026-10-07",
+    "startup accelerator paris"
+   ],
+   "clicks": 0,
+   "impressions": 111,
+   "ctr": 0.0,
+   "position": 10.36
+  },
+  {
+   "keys": [
+    "2026-10-07",
+    "pre-seed accelerator"
+   ],
+   "clicks": 0,
+   "impressions": 64,
+   "ctr": 0.0,
+   "position": 10.78
+  },
+  {
+   "keys": [
+    "2026-10-07",
+    "how to pitch investors"
+   ],
+   "clicks": 0,
+   "impressions": 60,
+   "ctr": 0.0,
+   "position": 12.94
+  },
+  {
+   "keys": [
+    "2026-10-07",
+    "swanbase"
+   ],
+   "clicks": 4,
+   "impressions": 26,
+   "ctr": 0.1538,
+   "position": 3.43
+  },
+  {
+   "keys": [
+    "2026-10-07",
+    "pre seed checklist"
+   ],
+   "clicks": 0,
+   "impressions": 42,
+   "ctr": 0.0,
+   "position": 12.19
+  },
+  {
+   "keys": [
+    "2026-10-07",
+    "startup events paris"
+   ],
+   "clicks": 0,
+   "impressions": 33,
+   "ctr": 0.0,
+   "position": 13.25
+  },
+  {
+   "keys": [
+    "2026-10-07",
+    "fundraising mistakes"
+   ],
+   "clicks": 0,
+   "impressions": 19,
+   "ctr": 0.0,
+   "position": 14.57
+  },
+  {
+   "keys": [
+    "2026-10-08",
+    "startup accelerator paris"
+   ],
+   "clicks": 1,
+   "impressions": 93,
+   "ctr": 0.0108,
+   "position": 10.99
+  },
+  {
+   "keys": [
+    "2026-10-08",
+    "pre-seed accelerator"
+   ],
+   "clicks": 2,
+   "impressions": 60,
+   "ctr": 0.0333,
+   "position": 10.88
+  },
+  {
+   "keys": [
+    "2026-10-08",
+    "how to pitch investors"
+   ],
+   "clicks": 1,
+   "impressions": 41,
+   "ctr": 0.0244,
+   "position": 12.97
+  },
+  {
+   "keys": [
+    "2026-10-08",
+    "swanbase"
+   ],
+   "clicks": 4,
+   "impressions": 23,
+   "ctr": 0.1739,
+   "position": 3.67
+  },
+  {
+   "keys": [
+    "2026-10-08",
+    "pre seed checklist"
+   ],
+   "clicks": 0,
+   "impressions": 37,
+   "ctr": 0.0,
+   "position": 12.4
+  },
+  {
+   "keys": [
+    "2026-10-08",
+    "startup events paris"
+   ],
+   "clicks": 0,
+   "impressions": 30,
+   "ctr": 0.0,
+   "position": 13.41
+  },
+  {
+   "keys": [
+    "2026-10-08",
+    "fundraising mistakes"
+   ],
+   "clicks": 0,
+   "impressions": 17,
+   "ctr": 0.0,
+   "position": 14.77
+  },
+  {
+   "keys": [
+    "2026-10-09",
+    "startup accelerator paris"
+   ],
+   "clicks": 2,
+   "impressions": 91,
+   "ctr": 0.022,
+   "position": 11.0
+  },
+  {
+   "keys": [
+    "2026-10-09",
+    "pre-seed accelerator"
+   ],
+   "clicks": 1,
+   "impressions": 51,
+   "ctr": 0.0196,
+   "position": 10.81
+  },
+  {
+   "keys": [
+    "2026-10-09",
+    "how to pitch investors"
+   ],
+   "clicks": 0,
+   "impressions": 39,
+   "ctr": 0.0,
+   "position": 13.73
+  },
+  {
+   "keys": [
+    "2026-10-09",
+    "swanbase"
+   ],
+   "clicks": 6,
+   "impressions": 24,
+   "ctr": 0.25,
+   "position": 3.68
+  },
+  {
+   "keys": [
+    "2026-10-09",
+    "pre seed checklist"
+   ],
+   "clicks": 1,
+   "impressions": 30,
+   "ctr": 0.0333,
+   "position": 12.23
+  },
+  {
+   "keys": [
+    "2026-10-09",
+    "startup events paris"
+   ],
+   "clicks": 0,
+   "impressions": 29,
+   "ctr": 0.0,
+   "position": 14.06
+  },
+  {
+   "keys": [
+    "2026-10-09",
+    "fundraising mistakes"
+   ],
+   "clicks": 0,
+   "impressions": 21,
+   "ctr": 0.0,
+   "position": 14.81
+  },
+  {
+   "keys": [
+    "2026-10-10",
+    "startup accelerator paris"
+   ],
+   "clicks": 2,
+   "impressions": 83,
+   "ctr": 0.0241,
+   "position": 10.76
+  },
+  {
+   "keys": [
+    "2026-10-10",
+    "pre-seed accelerator"
+   ],
+   "clicks": 3,
+   "impressions": 52,
+   "ctr": 0.0577,
+   "position": 10.91
+  },
+  {
+   "keys": [
+    "2026-10-10",
+    "how to pitch investors"
+   ],
+   "clicks": 0,
+   "impressions": 43,
+   "ctr": 0.0,
+   "position": 13.4
+  },
+  {
+   "keys": [
+    "2026-10-10",
+    "swanbase"
+   ],
+   "clicks": 5,
+   "impressions": 19,
+   "ctr": 0.2632,
+   "position": 3.98
+  },
+  {
+   "keys": [
+    "2026-10-10",
+    "pre seed checklist"
+   ],
+   "clicks": 0,
+   "impressions": 33,
+   "ctr": 0.0,
+   "position": 12.75
+  },
+  {
+   "keys": [
+    "2026-10-10",
+    "startup events paris"
+   ],
+   "clicks": 0,
+   "impressions": 20,
+   "ctr": 0.0,
+   "position": 13.91
+  },
+  {
+   "keys": [
+    "2026-10-10",
+    "fundraising mistakes"
+   ],
+   "clicks": 0,
+   "impressions": 18,
+   "ctr": 0.0,
+   "position": 14.9
+  },
+  {
+   "keys": [
+    "2026-10-11",
+    "startup accelerator paris"
+   ],
+   "clicks": 3,
+   "impressions": 79,
+   "ctr": 0.038,
+   "position": 10.68
+  },
+  {
+   "keys": [
+    "2026-10-11",
+    "pre-seed accelerator"
+   ],
+   "clicks": 0,
+   "impressions": 40,
+   "ctr": 0.0,
+   "position": 10.59
+  },
+  {
+   "keys": [
+    "2026-10-11",
+    "how to pitch investors"
+   ],
+   "clicks": 1,
+   "impressions": 39,
+   "ctr": 0.0256,
+   "position": 13.32
+  },
+  {
+   "keys": [
+    "2026-10-11",
+    "swanbase"
+   ],
+   "clicks": 3,
+   "impressions": 19,
+   "ctr": 0.1579,
+   "position": 4.04
+  },
+  {
+   "keys": [
+    "2026-10-11",
+    "pre seed checklist"
+   ],
+   "clicks": 0,
+   "impressions": 26,
+   "ctr": 0.0,
+   "position": 12.45
+  },
+  {
+   "keys": [
+    "2026-10-11",
+    "startup events paris"
+   ],
+   "clicks": 0,
+   "impressions": 26,
+   "ctr": 0.0,
+   "position": 13.67
+  },
+  {
+   "keys": [
+    "2026-10-11",
+    "fundraising mistakes"
+   ],
+   "clicks": 1,
+   "impressions": 16,
+   "ctr": 0.0625,
+   "position": 14.61
+  }
+ ]
+}

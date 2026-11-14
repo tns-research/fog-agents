@@ -1,0 +1,120 @@
+{
+  "url": "https://arctic-shift.photon-reddit.com/api/comments/search?subreddit=ycombinator&after=1783987200&before=1791849600&limit=20&sort=desc&body=raise",
+  "status": 200,
+  "fetched_at": "2026-10-12T09:00:59Z",
+  "body": {
+    "data": [
+      {
+        "id": "fictive61",
+        "author": "user-c32f8c",
+        "body": "This is why I like this sub. No \"we raised X\" and \"we hit Y\" posturing. Thanks, man!",
+        "created_utc": 1791491748,
+        "permalink": "/r/ycombinator/comments/fictivet01/what_the_three_years_after_the_batch_looked_like/fictive61/",
+        "score": 1,
+        "subreddit": "ycombinator",
+        "link_id": "t3_fictivet01",
+        "parent_id": "t3_fictivet01"
+      },
+      {
+        "id": "fictive57",
+        "author": "user-c527f5",
+        "body": "Years ago, when I launched my crowdfunding campaign, I could not find a videographer who fit my budget, which was tiny, around $2,000, so I went around colleges talking to film students and a few other places. I finally ended [...]",
+        "created_utc": 1791330837,
+        "permalink": "/r/ycombinator/comments/fictivet24/feeling_a_bit_hopeless/fictive57/",
+        "score": 1,
+        "subreddit": "ycombinator",
+        "link_id": "t3_fictivet24",
+        "parent_id": "t3_fictivet24"
+      },
+      {
+        "id": "fictive54",
+        "author": "user-78e0c4",
+        "body": "Hardware for aviation is a tough market, especially early. Even with signed LOIs from big companies it\u2019s hard to raise.\n\nI\u2019d like to hear more about his project though, and see if there are ways for him to keep going, if he wants to.",
+        "created_utc": 1791160869,
+        "permalink": "/r/ycombinator/comments/fictivet25/is_it_worth_eight_years_to_launch_a_hardware_product/fictive54/",
+        "score": 2,
+        "subreddit": "ycombinator",
+        "link_id": "t3_fictivet25",
+        "parent_id": "t1_fictivec09"
+      },
+      {
+        "id": "fictive53",
+        "author": "user-89efd6",
+        "body": "An early private valuation does not carry over to an IPO price by itself. The closer test is the next private round: if the numbers have not caught up with the last price, a flat or down round, or a delayed raise, gets more likely. Public investors judge the business they see at that time, [...]",
+        "created_utc": 1791150499,
+        "permalink": "/r/ycombinator/comments/fictivet02/newbie_question_does_a_high_valuation_carry_to_an_ipo/fictive53/",
+        "score": 0,
+        "subreddit": "ycombinator",
+        "link_id": "t3_fictivet02",
+        "parent_id": "t3_fictivet02"
+      },
+      {
+        "id": "fictive51",
+        "author": "user-99f420",
+        "body": "Anyone who has grown a real business from a startup knows that without investment it takes far longer than anyone expects. It takes real patience and willpower. Finding how to grow revenue is rarely quick. And once you can show a process that works, you have to go back into fundraising mode, which is a real pain.",
+        "created_utc": 1791011439,
+        "permalink": "/r/ycombinator/comments/fictivet16/software_is_easy_now_so_what_is_the_moat/fictive51/",
+        "score": 1,
+        "subreddit": "ycombinator",
+        "link_id": "t3_fictivet16",
+        "parent_id": "t1_fictivec08"
+      },
+      {
+        "id": "fictive50",
+        "author": "user-cb6833",
+        "body": "Repeat founder here, three rounds raised and one company taken to growth stage, then I tried to build a dating app\n\nSix months in I said \"no thanks\" and went back to B2B, and now I\u2019m in Hatchery Twelve\n\nConsumer social is the hardest thing to build outside deep tech\n\nIt comes down to [...]",
+        "created_utc": 1790941603,
+        "permalink": "/r/ycombinator/comments/fictivet23/built_a_dating_app_now_what/fictive50/",
+        "score": 4,
+        "subreddit": "ycombinator",
+        "link_id": "t3_fictivet23",
+        "parent_id": "t3_fictivet23"
+      },
+      {
+        "id": "fictive49",
+        "author": "user-81fc79",
+        "body": "It can be anything. In my field nobody had measurements of one kind of patient data during treatment. I built a small device to capture it. Nobody cared.\n\nA few years later I had collected the data myself, a big library of which patients got which treatment and where. Raised $10m. Now [...]",
+        "created_utc": 1790919494,
+        "permalink": "/r/ycombinator/comments/fictivet16/software_is_easy_now_so_what_is_the_moat/fictive49/",
+        "score": 2,
+        "subreddit": "ycombinator",
+        "link_id": "t3_fictivet16",
+        "parent_id": "t1_fictivec05"
+      },
+      {
+        "id": "fictive45",
+        "author": "user-e77b3a",
+        "body": "I think the investment committee decides, and if they say yes you would probably have to take it, but you know your case best. I think Cohort Zero is a bad program, especially the way they run their regional cohorts. I really think you should not rush to raise if you are early stage or pre revenue. Good luck with everything anyway",
+        "created_utc": 1790777916,
+        "permalink": "/r/ycombinator/comments/fictivet11/winter_batch_megathread/fictive45/",
+        "score": 1,
+        "subreddit": "ycombinator",
+        "link_id": "t3_fictivet11",
+        "parent_id": "t1_fictivec06"
+      },
+      {
+        "id": "fictive42",
+        "author": "user-6595bc",
+        "body": "They will raise plenty on founder signal alone. Lots of great companies got built without any customers or revenue at the start. For a great founder, the first company is almost a detail.",
+        "created_utc": 1790714704,
+        "permalink": "/r/ycombinator/comments/fictivet20/what_will_investors_fund_when_code_is_free/fictive42/",
+        "score": 0,
+        "subreddit": "ycombinator",
+        "link_id": "t3_fictivet20",
+        "parent_id": "t3_fictivet20"
+      },
+      {
+        "id": "fictive38",
+        "author": "user-e65d84",
+        "body": "I wish you were right. I spent two years trying to raise a Series A for the only local maker of our material, with a stack of patents, and nobody cared. Literally 200+ funds, climate and infra funds included, did not care.",
+        "created_utc": 1790570441,
+        "permalink": "/r/ycombinator/comments/fictivet16/software_is_easy_now_so_what_is_the_moat/fictive38/",
+        "score": 12,
+        "subreddit": "ycombinator",
+        "link_id": "t3_fictivet16",
+        "parent_id": "t1_fictivec04"
+      }
+    ],
+    "error": null
+  }
+}

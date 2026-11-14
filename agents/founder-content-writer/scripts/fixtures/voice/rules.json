@@ -1,0 +1,7 @@
+{
+  "language": "any",
+  "banned_words": ["seamless"],
+  "rules": [
+    { "code": "no-exclamation", "family": "project-voice", "level": "BLOCK", "pattern": "!", "message": "The founder's texts hold no exclamation mark.", "bad": ["It works!"], "good": ["It works."] }
+  ]
+}

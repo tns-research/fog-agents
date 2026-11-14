@@ -1,0 +1,106 @@
+/* editorial-paper: magazine page on warm paper.
+   Structure: 88 px margins, thick rule on top, hairline over the footer.
+   Fonts: --font-display (serif headlines), --font-text (serif body),
+   --font-label (grotesque for labels, sources, chart text). */
+
+.d-editorial-paper .slide{--pad-top:76px;--pad-x:88px;--pad-bottom:64px;--gap:44px;--logo-h:50px;--font-chart:var(--font-label)}
+.d-editorial-paper .s-deco::before{content:"";position:absolute;left:88px;right:88px;top:52px;height:5px;background:var(--rule)}
+.d-editorial-paper .s-foot{border-top:1.5px solid var(--rule);padding-top:16px;margin-top:36px;font-family:var(--font-label)}
+.d-editorial-paper .src,.d-editorial-paper .handle,.d-editorial-paper .folio{font-size:22px;letter-spacing:.01em}
+.d-editorial-paper .handle{font-weight:600;color:var(--ink)}
+
+/* Titles */
+.d-editorial-paper .t{font-family:var(--font-display);font-weight:560;line-height:1.02;letter-spacing:-.022em;
+  font-variation-settings:"opsz" 144,"SOFT" 30;color:var(--ink)}
+.d-editorial-paper .t .hl{font-style:italic;font-weight:480;color:var(--accent-text);letter-spacing:-.03em}
+.d-editorial-paper .sub{font-family:var(--font-text);font-style:italic;line-height:1.3;color:var(--ink);margin-top:.9em}
+.d-editorial-paper .body{font-family:var(--font-text);line-height:1.42;color:var(--ink)}
+.d-editorial-paper .body .hl{background:linear-gradient(transparent 58%,var(--accent-fill) 58%,var(--accent-fill) 92%,transparent 92%);color:var(--on-accent-fill)}
+
+/* Cover A: masthead */
+.d-editorial-paper .role-cover .s-head{padding-bottom:0}
+.d-editorial-paper .role-cover .s-deco::before{top:auto;bottom:auto;top:150px}
+.d-editorial-paper .role-cover{--pad-top:62px}
+.d-editorial-paper .role-cover .s-main{padding-top:58px;gap:40px;justify-content:flex-end}
+.d-editorial-paper .layout-cover-a.has-photo .b-photo{order:-1;flex:1 1 0;min-height:500px}
+.d-editorial-paper .layout-cover-a .b-title{flex:none}
+.d-editorial-paper .layout-cover-a .sub{max-width:840px}
+.d-editorial-paper .layout-cover-a:not(.has-photo) .s-main{justify-content:flex-end}
+.d-editorial-paper .layout-cover-a:not(.has-photo) .b-title{flex:1 1 auto;display:flex;flex-direction:column;justify-content:flex-end}
+
+/* Cover B: title first, photo and standfirst share the bottom row */
+.d-editorial-paper .layout-cover-b .s-main{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;column-gap:40px;row-gap:40px}
+.d-editorial-paper .layout-cover-b .b-title{grid-column:1 / -1;display:contents}
+.d-editorial-paper .layout-cover-b .t{grid-column:1 / -1;grid-row:1}
+.d-editorial-paper .layout-cover-b .sub{grid-column:1;grid-row:2;align-self:end;margin:0;padding-top:20px;border-top:1.5px solid var(--rule)}
+.d-editorial-paper .layout-cover-b .b-photo{grid-column:2;grid-row:2;min-height:0}
+.d-editorial-paper .layout-cover-b:not(.has-photo) .sub{grid-column:1 / -1}
+
+/* Photos: paper mat, keyline */
+.d-editorial-paper .ph-box{background:var(--mat);outline:2px solid var(--ink);outline-offset:-2px}
+.d-editorial-paper .b-photo:not(.mat-blur) .ph-mat{display:none}
+.d-editorial-paper .ph-cap{font-family:var(--font-label);font-size:22px;margin-top:12px}
+
+/* Text */
+.d-editorial-paper .layout-text .s-main{justify-content:space-between}
+.d-editorial-paper .layout-text .b-body{padding-top:36px;border-top:1.5px solid var(--rule)}
+
+/* List: hairlines between items, display numerals in accent */
+.d-editorial-paper .layout-list .s-main{gap:36px}
+.d-editorial-paper .list{font-family:var(--font-text);line-height:1.22}
+.d-editorial-paper .list li{padding:.5em 0 .52em;border-top:1.5px solid var(--rule);gap:.7em}
+.d-editorial-paper .list li:last-child{border-bottom:1.5px solid var(--rule)}
+.d-editorial-paper .list-numbered .li-n{font-family:var(--font-display);font-weight:500;color:var(--accent-text);
+  min-width:1.1em;font-variation-settings:"opsz" 144;font-size:1.25em;line-height:.9}
+.d-editorial-paper .li-s{font-family:var(--font-label);font-size:.62em;line-height:1.3;color:var(--muted);margin-top:.35em}
+.d-editorial-paper .b-list{flex:1 1 auto;display:flex;flex-direction:column;justify-content:flex-start}
+
+/* Stat */
+.d-editorial-paper .layout-stat .s-main{justify-content:space-between}
+.d-editorial-paper .b-stat{display:flex;flex-direction:column;flex:1 1 auto;justify-content:flex-end}
+.d-editorial-paper .stat-v{font-family:var(--font-display);font-weight:420;line-height:.86;letter-spacing:-.045em;
+  font-variation-settings:"opsz" 144;color:var(--ink);margin-left:-.04em}
+.d-editorial-paper .stat-l{font-family:var(--font-display);font-weight:500;line-height:1.1;letter-spacing:-.015em;margin-top:.5em;max-width:880px}
+.d-editorial-paper .stat-c{font-family:var(--font-text);line-height:1.4;color:var(--ink);margin-top:1.1em;padding-top:.9em;border-top:1.5px solid var(--rule)}
+.d-editorial-paper .layout-stat .b-title + .b-stat{justify-content:flex-end}
+
+/* Chart */
+.d-editorial-paper .layout-chart .s-main{gap:36px}
+.d-editorial-paper .c-title{font-family:var(--font-label);font-weight:600;letter-spacing:.01em;color:var(--ink);
+  padding-bottom:16px;margin-bottom:22px;border-bottom:1.5px solid var(--rule)}
+.d-editorial-paper .chart-svg .c-value{font-family:var(--font-label)}
+
+/* Quote */
+.d-editorial-paper .layout-quote .s-main{justify-content:center}
+.d-editorial-paper .q-t{font-family:var(--font-display);font-style:italic;font-weight:400;line-height:1.14;letter-spacing:-.015em;
+  font-variation-settings:"opsz" 144}
+.d-editorial-paper .q-mark{color:var(--accent-text);font-style:normal}
+.d-editorial-paper .q-a{font-family:var(--font-label);font-size:26px;padding-top:22px;margin-top:40px;border-top:1.5px solid var(--rule);max-width:420px}
+.d-editorial-paper .q-a{flex-direction:column;gap:4px}
+
+/* Media */
+.d-editorial-paper .layout-media .s-main{gap:36px}
+.d-editorial-paper .frame-browser .shot-frame{border-width:2px}
+.d-editorial-paper .shot-bar{border-bottom-width:2px;background:var(--mat)}
+.d-editorial-paper .shot-legend li{font-family:var(--font-text);font-size:30px}
+.d-editorial-paper .ann-n{font-family:var(--font-label)}
+
+/* CTA */
+.d-editorial-paper .role-cta .s-deco::before{top:150px}
+.d-editorial-paper .role-cta{--pad-top:62px}
+.d-editorial-paper .role-cta .s-main{padding-top:64px}
+.d-editorial-paper .cta-t{font-family:var(--font-display);font-weight:560;line-height:1.04;letter-spacing:-.02em;font-variation-settings:"opsz" 144}
+.d-editorial-paper .cta-url{font-family:var(--font-label);font-weight:600;font-size:34px;margin-top:40px;
+  text-decoration:underline;text-decoration-color:var(--accent-mark);text-decoration-thickness:4px;text-underline-offset:10px;word-break:break-all}
+.d-editorial-paper .cta-sub{font-family:var(--font-text);font-style:italic;color:var(--muted);margin-top:28px}
+.d-editorial-paper .role-cta .b-cta{flex:1 1 auto;display:flex;flex-direction:column}
+.d-editorial-paper .role-cta .cta-url{margin-top:auto}
+
+/* Inverse surface: the rules follow the ink */
+.d-editorial-paper .surface-inverse .t .hl{color:var(--accent-text)}
+
+/* Photos hug their own ratio (fit.js), set on the grid's left edge; in the
+   cover-b row they sit on the right edge. */
+.d-editorial-paper .ph-box{--ph-hug:1}
+.d-editorial-paper .b-photo{align-items:flex-start}
+.d-editorial-paper .layout-cover-b .b-photo{align-items:flex-end}

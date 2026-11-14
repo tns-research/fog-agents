@@ -1,0 +1,351 @@
+{
+  "pack": "fr",
+  "language": "fr",
+  "description": "Shared French pack: common machine-writing tics in French. Messages are in English for the agent; examples are French. Every rule carries bad and good examples tested by tests/run_tests.py.",
+  "rules": [
+    {
+      "code": "correction-deux-temps",
+      "family": "two-step-correction",
+      "level": "BLOCK",
+      "pattern": "\\b(?:ce|c|ça|cela|il|elle|le (?:problème|sujet|but|enjeu))\\s*(?:n['’]est|ne sont|n['’]était) pas\\b[^!?\\n]{1,80}?[,;.:]\\s*(?:c['’]est|ce sont|c['’]était|il s['’]agit|le [a-zéè]+ est)\\b",
+      "flags": "i",
+      "message": "State what it is. Drop the straw man you knock down first.",
+      "bad": [
+        "Ce n'est pas un outil, c'est une habitude.",
+        "Ce n’est pas une question de prix. C’est une question de confiance."
+      ],
+      "good": [
+        "Ce n'est pas prêt, donc on attend lundi.",
+        "Ce n'est pas gratuit : l'offre démarre à 49 euros."
+      ]
+    },
+    {
+      "code": "pas-mais",
+      "family": "two-step-correction",
+      "level": "BLOCK",
+      "pattern": "(?:(?:^|(?<=[.!?:]\\s))Pas [^.!?\\n]{1,50},\\s*mais\\b|\\bnon pas\\b[^.!?\\n]{1,60}?\\bmais\\b)",
+      "flags": "im",
+      "message": "Say the second half directly.",
+      "bad": [
+        "Pas un outil de plus, mais une méthode.",
+        "On vend non pas un logiciel mais un résultat."
+      ],
+      "good": [
+        "Il pleut, mais on sort quand même."
+      ]
+    },
+    {
+      "code": "pas-seulement-mais",
+      "family": "two-step-correction",
+      "level": "BLOCK",
+      "pattern": "\\b(?:pas|non) (?:seulement|simplement|juste|uniquement)\\b[^.!?\\n]{1,80}?\\bmais\\b",
+      "flags": "i",
+      "message": "Say the second half directly, with its fact.",
+      "bad": [
+        "Ce n'est pas seulement un CRM, mais un moteur de croissance.",
+        "Non seulement c'est rapide, mais c'est gratuit."
+      ],
+      "good": [
+        "Ce n'est pas seulement le prix qui compte pour eux."
+      ]
+    },
+    {
+      "code": "ni-ni-juste",
+      "family": "two-step-correction",
+      "level": "BLOCK",
+      "pattern": "\\bNi [^.!?\\n]{1,40}[.!]\\s+Ni [^.!?\\n]{1,40}[.!]\\s+(?:Juste|Seulement|Que)\\b",
+      "message": "Say what the reader gets, once.",
+      "bad": [
+        "Ni réunion. Ni paperasse. Juste des résultats."
+      ],
+      "good": [
+        "Ni le prix ni le délai ne bougent cette année."
+      ]
+    },
+    {
+      "code": "apposition-pas",
+      "family": "two-step-correction",
+      "level": "WARN",
+      "pattern": ",\\s+pas (?:un|une|des|le|la|les|du|de)\\b[^,.!?\\n]{1,40}\\.",
+      "flags": "i",
+      "escalate_at": 2,
+      "message": "State the thing without contrasting it with what it is not.",
+      "bad": [
+        "On vend un résultat, pas un logiciel."
+      ],
+      "good": [
+        "On ne vend pas de logiciel."
+      ]
+    },
+    {
+      "code": "vrai-x",
+      "family": "hollow-intensifier",
+      "level": "BLOCK",
+      "pattern": "\\b(?:un|une|de) (?:vrai|vraie|vrais|vraies|véritable|véritables) (?!nom\\b|prénom\\b)[a-zàâçéèêëîïôûùüÿœ-]+",
+      "flags": "i",
+      "message": "Drop 'vrai' or 'véritable' and put the number, the exact name or the fact.",
+      "bad": [
+        "C'est un vrai levier de croissance.",
+        "Une véritable révolution pour les équipes."
+      ],
+      "good": [
+        "Le vrai nom du fichier est en bas de page."
+      ]
+    },
+    {
+      "code": "intensificateur-creux",
+      "family": "hollow-intensifier",
+      "level": "BLOCK",
+      "pattern": "\\b(?:tout à fait|de loin le plus|pas moins de|bel et bien|littéralement|incontournable|au cœur de|dans un monde où|à l['’]heure où|force est de constater|il convient de noter|n['’]est plus à démontrer|sans plus attendre|plongeons dans|plonger dans|booster|game[- ]changer)\\b",
+      "flags": "i",
+      "message": "Delete the phrase and write the fact in its place.",
+      "bad": [
+        "C'est tout à fait possible.",
+        "Dans un monde où tout va vite, il faut agir.",
+        "Un outil incontournable."
+      ],
+      "good": [
+        "Le cœur du sujet est la marge brute."
+      ]
+    },
+    {
+      "code": "adverbe-creux",
+      "family": "hollow-intensifier",
+      "level": "WARN",
+      "pattern": "\\b(?:vraiment|réellement|parfaitement|totalement|extrêmement|incroyablement|profondément|absolument)\\b",
+      "flags": "i",
+      "escalate_at": 3,
+      "message": "Delete the adverb. If the sentence loses nothing, it was empty; if it does, add the fact instead.",
+      "bad": [
+        "C'est vraiment rapide."
+      ],
+      "good": [
+        "La page charge en 0,8 seconde."
+      ]
+    },
+    {
+      "code": "question-mise-en-scene",
+      "family": "staging",
+      "level": "BLOCK",
+      "pattern": "(?:^|(?<=[.!:]\\s))(?:Le résultat|La raison|Le problème|La réponse|Le secret|Le piège|La suite|La vérité|Résultat|Pourquoi|Comment|La conséquence)\\s?\\?",
+      "flags": "m",
+      "message": "Give the information instead of asking a question you answer yourself.",
+      "bad": [
+        "Le résultat ? Trois clients signés.",
+        "On a baissé le prix. Pourquoi ? Le churn montait."
+      ],
+      "good": [
+        "Quel est le résultat de mars pour la page prix ?"
+      ]
+    },
+    {
+      "code": "question-reponse",
+      "family": "staging",
+      "level": "WARN",
+      "pattern": "\\?[ \\t]+[A-ZÀ-Ý]\\S*(?:[ \\t]+\\S+){0,3}[.!](?=\\s|$)",
+      "escalate_at": 2,
+      "message": "Turn the question and its short answer into one statement.",
+      "bad": [
+        "Plus de leads ? Corrigez la page."
+      ],
+      "good": [
+        "Vous exportez en CSV ? Le bouton d'export se trouve dans Réglages, sous Données, à côté de l'import."
+      ]
+    },
+    {
+      "code": "faux-suspense",
+      "family": "staging",
+      "level": "BLOCK",
+      "pattern": "(?:\\bet c['’]est là que|\\bc['’]est là que (?:ça|tout) (?:devient|se joue|change)|\\bvoici (?:le hic|le piège|le plus surprenant|ce que personne)|\\b(?:ce que )?personne ne (?:vous )?(?:dit|parle|fait|voit|raconte)\\b|\\bspoiler\\s?:|\\baccrochez-vous\\b|\\bdevinez quoi\\b|\\ble plus fou,)",
+      "flags": "i",
+      "message": "Delete the teaser and give the fact.",
+      "bad": [
+        "Et c'est là que tout se joue.",
+        "Voici ce que personne ne vous dit.",
+        "Spoiler : ça marche."
+      ],
+      "good": [
+        "Voici l'export de mars."
+      ]
+    },
+    {
+      "code": "annonce-longueur",
+      "family": "staging",
+      "level": "BLOCK",
+      "pattern": "(?:\\b(?:méthode|approche|thèse|différence|idée|stratégie|logique|réponse|secret|leçon|règle|vision|philosophie|tout)\\s+(?:tient|se résume)\\s+(?:en|sur|à)\\s+(?:une|un|deux|trois|cette)\\s+(?:ligne|phrase|mot|page|chose|idée)s?\\b|\\ben (?:une|un) (?:phrase|mot)\\s?:)",
+      "flags": "i",
+      "message": "Write the content itself; do not announce how short it will be.",
+      "bad": [
+        "Notre méthode tient en une phrase.",
+        "En un mot : la focalisation.",
+        "Tout se résume à une chose."
+      ],
+      "good": [
+        "Le contrat tient sur deux pages."
+      ]
+    },
+    {
+      "code": "imaginez",
+      "family": "staging",
+      "level": "BLOCK",
+      "pattern": "(?:^|(?<=[.!?]\\s))Imaginez\\b",
+      "flags": "m",
+      "message": "Explain with the real case instead of an invented scene.",
+      "bad": [
+        "Imaginez un monde où les factures se paient seules."
+      ],
+      "good": [
+        "On a imaginé la fonction en mars."
+      ]
+    },
+    {
+      "code": "rituel",
+      "family": "staging",
+      "level": "BLOCK",
+      "pattern": "\\b(?:dans cet (?:article|guide),? nous|que vous soyez|découvrons ensemble|passons maintenant|n['’]hésitez pas à|en conclusion,|en résumé,|sans plus tarder|vous l['’]aurez compris)",
+      "flags": "i",
+      "message": "Delete the ritual sentence; start or end on the content.",
+      "bad": [
+        "Dans cet article, nous allons voir trois méthodes.",
+        "N'hésitez pas à nous écrire.",
+        "Que vous soyez fondateur ou salarié, ça compte."
+      ],
+      "good": [
+        "Écrivez-nous à l'adresse du pied de page."
+      ]
+    },
+    {
+      "code": "participe-final",
+      "family": "trailing-participle",
+      "level": "BLOCK",
+      "pattern": ",\\s+(?:soulignant|illustrant|démontrant|témoignant|renforçant|reflétant|marquant|ouvrant la voie|mettant en lumière|mettant en évidence|consolidant|confirmant|traduisant)\\b[^.!?\\n]*[.!?]",
+      "flags": "i",
+      "message": "End the sentence before the participle, or replace it with the evidence.",
+      "bad": [
+        "Le chiffre d'affaires a crû de 20 %, soulignant la solidité du modèle.",
+        "L'équipe livre deux fois par semaine, témoignant d'une culture de la vitesse."
+      ],
+      "good": [
+        "En soulignant la ligne, vous la passez en jaune."
+      ]
+    },
+    {
+      "code": "grandiloquence",
+      "family": "grandiosity",
+      "level": "BLOCK",
+      "pattern": "\\b(?:moment charnière|tournant décisif|héritage durable|(?:une |la )?nouvelle ère|prochaine ère|change(?:r|nt)? la donne|qui change tout|changer le monde|révolutionn(?:er|e|ent)|sans précédent|redéfini(?:r|t|ssent) (?:le|la|les) (?:futur|avenir|marché|secteur|règles)|changement de paradigme|véritable révolution)\\b",
+      "flags": "i",
+      "message": "Size the claim to the facts: say what changed, for whom, by how much.",
+      "bad": [
+        "Ce lancement ouvre une nouvelle ère.",
+        "Une offre qui change tout.",
+        "Une opportunité sans précédent."
+      ],
+      "good": [
+        "La nouvelle grille change la mise en page des factures."
+      ]
+    },
+    {
+      "code": "objet-agent",
+      "family": "object-as-agent",
+      "level": "BLOCK",
+      "pattern": "\\b(?:le|la|les|l['’]|cette|ce|cet|votre|notre|vos|nos)\\s?(?:outil|plateforme|stratégie|méthode|marché|algorithme|données|chiffres?|produit|processus|système|chapeau|tableau|logiciel|IA|data|page)\\s+(?:décide|décident|sait|savent|veut|veulent|pense|pensent|comprend|comprennent|refuse|refusent|pardonne|récompense|punit|fait le reste|se charge du reste|parle(?:nt)? d['’](?:elle|eux)-mêmes?|ne ment(?:ent)? pas|vous dit|vous disent)\\b",
+      "flags": "i",
+      "message": "Put the person who acts back as the subject (vous décidez, on relit, l'acheteur choisit).",
+      "bad": [
+        "Le chapeau décide du reste.",
+        "Les chiffres parlent d'eux-mêmes.",
+        "L'outil fait le reste."
+      ],
+      "good": [
+        "Le fondateur décide du prix.",
+        "Le tableau affiche le chiffre de la semaine."
+      ]
+    },
+    {
+      "code": "autorite-vague",
+      "family": "vague-authority",
+      "level": "WARN",
+      "pattern": "\\b(?:les experts (?:affirment|s['’]accordent|disent)|des études (?:montrent|prouvent|indiquent)|on sait (?:tous )?que|il est prouvé que|la science dit)\\b",
+      "flags": "i",
+      "escalate_at": 2,
+      "message": "Name the source with its link, or state it as your own view.",
+      "bad": [
+        "Des études montrent que les fondateurs dorment moins."
+      ],
+      "good": [
+        "Une enquête de 2024 du ministère (lien) compte 1 200 réponses."
+      ]
+    },
+    {
+      "code": "foule-vague",
+      "family": "vague-authority",
+      "level": "WARN",
+      "pattern": "\\b(?:la plupart des (?:fondateurs|founders|entrepreneurs|gens|startups|équipes)|beaucoup de (?:fondateurs|founders|startups|entrepreneurs)|tout le monde sait)\\b",
+      "flags": "i",
+      "escalate_at": 2,
+      "message": "Give a sourced number, or speak to the reader directly.",
+      "bad": [
+        "La plupart des fondateurs négligent le SEO."
+      ],
+      "good": [
+        "Vous pouvez vérifier votre SEO en dix minutes."
+      ]
+    },
+    {
+      "code": "staccato",
+      "family": "staging",
+      "level": "WARN",
+      "pattern": "(?:^|(?<=[.!?][ \\t]))(?:(?=[^\\W\\d_])[^\\s.!?]+(?:[ \\t]+[^\\s.!?]+){0,3}[.!?][ \\t]+){2}(?=[^\\W\\d_])[^\\s.!?]+(?:[ \\t]+[^\\s.!?]+){0,3}[.!?](?=\\s|$)",
+      "flags": "m",
+      "escalate_at": 2,
+      "message": "Merge the short punch sentences into one sentence that carries a fact.",
+      "bad": [
+        "Vous testez. Vous mesurez. Vous apprenez."
+      ],
+      "good": [
+        "Vous construisez la page lundi et la testez avec cinq personnes mardi."
+      ]
+    },
+    {
+      "code": "tiret-espace",
+      "family": "dash",
+      "level": "WARN",
+      "pattern": "(?<=\\w) - (?=\\w)",
+      "escalate_at": 3,
+      "message": "A spaced hyphen reads as a dash: use a period, a comma or a colon.",
+      "bad": [
+        "On l'a livré - enfin."
+      ],
+      "good": [
+        "Un contrôle en deux temps tourne d'abord."
+      ]
+    },
+    {
+      "code": "em-dash",
+      "family": "dash",
+      "level": "BLOCK",
+      "pattern": "\u2014",
+      "message": "Replace the em dash with a period, a comma, a colon or parentheses.",
+      "bad": [
+        "On l'a livré \u2014 enfin."
+      ],
+      "good": [
+        "On l'a livré, enfin."
+      ]
+    },
+    {
+      "code": "spaced-en-dash",
+      "family": "dash",
+      "level": "BLOCK",
+      "pattern": "\\s\u2013\\s",
+      "message": "Replace the spaced en dash with a period, a comma or a colon. Ranges take a plain hyphen: 10-20.",
+      "bad": [
+        "On l'a livré \u2013 enfin."
+      ],
+      "good": [
+        "Pages 10\u201320."
+      ]
+    }
+  ]
+}

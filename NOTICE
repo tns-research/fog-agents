@@ -1,0 +1,39 @@
+Founders Growth Agent Stack
+Copyright 2026 swanbase (https://swanbase.co)
+
+This product is built and maintained by swanbase.
+Companion site: https://fog-agents.com
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Attribution
+-----------
+Section 4(d) of the Apache 2.0 license requires redistributions to carry the
+attribution notices of this NOTICE file (in a NOTICE file, in the
+documentation, or in an attribution display). We also ask, without making it
+a condition, that forks keep this line visible in their README:
+
+  "Built on the Founders Growth Agent Stack by swanbase
+   (https://swanbase.co · https://fog-agents.com)."
+
+Trademarks
+----------
+The license grants no right to use the swanbase name, logos or brand assets
+(Section 6), beyond describing the origin of the work. The swanbase logos and
+brand files in the examples illustrate the agents' output; replace them with
+your own brand before you publish anything made with this stack.
+
+Third-party methods
+-------------------
+Some agents apply published marketing methods, adapted in our own words and
+credited where they are used. No affiliation with their authors is implied:
+
+- Levers Framework, Conversion.com (landing-page-analyzer, lever-grid.md)
+- Forces of Progress, Bob Moesta and Chris Spiek, Demand-Side Sales 101
+  (market-signal, jtbd-forces-of-progress.md)
+- Principles of influence, Robert Cialdini, Influence
+  (market-signal, cold-outreach-builder)
+- The Mom Test, Rob Fitzpatrick (market-signal references)
+
+The fixtures and examples use fictional people, handles and brands; any
+resemblance to a real account is unintended.

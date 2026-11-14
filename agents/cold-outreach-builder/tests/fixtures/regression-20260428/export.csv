@@ -1,0 +1,18 @@
+prospect_id,tier,email,first_name,last_name,company,role,linkedin_url,hook,hook_fact_id,hook_source_url,hook_date,angle,specific_observation,personal_hook,source_url,subject_variant,step_1_subject,step_1_body,step_1_delay_days,step_2_subject,step_2_body,step_2_delay_days,step_3_subject,step_3_body,step_3_delay_days,step_4_subject,step_4_body,step_4_delay_days,step_5_subject,step_5_body,step_5_delay_days
+p001,B,,Camille,Moreau,Atelier Nimbus,Cofondatrice,https://www.linkedin.com/in/fictional-camille-moreau-0000,,,,,,ton post sur ton premier recrutement,,,,,"Salut Camille, je suis Alex, co-founder de Brightloop. J'ai vu ton post sur ton premier recrutement \u2014 j'aime bien la démarche. On bosse avec d'autres first-time founders FR pré-seed, je voulais juste se connecter ici.",0,,"Merci pour l'add Camille.
+
+Je creuse un sujet en ce moment : pourquoi tant de first-time founders FR sortent d'un programme d'accélération en disant ""j'aurais pu faire ça seul"". Ça me curieux ton retour sur ce que tu as cherché côté accompagnement quand tu as démarré Atelier Nimbus.
+
+Pas de pitch \u2014 juste curiosité.",1,,"Camille, suite à ton post sur ton premier recrutement j'ai pensé à toi.
+
+On a publié hier un audit signal de marché sur l'accélérateur FR \u2014 15 sources, ce que les founders disent vraiment des programmes. Si t'as 5 min, l'insight #3 sur ""incubateur déguisé en accélérateur"" pourrait te parler.
+
+Je te le partage ici si tu veux : {{link}}",2,,"Camille, dernier ping avant de te laisser tranquille.
+
+On accompagne 14 first-time founders FR sur l'année (pas en sprint), avec un atelier interne \u2014 la répétition générale \u2014 pour durcir le pitch avant la levée. On a 3 places début juin.
+
+30 min en visio cette semaine pour voir si c'est un fit ? Si non, no hard feelings.",4,,"Pas de souci si ce n'est pas le bon moment Camille.
+
+Je clos la boucle de mon côté. Si dans 6 mois tu galères sur le positionnement avant ta levée, ping-moi \u2014 on aura toujours un slot pour un café.
+
+Bonne continuation sur Atelier Nimbus.",7

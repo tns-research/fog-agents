@@ -1,0 +1,62 @@
+{
+  "_comment": "static-ads-builder per-project config. Copied to <project-root>/<project-slug>/static-ads-builder/config.json on first run. Replace placeholders; never commit a real config to the agent folder. Optional: add a \"tools\" object (same keys as shared/tools.example.json, e.g. {\"image_gen\": \"manual\", \"vision\": \"builtin\"}) to override the project's tools.json for this agent only; image_gen accepts fal, openai or manual here; it picks the provider of the text-free photo plates (scripts/render_ads.py --provider). Mode photo_edit picks its backend with the founder (scripts/photo_edit.py --backend). Modes photo_edit and winning_recipe read the photo_edit and recipe objects (passed with --config).",
+  "project": "<project-slug>",
+  "copy_language": "en",
+  "funnel_stages": "all",
+  "num_ads": 6,
+  "formats": [
+    "4:5",
+    "9:16"
+  ],
+  "visual_style": "",
+  "render_width": 1080,
+  "utm": {
+    "source": "facebook",
+    "medium": "paid_social",
+    "campaign": ""
+  },
+  "perf": {
+    "target_cpa": null,
+    "min_spend": null,
+    "min_conversions": 3,
+    "kill_spend_multiple": 2.0,
+    "loser_cpa_multiple": 1.5,
+    "loser_spend_multiple": 3.0,
+    "min_impressions_ctr": 1000,
+    "min_clicks_cvr": 50,
+    "weak_ratio": 0.75,
+    "min_lpv_rate": 0.7,
+    "noise_conversions": 15,
+    "extend_share": 0.6
+  },
+  "default_model": "fal-ai/nano-banana-2",
+  "default_resolution": "1K",
+  "photo_edit": {
+    "model": "gpt-image-2",
+    "size": "1536x1024",
+    "quality": "high",
+    "input_fidelity": "high",
+    "price_per_image_usd": 0.17,
+    "fal_model": "fal-ai/nano-banana-2",
+    "fal_resolution": "1K",
+    "higgsfield_model": "gpt_image_2_5",
+    "higgsfield_resolution": "1k"
+  },
+  "recipe": {
+    "variants": 5
+  },
+  "$schema_hint": {
+    "copy_language": "en | fr. Language of the on-ad copy and the Meta ad text.",
+    "funnel_stages": "all | tofu | mofu | bofu | tofu,mofu | tofu,bofu | mofu,bofu.",
+    "num_ads": "Concepts per batch (max 15). Each renders in every format it lists. A smaller batch beats clones.",
+    "formats": "Default formats per concept: 1:1 (feed), 4:5 (feed, most screen), 9:16 (Stories and Reels, text kept in the Meta safe band).",
+    "visual_style": "Empty = the plan picks a style per concept from skills/visual-styles/REGISTRY.md. A slug locks one style for the batch.",
+    "render_width": "1080 (default) or 1440 (1440x1800 for 4:5, the size Meta's feed guide recommends). Same layout, sharper pixels.",
+    "utm": "utm_source, utm_medium, utm_campaign of every link. utm_content is the ad name, utm_term the ad set.",
+    "perf": "Decision rules of scripts/perf.py (see its --help). target_cpa null = the account median CPA. min_spend null = one target CPA. These are rules, not benchmarks.",
+    "default_model": "Plates only: fal-ai/nano-banana-2 | openai/gpt-image-2 | fal-ai/nano-banana-pro. Confirmed again at Gate 2.",
+    "default_resolution": "Plates only: 1K | 2K | 4K. Main cost lever. Confirmed again at Gate 2.",
+    "photo_edit": "Mode photo_edit only (scripts/photo_edit.py). Backend openai (OPENAI_API_KEY): model sent to POST /v1/images/edits (default gpt-image-2); size 1024x1024 | 1536x1024 | 1024x1536 when a concept does not set one; quality low | medium | high; input_fidelity high keeps faces and textures closer to the source (set it to an empty string if the model refuses the field); price_per_image_usd is the figure the Gate 2 estimate multiplies: 0.17 is an estimate for one 1536x1024 high output of gpt-image-2, input image tokens not included, to check on OpenAI's pricing page and update here. Confirmed again at Gate 2. Backend fal (FAL_KEY and the fal CLI): fal_model is fal-ai/nano-banana-2 or fal-ai/nano-banana-pro, fal_resolution 1K | 2K | 4K, priced from render_ads.py's table; the photo is uploaded under a public URL. Backend manual needs none of these. Backend higgsfield (the Higgsfield MCP connected to the agent's harness): higgsfield_model (default gpt_image_2_5, any Higgsfield image model that takes image_references), higgsfield_resolution 1k | 2k | 4k, billed in Higgsfield credits, cost read with get_cost before the call.",
+    "recipe": "Mode winning_recipe only (scripts/recipe_variants.py): variants per recipe, each changing one variable (hook, subhead, visual, cta, surface) against the winner. Passed as --count."
+  }
+}

@@ -1,0 +1,60 @@
+prospect_id,tier,email,first_name,last_name,company,role,linkedin_url,hook,hook_fact_id,hook_source_url,hook_date,angle,subject_variant,step_1_subject,step_1_body,step_1_delay_days,step_2_subject,step_2_body,step_2_delay_days
+p001,A,ana@quill.example,Ana,Silva,Quill,,,Your post of 2 October on hiring a first engineer before the round asked the question we hear most.,f1,https://quill.example/blog/first-engineer,2026-10-02,,,your first engineer,"Hi Ana,
+
+Your post of 2 October on hiring a first engineer before the round asked the question we hear most.
+
+We run swanbase, a Paris accelerator for first-time founders. Want the one-page pitch checklist?
+
+{{sender_first_name}}",0,,"Ana, should I send the checklist?
+
+{{sender_first_name}}",3
+p002,B,Ana@Quill.example,Ben,Okoro,Larch,,,Your post of 2 October on hiring a first engineer before the round asked the question we hear most.,f1,https://larch.example/blog,2026-10-01,,,your first engineer,"Hi Ben,
+
+Your post of 2 October on hiring a first engineer before the round asked the question we hear most.
+
+We run swanbase, a Paris accelerator for first-time founders. Want the one-page pitch checklist?
+
+{{sender_first_name}}",0,,"Ben, should I send the checklist?
+
+{{sender_first_name}}",3
+p003,B,chloe@fennel.example,Chloe,Park,Fennel,,,Your post of 5 October on hiring a first engineer before the round asked the question we hear most often.,f2,https://fennel.example/blog,2026-10-05,,,your first engineer,"Hi Chloe,
+
+Your post of 5 October on hiring a first engineer before the round asked the question we hear most often.
+
+We run swanbase, a Paris accelerator for first-time founders. Want the one-page pitch checklist?
+
+{{sender_first_name}}",0,,"Chloe, should I send the checklist?
+
+{{sender_first_name}}",3
+p004,B,dev@oriel.example,Dev,Rao,Oriel,,,You announced the Oriel seed round on 1 October.,f1,https://oriel.example/news,2026-10-01,,,Re: a very long subject line that keeps going past the limit,"Hi [First Name],
+
+You announced the Oriel seed round on 1 October.
+
+We helped 50 founders last year. Here is what we offer:
+- weekly sessions
+- pitch rehearsals
+
+See https://bit.ly/3xYz and https://swanbase.example/program for details. More words to push this message well past the word limit of the channel. More words to push this message well past the word limit of the channel. More words to push this message well past the word limit of the channel. More words to push this message well past the word limit of the channel. More words to push this message well past the word limit of the channel. More words to push this message well past the word limit of the channel. More words to push this message well past the word limit of the channel.
+
+Best,
+Alex",0,,"{{first_name}}, any thoughts?
+
+{{sender_first_name}}",3
+p005,B,eli@sorrel.example,Eli,Kim,Sorrel,,,,,,,,,a question for Sorrel,"Hi Eli,
+
+I hope this email finds you well.
+
+We run swanbase, a Paris accelerator for first-time founders. Want the one-page pitch checklist?
+
+{{sender_first_name}}",0,,"Eli, any thoughts?
+
+{{sender_first_name}}",3
+p006,B,fay@tansy.example,Fay,Ng,Tansy,,,Tansy shipped its mobile app on 3 October.,f1,https://tansy.example/news,2026-10-03,,,the Tansy app,"Hi Fay,
+
+Congrats on the launch.
+
+We run swanbase, a Paris accelerator for first-time founders. Want the one-page pitch checklist?
+
+{{sender_first_name}}",0,,"Fay, any thoughts?
+
+{{sender_first_name}}",3

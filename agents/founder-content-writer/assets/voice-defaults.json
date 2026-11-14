@@ -1,0 +1,16 @@
+{
+  "_comment": "Defaults of the founder's voice when nothing overrides them. Precedence for the address form: config.json address, then an active decision of memory/decisions.md enforced by 'founder-content-writer address:<form>', then this file. A voice pack that measured another form does not override it: the check warns and the founder chooses, because a post speaks to an audience and the founder's other texts may not. Patterns are read by scripts/check_spec.py with re.I; text between quotation marks is skipped, because a verbatim quote stays verbatim.",
+  "address": {
+    "fr": {
+      "form": "vous",
+      "patterns": {
+        "vous": "\\b(?:tu|toi|tes|te)\\b|(?<!\\ble )(?<!\\bun )(?<!\\bdu )(?<!\\bce )(?<!\\bmon )(?<!\\bnotre )(?<!\\bleur )\\bton\\b|\\bta\\b|\\bt['’](?=[a-zà-ÿ])",
+        "tu": "\\b(?:vous|votre|vos)\\b"
+      },
+      "messages": {
+        "vous": "A post in French addresses its audience with vous. Rewrite this sentence, or set address to tu in the agent's config.json if the founder wants it.",
+        "tu": "The founder chose tu for this project: this sentence addresses the reader with vous."
+      }
+    }
+  }
+}

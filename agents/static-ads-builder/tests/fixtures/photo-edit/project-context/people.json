@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "people": [
+    {
+      "slug": "ana-ruiz",
+      "name": "Ana Ruiz",
+      "role": "Founder",
+      "consent": {
+        "status": "granted",
+        "scope": [
+          "ads",
+          "carousel",
+          "posts",
+          "site"
+        ],
+        "date": "2026-10-02",
+        "source": "signed form of 2026-10-02 (fictional)"
+      }
+    },
+    {
+      "slug": "leo-park",
+      "name": "Leo Park",
+      "role": "Customer",
+      "consent": {
+        "status": "refused",
+        "scope": [],
+        "date": "2026-10-05",
+        "source": "email of 2026-10-05 (fictional)"
+      }
+    },
+    {
+      "slug": "mia-chen",
+      "name": "Mia Chen",
+      "role": "Team",
+      "consent": {
+        "status": "granted",
+        "scope": [
+          "carousel"
+        ],
+        "date": "2026-10-03",
+        "source": "signed form of 2026-10-03 (fictional)"
+      }
+    },
+    {
+      "slug": "sam-oak",
+      "name": "Sam Oak",
+      "role": "Co-founder",
+      "is_operator": true,
+      "consent": {
+        "status": "unknown",
+        "scope": [],
+        "date": "2026-10-01",
+        "source": "runs the agent (fictional)"
+      }
+    }
+  ]
+}

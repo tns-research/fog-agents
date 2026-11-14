@@ -1,0 +1,11 @@
+{
+ "key": "GET https://hacker-news.firebaseio.com/v0/user/nledger_fictive.json",
+ "status": 200,
+ "body": {
+  "id": "nledger_fictive",
+  "created": 1600000000,
+  "karma": 120,
+  "about": "",
+  "submitted": []
+ }
+}

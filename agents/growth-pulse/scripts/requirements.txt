@@ -1,0 +1,4 @@
+# growth-pulse scripts: Python 3.9+ standard library only. Nothing to install.
+# The connectors call the founder's own analytics APIs (Plausible, Umami, GA4, Search Console,
+# Stripe) over HTTPS with urllib when a key is set in the environment; none of them is paid to
+# read. Every source also reads a CSV export, and the tests replay recorded responses offline.

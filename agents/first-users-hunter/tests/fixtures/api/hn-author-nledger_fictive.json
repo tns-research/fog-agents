@@ -1,0 +1,35 @@
+{
+ "key": "GET https://hn.algolia.com/api/v1/search_by_date?hitsPerPage=100&numericFilters=created_at_i%3E1787875200&tags=author_nledger_fictive",
+ "status": 200,
+ "body": {
+  "exhaustive": {
+   "nbHits": true
+  },
+  "hits": [
+   {
+    "author": "nledger_fictive",
+    "created_at": "2026-09-30T21:40:00Z",
+    "created_at_i": 1790804400,
+    "objectID": "99000102",
+    "_tags": [
+     "comment",
+     "author_nledger_fictive",
+     "story_99000100"
+    ],
+    "_highlightResult": {},
+    "comment_text": "We hit the same wall with our first users. The thing that worked for us was a founders breakfast in our city, people came back every month.",
+    "parent_id": 99000100,
+    "story_id": 99000100,
+    "story_title": "Ask HN: How did you find your first ten users?",
+    "story_url": null
+   }
+  ],
+  "hitsPerPage": 50,
+  "nbHits": 1,
+  "nbPages": 1,
+  "page": 0,
+  "params": "fixture",
+  "processingTimeMS": 1,
+  "query": ""
+ }
+}

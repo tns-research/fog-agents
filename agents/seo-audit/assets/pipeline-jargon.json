@@ -1,0 +1,39 @@
+{
+  "_comment": "Strings that must never reach a published page: production jargon, unrendered template tokens and leftover brief markers. Checked on the visible text and the HTML comments of the served page by verify_served.py. Case-insensitive; a pattern starting with re: is a regular expression. Add a project list with --jargon <file> (same shape, lists merged).",
+  "schema_version": "1.0",
+  "visible_text": {
+    "all": [
+      "re:\\{\\{\\s*[\\w.]+\\s*\\}\\}",
+      "re:\\[(?:TODO|TBD|FIXME|INSERT|PLACEHOLDER)[^\\]]*\\]",
+      "lorem ipsum",
+      "re:\\bSERP\\b",
+      "search intent",
+      "target keyword",
+      "focus keyword",
+      "keyword density",
+      "re:\\bPAA\\b",
+      "people also ask",
+      "pillar page",
+      "cluster page",
+      "topical authority",
+      "re:\\bE-E-A-T\\b",
+      "answer block",
+      "as an ai language model",
+      "information gain"
+    ],
+    "fr": [
+      "mot-clé cible",
+      "intention de recherche",
+      "page pilier",
+      "autorité thématique",
+      "en tant que modèle de langage"
+    ]
+  },
+  "comments": [
+    "re:\\bbrief\\b",
+    "re:\\bTODO\\b",
+    "re:\\bSERP\\b",
+    "target keyword",
+    "re:\\bprompt\\b"
+  ]
+}

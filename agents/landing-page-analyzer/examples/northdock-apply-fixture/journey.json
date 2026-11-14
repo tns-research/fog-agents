@@ -1,0 +1,28 @@
+{
+  "url": "http://127.0.0.1:8000/index.html",
+  "goal": "application",
+  "viewports": ["desktop", "mobile"],
+  "allow_write": [],
+  "block": [],
+  "steps": [
+    {"do": "goto", "url": "{{url}}", "name": "landing"},
+    {"do": "click", "text": "Program", "selector": "nav a[href='#program']", "name": "nav-anchor"},
+    {"do": "check_links", "selector": "header a[href], footer a[href]", "name": "links", "shot": false},
+    {"do": "goto", "url": "{{url}}", "name": "back-to-top", "shot": false},
+    {"do": "tab", "count": 4, "name": "keyboard-focus"},
+    {"do": "click", "text": "Apply now", "name": "open-form"},
+    {"do": "submit", "text": "Send application", "name": "empty-submit"},
+    {"do": "fill", "field": "Full name", "value": "{{full_name}}", "name": "fill-name"},
+    {"do": "fill", "field": "Email", "value": "not-an-email", "name": "fill-bad-email"},
+    {"do": "submit", "text": "Send application", "name": "invalid-email-submit"},
+    {"do": "fill", "field": "Email", "value": "{{email}}", "name": "fill-email"},
+    {"do": "fill", "field": "Phone", "value": "{{phone}}", "name": "fill-phone"},
+    {"do": "fill", "field": "Startup name", "value": "{{company}}", "name": "fill-startup"},
+    {"do": "fill", "field": "What are you building?", "value": "{{message}}", "name": "fill-building"},
+    {"do": "submit", "text": "Send application", "name": "final-submit", "watch": ["#send", "#status"]},
+    {"do": "goto", "url": "{{url}}", "name": "home-again", "shot": false},
+    {"do": "scroll", "to": "footer", "name": "footer"},
+    {"do": "fill", "field": "Your email", "value": "{{email}}", "name": "newsletter-email"},
+    {"do": "submit", "selector": "form.newsletter button", "name": "newsletter-submit"}
+  ]
+}

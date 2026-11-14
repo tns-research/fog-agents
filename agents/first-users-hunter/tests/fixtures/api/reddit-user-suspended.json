@@ -1,0 +1,8 @@
+{
+ "key": "GET https://oauth.reddit.com/user/suspended_fictive/overview?limit=100",
+ "status": 403,
+ "body": {
+  "message": "Forbidden",
+  "error": 403
+ }
+}

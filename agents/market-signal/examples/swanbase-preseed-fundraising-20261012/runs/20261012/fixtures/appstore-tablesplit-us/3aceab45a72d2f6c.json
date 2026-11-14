@@ -1,0 +1,10 @@
+{
+  "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=9990000001/sortby=mostrecent/json",
+  "status": 200,
+  "fetched_at": "2026-10-12T09:18:59Z",
+  "body": {
+    "feed": {
+      "entry": []
+    }
+  }
+}

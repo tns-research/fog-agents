@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "people.json",
+  "description": "Registry of the people a visual or a copy may show or name (founders, team, customers quoted on camera), written by the project-context agent to <project>/project-context/people.json and read through shared/scripts/registry.py. A person appears in a deliverable only when consent.status is granted and consent.scope covers the use (ads for the static-ads-builder photo edit mode), or when is_operator is true. A person absent from the file is treated as consent unknown: blocked. Every path is relative to the project-context/ folder. Validate with: python3 shared/scripts/validate_json.py shared/schemas/people.schema.json <people.json>, then python3 shared/scripts/registry.py check <project-context> for the rules a schema cannot hold.",
+  "type": "object",
+  "required": ["version", "people"],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "const": 1 },
+    "people": { "type": "array", "items": { "$ref": "#/$defs/person" } }
+  },
+  "$defs": {
+    "person": {
+      "type": "object",
+      "required": ["slug", "name", "consent"],
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "$ref": "#/$defs/slug" },
+        "name": { "type": "string", "minLength": 1, "description": "Name as the person writes it." },
+        "role": { "type": "string", "minLength": 1, "description": "Role shown next to the name, e.g. Founder, Head of design, Customer at Acme." },
+        "photo": { "$ref": "#/$defs/rel_path", "description": "Portrait under assets/people/. Stored only once consent is granted, or for the operator." },
+        "is_operator": { "type": "boolean", "description": "true for the founder who runs the agents: their own name and photo need no recorded consent." },
+        "consent": { "$ref": "#/$defs/consent" }
+      }
+    },
+    "consent": {
+      "type": "object",
+      "required": ["status"],
+      "additionalProperties": false,
+      "properties": {
+        "status": { "type": "string", "enum": ["granted", "refused", "unknown"] },
+        "scope": { "type": "array", "items": { "type": "string", "enum": ["ads", "carousel", "posts", "outreach", "site", "video"] }, "description": "Uses covered. A granted consent needs at least one." },
+        "date": { "$ref": "#/$defs/date", "description": "Day the consent was given or refused." },
+        "source": { "type": "string", "minLength": 1, "description": "Where it is recorded: 'email of 2026-10-02', 'signed release form', 'reply on the call of 2026-09-14'." }
+      }
+    },
+    "slug": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "rel_path": {
+      "type": "string",
+      "pattern": "^(?!/)(?![A-Za-z]:)(?!project-context/)(?!.*\\.\\.)[A-Za-z0-9._/-]+$",
+      "description": "Path relative to the project-context/ folder. Never absolute, never starting with project-context/, never climbing with '..'."
+    }
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "window": {
+    "since": "2026-07-14",
+    "until": "2026-10-12"
+  },
+  "mode": "parallel",
+  "jobs": [
+    {
+      "job_id": "reddit-startups-preseed",
+      "source": "reddit",
+      "target": "r/startups comments 'pre-seed'",
+      "status": "ok",
+      "records": 12,
+      "pages": 1,
+      "requests": 1,
+      "capped": true,
+      "dropped_out_of_window": 0,
+      "dropped_removed": 0,
+      "dropped_duplicate": 0,
+      "message": "",
+      "errors": [],
+      "window": {
+        "since": "2026-07-14",
+        "until": "2026-10-12"
+      },
+      "fixtures": false,
+      "record_ids": [
+        "reddit:t1_fictive33",
+        "reddit:t1_fictive34",
+        "reddit:t1_fictive35",
+        "reddit:t1_fictive36",
+        "reddit:t1_fictive37",
+        "reddit:t1_fictive43",
+        "reddit:t1_fictive44",
+        "reddit:t1_fictive48",
+        "reddit:t1_fictive56",
+        "reddit:t1_fictive58",
+        "reddit:t1_fictive59",
+        "reddit:t1_fictive63"
+      ]
+    },
+    {
+      "job_id": "reddit-startups-warm-intro",
+      "source": "reddit",
+      "target": "r/startups comments 'warm intro'",
+      "status": "ok",
+      "records": 12,
+      "pages": 1,
+      "requests": 1,
+      "capped": true,
+      "dropped_out_of_window": 0,
+      "dropped_removed": 0,
+      "dropped_duplicate": 0,
+      "message": "",
+      "errors": [],
+      "window": {
+        "since": "2026-07-14",
+        "until": "2026-10-12"
+      },
+      "fixtures": false,
+      "record_ids": [
+        "reddit:t1_fictive30",
+        "reddit:t1_fictive31",
+        "reddit:t1_fictive32",
+        "reddit:t1_fictive35",
+        "reddit:t1_fictive39",
+        "reddit:t1_fictive40",
+        "reddit:t1_fictive41",
+        "reddit:t1_fictive46",
+        "reddit:t1_fictive47",
+        "reddit:t1_fictive52",
+        "reddit:t1_fictive55",
+        "reddit:t1_fictive60"
+      ]
+    },
+    {
+      "job_id": "reddit-ycombinator-raise",
+      "source": "reddit",
+      "target": "r/ycombinator comments 'raise'",
+      "status": "ok",
+      "records": 10,
+      "pages": 1,
+      "requests": 1,
+      "capped": true,
+      "dropped_out_of_window": 0,
+      "dropped_removed": 0,
+      "dropped_duplicate": 0,
+      "message": "",
+      "errors": [],
+      "window": {
+        "since": "2026-07-14",
+        "until": "2026-10-12"
+      },
+      "fixtures": false,
+      "record_ids": [
+        "reddit:t1_fictive38",
+        "reddit:t1_fictive42",
+        "reddit:t1_fictive45",
+        "reddit:t1_fictive49",
+        "reddit:t1_fictive50",
+        "reddit:t1_fictive51",
+        "reddit:t1_fictive53",
+        "reddit:t1_fictive54",
+        "reddit:t1_fictive57",
+        "reddit:t1_fictive61"
+      ]
+    },
+    {
+      "job_id": "reddit-venturecapital-preseed",
+      "source": "reddit",
+      "target": "r/venturecapital comments 'pre-seed'",
+      "status": "ok",
+      "records": 6,
+      "pages": 1,
+      "requests": 1,
+      "capped": false,
+      "dropped_out_of_window": 0,
+      "dropped_removed": 0,
+      "dropped_duplicate": 0,
+      "message": "",
+      "errors": [],
+      "window": {
+        "since": "2026-07-14",
+        "until": "2026-10-12"
+      },
+      "fixtures": false,
+      "record_ids": [
+        "reddit:t1_fictive25",
+        "reddit:t1_fictive26",
+        "reddit:t1_fictive27",
+        "reddit:t1_fictive28",
+        "reddit:t1_fictive29",
+        "reddit:t1_fictive62"
+      ]
+    },
+    {
+      "job_id": "hn-warm-intro",
+      "source": "hn",
+      "target": "\"warm intro\"",
+      "status": "ok",
+      "records": 9,
+      "pages": 2,
+      "requests": 2,
+      "capped": false,
+      "dropped_out_of_window": 0,
+      "dropped_removed": 0,
+      "dropped_duplicate": 0,
+      "message": "",
+      "errors": [],
+      "window": {
+        "since": "2026-07-14",
+        "until": "2026-10-12"
+      },
+      "fixtures": false,
+      "record_ids": [
+        "hn:90017565",
+        "hn:90018736",
+        "hn:90019907",
+        "hn:90021078",
+        "hn:90022249",
+        "hn:90023420",
+        "hn:90024591",
+        "hn:90025762",
+        "hn:90026933"
+      ]
+    },
+    {
+      "job_id": "hn-pre-seed",
+      "source": "hn",
+      "target": "\"pre-seed\"",
+      "status": "ok",
+      "records": 8,
+      "pages": 1,
+      "requests": 1,
+      "capped": true,
+      "dropped_out_of_window": 0,
+      "dropped_removed": 0,
+      "dropped_duplicate": 0,
+      "message": "",
+      "errors": [],
+      "window": {
+        "since": "2026-07-14",
+        "until": "2026-10-12"
+      },
+      "fixtures": false,
+      "record_ids": [
+        "hn:90031617",
+        "hn:90032788",
+        "hn:90036301",
+        "hn:90038643",
+        "hn:90040985",
+        "hn:90043327",
+        "hn:90044498",
+        "hn:90045669"
+      ]
+    },
+    {
+      "job_id": "se-money-investors",
+      "source": "se",
+      "target": "money 'investors'",
+      "status": "ok",
+      "records": 3,
+      "pages": 1,
+      "requests": 1,
+      "capped": false,
+      "dropped_out_of_window": 0,
+      "dropped_removed": 0,
+      "dropped_duplicate": 0,
+      "message": "",
+      "errors": [],
+      "window": {
+        "since": "2026-07-14",
+        "until": "2026-10-12"
+      },
+      "quota_remaining": 290,
+      "fixtures": false,
+      "record_ids": [
+        "se:money:q9000066",
+        "se:money:q9000077",
+        "se:money:q9000088"
+      ]
+    },
+    {
+      "job_id": "discourse-nocode-funding",
+      "source": "discourse",
+      "target": "forum.example 'funding'",
+      "status": "ok",
+      "records": 6,
+      "pages": 1,
+      "requests": 7,
+      "capped": true,
+      "dropped_out_of_window": 0,
+      "dropped_removed": 0,
+      "dropped_duplicate": 0,
+      "message": "",
+      "errors": [],
+      "window": {
+        "since": "2026-07-14",
+        "until": "2026-10-12"
+      },
+      "fixtures": false,
+      "record_ids": [
+        "discourse:forum.example:900091",
+        "discourse:forum.example:900104",
+        "discourse:forum.example:900117",
+        "discourse:forum.example:900130",
+        "discourse:forum.example:900143",
+        "discourse:forum.example:900156"
+      ]
+    },
+    {
+      "job_id": "appstore-tablesplit-us",
+      "source": "appstore",
+      "target": "App Store us: Tablesplit",
+      "status": "empty",
+      "records": 0,
+      "pages": 2,
+      "requests": 2,
+      "capped": false,
+      "dropped_out_of_window": 0,
+      "dropped_removed": 0,
+      "dropped_duplicate": 0,
+      "message": "the iTunes review feed answered no entries; it does this intermittently, retry later or with another --country",
+      "errors": [],
+      "window": {
+        "since": "2026-07-14",
+        "until": "2026-10-12"
+      },
+      "fixtures": false,
+      "record_ids": []
+    }
+  ],
+  "summary": {
+    "ok": 8,
+    "empty": 1,
+    "error": 0,
+    "quota": 0
+  },
+  "records": 65,
+  "by_source": {
+    "discourse": 6,
+    "hn": 17,
+    "reddit": 39,
+    "se": 3
+  },
+  "duplicates_across_jobs": 1,
+  "already_seen": 0
+}

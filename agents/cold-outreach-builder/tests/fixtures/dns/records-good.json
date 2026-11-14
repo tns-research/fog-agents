@@ -1,0 +1,11 @@
+{
+  "_comment": "DNS answers for check_sender.py --records (offline test). Fictional domain.",
+  "TXT": {
+    "outreach.swanbase.example": ["v=spf1 include:_spf.mailhost.example -all"],
+    "s1._domainkey.outreach.swanbase.example": ["v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtestkey"],
+    "_dmarc.outreach.swanbase.example": ["v=DMARC1; p=quarantine; rua=mailto:dmarc@swanbase.example"]
+  },
+  "MX": {
+    "outreach.swanbase.example": ["10 mx1.mailhost.example.", "20 mx2.mailhost.example."]
+  }
+}

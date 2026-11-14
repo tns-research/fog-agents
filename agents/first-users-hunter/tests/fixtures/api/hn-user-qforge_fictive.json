@@ -1,0 +1,11 @@
+{
+ "key": "GET https://hacker-news.firebaseio.com/v0/user/qforge_fictive.json",
+ "status": 200,
+ "body": {
+  "id": "qforge_fictive",
+  "created": 1690000000,
+  "karma": 120,
+  "about": "Building booking tools for small clinics. https://www.linkedin.com/in/alex-dupuis-fictive",
+  "submitted": []
+ }
+}

@@ -1,0 +1,21 @@
+---
+import Base from '../../layouts/Base.astro';
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Five pricing experiments we ran in 2026",
+  "datePublished": "2026-02-10",
+  "dateModified": "2026-09-15",
+  "author": { "@type": "Person", "name": "Ana Ruiz", "url": "https://larkspur.example/authors/ana-ruiz/" }
+};
+---
+<Base title="Five pricing experiments we ran in 2026 | Larkspur" description="Five pricing page experiments we ran in 2026 on our own product, what each one changed in paid conversions and what we kept.">
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <main>
+    <article>
+      <h1>Five pricing experiments we ran in 2026</h1>
+      <p class="byline">By <a href="/authors/ana-ruiz/" rel="author">Ana Ruiz</a>, published <time datetime="2026-02-10">February 10, 2026</time></p>
+      <p>We changed one thing at a time on our own pricing page and measured paid conversions for four weeks each.</p>
+    </article>
+  </main>
+</Base>

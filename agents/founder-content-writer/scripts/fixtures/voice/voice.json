@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "language": "en",
+  "as_of": "2026-10-20",
+  "brand_name": "Brindlefen",
+  "sources": [
+    { "path": "voice/exemplars/past-post.md", "channel": "post", "source": "fictional fixture", "words": 40 }
+  ],
+  "metrics": {
+    "texts": 3,
+    "words": 900,
+    "sentences": 60,
+    "sentence_words": { "median": 14, "p25": 9, "p75": 18, "p90": 24, "max": 30 },
+    "person": { "first_singular": 0.2, "first_plural": 0.7, "on": 0, "second": 0.1, "brand_third_person": 0 },
+    "address": { "form": "you", "you": 12 },
+    "per_1000_words": { "exclamation": 0, "question": 0, "colon": 2, "semicolon": 0, "parenthesis": 1, "ellipsis": 0, "emoji": 0, "contraction": 8 },
+    "low_sample": false
+  },
+  "rules": [
+    { "id": "sentence-length", "rule": "Keep sentences near 14 words; nine in ten under 24.", "evidence": "60 sentences in 3 texts", "enforced_by": null },
+    { "id": "questions", "rule": "State things; the founder's texts ask the reader no question.", "evidence": "no question mark in 3 texts", "enforced_by": null },
+    { "id": "exclamation", "rule": "Use no exclamation mark.", "evidence": "none in 3 texts", "enforced_by": "writing-gate no-exclamation" },
+    { "id": "contractions", "rule": "Use contractions.", "evidence": "8 per 1000 words", "enforced_by": null }
+  ],
+  "examples": [
+    { "text": "Our board shows the bike closest to done first, and that is the whole idea.", "source": "voice/exemplars/past-post.md", "channel": "post" }
+  ],
+  "banned": [
+    { "text": "seamless", "reason": "the founder never writes it", "source": "founder" }
+  ],
+  "pack_path": "voice/rules.json",
+  "calibration": { "status": "pass", "checked_at": "2026-10-20", "texts": [ { "path": "voice/exemplars/past-post.md", "block_before": 0, "block_after": 0 } ] }
+}

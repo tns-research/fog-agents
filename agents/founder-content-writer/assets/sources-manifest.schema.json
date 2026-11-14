@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "founder-content-writer sources manifest",
+  "description": "Written by scripts/ingest.py, never by hand: <run>/sources/manifest.json lists the raw material of a batch, copied verbatim with its sha256. scripts/check_spec.py refuses a passage from a file that changed after ingestion.",
+  "type": "object",
+  "required": ["schema_version", "sources"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_id", "path", "kind", "origin", "sha256", "added_at"],
+        "additionalProperties": false,
+        "properties": {
+          "source_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,40}$" },
+          "path": { "type": "string", "pattern": "^sources/[A-Za-z0-9._-]+$", "description": "Relative to the batch folder." },
+          "kind": { "type": "string", "enum": ["voice_note", "notes", "call", "talk", "post", "market_signal", "web_page", "other"] },
+          "origin": { "type": "string", "enum": ["founder", "market_signal", "third_party"], "description": "founder: the founder's own material. market_signal: a verified handoff. third_party: a page someone else wrote, with its url." },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "added_at": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+          "url": { "type": "string", "pattern": "^https?://" },
+          "note": { "type": "string" },
+          "signals": {
+            "type": "array",
+            "description": "What ingest.py noticed: text addressed to an AI, an e-mail address or a phone number. Reported to the founder, never obeyed.",
+            "items": {
+              "type": "object",
+              "required": ["code", "line", "excerpt"],
+              "additionalProperties": false,
+              "properties": {
+                "code": { "type": "string", "enum": ["injection", "email", "phone"] },
+                "line": { "type": "integer", "minimum": 1 },
+                "excerpt": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

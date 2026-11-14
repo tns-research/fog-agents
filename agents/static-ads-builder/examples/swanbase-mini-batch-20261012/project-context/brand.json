@@ -1,0 +1,88 @@
+{
+  "schema_version": "2.0",
+  "name": "swanbase",
+  "source_url": "https://swanbase.co",
+  "as_of": "2026-10-10",
+  "mode": "dark",
+  "colors": {
+    "bg": "#030619",
+    "surface": "#101224",
+    "text": "#ffffff",
+    "text_secondary": "#c0c1c6",
+    "text_muted": "#9a9ba3",
+    "border": "#212435",
+    "accent": "#a855f7",
+    "accent_secondary": "#4a276e",
+    "on_accent": "#ffffff"
+  },
+  "radius": "14px",
+  "fonts": {
+    "display": {
+      "family": "Instrument Serif",
+      "fallback": "Georgia, serif",
+      "weights": [
+        400
+      ],
+      "source": "google_fonts"
+    },
+    "body": {
+      "family": "Inter",
+      "fallback": "system-ui, sans-serif",
+      "weights": [
+        400,
+        500,
+        600,
+        700
+      ],
+      "source": "google_fonts"
+    },
+    "fonts_url": "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
+  },
+  "logos": {
+    "on_dark": {
+      "wordmark": {
+        "path": "assets/logos/wordmark-on-dark.svg",
+        "format": "svg",
+        "width": 3213,
+        "height": 753,
+        "ink": "#ffffff"
+      },
+      "mark": {
+        "path": "assets/logos/mark-on-dark.svg",
+        "format": "svg",
+        "width": 1496,
+        "height": 1374,
+        "ink": "#ffffff"
+      }
+    },
+    "on_light": {
+      "wordmark": {
+        "path": "assets/logos/wordmark-on-light.svg",
+        "format": "svg",
+        "width": 3213,
+        "height": 753,
+        "ink": "#14130f"
+      },
+      "mark": {
+        "path": "assets/logos/mark-on-light.svg",
+        "format": "svg",
+        "width": 1496,
+        "height": 1374,
+        "ink": "#14130f"
+      }
+    }
+  },
+  "logo_text": "swanbase",
+  "logo_audit": {
+    "status": "unchecked"
+  },
+  "extensions": {
+    "static_ads_builder": {
+      "light_paper": "#f3edfc",
+      "palette": {
+        "lavender": "#ddc9f7",
+        "yellow": "#ffd23f"
+      }
+    }
+  }
+}

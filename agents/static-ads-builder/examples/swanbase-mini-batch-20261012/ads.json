@@ -1,0 +1,167 @@
+{
+  "schema_version": "1.0",
+  "meta": {
+    "project": "swanbase",
+    "brand": "project-context/brand.json",
+    "language": "en",
+    "date": "2026-10-12",
+    "campaign": "seed-deck-guide",
+    "utm": {
+      "source": "facebook",
+      "medium": "paid_social",
+      "campaign": "seed-deck-guide"
+    }
+  },
+  "sources": [
+    {
+      "id": "docsend",
+      "label": "DocSend, 2026",
+      "url": "https://www.docsend.com/blog/what-vcs-really-want-to-see-inside-your-seed-deck/",
+      "title": "Sealing the deal in 12 slides: What VCs really want to see inside your seed deck (updated 2026-03-10)",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "guide",
+      "label": "swanbase blog",
+      "url": "https://swanbase.co/en/blog/startup-pitch-deck-guide-2026/",
+      "title": "How to build a winning pitch deck: the 14-slide structure (2026)",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "ads": [
+    {
+      "id": "deck-reading-time",
+      "n": 1,
+      "stage": "tofu",
+      "angle": "origin-number",
+      "style": "bold-statement",
+      "formats": [
+        "1:1",
+        "4:5",
+        "9:16"
+      ],
+      "surface": "brand",
+      "persuasion_principle": "Authority: a measured number from a named third party, not a promise.",
+      "copy": {
+        "headline": "A VC gives your seed deck *3 min 44 s*.",
+        "subhead": "Founders who open with purpose, problem, solution and market size are more likely to raise.",
+        "cta": "Read the 14-slide guide"
+      },
+      "proof": {
+        "text": "Average time a VC spends reading a seed deck.",
+        "source": "docsend"
+      },
+      "claims": [
+        {
+          "text": "A VC spends 3 min 44 s on a seed deck, on average",
+          "source": "docsend",
+          "verified_at": "2026-10-10"
+        },
+        {
+          "text": "Founders who open with purpose, problem, solution and market size are more likely to raise funding",
+          "source": "docsend",
+          "verified_at": "2026-10-10"
+        },
+        {
+          "text": "the 14-slide structure",
+          "source": "guide",
+          "verified_at": "2026-10-12"
+        }
+      ],
+      "meta_ad": {
+        "primary_text": "DocSend measured it: a VC spends 3 min 44 s on a seed deck, on average. Our free guide walks through a 14-slide structure, slide by slide.",
+        "headline": "The 14-slide deck guide",
+        "description": "Paris accelerator for pre-seed and seed founders",
+        "cta": "LEARN_MORE",
+        "destination_url": "https://swanbase.co/en/blog/startup-pitch-deck-guide-2026/",
+        "ad_set": "tofu-founders-broad"
+      }
+    },
+    {
+      "id": "storytelling-slides",
+      "n": 2,
+      "stage": "mofu",
+      "angle": "process-reveal",
+      "style": "three-benefits-card",
+      "formats": [
+        "1:1",
+        "4:5",
+        "9:16"
+      ],
+      "surface": "light",
+      "persuasion_principle": "Curiosity gap closed by a concrete method: three named slides.",
+      "copy": {
+        "headline": "Three slides that turn a deck into *a story*.",
+        "bullets": [
+          {
+            "label": "Slide 3",
+            "text": "The metaproblem"
+          },
+          {
+            "label": "Slide 4",
+            "text": "Why nobody has pulled it off"
+          },
+          {
+            "label": "Slide 5",
+            "text": "We cracked the code"
+          }
+        ],
+        "cta": "Read the guide"
+      },
+      "claims": [
+        {
+          "text": "Slides 3, 4 and 5 of the 14-slide structure: the metaproblem, why nobody has pulled it off, we cracked the code",
+          "source": "guide",
+          "verified_at": "2026-10-12"
+        }
+      ],
+      "meta_ad": {
+        "primary_text": "The swanbase deck structure adds three storytelling slides: the metaproblem, why nobody has pulled it off, and how you cracked the code.",
+        "headline": "Slides that tell a story",
+        "description": "Free guide on the swanbase blog",
+        "cta": "LEARN_MORE",
+        "destination_url": "https://swanbase.co/en/blog/startup-pitch-deck-guide-2026/",
+        "ad_set": "mofu-guide-readers"
+      }
+    },
+    {
+      "id": "apply-paris",
+      "n": 3,
+      "stage": "bofu",
+      "angle": "easy-first-step",
+      "style": "ugc-text-overlay",
+      "formats": [
+        "1:1",
+        "4:5",
+        "9:16"
+      ],
+      "surface": "brand",
+      "persuasion_principle": "Low-friction next step over a real photo of the place.",
+      "copy": {
+        "headline": "Build your startup in Paris, *all year round*.",
+        "subhead": "swanbase is an accelerator for pre-seed and seed founders.",
+        "cta": "Apply"
+      },
+      "media": [
+        {
+          "role": "photo",
+          "src": "media/screening-room-polaroid.jpg",
+          "alt": "Polaroid pinned on cork: founders seen from the back, facing a screen in a dim room at swanbase.",
+          "fit": "contain",
+          "visible_text": [
+            "patagonia"
+          ]
+        }
+      ],
+      "meta_ad": {
+        "primary_text": "swanbase is a Paris accelerator for pre-seed and seed founders, with an accompaniment that runs all year round, not a sprint.",
+        "headline": "Apply to swanbase",
+        "description": "Paris accelerator, pre-seed and seed",
+        "cta": "APPLY_NOW",
+        "destination_url": "https://swanbase.co/en/",
+        "ad_set": "bofu-site-visitors"
+      },
+      "notes": "The photo shows a third-party wordmark on a sweatshirt (declared in visible_text). Founder decision before paid spend: keep the photo or pick another one from the polaroid series."
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+/* styles.css: one block per visual style of skills/visual-styles/REGISTRY.md.
+ * Format classes: .f-1x1 (1080x1080), .f-4x5 (1080x1350), .f-9x16 (1080x1920,
+ * text kept in the Meta Reels safe band). 1:1 and 9:16 leave a near-square
+ * text box, so they share the "row" layouts; 4:5 stacks. On 9:16 the media
+ * of the media styles leave the text box for .ext (base.css). */
+
+/* ---------- bold-statement ---------- */
+.st-bold-statement .main { justify-content: center; gap: 36px; }
+.st-bold-statement .head { line-height: .98; }
+.st-bold-statement .sub { max-width: 92%; }
+
+/* ---------- meme-static ---------- */
+.st-meme-static .note {
+  background: var(--card); border: 2px solid var(--rule); border-radius: var(--radius);
+  padding: 48px; display: flex; flex-direction: column; gap: 26px; flex: 1 1 auto; min-height: 0; justify-content: center;
+}
+.st-meme-static .head { font-weight: 800; line-height: 1.12; letter-spacing: -.018em; }
+
+/* ---------- three-benefits-card ---------- */
+.tb-grid { display: flex; gap: 40px; flex: 1 1 auto; min-height: 0; align-items: stretch; }
+.f-4x5 .tb-grid { flex-direction: column; gap: 32px; }
+.tb-grid.solo { align-items: center; }
+.tb-text { flex: 1 1 0; display: flex; align-items: center; min-width: 0; min-height: 0; }
+.tb-grid.solo .tb-text { align-items: center; }
+.st-three-benefits-card .list { gap: 24px; }
+.st-three-benefits-card .list li { padding-bottom: 22px; border-bottom: 2px solid var(--rule); }
+.st-three-benefits-card .list li:last-child { border-bottom: 0; padding-bottom: 0; }
+
+/* ---------- us-vs-them-comparison ---------- */
+.cmp { display: grid; grid-template-columns: 1fr 1.14fr; column-gap: 20px; position: relative; flex: 1 1 auto; min-height: 0; align-content: start; }
+.cmp-bg { border-radius: var(--radius); }
+.cmp-bg.them { grid-column: 1; background: var(--card); }
+.cmp-bg.us { grid-column: 2; background: var(--card); border: 3px solid var(--accent-mark); }
+.col-l { padding: 28px 28px 12px; font-size: 30px; font-weight: 700; line-height: 1.15; position: relative; }
+.col-l.them { grid-column: 1; color: var(--muted); }
+.col-l.us { grid-column: 2; color: var(--accent-text); }
+.cell { padding: 12px 28px; display: flex; gap: 14px; align-items: flex-start; position: relative; min-width: 0; }
+.cell.last { padding-bottom: 30px; }
+.cell.them { grid-column: 1; color: var(--ink-2); }
+.cell.them .ico { color: var(--muted); }
+.cell.us { grid-column: 2; }
+.cell.us .li-t { font-weight: 600; }
+
+/* ---------- crossed-out-problems ---------- */
+.list.struck { gap: 22px; }
+.list.struck .li-t { text-decoration: line-through; text-decoration-thickness: 4px; text-decoration-color: var(--accent-mark); color: var(--ink-2); }
+.list.struck .ico { color: var(--muted); }
+.sub.resolve { color: var(--ink); font-weight: 700; margin-top: 8px; }
+
+/* ---------- social-proof-card ---------- */
+.quote-card { background: var(--card); border-radius: var(--radius); padding: 48px; flex: 1 1 auto; min-height: 0; display: flex; align-items: center; }
+.proof.big { max-width: none; gap: 22px; }
+.pq { font-family: var(--font-display); font-weight: var(--display-weight); line-height: 1.14; }
+.pq .em { background: var(--hl); color: var(--on-hl); padding: 0 .12em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+
+/* ---------- feature-callout-arrows ---------- */
+.co-stage { position: relative; display: flex; gap: 28px; flex: 1 1 auto; min-height: 0; align-items: stretch; }
+.co-col { flex: 0 0 27%; display: flex; flex-direction: column; justify-content: space-around; gap: 24px; z-index: 2; min-width: 0; }
+.co { background: var(--card); border: 2px solid var(--accent-mark); border-radius: var(--radius); padding: 16px 18px; }
+.co-media { flex: 1 1 0; align-self: center; z-index: 0; }
+.co-lines { position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; overflow: visible; }
+.co-lines line { stroke: var(--accent-mark); stroke-width: 4; }
+.co-lines circle { fill: var(--accent-mark); }
+
+/* ---------- myth-vs-fact ---------- */
+.mf { border-radius: var(--radius); padding: 40px 44px; display: flex; flex-direction: column; gap: 14px; flex: 1 1 0; min-height: 0; justify-content: center; }
+.mf.myth { background: var(--card); }
+.mf.myth .mf-t { color: var(--ink-2); }
+.mf.fact { background: var(--solid); color: var(--on-solid); }
+.mf-l { font-size: 30px; font-weight: 700; letter-spacing: .06em; line-height: 1; }
+.mf.myth .mf-l { color: var(--muted); }
+.mf-t { line-height: 1.18; font-family: var(--font-display); font-weight: var(--display-weight); }
+
+/* ---------- reply-to-comment ---------- */
+.thread { background: var(--card); border-radius: var(--radius); padding: 40px; display: flex; flex-direction: column; gap: 32px; flex: 1 1 auto; min-height: 0; justify-content: center; }
+.cm { display: flex; gap: 20px; min-width: 0; }
+.cm.reply { margin-left: 76px; }
+.av { width: 64px; height: 64px; border-radius: 50%; background: var(--rule); flex: 0 0 64px; display: flex; align-items: center; justify-content: center; }
+.av.brand { background: var(--ink); color: var(--paper); }
+.av-mark { width: 38px; height: 38px; }
+.cm-b { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.cm-a { font-size: 28px; font-weight: 700; line-height: 1.2; }
+.cm-t { line-height: 1.3; }
+
+/* ---------- mini-landing-page ---------- */
+.ml-body { display: flex; flex-direction: column; gap: 28px; flex: 1 1 auto; min-height: 0; }
+.f-1x1 .ml-body.with-media, .f-9x16 .ml-body.with-media { flex-direction: row; gap: 36px; }
+.ml-media { flex: 1 1 0; }
+.ml-text { display: flex; flex-direction: column; gap: 26px; flex: 1 1 0; justify-content: center; min-width: 0; min-height: 0; }
+.ml-text .proof { max-width: none; border-top: 2px solid var(--rule); padding-top: 22px; }
+
+/* ---------- benefit-timeline ---------- */
+.list.timeline { position: relative; gap: 28px; }
+.list.timeline::before { content: ""; position: absolute; left: 20px; top: 26px; bottom: 26px; width: 4px; background: var(--accent-mark); }
+.list.timeline .ico { width: 44px; height: 44px; flex-basis: 44px; background: var(--paper); border-radius: 50%; position: relative; margin-top: 0; }
+
+/* ---------- flowchart-decision ---------- */
+.q-node { background: var(--solid); color: var(--on-solid); border-radius: var(--radius); padding: 32px 36px; }
+.branches { display: flex; gap: 24px; flex: 1 1 auto; min-height: 0; align-items: stretch; }
+.br { flex: 1 1 0; display: flex; flex-direction: column; align-items: center; gap: 12px; min-width: 0; }
+.br-line { width: 4px; height: 40px; background: var(--accent-mark); flex: 0 0 auto; }
+.br-l { font-size: 30px; font-weight: 700; line-height: 1; color: var(--accent-text); border: 2px solid var(--accent-mark); border-radius: 999px; padding: 8px 20px; }
+.br-box { background: var(--card); border-radius: var(--radius); padding: 28px; flex: 1 1 auto; width: 100%; display: flex; align-items: center; min-height: 0; }
+
+/* ---------- testimonial-screenshot ---------- */
+.review {
+  background: var(--paper); color: var(--ink); border: 2px solid var(--rule); border-radius: var(--radius);
+  padding: 44px; display: flex; flex-direction: column; gap: 20px; flex: 1 1 auto; min-height: 0; justify-content: center;
+}
+.rv-h { display: flex; align-items: center; gap: 18px; }
+.review .pq { font-family: var(--font-body); font-weight: 500; line-height: 1.3; }
+
+/* ---------- cost-reframe-card ---------- */
+.cr-grid { display: flex; gap: 24px; flex: 1 1 auto; min-height: 0; }
+.f-4x5 .cr-grid { flex-direction: column; }
+.cr { flex: 1 1 0; border-radius: var(--radius); padding: 36px; display: flex; flex-direction: column; justify-content: center; gap: 10px; min-width: 0; min-height: 0; }
+.cr.them { background: var(--card); }
+.cr.us { background: var(--solid); color: var(--on-solid); }
+.cr-l { font-size: 30px; font-weight: 600; line-height: 1.2; }
+.fig { font-family: var(--font-display); font-weight: var(--display-weight); line-height: 1; white-space: nowrap; }
+.cr.them .fig { color: var(--ink-2); text-decoration: line-through; text-decoration-thickness: 6px; text-decoration-color: var(--accent-mark); }
+.fig-n { font-size: 28px; line-height: 1.25; }
+
+/* ---------- ugc-text-overlay ---------- */
+.st-ugc-text-overlay .bg .media.full { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: 0; min-height: 0; }
+.st-ugc-text-overlay .main { gap: 18px; }
+.st-ugc-text-overlay .spacer { flex: 1 1 auto; }
+.cap { align-self: flex-start; max-width: 92%; line-height: 1.5; }
+.cap-t {
+  background: var(--paper); color: var(--ink); padding: .06em .32em; font-weight: 800; line-height: 1.5;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+.cap.small .cap-t { font-weight: 600; }
+.st-ugc-text-overlay .top .logo, .st-ugc-text-overlay .top .badge { background: var(--paper); padding: 10px 16px; border-radius: var(--radius); }
+
+/* ---------- before-after-asymmetric ---------- */
+.ba-grid { display: flex; gap: 20px; flex: 1 1 auto; min-height: 0; }
+.f-4x5 .ba-grid { flex-direction: column; }
+.ba { border-radius: var(--radius); padding: 32px; display: flex; flex-direction: column; gap: 18px; min-width: 0; min-height: 0; }
+.ba.them { flex: 35 1 0; background: var(--card); }
+.ba.us { flex: 65 1 0; border: 3px solid var(--accent-mark); }
+.ba-l { font-weight: 700; font-size: 30px; line-height: 1.1; }
+.ba.them .ba-l { color: var(--muted); }
+.ba.them .li-t { color: var(--ink-2); }
+.ba.them .ico { color: var(--muted); }
+.ba.us .ba-l { color: var(--accent-text); }
+.ba-media { flex: 1 1 0; min-height: 160px; }
+
+/* ---------- ingredient-origin-strip ---------- */
+.os-grid { display: flex; gap: 24px; flex: 1 1 auto; min-height: 0; }
+.f-4x5 .os-grid { flex-direction: column; }
+.os-media { flex: 1 1 0; }
+.os-text { flex: 1 1 0; display: flex; flex-direction: column; justify-content: center; gap: 24px; min-width: 0; min-height: 0; }
+
+/* ---------- hybrid-2d-3d-fusion ---------- */
+.hy-panels span { position: absolute; display: block; }
+.hy-a { left: 0; right: 0; bottom: 0; height: 44%; background: var(--card); }
+.hy-b { left: 0; right: 0; bottom: 44%; height: 10px; background: var(--ink); }
+.hy-c { display: none; }
+.hy-stage { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; }
+.hy-media { background: transparent; }
+
+/* Vertical rhythm: list styles sit in the middle of the free space. */
+.st-us-vs-them-comparison .cmp { align-content: center; flex: 0 1 auto; }
+.st-us-vs-them-comparison .main, .st-benefit-timeline .main, .st-crossed-out-problems .main { justify-content: center; gap: 40px; }
+.tb-grid .tb-media { flex: .8 1 0; }
+.tb-grid .tb-text { flex: 1.2 1 0; }
+
+/* 9:16 visual zone: the hybrid panel rises behind the photo. */
+.f-9x16.st-hybrid-2d-3d-fusion .hy-a { height: 40%; }
+.f-9x16.st-hybrid-2d-3d-fusion .hy-b { bottom: 40%; }
+.ext .hy-stage { justify-content: flex-start; }

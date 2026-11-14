@@ -1,0 +1,27 @@
+1
+00:00:00,400 --> 00:00:03,100
+Most founders pitch the product first.
+
+2
+00:00:03,300 --> 00:00:06,700
+Investors don't fund products. They fund a problem they believe in.
+
+3
+00:00:07,000 --> 00:00:09,700
+So raisin hand if you have ever opened with a demo.
+
+4
+00:00:10,300 --> 00:00:13,500
+Here is what we changed during the swan base program.
+
+5
+00:00:13,700 --> 00:00:17,000
+We open with one customer story, told in their own words.
+
+6
+00:00:17,300 --> 00:00:20,900
+The demo comes last, and it only shows the moment the problem disappears.
+
+7
+00:00:21,200 --> 00:00:23,700
+Start with the problem. The product will follow.

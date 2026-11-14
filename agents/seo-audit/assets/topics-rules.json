@@ -1,0 +1,367 @@
+{
+  "_comment": "An H2 or H3 equal to the title of a live page is a link card (related articles) and never counts as a section. broad: when no page holds every word of the subject as most of its own subject, and at least min_pages pages score within margin of the best (below max_score), the subject is new and broad (pillar candidate), with those pages listed. word_weights: from min_lines registry lines on, each word weighs max(floor, 1 - slope x share of the lines that hold it) in the Jaccard, so words every page shares count less. drop_small_numbers removes listicle counts (12 meilleurs). joins rewrites a split spelling into one word before tokens (start up, startup). Single source of the topic registry rules (scripts/topics.py). A project overrides any key with a topics object in its config.json (--config). Scores run from 0 to 1: Jaccard of the normalized, stemmed tokens of two texts, raised by substring_weight x (1 - Jaccard) when the shorter token sequence appears whole and in order inside the longer one. check: a score >= duplicate against the query, an alias or the title of a live page, a brief or a draft is a duplicate; >= refresh_main against them, or >= refresh_section against one of their H2 or H3, is a refresh of that URL (or that brief); anything else is new. A proposed topic never blocks: it is reported as already proposed. propose groups two ideas when their score >= cluster. A subject of two words or more whose every word is in the query, an alias or the title of a live page is a duplicate when its words make at least duplicate_contained of that text's words (a broad subject inside a longer page stays a refresh). The substring bonus only counts a registry text inside the subject when it has two words or more. Pages under a /xx/ language prefix rank after the pages of the site's default language unless the subject is in that language (English detected by its stop words; default_language, null by default, names the language of unprefixed pages).",
+  "thresholds": {
+    "duplicate": 0.85,
+    "refresh_main": 0.55,
+    "refresh_section": 0.55,
+    "cluster": 0.75,
+    "duplicate_contained": 0.7
+  },
+  "substring_weight": 0.5,
+  "min_token_length": 2,
+  "drop_years": true,
+  "drop_small_numbers": true,
+  "word_weights": {
+    "min_lines": 30,
+    "floor": 0.2,
+    "slope": 2.0
+  },
+  "stopwords": {
+    "fr": [
+      "le",
+      "la",
+      "les",
+      "l",
+      "un",
+      "une",
+      "des",
+      "du",
+      "de",
+      "d",
+      "au",
+      "aux",
+      "et",
+      "ou",
+      "où",
+      "à",
+      "a",
+      "en",
+      "dans",
+      "par",
+      "pour",
+      "sur",
+      "sous",
+      "avec",
+      "sans",
+      "ce",
+      "cet",
+      "cette",
+      "ces",
+      "son",
+      "sa",
+      "ses",
+      "leur",
+      "leurs",
+      "notre",
+      "nos",
+      "votre",
+      "vos",
+      "mon",
+      "ma",
+      "mes",
+      "ton",
+      "ta",
+      "tes",
+      "que",
+      "qu",
+      "qui",
+      "quoi",
+      "dont",
+      "comment",
+      "pourquoi",
+      "quand",
+      "quel",
+      "quelle",
+      "quels",
+      "quelles",
+      "est",
+      "sont",
+      "être",
+      "avoir",
+      "fait",
+      "faire",
+      "plus",
+      "moins",
+      "tout",
+      "tous",
+      "toute",
+      "toutes",
+      "se",
+      "s",
+      "y",
+      "ne",
+      "pas",
+      "il",
+      "elle",
+      "ils",
+      "elles",
+      "on",
+      "nous",
+      "vous",
+      "je",
+      "tu",
+      "c",
+      "j",
+      "n",
+      "m",
+      "t",
+      "lui",
+      "combien",
+      "entre"
+    ],
+    "en": [
+      "the",
+      "a",
+      "an",
+      "of",
+      "to",
+      "in",
+      "on",
+      "for",
+      "and",
+      "or",
+      "with",
+      "without",
+      "your",
+      "you",
+      "our",
+      "is",
+      "are",
+      "be",
+      "how",
+      "why",
+      "what",
+      "when",
+      "which",
+      "who",
+      "whose",
+      "where",
+      "do",
+      "does",
+      "can",
+      "should",
+      "will",
+      "my",
+      "me",
+      "i",
+      "it",
+      "its",
+      "this",
+      "that",
+      "these",
+      "those",
+      "from",
+      "by",
+      "at",
+      "as",
+      "into",
+      "about",
+      "vs",
+      "versus",
+      "much",
+      "many",
+      "get"
+    ],
+    "filler": [
+      "guide",
+      "guides",
+      "ultimate",
+      "complete",
+      "complet",
+      "définitif",
+      "blog",
+      "article",
+      "top",
+      "best",
+      "meilleur",
+      "meilleurs",
+      "meilleure",
+      "meilleures"
+    ]
+  },
+  "stem_suffixes": [
+    {
+      "suffix": "ements",
+      "min_stem": 4
+    },
+    {
+      "suffix": "ement",
+      "min_stem": 4
+    },
+    {
+      "suffix": "ations",
+      "min_stem": 3
+    },
+    {
+      "suffix": "ation",
+      "min_stem": 3
+    },
+    {
+      "suffix": "euses",
+      "min_stem": 3
+    },
+    {
+      "suffix": "euse",
+      "min_stem": 3
+    },
+    {
+      "suffix": "ments",
+      "min_stem": 4
+    },
+    {
+      "suffix": "ment",
+      "min_stem": 4
+    },
+    {
+      "suffix": "ings",
+      "min_stem": 4
+    },
+    {
+      "suffix": "ing",
+      "min_stem": 4
+    },
+    {
+      "suffix": "ies",
+      "min_stem": 3,
+      "replace": "y"
+    },
+    {
+      "suffix": "eurs",
+      "min_stem": 3
+    },
+    {
+      "suffix": "eur",
+      "min_stem": 3
+    },
+    {
+      "suffix": "aux",
+      "min_stem": 3,
+      "replace": "al"
+    },
+    {
+      "suffix": "ers",
+      "min_stem": 3
+    },
+    {
+      "suffix": "er",
+      "min_stem": 3
+    },
+    {
+      "suffix": "es",
+      "min_stem": 3
+    },
+    {
+      "suffix": "ed",
+      "min_stem": 4
+    },
+    {
+      "suffix": "s",
+      "min_stem": 3
+    },
+    {
+      "suffix": "x",
+      "min_stem": 3
+    },
+    {
+      "suffix": "e",
+      "min_stem": 3
+    }
+  ],
+  "ignore_headings": [
+    "faq",
+    "faqs",
+    "questions fréquentes",
+    "sources",
+    "references",
+    "références",
+    "conclusion",
+    "sommaire",
+    "table of contents",
+    "table des matières",
+    "contents",
+    "summary",
+    "résumé",
+    "introduction",
+    "related articles",
+    "articles similaires",
+    "à lire aussi",
+    "lire aussi",
+    "read next",
+    "read more",
+    "newsletter",
+    "share",
+    "partager",
+    "about the author",
+    "à propos de l auteur",
+    "key takeaways",
+    "en bref",
+    "in short",
+    "tl dr",
+    "tldr",
+    "comments",
+    "commentaires"
+  ],
+  "template_heading_share": 0.5,
+  "template_heading_min_pages": 4,
+  "title_separators": [
+    " | ",
+    " - ",
+    " \u2013 ",
+    " \u2014 ",
+    " · ",
+    " • ",
+    " :: ",
+    " / "
+  ],
+  "exclude_path_patterns": [
+    "/(tag|tags|category|categories|categorie|catégorie|author|authors|auteur|auteurs)(/|$)",
+    "/page/\\d+/?$",
+    "[?&](page|p|paged)=\\d+",
+    "/(search|recherche|login|signin|signup|account|compte|cart|panier|checkout|feed|rss|wp-admin|wp-content|wp-json)(/|$)",
+    "\\.(xml|txt|json|pdf|png|jpe?g|gif|webp|svg)$"
+  ],
+  "exclude_site_pages": [
+    "legal_page",
+    "privacy_page",
+    "contact_page"
+  ],
+  "broad": {
+    "margin": 0.03,
+    "min_pages": 3,
+    "max_score": 0.9
+  },
+  "joins": {
+    "start up": "startup",
+    "start ups": "startups",
+    "co founder": "cofounder",
+    "co founders": "cofounders",
+    "co fondateur": "cofondateur",
+    "co fondateurs": "cofondateurs",
+    "e mail": "email",
+    "e mails": "emails",
+    "e commerce": "ecommerce",
+    "no code": "nocode",
+    "low code": "lowcode"
+  },
+  "language_root_pattern": "^/[a-z]{2}(?:[-_][a-z]{2})?/?$",
+  "propose": {
+    "max_ideas": 30,
+    "min_per_source": 5,
+    "max_idea_tokens": 10,
+    "gsc_min_impressions": 10,
+    "suggest_max_seeds": 10,
+    "suggest_delay_s": 0.3,
+    "competitor_max_urls": 400,
+    "competitor_max_sitemaps": 20,
+    "fetch_titles_max": 30,
+    "timeout_s": 15,
+    "news_slug_pattern": "\\b(press|news|actu|actualite|actualites|communique|release|webinar|webinaire|job|jobs|careers|carriere|recrutement|hiring)\\b",
+    "priority": {
+      "per_source": 10,
+      "per_competitor": 4,
+      "per_extra_hit": 1,
+      "impressions_log10": 10
+    }
+  },
+  "default_language": null
+}

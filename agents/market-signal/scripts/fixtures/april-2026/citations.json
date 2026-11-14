@@ -1,0 +1,64 @@
+{
+  "_comment": "Fictional reconstruction of the April 2026 market-signal run: ten quotes as that run printed them, rewritten on invented articles (every text, title, url and name in corpus.jsonl is fictional) so that each keeps the defect the real one had, plus a 'Frustrations (their language)' line that exists in no scrape. The run had no record ids: each quote is mapped to the scrape it came from. Window: run date 2026-04-28, recency_days 90. Expected verdicts live in selftest.py. q_fix is the V2 way: a record id plus a passage copied from the record.",
+  "window": {
+    "since": "2026-01-28",
+    "until": "2026-04-28"
+  },
+  "quotes": [
+    {
+      "quote_id": "q_a01",
+      "record_id": "web:april-s5",
+      "passage": "The weeks founders spend in these programmes are too short, and the sessions are often improvised or lack a clear plan. Many rely on volunteers who drop in to speak to startups a couple of hours a month, which he found wasn't enough time to change much for the founders."
+    },
+    {
+      "quote_id": "q_a02",
+      "record_id": "web:april-s6",
+      "passage": "Last spring, I saw a founder make a choice that will probably sink their company. They signed up for an 'accelerator' that was, in practice, an incubator dressed up in an accelerator's branding."
+    },
+    {
+      "quote_id": "q_a03",
+      "record_id": "web:april-s6",
+      "passage": "Theory doesn't help at this stage. Templates don't help. You need mentors who have taken these calls under the same pressure you're under... The best programme mentors carry scars."
+    },
+    {
+      "quote_id": "q_a04",
+      "record_id": "web:april-s1",
+      "passage": "Although Hangar Nord says English is its working language, more than 60% of its events and workshops are run in French only."
+    },
+    {
+      "quote_id": "q_a06",
+      "record_id": "web:april-s7",
+      "passage": "L'antenne parisienne de l'accélérateur londonien [Cohort Zero], installée sur le campus Hangar Nord, va donc fermer ses portes... Cette décision n'est pas vraiment une surprise, dans la mesure où Rampart Ventures... a lui aussi choisi cette année de fermer ses bureaux à Paris."
+    },
+    {
+      "quote_id": "q_a07",
+      "record_id": "web:april-s6",
+      "passage": "Burning runway on workshops built for a company at an entirely different stage."
+    },
+    {
+      "quote_id": "q_a08",
+      "record_id": "web:april-s4",
+      "passage": "Hangar Nord has been a fantastic catalyst that let us save 6 months of work and thanks to which we can now claim to be a credible player on the European insurance market."
+    },
+    {
+      "quote_id": "q_a09",
+      "record_id": "web:april-s4",
+      "passage": "All the VCs come to Hangar Nord. Northfold, Brightwater, Kelp Capital, Ondine Partners... This proximity saves a huge amount of time and, above all, is a rare opportunity during a growth phase."
+    },
+    {
+      "quote_id": "q_a10",
+      "record_id": "web:april-s6",
+      "passage": "Calling every programme an 'accelerator' actively hurts founders by hiding the real difference between what a company needs at each stage of its life."
+    },
+    {
+      "quote_id": "q_a11",
+      "record_id": null,
+      "passage": "Mentors who never shipped anything"
+    },
+    {
+      "quote_id": "q_fix",
+      "record_id": "web:april-s6",
+      "passage": "Theory doesn't help at this stage. Templates don't help."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+<style>
+/* cover: 1200x630, the og:image and the article hero. Title fitted by
+   visuals.js between 48 and 84 px on at most 4 lines. */
+.canvas.cover { padding: 64px 72px; justify-content: space-between; gap: 24px; }
+.cv-top { display: flex; align-items: center; min-height: 40px; position: relative; z-index: 1; }
+.cv-top .logo { height: 40px; margin-left: 0; }
+.cv-top .logo-text { font-size: 32px; }
+.cv-main { display: flex; flex-direction: column; gap: 20px; max-width: 860px; position: relative; z-index: 1; }
+.cv-kicker { font-size: 24px; line-height: 1.3; font-weight: var(--body-strong); color: var(--accent-ink); letter-spacing: 0.01em; }
+.cv-title { font-family: var(--font-display); font-weight: var(--display-weight); font-size: 64px; line-height: 1.08; letter-spacing: -0.015em; color: var(--text); }
+.cv-bar { width: 96px; height: 8px; background: var(--accent); border-radius: min(var(--radius), 4px); position: relative; z-index: 1; }
+.cv-motif { position: absolute; right: 0; bottom: 0; width: 260px; height: 260px; z-index: 0; }
+.cv-motif .arc { fill: none; stroke: var(--border); stroke-width: 2; }
+.cv-motif .arc.a { stroke: var(--accent); stroke-width: 8; }
+</style>
+<main class="canvas fixed cover" data-kind="cover">
+  <svg class="cv-motif" viewBox="0 0 260 260" aria-hidden="true">
+    <path class="arc" d="M 260 20 A 240 240 0 0 0 20 260"/>
+    <path class="arc" d="M 260 80 A 180 180 0 0 0 80 260"/>
+    <path class="arc a" d="M 260 140 A 120 120 0 0 0 140 260"/>
+    <path class="arc" d="M 260 200 A 60 60 0 0 0 200 260"/>
+  </svg>
+  <div class="cv-top">{{logo}}</div>
+  <div class="cv-main">
+    {{kicker}}
+    <h1 class="cv-title tx" data-where="cover.title" data-fit-min="48" data-fit-max="84" data-fit-lines="4" data-fit-order="1" data-fit>{{title}}</h1>
+  </div>
+  <div class="cv-bar"></div>
+</main>

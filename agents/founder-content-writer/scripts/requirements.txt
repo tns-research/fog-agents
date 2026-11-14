@@ -1,0 +1,3 @@
+# founder-content-writer scripts: Python 3.9+ standard library only, nothing to install.
+# They read agents/content-publisher (limits, link rules), shared/ (writing gate, validator)
+# and, when present, agents/market-signal (sidecar validator) and agents/project-context (voice schema).

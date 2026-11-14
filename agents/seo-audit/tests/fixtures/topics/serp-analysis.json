@@ -1,0 +1,23 @@
+{
+  "_comment": "Fictional serp-analysis.json (only the keys topics.py reads): People also ask of one query.",
+  "version": "1.1",
+  "data": [
+    {
+      "query": "pitch deck",
+      "features": {
+        "paa": [
+          "How many slides should a pitch deck have?",
+          "What is a cap table slide?"
+        ],
+        "paa_status": "captured"
+      }
+    },
+    {
+      "query": "burn rate",
+      "features": {
+        "paa": [],
+        "paa_status": "unverified"
+      }
+    }
+  ]
+}

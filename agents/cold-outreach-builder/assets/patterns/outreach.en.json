@@ -1,0 +1,77 @@
+{
+  "pack": "outreach-en",
+  "language": "en",
+  "description": "Cold-outreach rules added on top of the shared English pack by scripts/lint_outreach.py (format: shared/schemas/copy-rules.schema.json). Openers, disclaimers, announced asks, staged setups, flattery and invented scarcity. Structural checks (length, links, tokens, signature, duplicates, numbers, sourced fact) live in the script, not here.",
+  "rules": [
+    {
+      "code": "opener-cliche",
+      "family": "cold-opener",
+      "level": "BLOCK",
+      "pattern": "\\bI hope (?:this|my|you|you're|you are|all is)\\b[^.!?\\n]{0,40}\\bwell\\b|\\bI trust this (?:email|message|note) finds\\b|^\\s*quick question\\b|\\bI came across your (?:profile|impressive|amazing|great)\\b|\\bI noticed (?:that )?you(?:'re| are) (?:a|the)\\b",
+      "flags": "im",
+      "message": "Open on the fact you found about them, not on a ritual line.",
+      "bad": ["I hope this email finds you well.", "Quick question about your onboarding.", "I came across your profile on LinkedIn.", "I noticed you're a founder at Acme."],
+      "good": ["Your post of 3 March on pricing pages stuck with me.", "I hope to see you at the meetup."]
+    },
+    {
+      "code": "pitch-disclaimer",
+      "family": "cold-opener",
+      "level": "BLOCK",
+      "pattern": "\\b(?:no|not a|this is not a|this isn't a)\\s+(?:sales\\s+)?pitch\\b|\\bnot (?:trying|here) to sell\\b|\\bno strings attached\\b",
+      "flags": "i",
+      "message": "Delete the disclaimer: a message that says it is not a pitch reads as one. Let the content show it.",
+      "bad": ["No pitch, just curious.", "I'm not trying to sell you anything.", "This isn't a sales pitch."],
+      "good": ["How did you pick your first ten design partners?"]
+    },
+    {
+      "code": "ask-announcement",
+      "family": "staging",
+      "level": "BLOCK",
+      "pattern": "\\bI(?:'ll| will) (?:keep (?:this|it) (?:short|brief)|be (?:brief|quick|direct))\\b|\\bthe reason I(?:'m| am) (?:reaching out|writing|emailing)\\b|\\bI(?:'m| am) reaching out (?:because|to)\\b|\\blet me (?:get|cut) (?:straight )?to the (?:point|chase)\\b",
+      "flags": "i",
+      "message": "Say the thing instead of announcing that you will say it.",
+      "bad": ["I'll keep this short.", "The reason I'm reaching out is simple.", "I'm reaching out because we help founders."],
+      "good": ["We run a year-round program for first-time founders in Paris."]
+    },
+    {
+      "code": "dramatic-setup",
+      "family": "staging",
+      "level": "BLOCK",
+      "pattern": "\\bif I(?:'m| am) (?:writing|reaching out) (?:to you )?(?:today|now)\\b|\\bthere(?:'s| is) a (?:specific |good )?reason I(?:'m| am) writing\\b|\\bI(?:'ll| will) be honest with you\\b",
+      "flags": "i",
+      "message": "Drop the theatrical setup; open on the fact.",
+      "bad": ["If I'm writing to you today, it's for a specific reason.", "I'll be honest with you."],
+      "good": ["I'm writing about your hiring post of 2 October."]
+    },
+    {
+      "code": "flattery",
+      "family": "fake-closeness",
+      "level": "WARN",
+      "pattern": "\\b(?:love|loved|admire|admired) (?:your|what you)\\b|\\bbig fan of\\b|\\bimpressive (?:work|journey|track record|profile)\\b|\\bgreat (?:post|article|work)!",
+      "flags": "i",
+      "message": "Replace the compliment with the specific point of their post you are reacting to.",
+      "bad": ["Love what you're building.", "Big fan of your newsletter.", "Impressive journey so far."],
+      "good": ["Your point on annual plans made me check ours."]
+    },
+    {
+      "code": "fake-scarcity",
+      "family": "pressure",
+      "level": "BLOCK",
+      "pattern": "\\b(?:only|just) \\d+ (?:spots|seats|places|slots|openings) (?:left|remaining)\\b|\\blast chance\\b|\\bexpires (?:today|tonight|soon)\\b|\\bact (?:now|fast)\\b",
+      "flags": "i",
+      "message": "Remove the pressure line; a real deadline goes in with its date and its source.",
+      "bad": ["Only 2 spots left for June.", "Last chance to join.", "The offer expires tonight."],
+      "good": ["Applications for the October batch close on 21 October."]
+    },
+    {
+      "code": "guilt-breakup",
+      "family": "pressure",
+      "level": "WARN",
+      "pattern": "\\bdid I do something wrong\\b|\\byou must be (?:really |very )?busy\\b|\\bhaven'?t heard back\\b",
+      "flags": "i",
+      "message": "Close the loop without guilt: one line that leaves the door open.",
+      "bad": ["You must be busy.", "I haven't heard back from you."],
+      "good": ["I'll stop here; reply any time if this becomes a priority."]
+    }
+  ]
+}

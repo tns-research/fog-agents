@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "source": "talk.mp4",
+  "transcript": "words.json",
+  "language": "en",
+  "objective": "authority",
+  "duration_limits": { "min_seconds": 8, "max_seconds": 60 },
+  "speaker": { "name": "Sam Rivera", "role": "Founder, Lumen Ledger", "show_seconds": 4 },
+  "style": {
+    "accent": "#A855F7",
+    "text": "#FFFFFF",
+    "background": "#030619",
+    "font": "Inter",
+    "uppercase": true,
+    "words_per_line": 3,
+    "position": "lower",
+    "progress_bar": true
+  },
+  "audio": { "target_lufs": -14, "true_peak": -1.5, "denoise": true },
+  "cta": { "enabled": false, "lines": ["Year-round support for founders"], "url": "swanbase.co", "seconds": 2.5 },
+  "clips": [
+    {
+      "id": "investors-fund-problems",
+      "start": "0:00.4",
+      "end": "0:09.7",
+      "hook": "Most founders pitch the product first.",
+      "reason": "A contrarian opening any founder recognises, then the room is asked to admit it: stands alone with no context and invites comments.",
+      "title": "Investors fund a problem, not a product",
+      "post": "Most decks open on the product. The ones that get a second meeting open on the problem the investor already believes in."
+    },
+    {
+      "id": "demo-comes-last",
+      "start": "0:10.3",
+      "end": "0:23.7",
+      "hook": "Here is what we changed during the swanbase program.",
+      "reason": "A concrete before and after of a pitch structure, ending on a line people quote: the teaching moment of the talk.",
+      "title": "Open on a customer story, end on the demo",
+      "cta": { "enabled": true }
+    }
+  ]
+}

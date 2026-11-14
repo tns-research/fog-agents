@@ -1,0 +1,5 @@
+# Fictional fixture robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://larkspur.example/sitemap.xml

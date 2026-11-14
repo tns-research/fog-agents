@@ -1,0 +1,25 @@
+---
+import Footer from '../components/Footer.astro';
+const { frontmatter } = Astro.props;
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": frontmatter.title,
+  "datePublished": frontmatter.date
+};
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{frontmatter.title} | Larkspur</title>
+    <meta name="description" content={frontmatter.description} />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body>
+    <main>
+      <h1>{frontmatter.title}</h1>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

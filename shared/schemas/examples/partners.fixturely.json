@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "partners": [
+    {
+      "slug": "acme",
+      "name": "Acme",
+      "relation": "customer",
+      "logo": "assets/partners/acme.svg",
+      "logo_on_dark": "assets/partners/acme-white.svg",
+      "url": "https://acme.example",
+      "consent": { "status": "granted", "scope": ["ads", "carousel", "site"], "date": "2026-09-18", "source": "logo-use clause of the contract of 2026-09-18" }
+    },
+    {
+      "slug": "northwind-ledger",
+      "name": "Northwind Ledger",
+      "relation": "partner",
+      "url": "https://northwind.example",
+      "consent": { "status": "refused", "date": "2026-10-11", "source": "email of 2026-10-11" }
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "url": "https://arctic-shift.photon-reddit.com/api/comments/search?subreddit=startups&after=1783987200&before=1791849600&limit=22&sort=desc&body=pre-seed",
+  "status": 200,
+  "fetched_at": "2026-10-12T09:00:44Z",
+  "body": {
+    "data": [
+      {
+        "id": "fictive63",
+        "author": "user-836236",
+        "body": "I'm not sure I follow. I guess you want the dual-class structure eventually so the founders keep control as you dilute with more people on the cap table, but you worry those clauses would scare off your Hatchery Twelve investors, demo day or seed round.\n\nI'd use a standard investor-friendly [...]",
+        "created_utc": 1791789950,
+        "permalink": "/r/startups/comments/fictivet32/dual_class_shares_before_an_accelerator_round/fictive63/",
+        "score": 1,
+        "subreddit": "startups",
+        "link_id": "t3_fictivet32",
+        "parent_id": "t1_fictivec12"
+      },
+      {
+        "id": "fictive59",
+        "author": "user-01e293",
+        "body": "1. When I had my startup, I collected letters of intent from potential clients, closed a pre-seed round on that, and then signed those clients. But I also know startups that put up a landing page to find customers before the product [...]",
+        "created_utc": 1791398346,
+        "permalink": "/r/startups/comments/fictivet29/how_do_i_know_the_problem_is_worth_solving/fictive59/",
+        "score": 1,
+        "subreddit": "startups",
+        "link_id": "t3_fictivet29",
+        "parent_id": "t1_fictivec10"
+      },
+      {
+        "id": "fictive58",
+        "author": "user-48be36",
+        "body": "Raising a pre-seed at $500k ARR is still way above market I think, going by my own fundraising conversations (in NYC) and the public benchmarks",
+        "created_utc": 1791338872,
+        "permalink": "/r/startups/comments/fictivet28/first_time_founder_started_raising_what_now/fictive58/",
+        "score": 2,
+        "subreddit": "startups",
+        "link_id": "t3_fictivet28",
+        "parent_id": "t1_fictive56"
+      },
+      {
+        "id": "fictive56",
+        "author": "user-1ce547",
+        "body": "[...] motion. I use Deckpeek to see who opens the deck, since you rarely present the deck in meetings or show a demo anymore. [...] Traction doesn\u2019t have to mean revenue, but revenue is king. Building a product and getting revenue is easier now, so the bar is higher. [...]",
+        "created_utc": 1791311494,
+        "permalink": "/r/startups/comments/fictivet28/first_time_founder_started_raising_what_now/fictive56/",
+        "score": 7,
+        "subreddit": "startups",
+        "link_id": "t3_fictivet28",
+        "parent_id": "t3_fictivet28"
+      },
+      {
+        "id": "fictive48",
+        "author": "user-d70e18",
+        "body": "I see it the other way round.\nMy startup has a working product with paying customers and I can't even get meetings with VCs. Meanwhile someone I know with the same background announced $100k ARR (built on \"friendly\" LOIs) with no beta at all and raised a $1.4m pre-seed.\nYou need a hook to get through the door with VCs, and usually that hook is some \"sparkle\".",
+        "created_utc": 1790915430,
+        "permalink": "/r/startups/comments/fictivet22/anyone_else_feel_the_raise_is_about_sparkle/fictive48/",
+        "score": 0,
+        "subreddit": "startups",
+        "link_id": "t3_fictivet22",
+        "parent_id": "t3_fictivet22"
+      },
+      {
+        "id": "fictive44",
+        "author": "user-646cdb",
+        "body": "Begin with the one sentence an investor can repeat to a partner: who is hurting, what you do, and the strongest single proof you have today (even if that is 5 paying users or a waitlist of the right people). [...]",
+        "created_utc": 1790777779,
+        "permalink": "/r/startups/comments/fictivet17/how_should_a_pre_seed_deck_open/fictive44/",
+        "score": 2,
+        "subreddit": "startups",
+        "link_id": "t3_fictivet17",
+        "parent_id": "t3_fictivet17"
+      },
+      {
+        "id": "fictive43",
+        "author": "user-a3e28d",
+        "body": "pre-seed? a one pager is plenty.",
+        "created_utc": 1790764592,
+        "permalink": "/r/startups/comments/fictivet17/how_should_a_pre_seed_deck_open/fictive43/",
+        "score": 1,
+        "subreddit": "startups",
+        "link_id": "t3_fictivet17",
+        "parent_id": "t3_fictivet17"
+      },
+      {
+        "id": "fictive37",
+        "author": "user-7fc1f4",
+        "body": "[...] I'm not rich, and neither is my family. I have zero connections to VCs or to big money. I'm bootstrapping. [...] 1. You're WAY over indexing on Hatchery Twelve. Maybe 4 items across their last 3 request lists would even fit my startup. [...]",
+        "created_utc": 1790491935,
+        "permalink": "/r/startups/comments/fictivet14/moving_forward_without_investors_or_a_network/fictive37/",
+        "score": 1,
+        "subreddit": "startups",
+        "link_id": "t3_fictivet14",
+        "parent_id": "t3_fictivet14"
+      },
+      {
+        "id": "fictive36",
+        "author": "user-f23be1",
+        "body": "[...] at once. At pre-seed, investors buy one wedge, not a group of companies. Complexity at this stage reads as risk, and each extra market you list is one more reason to pass. [...]",
+        "created_utc": 1790407656,
+        "permalink": "/r/startups/comments/fictivet15/my_deck_tries_to_cover_three_markets/fictive36/",
+        "score": 2,
+        "subreddit": "startups",
+        "link_id": "t3_fictivet15",
+        "parent_id": "t3_fictivet15"
+      },
+      {
+        "id": "fictive35",
+        "author": "user-f8d6bf",
+        "body": "[...] If anyone here likes the project and happens to know a pre-seed investor who would be a good fit, a warm intro would mean a lot. No pressure at all. [...]",
+        "created_utc": 1790287420,
+        "permalink": "/r/startups/comments/fictivet13/advice_on_warm_intros_to_pre_seed_investors/fictive35/",
+        "score": -2,
+        "subreddit": "startups",
+        "link_id": "t3_fictivet13",
+        "parent_id": "t3_fictivet13"
+      },
+      {
+        "id": "fictive34",
+        "author": "user-75a434",
+        "body": "I\u2019ve raised two seed rounds and a pre-seed on SAFEs. [...] not charity. For an investor, pre-seed is a roulette table: they know most of these startups will fail. [...]",
+        "created_utc": 1790217497,
+        "permalink": "/r/startups/comments/fictivet09/what_actually_gets_a_b2b_tool_funded/fictive34/",
+        "score": 1,
+        "subreddit": "startups",
+        "link_id": "t3_fictivet09",
+        "parent_id": "t3_fictivet09"
+      },
+      {
+        "id": "fictive33",
+        "author": "user-745590",
+        "body": "Not really, they work more like an accelerator with a small pre-seed fund on the side. VC usually means much later rounds.",
+        "created_utc": 1790181237,
+        "permalink": "/r/startups/comments/fictivet12/is_this_an_accelerator_or_a_fund/fictive33/",
+        "score": 1,
+        "subreddit": "startups",
+        "link_id": "t3_fictivet12",
+        "parent_id": "t1_fictivec03"
+      }
+    ],
+    "error": null
+  }
+}

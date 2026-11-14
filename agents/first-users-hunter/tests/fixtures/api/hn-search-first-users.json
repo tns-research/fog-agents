@@ -1,0 +1,52 @@
+{
+ "key": "GET https://hn.algolia.com/api/v1/search_by_date?hitsPerPage=50&numericFilters=created_at_i%3E1786579200&query=first+users&tags=%28story%2Ccomment%29",
+ "status": 200,
+ "body": {
+  "exhaustive": {
+   "nbHits": true
+  },
+  "hits": [
+   {
+    "author": "qforge_fictive",
+    "created_at": "2026-10-03T14:05:00Z",
+    "created_at_i": 1791036300,
+    "objectID": "99000101",
+    "_tags": [
+     "comment",
+     "author_qforge_fictive",
+     "story_99000100"
+    ],
+    "_highlightResult": {},
+    "comment_text": "<p>Solo founder here, three weeks after launching an MVP for small clinics. I have four users, all friends of friends. Any advice on where pre-seed founders in Europe actually find their first real users? I am based in Paris and starting to feel stuck.</p>",
+    "parent_id": 99000100,
+    "story_id": 99000100,
+    "story_title": "Ask HN: How did you find your first ten users?",
+    "story_url": null
+   },
+   {
+    "author": "nledger_fictive",
+    "created_at": "2026-09-30T21:40:00Z",
+    "created_at_i": 1790804400,
+    "objectID": "99000102",
+    "_tags": [
+     "comment",
+     "author_nledger_fictive",
+     "story_99000100"
+    ],
+    "_highlightResult": {},
+    "comment_text": "We hit the same wall with our first users. The thing that worked for us was a founders breakfast in our city, people came back every month.",
+    "parent_id": 99000100,
+    "story_id": 99000100,
+    "story_title": "Ask HN: How did you find your first ten users?",
+    "story_url": null
+   }
+  ],
+  "hitsPerPage": 50,
+  "nbHits": 2,
+  "nbPages": 1,
+  "page": 0,
+  "params": "fixture",
+  "processingTimeMS": 1,
+  "query": "first users"
+ }
+}

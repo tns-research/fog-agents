@@ -1,0 +1,32 @@
+{
+  "_comment": "Single source of the thresholds of scripts/links.py (internal linking). A project overrides any key with a links object in its config.json (deep merge, --config). Anchors are phrases already written in a page of the site: the script never writes new prose, it wraps words the author already wrote.",
+  "phrase": { "min_words": 2, "max_words": 7, "min_chars": 8 },
+  "gsc": { "min_impressions": 10, "queries_per_page": 6 },
+  "quick_win_positions": [4, 20],
+  "max_new_links_per_source": 3,
+  "max_new_links_per_block": 1,
+  "max_existing_links_per_block": 3,
+  "max_source_body_outlinks": 50,
+  "max_suggestions_per_target": 5,
+  "max_same_anchor_per_target": 2,
+  "weak_body_inlinks": 3,
+  "hub_chrome_inlinks": 10,
+  "template_links": { "min_pages": 10, "share": 0.3 },
+  "deep_page_depth": 4,
+  "anchor_diversity": { "min_body_inlinks": 5, "max_share": 0.7, "max_anchor_words": 10 },
+  "weights": {
+    "phrase": { "gsc": 1.0, "keyword": 1.0, "h1": 0.8, "slug": 0.75, "title": 0.7, "partial": 0.6 },
+    "longer_phrase_bonus": 0.1,
+    "target": { "new_page": 1.0, "orphan": 1.0, "quick_win": 0.5, "weak": 0.3, "deep": 0.3 },
+    "source_inlinks": 0.5,
+    "source_clicks": 0.2,
+    "relevance": 1.0
+  },
+  "high_confidence": { "min_words": 3, "kinds": ["gsc", "keyword"] },
+  "generic_anchors": {
+    "en": ["click here", "here", "read more", "learn more", "more", "this page", "this article", "this link", "link", "see more", "find out more", "continue reading", "details", "go"],
+    "fr": ["ici", "cliquez ici", "cliquer ici", "en savoir plus", "lire la suite", "voir plus", "plus", "cet article", "cette page", "ce lien", "lien", "découvrir", "decouvrir", "suite", "voir"]
+  },
+  "skip_target_paths": ["/(mentions-legales|legal|legal-notice|privacy|confidentialite|politique-de-confidentialite|cgu|cgv|terms|conditions|cookies|imprint|impressum|plan-du-site|sitemap)(/|$)", "/(404|500)(/|\\.html|$)"],
+  "skip_source_paths": ["/(mentions-legales|legal|legal-notice|privacy|confidentialite|politique-de-confidentialite|cgu|cgv|terms|conditions|cookies|imprint|impressum)(/|$)"]
+}

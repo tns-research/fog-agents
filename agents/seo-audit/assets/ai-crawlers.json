@@ -1,0 +1,23 @@
+{
+  "_comment": "User-agent tokens that matter for answer engines, checked against robots.txt by geo_panel.py robots and crawl.py. purpose: training (model training), search (index used to answer and cite), user (fetch on a user's request), control (a robots.txt token that is not a crawler but controls a use). Each entry links the operator's own documentation; re-check it when an operator renames a bot.",
+  "schema_version": "1.0",
+  "crawlers": [
+    { "token": "GPTBot", "operator": "OpenAI", "purpose": "training", "doc": "https://platform.openai.com/docs/bots" },
+    { "token": "OAI-SearchBot", "operator": "OpenAI", "purpose": "search", "doc": "https://platform.openai.com/docs/bots" },
+    { "token": "ChatGPT-User", "operator": "OpenAI", "purpose": "user", "doc": "https://platform.openai.com/docs/bots" },
+    { "token": "ClaudeBot", "operator": "Anthropic", "purpose": "training", "doc": "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler" },
+    { "token": "Claude-SearchBot", "operator": "Anthropic", "purpose": "search", "doc": "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler" },
+    { "token": "Claude-User", "operator": "Anthropic", "purpose": "user", "doc": "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler" },
+    { "token": "PerplexityBot", "operator": "Perplexity", "purpose": "search", "doc": "https://docs.perplexity.ai/guides/bots" },
+    { "token": "Perplexity-User", "operator": "Perplexity", "purpose": "user", "doc": "https://docs.perplexity.ai/guides/bots" },
+    { "token": "Googlebot", "operator": "Google", "purpose": "search", "doc": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers" },
+    { "token": "Google-Extended", "operator": "Google", "purpose": "control", "doc": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers" },
+    { "token": "Bingbot", "operator": "Microsoft", "purpose": "search", "doc": "https://www.bing.com/webmasters/help/which-crawlers-does-bing-use-8c184ec0" },
+    { "token": "Applebot-Extended", "operator": "Apple", "purpose": "control", "doc": "https://support.apple.com/en-us/119829" },
+    { "token": "CCBot", "operator": "Common Crawl", "purpose": "training", "doc": "https://commoncrawl.org/ccbot" },
+    { "token": "meta-externalagent", "operator": "Meta", "purpose": "training", "doc": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers" },
+    { "token": "Amazonbot", "operator": "Amazon", "purpose": "search", "doc": "https://developer.amazon.com/amazonbot" },
+    { "token": "DuckAssistBot", "operator": "DuckDuckGo", "purpose": "search", "doc": "https://duckduckgo.com/duckduckgo-help-pages/results/duckassistbot" }
+  ],
+  "content_signals_doc": "https://contentsignals.org/"
+}

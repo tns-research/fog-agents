@@ -1,0 +1,59 @@
+{
+  "_comment": "Same site one run later: the weak article got a byline and an update date (signals gained), the strong article lost its sources and citations (signals lost).",
+  "routes": {
+    "/": {
+      "status": 200,
+      "file": "home.html"
+    },
+    "/about/": {
+      "status": 200,
+      "file": "about.html"
+    },
+    "/contact/": {
+      "status": 200,
+      "file": "contact.html"
+    },
+    "/privacy/": {
+      "status": 200,
+      "file": "privacy.html"
+    },
+    "/changelog/": {
+      "status": 200,
+      "file": "changelog.html"
+    },
+    "/blog/": {
+      "status": 200,
+      "file": "blog.html"
+    },
+    "/blog/pricing-experiments/": {
+      "status": 200,
+      "file": "pricing-experiments-after.html"
+    },
+    "/blog/onboarding-checklist/": {
+      "status": 200,
+      "file": "onboarding-checklist-after.html"
+    },
+    "/authors/ana-ruiz/": {
+      "status": 200,
+      "file": "author-ana-ruiz.html"
+    },
+    "/customers/": {
+      "status": 200,
+      "file": "customers.html"
+    },
+    "/robots.txt": {
+      "status": 200,
+      "file": "robots.txt",
+      "headers": {
+        "Content-Type": "text/plain; charset=utf-8"
+      }
+    },
+    "/sitemap.xml": {
+      "status": 200,
+      "file": "sitemap.xml",
+      "headers": {
+        "Content-Type": "application/xml"
+      }
+    }
+  }
+}

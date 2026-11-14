@@ -1,0 +1,104 @@
+/* data-notebook: a lab notebook page. Faint graph paper, a margin rule,
+   numbered figures, marker highlights. The grid lines stay under 50 %
+   alpha so contrast is measured against the paper, not the lines. */
+
+.d-data-notebook .deck{counter-reset:fig}
+.d-data-notebook .slide{--pad-top:84px;--pad-x:90px;--pad-bottom:64px;--gap:38px;--logo-h:46px;--font-chart:var(--font-mono);
+  --grid:color-mix(in srgb,var(--ink) 9%,transparent);--grid-major:color-mix(in srgb,var(--ink) 16%,transparent);
+  background-color:var(--paper);
+  background-image:
+    linear-gradient(var(--grid-major) 1.5px,transparent 1.5px),
+    linear-gradient(90deg,var(--grid-major) 1.5px,transparent 1.5px),
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:150px 150px,150px 150px,30px 30px,30px 30px;
+  background-position:-1px -1px,-1px -1px,-1px -1px,-1px -1px}
+.d-data-notebook .s-deco::before{content:"";position:absolute;top:0;bottom:0;left:66px;width:2px;background:color-mix(in srgb,var(--accent-mark) 70%,transparent)}
+.d-data-notebook .s-foot{font-family:var(--font-mono);padding-top:14px;margin-top:30px;border-top:1.5px solid var(--rule)}
+.d-data-notebook .src,.d-data-notebook .handle,.d-data-notebook .folio{font-size:21px}
+.d-data-notebook .handle{color:var(--ink);font-weight:600}
+
+/* Titles */
+.d-data-notebook .t{font-family:var(--font-display);font-weight:720;font-stretch:88%;line-height:1.02;letter-spacing:-.025em;
+  font-variation-settings:"opsz" 96;color:var(--ink)}
+.d-data-notebook .t .hl,.d-data-notebook .body .hl,.d-data-notebook .stat-l .hl{
+  background:linear-gradient(transparent 12%,var(--accent-fill) 12%,var(--accent-fill) 88%,transparent 88%);
+  color:var(--on-accent-fill);padding:0 .08em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.d-data-notebook .sub{font-family:var(--font-text);line-height:1.35;color:var(--ink);margin-top:.8em}
+.d-data-notebook .body{font-family:var(--font-text);line-height:1.45;color:var(--ink)}
+
+/* Cover A */
+.d-data-notebook .role-cover,.d-data-notebook .role-cta{--pad-top:64px}
+.d-data-notebook .role-cover .s-main{padding-top:40px;gap:44px;justify-content:flex-end}
+.d-data-notebook .layout-cover-a.has-photo .b-photo{order:-1;flex:1 1 0;min-height:480px}
+.d-data-notebook .layout-cover-a:not(.has-photo) .b-title{flex:1 1 auto;display:flex;flex-direction:column;justify-content:flex-end}
+
+/* Cover B */
+.d-data-notebook .layout-cover-b .s-main{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;column-gap:44px;row-gap:44px}
+.d-data-notebook .layout-cover-b .b-title{display:contents}
+.d-data-notebook .layout-cover-b .t{grid-column:1 / -1;grid-row:1}
+.d-data-notebook .layout-cover-b .sub{grid-column:1;grid-row:2;align-self:end;margin:0;padding-top:18px;border-top:1.5px solid var(--rule)}
+.d-data-notebook .layout-cover-b .b-photo{grid-column:2;grid-row:2;min-height:0}
+.d-data-notebook .layout-cover-b:not(.has-photo) .sub{grid-column:1 / -1}
+
+/* Photo: a print on white photo paper, shown whole */
+.d-data-notebook .ph-box{background:var(--mat);border:1.5px solid var(--rule)}
+.d-data-notebook .b-photo:not(.mat-blur) .ph-mat{display:none}
+.d-data-notebook .ph-cap{font-family:var(--font-mono);font-size:21px;margin-top:12px}
+
+/* Screenshot */
+.d-data-notebook .frame-browser .shot-frame{border:2px solid var(--ink);background:var(--mat)}
+.d-data-notebook .shot-bar{border-bottom:2px solid var(--ink);background:var(--mat)}
+.d-data-notebook .shot-legend li{font-family:var(--font-text);font-size:30px}
+.d-data-notebook .ann-n{font-family:var(--font-mono)}
+
+/* Text */
+.d-data-notebook .layout-text .s-main{justify-content:space-between}
+.d-data-notebook .layout-text .b-body{padding:30px 32px 32px;background:color-mix(in srgb,var(--mat) 88%,transparent);border:1.5px solid var(--rule)}
+
+/* List: circled numbers */
+.d-data-notebook .list{font-family:var(--font-text);line-height:1.22}
+.d-data-notebook .list li{padding:.55em 0;border-bottom:1.5px dashed color-mix(in srgb,var(--ink) 45%,transparent);gap:.75em;align-items:flex-start}
+.d-data-notebook .list-numbered .li-n{font-family:var(--font-mono);font-weight:600;font-size:.62em;width:1.9em;height:1.9em;border-radius:50%;
+  border:2px solid var(--accent-mark);color:var(--accent-text);display:flex;align-items:center;justify-content:center;margin-top:.12em;flex:none}
+.d-data-notebook .li-t{font-weight:600}
+.d-data-notebook .li-s{font-size:max(26px,.64em);line-height:1.35;color:var(--muted);margin-top:.3em}
+.d-data-notebook .b-list{flex:1 1 auto}
+
+/* Stat: numeral on a double underline */
+.d-data-notebook .layout-stat .s-main{justify-content:center}
+.d-data-notebook .b-stat{display:flex;flex-direction:column;justify-content:center;flex:1 1 auto}
+.d-data-notebook .stat-v{font-family:var(--font-display);font-weight:760;font-stretch:85%;line-height:.9;letter-spacing:-.05em;
+  font-variation-settings:"opsz" 96;color:var(--ink);padding-bottom:.06em;border-bottom:6px double var(--accent-mark);align-self:flex-start}
+.d-data-notebook .stat-l{font-family:var(--font-display);font-weight:600;font-stretch:92%;line-height:1.12;letter-spacing:-.015em;margin-top:.55em}
+.d-data-notebook .stat-c{font-family:var(--font-text);line-height:1.45;color:var(--ink);margin-top:1.1em;padding:22px 26px;
+  background:color-mix(in srgb,var(--mat) 88%,transparent);border:1.5px solid var(--rule)}
+
+/* Chart: numbered figure */
+.d-data-notebook .layout-chart .s-main{gap:30px}
+.d-data-notebook .b-chart{padding:26px 28px 22px;background:color-mix(in srgb,var(--mat) 92%,transparent);border:1.5px solid var(--rule)}
+.d-data-notebook .c-title{font-family:var(--font-mono);font-weight:500;color:var(--ink);padding-bottom:14px;margin-bottom:18px;border-bottom:1.5px solid var(--rule)}
+.d-data-notebook .c-title::before{counter-increment:fig;content:"Fig. " counter(fig) "\00a0\00a0";font-weight:600;color:var(--accent-text)}
+.d-data-notebook .c-note{font-family:var(--font-mono);font-size:21px}
+.d-data-notebook .chart-svg .c-value{font-family:var(--font-mono)}
+
+/* Quote */
+.d-data-notebook .layout-quote .s-main{justify-content:center}
+.d-data-notebook .q-t{font-family:var(--font-display);font-weight:560;font-stretch:92%;line-height:1.12;letter-spacing:-.02em;font-variation-settings:"opsz" 96}
+.d-data-notebook .q-mark{color:var(--accent-text)}
+.d-data-notebook .q-a{font-family:var(--font-mono);font-size:24px;flex-direction:column;gap:4px;margin-top:40px;padding-top:18px;border-top:1.5px solid var(--rule);max-width:520px}
+
+/* Media */
+.d-data-notebook .layout-media .s-main{gap:32px}
+
+/* CTA */
+.d-data-notebook .role-cta .s-main{padding-top:56px}
+.d-data-notebook .role-cta .b-cta{flex:1 1 auto;display:flex;flex-direction:column;justify-content:flex-end}
+.d-data-notebook .cta-t{font-family:var(--font-display);font-weight:720;font-stretch:88%;line-height:1.02;letter-spacing:-.025em;font-variation-settings:"opsz" 96}
+.d-data-notebook .cta-url{font-family:var(--font-mono);font-weight:600;font-size:30px;margin-top:44px;overflow-wrap:anywhere;
+  background:linear-gradient(transparent 55%,var(--accent-fill) 55%);color:var(--on-accent-fill);align-self:flex-start;padding:0 .12em}
+.d-data-notebook .cta-sub{font-family:var(--font-text);color:var(--muted);margin-top:22px;line-height:1.4}
+
+/* Photos hug their own ratio (fit.js), centred like a print on the page. */
+.d-data-notebook .ph-box{--ph-hug:1}
+.d-data-notebook .b-photo{align-items:center}

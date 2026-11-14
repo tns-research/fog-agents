@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "project": "brindlefen",
+  "label": "note-fr",
+  "date": "2026-10-26",
+  "language": "fr",
+  "summary": "Un post tiré de votre note vocale, sur LinkedIn et sur X.",
+  "posts": [
+    {
+      "ref": "fichier-clients-premier-appel",
+      "angle": "Demander le fichier clients au premier appel arrête la conversation, il vaut mieux partir du travail déjà visible dans l'atelier.",
+      "angle_type": "lesson",
+      "hook_type": "decision",
+      "structure": "problem_cause_action",
+      "networks": ["linkedin", "x"],
+      "link": null,
+      "variants": {
+        "linkedin": { "text": "On a arrêté de demander aux ateliers d'importer leur fichier clients au premier appel.\n\nLa conversation s'arrêtait à chaque fois, parce que personne dans un atelier ne garde cette liste au même endroit. Maintenant on part des réparations déjà accrochées au mur, et la liste se construit toute seule.\n\nSi votre onboarding demande un fichier avant de donner quoi que ce soit, regardez à quel moment la conversation s'arrête." },
+        "x": { "text": "Personne dans un atelier ne garde sa liste de clients au même endroit. On part donc des réparations déjà accrochées au mur, et la liste se construit toute seule." }
+      },
+      "source_passages": [
+        { "source_id": "note", "passage": "On a arrêté de demander aux ateliers d'importer leur fichier clients au premier appel. La conversation s'arrêtait à chaque fois, parce que personne dans un atelier ne garde cette liste au même endroit." },
+        { "source_id": "note", "passage": "Maintenant on part des réparations déjà accrochées au mur et la liste se construit toute seule." }
+      ],
+      "claims": []
+    }
+  ]
+}

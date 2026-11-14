@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "first-users-hunter signal record",
+  "description": "One line of <run>/signals.jsonl: a dated public act by one person, as a collector returned it. Every collector (scripts/collectors/*.py) writes this shape, the founder's manual CSV included. The text is verbatim; collect.py caches it under cache/<hash>.txt for the signal URL so verify_people.py can check excerpts against it. Validated with shared/scripts/validate_json.py.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "signal_id", "collector", "network", "handle", "url", "date", "date_source", "text", "signal_type", "authored"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "signal_id": { "type": "string", "pattern": "^[a-z_]+:[^\\s]{1,200}$", "description": "<collector>:<id at the source>, unique in the run." },
+    "collector": { "type": "string", "enum": ["hn", "github", "reddit", "luma", "notion", "folk", "registry_fr", "manual"] },
+    "network": { "type": "string", "enum": ["hn", "github", "reddit", "luma", "linkedin", "x", "registry_fr", "notion", "folk", "web", "community"], "description": "Where the person acted. community: a closed group read from founder screenshots or pasted text." },
+    "handle": { "type": "string", "description": "Author handle on that network, lower case; empty for registry rows and lists without a handle." },
+    "author_name": { "type": "string" },
+    "author_url": { "type": "string" },
+    "url": { "type": "string", "pattern": "^https?://" },
+    "thread_url": { "type": "string", "description": "The discussion the signal sits in, read in full before drafting." },
+    "title": { "type": "string" },
+    "text": { "type": "string", "description": "Verbatim words of the person, original language." },
+    "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "datetime": { "type": "string" },
+    "date_source": { "type": "string", "enum": ["api", "post_id", "page", "registry", "founder"], "description": "api: date field of the source API; post_id: decoded from a LinkedIn or X id in the URL; page: read on the page; registry: public registry; founder: given by the founder (screenshots of a closed group)." },
+    "signal_type": { "type": "string", "enum": ["ask", "switch", "complaint", "question", "trigger", "event", "build", "listed"] },
+    "authored": { "type": "boolean", "description": "true when the person wrote or hosted it (it then counts as one own post); false for registry rows, lists and third-party mentions." },
+    "community": { "type": "string", "description": "Where it was said: Ask HN, r/<sub>, <owner>/<repo>, a Luma calendar, a list name." },
+    "query_id": { "type": "string" },
+    "links": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "linkedin": { "type": "string" },
+        "x": { "type": "string" },
+        "github": { "type": "string" },
+        "hn": { "type": "string" },
+        "reddit": { "type": "string" },
+        "website": { "type": "string" }
+      },
+      "description": "Other handles the source itself publishes for this person (a Luma host profile, a list column). Used to merge identities, never guessed."
+    },
+    "role": { "type": "string" },
+    "company": { "type": "string" },
+    "company_url": { "type": "string" },
+    "metrics": { "type": "object" },
+    "collected_at": { "type": "string" }
+  }
+}

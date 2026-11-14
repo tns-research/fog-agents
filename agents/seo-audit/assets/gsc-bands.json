@@ -1,0 +1,99 @@
+{
+  "_comment": "The single definition of decline, position bands, quick wins, CTR gaps, lost queries and cannibalization for seo-audit. Read by scripts/gsc_bands.py, scripts/write_briefs.py and scripts/seo_state.py; quoted by the skills and the report template. A project overrides any key with a gsc_bands object in <project>/seo-audit/config.json (keys merged over this file). These are conventions of the stack, chosen to filter noise on small sites, not Google benchmarks: change them in one place, here.",
+  "schema_version": "1.0",
+  "position_bands": [
+    {
+      "name": "top3",
+      "min": 1,
+      "max": 3.99
+    },
+    {
+      "name": "striking",
+      "min": 4,
+      "max": 20
+    },
+    {
+      "name": "deep",
+      "min": 20.01,
+      "max": null
+    }
+  ],
+  "quick_win": {
+    "_comment": "Positions 4 to 20 with enough impressions: visible to Google, under-clicked. Opportunity = impressions x (position - 3).",
+    "position_min": 4,
+    "position_max": 20,
+    "min_impressions": 50
+  },
+  "decline": {
+    "_comment": "Clicks down at least 20 % vs the prior period, with at least 10 prior clicks. Applied to queries and pages alike.",
+    "min_prior_clicks": 10,
+    "max_change_pct": -20,
+    "cause_position_worse_by": 2,
+    "cause_impressions_change_pct": -20
+  },
+  "artifact": {
+    "_comment": "Position stable and impressions falling on a deep position: check for a measurement change before calling it a decline (flag only, never a band).",
+    "min_position": 50,
+    "max_abs_position_change": 2,
+    "max_impressions_change_pct": -30
+  },
+  "lost": {
+    "_comment": "In the top 20 in the prior period, absent or below 20 now.",
+    "prior_position_max": 20,
+    "min_prior_impressions": 20
+  },
+  "ctr_gap": {
+    "_comment": "CTR at least 25 % under the site's own median CTR of the same position bucket (never an outside CTR curve). Buckets with fewer than min_queries_per_bucket rows have no median.",
+    "buckets": [
+      [
+        1,
+        1.99
+      ],
+      [
+        2,
+        2.99
+      ],
+      [
+        3,
+        3.99
+      ],
+      [
+        4,
+        5.99
+      ],
+      [
+        6,
+        10.99
+      ],
+      [
+        11,
+        20
+      ]
+    ],
+    "min_impressions": 100,
+    "min_queries_per_bucket": 5,
+    "ratio": 0.75
+  },
+  "cannibalization": {
+    "_comment": "Two URLs or more of the site receive impressions on one query, each with at least this share of the query's impressions. Needs query x page rows (API JSON or a CSV with both columns).",
+    "min_impressions_per_url": 10,
+    "min_share": 0.1
+  },
+  "priority": [
+    "lost",
+    "decline",
+    "ctr_gap",
+    "quick_win"
+  ],
+  "tracking": {
+    "_comment": "Follow-up of every modified page. Checkpoint N compares the N days after the ship date with the N days before it, once N + lag_days have passed (Search Console data arrives 2 to 3 days late). Outcome up or down needs both the percentage and the absolute click change; anything else is flat. An outcome is a correlation, never proof that the change caused it.",
+    "checkpoints_days": [
+      14,
+      28,
+      56
+    ],
+    "lag_days": 3,
+    "outcome_min_change_pct": 20,
+    "outcome_min_abs_clicks": 5
+  }
+}

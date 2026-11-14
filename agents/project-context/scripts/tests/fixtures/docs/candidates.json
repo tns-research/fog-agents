@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "fields": [
+    { "field": "one_liner", "value": "Fixturely chases late invoices for freelance designers and small studios.", "source": "docs/deck.pdf#p1", "excerpt": "For freelance designers and small studios" },
+    { "field": "icp.pains", "value": ["Friday afternoons lost chasing late invoices"], "source": "docs/deck.pdf#p2", "excerpt": "Freelancers spend Friday afternoons chasing late invoices" },
+    { "field": "icp.who", "value": "Freelance designers with ten clients or more", "source": "docs/deck.pdf#p2", "excerpt": "Freelance designers with ten clients" }
+  ],
+  "proof": [
+    { "id": "waitlist", "claim": "1 240 freelancers on the waitlist in September 2026", "kind": "metric", "source": "docs/deck.pdf#p3", "date": "2026-09-30" },
+    { "id": "pilot-invoices", "claim": "38 studios sent 2 900 invoices during the pilot", "kind": "metric", "source": "docs/deck.pdf#p3" },
+    { "id": "waitlist-rounded", "claim": "1 300 freelancers on the waitlist", "kind": "metric", "source": "docs/deck.pdf#p3", "date": "2026-09-30" },
+    { "id": "pilot-wrong-page", "claim": "38 studios sent 2 900 invoices during the pilot", "kind": "metric", "source": "docs/deck.pdf#p2", "date": "2026-09-30" },
+    { "id": "lena-quote", "claim": "We get paid in a week now.", "kind": "testimonial", "source": "docs/deck.pdf#p4", "date": "2026-09-30", "consent": { "status": "unknown" } },
+    { "id": "october-studios", "claim": "We onboarded 12 studios in October 2026.", "kind": "metric", "source": "docs/notes.md#p1", "date": "2026-10-28" },
+    { "id": "memo-figure", "claim": "Churn stayed under 2 percent", "kind": "metric", "source": "docs/board-memo.pdf#p1", "date": "2026-10-01" },
+    { "id": "page-out-of-range", "claim": "1 240 freelancers on the waitlist in September 2026", "kind": "metric", "source": "docs/deck.pdf#p9", "date": "2026-09-30" }
+  ]
+}

@@ -1,0 +1,18 @@
+<style>
+/* checklist: 4 to 10 items, check / warn / cross icons, one column or two
+   columns for six or more short items. */
+.chk { list-style: none; display: grid; grid-template-columns: 1fr; column-gap: 56px; background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--radius); padding: 8px 36px; }
+.chk.two { grid-template-columns: 1fr 1fr; }
+.chk-i { display: flex; gap: 20px; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid var(--border); }
+.chk-i.last { border-bottom: 0; }
+.chk-t { font-size: 24px; line-height: 1.4; color: var(--text); padding-top: 1px; }
+.chk-i.cross .chk-t { color: var(--text-secondary); }
+</style>
+<main class="canvas" data-kind="checklist">
+  {{head}}
+  <section class="v-body">
+    <ul class="chk {{layout}}">{{items}}</ul>
+  </section>
+  {{foot}}
+</main>

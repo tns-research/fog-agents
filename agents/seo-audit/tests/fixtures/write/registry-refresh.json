@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "domain": "https://fernhollow.example/",
+  "updated": "2026-11-10",
+  "topics": [
+    { "id": "t-getting-paid", "query": "getting paid freelance", "aliases": [], "url": "https://fernhollow.example/blog/getting-paid/", "status": "live",
+      "source": "crawl", "title": "Getting paid as a freelancer", "h2": ["How to invoice as a freelancer", "Chasing late payments"], "h3": [],
+      "first_seen": "2026-10-12", "updated": "2026-10-12", "brief_id": null, "notes": "" },
+    { "id": "t-pricing", "query": "freelance bookkeeping pricing", "aliases": [], "url": "https://fernhollow.example/pricing/", "status": "live",
+      "source": "crawl", "title": "Pricing", "h2": [], "h3": [], "first_seen": "2026-10-12", "updated": "2026-10-12", "brief_id": null, "notes": "" }
+  ]
+}

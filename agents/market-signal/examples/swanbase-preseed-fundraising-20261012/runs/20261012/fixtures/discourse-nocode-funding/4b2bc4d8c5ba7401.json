@@ -1,0 +1,15 @@
+{
+  "url": "https://forum.example/posts/900117.json",
+  "status": 200,
+  "fetched_at": "2026-10-12T09:00:36Z",
+  "body": {
+    "id": 900117,
+    "topic_id": 90028,
+    "topic_slug": "blockyard-s-collaboration-problem-the-cost-of-adding-a-teammate",
+    "username": "user-b35b5b",
+    "created_at": "2026-09-17T23:04:16.406Z",
+    "cooked": "Suggestion: Blockyard should rethink collaborator seats across its plans<br><br>I think Blockyard should reconsider how collaborator seats are split between the Starter, Growth and Team plans. I am not asking for lower prices overall.<br><br>The [...]",
+    "post_number": 1,
+    "reply_count": 0
+  }
+}

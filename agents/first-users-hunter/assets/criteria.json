@@ -1,0 +1,140 @@
+{
+  "_comment": "Single source of the deterministic rules of first-users-hunter: signal types and their maximum age, the classifier patterns, the activity gate, the score and the first-touch limits. Read by candidates.py, check_activity.py, score_people.py and verify_people.py. The model never scores. Override per project with <project>/first-users-hunter/criteria.json (keys merged over this file), or with recency_days and activity in config.json. Points are this stack's defaults, not figures from a study: change them, rerun, compare.",
+  "version": "1.0",
+  "signal_types": {
+    "ask": {
+      "label": "asks for help, a recommendation or a tool for the task the product does",
+      "points": 12,
+      "max_age_days": 45,
+      "eligible": true
+    },
+    "switch": {
+      "label": "leaves or replaces a tool or a way of working, asks for an alternative",
+      "points": 10,
+      "max_age_days": 60,
+      "eligible": true
+    },
+    "complaint": {
+      "label": "complains about the status quo, a workaround or a competitor",
+      "points": 9,
+      "max_age_days": 60,
+      "eligible": true
+    },
+    "question": {
+      "label": "asks a public question on the problem space, not yet a request for a tool",
+      "points": 7,
+      "max_age_days": 45,
+      "eligible": true
+    },
+    "trigger": {
+      "label": "a dated public event that opens the need: company created, funding, a role hired, a launch",
+      "points": 6,
+      "max_age_days": 60,
+      "eligible": true
+    },
+    "event": {
+      "label": "hosts or speaks at an event on the topic; the date is the event date and may be ahead",
+      "points": 5,
+      "max_age_days": 14,
+      "future_horizon_days": 60,
+      "eligible": true
+    },
+    "build": {
+      "label": "builds in public in an adjacent domain",
+      "points": 4,
+      "max_age_days": 30,
+      "eligible": true
+    },
+    "listed": {
+      "label": "appears in a public list or directory: a seed, never a signal on its own",
+      "points": 0,
+      "max_age_days": 365,
+      "eligible": false
+    }
+  },
+  "classifier": {
+    "_comment": "First matching type wins, in this order. Case-insensitive regular expressions on title and text. The model may correct a type in people.jsonl; verify_people.py only checks it is a known type.",
+    "order": ["switch", "ask", "complaint", "question"],
+    "patterns": {
+      "switch": [
+        "\\balternative(s)? to\\b",
+        "\\bswitch(ing|ed)? (away )?from\\b",
+        "\\bmov(e|ing|ed) (away )?from\\b",
+        "\\bmigrat(e|ing|ed) (away )?from\\b",
+        "\\breplac(e|ing) [a-z0-9 ]{1,30} with\\b",
+        "\\bquitt?(ing)? [a-z0-9]+ for\\b",
+        "\\bpasser de\\b",
+        "\\balternative \u00e0\\b"
+      ],
+      "ask": [
+        "\\bany (recommendation|recommendations|advice|suggestion|suggestions|pointers)\\b",
+        "\\b(looking|searching) for (a|an|some)?\\s*(tool|program|programme|accelerator|cofounder|co-founder|mentor|space|community|way|help|advice|recommendation)",
+        "\\bcan anyone recommend\\b",
+        "\\bwhat do you (use|recommend)\\b",
+        "\\bhow (do|did|would) (you|i|we) (find|get|handle|choose|pick|start)\\b",
+        "\\bneed help\\b",
+        "\\bis there (a|an|any) [a-z0-9 -]{1,40}(tool|program|programme|service|app|accelerator|community)\\b",
+        "\\bje cherche\\b",
+        "\\bvous conseillez\\b",
+        "\\bdes recommandations\\b"
+      ],
+      "complaint": [
+        "\\bfrustrat(ed|ing|ion)\\b",
+        "\\b(i|we) hate\\b",
+        "\\bso annoying\\b",
+        "\\btired of\\b",
+        "\\bfed up\\b",
+        "\\bwaste of time\\b",
+        "\\bpain in the\\b",
+        "\\bstruggl(e|ing|ed)\\b",
+        "\\bmarre de\\b",
+        "\\bgal\u00e8re\\b"
+      ],
+      "question": [
+        "\\?\\s*$",
+        "\\?\\s",
+        "^(ask hn|question)\\b"
+      ]
+    },
+    "default_type": "build"
+  },
+  "recency_points": [[7, 6], [30, 4], [90, 2]],
+  "activity": {
+    "_comment": "Gate: at least min_weighted_posts own public posts in the window, weighted by kind. LinkedIn gets a wider window because search engines index a fraction of its posts. Zero posts found means not proven, never inactive: a person not proven is left out of this run, not labelled dead.",
+    "window_days": 30,
+    "window_days_by_network": { "linkedin": 45 },
+    "min_weighted_posts": 2,
+    "kind_weights": {
+      "post": 1,
+      "comment": 1,
+      "issue": 1,
+      "pull_request": 1,
+      "discussion": 1,
+      "event_host": 1,
+      "reply": 0.25,
+      "repost": 0.25,
+      "push": 0.25,
+      "other": 0
+    },
+    "count_signal_as_post": true,
+    "date_tolerance_days": 1,
+    "steps": [[2, 4], [4, 6], [8, 8]],
+    "multi_network_bonus": 2
+  },
+  "fit": {
+    "require_icp_keyword": true,
+    "icp_keyword_points": 1,
+    "icp_keyword_max": 3
+  },
+  "multi_signal_bonus": 2,
+  "max_people_default": 20,
+  "touch_limits": {
+    "_comment": "Characters unless words is set. Touch 1 never carries a link; touch 2 at most one. connection_note: LinkedIn cuts notes of free accounts at 200 characters. X replies: 280 characters.",
+    "reply_in_thread": { "max_chars": 600, "max_chars_x": 280, "max_links": 0 },
+    "dm": { "max_chars": 600, "max_links": 0 },
+    "connection_note": { "max_chars": 200, "max_links": 0 },
+    "email": { "max_words": 120, "max_links": 0 },
+    "event_intro": { "max_chars": 400, "max_links": 0 },
+    "second_touch_max_links": 1
+  }
+}

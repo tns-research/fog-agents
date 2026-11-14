@@ -1,0 +1,6 @@
+playwright>=1.65.0
+Pillow>=13.0.0
+# After installing, run once:  python -m playwright install chromium
+# Every API (Firecrawl, Jina Reader, Exa) is optional and reached over HTTP or a CLI: no Python dep needed.
+# enrich_context.py uses the standard library only.
+# ingest_docs.py reads PDF decks with poppler's pdftotext when installed, else pypdf when importable. Both optional.

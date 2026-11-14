@@ -1,0 +1,164 @@
+{
+  "schema_version": "2.0",
+  "previous_window": {
+    "since": "2026-04-15",
+    "until": "2026-07-13",
+    "days": 90
+  },
+  "current_window": {
+    "since": "2026-07-14",
+    "until": "2026-10-12",
+    "days": 91
+  },
+  "rules": {
+    "rise_ratio": 1.5,
+    "min_delta_per_30_days": 2.0
+  },
+  "pains": [
+    {
+      "pain_id": "pain_vc_misalignment",
+      "status": "new",
+      "previous": {
+        "distinct_authors": 0,
+        "per_30_days": 0.0,
+        "escalated": false
+      },
+      "current": {
+        "distinct_authors": 4,
+        "per_30_days": 1.3,
+        "escalated": false
+      },
+      "newly_escalated": false,
+      "no_longer_escalated": false,
+      "lower_bound": true
+    },
+    {
+      "pain_id": "pain_intro_black_box",
+      "status": "new",
+      "previous": {
+        "distinct_authors": 0,
+        "per_30_days": 0.0,
+        "escalated": false
+      },
+      "current": {
+        "distinct_authors": 3,
+        "per_30_days": 1.0,
+        "escalated": false
+      },
+      "newly_escalated": false,
+      "no_longer_escalated": false,
+      "lower_bound": false
+    },
+    {
+      "pain_id": "pain_traction_bar",
+      "status": "rising",
+      "previous": {
+        "distinct_authors": 3,
+        "per_30_days": 1.0,
+        "escalated": false
+      },
+      "current": {
+        "distinct_authors": 10,
+        "per_30_days": 3.3,
+        "escalated": true
+      },
+      "newly_escalated": true,
+      "no_longer_escalated": false,
+      "lower_bound": true
+    },
+    {
+      "pain_id": "pain_founder_salary",
+      "status": "disappeared",
+      "previous": {
+        "distinct_authors": 3,
+        "per_30_days": 1.0,
+        "escalated": false
+      },
+      "current": {
+        "distinct_authors": 0,
+        "per_30_days": 0.0,
+        "escalated": false
+      },
+      "newly_escalated": false,
+      "no_longer_escalated": false,
+      "lower_bound": true
+    },
+    {
+      "pain_id": "pain_investor_access",
+      "status": "stable",
+      "previous": {
+        "distinct_authors": 7,
+        "per_30_days": 2.3,
+        "escalated": true
+      },
+      "current": {
+        "distinct_authors": 9,
+        "per_30_days": 3.0,
+        "escalated": true
+      },
+      "newly_escalated": false,
+      "no_longer_escalated": false,
+      "lower_bound": true
+    },
+    {
+      "pain_id": "pain_pitch_story",
+      "status": "stable",
+      "previous": {
+        "distinct_authors": 2,
+        "per_30_days": 0.7,
+        "escalated": false
+      },
+      "current": {
+        "distinct_authors": 4,
+        "per_30_days": 1.3,
+        "escalated": false
+      },
+      "newly_escalated": false,
+      "no_longer_escalated": false,
+      "lower_bound": true
+    }
+  ],
+  "summary": {
+    "new": [
+      "pain_vc_misalignment",
+      "pain_intro_black_box"
+    ],
+    "rising": [
+      "pain_traction_bar"
+    ],
+    "falling": [],
+    "disappeared": [
+      "pain_founder_salary"
+    ],
+    "stable": [
+      "pain_investor_access",
+      "pain_pitch_story"
+    ]
+  },
+  "newly_escalated": [
+    "pain_traction_bar"
+  ],
+  "no_longer_escalated": [],
+  "sources": [
+    {
+      "job_id": "reddit-ycombinator-raise",
+      "previous": "quota",
+      "current": "ok",
+      "message": ""
+    }
+  ],
+  "competitors": {
+    "new": [
+      "Cohort Zero",
+      "Deckpeek",
+      "Hatchery Twelve",
+      "SAFE",
+      "cold email",
+      "friends and family round"
+    ],
+    "gone": [
+      "accelerators"
+    ]
+  },
+  "new_phrases": []
+}

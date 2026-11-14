@@ -1,0 +1,386 @@
+{
+ "_comment": "Fictional Search Console rows for the growth-pulse tests. Invented numbers.",
+ "dimensions": [
+  "date"
+ ],
+ "rows": [
+  {
+   "keys": [
+    "2026-08-31"
+   ],
+   "clicks": 23,
+   "impressions": 471,
+   "ctr": 0.0488,
+   "position": 9.17
+  },
+  {
+   "keys": [
+    "2026-09-01"
+   ],
+   "clicks": 32,
+   "impressions": 544,
+   "ctr": 0.0588,
+   "position": 9.14
+  },
+  {
+   "keys": [
+    "2026-09-02"
+   ],
+   "clicks": 21,
+   "impressions": 418,
+   "ctr": 0.0502,
+   "position": 9.29
+  },
+  {
+   "keys": [
+    "2026-09-03"
+   ],
+   "clicks": 17,
+   "impressions": 461,
+   "ctr": 0.0369,
+   "position": 9.43
+  },
+  {
+   "keys": [
+    "2026-09-04"
+   ],
+   "clicks": 8,
+   "impressions": 400,
+   "ctr": 0.02,
+   "position": 9.57
+  },
+  {
+   "keys": [
+    "2026-09-05"
+   ],
+   "clicks": 20,
+   "impressions": 352,
+   "ctr": 0.0568,
+   "position": 8.8
+  },
+  {
+   "keys": [
+    "2026-09-06"
+   ],
+   "clicks": 22,
+   "impressions": 398,
+   "ctr": 0.0553,
+   "position": 8.88
+  },
+  {
+   "keys": [
+    "2026-09-07"
+   ],
+   "clicks": 24,
+   "impressions": 474,
+   "ctr": 0.0506,
+   "position": 9.14
+  },
+  {
+   "keys": [
+    "2026-09-08"
+   ],
+   "clicks": 33,
+   "impressions": 555,
+   "ctr": 0.0595,
+   "position": 9.36
+  },
+  {
+   "keys": [
+    "2026-09-09"
+   ],
+   "clicks": 24,
+   "impressions": 435,
+   "ctr": 0.0552,
+   "position": 9.49
+  },
+  {
+   "keys": [
+    "2026-09-10"
+   ],
+   "clicks": 26,
+   "impressions": 455,
+   "ctr": 0.0571,
+   "position": 9.51
+  },
+  {
+   "keys": [
+    "2026-09-11"
+   ],
+   "clicks": 23,
+   "impressions": 415,
+   "ctr": 0.0554,
+   "position": 9.29
+  },
+  {
+   "keys": [
+    "2026-09-12"
+   ],
+   "clicks": 22,
+   "impressions": 352,
+   "ctr": 0.0625,
+   "position": 9.31
+  },
+  {
+   "keys": [
+    "2026-09-13"
+   ],
+   "clicks": 24,
+   "impressions": 363,
+   "ctr": 0.0661,
+   "position": 9.46
+  },
+  {
+   "keys": [
+    "2026-09-14"
+   ],
+   "clicks": 37,
+   "impressions": 493,
+   "ctr": 0.0751,
+   "position": 9.26
+  },
+  {
+   "keys": [
+    "2026-09-15"
+   ],
+   "clicks": 21,
+   "impressions": 448,
+   "ctr": 0.0469,
+   "position": 9.22
+  },
+  {
+   "keys": [
+    "2026-09-16"
+   ],
+   "clicks": 22,
+   "impressions": 483,
+   "ctr": 0.0455,
+   "position": 9.33
+  },
+  {
+   "keys": [
+    "2026-09-17"
+   ],
+   "clicks": 22,
+   "impressions": 434,
+   "ctr": 0.0507,
+   "position": 9.15
+  },
+  {
+   "keys": [
+    "2026-09-18"
+   ],
+   "clicks": 20,
+   "impressions": 395,
+   "ctr": 0.0506,
+   "position": 9.54
+  },
+  {
+   "keys": [
+    "2026-09-19"
+   ],
+   "clicks": 18,
+   "impressions": 351,
+   "ctr": 0.0513,
+   "position": 9.2
+  },
+  {
+   "keys": [
+    "2026-09-20"
+   ],
+   "clicks": 17,
+   "impressions": 355,
+   "ctr": 0.0479,
+   "position": 9.46
+  },
+  {
+   "keys": [
+    "2026-09-21"
+   ],
+   "clicks": 29,
+   "impressions": 493,
+   "ctr": 0.0588,
+   "position": 8.91
+  },
+  {
+   "keys": [
+    "2026-09-22"
+   ],
+   "clicks": 29,
+   "impressions": 468,
+   "ctr": 0.062,
+   "position": 9.25
+  },
+  {
+   "keys": [
+    "2026-09-23"
+   ],
+   "clicks": 36,
+   "impressions": 454,
+   "ctr": 0.0793,
+   "position": 9.19
+  },
+  {
+   "keys": [
+    "2026-09-24"
+   ],
+   "clicks": 31,
+   "impressions": 434,
+   "ctr": 0.0714,
+   "position": 9.33
+  },
+  {
+   "keys": [
+    "2026-09-25"
+   ],
+   "clicks": 17,
+   "impressions": 378,
+   "ctr": 0.045,
+   "position": 9.46
+  },
+  {
+   "keys": [
+    "2026-09-26"
+   ],
+   "clicks": 26,
+   "impressions": 345,
+   "ctr": 0.0754,
+   "position": 9.04
+  },
+  {
+   "keys": [
+    "2026-09-27"
+   ],
+   "clicks": 14,
+   "impressions": 348,
+   "ctr": 0.0402,
+   "position": 9.32
+  },
+  {
+   "keys": [
+    "2026-09-28"
+   ],
+   "clicks": 17,
+   "impressions": 465,
+   "ctr": 0.0366,
+   "position": 9.03
+  },
+  {
+   "keys": [
+    "2026-09-29"
+   ],
+   "clicks": 26,
+   "impressions": 460,
+   "ctr": 0.0565,
+   "position": 9.28
+  },
+  {
+   "keys": [
+    "2026-09-30"
+   ],
+   "clicks": 17,
+   "impressions": 462,
+   "ctr": 0.0368,
+   "position": 9.64
+  },
+  {
+   "keys": [
+    "2026-10-01"
+   ],
+   "clicks": 19,
+   "impressions": 416,
+   "ctr": 0.0457,
+   "position": 9.36
+  },
+  {
+   "keys": [
+    "2026-10-02"
+   ],
+   "clicks": 22,
+   "impressions": 427,
+   "ctr": 0.0515,
+   "position": 9.34
+  },
+  {
+   "keys": [
+    "2026-10-03"
+   ],
+   "clicks": 11,
+   "impressions": 344,
+   "ctr": 0.032,
+   "position": 10.77
+  },
+  {
+   "keys": [
+    "2026-10-04"
+   ],
+   "clicks": 12,
+   "impressions": 351,
+   "ctr": 0.0342,
+   "position": 10.82
+  },
+  {
+   "keys": [
+    "2026-10-05"
+   ],
+   "clicks": 14,
+   "impressions": 412,
+   "ctr": 0.034,
+   "position": 11.99
+  },
+  {
+   "keys": [
+    "2026-10-06"
+   ],
+   "clicks": 14,
+   "impressions": 477,
+   "ctr": 0.0294,
+   "position": 12.44
+  },
+  {
+   "keys": [
+    "2026-10-07"
+   ],
+   "clicks": 7,
+   "impressions": 467,
+   "ctr": 0.015,
+   "position": 11.8
+  },
+  {
+   "keys": [
+    "2026-10-08"
+   ],
+   "clicks": 9,
+   "impressions": 399,
+   "ctr": 0.0226,
+   "position": 12.01
+  },
+  {
+   "keys": [
+    "2026-10-09"
+   ],
+   "clicks": 10,
+   "impressions": 379,
+   "ctr": 0.0264,
+   "position": 12.18
+  },
+  {
+   "keys": [
+    "2026-10-10"
+   ],
+   "clicks": 10,
+   "impressions": 351,
+   "ctr": 0.0285,
+   "position": 12.22
+  },
+  {
+   "keys": [
+    "2026-10-11"
+   ],
+   "clicks": 8,
+   "impressions": 327,
+   "ctr": 0.0245,
+   "position": 12.06
+  }
+ ]
+}

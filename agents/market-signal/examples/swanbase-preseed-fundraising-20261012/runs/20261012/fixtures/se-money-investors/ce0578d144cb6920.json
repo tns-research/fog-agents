@@ -1,0 +1,61 @@
+{
+  "url": "https://api.stackexchange.com/2.3/search/advanced?order=desc&sort=relevance&q=investors&site=money&fromdate=1783987200&todate=1791849600&page=1&pagesize=15&filter=withbody",
+  "status": 200,
+  "fetched_at": "2026-10-12T09:00:32Z",
+  "body": {
+    "has_more": false,
+    "quota_remaining": 290,
+    "items": [
+      {
+        "question_id": 9000077,
+        "creation_date": 1786406346,
+        "title": "Why would a private fund set a maximum investment per investor?",
+        "body": "I received an invitation to invest in a fund that will hold shares of one private company. It lists a target minimum and a target maximum investment. I get the minimum: they want fewer, larger investors. But why would [...]",
+        "link": "https://qa.example/money/questions/9000077/why-would-a-private-fund-set-a-maximum-investment-per-investor",
+        "score": 1,
+        "answer_count": 2,
+        "owner": {
+          "display_name": "user-50d24b"
+        },
+        "tags": [
+          "investing",
+          "spv"
+        ]
+      },
+      {
+        "question_id": 9000088,
+        "creation_date": 1791509578,
+        "title": "Where does the equity risk premium actually come from?",
+        "body": "Textbooks say stocks earn more than bonds because they are \"riskier\", so they trade at a discount.\n\nBut what does \"risk\" mean here, and has anyone tried to measure which \"risks\" [...]",
+        "link": "https://qa.example/money/questions/9000088/where-does-the-equity-risk-premium-actually-come-from",
+        "score": 0,
+        "answer_count": 3,
+        "owner": {
+          "display_name": "user-0ac3cc"
+        },
+        "tags": [
+          "equity"
+        ]
+      },
+      {
+        "question_id": 9000066,
+        "creation_date": 1786351783,
+        "title": "Which records should I keep for small crypto trades?",
+        "body": "I trade small amounts of crypto from time to time and want clean records for taxes and tracking.\n\nFor each trade, what should a private investor write down?\n\nFor example:\n\ndate and time\n\nthe pair traded\n\nprice\n\nfees [...]",
+        "link": "https://qa.example/money/questions/9000066/which-records-should-i-keep-for-small-crypto-trades",
+        "score": 0,
+        "answer_count": 1,
+        "owner": {
+          "display_name": "user-4e5191"
+        },
+        "tags": [
+          "taxes",
+          "cryptocurrency",
+          "bookkeeping",
+          "crypto-exchanges",
+          "ethereum"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "first_name": "Test",
+  "last_name": "Founder",
+  "role": "Founder",
+  "company": "Oakline",
+  "linkedin_url": "https://www.linkedin.com/in/fictional-test-founder-0001/",
+  "geography": "fr",
+  "language": "en",
+  "register": "n/a",
+  "researched_at": "2026-10-12",
+  "relationship": "none",
+  "disqualifiers": [],
+  "prospect_id": "d-schema",
+  "pages_read": [],
+  "facts": [
+    {
+      "id": "f1",
+      "type": "post",
+      "claim": "A fact without a date or an excerpt.",
+      "source_url": "https://oakline.example/blog/launch",
+      "owner": "self"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "_comment": "Copied to <your-projects-root>/<project>/market-signal/config.json on the first run. Values given in chat win, then this file, then project-context. No script reads this file: the model writes window, caps and sources into plan.json and passes the thresholds as flags. language: ISO codes comma-separated or both. recency_days: window length; every quote must be dated inside it. depth sets the caps per collector job (quick 10 records and 2 pages, standard 25 and 3, deep 50 and 5); caps.records_per_job and caps.pages_per_job override it (a plan without caps runs at 50 and 3). sources.include: communities the plan must cover, as {\"source\": \"reddit\", \"subreddit\": \"...\"}, {\"source\": \"discourse\", \"host\": \"...\"}, {\"source\": \"stackexchange\", \"site\": \"...\"}, {\"source\": \"appstore\", \"app_id\": \"...\", \"country\": \"..\"}. sources.exclude: job ids or hosts never to use (also kept in sources-rejected.md). escalation: a pain escalates at min_authors distinct authors across min_communities communities, counting the speakers listed (--min-authors, --min-communities of compute_signals.py and build_handoff.py; counted_speakers is --speakers of compute_signals.py and build_handoff.py, comma-separated, among user, practitioner, vendor, press, other; an unknown value exits 2). watch.enabled: collect only what is new since state/seen.json and write changes.md against the previous run; rise_ratio and min_delta set what counts as rising (distinct authors per 30 days; --rise-ratio, --min-delta of diff_runs.py). The first watch run has no state file and runs collect.py with --seen alone. valid_days: how long consumers treat the sidecar as fresh (--valid-days of build_handoff.py, which sets valid_until). Optional: a \"tools\" object (same keys as shared/tools.example.json) overrides the project's tools.json for this agent; paid providers stay off unless the founder sets them.",
+  "project": "<project-slug>",
+  "market": "<the market or product category>",
+  "language": "en",
+  "geography": "global",
+  "recency_days": 90,
+  "depth": "standard",
+  "caps": { "records_per_job": null, "pages_per_job": null },
+  "sources": { "include": [], "exclude": [] },
+  "escalation": { "min_authors": 5, "min_communities": 2, "counted_speakers": ["user", "practitioner"] },
+  "watch": { "enabled": false, "rise_ratio": 1.5, "min_delta": 2 },
+  "valid_days": 90
+}

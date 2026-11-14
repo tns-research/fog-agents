@@ -1,0 +1,31 @@
+{
+ "key": "POST https://gateway.folk.app/networks/graphql #4eb08202615e",
+ "status": 200,
+ "body": {
+  "data": {
+   "sharedViewContactList": {
+    "totalCount": 2,
+    "items": [
+     {
+      "fullname": "Lea Garnier",
+      "pJobTitle": "Founder, fictional studio",
+      "urls": [
+       {
+        "value": "https://www.linkedin.com/in/lea-garnier-fictive"
+       }
+      ]
+     },
+     {
+      "fullname": "Nina Vidal",
+      "pJobTitle": "CTO",
+      "urls": [
+       {
+        "value": "https://x.com/nina_vidal_fictive"
+       }
+      ]
+     }
+    ]
+   }
+  }
+ }
+}

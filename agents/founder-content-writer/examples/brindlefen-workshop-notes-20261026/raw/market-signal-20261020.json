@@ -1,0 +1,95 @@
+{
+  "schema_version": "2.0",
+  "agent": "market-signal",
+  "project": "brindlefen",
+  "date": "2026-10-20",
+  "market": "bike workshop software",
+  "language": "en",
+  "geography": "fictional",
+  "window": {
+    "since": "2026-07-22",
+    "until": "2026-10-20",
+    "days": 90
+  },
+  "valid_until": "2027-01-18",
+  "corpus": {
+    "path": "runs/20261020/corpus.jsonl",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "records": 1
+  },
+  "stats": {
+    "records_collected": 1,
+    "records_relevant": 1,
+    "voices": 1,
+    "quotes_verified": 1,
+    "by_source": [
+      {
+        "source": "forum",
+        "records": 1,
+        "share": 1.0
+      }
+    ],
+    "sentiment": {
+      "counted": 1,
+      "counts": {
+        "negative": 1
+      }
+    },
+    "escalation_rule": {
+      "min_authors": 3,
+      "min_communities": 2,
+      "counted_speakers": [
+        "user",
+        "practitioner"
+      ]
+    }
+  },
+  "source_health": [
+    {
+      "job_id": "forum-1",
+      "source": "forum",
+      "status": "ok",
+      "records": 1
+    }
+  ],
+  "pains": [
+    {
+      "pain_id": "pain_phone_interruptions",
+      "summary": "The phone interrupts repair work all day",
+      "force": "push",
+      "escalated": true,
+      "mention_count": 1,
+      "distinct_authors": 1,
+      "distinct_communities": 1,
+      "trend": "unknown",
+      "volume": "complete",
+      "quote_ids": [
+        "q_phone_hour"
+      ]
+    }
+  ],
+  "quotes": [
+    {
+      "quote_id": "q_phone_hour",
+      "record_id": "forum-example-123",
+      "text_verbatim": "I lose an hour a day telling people their bike isn't ready yet",
+      "char_count": 62,
+      "language": "en",
+      "permalink": "https://forum.example/t/shop-phone/123",
+      "date": "2026-10-02",
+      "source": "forum",
+      "community": "forum.example mechanics",
+      "speaker": "practitioner",
+      "pain_id": "pain_phone_interruptions",
+      "usable_as": [
+        "hook"
+      ],
+      "verified": true
+    }
+  ],
+  "hooks": [],
+  "objections": [],
+  "angles": [],
+  "personas": [],
+  "usage": "Fictional fixture. Quotes are language about a problem, never testimonials of the product."
+}

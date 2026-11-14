@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0",
+  "first_name": "Test",
+  "last_name": "Founder",
+  "role": "Founder",
+  "company": "Oakline",
+  "linkedin_url": "https://www.linkedin.com/in/fictional-test-founder-0001/",
+  "geography": "fr",
+  "language": "en",
+  "register": "n/a",
+  "researched_at": "2026-10-12",
+  "relationship": "none",
+  "disqualifiers": [],
+  "prospect_id": "d-bad",
+  "email": "ceo@oakline.example",
+  "email_source_url": "https://oakline.example/contact",
+  "pages_read": [
+    "https://oakline.example/blog/launch",
+    "https://oakline.example/never-cached"
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "type": "launch",
+      "claim": "Oakline launched in every bakery in France.",
+      "date": "2026-06-03",
+      "date_source": "page",
+      "source_url": "https://oakline.example/blog/launch",
+      "excerpt": "Oakline is live for every bakery in France.",
+      "owner": "company"
+    },
+    {
+      "id": "f2",
+      "type": "hiring",
+      "claim": "Oakline is hiring a head of sales.",
+      "date": "2026-09-01",
+      "date_source": "page",
+      "source_url": "https://oakline.example/never-cached",
+      "excerpt": "We are hiring a head of sales in Lyon.",
+      "owner": "company"
+    },
+    {
+      "id": "f3",
+      "type": "post",
+      "claim": "The founder posted about hiring a first engineer.",
+      "date": "2026-10-01",
+      "date_source": "page",
+      "source_url": "https://www.linkedin.com/posts/fictional-test-founder-0001_first-hire-activity-7505550979891323456-AbCd",
+      "excerpt": "We just hired our first engineer",
+      "owner": "self"
+    },
+    {
+      "id": "f4",
+      "type": "post",
+      "claim": "The founder posted about a meetup with the team.",
+      "date": "2026-09-20",
+      "date_source": "post_id",
+      "source_url": "https://www.linkedin.com/posts/someone-else-0002_tagged-activity-7507362919219323456-EfGh",
+      "excerpt": "Great evening with fictional-test-founder-0001 and the Oakline team",
+      "owner": "self"
+    },
+    {
+      "id": "f5",
+      "type": "launch",
+      "claim": "Oakline will open in Paris.",
+      "date": "2026-12-01",
+      "date_source": "page",
+      "source_url": "https://oakline.example/blog/launch",
+      "excerpt": "Oakline is live for every bakery in Lyon",
+      "owner": "company"
+    },
+    {
+      "id": "f6",
+      "type": "company_creation",
+      "claim": "Oakline started in a shared kitchen.",
+      "date": "2023-01-10",
+      "date_source": "page",
+      "source_url": "https://oakline.example/blog/2023",
+      "excerpt": "We started Oakline in a shared kitchen.",
+      "owner": "company"
+    },
+    {
+      "id": "f7",
+      "type": "talk",
+      "claim": "The founder spoke about the pilot.",
+      "date": "2026-06-03",
+      "date_source": "post_id",
+      "source_url": "https://oakline.example/blog/launch",
+      "excerpt": "after a pilot with nine shops",
+      "owner": "company"
+    }
+  ]
+}

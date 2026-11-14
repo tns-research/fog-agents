@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "writing-gate rules file",
+  "description": "Format of the shared packs (shared/skills/writing-gate/packs/<lang>.json) and of the optional project pack <project>/project-context/voice/rules.json. A project pack may hold only banned_words, or add rules, disable shared codes, or change their level.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "pack": { "type": "string", "description": "Pack name, for example en or fr." },
+    "language": {
+      "type": "string",
+      "enum": ["en", "fr", "any"],
+      "description": "Language the rules apply to. A project pack defaults to any."
+    },
+    "description": { "type": "string" },
+    "banned_words": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "description": "Words or phrases the founder never wants in copy. Matched case-insensitively on word boundaries, always BLOCK (code banned-word)."
+    },
+    "disable": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Shared rule codes switched off for this project (for example after calibration on the founder's own texts)."
+    },
+    "levels": {
+      "type": "object",
+      "additionalProperties": { "type": "string", "enum": ["BLOCK", "WARN"] },
+      "description": "Level override per shared rule code."
+    },
+    "rules": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/rule" }
+    }
+  },
+  "$defs": {
+    "rule": {
+      "type": "object",
+      "required": ["code", "level", "pattern", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+          "description": "Stable id, kebab-case."
+        },
+        "family": {
+          "type": "string",
+          "description": "Tic family, for example two-step-correction, hollow-intensifier, staging, trailing-participle, grandiosity, dash, object-as-agent."
+        },
+        "level": { "type": "string", "enum": ["BLOCK", "WARN"] },
+        "pattern": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Python regular expression, applied to the text with blank lines kept as paragraph breaks. Avoid crossing paragraphs: use [^\\n] instead of '.' with DOTALL."
+        },
+        "flags": {
+          "type": "string",
+          "pattern": "^[imx]*$",
+          "description": "i: ignore case, m: multiline (^ and $ per line), x: verbose."
+        },
+        "escalate_at": {
+          "type": "integer",
+          "minimum": 2,
+          "description": "A WARN rule whose hit count in one text reaches this number turns every hit into BLOCK."
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1,
+          "description": "How to fix it, in one sentence, in the imperative."
+        },
+        "bad": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Examples that must trigger the rule (tested by tests/run_tests.py)."
+        },
+        "good": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Near-misses that must not trigger the rule."
+        }
+      }
+    }
+  }
+}

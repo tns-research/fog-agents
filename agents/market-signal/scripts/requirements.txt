@@ -1,0 +1,5 @@
+# market-signal scripts: Python 3.9+ standard library only. Nothing to install.
+# The collectors call free public APIs without keys (HN Algolia, Arctic Shift,
+# Stack Exchange, Discourse search.json, iTunes RSS); tests run offline on
+# frozen fixtures. Optional paid providers (Exa, Perplexity) are never called
+# by these scripts: their output is imported with import_records.py.

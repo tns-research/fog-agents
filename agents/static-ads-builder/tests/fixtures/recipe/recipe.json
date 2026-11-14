@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "source": {
+    "ad_name": "acme_01_tofu_anti-category_bold-statement_4x5",
+    "picked_by": "perf",
+    "why": "CPA 16.36 <= target 20.00 on 11 conversions",
+    "spec": "../all-styles/ads.json"
+  },
+  "angle": "anti-category",
+  "hook_type": "contrarian",
+  "text_length": {
+    "headline_words": 9,
+    "subhead_words": 10,
+    "band": "medium"
+  },
+  "layout": {
+    "zones": [
+      {
+        "role": "headline",
+        "area": "upper-third",
+        "note": "two lines, the emphasis word in the accent colour"
+      },
+      {
+        "role": "subhead",
+        "area": "center"
+      },
+      {
+        "role": "cta",
+        "area": "lower-third"
+      },
+      {
+        "role": "logo",
+        "area": "bottom"
+      }
+    ],
+    "hierarchy": [
+      "headline",
+      "subhead",
+      "cta",
+      "logo"
+    ]
+  },
+  "style": "bold-statement",
+  "palette": {
+    "surface": "brand",
+    "accent_role": "the emphasised words of the headline and the button"
+  },
+  "cta": {
+    "on_ad": "See how",
+    "meta": "LEARN_MORE"
+  },
+  "funnel_stage": "tofu",
+  "formats": [
+    "1:1",
+    "4:5",
+    "9:16"
+  ],
+  "control": {
+    "id": "bold",
+    "n": 1,
+    "stage": "tofu",
+    "angle": "anti-category",
+    "style": "bold-statement",
+    "formats": [
+      "1:1",
+      "4:5",
+      "9:16"
+    ],
+    "copy": {
+      "headline": "Jam should taste like *the fruit*, not the sugar.",
+      "subhead": "Cooked in small copper pans, one batch at a time.",
+      "cta": "See how"
+    },
+    "meta_ad": {
+      "primary_text": "Jam should taste like the fruit, not the sugar.",
+      "headline": "Acme fig and vanilla jam",
+      "cta": "LEARN_MORE",
+      "destination_url": "https://example.com/jam",
+      "ad_set": "tofu-test"
+    }
+  },
+  "notes": "Fictional recipe for the selftest: the Acme bold statement that won the fixture export."
+}

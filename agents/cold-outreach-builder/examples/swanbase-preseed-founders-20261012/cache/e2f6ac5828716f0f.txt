@@ -1,0 +1,8 @@
+URL: https://hardwarenight.example/talks/2026-03-ferncast
+
+Hardware Night Berlin (fictional demo meetup)
+
+Talk archive, 18 March 2026
+
+Jonas Weber, founder of Ferncast: "What three farms taught us about our prototype"
+Jonas showed how the Ferncast soil sensor prototype failed in the first week on three farms, and how the team rebuilt the casing before asking anyone to pay.

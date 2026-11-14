@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "short-video-builder words.json",
+  "description": "Word-level transcript written by scripts/transcribe.py (any engine or an imported SRT, VTT or JSON) and corrected in place by scripts/proofread.py apply.",
+  "type": "object",
+  "required": ["version", "duration", "engine", "timing", "words"],
+  "properties": {
+    "version": { "const": 1 },
+    "source": { "type": ["string", "null"] },
+    "duration": { "type": "number", "minimum": 0 },
+    "language": { "type": ["string", "null"] },
+    "engine": { "type": "string", "pattern": "^(faster-whisper|whisper-cpp|openai-whisper|import:[a-z]+)$" },
+    "model": { "type": ["string", "null"] },
+    "timing": { "enum": ["word", "estimated"], "description": "estimated: word times shared out from cue times, karaoke sync is approximate." },
+    "prompt": { "type": ["string", "null"] },
+    "created": { "type": "string" },
+    "corrections_applied": { "type": "integer", "minimum": 0 },
+    "words": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["word", "start", "end"],
+        "additionalProperties": false,
+        "properties": {
+          "word": { "type": "string", "minLength": 1 },
+          "start": { "type": "number", "minimum": 0 },
+          "end": { "type": "number", "minimum": 0 },
+          "prob": { "type": "number", "minimum": 0, "maximum": 1 },
+          "fixed": { "type": "boolean", "description": "Written by a proofreading correction." }
+        }
+      }
+    }
+  }
+}

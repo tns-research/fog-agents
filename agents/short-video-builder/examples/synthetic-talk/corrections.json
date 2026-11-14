@@ -1,0 +1,4 @@
+[
+  {"find": "raisin hand", "replace": "raise your hand", "why": "mishearing: the speaker asks the room to raise a hand"},
+  {"find": "swan base", "replace": "swanbase", "why": "brand name is one word (project-context)"}
+]

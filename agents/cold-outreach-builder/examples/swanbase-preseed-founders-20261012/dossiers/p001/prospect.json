@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "prospect_id": "p001",
+  "first_name": "Maya",
+  "last_name": "Okafor",
+  "role": "Co-founder & CEO",
+  "company": "Tidewell",
+  "company_url": "https://tidewell.example",
+  "email": "maya@tidewell.example",
+  "email_source_url": "lead_list",
+  "profile_url": "https://mayaokafor.example",
+  "geography": "fr",
+  "language": "en",
+  "register": "n/a",
+  "researched_at": "2026-10-12",
+  "relationship": "none",
+  "facts": [
+    {
+      "id": "f1",
+      "type": "company_creation",
+      "claim": "Tidewell SAS was registered in Paris with Maya Okafor as president.",
+      "date": "2026-08-20",
+      "date_source": "registry",
+      "source_url": "https://registry.example/companies/tidewell-sas",
+      "excerpt": "TIDEWELL SAS Registered on 20 August 2026",
+      "owner": "third_party"
+    },
+    {
+      "id": "f2",
+      "type": "launch",
+      "claim": "Tidewell opened its private beta to finance teams from its waitlist.",
+      "date": "2026-09-29",
+      "date_source": "page",
+      "source_url": "https://tidewell.example/blog/private-beta",
+      "excerpt": "Today we open the Tidewell private beta to the first forty finance teams on our waitlist.",
+      "owner": "company"
+    },
+    {
+      "id": "f3",
+      "type": "post",
+      "claim": "Maya wrote how Tidewell found its first ten design partners and asks how to turn them into a story for investors.",
+      "date": "2026-10-02",
+      "date_source": "page",
+      "source_url": "https://mayaokafor.example/notes/first-ten-design-partners",
+      "excerpt": "Seven came from people I had worked with, three from a single post in a finance community. The harder question now is the next one: how do we turn ten happy users into a story an investor can follow in five minutes?",
+      "owner": "self"
+    }
+  ],
+  "disqualifiers": [],
+  "pages_read": [
+    "https://registry.example/companies/tidewell-sas",
+    "https://tidewell.example/blog/private-beta",
+    "https://mayaokafor.example/notes/first-ten-design-partners"
+  ],
+  "notes": "Writes in English on her notes page; the beta post asks readers to reply, a direct register."
+}

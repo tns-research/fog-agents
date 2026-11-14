@@ -1,0 +1,16 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+  - package-ecosystem: pip
+    directories:
+      - /agents/carousel-builder/scripts
+      - /agents/landing-page-analyzer/scripts
+      - /agents/project-context/scripts
+      - /agents/short-video-builder/scripts
+      - /agents/static-ads-builder/scripts
+      - /shared/skills/reviewing-renders/scripts
+    schedule:
+      interval: weekly

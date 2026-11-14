@@ -1,0 +1,51 @@
+{
+  "_comment": "Fictional state.json of fernhill.example for tests/test_topics.py: an open refresh brief on a live page, an open brief on a page the crawl did not reach, a dropped brief.",
+  "schema_version": "1.0",
+  "project": "fernhill",
+  "domain": "https://fernhill.example/",
+  "created": "2026-10-01",
+  "runs": [],
+  "log": [],
+  "briefs": {
+    "b-burn-rate": {
+      "id": "b-burn-rate",
+      "url": "https://fernhill.example/blog/burn-rate/",
+      "action": "expand",
+      "lane": "quick_win",
+      "status": "open",
+      "opened": "2026-11-01",
+      "brief": "briefs/b-burn-rate/brief.md",
+      "expect": null,
+      "shipped_on": null,
+      "verify": [],
+      "checkpoints": {}
+    },
+    "b-cap-table": {
+      "id": "b-cap-table",
+      "url": "https://fernhill.example/blog/cap-table-guide/",
+      "action": "update",
+      "lane": "decline",
+      "status": "open",
+      "target_query": "cap table guide",
+      "opened": "2026-11-02",
+      "brief": "briefs/b-cap-table/brief.md",
+      "expect": null,
+      "shipped_on": null,
+      "verify": [],
+      "checkpoints": {}
+    },
+    "b-pricing": {
+      "id": "b-pricing",
+      "url": "https://fernhill.example/pricing/",
+      "action": "refine",
+      "lane": "ctr_gap",
+      "status": "dropped",
+      "opened": "2026-10-02",
+      "brief": "briefs/b-pricing/brief.md",
+      "expect": null,
+      "shipped_on": null,
+      "verify": [],
+      "checkpoints": {}
+    }
+  }
+}

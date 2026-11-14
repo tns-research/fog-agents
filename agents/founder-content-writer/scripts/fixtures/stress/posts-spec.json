@@ -1,0 +1,738 @@
+{
+  "schema_version": "1.0",
+  "project": "brindlefen",
+  "label": "stress",
+  "date": "2026-10-26",
+  "language": "en",
+  "summary": "A spec built to fail on every rule of the checker.",
+  "posts": [
+    {
+      "ref": "stress-edited-passage",
+      "angle": "Case edited passage for the checker",
+      "angle_type": "lesson",
+      "hook_type": "observation",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "We stopped asking workshops to import their customer list, because nobody keeps that list in one place."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "voice-note",
+          "passage": "We stopped asking workshops to import their client list on day one."
+        }
+      ],
+      "claims": []
+    },
+    {
+      "ref": "stress-case",
+      "angle": "Case case for the checker",
+      "angle_type": "lesson",
+      "hook_type": "observation",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "Importing a customer list on the first call stopped working for us."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "voice-note",
+          "passage": "we stopped asking workshops to import their customer list on day one."
+        }
+      ],
+      "claims": []
+    },
+    {
+      "ref": "stress-elided",
+      "angle": "Case elided for the checker",
+      "angle_type": "lesson",
+      "hook_type": "observation",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "Asking for a list too early ended the talk with a workshop."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "voice-note",
+          "passage": "We stopped asking workshops ... the list builds itself as the bikes come through."
+        }
+      ],
+      "claims": []
+    },
+    {
+      "ref": "stress-short",
+      "angle": "Case short for the checker",
+      "angle_type": "lesson",
+      "hook_type": "observation",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "Importing a list on the first call stopped working for workshops."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "voice-note",
+          "passage": "We stopped asking"
+        }
+      ],
+      "claims": []
+    },
+    {
+      "ref": "stress-unknown-source",
+      "angle": "Case unknown source for the checker",
+      "angle_type": "lesson",
+      "hook_type": "observation",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "Importing a list on the first call fell flat with workshop owners."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "nowhere",
+          "passage": "A passage from a file that was never ingested."
+        }
+      ],
+      "claims": []
+    },
+    {
+      "ref": "stress-fake-quote-passage",
+      "angle": "Case fake quote passage for the checker",
+      "angle_type": "lesson",
+      "hook_type": "observation",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "An hour a day goes to telling people where their bike is, a mechanic wrote."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "market-signal",
+          "quote_id": "q_phone_hour",
+          "passage": "I lose two hours a day telling people their bike"
+        },
+        {
+          "source_id": "market-signal",
+          "quote_id": "q_unknown",
+          "passage": "Words that sit in no quote of this sidecar."
+        }
+      ],
+      "claims": []
+    },
+    {
+      "ref": "stress-number",
+      "angle": "Case number for the checker",
+      "angle_type": "lesson",
+      "hook_type": "observation",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "Repair boards work well. 47 workshops signed up after we changed this, because nobody keeps that list in one place."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "voice-note",
+          "passage": "We stopped asking workshops to import their customer list on day one. Every time we asked for it during the first call the conversation died, because nobody in a repair workshop keeps that list in one place."
+        }
+      ],
+      "claims": []
+    },
+    {
+      "ref": "stress-rounded",
+      "angle": "Case rounded for the checker",
+      "angle_type": "lesson",
+      "hook_type": "observation",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "20 independent workshops ran the Brindlefen pilot, and nobody keeps that list in one place."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "voice-note",
+          "passage": "We stopped asking workshops to import their customer list on day one. Every time we asked for it during the first call the conversation died, because nobody in a repair workshop keeps that list in one place."
+        }
+      ],
+      "claims": [
+        {
+          "text": "20 independent workshops ran the Brindlefen pilot",
+          "kind": "number",
+          "source": "proof",
+          "proof_index": 0
+        },
+        {
+          "text": "nobody keeps that list in one place",
+          "kind": "observation",
+          "source": "proof",
+          "proof_index": 9
+        }
+      ]
+    },
+    {
+      "ref": "stress-notes-number",
+      "angle": "Case notes number for the checker",
+      "angle_type": "lesson",
+      "hook_type": "observation",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "We lost a deal of forty-two stands because I quoted them per user and they have seasonal staff."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "voice-note",
+          "passage": "We also lost the Fictivelo deal, forty-two stands, because I quoted them per user and they have seasonal staff."
+        }
+      ],
+      "claims": [
+        {
+          "text": "a deal of forty-two stands",
+          "kind": "number",
+          "source": "passage",
+          "passage_index": 0
+        }
+      ]
+    },
+    {
+      "ref": "stress-invented-client",
+      "angle": "Case invented client for the checker",
+      "angle_type": "lesson",
+      "hook_type": "observation",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "Last week a customer named Rouetop told us the wall board changed his season, and they look at the wall first."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "voice-note",
+          "passage": "They look at the wall, they look at which bike is closest to done, and they pick that one."
+        }
+      ],
+      "claims": []
+    },
+    {
+      "ref": "stress-fake-quote",
+      "angle": "Case fake quote for the checker",
+      "angle_type": "lesson",
+      "hook_type": "observation",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "\u201cThis board saved my whole season\u201d is what the workshops tell me about the customer list in one place."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "voice-note",
+          "passage": "We stopped asking workshops to import their customer list on day one. Every time we asked for it during the first call the conversation died, because nobody in a repair workshop keeps that list in one place."
+        }
+      ],
+      "claims": []
+    },
+    {
+      "ref": "stress-ranking",
+      "angle": "Case ranking for the checker",
+      "angle_type": "lesson",
+      "hook_type": "observation",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "We built the best repair board for a workshop. Most founders keep a customer list in one place."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "voice-note",
+          "passage": "We stopped asking workshops to import their customer list on day one. Every time we asked for it during the first call the conversation died, because nobody in a repair workshop keeps that list in one place."
+        }
+      ],
+      "claims": []
+    },
+    {
+      "ref": "stress-market-testimonial",
+      "angle": "Case market testimonial for the checker",
+      "angle_type": "lesson",
+      "hook_type": "customer_words",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "\"I lose an hour a day telling people their bike isn't ready yet\" and our board fixed that for this workshop."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "market-signal",
+          "quote_id": "q_phone_hour",
+          "passage": "I lose an hour a day telling people their bike isn't ready yet"
+        }
+      ],
+      "claims": [
+        {
+          "text": "I lose an hour a day telling people their bike isn't ready yet",
+          "kind": "testimonial",
+          "source": "quote",
+          "passage_index": 0
+        }
+      ]
+    },
+    {
+      "ref": "stress-links",
+      "angle": "Case links for the checker",
+      "angle_type": "lesson",
+      "hook_type": "observation",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin"
+      ],
+      "link": "https://elsewhere.example/page",
+      "variants": {
+        "linkedin": {
+          "text": "Read more about the customer list at https://brindlefen.example/pricing and brindlefen.example has the details on the workshop."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "voice-note",
+          "passage": "We stopped asking workshops to import their customer list on day one. Every time we asked for it during the first call the conversation died, because nobody in a repair workshop keeps that list in one place."
+        }
+      ],
+      "claims": []
+    },
+    {
+      "ref": "stress-x-long",
+      "angle": "Case x long for the checker",
+      "angle_type": "lesson",
+      "hook_type": "observation",
+      "structure": "single_idea",
+      "networks": [
+        "x"
+      ],
+      "link": null,
+      "variants": {
+        "x": {
+          "text": "The customer list stays in one place. A sentence about a workshop keeps going and going without end. A sentence about a workshop keeps going and going without end. A sentence about a workshop keeps going and going without end. A sentence about a workshop keeps going and going without end. A sentence about a workshop keeps going and going without end. A sentence about a workshop keeps going and going without end. \n---\nA second part of the thread about the customer list."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "voice-note",
+          "passage": "We stopped asking workshops to import their customer list on day one. Every time we asked for it during the first call the conversation died, because nobody in a repair workshop keeps that list in one place."
+        }
+      ],
+      "claims": []
+    },
+    {
+      "ref": "stress-gate",
+      "angle": "Case gate for the checker",
+      "angle_type": "lesson",
+      "hook_type": "observation",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "It's not a tool, it's a habit \u2014 the customer list in one place stays out of reach for a workshop."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "voice-note",
+          "passage": "We stopped asking workshops to import their customer list on day one. Every time we asked for it during the first call the conversation died, because nobody in a repair workshop keeps that list in one place."
+        }
+      ],
+      "claims": []
+    },
+    {
+      "ref": "stress-dup-a",
+      "angle": "The customer list is scattered, so the product starts from the repairs on the wall.",
+      "angle_type": "lesson",
+      "hook_type": "observation",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "Workshops never keep a customer list in one place, so we start from the wall."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "voice-note",
+          "passage": "We stopped asking workshops to import their customer list on day one. Every time we asked for it during the first call the conversation died, because nobody in a repair workshop keeps that list in one place."
+        }
+      ],
+      "claims": []
+    },
+    {
+      "ref": "stress-dup-b",
+      "angle": "The customer list is scattered, so the product starts from the repairs on the wall.",
+      "angle_type": "lesson",
+      "hook_type": "observation",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "Workshops never keep a customer list in one place, and that changed our first call."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "voice-note",
+          "passage": "We stopped asking workshops to import their customer list on day one. Every time we asked for it during the first call the conversation died, because nobody in a repair workshop keeps that list in one place."
+        }
+      ],
+      "claims": []
+    },
+    {
+      "ref": "stress-hook-number",
+      "angle": "Case hook number for the checker",
+      "angle_type": "lesson",
+      "hook_type": "number",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "Importing a customer list on the first call fell flat with workshops."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "voice-note",
+          "passage": "We stopped asking workshops to import their customer list on day one. Every time we asked for it during the first call the conversation died, because nobody in a repair workshop keeps that list in one place."
+        }
+      ],
+      "claims": []
+    },
+    {
+      "ref": "stress-hook-question",
+      "angle": "Case hook question for the checker",
+      "angle_type": "lesson",
+      "hook_type": "question",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "Importing a customer list on the first call stopped the talk with workshops."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "voice-note",
+          "passage": "We stopped asking workshops to import their customer list on day one. Every time we asked for it during the first call the conversation died, because nobody in a repair workshop keeps that list in one place."
+        }
+      ],
+      "claims": []
+    },
+    {
+      "ref": "stress-list",
+      "angle": "Case list for the checker",
+      "angle_type": "lesson",
+      "hook_type": "observation",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "Three things to check on the first call with a workshop:\n- the customer list\n- the wall of repairs"
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "voice-note",
+          "passage": "We stopped asking workshops to import their customer list on day one. Every time we asked for it during the first call the conversation died, because nobody in a repair workshop keeps that list in one place."
+        }
+      ],
+      "claims": [
+        {
+          "text": "Three things to check",
+          "kind": "post_count",
+          "source": "structure"
+        }
+      ]
+    },
+    {
+      "ref": "stress-idiom",
+      "angle": "Case idiom for the checker",
+      "angle_type": "lesson",
+      "hook_type": "observation",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "We got 3 of them to keep the customer list in one place at the workshop."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "voice-note",
+          "passage": "We stopped asking workshops to import their customer list on day one. Every time we asked for it during the first call the conversation died, because nobody in a repair workshop keeps that list in one place."
+        }
+      ],
+      "claims": [
+        {
+          "text": "3 of them",
+          "kind": "idiom",
+          "source": "none",
+          "reason": "a figure of speech"
+        }
+      ]
+    },
+    {
+      "ref": "stress-placeholder",
+      "angle": "Case placeholder for the checker",
+      "angle_type": "lesson",
+      "hook_type": "observation",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "Call me on +33 1 00 00 00 00 about the customer list in one place.\n\n{{sender_first_name}}"
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "voice-note",
+          "passage": "We stopped asking workshops to import their customer list on day one. Every time we asked for it during the first call the conversation died, because nobody in a repair workshop keeps that list in one place."
+        }
+      ],
+      "claims": []
+    },
+    {
+      "ref": "stress-french",
+      "angle": "Case french for the checker",
+      "angle_type": "lesson",
+      "hook_type": "observation",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "On a arr\u00eat\u00e9 de demander aux ateliers leur fichier clients au premier appel, parce que personne ne garde cette liste au m\u00eame endroit et que la conversation s'arr\u00eatait \u00e0 chaque fois avec eux."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "voice-note",
+          "passage": "We stopped asking workshops to import their customer list on day one. Every time we asked for it during the first call the conversation died, because nobody in a repair workshop keeps that list in one place."
+        }
+      ],
+      "claims": []
+    },
+    {
+      "ref": "stress-not-tied",
+      "angle": "Case not tied for the checker",
+      "angle_type": "lesson",
+      "hook_type": "observation",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "Pricing pages deserve more attention than brand colours ever will, especially during a slow quarter."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "voice-note",
+          "passage": "They look at the wall, they look at which bike is closest to done, and they pick that one."
+        }
+      ],
+      "claims": []
+    },
+    {
+      "ref": "stress-claim-absent",
+      "angle": "Case claim absent for the checker",
+      "angle_type": "lesson",
+      "hook_type": "observation",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "We stopped asking workshops for their customer list, because nobody keeps that list in one place."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "voice-note",
+          "passage": "We stopped asking workshops to import their customer list on day one. Every time we asked for it during the first call the conversation died, because nobody in a repair workshop keeps that list in one place."
+        }
+      ],
+      "claims": [
+        {
+          "text": "a sentence that the body does not hold",
+          "kind": "observation",
+          "source": "passage",
+          "passage_index": 0
+        }
+      ]
+    },
+    {
+      "ref": "stress-claim-far",
+      "angle": "Case claim far for the checker",
+      "angle_type": "lesson",
+      "hook_type": "observation",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "Pricing pages deserve attention, and nobody keeps that customer list in one place."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "voice-note",
+          "passage": "We stopped asking workshops to import their customer list on day one. Every time we asked for it during the first call the conversation died, because nobody in a repair workshop keeps that list in one place."
+        }
+      ],
+      "claims": [
+        {
+          "text": "Pricing pages deserve attention",
+          "kind": "observation",
+          "source": "passage",
+          "passage_index": 0
+        }
+      ]
+    },
+    {
+      "ref": "stress-untraced-event",
+      "angle": "Case untraced event for the checker",
+      "angle_type": "lesson",
+      "hook_type": "observation",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "They look at the wall, they look at which bike is closest to done, and they pick that one.\n\nWe signed a partnership with regional retailers during the spring campaign."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "voice-note",
+          "passage": "They look at the wall, they look at which bike is closest to done, and they pick that one."
+        }
+      ],
+      "claims": []
+    },
+    {
+      "ref": "stress-third-party-only",
+      "angle": "Case third party only for the checker",
+      "angle_type": "lesson",
+      "hook_type": "observation",
+      "structure": "single_idea",
+      "networks": [
+        "linkedin"
+      ],
+      "link": null,
+      "variants": {
+        "linkedin": {
+          "text": "A public page says workshops keep repair notes on paper, and that page holds the whole story of paper notes."
+        }
+      },
+      "source_passages": [
+        {
+          "source_id": "page",
+          "passage": "Workshops keep repair notes on paper, says this public page about paper notes."
+        }
+      ],
+      "claims": []
+    }
+  ]
+}

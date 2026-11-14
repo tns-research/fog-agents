@@ -1,0 +1,46 @@
+{
+  "_comment": "Every threshold compute_pulse.py and check_experiments.py apply. These are conventions of the stack, chosen so a small site does not read noise as news; they are not industry benchmarks. A project overrides any key with a pulse_rules object in <project>/growth-pulse/config.json. The model never recomputes them.",
+  "schema_version": "1.0",
+  "weeks": {
+    "_comment": "ISO weeks, Monday to Sunday. The report week is the last complete week before the run date. The 4-week reference is the mean of the 4 weeks before the report week (previous week included), over the weeks that are complete.",
+    "window_weeks": 6,
+    "baseline_weeks": 4,
+    "min_complete_baseline_weeks": 2
+  },
+  "volume": {
+    "_comment": "No percentage is computed on fewer than min_events_for_pct events: under 30, one event more or less moves a percentage by more than 3 points. A count change on a smaller base is given in absolute terms; a rate is given as 'x of y'; a revenue change is given in money with the payment count.",
+    "min_events_for_pct": 30
+  },
+  "noise": {
+    "_comment": "A count change is 'flat' when it stays within z standard deviations. The deviation is the larger of two: a Poisson count (difference of two weeks: sqrt(current + previous); against the 4-week mean m over k weeks: sqrt(m x (1 + 1/k))) and the observed spread of the reference weeks (sample standard deviation s: s x sqrt(2) against last week, s x sqrt(1 + 1/k) against the mean), computed when at least min_weeks_for_spread reference weeks are complete. Impressions and pageviews come in bursts and need the second. A rate change uses the two-proportion standard error. An approximation, not a significance test. Average position moves of less than position_flat_band are flat.",
+    "z": 2.0,
+    "min_weeks_for_spread": 3,
+    "position_flat_band": 1.0
+  },
+  "correlation": {
+    "_comment": "Only the pairs below are tested, fixed in advance so the report never goes fishing across every metric. Pearson r on daily values after removing the day-of-week mean of each series, b shifted by lag days after a. A pair is 'correlated' at |r| >= min_abs_r with at least min_days paired days. A correlation is never a cause: both series may follow a third thing.",
+    "min_days": 28,
+    "min_abs_r": 0.5,
+    "lags_days": [0, 1],
+    "pairs": [
+      { "a": "social.*.impressions", "b": "*.visitors", "same_source": false, "question": "Do social impressions and site visitors move together?" },
+      { "a": "gsc.clicks", "b": "*.visitors", "same_source": false, "question": "Do search clicks and site visitors move together?" },
+      { "a": "*.visitors", "b": "*.event.*", "same_source": true, "question": "Do conversions follow traffic, or move on their own?" }
+    ]
+  },
+  "gsc_decline": {
+    "_comment": "Mirror of the decline object of seo-audit's gsc-bands.json, so both agents call the same thing a decline: clicks down at least 20 % against the prior period with at least 10 prior clicks; cause position when the average position worsened by 2 or more, demand when impressions fell 20 % or more, else ctr; gone when the row disappeared. Here the prior period is the previous week. The selftest fails when the two files drift apart. A project override in <project>/seo-audit/config.json (gsc_bands.decline) is read too, so one override serves both agents.",
+    "min_prior_clicks": 10,
+    "max_change_pct": -20,
+    "cause_position_worse_by": 2,
+    "cause_impressions_change_pct": -20
+  },
+  "experiments": {
+    "_comment": "check_experiments.py: exactly count experiments, AARRR stages only, duration in days within the bounds, at least min_distinct_stages stages unless config.focus_stage pins one, any cash spend flagged for approval and within config.budget_eur_per_sprint when set.",
+    "count": 3,
+    "stages": ["acquisition", "activation", "retention", "referral", "revenue"],
+    "min_duration_days": 7,
+    "max_duration_days": 28,
+    "min_distinct_stages": 2
+  }
+}

@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.jsx';
+const org = { "@context": "https://schema.org", "@type": "Organization", "name": "Larkspur", "url": "https://larkspur.example/" };
+---
+<Base title="Larkspur: pricing analytics for small software teams" description="Larkspur shows small software teams which plans, prices and trials bring paying customers, with one report a week.">
+  <script type="application/ld+json" set:html={JSON.stringify(org)} />
+  <main>
+    <h1>Pricing analytics for small software teams</h1>
+    <Hero />
+    <img src="/images/divider.svg" alt="" />
+    <p>Larkspur reads your billing events and tells you which plan, price and trial length bring paying customers.</p>
+    <section class="testimonial"><blockquote>We found our pricing gap in a week. Lea Novak, Brightmill</blockquote></section>
+  </main>
+</Base>

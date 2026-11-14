@@ -1,0 +1,9 @@
+From: Mail Delivery Subsystem <mailer-daemon@mail.example>
+To: sender@outreach.example
+Subject: Delivery Status Notification (Failure)
+Date: Mon, 12 Oct 2026 10:01:00 +0200
+Message-ID: <bounce-fay-1@mail.example>
+Content-Type: text/plain; charset=utf-8
+
+Your message wasn't delivered to fay@tansy.example because the address couldn't be found.
+550 5.1.1 The email account that you tried to reach does not exist.

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fernwood.example/sitemap.xml

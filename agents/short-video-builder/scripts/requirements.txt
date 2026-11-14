@@ -1,0 +1,17 @@
+# short-video-builder engine: transcribe.py (import), proofread.py, clipspec.py,
+# track.py, captions.py, render.py, qa.py, pipeline.py, fixture.py, selftest.py
+# System packages, not pip: ffmpeg and ffprobe built with libass (apt install ffmpeg,
+# brew install ffmpeg), fontconfig with the caption font installed (fc-list).
+#
+# Face tracking (Haar cascades ship inside the wheel, no model download) and the
+# frame maths. mediapipe is not used: OpenCV covers frontal and profile faces
+# offline in a much smaller install.
+opencv-python-headless>=4.8.1.78,<5  # 5.0 drops cv2.CascadeClassifier from the main module
+# 4.8 and 4.9 wheels are built against NumPy 1.x: pinning one of them needs numpy<2.
+numpy>=1.24
+# Fixture drawing (fixture.py) and the shared contact sheet (reviewing-renders).
+Pillow>=13.0.0
+#
+# Optional, local transcription (capability `transcription`). Without it, import the
+# founder's SRT/VTT/JSON, or use whisper.cpp or openai-whisper if installed.
+# faster-whisper>=1.0

@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "project": "swanbase",
+  "settings": {
+    "timezone": "Europe/Paris",
+    "slots": { "linkedin": [{ "day": "tue", "time": "09:00" }], "x": [{ "day": "wed", "time": "12:30" }] },
+    "window_minutes": 120,
+    "lead_minutes": 60,
+    "horizon_days": 28,
+    "approvers": [],
+    "adapter": "dry-run",
+    "x_allow_thread": false
+  },
+  "items": [
+    {
+      "id": "demo-objections.linkedin",
+      "ref": "demo-objections",
+      "network": "linkedin",
+      "kind": "carousel",
+      "language": "en",
+      "status": "to_review",
+      "text": "Five objections founders raise before a demo call, and what the call actually covers.",
+      "first_comment": "Book a call: https://swanbase.co",
+      "reply": null,
+      "media": [],
+      "slot": "2026-10-20T09:00",
+      "content_hash": "__HASH__",
+      "checks": { "lint": "pass", "writing_gate": "pass" },
+      "approval": null,
+      "history": [{ "at": "__DAY__T09:00", "action": "add", "to": "to_review" }]
+    },
+    {
+      "id": "demo-objections.x",
+      "ref": "demo-objections",
+      "network": "x",
+      "kind": "carousel",
+      "language": "en",
+      "status": "to_review",
+      "text": "Five objections founders raise before a demo call, and what the call covers.",
+      "first_comment": null,
+      "reply": "https://swanbase.co",
+      "media": [],
+      "slot": "2026-10-21T12:30",
+      "content_hash": "__HASH__",
+      "checks": { "lint": "pass", "writing_gate": "pass" },
+      "approval": null,
+      "history": [{ "at": "__DAY__T09:00", "action": "add", "to": "to_review" }]
+    }
+  ]
+}

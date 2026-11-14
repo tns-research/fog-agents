@@ -1,0 +1,11 @@
+{
+ "key": "GET https://hacker-news.firebaseio.com/v0/user/mtrace_fictive.json",
+ "status": 200,
+ "body": {
+  "id": "mtrace_fictive",
+  "created": 1650000000,
+  "karma": 120,
+  "about": "",
+  "submitted": []
+ }
+}
