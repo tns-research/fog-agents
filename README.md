@@ -27,7 +27,7 @@ Every number is computed by a script, every quote traced to its source, and noth
 <table><tr><td>
 <b>Built by <a href="https://swanbase.co/en/?utm_source=github&utm_medium=readme&utm_campaign=fog-agents">swanbase</a></b>, the growth marketing accelerator for ambitious European startups.<br>
 Launch your product fast, find your first 10 to 1,000 customers, raise funds: weekly talks and workshops, unlimited office hours and a dedicated Head of Growth. €0, no fees, all year round.<br>
-<a href="https://swanbase.co/en/events/the-nest-paris-2026-10/?utm_source=github&utm_medium=readme&utm_campaign=fog-agents"><b>Apply to the F26 batch →</b></a>
+<a href="https://swanbase.co/en/?utm_source=github&utm_medium=readme&utm_campaign=fog-agents"><b>Discover swanbase →</b></a>
 </td></tr></table>
 
 <br>
@@ -326,7 +326,7 @@ Standard library only, no install. It checks that every relative link and refere
 
 €0, no fees before or after, no subscription. We stay with you from your first 10 customers to your first 1,000, and after that until the exit. 3,000+ hours of mentoring since 2018.
 
-<a href="https://swanbase.co/en/events/the-nest-paris-2026-10/?utm_source=github&utm_medium=readme&utm_campaign=fog-agents-footer"><b>Apply to the F26 batch →</b></a> · <a href="https://swanbase.co/en/?utm_source=github&utm_medium=readme&utm_campaign=fog-agents-footer">Discover the program</a>
+<a href="https://swanbase.co/en/?utm_source=github&utm_medium=readme&utm_campaign=fog-agents-footer"><b>Discover swanbase →</b></a>
 
 ## Security
 
