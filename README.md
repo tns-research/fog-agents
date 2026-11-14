@@ -32,7 +32,7 @@ Launch your product fast, find your first 10 to 1,000 customers, raise funds: we
 
 <br>
 
-<img src="docs/hero.webp" alt="fog, growth agents for founders who don't need a marketing agency" width="100%">
+<img src="docs/hero.webp" alt="fog-agents.com: the growth team you can't hire yet, running inside your coding agent" width="100%">
 
 </div>
 
