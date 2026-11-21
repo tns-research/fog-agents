@@ -2,7 +2,7 @@
 # After install: playwright install chromium
 # Local HTML rendering of every ad (exact text, exact sizes, 0 USD); the same
 # Chromium is already used by carousel-builder and landing-page-analyzer.
-playwright>=1.65.0
+playwright>=1.65.2
 # Image sizes, JPEG export with sRGB profile, contact sheets.
 Pillow>=13.0.0
 #
