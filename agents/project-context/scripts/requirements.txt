@@ -1,4 +1,4 @@
-playwright>=1.65.0
+playwright>=1.65.2
 Pillow>=13.0.0
 # After installing, run once:  python -m playwright install chromium
 # Every API (Firecrawl, Jina Reader, Exa) is optional and reached over HTTP or a CLI: no Python dep needed.
