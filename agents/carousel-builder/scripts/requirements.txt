@@ -1,6 +1,6 @@
 # carousel-builder engine: build.py, render.py, qa.py, pipeline.py
 # After install: playwright install chromium
-playwright>=1.65.0
+playwright>=1.65.2
 Pillow>=13.0.0
 # Video variant (animate.py) also needs ffmpeg and ffprobe on the PATH, a system
 # package, not pip: apt install ffmpeg, brew install ffmpeg.
