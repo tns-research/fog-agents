@@ -8,7 +8,7 @@
 # offline in a much smaller install.
 opencv-python-headless>=4.8.1.78,<5  # 5.0 drops cv2.CascadeClassifier from the main module
 # 4.8 and 4.9 wheels are built against NumPy 1.x: pinning one of them needs numpy<2.
-numpy>=1.24
+numpy>=2.5.5
 # Fixture drawing (fixture.py) and the shared contact sheet (reviewing-renders).
 Pillow>=13.0.0
 #
